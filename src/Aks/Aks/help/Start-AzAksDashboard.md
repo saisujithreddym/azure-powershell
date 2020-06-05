@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿---
+=======
+---
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Aks.dll-Help.xml
 Module Name: Az.Aks
 online version: https://docs.microsoft.com/en-us/powershell/module/az.aks/start-azaksdashboard
@@ -14,20 +18,34 @@ Create a Kubectl SSH tunnel to the managed cluster's dashboard.
 
 ### GroupNameParameterSet (Default)
 ```
+<<<<<<< HEAD
 Start-AzAksDashboard [-ResourceGroupName] <String> [-Name] <String> [-DisableBrowser] [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+Start-AzAksDashboard [-ResourceGroupName] <String> [-Name] <String> [-DisableBrowser] [-ListenPort <Int32>]
+ [-PassThru] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### InputObjectParameterSet
 ```
+<<<<<<< HEAD
 Start-AzAksDashboard [-InputObject] <PSKubernetesCluster> [-DisableBrowser] [-PassThru]
+=======
+Start-AzAksDashboard [-InputObject] <PSKubernetesCluster> [-DisableBrowser] [-ListenPort <Int32>] [-PassThru]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### IdParameterSet
 ```
+<<<<<<< HEAD
 Start-AzAksDashboard [-Id] <String> [-DisableBrowser] [-PassThru] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
+=======
+Start-AzAksDashboard [-Id] <String> [-DisableBrowser] [-ListenPort <Int32>] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -102,6 +120,24 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -ListenPort
+The listening port for the dashboard. Default value is 8003.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Name
 Name of your managed Kubernetes cluster
 
@@ -148,7 +184,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

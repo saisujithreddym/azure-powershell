@@ -36,6 +36,12 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
 
         public ServerKeyVaultKeyTests(ITestOutputHelper output) : base(output)
         {
+<<<<<<< HEAD
+=======
+            base.resourceTypesToIgnoreApiVersion = new string[] {
+                "Microsoft.Sql/servers"
+            };
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         [Fact] 

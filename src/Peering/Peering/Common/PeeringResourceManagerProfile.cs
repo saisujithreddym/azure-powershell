@@ -80,12 +80,23 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
                         cfg.CreateMap<MNM.PeerAsn, CNM.PSPeerAsn>();
                         cfg.CreateMap<MNM.Resource, CNM.PSResource>();
                         cfg.CreateMap<MNM.SubResource, CNM.PSSubResource>();
+<<<<<<< HEAD
                         cfg.CreateMap<MNM.ContactInfo, CNM.PSContactInfo>();
+=======
+                        cfg.CreateMap<MNM.ContactDetail, CNM.PSContactDetail>();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         cfg.CreateMap<MNM.PeeringService, CNM.PSPeeringService>();
                         cfg.CreateMap<MNM.PeeringServiceLocation, CNM.PSPeeringServiceLocation>();
                         cfg.CreateMap<MNM.PeeringServicePrefix, CNM.PSPeeringServicePrefix>();
                         cfg.CreateMap<MNM.PeeringServiceProvider, CNM.PSPeeringServiceProvider>();
                         cfg.CreateMap<MNM.PeeringServicePrefixEvent, CNM.PSPeeringServicePrefixEvent>();
+<<<<<<< HEAD
+=======
+                        cfg.CreateMap<MNM.PeeringRegisteredAsn, CNM.PSPeeringRegisteredAsn>();
+                        cfg.CreateMap<MNM.PeeringRegisteredPrefix, CNM.PSPeeringRegisteredPrefix>();
+                        cfg.CreateMap<MNM.PeeringServiceCountry, CNM.PSPeeringServiceCountry>();
+                        cfg.CreateMap<MNM.PeeringServiceSku, CNM.PSPeeringServiceSku>();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         // CNM to MNM
                         cfg.CreateMap<CNM.PSBgpSession, MNM.BgpSession>();
                         cfg.CreateMap<CNM.PSDirectConnection, MNM.DirectConnection>();
@@ -103,12 +114,28 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
                         cfg.CreateMap<CNM.PSPeerAsn, MNM.PeerAsn>();
                         cfg.CreateMap<CNM.PSResource, MNM.Resource>();
                         cfg.CreateMap<CNM.PSSubResource, MNM.SubResource>();
+<<<<<<< HEAD
                         cfg.CreateMap<CNM.PSContactInfo, MNM.ContactInfo>();
+=======
+                        cfg.CreateMap<CNM.PSContactDetail, MNM.ContactDetail>();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         cfg.CreateMap<CNM.PSPeeringService, MNM.PeeringService>();
                         cfg.CreateMap<CNM.PSPeeringServiceLocation, MNM.PeeringServiceLocation>();
                         cfg.CreateMap<CNM.PSPeeringServicePrefix, MNM.PeeringServicePrefix>();
                         cfg.CreateMap<CNM.PSPeeringServiceProvider, MNM.PeeringServiceProvider>();
                         cfg.CreateMap<CNM.PSPeeringServicePrefixEvent, MNM.PeeringServicePrefixEvent>();
+<<<<<<< HEAD
+=======
+                        cfg.CreateMap<CNM.PSPeeringRegisteredAsn, MNM.PeeringRegisteredAsn>();
+                        cfg.CreateMap<CNM.PSPeeringRegisteredPrefix, MNM.PeeringRegisteredPrefix>();
+                        cfg.CreateMap<CNM.PSPeeringServiceCountry, MNM.PeeringServiceCountry>();
+                        cfg.CreateMap<CNM.PSPeeringServiceSku, MNM.PeeringServiceSku>();
+                        //View Models
+                        cfg.CreateMap<CNM.PSPeering, CNM.PSDirectPeeringModelView>();
+                        cfg.CreateMap<CNM.PSPeering, CNM.PSExchangePeeringModelView>();
+                        cfg.CreateMap<CNM.PSDirectPeeringModelView, CNM.PSPeering>();
+                        cfg.CreateMap<CNM.PSExchangePeeringModelView, CNM.PSPeering>();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     });
             mapper = config.CreateMapper();
         }

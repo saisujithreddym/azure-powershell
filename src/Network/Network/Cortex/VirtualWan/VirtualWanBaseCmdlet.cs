@@ -50,7 +50,11 @@ namespace Microsoft.Azure.Commands.Network
             var psVirtualWan = NetworkResourceManagerProfile.Mapper.Map<PSVirtualWan>(virtualWan);
 
             psVirtualWan.Tag = TagsConversionHelper.CreateTagHashtable(virtualWan.Tags);
+<<<<<<< HEAD
 
+=======
+            psVirtualWan.AllowVnetToVnetTraffic = true;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             return psVirtualWan;
         }
 

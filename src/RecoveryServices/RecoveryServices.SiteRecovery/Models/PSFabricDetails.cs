@@ -117,6 +117,17 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             this.SystemLoadStatus = processServer.SystemLoadStatus;
             this.TotalMemoryInBytes = processServer.TotalMemoryInBytes;
             this.TotalSpaceInBytes = processServer.TotalSpaceInBytes;
+<<<<<<< HEAD
+=======
+            this.Health = processServer.Health;
+            this.PSStatsRefreshTime = processServer.PsStatsRefreshTime;
+            this.ThroughputUploadPendingDataInBytes = processServer.ThroughputUploadPendingDataInBytes;
+            this.ThroughputInMBps = processServer.ThroughputInMBps;
+            this.ThroughputInBytes = processServer.ThroughputInBytes;
+            this.ThroughputStatus = processServer.ThroughputStatus;
+            this.MarsCommunicationStatus = processServer.MarsCommunicationStatus;
+            this.MarsRegistrationStatus = processServer.MarsRegistrationStatus;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             this.Updates =
                 this.TranslateMobilityServiceUpdate(processServer.MobilityServiceUpdates);
         }
@@ -233,6 +244,49 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         public string VersionStatus { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///     Gets or sets the health of Process Server.
+        /// </summary>
+        public string Health { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the process server stats refresh time.
+        /// </summary>
+        public DateTime? PSStatsRefreshTime { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the uploading pending data in bytes.
+        /// </summary>
+        public long? ThroughputUploadPendingDataInBytes { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the throughput in MBps.
+        /// </summary>
+        public long? ThroughputInMBps { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the throughput in bytes.
+        /// </summary>
+        public long? ThroughputInBytes { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the throughput status.
+        /// </summary>
+        public string ThroughputStatus { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the MARS communication status.
+        /// </summary>
+        public string MarsCommunicationStatus { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the MARS registration status.
+        /// </summary>
+        public string MarsRegistrationStatus { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///     Translate Mobility updates into Powershell object.
         /// </summary>
         /// <param name="mobilityUpdates">List of Mobility service update object.</param>
@@ -827,6 +881,10 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             this.OSDiskId = details.OsDiskId;
             this.OSType = details.OsType;
             this.ProcessServerId = details.ProcessServerId;
+<<<<<<< HEAD
+=======
+            this.ProcessServerName = details.ProcessServerName;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             this.ProtectionStage = details.ProtectionStage;
             this.RecoveryAzureLogStorageAccountId = details.RecoveryAzureLogStorageAccountId;
             this.VHDName = details.VhdName;
@@ -927,6 +985,14 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         public string ProcessServerId { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///     Process Server Name.
+        /// </summary>
+        public string ProcessServerName { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///     Gets or sets Protected Disk Details of the Virtual machine.
         /// </summary>
         public List<AsrVirtualHardDisk> ProtectedDiskDetails { get; set; }
@@ -1203,6 +1269,10 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             this.RecoveryAzureCloudService = details.RecoveryCloudService;
             this.RecoveryFabricLocation = details.RecoveryFabricLocation;
             this.RecoveryAvailabilitySet = details.RecoveryAvailabilitySet;
+<<<<<<< HEAD
+=======
+            this.RecoveryProximityPlacementGroupId = details.RecoveryProximityPlacementGroupId;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             this.TestFailoverRecoveryFabricObjectId = details.TestFailoverRecoveryFabricObjectId;
             this.MonitoringJobType = details.MonitoringJobType;
             this.MonitoringPercentageCompletion = details.MonitoringPercentageCompletion;
@@ -1309,6 +1379,14 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         public string RecoveryAvailabilitySet { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Recovery proximity placement group Id.
+        /// </summary>
+        public string RecoveryProximityPlacementGroupId { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Synced configuration details of the virtual machine.
         /// </summary>
         public ASRAzureToAzureVmSyncedConfigDetails VmSyncedConfigDetails { get; set; }

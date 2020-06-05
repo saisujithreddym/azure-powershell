@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+=======
+<Project Sdk="Microsoft.NET.Sdk">
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
   <PropertyGroup>
     <PsModuleName>Monitor</PsModuleName>
@@ -11,8 +15,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.Monitor" Version="0.24.1-preview" />
     <PackageReference Include="Microsoft.Azure.Management.ApplicationInsights" Version="0.2.0-preview" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.Monitor" Version="0.25.1-preview" />
+    <PackageReference Include="Microsoft.Azure.Management.ApplicationInsights" Version="0.3.0-preview" />
+    <PackageReference Include="Microsoft.Azure.Management.Network" Version="20.0.1-preview" />
+    <PackageReference Include="Microsoft.Azure.Management.OperationalInsights" Version="0.20.0-preview" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </ItemGroup>
 
   <ItemGroup>

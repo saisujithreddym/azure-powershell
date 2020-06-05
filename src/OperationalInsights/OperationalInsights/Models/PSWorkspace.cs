@@ -19,7 +19,11 @@ using Microsoft.Azure.Management.Internal.Network.Common;
 
 namespace Microsoft.Azure.Commands.OperationalInsights.Models
 {
+<<<<<<< HEAD
     public class PSWorkspace: IOperationalInsightWorkspace
+=======
+    public class PSWorkspace
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     {
         public PSWorkspace()
         {
@@ -38,6 +42,7 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Models
             this.Location = workspace.Location;
             this.Tags = workspace.Tags;
 
+<<<<<<< HEAD
             if (workspace!= null)
             {
                 this.Sku = workspace.Sku != null ? workspace.Sku.Name : null;
@@ -46,6 +51,17 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Models
                 this.PortalUrl = workspace.PortalUrl;
                 this.ProvisioningState = workspace.ProvisioningState;
             }
+=======
+            this.Sku = workspace.Sku != null ? workspace.Sku.Name : null;
+            this.retentionInDays = workspace.RetentionInDays;
+            this.CustomerId = new Guid(workspace.CustomerId);
+            this.ProvisioningState = workspace.ProvisioningState;
+
+            this.PublicNetworkAccessForIngestion = workspace.PublicNetworkAccessForIngestion;
+            this.PublicNetworkAccessForQuery = workspace.PublicNetworkAccessForQuery;
+            this.PrivateLinkScopedResources = workspace.PrivateLinkScopedResources;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public string Name { get; set; }
@@ -62,10 +78,22 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Models
 
         public int? retentionInDays { get; set; }
 
+<<<<<<< HEAD
         public Guid? CustomerId { get; set; }
 
         public string PortalUrl { get; set; }
 
         public string ProvisioningState { get; set; }
+=======
+        public Guid? CustomerId { get; private set; }
+
+        public string ProvisioningState { get; set; }
+
+        public string PublicNetworkAccessForIngestion { get; set; }
+
+        public string PublicNetworkAccessForQuery { get; set; }
+
+        public IList<PrivateLinkScopedResource> PrivateLinkScopedResources { get; private set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

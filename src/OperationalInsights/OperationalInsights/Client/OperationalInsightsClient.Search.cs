@@ -44,6 +44,7 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
             return searchResponses;
         }
 
+<<<<<<< HEAD
         public virtual PSSearchGetSearchResultsResponse GetSavedSearchResults(string resourceGroupName, string workspaceName, string savedSearchId)
         {
             SearchResultsResponse responses = OperationalInsightsManagementClient.SavedSearches.GetResults(resourceGroupName, workspaceName, savedSearchId);
@@ -54,10 +55,16 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
         public virtual PSSearchGetSchemaResponse GetSchema(string resourceGroupName, string workspaceName)
         {
             SearchGetSchemaResponse response = OperationalInsightsManagementClient.Workspaces.GetSchema(resourceGroupName, workspaceName);
+=======
+        public virtual PSSearchGetSchemaResponse GetSchema(string resourceGroupName, string workspaceName)
+        {
+            SearchGetSchemaResponse response = OperationalInsightsManagementClient.Schema.Get(resourceGroupName, workspaceName);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             PSSearchGetSchemaResponse schemaResponse = new PSSearchGetSchemaResponse(response);
             return schemaResponse;
         }
 
+<<<<<<< HEAD
         public virtual PSSearchGetSearchResultsResponse GetSearchResults(string resourceGroupName, string workspaceName, PSSearchGetSearchResultsParameters psParameters)
         {
             SearchParameters parameters = new SearchParameters();
@@ -86,6 +93,8 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
             return searchResponse;
         }
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public virtual HttpStatusCode CreateOrUpdateSavedSearch(string resourceGroupName, string workspaceName, string savedSearchId, SavedSearch properties, bool force, Action<bool, string, string, string, Action, Func<bool>> ConfirmAction, string ETag = null)
         {
             HttpStatusCode status = HttpStatusCode.Ambiguous;
@@ -93,7 +102,11 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
                 {
                     if (ETag != null && ETag != "")
                     {
+<<<<<<< HEAD
                         properties.Etag = ETag;
+=======
+                        properties.ETag = ETag;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }
                     Rest.Azure.AzureOperationResponse<SavedSearch> result = OperationalInsightsManagementClient.SavedSearches.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName, workspaceName, savedSearchId, properties).GetAwaiter().GetResult();
                     status = result.Response.StatusCode;

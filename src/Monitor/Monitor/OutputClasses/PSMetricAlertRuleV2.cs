@@ -56,7 +56,11 @@ namespace Microsoft.Azure.Commands.Insights.OutputClasses
             Actions = new ActivityLogAlertActionGroup[metricAlertResource.Actions.Count];
             for(int i = 0; i < metricAlertResource.Actions.Count;i++)
             {
+<<<<<<< HEAD
                 Actions[i] = new ActivityLogAlertActionGroup(metricAlertResource.Actions[i].ActionGroupId, metricAlertResource.Actions[i].WebhookProperties);
+=======
+                Actions[i] = new ActivityLogAlertActionGroup(metricAlertResource.Actions[i].ActionGroupId, metricAlertResource.Actions[i].WebHookProperties);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             var resourceIdentifier = new ResourceIdentifier(metricAlertResource.Id);

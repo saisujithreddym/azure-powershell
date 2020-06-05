@@ -15,7 +15,11 @@ Creates a private link service
 ```
 New-AzPrivateLinkService -Name <String> -ResourceGroupName <String> -Location <String>
  -LoadBalancerFrontendIpConfiguration <PSFrontendIPConfiguration[]>
+<<<<<<< HEAD
  -IpConfiguration <PSPrivateLinkServiceIpConfiguration[]> [-Visibility <String[]>] [-AutoApproval <String[]>]
+=======
+ -IpConfiguration <PSPrivateLinkServiceIpConfiguration[]> [-Visibility <String[]>] [-AutoApproval <String[]>] [-EnableProxyProtocol]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-Tag <Hashtable>] [-Force] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -26,6 +30,7 @@ The **New-AzPrivateLinkService** cmdlet creates a private link service
 ## EXAMPLES
 
 ### Example 1
+<<<<<<< HEAD
 ```
 $vnet = Get-AzVirtualNetwork -ResourceName "myvnet" -ResourceGroupName "myresourcegroup"
 $IPConfig = New-AzPrivateLinkServiceIpConfig -Name "IP-Config" -Subnet $vnet.subnets[1] -PrivateIpAddress "10.0.0.5"
@@ -36,6 +41,21 @@ New-AzPrivateLinkService -Name "mypls" -ResourceGroupName myresourcegroup -Locat
 ```
 
 This example creates a private link service.
+=======
+
+The following example creates a private link service.
+
+```powershell
+$vnet = Get-AzVirtualNetwork -ResourceName 'myvnet' -ResourceGroupName 'myresourcegroup'
+# View the results of $vnet and change 'mysubnet' in the following line to the appropriate subnet name.
+$subnet = $vnet | Select-Object -ExpandProperty subnets | Where-Object Name -eq 'mysubnet'
+$IPConfig = New-AzPrivateLinkServiceIpConfig -Name 'IP-Config' -Subnet $subnet -PrivateIpAddress '10.0.0.5'
+$publicip = Get-AzPublicIpAddress -ResourceGroupName 'myresourcegroup'
+$frontend = New-AzLoadBalancerFrontendIpConfig -Name 'FrontendIpConfig01' -PublicIpAddress $publicip
+$lb = New-AzLoadBalancer -Name 'MyLoadBalancer' -ResourceGroupName 'myresourcegroup' -Location 'West US' -FrontendIpConfiguration $frontend
+New-AzPrivateLinkService -Name 'mypls' -ResourceGroupName myresourcegroup -Location "West US" -LoadBalancerFrontendIpConfiguration $frontend -IpConfiguration $IPConfig
+```
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## PARAMETERS
 
@@ -84,6 +104,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -EnableProxyProtocol
+Enable proxy protocol for the private link service.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Force
 Do not ask for confirmation if you want to overwrite a resource
 

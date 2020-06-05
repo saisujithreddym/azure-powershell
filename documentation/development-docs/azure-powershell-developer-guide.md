@@ -2,6 +2,11 @@
 
 The Azure PowerShell Developer Guide was created to help with the development and testing of Azure PowerShell cmdlets. This guide contains information on how to set up your environment, create a new project, implement cmdlets, record and run tests, and more.
 
+<<<<<<< HEAD
+=======
+**Note: Except for the way described in this page, There is a new way to generate PowerShell modules through AutoRest PowerShell generator. And related links are attached in the end.**
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 # Table of Contents
 
 - [Prerequisites](#prerequisites)
@@ -36,6 +41,10 @@ The Azure PowerShell Developer Guide was created to help with the development an
 - [After Development](#after-development)
 - [Misc](#misc)
     - [Publish to PowerShell Gallery](#publish-to-powershell-gallery)
+<<<<<<< HEAD
+=======
+- [Autorest PowerShell Generator](#autorest-powershell-generator)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Prerequisites
 
@@ -317,3 +326,10 @@ Whenever you make updates to a project, please make sure to update the correspon
 ## Publish to PowerShell Gallery
 
 To publish your module to the [official PowerShell gallery](http://www.powershellgallery.com/) or the test gallery site, contact the Azure PowerShell team
+<<<<<<< HEAD
+=======
+
+# AutoRest PowerShell Generator
+- [autorest.powershell documentation](https://github.com/Azure/autorest.powershell/tree/master/docs)
+- [examples](https://github.com/Azure/azure-powershell/tree/generation/src)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

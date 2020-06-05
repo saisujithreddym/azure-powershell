@@ -285,6 +285,17 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         public string RecoveryAvailabilityZone { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or sets the resource ID of proximity placement group to failover this virtual machine to.
+        /// </summary>
+        [Parameter(ParameterSetName = ASRParameterSets.AzureToAzure, HelpMessage = "Specify the proximity placement group Id to used by the failover Vm in target recovery region.")]
+        [Parameter(ParameterSetName = ASRParameterSets.AzureToAzureWithoutDiskDetails, HelpMessage = "Specify the proximity placement group Id to used by the failover Vm in target recovery region.")]
+        [ValidateNotNullOrEmpty]
+        public string RecoveryProximityPlacementGroupId { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Gets or sets ID of the AvailabilitySet to recover the machine to in the event of a failover.
         /// </summary>
         [Parameter(ParameterSetName = ASRParameterSets.AzureToAzure)]
@@ -684,7 +695,12 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                 RecoveryBootDiagStorageAccountId = this.RecoveryBootDiagStorageAccountId,
                 RecoveryAzureNetworkId = this.RecoveryAzureNetworkId,
                 RecoverySubnetName = this.RecoveryAzureSubnetName,
+<<<<<<< HEAD
                 RecoveryAvailabilityZone = this.RecoveryAvailabilityZone
+=======
+                RecoveryAvailabilityZone = this.RecoveryAvailabilityZone,
+                RecoveryProximityPlacementGroupId = this.RecoveryProximityPlacementGroupId
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
 
             if (!string.IsNullOrEmpty(this.ReplicationGroupName))
@@ -826,6 +842,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             input.Properties.ProviderSpecificDetails = providerSettings;
         }
 
+<<<<<<< HEAD
         /**
          * Creating DiskEncryptionInfo for A2A encrypted Vm.
          */
@@ -857,6 +874,8 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             return null;
         }
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <summary>
         ///     Writes Job.
         /// </summary>

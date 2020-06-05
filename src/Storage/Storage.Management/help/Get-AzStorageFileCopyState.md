@@ -29,6 +29,10 @@ Get-AzStorageFileCopyState [-File] <CloudFile> [-WaitForComplete] [-ServerTimeou
 
 ## DESCRIPTION
 The **Get-AzStorageFileCopyState** cmdlet gets the state of an Azure Storage file copy operation.
+<<<<<<< HEAD
+=======
+It should run on the copy destination file.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 
@@ -39,6 +43,19 @@ PS C:\>Get-AzStorageFileCopyState -ShareName "ContosoShare" -FilePath "ContosoFi
 
 This command gets the state of the copy operation for a file that has the specified name.
 
+<<<<<<< HEAD
+=======
+### Example 2: Start Copy and pipeline to get the copy status
+```
+C:\PS> $destfile = Start-AzStorageFileCopy -SrcShareName "contososhare" -SrcFilePath "contosofile" -DestShareName "contososhare2" -destfilepath "contosofile_copy"  
+
+C:\PS> $destfile | Get-AzStorageFileCopyState
+```
+
+The first command starts copy file "contosofile" to "contosofile_copy", and output the destiantion file object. 
+The second command pipeline the destiantion file object to Get-AzStorageFileCopyState, to get file copy state.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -ClientTimeoutPerRequest
@@ -115,12 +132,20 @@ You can create a cloud file or obtain one by using the Get-AzStorageFile cmdlet.
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFile
 Parameter Sets: File
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFile
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -186,7 +211,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 
@@ -196,7 +225,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+<<<<<<< HEAD
 ### Microsoft.Azure.Storage.File.CloudFile
+=======
+### Microsoft.Azure.Storage.File.CopyState
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## NOTES
 

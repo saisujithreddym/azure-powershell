@@ -20,7 +20,20 @@ namespace Microsoft.Azure.Commands.Cdn.Models.Profile
         Premium_Verizon,
         Custom_Verizon,
         Standard_Akamai,
+<<<<<<< HEAD
         Standard_ChinaCdn,
         Standard_Microsoft
     }
 }
+=======
+        Standard_Microsoft,
+        Standard_ChinaCdn,
+        Premium_ChinaCdn,
+        Standard_955BandWidth_ChinaCdn,
+        Standard_AvgBandWidth_ChinaCdn,
+        StandardPlus_ChinaCdn,
+        StandardPlus_955BandWidth_ChinaCdn,
+        StandardPlus_AvgBandWidth_ChinaCdn,
+    }
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

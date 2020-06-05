@@ -24,7 +24,11 @@ namespace Microsoft.Azure.Commands.Blueprint.Models
         public string Description { get; set; }
         public List<string> DependsOn { get; set; }
         public string PolicyDefinitionId { get; set; }
+<<<<<<< HEAD
         public IDictionary<string, PSParameterValueBase> Parameters { get; set; }
+=======
+        public IDictionary<string, PSParameterValue> Parameters { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ResourceGroup { get; set; }
 
         internal static PSPolicyAssignmentArtifact FromArtifactModel(PolicyAssignmentArtifact artifact, string scope)
@@ -38,12 +42,17 @@ namespace Microsoft.Azure.Commands.Blueprint.Models
                 Description = artifact.Description,
                 PolicyDefinitionId = artifact.PolicyDefinitionId,
                 DependsOn = new List<string>(),
+<<<<<<< HEAD
                 Parameters = new Dictionary<string, PSParameterValueBase>(),
+=======
+                Parameters = new Dictionary<string, PSParameterValue>(),
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ResourceGroup = artifact.ResourceGroup
             };
 
             foreach (var item in artifact.Parameters)
             {
+<<<<<<< HEAD
                 PSParameterValueBase parameter = GetArtifactParameters(item);
                 psArtifact.Parameters.Add(item.Key, parameter);
             }
@@ -67,6 +76,28 @@ namespace Microsoft.Azure.Commands.Blueprint.Models
             {
                 var parameterValue = (SecretReferenceParameterValue)parameterKvp.Value;
 
+=======
+                PSParameterValue parameter = GetArtifactParameters(item);
+                psArtifact.Parameters.Add(item.Key, parameter);
+            }
+
+            psArtifact.DependsOn = artifact.DependsOn?.ToList();
+
+            return psArtifact;
+        }
+        private static PSParameterValue GetArtifactParameters(KeyValuePair<string, ParameterValue> parameterKvp)
+        {
+            PSParameterValue parameter = null;
+
+            if (parameterKvp.Value?.Value != null)
+            {
+                var parameterValue = parameterKvp.Value;
+                parameter = new PSParameterValue { Value = parameterValue.Value };
+            }
+            else if (parameterKvp.Value?.Reference != null)
+            {
+                var parameterValue = parameterKvp.Value;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 var secretReference = new PSSecretValueReference
                 {
                     KeyVault = new PSKeyVaultReference { Id = parameterValue.Reference.KeyVault.Id },
@@ -74,7 +105,11 @@ namespace Microsoft.Azure.Commands.Blueprint.Models
                     SecretVersion = parameterValue.Reference.SecretVersion
                 };
 
+<<<<<<< HEAD
                 parameter = new PSSecretReferenceParameterValue { Reference = secretReference, Description = parameterValue.Description };
+=======
+                parameter = new PSParameterValue { Reference = secretReference };
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return parameter;

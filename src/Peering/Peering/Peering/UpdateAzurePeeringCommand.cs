@@ -31,7 +31,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
     /// </summary>
     [Cmdlet(
         "Update",
+<<<<<<< HEAD
         "AzPeering",
+=======
+        Constants.AzPeering,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         DefaultParameterSetName = Constants.ParameterSetNameDefault + Constants.Exchange,
         SupportsShouldProcess = true)]
     [OutputType(typeof(PSPeering))]

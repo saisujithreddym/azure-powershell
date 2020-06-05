@@ -32,7 +32,11 @@ namespace Commands.HDInsight.Test.ScenarioTests
             XunitTracingInterceptor.AddToContext(_logger);
         }
 
+<<<<<<< HEAD
         [Fact]
+=======
+        [Fact(Skip = "test case cannot be re-recorded properly, need help from service team")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestMonitoringRelatedCommands()
         {

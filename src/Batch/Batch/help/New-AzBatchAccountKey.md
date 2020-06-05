@@ -34,7 +34,11 @@ DedicatedCoreQuota           : 20
 LowPriorityCoreQuota         : 20
 PoolQuota                    : 20
 ActiveJobAndJobScheduleQuota : 20
+<<<<<<< HEAD
 Tags                         : 
+=======
+Tags                         :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 TaskTenantUrl                : https://cmdletexample.westus.batch.azure.com
 ```
 
@@ -74,7 +78,11 @@ Accept wildcard characters: False
 
 ### -KeyType
 Specifies the type of key that this cmdlet regenerates.
+<<<<<<< HEAD
 Valid values are: 
+=======
+Valid values are:
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 - Primary
 - Secondary
 
@@ -123,6 +131,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Get-AzBatchAccountKey](./Get-AzBatchAccountKey.md)
 
+<<<<<<< HEAD
 [Azure Batch Cmdlets](./Az.Batch.md)
 
 
+=======
+[Azure Batch Cmdlets](/powershell/module/Az.Batch/)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

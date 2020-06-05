@@ -60,6 +60,12 @@ namespace Microsoft.Azure.Commands.Management.Storage
         [ValidateNotNullOrEmpty]
         public SwitchParameter IncludeGeoReplicationStats { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(Mandatory = false, HelpMessage = "Run cmdlet in the background")]
+        public SwitchParameter AsJob { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public override void ExecuteCmdlet()
         {
             base.ExecuteCmdlet();

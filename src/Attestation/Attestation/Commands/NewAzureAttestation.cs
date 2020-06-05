@@ -21,6 +21,11 @@ using System.Management.Automation;
 using System.Security.Cryptography.X509Certificates;
 using Microsoft.Azure.Management.Attestation.Models;
 using AttestationProperties = Microsoft.Azure.Commands.Attestation.Properties;
+<<<<<<< HEAD
+=======
+using System.Collections;
+using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Attestation
 {
@@ -39,21 +44,34 @@ namespace Microsoft.Azure.Commands.Attestation
         [Parameter(Mandatory = true,
             ValueFromPipelineByPropertyName = true,
             HelpMessage =
+<<<<<<< HEAD
                 "Specifies a name of the Instance to create. The name can be any combination of letters, digits, or hyphens. The name must start and end with a letter or digit. The name must be universally unique."
+=======
+                "Specifies the attestation provider name. The name can be any combination of letters, digits, or hyphens. The name must start and end with a letter or digit. The name must be universally unique."
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             )]
         [ValidateNotNullOrEmpty]
         [Alias("InstanceName")]
         public string Name { get; set; }
+<<<<<<< HEAD
+=======
+        
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <summary>
         /// Resource group name
         /// </summary>
         [Parameter(Mandatory = true,
             ValueFromPipelineByPropertyName = true,
+<<<<<<< HEAD
             HelpMessage = "Specifies the name of an existing resource group in which to create the attestation.")]
+=======
+            HelpMessage = "Specifies the name of an existing resource group in which to create the attestation provider.")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [ResourceGroupCompleter]
         [ValidateNotNullOrEmpty()]
         public string ResourceGroupName { get; set; }
 
+<<<<<<< HEAD
 
         [Parameter(Mandatory = false,
             ValueFromPipelineByPropertyName = true,
@@ -61,19 +79,43 @@ namespace Microsoft.Azure.Commands.Attestation
                 "Specifies the attestation policy passed in which to create the attestation."
         )]
         public string AttestationPolicy { get; set; }
+=======
+        /// <summary>
+        /// Location
+        /// </summary>
+        [Parameter(Mandatory = true,
+            ValueFromPipelineByPropertyName = true,
+            HelpMessage = "Specifies the Azure region in which to create the attestation provider. Use the command Get-AzResourceProvider with the ProviderNamespace parameter to see your choices.")]
+        [LocationCompleter("Microsoft.Attestation/attestationProviders")]
+        [ValidateNotNullOrEmpty()]
+        public string Location { get; set; }
+
+        [Parameter(Mandatory = false,
+            ValueFromPipelineByPropertyName = true,
+            HelpMessage = "A hash table which represents resource tags.")]
+        [Alias("Tags")]
+        public Hashtable Tag { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         [Parameter(Mandatory = false,
             ValueFromPipelineByPropertyName = true,
             HelpMessage =
+<<<<<<< HEAD
                 "Specifies the configuration signing keys passed in which to create the attestation."
         )]
         public string PolicySigningCertificateFile { get; set; }
+=======
+                "Specifies the set of trusted signing keys for issuance policy in a single certificate file."
+        )]
+        public string PolicySignersCertificateFile { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #endregion
 
         public override void ExecuteCmdlet()
         {
             if (ShouldProcess(Name, Resources.CreateAttestation))
             {
+<<<<<<< HEAD
                 JSONWebKeySet jsonWebKeySet = null;
 
                 if (this.PolicySigningCertificateFile != null)
@@ -101,6 +143,26 @@ namespace Microsoft.Azure.Commands.Attestation
                     AttestationPolicy = this.AttestationPolicy,
                     PolicySigningCertificates = jsonWebKeySet
                 });
+=======
+                var newServiceParameters = new AttestationCreationParameters
+                {
+                    ResourceGroupName = this.ResourceGroupName,
+                    ProviderName = this.Name,
+                    CreationParameters = new AttestationServiceCreationParams
+                    {
+                        Location = this.Location,
+                        Tags = TagsConversionHelper.CreateTagDictionary(this.Tag, validate: true),
+                        Properties = new AttestationServiceCreationSpecificParams
+                        {
+                            AttestationPolicy = null,
+                            PolicySigningCertificates =
+                                JwksHelper.GetJwks(ResolveUserPath(this.PolicySignersCertificateFile))
+                        }
+                    }
+                };
+
+                var newAttestation = AttestationClient.CreateNewAttestation(newServiceParameters);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 this.WriteObject(newAttestation);
             } 
         }

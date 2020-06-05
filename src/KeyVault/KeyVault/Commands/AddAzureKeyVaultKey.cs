@@ -20,12 +20,17 @@ using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 using System;
 using System.Collections;
 using System.IO;
+<<<<<<< HEAD
+=======
+using System.Linq;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Management.Automation;
 using System.Security;
 
 namespace Microsoft.Azure.Commands.KeyVault
 {
     /// <summary>
+<<<<<<< HEAD
     /// Create a new key in key vault. This cmdlet supports the following types of 
     /// key creation.
     /// 1. Create a new HSM or software key with default key attributes
@@ -36,6 +41,18 @@ namespace Microsoft.Azure.Commands.KeyVault
     /// attributes
     /// </summary>
     [Cmdlet("Add", ResourceManager.Common.AzureRMConstants.AzurePrefix + "KeyVaultKey",SupportsShouldProcess = true,DefaultParameterSetName = InteractiveCreateParameterSet)]
+=======
+    /// Create a new key in key vault. This cmdlet supports the following types of
+    /// key creation.
+    /// 1. Create a new HSM or software key with default key attributes
+    /// 2. Create a new HSM or software key with given key attributes
+    /// 3. Create a HSM or software key by importing key material with default key
+    /// attributes
+    /// 4 .Create a HSM or software key by importing key material with given key
+    /// attributes
+    /// </summary>
+    [Cmdlet("Add", ResourceManager.Common.AzureRMConstants.AzurePrefix + "KeyVaultKey", SupportsShouldProcess = true, DefaultParameterSetName = InteractiveCreateParameterSet)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSKeyVaultKey))]
     public class AddAzureKeyVaultKey : KeyVaultCmdletBase
     {
@@ -126,7 +143,11 @@ namespace Microsoft.Azure.Commands.KeyVault
         public string KeyFilePath { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Password of the imported file. 
+=======
+        /// Password of the imported file.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Required for pfx file
         /// </summary>
         [Parameter(Mandatory = false,
@@ -166,14 +187,24 @@ namespace Microsoft.Azure.Commands.KeyVault
         public string Destination { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Set key in disabled state if present       
         /// </summary>
         [Parameter(Mandatory = false,                            
+=======
+        /// Set key in disabled state if present
+        /// </summary>
+        [Parameter(Mandatory = false,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = "Indicates that the key you are adding is set to an initial state of disabled. Any attempt to use the key will fail. Use this parameter if you are preloading keys that you intend to enable later.")]
         public SwitchParameter Disable { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Key operations 
+=======
+        /// Key operations
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         [Parameter(Mandatory = false,
             HelpMessage = "The operations that can be performed with the key. If not present, all operations can be performed.")]
@@ -187,7 +218,11 @@ namespace Microsoft.Azure.Commands.KeyVault
         public DateTime? Expires { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// The UTC time before which key can't be used 
+=======
+        /// The UTC time before which key can't be used
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         [Parameter(Mandatory = false,
             HelpMessage = "The UTC time before which the key can't be used. If not specified, there is no limitation.")]
@@ -203,7 +238,11 @@ namespace Microsoft.Azure.Commands.KeyVault
 
 
         [Parameter(Mandatory = false,
+<<<<<<< HEAD
             ParameterSetName = InputObjectCreateParameterSet, 
+=======
+            ParameterSetName = InputObjectCreateParameterSet,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = "RSA key size, in bits. If not specified, the service will provide a safe default.")]
         [Parameter(Mandatory = false,
             ParameterSetName = InteractiveCreateParameterSet,
@@ -226,6 +265,11 @@ namespace Microsoft.Azure.Commands.KeyVault
                 VaultName = resourceIdentifier.ResourceName;
             }
 
+<<<<<<< HEAD
+=======
+            ValidateKeyExchangeKey();
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (ShouldProcess(Name, Properties.Resources.AddKey))
             {
                 PSKeyVaultKey keyBundle;
@@ -256,6 +300,20 @@ namespace Microsoft.Azure.Commands.KeyVault
             }
         }
 
+<<<<<<< HEAD
+=======
+        private void ValidateKeyExchangeKey()
+        {
+            if (KeyOps != null && KeyOps.Contains(Constants.KeyOpsImport))
+            {
+                // "import" is exclusive, it cannot be combined with any other value(s).
+                if (KeyOps.Length > 1) { throw new ArgumentException(Resources.KeyOpsImportIsExclusive); }
+                // When KeyOps is 'import', KeyType MUST be RSA-HSM
+                if (Destination != HsmDestination) { throw new ArgumentException(Resources.KEKMustBeHSM); }
+            }
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         internal PSKeyVaultKeyAttributes CreateKeyAttributes()
         {
             string keyType = string.Empty;

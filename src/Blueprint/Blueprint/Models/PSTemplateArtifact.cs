@@ -24,7 +24,11 @@ namespace Microsoft.Azure.Commands.Blueprint.Models
         public string Description { get; set; }
         public List<string> DependsOn { get; set; }
         public object Template { get; set; }
+<<<<<<< HEAD
         public IDictionary<string, PSParameterValueBase> Parameters { get; set; }
+=======
+        public IDictionary<string, PSParameterValue> Parameters { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ResourceGroup { get; set; }
 
         internal static PSTemplateArtifact FromArtifactModel(TemplateArtifact artifact, string scope)
@@ -38,12 +42,17 @@ namespace Microsoft.Azure.Commands.Blueprint.Models
                 Description = artifact.Description,
                 DependsOn = new List<string>(),
                 Template = artifact.Template,
+<<<<<<< HEAD
                 Parameters = new Dictionary<string, PSParameterValueBase>(),
+=======
+                Parameters = new Dictionary<string, PSParameterValue>(),
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ResourceGroup = artifact.ResourceGroup
             };
 
             foreach (var item in artifact.Parameters)
             {
+<<<<<<< HEAD
                 PSParameterValueBase parameter = GetArtifactParameters(item);
                 psArtifact.Parameters.Add(item.Key, parameter);
             }
@@ -62,6 +71,26 @@ namespace Microsoft.Azure.Commands.Blueprint.Models
                 var parameterValue = (ParameterValue)parameterKvp.Value;
 
                 parameter = new PSParameterValue { Description = parameterValue.Description, Value = parameterValue.Value };
+=======
+                PSParameterValue parameter = GetArtifactParameters(item);
+                psArtifact.Parameters.Add(item.Key, parameter);
+            }
+
+            psArtifact.DependsOn = artifact.DependsOn?.ToList();
+
+            return psArtifact;
+        }
+
+        private static PSParameterValue GetArtifactParameters(KeyValuePair<string, ParameterValue> parameterKvp)
+        {
+            PSParameterValue parameter = null;
+
+            if (parameterKvp.Value != null)
+            {
+                var parameterValue = parameterKvp.Value;
+
+                parameter = new PSParameterValue { Value = parameterValue.Value };
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
           
             return parameter;

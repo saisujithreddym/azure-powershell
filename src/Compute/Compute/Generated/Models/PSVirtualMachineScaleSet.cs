@@ -43,6 +43,10 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
         public Sku Sku { get; set; }
         public Plan Plan { get; set; }
         public UpgradePolicy UpgradePolicy { get; set; }
+<<<<<<< HEAD
+=======
+        public AutomaticRepairsPolicy AutomaticRepairsPolicy { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ProvisioningState { get; set; }
         public bool? Overprovision { get; set; }
         public bool? DoNotRunExtensionsOnOverprovisionedVMs { get; set; }
@@ -54,7 +58,11 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
         public AdditionalCapabilities AdditionalCapabilities { get; set; }
         public ScaleInPolicy ScaleInPolicy { get; set; }
         public VirtualMachineScaleSetIdentity Identity { get; set; }
+<<<<<<< HEAD
         public System.Collections.Generic.IList<string> Zones { get; set; }
+=======
+        public IList<string> Zones { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Id { get; set; }
         public string Name { get; set; }
         public string Type { get; set; }

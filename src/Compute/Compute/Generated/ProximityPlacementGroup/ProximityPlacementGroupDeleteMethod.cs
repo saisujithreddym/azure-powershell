@@ -70,9 +70,15 @@ namespace Microsoft.Azure.Commands.Compute.Automation
                         EndTime = DateTime.Now
                     };
 
+<<<<<<< HEAD
                     if (result != null)
                     {
                         output.Name = result.RequestId;
+=======
+                    if (result != null && result.Request != null && result.Request.RequestUri != null)
+                    {
+                        output.Name = GetOperationIdFromUrlString(result.Request.RequestUri.ToString());
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }
 
                     WriteObject(output);

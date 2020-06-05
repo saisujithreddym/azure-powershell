@@ -18,7 +18,12 @@ New-AzFrontDoorRoutingRuleObject -ResourceGroupName <String> -FrontDoorName <Str
  -FrontendEndpointName <String[]> -BackendPoolName <String> [-AcceptedProtocol <PSProtocol[]>]
  [-PatternToMatch <String[]>] [-CustomForwardingPath <String>] [-ForwardingProtocol <String>]
  [-EnableCaching <Boolean>] [-QueryParameterStripDirective <String>] [-DynamicCompression <PSEnabledState>]
+<<<<<<< HEAD
  [-EnabledState <PSEnabledState>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+ [-EnabledState <PSEnabledState>] [-RulesEngineName <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### ByFieldsWithRedirectParameterSet
@@ -27,7 +32,11 @@ New-AzFrontDoorRoutingRuleObject -ResourceGroupName <String> -FrontDoorName <Str
  -FrontendEndpointName <String[]> [-AcceptedProtocol <PSProtocol[]>] [-PatternToMatch <String[]>]
  [-RedirectType <String>] [-RedirectProtocol <String>] [-CustomHost <String>] [-CustomPath <String>]
  [-CustomFragment <String>] [-CustomQueryString <String>] [-EnabledState <PSEnabledState>]
+<<<<<<< HEAD
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+ [-RulesEngineName <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -388,6 +397,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -RulesEngineName
+A reference to a specific Rules Engine Configuration to apply to this route.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 

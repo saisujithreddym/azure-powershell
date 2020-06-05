@@ -13,7 +13,11 @@ Sets the storage capacity for a share.
 
 ## SYNTAX
 
+<<<<<<< HEAD
 ### ShareName
+=======
+### ShareName (Default)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 Set-AzStorageShareQuota [-ShareName] <String> [-Quota] <Int32> [-Context <IStorageContext>]
  [-ServerTimeoutPerRequest <Int32>] [-ClientTimeoutPerRequest <Int32>]
@@ -146,12 +150,20 @@ To obtain a **CloudFileShare** object, use the Get-AzStorageShare cmdlet.
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFileShare
 Parameter Sets: Share
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFileShare
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -171,7 +183,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 
@@ -183,7 +199,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+<<<<<<< HEAD
 ### Microsoft.Azure.Storage.File.FileShareProperties
+=======
+### Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageFileShare
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## NOTES
 

@@ -15,10 +15,19 @@
 namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
 {
     using Microsoft.Azure.Storage.File;
+<<<<<<< HEAD
     using System.Globalization;
     using System.Management.Automation;
 
     [Cmdlet("New", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageDirectory", DefaultParameterSetName = Constants.ShareNameParameterSetName), OutputType(typeof(CloudFileDirectory))]
+=======
+    using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+    using Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel;
+    using System.Globalization;
+    using System.Management.Automation;
+
+    [Cmdlet("New", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageDirectory", DefaultParameterSetName = Constants.ShareNameParameterSetName), OutputType(typeof(AzureStorageFileDirectory))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class NewAzureStorageDirectory : AzureStorageFileCmdletBase
     {
         [Parameter(
@@ -33,18 +42,34 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
             Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = Constants.ShareParameterSetName,
             HelpMessage = "CloudFileShare object indicated the share where the directory would be created.")]
         [ValidateNotNull]
+=======
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = Constants.ShareParameterSetName,
+            HelpMessage = "CloudFileShare object indicated the share where the directory would be created.")]
+        [ValidateNotNull]
+        [Alias("CloudFileShare")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFileShare Share { get; set; }
 
         [Parameter(
             Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = Constants.DirectoryParameterSetName,
             HelpMessage = "CloudFileDirectory object indicated the base folder where the new directory would be created.")]
         [ValidateNotNull]
+=======
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = Constants.DirectoryParameterSetName,
+            HelpMessage = "CloudFileDirectory object indicated the base folder where the new directory would be created.")]
+        [ValidateNotNull]
+        [Alias("CloudFileDirectory")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFileDirectory Directory { get; set; }
 
         [Parameter(
@@ -84,7 +109,11 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
             this.RunTask(async taskId =>
             {
                 await this.Channel.CreateDirectoryAsync(directoryToBeCreated, this.RequestOptions, this.OperationContext, this.CmdletCancellationToken).ConfigureAwait(false);
+<<<<<<< HEAD
                 this.OutputStream.WriteObject(taskId, directoryToBeCreated);
+=======
+                WriteCloudFileDirectoryeObject(taskId, this.Channel, directoryToBeCreated);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             });
         }
     }

@@ -19,6 +19,10 @@ using Microsoft.Azure.Commands.RecoveryServices.Backup.Helpers;
 using Microsoft.Azure.Commands.RecoveryServices.Backup.Properties;
 using Microsoft.Azure.Management.Internal.Resources.Models;
 using Microsoft.Azure.Management.RecoveryServices.Backup.Models;
+<<<<<<< HEAD
+=======
+using Microsoft.Rest;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Rest.Azure.OData;
 using System;
 using System.Collections.Generic;
@@ -74,6 +78,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
             string azureVMCloudServiceName = (string)ProviderData[ItemParams.AzureVMCloudServiceName];
             string azureVMResourceGroupName = (string)ProviderData[ItemParams.AzureVMResourceGroupName];
             string parameterSetName = (string)ProviderData[ItemParams.ParameterSetName];
+<<<<<<< HEAD
+=======
+            string[] inclusionDisksList = (string[])ProviderData[ItemParams.InclusionDisksList];
+            string[] exclusionDisksList = (string[])ProviderData[ItemParams.ExclusionDisksList];
+            SwitchParameter resetDiskExclusionSetting = (SwitchParameter)ProviderData[ItemParams.ResetExclusionSettings];
+            bool excludeAllDataDisks = (bool)ProviderData[ItemParams.ExcludeAllDataDisks];
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             PolicyBase policy = (PolicyBase)ProviderData[ItemParams.Policy];
 
@@ -81,6 +92,12 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
 
             AzureVmItem item = (AzureVmItem)ProviderData[ItemParams.Item];
 
+<<<<<<< HEAD
+=======
+            bool isDiskExclusionParamPresent = ValidateDiskExclusionParameters(
+                inclusionDisksList, exclusionDisksList, resetDiskExclusionSetting, excludeAllDataDisks);
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             // do validations
             string containerUri = "";
             string protectedItemUri = "";
@@ -88,7 +105,14 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
             string sourceResourceId = null;
 
             AzureVmPolicy azureVmPolicy = (AzureVmPolicy)ProviderData[ItemParams.Policy];
+<<<<<<< HEAD
             ValidateProtectedItemCount(azureVmPolicy);
+=======
+            if (azureVmPolicy != null)
+            {
+                ValidateProtectedItemCount(azureVmPolicy);
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (itemBase == null)
             {
@@ -126,6 +150,17 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
                     sourceResourceId = iaasVmProtectableItem.VirtualMachineId;
                 }
             }
+<<<<<<< HEAD
+=======
+            else if(isDiskExclusionParamPresent && parameterSetName.Contains("Modify"))
+            {
+                isComputeAzureVM = IsComputeAzureVM(item.VirtualMachineId);
+                Dictionary<UriEnums, string> keyValueDict = HelperUtils.ParseUri(item.Id);
+                containerUri = HelperUtils.GetContainerUri(keyValueDict, item.Id);
+                protectedItemUri = HelperUtils.GetProtectedItemUri(keyValueDict, item.Id);
+                sourceResourceId = item.SourceResourceId;
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             else
             {
                 ValidateAzureVMWorkloadType(item.WorkloadType, policy.WorkloadType);
@@ -150,9 +185,55 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
                 properties = new AzureIaaSComputeVMProtectedItem();
             }
 
+<<<<<<< HEAD
             properties.PolicyId = policy.Id;
             properties.SourceResourceId = sourceResourceId;
 
+=======
+            if(policy != null)
+            {
+                properties.PolicyId = policy.Id;
+            }
+            else
+            {
+                properties.PolicyId = item.PolicyId;
+            }
+            properties.SourceResourceId = sourceResourceId;
+
+            ExtendedProperties extendedProperties = null;
+            if (resetDiskExclusionSetting.IsPresent)
+            {
+                extendedProperties = new ExtendedProperties();
+                extendedProperties.DiskExclusionProperties = null;
+            }
+            else
+            {
+                if(inclusionDisksList != null)
+                {
+                    IList<int?> inclusionList = Array.ConvertAll(inclusionDisksList, s => int.Parse(s)).OfType<int?>().ToList();
+                    DiskExclusionProperties diskExclusionProperties = new DiskExclusionProperties(inclusionList, true);
+                    extendedProperties = new ExtendedProperties();
+                    extendedProperties.DiskExclusionProperties = diskExclusionProperties;
+                }
+                else if(exclusionDisksList != null)
+                {
+                    IList<int?> exclusionList = Array.ConvertAll(exclusionDisksList, s => int.Parse(s)).OfType<int?>().ToList();
+                    DiskExclusionProperties diskExclusionProperties = new DiskExclusionProperties(exclusionList, false);
+                    extendedProperties = new ExtendedProperties();
+                    extendedProperties.DiskExclusionProperties = diskExclusionProperties;
+                }
+                else if(excludeAllDataDisks == true)
+                {
+                    IList<int?> exclusionList = new List<int?>();
+                    DiskExclusionProperties diskExclusionProperties = new DiskExclusionProperties(exclusionList, true);
+                    extendedProperties = new ExtendedProperties();
+                    extendedProperties.DiskExclusionProperties = diskExclusionProperties;
+                }
+            }
+
+            properties.ExtendedProperties = extendedProperties;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             ProtectedItemResource serviceClientRequest = new ProtectedItemResource()
             {
                 Properties = properties
@@ -327,6 +408,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
                 ProviderData.ContainsKey(RestoreVMBackupItemParams.TargetResourceGroupName) ?
                 ProviderData[RestoreVMBackupItemParams.TargetResourceGroupName].ToString() : null;
             bool osaOption = (bool)ProviderData[RestoreVMBackupItemParams.OsaOption];
+<<<<<<< HEAD
+=======
+            string[] restoreDiskList = (string[])ProviderData[RestoreVMBackupItemParams.RestoreDiskList];
+            SwitchParameter restoreOnlyOSDisk = (SwitchParameter)ProviderData[RestoreVMBackupItemParams.RestoreOnlyOSDisk];
+            SwitchParameter restoreAsUnmanagedDisks = (SwitchParameter)ProviderData[RestoreVMBackupItemParams.RestoreAsUnmanagedDisks];
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Dictionary<UriEnums, string> uriDict = HelperUtils.ParseUri(rp.Id);
             string containerUri = HelperUtils.GetContainerUri(uriDict, rp.Id);
 
@@ -343,11 +431,42 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
                 throw new Exception(string.Format(Resources.RestoreDiskStorageTypeError, vmType));
             }
 
+<<<<<<< HEAD
+=======
+            if(targetResourceGroupName != null && restoreAsUnmanagedDisks.IsPresent)
+            {
+                throw new Exception(Resources.TargetRGUnmanagedRestoreDuplicateParamsException);
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (targetResourceGroupName != null && rp.IsManagedVirtualMachine == false)
             {
                 Logger.Instance.WriteWarning(Resources.UnManagedBackupVmWarning);
             }
 
+<<<<<<< HEAD
+=======
+            if(rp.IsManagedVirtualMachine == true && targetResourceGroupName == null
+                && restoreAsUnmanagedDisks.IsPresent == false)
+            {
+                Logger.Instance.WriteWarning(Resources.UnmanagedVMRestoreWarning);
+            }
+
+            IList<int?> restoreDiskLUNS;
+            if(restoreOnlyOSDisk.IsPresent)
+            {
+                restoreDiskLUNS = new List<int?>();
+            }
+            else if(restoreDiskList != null)
+            {
+                restoreDiskLUNS = Array.ConvertAll(restoreDiskList, s => int.Parse(s)).OfType<int?>().ToList();
+            }
+            else
+            {
+                restoreDiskLUNS = null;
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             IaasVMRestoreRequest restoreRequest = new IaasVMRestoreRequest()
             {
                 CreateNewCloudService = false,
@@ -360,6 +479,10 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
                     "/subscriptions/" + ServiceClientAdapter.SubscriptionId + "/resourceGroups/" + targetResourceGroupName :
                     null,
                 OriginalStorageAccountOption = useOsa,
+<<<<<<< HEAD
+=======
+                RestoreDiskLunList = restoreDiskLUNS
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
 
             RestoreRequestResource triggerRestoreRequest = new RestoreRequestResource();
@@ -664,7 +787,14 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
                     SchedulePolicy = PolicyHelpers.GetServiceClientSimpleSchedulePolicy(
                                   (CmdletModel.SimpleSchedulePolicy)((AzureVmPolicy)policy).SchedulePolicy),
                     TimeZone = DateTimeKind.Utc.ToString().ToUpper(),
+<<<<<<< HEAD
                     InstantRpRetentionRangeInDays = ((AzureVmPolicy)policy).SnapshotRetentionInDays
+=======
+                    InstantRpRetentionRangeInDays = ((AzureVmPolicy)policy).SnapshotRetentionInDays,
+                    InstantRPDetails = new InstantRPAdditionalDetails(
+                        ((AzureVmPolicy)policy).AzureBackupRGName,
+                        ((AzureVmPolicy)policy).AzureBackupRGNameSuffix)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
             };
 
@@ -987,6 +1117,36 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
             }
         }
 
+<<<<<<< HEAD
+=======
+        private bool ValidateDiskExclusionParameters(string[] inclusionDiskList, string[] exclusionDiskList,
+            SwitchParameter resetDiskExclusion, bool excludeAllDataDisks)
+        {
+            bool isDiskExclusionParamPresent = false;
+            if(inclusionDiskList != null || exclusionDiskList != null || resetDiskExclusion.IsPresent || excludeAllDataDisks)
+            {
+                isDiskExclusionParamPresent = true;
+            }
+
+            if(inclusionDiskList != null && exclusionDiskList != null)
+            {
+                throw new ArgumentException(Resources.InclusionListRedundantError);
+            }
+
+            if(resetDiskExclusion.IsPresent && (inclusionDiskList != null && exclusionDiskList != null))
+            {
+                throw new ArgumentException(Resources.DiskExclusionParametersRedundant);
+            }
+
+            if(excludeAllDataDisks && (inclusionDiskList != null || exclusionDiskList != null || resetDiskExclusion.IsPresent))
+            {
+                throw new ArgumentException(Resources.DiskExclusionParametersRedundant);
+            }
+
+            return isDiskExclusionParamPresent;
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private void ValidateAzureVMDisableProtectionRequest(ItemBase itemBase)
         {
 
@@ -1140,6 +1300,10 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
                 {
                     IaaSVMProtectableItem iaaSVMProtectableItem =
                         (IaaSVMProtectableItem)protectableItem.Properties;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     if (iaaSVMProtectableItem != null &&
                         string.Compare(iaaSVMProtectableItem.FriendlyName, vmName, true) == 0
                         && iaaSVMProtectableItem.VirtualMachineId.IndexOf(virtualMachineId,

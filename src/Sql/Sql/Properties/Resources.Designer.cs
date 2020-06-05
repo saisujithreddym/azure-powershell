@@ -19,7 +19,11 @@ namespace Microsoft.Azure.Commands.Sql.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+=======
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,6 +65,18 @@ namespace Microsoft.Azure.Commands.Sql.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Adding Storage Blob Data Contributor role for storage account {0} is forbidden.
+        /// </summary>
+        internal static string AddingStorageBlobDataContributorRoleForStorageAccountIsForbidden {
+            get {
+                return ResourceManager.GetString("AddingStorageBlobDataContributorRoleForStorageAccountIsForbidden", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to More than one Active Directory group with the display name &apos;{0}&apos; was found. Please provide an Azure Active Directory object id to select the correct group. To get the object id use Get-AzADGroup -SearchString &quot;{0}&quot;.
         /// </summary>
         internal static string ADGroupMoreThanOneFound {
@@ -268,6 +284,27 @@ namespace Microsoft.Azure.Commands.Sql.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to You cannot change hardware family..
+        /// </summary>
+        internal static string CannotChangeHardwareFamily {
+            get {
+                return ResourceManager.GetString("CannotChangeHardwareFamily", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to For this update operation provided compute generation parameter is &apos;{0}&apos;. Once the hardware generation is upgraded, it is not possible to switch back to Gen4 compute generation as this hardware is being deprecated..
+        /// </summary>
+        internal static string ChangingHardwareFamilyIsIrreversable {
+            get {
+                return ResourceManager.GetString("ChangingHardwareFamilyIsIrreversable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Database with name: &apos;{0}&apos; already exists in server &apos;{1}&apos;..
         /// </summary>
         internal static string DatabaseNameExists {
@@ -322,6 +359,18 @@ namespace Microsoft.Azure.Commands.Sql.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Do you want to proceed?.
+        /// </summary>
+        internal static string DoYouWantToProceed {
+            get {
+                return ResourceManager.GetString("DoYouWantToProceed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Azure Sql Database Elastic Pool name cannot be specified for this operation.
         /// </summary>
         internal static string ElasticPoolDatabaseActivityCancelNotSupported {
@@ -367,6 +416,27 @@ namespace Microsoft.Azure.Commands.Sql.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Failed to add Role Assignment for Storage Account &apos;{0}&apos;. Response Status Code {1}. Response Content: {2}.
+        /// </summary>
+        internal static string FailedToAddRoleAssignmentForStorageAccount {
+            get {
+                return ResourceManager.GetString("FailedToAddRoleAssignmentForStorageAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Failed to get Role Assignments for Storage Account &apos;{0}&apos;..
+        /// </summary>
+        internal static string FailedToGetRoleAssignmentsForStorageAccount {
+            get {
+                return ResourceManager.GetString("FailedToGetRoleAssignmentsForStorageAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Failing over Azure Sql Database &apos;{0}&apos; on server &apos;{1}&apos;..
         /// </summary>
         internal static string FailoverAzureSqlDatabaseDescription {
@@ -763,6 +833,27 @@ namespace Microsoft.Azure.Commands.Sql.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Permanantly removing the Long Term Retention backup &apos;{0}&apos; on database &apos;{1}&apos; on instance &apos;{2}&apos; in location &apos;{3}&apos;?.
+        /// </summary>
+        internal static string RemoveAzureSqlInstanceDatabaseLongTermRetentionBackupDescription {
+            get {
+                return ResourceManager.GetString("RemoveAzureSqlInstanceDatabaseLongTermRetentionBackupDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to remove the Long Term Retention backup &apos;{0}&apos; on database &apos;{1}&apos; on instance &apos;{2}&apos; in location &apos;{3}&apos;?.
+        /// </summary>
+        internal static string RemoveAzureSqlInstanceDatabaseLongTermRetentionBackupWarning {
+            get {
+                return ResourceManager.GetString("RemoveAzureSqlInstanceDatabaseLongTermRetentionBackupWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Removing Azure Sql Server Active Directory Administrator on server &apos;{0}&apos;..
         /// </summary>
         internal static string RemoveAzureSqlServerActiveDirectoryAdministratorDescription {
@@ -1015,7 +1106,20 @@ namespace Microsoft.Azure.Commands.Sql.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to Vulnerability assessment settings are not defined. Please run Update-AzSqlInstanceVulnerabilityAssessmentSetting first..
+=======
+        ///   Looks up a localized string similar to Failed to retrieve properties of storage account &apos;{0}&apos;..
+        /// </summary>
+        internal static string RetrievingStorageAccountPropertiesFailed {
+            get {
+                return ResourceManager.GetString("RetrievingStorageAccountPropertiesFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vulnerability assessment settings are not defined. Please run Update-AzSqlInstanceVulnerabilityAssessmentSettings first..
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         internal static string RunSetManagedDatabaseVulnerabilityAssemenSettings {
             get {
@@ -1267,6 +1371,27 @@ namespace Microsoft.Azure.Commands.Sql.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Are you sure you want to submit request for stopping the operation &apos;{0}&apos; on Azure Sql Managed Instance &apos;{1}&apos;?.
+        /// </summary>
+        internal static string StopAzureSqlInstanceOperationDescription {
+            get {
+                return ResourceManager.GetString("StopAzureSqlInstanceOperationDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Submiting request for stopping the operation &apos;{0}&apos; on Azure Sql Managed Instance &apos;{1}&apos;..
+        /// </summary>
+        internal static string StopAzureSqlInstanceOperationWarning {
+            get {
+                return ResourceManager.GetString("StopAzureSqlInstanceOperationWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Stopping upgrade for Azure Sql Database Server &apos;{0}&apos;..
         /// </summary>
         internal static string StopAzureSqlServerUpgradeDescription {

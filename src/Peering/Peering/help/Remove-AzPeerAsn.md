@@ -12,15 +12,31 @@ Remove Peer Asn
 
 ## SYNTAX
 
+<<<<<<< HEAD
 ### Default (Default)
+=======
+### ByName (Default)
+```
+Remove-AzPeerAsn -Name <String> [-Force] [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### InputObject
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 Remove-AzPeerAsn [-InputObject] <PSPeerAsn> [-Force] [-PassThru] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
 ### ByName
 ```
 Remove-AzPeerAsn [-Name] <String> [-Force] [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+=======
+### ByResourceId
+```
+Remove-AzPeerAsn -ResourceId <String> [-Force] [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -88,7 +104,11 @@ The PeerAsn object.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeerAsn
+<<<<<<< HEAD
 Parameter Sets: Default
+=======
+Parameter Sets: InputObject
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -107,7 +127,11 @@ Parameter Sets: ByName
 Aliases:
 
 Required: True
+<<<<<<< HEAD
 Position: 0
+=======
+Position: Named
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -128,6 +152,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -ResourceId
+The resource id string name.
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -165,6 +207,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeerAsn
 
+<<<<<<< HEAD
+=======
+### System.String
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## OUTPUTS
 
 ### System.Boolean

@@ -27,7 +27,10 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
         public string FullyQualifiedDomainName { get; set; }
 
         public PSVirtualMachineScaleSetVMProfile VirtualMachineProfile { get; set; } // To hide a breaking change
+<<<<<<< HEAD
 
         public PSAutomaticRepairsPolicy AutomaticRepairsPolicy { get; set; } // To hide a breaking change
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

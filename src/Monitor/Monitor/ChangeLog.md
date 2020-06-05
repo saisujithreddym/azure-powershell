@@ -16,8 +16,42 @@
     ## YYYY.MM.DD - Version X.Y.Z (Previous Release)
     * Overview of change #1
         - Additional information about change #1
+<<<<<<< HEAD
         
 ## Upcoming Release
+=======
+-->
+
+## Upcoming Release
+* Fixed bug for `Set-AzDiagnosticSettings`, retention policy won't apply to all categories [#11589]
+* Supported WebTest availability criteria for metric alert V2
+	- `New-AzMetricAlertRuleV2Criteria`: an option to create webtest availability criteria was added
+	- `Add-AzMetricAlertRuleV2`: supports the new webtest availability criteria
+* Removed redundant definition for RetentionPolicy in PSLogProfile [#7608]
+* Removed redundant properties difined in PSEventData [#11353]
+* Renamed `Get-AzLog` to `Get-AzActivityLog`
+
+## Version 1.7.0
+* Added cmdlets for private link scope
+    - `Get-AzInsightsPrivateLinkScope`
+    - `Remove-AzInsightsPrivateLinkScope`
+    - `New-AzInsightsPrivateLinkScope`
+    - `Update-AzInsightsPrivateLinkScope`
+    - `Get-AzInsightsPrivateLinkScopedResource`
+    - `New-AzInsightsPrivateLinkScopedResource`
+    - `Remove-AzInsightsPrivateLinkScopedResource`
+
+## Version 1.6.2
+* Updated documentation for `New-AzScheduledQueryRuleLogMetricTrigger`
+
+## Version 1.6.1
+* Fixed output value for `Get-AzMetricDefinition` [#9714]
+
+## Version 1.6.0
+* Fixed description of the Get-AzLog cmdlet.
+* A new parameter called ActionGroupId was added to `New-AzMetricAlertRuleV2` command.
+	- The user can provide either ActionGroupId(string) or ActionGorup(ActivityLogAlertActionGroup).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 1.5.0
 * Update references in .psd1 to use relative path

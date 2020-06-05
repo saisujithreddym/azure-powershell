@@ -19,6 +19,7 @@
 // Changes to this file may cause incorrect behavior and will be lost if the
 // code is regenerated.
 
+<<<<<<< HEAD
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -33,5 +34,15 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
             return ComputeAutomationAutoMapperProfile.Mapper.Map<PSHost>(this);
         }
 
+=======
+namespace Microsoft.Azure.Commands.Compute.Automation.Models
+{
+    public class PSHostList : PSHost
+    {
+        public PSHost ToPSHost ()
+        {
+            return ComputeAutomationAutoMapperProfile.Mapper.Map<PSHost>(this);
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

@@ -16,12 +16,21 @@ using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Management.HDInsight;
 using Microsoft.Azure.Management.Internal.Resources;
 using Microsoft.Azure.Management.OperationalInsights;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Management.ManagedServiceIdentity;
+using Microsoft.Azure.Management.KeyVault;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Management.Storage.Version2017_10_01;
 using Microsoft.Azure.ServiceManagement.Common.Models;
 using Microsoft.Azure.Test.HttpRecorder;
 using Microsoft.Rest.ClientRuntime.Azure.TestFramework;
 using Microsoft.WindowsAzure.Commands.ScenarioTest;
 using Microsoft.WindowsAzure.Commands.Test.Utilities.Common;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.KeyVault;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -35,6 +44,7 @@ namespace Commands.HDInsight.Test.ScenarioTests
         private readonly EnvironmentSetupHelper _helper;
 
         public ResourceManagementClient ResourceManagementClient { get; private set; }
+<<<<<<< HEAD
 
         public HDInsightManagementClient HDInsightManagementClient { get; private set; }
         public StorageManagementClient StorageManagementClient { get; private set; }
@@ -42,6 +52,17 @@ namespace Commands.HDInsight.Test.ScenarioTests
 
         public static TestController NewInstance => new TestController();
 
+=======
+        public HDInsightManagementClient HDInsightManagementClient { get; private set; }
+        public StorageManagementClient StorageManagementClient { get; private set; }
+        public OperationalInsightsManagementClient OperationalInsightsManagementClient { get; private set; }
+        public KeyVaultManagementClient KeyVaultManagementClient { get; private set; }
+        public KeyVaultClient KeyVaultClient { get; private set; }
+        public ManagedServiceIdentityClient ManagedServiceIdentityClient { get; private set; }
+        public static TestHelper TestHelper { get; private set; }
+        public static TestController NewInstance => new TestController();
+        
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         protected TestController()
         {
             _helper = new EnvironmentSetupHelper();
@@ -53,8 +74,14 @@ namespace Commands.HDInsight.Test.ScenarioTests
             HDInsightManagementClient = GetHDInsightManagementClient(context);
             StorageManagementClient = GetStorageManagementClient(context);
             OperationalInsightsManagementClient = GetOperationalInsightsManagementClient(context);
+<<<<<<< HEAD
 
             _helper.SetupManagementClients(ResourceManagementClient, HDInsightManagementClient, StorageManagementClient, OperationalInsightsManagementClient);
+=======
+            KeyVaultManagementClient = GetKeyVaultManagementClient(context);
+            ManagedServiceIdentityClient = GetManagedServiceIdentityClient(context);
+            _helper.SetupManagementClients(ResourceManagementClient, HDInsightManagementClient, StorageManagementClient, OperationalInsightsManagementClient, KeyVaultManagementClient, ManagedServiceIdentityClient);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public void RunPowerShellTest(XunitTracingInterceptor logger, params string[] scripts)
@@ -74,7 +101,11 @@ namespace Commands.HDInsight.Test.ScenarioTests
                 mockName);
         }
 
+<<<<<<< HEAD
         public void RunPsTestWorkFlow(Func<string[]> scriptBuilder, Action cleanup, string callingClassType, string mockName)
+=======
+        public void RunPsTestWorkFlow(Func<string[]> scriptBuilder, System.Action cleanup, string callingClassType, string mockName)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             var d = new Dictionary<string, string>
             {
@@ -95,6 +126,11 @@ namespace Commands.HDInsight.Test.ScenarioTests
             {
                 SetupManagementClient(context);
                 _helper.SetupEnvironment(AzureModule.AzureResourceManager);
+<<<<<<< HEAD
+=======
+                KeyVaultClient = GetKeyVaultClient();
+                TestHelper = GetTestHelper();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                 var callingClassName = callingClassType.Split(new[] { "." }, StringSplitOptions.RemoveEmptyEntries).Last();
 
@@ -104,6 +140,11 @@ namespace Commands.HDInsight.Test.ScenarioTests
                     _helper.RMProfileModule,
                     _helper.GetRMModulePath(@"AzureRM.HDInsight.psd1"),
                     _helper.GetRMModulePath("AzureRM.OperationalInsights.psd1"),
+<<<<<<< HEAD
+=======
+                    _helper.GetRMModulePath("AzureRM.ManagedServiceIdentity.psd1"),
+                    _helper.RMKeyVaultModule,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "AzureRM.Storage.ps1",
                     "AzureRM.Resources.ps1");
                 try
@@ -140,5 +181,28 @@ namespace Commands.HDInsight.Test.ScenarioTests
         {
             return context.GetServiceClient<OperationalInsightsManagementClient>(TestEnvironmentFactory.GetTestEnvironment());
         }
+<<<<<<< HEAD
+=======
+
+        private static KeyVaultManagementClient GetKeyVaultManagementClient(MockContext context)
+        {
+            return context.GetServiceClient<KeyVaultManagementClient>(TestEnvironmentFactory.GetTestEnvironment());
+        }
+
+        private static KeyVaultClient GetKeyVaultClient()
+        {
+            return new KeyVaultClient(TestHelper.GetAccessToken, TestHelper.GetHandlers());
+        }
+
+        private static ManagedServiceIdentityClient GetManagedServiceIdentityClient(MockContext context)
+        {
+            return context.GetServiceClient<ManagedServiceIdentityClient>(TestEnvironmentFactory.GetTestEnvironment());
+        }
+
+        private TestHelper GetTestHelper()
+        {
+            return new TestHelper(KeyVaultManagementClient, KeyVaultClient);
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

@@ -53,7 +53,11 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
+<<<<<<< HEAD
 RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.1'; })
+=======
+RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.5'; })
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'Microsoft.Azure.Management.NetApp.dll'
@@ -81,7 +85,14 @@ CmdletsToExport = 'Get-AzNetAppFilesAccount', 'New-AzNetAppFilesAccount',
                'Remove-AzNetAppFilesPool', 'Get-AzNetAppFilesVolume', 
                'New-AzNetAppFilesVolume', 'Remove-AzNetAppFilesVolume', 
                'Update-AzNetAppFilesVolume', 'Get-AzNetAppFilesSnapshot', 
+<<<<<<< HEAD
                'New-AzNetAppFilesSnapshot', 'Remove-AzNetAppFilesSnapshot'
+=======
+               'New-AzNetAppFilesSnapshot', 'Remove-AzNetAppFilesSnapshot',
+               'Approve-AzNetAppFilesReplication', 'Get-AzNetAppFilesReplicationStatus',
+               'Suspend-AzNetAppFilesReplication', 'Remove-AzNetAppFilesReplication',
+               'Resume-AzNetAppFilesReplication'
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Variables to export from this module
 # VariablesToExport = @()
@@ -91,7 +102,13 @@ AliasesToExport = 'Get-AnfAccount', 'New-AnfAccount', 'Remove-AnfAccount',
                'Set-AnfAccount', 'Update-AnfAccount', 'Get-AnfPool', 'New-AnfPool', 
                'Update-AnfPool', 'Remove-AnfPool', 'Get-AnfVolume', 'New-AnfVolume', 
                'Remove-AnfVolume', 'Update-AnfVolume', 'Get-AnfSnapshot', 
+<<<<<<< HEAD
                'New-AnfSnapshot', 'Remove-AnfSnapshot'
+=======
+               'New-AnfSnapshot', 'Remove-AnfSnapshot', 'Approve-AnfReplication',
+               'Get-AnfReplicationStatus', 'Suspend-AnfReplication',
+               'Remove-AnfReplication', 'Resume-AnfReplication'
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
@@ -124,7 +141,11 @@ PrivateData = @{
 * Includes some additional volume properties associated with upcoming replication operations'
 
         # Prerelease string of this module
+<<<<<<< HEAD
         Prerelease = 'preview'
+=======
+        # Prerelease = ''
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
         # RequireLicenseAcceptance = $false

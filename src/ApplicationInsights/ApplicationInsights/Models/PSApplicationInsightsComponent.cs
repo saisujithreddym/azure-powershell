@@ -41,6 +41,13 @@ namespace Microsoft.Azure.Commands.ApplicationInsights.Models
             this.RequestSource = component.RequestSource;
             this.SamplingPercentage = component.SamplingPercentage;
             this.TenantId = component.TenantId;
+<<<<<<< HEAD
+=======
+            this.PublicNetworkAccessForIngestion = component.PublicNetworkAccessForIngestion;
+            this.PublicNetworkAccessForQuery = component.PublicNetworkAccessForQuery;
+            this.PrivateLinkScopedResources = component.PrivateLinkScopedResources;
+            this.RetentionInDays = component.RetentionInDays;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public string Id { get; set; }
@@ -79,6 +86,17 @@ namespace Microsoft.Azure.Commands.ApplicationInsights.Models
 
         public string TenantId { get; set; }
 
+<<<<<<< HEAD
+=======
+        public string PublicNetworkAccessForIngestion { get; set; }
+
+        public string PublicNetworkAccessForQuery { get; set; }
+
+        public IList<PrivateLinkScopedResource> PrivateLinkScopedResources { get; private set; }
+
+        public int? RetentionInDays { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public static PSApplicationInsightsComponent Create(ApplicationInsightsComponent component)
         {
             var result = new PSApplicationInsightsComponent(component);

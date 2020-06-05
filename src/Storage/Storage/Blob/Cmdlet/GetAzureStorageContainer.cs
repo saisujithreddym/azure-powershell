@@ -29,7 +29,11 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Blob.Cmdlet
     /// List azure storage container
     /// </summary>
     [Cmdlet("Get", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageContainer", DefaultParameterSetName = NameParameterSet),OutputType(typeof(AzureStorageContainer))]
+<<<<<<< HEAD
     [Alias("Get-" + Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageContainerAcl")]
+=======
+    [Alias("Get-" + Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageContainerAcl", "Get-" + Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "DatalakeGen2FileSystem")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class GetAzureStorageContainerCommand : StorageCloudBlobCmdletBase
     {
         /// <summary>

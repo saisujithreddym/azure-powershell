@@ -34,10 +34,18 @@ namespace Microsoft.Azure.Commands.HDInsight.Models
 
         private IHDInsightManagementClient HdInsightManagementClient { get; set; }
 
+<<<<<<< HEAD
         public virtual Cluster CreateNewCluster(string resourceGroupName, string clusterName, OSType osType, ClusterCreateParameters parameters)
         {
             var createParams = CreateParametersConverter.GetExtendedClusterCreateParameters(clusterName, parameters);
             createParams.Properties.OsType = osType;
+=======
+        public virtual Cluster CreateNewCluster(string resourceGroupName, string clusterName, OSType osType, ClusterCreateParameters parameters, string minSupportedTlsVersion=default(string))
+        {
+            var createParams = CreateParametersConverter.GetExtendedClusterCreateParameters(clusterName, parameters);
+            createParams.Properties.OsType = osType;
+            createParams.Properties.MinSupportedTlsVersion = minSupportedTlsVersion;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             return HdInsightManagementClient.Clusters.Create(resourceGroupName, clusterName, createParams);
         }
 
@@ -209,5 +217,13 @@ namespace Microsoft.Azure.Commands.HDInsight.Models
         {
             return HdInsightManagementClient.Extensions.GetMonitoringStatus(resourceGroupName, clusterName);
         }
+<<<<<<< HEAD
+=======
+
+        public virtual void RotateDiskEncryptionKey(string resourceGroupName, string clusterName, ClusterDiskEncryptionParameters parameters)
+        {
+            HdInsightManagementClient.Clusters.RotateDiskEncryptionKey(resourceGroupName, clusterName, parameters);
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

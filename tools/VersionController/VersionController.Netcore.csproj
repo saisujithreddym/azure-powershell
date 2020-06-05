@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <Project Sdk="Microsoft.NET.Sdk">
+=======
+﻿<Project Sdk="Microsoft.NET.Sdk">
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
   <Import Project="$(MSBuildThisFileDirectory)..\..\Repo.props" />
 
@@ -45,4 +49,12 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+<<<<<<< HEAD
+=======
+
+  <ItemGroup>
+    <Content Include="MinimalVersion.csv" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 </Project>

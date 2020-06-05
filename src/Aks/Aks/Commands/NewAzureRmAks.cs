@@ -14,15 +14,26 @@
 
 using System;
 using System.Management.Automation;
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Aks.Generated.Version2017_08_31;
 using Microsoft.Azure.Commands.Aks.Models;
 using Microsoft.Azure.Commands.Aks.Properties;
+=======
+using Microsoft.Azure.Commands.Aks.Models;
+using Microsoft.Azure.Commands.Aks.Properties;
+using Microsoft.Azure.Management.ContainerService;
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Aks
 {
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "Aks", DefaultParameterSetName = DefaultParamSet, SupportsShouldProcess = true)]
     [OutputType(typeof(PSKubernetesCluster))]
+<<<<<<< HEAD
     public class NewAzureRmAks : CreateOrUpdateKubeBase
+=======
+    public class NewAzureRmAks : NewKubeBase
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     {
         [Parameter(Mandatory = false, HelpMessage = "Create cluster even if it already exists")]
         public SwitchParameter Force { get; set; }
@@ -30,6 +41,10 @@ namespace Microsoft.Azure.Commands.Aks
         public override void ExecuteCmdlet()
         {
             base.ExecuteCmdlet();
+<<<<<<< HEAD
+=======
+            PreValidate();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             Action action = () =>
             {
@@ -61,5 +76,15 @@ namespace Microsoft.Azure.Commands.Aks
                 }
             }
         }
+<<<<<<< HEAD
+=======
+
+        private void PreValidate()
+        {
+            if ((this.IsParameterBound(c => c.NodeMinCount) || this.IsParameterBound(c => c.NodeMaxCount) || this.EnableNodeAutoScaling.IsPresent) &&
+                !(this.IsParameterBound(c => c.NodeMinCount) && this.IsParameterBound(c => c.NodeMaxCount) && this.EnableNodeAutoScaling.IsPresent))
+                throw new PSInvalidCastException(Resources.AksNodePoolAutoScalingParametersMustAppearTogether);
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

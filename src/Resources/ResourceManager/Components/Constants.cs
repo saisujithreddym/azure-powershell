@@ -35,6 +35,19 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Components
         public static readonly string MicrosoftManagementNamespace = "Microsoft.Management";
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// The string literal <c>ManagementGroups</c>
+        /// </summary>
+        public static readonly string ManagementGroups = "managementGroups";
+
+        /// <summary>
+        /// The management group id prefix.
+        /// </summary>
+        public static readonly string ManagementGroupIdPrefix = $"/providers/{Constants.MicrosoftManagementNamespace}/{Constants.ManagementGroups}/";
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// The <c>Microsoft.Solutions</c> namespace.
         /// </summary>
         public static readonly string MicrosoftSolutionNamespace = "Microsoft.Solutions";
@@ -145,11 +158,14 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Components
         public static readonly string MicrosoftAuthorizationPolicyAssignmentType = Constants.MicrosoftAuthorizationNamespace + "/policyassignments";
 
         /// <summary>
+<<<<<<< HEAD
         /// The management group resource type.
         /// </summary>
         public static readonly string MicrosoftManagementGroupDefinitionType = Constants.MicrosoftManagementNamespace + "/managementgroups";
 
         /// <summary>
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// The application definition resource type.
         /// </summary>
         public static readonly string MicrosoftApplicationDefinitionType = Constants.MicrosoftSolutionNamespace + "/applicationdefinitions";

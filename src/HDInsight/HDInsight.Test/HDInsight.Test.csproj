@@ -11,13 +11,29 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.HDInsight" Version="5.1.0" />
     <PackageReference Include="Microsoft.Azure.Management.HDInsight.Job" Version="2.0.7" />
     <PackageReference Include="Microsoft.Azure.Management.OperationalInsights" Version="0.19.0-preview" />
+=======
+    <PackageReference Include="Microsoft.Azure.KeyVault" Version="3.0.5" />
+    <PackageReference Include="Microsoft.Azure.Management.HDInsight" Version="5.3.0" />
+    <PackageReference Include="Microsoft.Azure.Management.HDInsight.Job" Version="2.0.7" />
+    <PackageReference Include="Microsoft.Azure.Management.KeyVault" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Azure.Management.ManagedServiceIdentity" Version="0.11.0" />
+    <PackageReference Include="Microsoft.Azure.Management.OperationalInsights" Version="0.20.0-preview" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HDInsight\HDInsight.csproj" />
   </ItemGroup>
 
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <Folder Include="SessionRecords\Commands.HDInsight.Test.ScenarioTests.HDInsightClusterTests\" />
+  </ItemGroup>
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 </Project>

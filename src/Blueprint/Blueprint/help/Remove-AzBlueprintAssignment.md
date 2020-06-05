@@ -8,6 +8,7 @@ schema: 2.0.0
 # Remove-AzBlueprintAssignment
 
 ## SYNOPSIS
+<<<<<<< HEAD
 Remove a blueprint assignment from a subscription.
 
 ## SYNTAX
@@ -15,12 +16,31 @@ Remove a blueprint assignment from a subscription.
 ### DeleteBlueprintAssignmentByName (Default)
 ```
 Remove-AzBlueprintAssignment [[-SubscriptionId] <String>] [-Name] <String> [-PassThru]
+=======
+Remove a blueprint assignment from a subscription or a management group.
+
+## SYNTAX
+
+### BySubscriptionAndName (Default)
+```
+Remove-AzBlueprintAssignment [-Name] <String> [[-SubscriptionId] <String>] [-PassThru]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### ByManagementGroupAndName
+```
+Remove-AzBlueprintAssignment [-Name] <String> [-ManagementGroupId] <String> [-PassThru]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteBlueprintAssignmentByObject
 ```
+<<<<<<< HEAD
 Remove-AzBlueprintAssignment [[-SubscriptionId] <String>] [-InputObject] <PSBlueprintAssignment> [-PassThru]
+=======
+Remove-AzBlueprintAssignment -InputObject <PSBlueprintAssignment> [-PassThru]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -62,7 +82,26 @@ Parameter Sets: DeleteBlueprintAssignmentByObject
 Aliases:
 
 Required: True
+<<<<<<< HEAD
 Position: 1
+=======
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -ManagementGroupId
+The ID of the management group where the Blueprint assignment is saved.
+
+```yaml
+Type: System.String
+Parameter Sets: ByManagementGroupAndName
+Aliases:
+
+Required: True
+Position: 0
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -73,7 +112,11 @@ Blueprint assignment name.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: DeleteBlueprintAssignmentByName
+=======
+Parameter Sets: BySubscriptionAndName, ByManagementGroupAndName
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -84,7 +127,11 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
+<<<<<<< HEAD
 {{Fill PassThru Description}}
+=======
+When set, the cmdlet will return an object representing the removed Blueprint assignment. By default, this cmdlet does not generate any output.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -103,6 +150,7 @@ Subscription Id the blueprint assignment is deployed to.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: DeleteBlueprintAssignmentByName
 Aliases:
 
@@ -116,12 +164,19 @@ Accept wildcard characters: False
 ```yaml
 Type: System.String
 Parameter Sets: DeleteBlueprintAssignmentByObject
+=======
+Parameter Sets: BySubscriptionAndName
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: False
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByPropertyName)
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -157,7 +212,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

@@ -13,18 +13,36 @@
 // ----------------------------------------------------------------------------------
 using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+<<<<<<< HEAD
 using Microsoft.Azure.Management.Sql;
 using Microsoft.Azure.Management.Sql.Models;
 using Microsoft.Rest.Azure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+=======
+using Microsoft.Azure.Management.Internal.Resources;
+using Microsoft.Azure.Management.Sql;
+using Microsoft.Azure.Management.Sql.Models;
+using Microsoft.Rest.Azure;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Sql.DataClassification.Services
 {
     internal class DataClassificationEndpointsCommunicator
     {
+<<<<<<< HEAD
         private ISqlManagementClient SqlManagementClient { get; set; }
+=======
+        private SqlManagementClient SqlManagementClient { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         private IAzureSubscription Subscription { get; set; }
 
@@ -54,6 +72,37 @@ namespace Microsoft.Azure.Commands.Sql.DataClassification.Services
                 managedInstanceName, databaseName, schemaName, tableName, columnName, sensitivityLabel);
         }
 
+<<<<<<< HEAD
+=======
+        internal void PatchSensitivityLabels(string resourceGroupName, string serverName, string databaseName,
+            PatchOperations operations)
+        {
+            PatchOperations(resourceGroupName, serverName, databaseName, operations,
+                isManagedInstance: false, currentOrRecommended: "current");
+        }
+
+        internal void PatchManagedDatabaseSensitivityLabels(string resourceGroupName, string managedInstanceName, string databaseName,
+            PatchOperations operations)
+        {
+            PatchOperations(resourceGroupName, managedInstanceName, databaseName, operations,
+                isManagedInstance: true, currentOrRecommended: "current");
+        }
+
+        internal void PatchSensitivityRecommendations(string resourceGroupName, string serverName, string databaseName,
+            PatchOperations operations)
+        {
+            PatchOperations(resourceGroupName, serverName, databaseName, operations,
+                isManagedInstance: false, currentOrRecommended: "recommended");
+        }
+
+        internal void PatchManagedDatabaseSensitivityRecommendations(string resourceGroupName, string managedInstanceName, string databaseName,
+            PatchOperations operations)
+        {
+            PatchOperations(resourceGroupName, managedInstanceName, databaseName, operations,
+                isManagedInstance: true, currentOrRecommended: "recommended");
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         internal void DeleteSensitivityLabel(string resourceGroupName, string serverName, string databaseName,
             string schemaName, string tableName, string columnName)
         {
@@ -71,16 +120,25 @@ namespace Microsoft.Azure.Commands.Sql.DataClassification.Services
         internal List<SensitivityLabel> GetSensitivityLabel(string resourceGroupName, string serverName, string databaseName,
             string schemaName, string tableName, string columnName)
         {
+<<<<<<< HEAD
             SensitivityLabel sensitivityLabel =
                 GetCurrentSqlManagementClient().SensitivityLabels.Get(
                     resourceGroupName, serverName, databaseName, schemaName, tableName, columnName,
                     SensitivityLabelSource.Current);
+=======
+            SensitivityLabel sensitivityLabel = GetSensitivityLabel(() =>
+                GetCurrentSqlManagementClient().SensitivityLabels.Get(
+                    resourceGroupName, serverName, databaseName, schemaName, tableName, columnName,
+                    SensitivityLabelSource.Current));
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             return ToList(sensitivityLabel);
         }
 
         internal List<SensitivityLabel> GetManagedDatabaseSensitivityLabel(string resourceGroupName, string managedInstanceName, string databaseName,
             string schemaName, string tableName, string columnName)
         {
+<<<<<<< HEAD
             SensitivityLabel sensitivityLabel =
                 GetCurrentSqlManagementClient().ManagedDatabaseSensitivityLabels.Get(
                     resourceGroupName, managedInstanceName, databaseName, schemaName, tableName, columnName,
@@ -88,6 +146,35 @@ namespace Microsoft.Azure.Commands.Sql.DataClassification.Services
             return ToList(sensitivityLabel);
         }
 
+=======
+            SensitivityLabel sensitivityLabel = GetSensitivityLabel(() =>
+                GetCurrentSqlManagementClient().ManagedDatabaseSensitivityLabels.Get(
+                    resourceGroupName, managedInstanceName, databaseName, schemaName, tableName, columnName,
+                    SensitivityLabelSource.Current));
+
+            return ToList(sensitivityLabel);
+        }
+
+        private SensitivityLabel GetSensitivityLabel(Func<SensitivityLabel> getSensitivityLabelFromServer)
+        {
+            SensitivityLabel sensitivityLabel = null;
+            try
+            {
+                sensitivityLabel = getSensitivityLabelFromServer();
+            }
+            catch (CloudException e)
+            {
+                if (!(e.Body.Code == "SensitivityLabelsLabelNotFound" &&
+                    e.Body.Message == "The specified sensitivity label could not be found"))
+                {
+                    throw;
+                }
+            }
+
+            return sensitivityLabel;
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         internal List<SensitivityLabel> GetCurrentSensitivityLabels(string resourceGroupName,
             string serverName, string databaseName)
         {
@@ -125,7 +212,11 @@ namespace Microsoft.Azure.Commands.Sql.DataClassification.Services
         }
 
         internal void EnableSensitivityRecommendation(string resourceGroupName, string serverName, string databaseName,
+<<<<<<< HEAD
     string schemaName, string tableName, string columnName)
+=======
+            string schemaName, string tableName, string columnName)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             GetCurrentSqlManagementClient().SensitivityLabels.EnableRecommendation(resourceGroupName, serverName, databaseName,
                 schemaName, tableName, columnName);
@@ -152,6 +243,33 @@ namespace Microsoft.Azure.Commands.Sql.DataClassification.Services
                 schemaName, tableName, columnName);
         }
 
+<<<<<<< HEAD
+=======
+        private void PatchOperations(string resourceGroupName, string serverName, string databaseName,
+            PatchOperations operations, bool isManagedInstance, string currentOrRecommended)
+        {
+            Uri endpoint = Context.Environment.GetEndpointAsUri(AzureEnvironment.Endpoint.ResourceManager);
+            string uri = $"{endpoint}/subscriptions/{Subscription.Id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/{(isManagedInstance ? "managedInstances" : "servers")}/{serverName}/databases/{databaseName}/{currentOrRecommended}SensitivityLabels?api-version=2017-03-01-preview";
+            string content = JsonConvert.SerializeObject(operations, new JsonSerializerSettings
+            {
+                Converters = new List<JsonConverter>() { new Rest.Serialization.TransformationJsonConverter() },
+                NullValueHandling = NullValueHandling.Ignore
+            });
+
+            HttpRequestMessage httpRequest = new HttpRequestMessage
+            {
+                Method = new HttpMethod("Patch"),
+                RequestUri = new Uri(uri),
+                Content = new StringContent(content, Encoding.UTF8, "application/json")
+            };
+
+            SqlManagementClient client = GetCurrentSqlManagementClient();
+            client.Credentials.ProcessHttpRequestAsync(httpRequest, CancellationToken.None).ConfigureAwait(false);
+            HttpResponseMessage response = client.HttpClient.SendAsync(httpRequest, CancellationToken.None).Result;
+            response.EnsureSuccessStatusCode();
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private List<SensitivityLabel> IterateOverPages(
             Func<IPage<SensitivityLabel>> listByDatabase,
             Func<string, IPage<SensitivityLabel>> listByNextPageLink)
@@ -184,7 +302,11 @@ namespace Microsoft.Azure.Commands.Sql.DataClassification.Services
                 new List<SensitivityLabel> { sensitivityLabel };
         }
 
+<<<<<<< HEAD
         private ISqlManagementClient GetCurrentSqlManagementClient()
+=======
+        private SqlManagementClient GetCurrentSqlManagementClient()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             if (SqlManagementClient == null)
             {

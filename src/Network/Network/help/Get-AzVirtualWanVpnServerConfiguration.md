@@ -49,7 +49,11 @@ VpnServerConfigurationResourceIds : [
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
+<<<<<<< HEAD
 Type: IAzureContextContainer
+=======
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -64,8 +68,13 @@ Accept wildcard characters: False
 The resource name.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
 Parameter Sets: ByVirtualWanName
+=======
+Type: System.String
+Parameter Sets: (All)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases: ResourceName
 
 Required: False
@@ -79,8 +88,13 @@ Accept wildcard characters: False
 The resource group name.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
 Parameter Sets: ByVirtualWanName
+=======
+Type: System.String
+Parameter Sets: (All)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -94,7 +108,11 @@ Accept wildcard characters: False
 The Azure resource ID for the virtual wan.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVirtualWanResourceId
 Aliases: VirtualWanId
 
@@ -109,7 +127,11 @@ Accept wildcard characters: False
 The virtual wan object.
 
 ```yaml
+<<<<<<< HEAD
 Type: PSVirtualWan
+=======
+Type: Microsoft.Azure.Commands.Network.Models.PSVirtualWan
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVirtualWanObject
 Aliases: VirtualWan
 

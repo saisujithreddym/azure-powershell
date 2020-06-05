@@ -190,6 +190,37 @@ function Test-DedicatedHostVirtualMachine
         Assert-AreEqual 1 $dedicatedHostGroup.Hosts.Count;
         Assert-AreEqual $dedicatedHostId $dedicatedHostGroup.Hosts[0].Id;
 
+<<<<<<< HEAD
+=======
+        # Remove Host from VM
+        Stop-AzVM -ResourceGroupName $rgname -Name $vmName1 -Force;
+        $vm1 = Get-AzVM -ResourceGroupName $rgname -Name $vmName1;
+        Update-AzVM -ResourceGroupName $rgname -VM $vm1 -HostId $null;
+
+        $vm1 = Get-AzVM -ResourceGroupName $rgname -Name $vmname1;
+        Assert-Null $vm1.Host;
+        $dedicatedHost = Get-AzHost -ResourceGroupName $rgname -HostGroupName $hostGroupName -Name $hostName;
+        Assert-AreEqual 1 $dedicatedHost.VirtualMachines.Count;
+        Assert-AreEqual $vm0.Id $dedicatedHost.VirtualMachines[0].Id;
+        $dedicatedHostGroup = Get-AzHostGroup -ResourceGroupName $rgname -HostGroupName $hostGroupNam;
+        Assert-AreEqual 1 $dedicatedHostGroup.Hosts.Count;
+        Assert-AreEqual $dedicatedHostId $dedicatedHostGroup.Hosts[0].Id;
+
+        # Add Host back to the VM
+        Update-AzVM -ResourceGroupName $rgname -VM $vm1 -HostId $dedicatedHostId;
+
+        $vm1 = Get-AzVM -ResourceGroupName $rgname -Name $vmname1;
+        Assert-AreEqual $dedicatedHostId $vm1.Host.Id;
+        $dedicatedHost = Get-AzHost -ResourceGroupName $rgname -HostGroupName $hostGroupName -Name $hostName;
+        Assert-AreEqual 2 $dedicatedHost.VirtualMachines.Count;
+        Assert-AreEqual $vm0.Id $dedicatedHost.VirtualMachines[0].Id;
+        Assert-AreEqual $vm1.Id $dedicatedHost.VirtualMachines[1].Id;
+        $dedicatedHostGroup = Get-AzHostGroup -ResourceGroupName $rgname -HostGroupName $hostGroupNam;
+        Assert-AreEqual 1 $dedicatedHostGroup.Hosts.Count;
+        Assert-AreEqual $dedicatedHostId $dedicatedHostGroup.Hosts[0].Id;
+
+        # Remove the VMs
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         Remove-AzVM -ResourceGroupName $rgname -Name $vmname1 -Force;
 
         $dedicatedHost = Get-AzHost -ResourceGroupName $rgname -HostGroupName $hostGroupName -Name $hostName;

@@ -131,6 +131,16 @@ namespace Microsoft.Azure.Commands.Resources.Test.ScenarioTests
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
+=======
+        public void TestPolicyObjectPiping()
+        {
+            TestRunner.RunTestScript("Test-PolicyObjectPiping");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TestPolicyDefinitionWithFullObject()
         {
             TestRunner.RunTestScript("Test-PolicyDefinitionWithFullObject");

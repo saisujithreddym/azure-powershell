@@ -36,7 +36,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
     /// Cmdlet to get existing resources.
     /// </summary>
     [Cmdlet("Get", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "Resource", DefaultParameterSetName = ByTagNameValueParameterSet), OutputType(typeof(PSResource))]
+<<<<<<< HEAD
     public sealed class GetAzureResourceCmdlet : ResourceManagerCmdletBase
+=======
+    public sealed class GetAzureResourceCmdlet : ResourceManagerCmdletBaseWithAPiVersion
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     {
         public const string ByResourceIdParameterSet = "ByResourceId";
         public const string ByTagObjectParameterSet = "ByTagObjectParameterSet";
@@ -226,6 +230,12 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
                                             ResourceGroupName,
                                             ResourceType,
                                             Name);
+<<<<<<< HEAD
+=======
+
+                this.DefaultApiVersion = DetermineApiVersion(resourceId).Result;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 return true;
             }
 
@@ -626,4 +636,8 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
                 this.ResourceType != null;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

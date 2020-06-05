@@ -26,9 +26,15 @@ The **Get-AzSqlServerActiveDirectoryAdministrator** cmdlet gets information abou
 ### Example 1: Gets information about an administrator for a server
 ```
 PS C:\>Get-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
+<<<<<<< HEAD
 ResourceGroupName ServerName DisplayName ObjectId 
 ----------------- ---------- ----------- -------- 
 ResourceGroup01   Server01   DBAs        40b79501-b343-44ed-9ce7-da4c8cc7353b
+=======
+ResourceGroupName ServerName DisplayName ObjectId IsAzureADOnlyAuthentication
+----------------- ---------- ----------- -------- -----------
+ResourceGroup01   Server01   DBAs        40b79501-b343-44ed-9ce7-da4c8cc7353b true
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 This command gets information about an Azure AD administrator for a server named Server01 that is associated with a resource group named ResourceGroup01.
@@ -130,6 +136,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Set-AzSqlServerActiveDirectoryAdministrator](./Set-AzSqlServerActiveDirectoryAdministrator.md)
 
+<<<<<<< HEAD
+=======
+[Disable-AzSqlServerActiveDirectoryOnlyAuthentication](./Disable-AzSqlServerActiveDirectoryOnlyAuthentication.md)
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 [SQL Database Documentation](https://docs.microsoft.com/azure/sql-database/)
 
 

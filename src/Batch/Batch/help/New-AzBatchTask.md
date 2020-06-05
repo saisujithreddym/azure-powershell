@@ -161,10 +161,17 @@ Accept wildcard characters: False
 
 ### -AuthenticationTokenSettings
 The settings for an authentication token that the task can use to perform Batch service operations.
+<<<<<<< HEAD
 If this is set, the Batch service provides the task with an authentication token which can be used to 
 authenticate Batch service operations without requiring an account access key. The token is provided via the 
 AZ_BATCH_AUTHENTICATION_TOKEN environment variable. The operations that the task can carry out using the token 
 depend on the settings. For example, a task can request job permissions in order to add other tasks to the job, 
+=======
+If this is set, the Batch service provides the task with an authentication token which can be used to
+authenticate Batch service operations without requiring an account access key. The token is provided via the
+AZ_BATCH_AUTHENTICATION_TOKEN environment variable. The operations that the task can carry out using the token
+depend on the settings. For example, a task can request job permissions in order to add other tasks to the job,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 or check the status of the job or of other tasks.
 
 ```yaml
@@ -228,8 +235,13 @@ Accept wildcard characters: False
 ### -ContainerSettings
 The settings for the container under which the task runs.
 If the pool that will run this task has containerConfiguration set, this must be set as well. If the pool that will run this task
+<<<<<<< HEAD
 doesn't have containerConfiguration set, this must not be set. When this is specified, all directories recursively below the 
 AZ_BATCH_NODE_ROOT_DIR (the root of Azure Batch directories on the node) are mapped into the container, all task environment variables 
+=======
+doesn't have containerConfiguration set, this must not be set. When this is specified, all directories recursively below the
+AZ_BATCH_NODE_ROOT_DIR (the root of Azure Batch directories on the node) are mapped into the container, all task environment variables
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 are mapped into the container, and the task command line is executed in the container.
 
 ```yaml
@@ -474,6 +486,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Stop-AzBatchTask](./Stop-AzBatchTask.md)
 
+<<<<<<< HEAD
 [Azure Batch Cmdlets](./Az.Batch.md)
 
 
+=======
+[Azure Batch Cmdlets](/powershell/module/Az.Batch/)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

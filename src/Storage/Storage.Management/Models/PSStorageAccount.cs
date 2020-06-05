@@ -52,9 +52,17 @@ namespace Microsoft.Azure.Commands.Management.Storage.Models
             this.EnableHttpsTrafficOnly = storageAccount.EnableHttpsTrafficOnly;
             this.NetworkRuleSet = PSNetworkRuleSet.ParsePSNetworkRule(storageAccount.NetworkRuleSet);
             this.EnableHierarchicalNamespace = storageAccount.IsHnsEnabled;
+<<<<<<< HEAD
             this.LargeFileSharesState = storageAccount.LargeFileSharesState;
             this.AzureFilesIdentityBasedAuth = storageAccount.AzureFilesIdentityBasedAuthentication is null ? null : new PSAzureFilesIdentityBasedAuthentication(storageAccount.AzureFilesIdentityBasedAuthentication);
             this.GeoReplicationStats = PSGeoReplicationStats.ParsePSGeoReplicationStats(storageAccount.GeoReplicationStats);
+=======
+            this.FailoverInProgress = storageAccount.FailoverInProgress;
+            this.LargeFileSharesState = storageAccount.LargeFileSharesState;
+            this.AzureFilesIdentityBasedAuth = storageAccount.AzureFilesIdentityBasedAuthentication is null ? null : new PSAzureFilesIdentityBasedAuthentication(storageAccount.AzureFilesIdentityBasedAuthentication);
+            this.GeoReplicationStats = PSGeoReplicationStats.ParsePSGeoReplicationStats(storageAccount.GeoReplicationStats);
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         [Ps1Xml(Label = "ResourceGroupName", Target = ViewControl.Table, Position = 1)]
@@ -65,7 +73,10 @@ namespace Microsoft.Azure.Commands.Management.Storage.Models
 
         public string Id { get; set; }
 
+<<<<<<< HEAD
         [Ps1Xml(Label = "Location", Target = ViewControl.Table, Position = 2)]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Location { get; set; }
 
         [Ps1Xml(Label = "SkuName", Target = ViewControl.Table, ScriptBlock = "$_.Sku.Name", Position = 3)]
@@ -112,6 +123,11 @@ namespace Microsoft.Azure.Commands.Management.Storage.Models
 
         public bool? EnableHierarchicalNamespace { get; set; }
 
+<<<<<<< HEAD
+=======
+        public bool? FailoverInProgress { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string LargeFileSharesState { get; set; }
 
         public PSNetworkRuleSet NetworkRuleSet { get; set; }

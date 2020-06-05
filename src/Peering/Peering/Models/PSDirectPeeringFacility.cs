@@ -32,8 +32,13 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         /// <param name="address">The address of the direct peering
         /// facility.</param>
         /// <param name="directPeeringType">The type of the direct peering.
+<<<<<<< HEAD
         /// Possible values include: 'Edge', 'Transit', 'Cdn',
         /// 'Internal'</param>
+=======
+        /// Possible values include: 'Edge', 'Transit', 'Cdn', 'Internal',
+        /// 'Ix', 'IxRs'</param>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <param name="peeringDBFacilityId">The PeeringDB.com ID of the
         /// facility.</param>
         /// <param name="peeringDBFacilityLink">The PeeringDB.com URL of the
@@ -60,7 +65,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
 
         /// <summary>
         /// Gets or sets the type of the direct peering. Possible values
+<<<<<<< HEAD
         /// include: 'Edge', 'Transit', 'Cdn', 'Internal'
+=======
+        /// include: 'Edge', 'Transit', 'Cdn', 'Internal', 'Ix', 'IxRs'
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         [JsonProperty(PropertyName = "directPeeringType")]
         public string DirectPeeringType { get; set; }

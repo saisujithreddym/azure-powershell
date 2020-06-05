@@ -14,19 +14,31 @@ Regenerate a given CosmosDB Account Key.
 
 ### ByNameParameterSet (Default)
 ```
+<<<<<<< HEAD
 New-AzCosmosDBAccountKey -ResourceGroupName <String> -Name <String> [-KeyKind <String>] [-AsJob] [-PassThru]
+=======
+New-AzCosmosDBAccountKey -ResourceGroupName <String> -Name <String> [-KeyKind <String>] [-AsJob]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByResourceIdParameterSet
 ```
+<<<<<<< HEAD
 New-AzCosmosDBAccountKey [-KeyKind <String>] -ResourceId <String> [-AsJob] [-PassThru]
+=======
+New-AzCosmosDBAccountKey [-KeyKind <String>] -ResourceId <String> [-AsJob]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByObjectParameterSet
 ```
+<<<<<<< HEAD
 New-AzCosmosDBAccountKey [-KeyKind <String>] -InputObject <PSDatabaseAccount> [-AsJob] [-PassThru]
+=======
+New-AzCosmosDBAccountKey [-KeyKind <String>] -InputObject <PSDatabaseAccountGetResults> [-AsJob]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -93,14 +105,22 @@ Accept wildcard characters: False
 CosmosDB Account object
 
 ```yaml
+<<<<<<< HEAD
 Type: PSDatabaseAccount
+=======
+Type: PSDatabaseAccountGetResults
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByObjectParameterSet
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByPropertyName)
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -135,6 +155,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -PassThru
 To be set to true if the user wants to receive an output. The output is true if the operation was successful and an error is thrown if not.
 
@@ -150,6 +171,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ResourceGroupName
 Name of resource group.
 

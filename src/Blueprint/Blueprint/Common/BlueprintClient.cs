@@ -67,11 +67,19 @@ namespace Microsoft.Azure.Commands.Blueprint.Common
             return PSBlueprint.FromBlueprintModel(result.Body, scope);
         }
 
+<<<<<<< HEAD
         public PSBlueprintAssignment GetBlueprintAssignment(string subscriptionId, string blueprintAssignmentName)
         {
             var result = blueprintManagementClient.Assignments.GetWithHttpMessagesAsync(subscriptionId, blueprintAssignmentName).GetAwaiter().GetResult();
 
             return PSBlueprintAssignment.FromAssignment(result.Body, subscriptionId);
+=======
+        public PSBlueprintAssignment GetBlueprintAssignment(string scope, string blueprintAssignmentName)
+        {
+            var result = blueprintManagementClient.Assignments.GetWithHttpMessagesAsync(scope, blueprintAssignmentName).GetAwaiter().GetResult();
+
+            return PSBlueprintAssignment.FromAssignment(result.Body);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public PSBlueprint DeleteBlueprint(string scope, string blueprintName)
@@ -102,11 +110,19 @@ namespace Microsoft.Azure.Commands.Blueprint.Common
             return latest;
         }
 
+<<<<<<< HEAD
         public IEnumerable<PSBlueprintAssignment> ListBlueprintAssignments(string subscriptionId)
         {
             var assignments = blueprintManagementClient.Assignments.List(subscriptionId);
 
             foreach (var assignment in assignments.Select(assignment => PSBlueprintAssignment.FromAssignment(assignment, subscriptionId)))
+=======
+        public IEnumerable<PSBlueprintAssignment> ListBlueprintAssignments(string scope)
+        {
+            var assignments = blueprintManagementClient.Assignments.List(scope);
+
+            foreach (var assignment in assignments.Select(assignment => PSBlueprintAssignment.FromAssignment(assignment)))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             {
                 yield return assignment;
             }
@@ -114,7 +130,11 @@ namespace Microsoft.Azure.Commands.Blueprint.Common
             while (!string.IsNullOrEmpty(assignments.NextPageLink))
             {
                 assignments = blueprintManagementClient.Assignments.ListNext(assignments.NextPageLink);
+<<<<<<< HEAD
                 foreach (var assignment in assignments.Select(assignment => PSBlueprintAssignment.FromAssignment(assignment, subscriptionId)))
+=======
+                foreach (var assignment in assignments.Select(assignment => PSBlueprintAssignment.FromAssignment(assignment)))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {
                     yield return assignment;
                 }
@@ -189,13 +209,20 @@ namespace Microsoft.Azure.Commands.Blueprint.Common
             return list;
         }
 
+<<<<<<< HEAD
         public PSBlueprintAssignment DeleteBlueprintAssignment(string subscriptionId, string blueprintAssignmentName)
         {
             var result = blueprintManagementClient.Assignments.DeleteWithHttpMessagesAsync(subscriptionId, blueprintAssignmentName).GetAwaiter().GetResult();
+=======
+        public PSBlueprintAssignment DeleteBlueprintAssignment(string scope, string blueprintAssignmentName)
+        {
+            var result = blueprintManagementClient.Assignments.DeleteWithHttpMessagesAsync(scope, blueprintAssignmentName).GetAwaiter().GetResult();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (result.Body == null)
                 return null;
 
+<<<<<<< HEAD
             return PSBlueprintAssignment.FromAssignment(result.Body, subscriptionId);
         }
 
@@ -206,6 +233,18 @@ namespace Microsoft.Azure.Commands.Blueprint.Common
             if (result.Body != null)
             {
                 return PSBlueprintAssignment.FromAssignment(result.Body, subscriptionId);
+=======
+            return PSBlueprintAssignment.FromAssignment(result.Body);
+        }
+
+        public PSBlueprintAssignment CreateOrUpdateBlueprintAssignment(string scope, string assignmentName, Assignment assignment)
+        {
+            var result = blueprintManagementClient.Assignments.CreateOrUpdateWithHttpMessagesAsync(scope, assignmentName, assignment).GetAwaiter().GetResult();
+
+            if (result.Body != null)
+            {
+                return PSBlueprintAssignment.FromAssignment(result.Body);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return null;

@@ -150,7 +150,11 @@ namespace Microsoft.Azure.Commands.Network
 
             if (this.AllowVnetToVnetTraffic.HasValue)
             {
+<<<<<<< HEAD
                 virtualWanToUpdate.AllowVnetToVnetTraffic = this.AllowVnetToVnetTraffic.Value;
+=======
+                virtualWanToUpdate.AllowVnetToVnetTraffic = true;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             if (!string.IsNullOrWhiteSpace(this.VirtualWANType))

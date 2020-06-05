@@ -133,6 +133,13 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.DeploymentSlots
         [ValidateSet("AllAllowed", "Disabled", "FtpsOnly")]
         public string FtpsState { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(ParameterSetName = ParameterSet1Name, Mandatory = false, HelpMessage = "Custom hostnames associated with web app slot")]
+        [ValidateNotNullOrEmpty]
+        public string[] HostNames { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         public override void ExecuteCmdlet()
         {
@@ -260,6 +267,13 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.DeploymentSlots
                         //Update WebApp object after site update
                         WebApp = new PSSite(WebsitesClient.GetWebApp(ResourceGroupName, Name, null));
                     }
+<<<<<<< HEAD
+=======
+                    if (parameters.Contains("HostNames"))
+                    {
+                        WebsitesClient.AddCustomHostNames(ResourceGroupName, location, Name,HostNames, Slot);
+                    }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                     break;
                 case ParameterSet2Name:
@@ -298,6 +312,10 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.DeploymentSlots
                     CmdletHelpers.TryParseAppServicePlanMetadataFromResourceId(WebApp.ServerFarmId, out rg, out servicePlanName);
                     WebApp.AzureStoragePath = null; // the API to update site Object doesn't have the AzureStorage Path property
                     WebsitesClient.UpdateWebApp(ResourceGroupName, location, Name, Slot, servicePlanName, WebApp);
+<<<<<<< HEAD
+=======
+                    WebsitesClient.AddCustomHostNames(ResourceGroupName, location, Name, WebApp.HostNames.ToArray(), Slot);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     break;
             }
 

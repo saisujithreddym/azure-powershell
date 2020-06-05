@@ -19,9 +19,22 @@ namespace Commands.Aks.Test.ScenarioTests
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
         public void TestAzureKubernetes()
         {
             TestController.NewInstance.RunPowerShellTest(_logger, "Test-AzureRmKubernetes");
+=======
+        public void TestSimpleAzureKubernetes()
+        {
+            TestController.NewInstance.RunPowerShellTest(_logger, "Test-NewAzAksSimple");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestAzureKubernetes()
+        {
+            TestController.NewInstance.RunPowerShellTest(_logger, "Test-NewAzAks");
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

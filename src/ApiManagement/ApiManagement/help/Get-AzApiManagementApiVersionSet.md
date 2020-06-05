@@ -173,4 +173,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Remove-AzApiManagementApiSet](./Remove-AzApiManagementApiVersionSet.md)
 
+<<<<<<< HEAD
 [Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiSet.md)
+=======
+[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiVersionSet.md)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

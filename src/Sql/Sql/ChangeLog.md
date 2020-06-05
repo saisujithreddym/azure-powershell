@@ -18,7 +18,48 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
 * Added support for cross subscription point in time restore on Managed Instances.
+=======
+* Enhance performance of:
+    - `Set-AzSqlDatabaseSensitivityClassification`
+    - `Set-AzSqlInstanceDatabaseSensitivityClassification`
+    - `Remove-AzSqlDatabaseSensitivityClassification`
+    - `Remove-AzSqlInstanceDatabaseSensitivityClassification`
+    - `Enable-AzSqlDatabaseSensitivityRecommendation`
+    - `Enable-AzSqlInstanceDatabaseSensitivityRecommendation`
+    - `Disable-AzSqlDatabaseSensitivityRecommendation`
+    - `Disable-AzSqlInstanceDatabaseSensitivityRecommendation`
+* Removed client-side validation of 'RetentionDays' parameter from cmdlet `Set-AzSqlDatabaseBackupShortTermRetentionPolicy`
+* Auditing to a storage account in Vnet, fixing a bug when creating a Storage Blob Data Contributor role.
+
+## Version 2.6.0
+* Added cmdlets `Get-AzSqlInstanceOperation` and `Stop-AzSqlInstanceOperation`
+* Supported auditing to a storage account in VNet.
+* Assign 'None' value as StorageKeyKind when a storage account under VNet is a target for the audit records. 
+
+## Version 2.5.0
+* Added readable secondary parameter to `Invoke-AzSqlDatabaseFailover`
+* Added cmdlet `Disable-AzSqlServerActiveDirectoryOnlyAuthentication`
+* Saved sensitivity rank when classifying columns in the database.
+
+## Version 2.4.0
+* Added PublicNetworkAccess to `New-AzSqlServer` and `Set-AzSqlServer`
+* Added support for Long Term Retention backup configuration for Managed Databases
+    - Get/Set LTR policy on a managed database 
+    - Get LTR backup(s) by managed database, managed instance, or by location 
+    - Remove an LTR backup 
+    - Restore an LTR backup to create a new managed database
+* Added MinimalTlsVersion to `New-AzSqlServer` and `Set-AzSqlServer`
+* Added MinimalTlsVersion to `New-AzSqlInstance` and `Set-AzSqlInstance`
+* Bumped SQL SDK version for Az.Network
+
+## Version 2.3.0
+* Added support for cross subscription point in time restore on Managed Instances.
+* Added support for changing existing Sql Managed Instance hardware generation
+* Fixed `Update-AzSqlServerVulnerabilityAssessmentSetting` help examples: parameter/property output - EmailAdmins
+* Updating Azure SQL Server Active Azure administrator API to use 2019-06-01-preview api version.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 2.2.0
 Fix New-AzSqlDatabaseSecondary cmdlet to check for PartnerDatabaseName existence instead of DatabaseName existence.

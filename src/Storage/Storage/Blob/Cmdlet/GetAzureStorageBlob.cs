@@ -135,6 +135,7 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Blob.Cmdlet
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// get the CloudBlobContainer object by name if container exists
         /// </summary>
         /// <param name="containerName">container name</param>
@@ -159,6 +160,8 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Blob.Cmdlet
         }
 
         /// <summary>
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// list blobs by blob name and container name
         /// </summary>
         /// <param name="containerName">container name</param>

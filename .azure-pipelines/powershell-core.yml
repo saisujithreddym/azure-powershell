@@ -4,10 +4,18 @@ variables:
   LinuxName: linux
   LinuxImage: ubuntu-18.04
   MacOSName: macOS
+<<<<<<< HEAD
   MacOSImage: macOS-10.13
   TestFramework: netcoreapp2.2
   TestTarget: Test
   Configuration: Debug
+=======
+  MacOSImage: macOS-10.14
+  TestFramework: netcoreapp2.2
+  TestTarget: Test
+  Configuration: Debug
+  DebugLocalBuildTasks: true
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 jobs:
 - job: Build

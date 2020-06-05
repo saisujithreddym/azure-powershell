@@ -25,7 +25,14 @@ namespace Microsoft.Azure.Commands.Network
     using System.Management.Automation;
     using MNM = Microsoft.Azure.Management.Network.Models;
     using System;
+<<<<<<< HEAD
 
+=======
+    using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+
+    [GenericBreakingChange("Default behaviour of Zone will be changed", OldWay = "Zone = [] means the Standard PublicIpPrefix is zone-redundant",
+        NewWay = "Zone = [] means the Standard PublicIpPrefix has no zones. If you want to create a zone-redundant PublicIpPrefix, please specify all the zones in the region. For example, Zone = [\"1\", \"2\", \"3\"].To learn more visit aka.ms/standardpublicip")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "PublicIpPrefix", SupportsShouldProcess = true), OutputType(typeof(PSPublicIpPrefix))]
     public class NewAzurePublicIpPrefixCommand : PublicIpPrefixBaseCmdlet
     {

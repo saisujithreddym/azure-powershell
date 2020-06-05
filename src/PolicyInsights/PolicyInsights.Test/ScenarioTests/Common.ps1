@@ -27,7 +27,11 @@ Gets test resource group group name
 #>
 function Get-TestResourceGroupName
 {
+<<<<<<< HEAD
    "cleanupservice"
+=======
+   "cheggpolicy"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -36,7 +40,11 @@ Gets test resource id
 #>
 function Get-TestResourceId
 {
+<<<<<<< HEAD
    "/subscriptions/0b40be06-04e8-4f70-abde-a502b2646fe8/resourcegroups/cleanupservice/providers/Microsoft.KeyVault/vaults/kv12-cleanupservice"
+=======
+   "/subscriptions/e78961ba-36fe-4739-9212-e3031b4c8db7/resourcegroups/cheggpolicy/providers/microsoft.keyvault/vaults/cheggkv"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -45,7 +53,11 @@ Gets test policy set definition name
 #>
 function Get-TestPolicySetDefinitionName
 {
+<<<<<<< HEAD
    "716ef2c9-4404-4673-8609-f984d58c417d"
+=======
+   "81811175-958c-478d-936a-d96e158a8c66"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -54,7 +66,11 @@ Gets test policy definition name
 #>
 function Get-TestPolicyDefinitionName
 {
+<<<<<<< HEAD
    "policy2"
+=======
+   "3520924f-7a65-4cbf-83e6-e2ed67bbf0da"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -63,7 +79,11 @@ Gets test policy assignment name
 #>
 function Get-TestPolicyAssignmentName
 {
+<<<<<<< HEAD
    "SecurityCenterBuiltIn"
+=======
+   "1e4e70f9cd4846268b6998ee"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -72,7 +92,11 @@ Gets test resource group group name for resource group level policy assignment (
 #>
 function Get-TestResourceGroupNameForPolicyAssignmentEvents
 {
+<<<<<<< HEAD
    "cleanupservice"
+=======
+   "cheggpolicy"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -81,7 +105,11 @@ Gets test policy assignment name (resource group level) (for event tests)
 #>
 function Get-TestPolicyAssignmentNameResourceGroupLevelEvents
 {
+<<<<<<< HEAD
    "568e500984414fbe8a4f10d0"
+=======
+   "8a4555d353ed46bb856e9890"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -90,7 +118,11 @@ Gets test policy definition name for events
 #>
 function Get-TestPolicyDefinitionNameForEvents
 {
+<<<<<<< HEAD
    "d994a92a-7669-4735-9950-bdcc326f32e4"
+=======
+   "926d9eb2-ac1e-4408-b27a-9c61a70f8ff8"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -99,7 +131,11 @@ Gets test resource group group name for resource group level policy assignment (
 #>
 function Get-TestResourceGroupNameForPolicyAssignmentStates
 {
+<<<<<<< HEAD
    "cleanupservice"
+=======
+   "cheggpolicy"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -108,7 +144,11 @@ Gets test policy assignment name (resource group level) (for state tests)
 #>
 function Get-TestPolicyAssignmentNameResourceGroupLevelStates
 {
+<<<<<<< HEAD
    "147b065f2a0f409ca31325c7"
+=======
+   "8a4555d353ed46bb856e9890"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -117,7 +157,11 @@ Gets test query interval start
 #>
 function Get-TestQueryIntervalStart
 {
+<<<<<<< HEAD
    "2019-12-01 00:00:00Z"
+=======
+   "2020-03-24 00:00:00Z"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -126,7 +170,11 @@ Gets test query interval end
 #>
 function Get-TestQueryIntervalEnd
 {
+<<<<<<< HEAD
    "2019-12-06 00:00:00Z"
+=======
+   "2020-03-30 00:00:00Z"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#

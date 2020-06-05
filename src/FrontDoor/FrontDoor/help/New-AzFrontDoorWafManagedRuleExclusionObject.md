@@ -37,7 +37,11 @@ QueryStringArgNames Equals                ParameterName
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
+<<<<<<< HEAD
 Type: IAzureContextContainer
+=======
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -52,7 +56,11 @@ Accept wildcard characters: False
 Operator to use when matching the selector, EqualsAny means no selector (all match variables of the specified type)
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -67,7 +75,11 @@ Accept wildcard characters: False
 Selector pattern to match using the operator (if the operator is not EqualsAny)
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -83,7 +95,11 @@ Match variable. Possible values are RequestHeaderNames, RequestCookieNames, Quer
 For example, QueryStringArgNames is an exclusion of GET parameters matching the selector with the given operator.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -108,6 +124,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 [New-AzFrontDoorWafManagedRuleOverrideObject](./New-AzFrontDoorWafManagedRuleOverrideObject.md)
 [New-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)
 [New-AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)

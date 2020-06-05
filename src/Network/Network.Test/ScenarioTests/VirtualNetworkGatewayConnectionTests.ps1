@@ -263,7 +263,11 @@ function Test-VirtualNetworkGatewayConnectionWithIpsecPoliciesCRUD
 	  $ipsecPolicy = New-AzIpsecPolicy -SALifeTimeSeconds 3000 -SADataSizeKilobytes 10000 -IpsecEncryption "GCMAES256" -IpsecIntegrity "GCMAES256" -IkeEncryption "AES256" -IkeIntegrity "SHA256" -DhGroup "DHGroup14" -PfsGroup "PFS2048"
 
       # Create & Get VirtualNetworkGatewayConnection w/ policy based TS
+<<<<<<< HEAD
       $job = New-AzVirtualNetworkGatewayConnection -ResourceGroupName $rgname -name $vnetConnectionName -location $location -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localnetGateway -ConnectionType IPsec -RoutingWeight 3 -SharedKey abc -EnableBgp $false -UsePolicyBasedTrafficSelectors $true -IpsecPolicies $ipsecPolicy -AsJob
+=======
+      $job = New-AzVirtualNetworkGatewayConnection -ResourceGroupName $rgname -name $vnetConnectionName -location $location -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localnetGateway -ConnectionType IPsec -RoutingWeight 3 -SharedKey abc -EnableBgp $false -UsePolicyBasedTrafficSelectors $true -IpsecPolicies $ipsecPolicy -DpdTimeoutInSeconds 30 -AsJob
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       $job | Wait-Job
 	  $actual = $job | Receive-Job
 	  $connection = Get-AzVirtualNetworkGatewayConnection -ResourceGroupName $rgname -name $vnetConnectionName
@@ -279,9 +283,16 @@ function Test-VirtualNetworkGatewayConnectionWithIpsecPoliciesCRUD
 	  Assert-AreEqual $connection.IpsecPolicies[0].IkeIntegrity $actual.IpsecPolicies[0].IkeIntegrity
 	  Assert-AreEqual $connection.IpsecPolicies[0].DhGroup $actual.IpsecPolicies[0].DhGroup
 	  Assert-AreEqual $connection.IpsecPolicies[0].PfsGroup $actual.IpsecPolicies[0].PfsGroup
+<<<<<<< HEAD
     
 	  # Set & Get VirtualNetworkGatewayConnection with policy cleared
       $job = Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection -UsePolicyBasedTrafficSelectors $false -IpsecPolicies @() -Force -AsJob
+=======
+      Assert-AreEqual 30 $connection.DpdTimeoutSeconds
+    
+	  # Set & Get VirtualNetworkGatewayConnection with policy cleared
+      $job = Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connection -UsePolicyBasedTrafficSelectors $false -IpsecPolicies @() -DpdTimeoutInSeconds 10 -Force -AsJob
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	  $job | Wait-Job
 	  $actual = $job | Receive-Job
 	  $connection = Get-AzVirtualNetworkGatewayConnection -ResourceGroupName $rgname -name $vnetConnectionName
@@ -289,6 +300,10 @@ function Test-VirtualNetworkGatewayConnectionWithIpsecPoliciesCRUD
 	  # Verify cleared policies
 	  Assert-AreEqual false $connection.UsePolicyBasedTrafficSelectors
 	  Assert-AreEqual 0 $connection.IpsecPolicies.Count
+<<<<<<< HEAD
+=======
+      Assert-AreEqual 10 $connection.DpdTimeoutSeconds
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
       # Delete VirtualNetworkGatewayConnection
       $delete = Remove-AzVirtualNetworkGatewayConnection -ResourceGroupName $actual.ResourceGroupName -name $vnetConnectionName -PassThru -Force

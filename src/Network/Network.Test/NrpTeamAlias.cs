@@ -19,7 +19,14 @@ namespace Commands.Network.Test
         // Below is the list of aliases to contact on test behavior
 
         // Virtual Appliance dev team
+<<<<<<< HEAD
         public const string nvadev = "nvadev";
+=======
+        // First part of ApplicationGateway tests
+        public const string nvadev = "nvadev";
+        // Second part of ApplicationGateway tests
+        public const string nvadev_subset1 = "nvadev_subset1";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         // SDN NRP Dev Team
         public const string sdnnrp = "sdnnrp";
@@ -29,6 +36,11 @@ namespace Commands.Network.Test
 
         // Windows Azure SLB Dev Team
         public const string slbdev = "slbdev";
+<<<<<<< HEAD
+=======
+        // Azure PowerShell Team
+        public const string azdevxps = "azdevxps";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         // Brooklyn FTEs
         // Split into subsets due to tests' long running time
@@ -42,6 +54,11 @@ namespace Commands.Network.Test
         public const string brooklynft_subset3 = "brooklynft_subset3";
         // Second part of VirtualNetworkGatewayConnection tests
         public const string brooklynft_subset4 = "brooklynft_subset4";
+<<<<<<< HEAD
+=======
+        // Third part of VirtualNetworkGatewayConnection tests
+        public const string brooklynft_subset5 = "brooklynft_subset5";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         // Azure Network Analytics Dev Team
         public const string netanalyticsdev = "netanalyticsdev";
@@ -54,5 +71,11 @@ namespace Commands.Network.Test
 
         // Azure NRP bastion dev team
         public const string bastion = "bastion";
+<<<<<<< HEAD
+=======
+
+        // Azure Network IPAM dev team
+        public const string ipam = "ipamdev";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

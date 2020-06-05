@@ -368,4 +368,23 @@ function Remediation-ReEvaluateCompliance
    # Delete the remediation that was created initially
    $result = (Remove-AzPolicyRemediation -ResourceGroupName $resourceGroupName -Name $remediationName -PassThru)
    Assert-AreEqual $true $result
+<<<<<<< HEAD
+=======
+}
+
+<#
+.SYNOPSIS
+Perform remediation operations that will fail and ensure the error message contains verbose information.
+#>
+function Remediation-ErrorHandling
+{
+   $assignmentId = Get-TestRemediationMgPolicyAssignmentId
+   $remediationName = "PSTestRemediation"
+   $managementGroupId = "AzGovPerfTest"
+
+   # Attempt to request compliance re-evaluation at MG scope, should fail
+   Assert-ThrowsContains `
+      { Start-AzPolicyRemediation -ManagementGroupName $managementGroupId -PolicyAssignmentId $assignmentId -Name $remediationName -ResourceDiscoveryMode ReEvaluateCompliance } `
+      "InvalidCreateRemediationRequest: The request to create remediation '$remediationName' is invalid. Evaluating compliance before remediation is only supported for remediations at subscription scope and below."
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }

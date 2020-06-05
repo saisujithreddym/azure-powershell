@@ -115,7 +115,11 @@ Location                               :
 
 This sets the long term retention policy of database01 to save each full backup for 14 days, the first full backup of each month for 24 weeks, and the full backup taken on the 26th week of the year for 10 years
 
+<<<<<<< HEAD
 ### Example 4: Remove the long term retention policy
+=======
+### Example 5: Remove the long term retention policy
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```powershell
 PS C:\> Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -RemovePolicy
 
@@ -133,7 +137,11 @@ Location                               :
 Removes the policy for database01 so it no longer saves any long term retention backups.
 This will not affect backups that have already been taken
 
+<<<<<<< HEAD
 ### Example 4: Remove the long term retention policy
+=======
+### Example 6: Remove the long term retention policy
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```powershell
 PS C:\> Set-AzSqlDatabaseBackupLongTermRetentionPolicy -ResourceGroupName resourcegroup01 -ServerName server01 -DatabaseName database01 -WeeklyRetention P0D
 

@@ -156,7 +156,11 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Cmdlets
         /// <summary>
         /// Executes the cmdlet
         /// </summary>
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
+=======
+        public override void Execute()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             var queryOptions = new RestApiModels.QueryOptions
             {
@@ -176,6 +180,7 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Cmdlets
                 ? RestApiModels.PolicyStatesResource.Latest
                 : RestApiModels.PolicyStatesResource.Default;
 
+<<<<<<< HEAD
             try
             {
                 switch (ParameterSetName)
@@ -244,6 +249,66 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Cmdlets
                     ? new Exception($"{e.Message} ({e.Body.Error.Code}: {e.Body.Error.Message})")
                     : e);
                 return;
+=======
+            switch (ParameterSetName)
+            {
+                case ParameterSetNames.ManagementGroupScope:
+                    policyStatesQueryResults = PolicyInsightsClient.PolicyStates.ListQueryResultsForManagementGroup(
+                        policyStatesResource,
+                        ManagementGroupName,
+                        queryOptions);
+                    break;
+                case ParameterSetNames.SubscriptionScope:
+                    policyStatesQueryResults = PolicyInsightsClient.PolicyStates.ListQueryResultsForSubscription(
+                        policyStatesResource,
+                        SubscriptionId ?? DefaultContext.Subscription.Id,
+                        queryOptions);
+                    break;
+                case ParameterSetNames.ResourceGroupScope:
+                    policyStatesQueryResults = PolicyInsightsClient.PolicyStates.ListQueryResultsForResourceGroup(
+                        policyStatesResource,
+                        SubscriptionId ?? DefaultContext.Subscription.Id,
+                        ResourceGroupName,
+                        queryOptions);
+                    break;
+                case ParameterSetNames.ResourceScope:
+                    policyStatesQueryResults = PolicyInsightsClient.PolicyStates.ListQueryResultsForResource(
+                        policyStatesResource,
+                        ResourceId,
+                        queryOptions);
+                    break;
+                case ParameterSetNames.PolicySetDefinitionScope:
+                    policyStatesQueryResults = PolicyInsightsClient.PolicyStates.ListQueryResultsForPolicySetDefinition(
+                        policyStatesResource,
+                        SubscriptionId ?? DefaultContext.Subscription.Id,
+                        PolicySetDefinitionName,
+                        queryOptions);
+                    break;
+                case ParameterSetNames.PolicyDefinitionScope:
+                    policyStatesQueryResults = PolicyInsightsClient.PolicyStates.ListQueryResultsForPolicyDefinition(
+                        policyStatesResource,
+                        SubscriptionId ?? DefaultContext.Subscription.Id,
+                        PolicyDefinitionName,
+                        queryOptions);
+                    break;
+                case ParameterSetNames.SubscriptionLevelPolicyAssignmentScope:
+                    policyStatesQueryResults = PolicyInsightsClient.PolicyStates.ListQueryResultsForSubscriptionLevelPolicyAssignment(
+                        policyStatesResource,
+                        SubscriptionId ?? DefaultContext.Subscription.Id,
+                        PolicyAssignmentName,
+                        queryOptions);
+                    break;
+                case ParameterSetNames.ResourceGroupLevelPolicyAssignmentScope:
+                    policyStatesQueryResults = PolicyInsightsClient.PolicyStates.ListQueryResultsForResourceGroupLevelPolicyAssignment(
+                        policyStatesResource,
+                        SubscriptionId ?? DefaultContext.Subscription.Id,
+                        ResourceGroupName,
+                        PolicyAssignmentName,
+                        queryOptions);
+                    break;
+                default:
+                    throw new PSInvalidOperationException();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             WriteObject(policyStatesQueryResults.Value.Select(policyState => new PolicyState(policyState)), true);

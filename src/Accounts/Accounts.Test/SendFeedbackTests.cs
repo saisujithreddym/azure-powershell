@@ -58,6 +58,7 @@ namespace Microsoft.Azure.Commands.Profile.Test
                 cmdlet.InvokeBeginProcessing();
             });
         }
+<<<<<<< HEAD
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
@@ -88,5 +89,7 @@ namespace Microsoft.Azure.Commands.Profile.Test
             Assert.Equal(payload.NegativeComments, serializedPayload["negativeComments"]);
             Assert.Equal(payload.Email, serializedPayload["email"]);
         }
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

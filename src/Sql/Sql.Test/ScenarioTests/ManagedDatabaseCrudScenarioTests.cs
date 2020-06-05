@@ -35,7 +35,13 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
         public ManagedDatabaseCrudScenarioTests(ITestOutputHelper output) : base(output)
         {
             base.resourceTypesToIgnoreApiVersion = new string[] {
+<<<<<<< HEAD
                 "Microsoft.Sql/managedInstances"
+=======
+                "Microsoft.Sql/managedInstances",
+                "Microsoft.Sql/managedInstances/databases",
+                "Microsoft.Sql/managedInstances/managedDatabases"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
         }
 
@@ -46,21 +52,33 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
             RunPowerShellTest("Test-CreateManagedDatabase");
         }
 
+<<<<<<< HEAD
         [Fact]
+=======
+        [Fact(Skip = "Skip due to bug in ignore api version plus long setup time for managed instance")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestGetManagedDatabase()
         {
             RunPowerShellTest("Test-GetManagedDatabase");
         }
 
+<<<<<<< HEAD
         [Fact]
+=======
+        [Fact(Skip = "Skip due to long setup time for managed instance")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestRemoveManagedDatabase()
         {
             RunPowerShellTest("Test-RemoveManagedDatabase");
         }
 
+<<<<<<< HEAD
         [Fact]
+=======
+        [Fact(Skip = "Skip due to long setup time for managed instance")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestRestoreManagedDatabase()
         {

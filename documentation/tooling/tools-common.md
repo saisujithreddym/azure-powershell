@@ -208,6 +208,15 @@ The versioning tool that runs as a part of each release uses the `.json` files t
 | Minor | Additions were made to the module (_e.g._, new cmdlets, new parameters) | `1.2.3` --> `1.3.0` |
 | Patch | Bug fixes in the backend of a module or documentation updates | `1.2.3` --> `1.2.4` |
 
+<<<<<<< HEAD
+=======
+Version bumping bases on installed version and changes of APIs. But it cannot handle below scenarios:
+* Module will be GAed from `0.n.n` --> `1.0.0`. The tool cannot detect this change because preview release module doesn't has `.json` file, or there is no breaking changes in current release.
+* Module has a preview release but new bumped version has the same semantic version just without `preview` label. This new version cannot be published to PSGallery. The tool needs a patch version increase.  
+
+Above scenarios can be supported by configurations `MinimalVersion.csv`. Each line contains module name and expected minimal version. If bumped version is lower than expected minital version, the tool will use minimal version for new release.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### `Issues`
 
 The `Issues` folder contains classes that represent the records that are created by the different analyzers found in static analysis. Each analyzer is responsible for implement a specific record for their analyzer that defines the following methods:
@@ -237,4 +246,8 @@ The [`ReportLogger`](https://github.com/Azure/azure-powershell/blob/01a81fbb7ea6
 
 An implementation of the `ReportLogger` abstraction can be found in this class as well, [`ReportLogger<T>`](https://github.com/Azure/azure-powershell/blob/01a81fbb7ea6c086fff2bc137053168c0fc7728a/tools/Tools.Common/Loggers/ReportLogger.cs#L68), which knows how to use the exceptions files for the different analyzers in static analysis and log records against them.
 
+<<<<<<< HEAD
 For example, if a new breaking change exception is found in its analyzer, the `ReportLogger` knows to how to compare the new breaking change record created and compare it to the existing breaking change exceptions that are found in the `Exceptions` folder of `Tools.Common` to see if the new record can be ignored.
+=======
+For example, if a new breaking change exception is found in its analyzer, the `ReportLogger` knows to how to compare the new breaking change record created and compare it to the existing breaking change exceptions that are found in the `Exceptions` folder of `Tools.Common` to see if the new record can be ignored.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

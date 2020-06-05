@@ -44,11 +44,19 @@ You can use the **IsDirectory** property to distinguish between folders and file
 
 ### Example 1: List directories in a share
 ```
+<<<<<<< HEAD
 PS C:\>Get-AzStorageFile -ShareName "ContosoShare06" | where {$_.GetType().Name -eq "CloudFileDirectory"}
 ```
 
 This command lists only the directories in the share ContosoShare06.
 It first retrieves both files and directories, passes them to the **where** operator by using the pipeline operator, then discards any objects whose type is not "CloudFileDirectory".
+=======
+PS C:\>Get-AzStorageFile -ShareName "ContosoShare06" | where {$_.GetType().Name -eq "AzureStorageFileDirectory"}
+```
+
+This command lists only the directories in the share ContosoShare06.
+It first retrieves both files and directories, passes them to the **where** operator by using the pipeline operator, then discards any objects whose type is not "AzureStorageFileDirectory".
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ### Example 2: List a File Directory
 ```
@@ -136,12 +144,20 @@ You can also use the **Get-AzStorageFile** cmdlet to obtain a directory.
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFileDirectory
 Parameter Sets: Directory
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFileDirectory
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -188,12 +204,20 @@ If you specify this parameter, do not specify the *Context* parameter.
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFileShare
 Parameter Sets: Share
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFileShare
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -214,7 +238,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 
@@ -226,7 +254,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+<<<<<<< HEAD
 ### Microsoft.Azure.Storage.File.CloudFile
+=======
+### Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageFile
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## NOTES
 

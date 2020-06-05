@@ -105,5 +105,18 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Components
             }
             return tagValueParameter;
         }
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// Utility method to convert hashtable to dictionary
+        /// </summary>
+        /// <param name="tags">Tag Hashtable</param>
+        /// <returns></returns>
+        internal static IDictionary<string, string> ConvertToTagsDictionary(Hashtable tags)
+        {
+            return tags?.Cast<DictionaryEntry>().ToDictionary(d => d.Key?.ToString(), d => d.Value?.ToString());
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

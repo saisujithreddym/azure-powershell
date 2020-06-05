@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-AzCosmosDBSqlConflictResolutionPolicy
 
 ## SYNOPSIS
+<<<<<<< HEAD
 Creates a new CosmosDB Sql ConflictResolutionPolicy object.
+=======
+Creates a new object of type PSSqlConflictResolutionPolicy. It can be passed as a parameter value for Set-AzCosmosDBSqlContainer.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## SYNTAX
 
@@ -18,12 +22,17 @@ New-AzCosmosDBSqlConflictResolutionPolicy -Type <String> [-Path <String>]
 ```
 
 ## DESCRIPTION
+<<<<<<< HEAD
 The **New-AzCosmosDBSqlConflictResolutionPolicy** cmdlet creates a new object of type PSSqlConflictResolutionPolicy.
+=======
+Object corresponding to Sql API's ConflictResolutionPolicy.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
+<<<<<<< HEAD
 PS C:\> New-AzCosmosDBSqlConflictResolutionPolicy -Type {type} -Path {path} -ConflictResolutionProcedure {conflictResolutionProcedure}
 
 Type   Path  ConflictResolutionProcedure
@@ -31,6 +40,17 @@ Type   Path  ConflictResolutionProcedure
 {type} {path} {conflictResolutionProcedure}
 ```
 
+=======
+PS C:\> New-AzCosmosDBSqlConflictResolutionPolicy -Type LastWriterWins -Path "/myPath"
+
+Mode           ConflictResolutionPath ConflictResolutionProcedure
+----           ---------------------- ---------------------------
+LastWriterWins /myPath
+```
+
+{{ Add example description here }}
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -ConflictResolutionProcedure

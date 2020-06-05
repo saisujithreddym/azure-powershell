@@ -36,7 +36,11 @@ namespace Microsoft.Azure.Commands.Batch.Models
         
         private PSPoolEndpointConfiguration endpointConfiguration;
         
+<<<<<<< HEAD
         private IList<System.String> publicIPs;
+=======
+        private PSPublicIPAddressConfiguration publicIPAddressConfiguration;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         
         public PSNetworkConfiguration()
         {
@@ -89,6 +93,7 @@ namespace Microsoft.Azure.Commands.Batch.Models
             }
         }
         
+<<<<<<< HEAD
         public IList<System.String> PublicIPs
         {
             get
@@ -109,11 +114,24 @@ namespace Microsoft.Azure.Commands.Batch.Models
                     this.publicIPs = list;
                 }
                 return this.publicIPs;
+=======
+        public PSPublicIPAddressConfiguration PublicIPAddressConfiguration
+        {
+            get
+            {
+                if (((this.publicIPAddressConfiguration == null) 
+                            && (this.omObject.PublicIPAddressConfiguration != null)))
+                {
+                    this.publicIPAddressConfiguration = new PSPublicIPAddressConfiguration(this.omObject.PublicIPAddressConfiguration);
+                }
+                return this.publicIPAddressConfiguration;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             set
             {
                 if ((value == null))
                 {
+<<<<<<< HEAD
                     this.omObject.PublicIPs = null;
                 }
                 else
@@ -121,6 +139,15 @@ namespace Microsoft.Azure.Commands.Batch.Models
                     this.omObject.PublicIPs = new List<System.String>();
                 }
                 this.publicIPs = value;
+=======
+                    this.omObject.PublicIPAddressConfiguration = null;
+                }
+                else
+                {
+                    this.omObject.PublicIPAddressConfiguration = value.omObject;
+                }
+                this.publicIPAddressConfiguration = value;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
         }
         

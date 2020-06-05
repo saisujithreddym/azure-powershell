@@ -26,10 +26,39 @@ Remove-AzResourceGroupDeployment -Id <String> [-ApiVersion <String>] [-Pre]
 ```
 
 ## DESCRIPTION
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 The **Remove-AzResourceGroupDeployment** cmdlet removes an Azure resource group deployment and any associated operations.
 
 ## EXAMPLES
 
+<<<<<<< HEAD
+=======
+### Example 1: Removes a resource group deployment with ResourceId
+
+```powershell
+PS C:\>Remove-AzResourceGroupDeployment -ResourceId /subscriptions/{subId}/resourceGroups/testGroup/providers/Microsoft.Resources/deployments/testDeployment1
+
+True
+```
+
+This command removes a resource group deployment with the fully qualified resource Id of the deployment.
+Successful removal returns true.
+
+### Example 2: Removes a resource group deployment with ResourceGroupName and ResourceName
+
+```powershell
+PS C:\>Remove-AzResourceGroupDeployment -ResourceGroupName testGroup -Name testDeployment1
+
+True
+```
+
+This command removes a resource group deployment with the provided ResourceGroupName and ResourceName.
+Successful removal returns true.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -ApiVersion
@@ -155,7 +184,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

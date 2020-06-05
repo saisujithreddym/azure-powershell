@@ -47,8 +47,11 @@ function Test-BatchAccountEndToEnd
         Assert-AreEqual $location $createdAccount.Location
         Assert-AreEqual 1 $createdAccount.Tags.Count
         Assert-AreEqual $tagValue $createdAccount.Tags[$tagName]
+<<<<<<< HEAD
         Assert-True { $createdAccount.DedicatedCoreQuota -gt 0 }
         Assert-True { $createdAccount.LowPriorityCoreQuota -gt 0 }
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         Assert-True { $createdAccount.PoolQuota -gt 0 }
         Assert-True { $createdAccount.ActiveJobAndJobScheduleQuota -gt 0 }
 
@@ -113,4 +116,41 @@ function Test-GetBatchSupportedImage
         Assert-True { $supportedImage.OSType -in "linux","windows" }
         Assert-AreNotEqual $null $supportedImage.VerificationType
     }
+<<<<<<< HEAD
+=======
+}
+
+<#
+.SYNOPSIS
+Tests creating an account without public network access (note that as of the time of writing this test, it must be run in canary)
+#>
+function Test-CreateNewBatchAccountWithNoPublicIp
+{
+    # Setup
+    $accountName = Get-BatchAccountName
+    $resourceGroup = Get-ResourceGroupName
+
+    try
+    {
+        $location = Get-BatchAccountProviderLocation
+        # Create a Batch account
+        New-AzResourceGroup -Name $resourceGroup -Location $location
+        $createdAccount = New-AzBatchAccount -Name $accountName -ResourceGroupName $resourceGroup -Location $location -PublicNetworkAccess Disabled
+
+        $subnetConfig = New-AzVirtualNetworkSubnetConfig -Name "mysubnet" -AddressPrefix "11.0.1.0/24" -PrivateEndpointNetworkPolicies "Disabled"
+        New-AzVirtualNetwork -ResourceGroupName $resourceGroup -Name "myvnet" -Location $location -AddressPrefix "11.0.0.0/16" -Subnet $subnetConfig
+        $vnet = Get-AzVirtualNetwork -ResourceGroupName $resourceGroup -Name "myvnet"
+
+        $privateLinkResource = Get-AzPrivateLinkResource -PrivateLinkResourceId $createdAccount.Id
+
+        $plsConnection = New-AzPrivateLinkServiceConnection -Name "myplsconnection" -PrivateLinkServiceId $createdAccount.Id -GroupId $privateLinkResource.GroupId
+        New-AzPrivateEndpoint -ResourceGroupName $resourceGroup -Name "mypec" -Location $location -Subnet $vnet.subnets[0] -PrivateLinkServiceConnection $plsConnection -ByManualRequest
+
+        $connection = Get-AzPrivateEndpointConnection -PrivateLinkResourceId $createdAccount.Id
+    }
+    finally
+    {
+        Remove-AzResourceGroup $resourceGroup
+    }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }

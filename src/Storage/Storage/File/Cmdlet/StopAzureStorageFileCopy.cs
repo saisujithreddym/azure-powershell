@@ -31,8 +31,15 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
             Position = 0,
             HelpMessage = "Target file instance", Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = Constants.FileParameterSetName)]
         [ValidateNotNull]
+=======
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = Constants.FileParameterSetName)]
+        [ValidateNotNull]
+        [Alias("CloudFile")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFile File { get; set; }
 
         [Parameter(HelpMessage = "Copy Id", Mandatory = false)]

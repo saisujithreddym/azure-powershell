@@ -72,7 +72,11 @@ namespace Microsoft.Azure.Commands.DataLakeStore.Test.ScenarioTests
         {
             var workingPath = Path.GetDirectoryName(new Uri(Assembly.GetExecutingAssembly().CodeBase).AbsolutePath);
             var testLocation = Path.Combine(workingPath, "ScenarioTests", (this.GetType().Name + ".ps1"));
+<<<<<<< HEAD
             NewInstance.RunPsTest(_logger, string.Format("Test-DataLakeStoreFileSystem -fileToCopy '{0}' -location '{1}'", testLocation, AdlsTestsBase.ResourceGroupLocation));
+=======
+            NewInstance.RunPsTest(_logger, string.Format("Test-DataLakeStoreFileSystem -fileToCopy '{0}' -location '{1}'", testLocation, AdlsTestsBase.TestFileSystemResourceGroupLocation));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         [Fact]

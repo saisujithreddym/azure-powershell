@@ -15,8 +15,14 @@ Creates a key vault.
 
 ```
 New-AzKeyVault [-Name] <String> [-ResourceGroupName] <String> [-Location] <String> [-EnabledForDeployment]
+<<<<<<< HEAD
  [-EnabledForTemplateDeployment] [-EnabledForDiskEncryption] [-EnableSoftDelete] [-EnablePurgeProtection]
  [-Sku <SkuName>] [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+=======
+ [-EnabledForTemplateDeployment] [-EnabledForDiskEncryption] [-DisableSoftDelete] [-EnablePurgeProtection]
+ [-SoftDeleteRetentionInDays <Int32>] [-Sku <SkuName>] [-Tag <Hashtable>]
+ [-NetworkRuleSet <PSKeyVaultNetworkRuleSet>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [<CommonParameters>]
 ```
 
@@ -106,6 +112,20 @@ Tags                             :
 This command creates a key vault, just like the previous example. However, it specifies a value of
 Premium for the *SKU* parameter to create a Premium key vault.
 
+<<<<<<< HEAD
+=======
+### Example 3
+```powershell
+PS C:\> $frontendSubnet = New-AzVirtualNetworkSubnetConfig -Name frontendSubnet -AddressPrefix "110.0.1.0/24" -ServiceEndpoint Microsoft.KeyVault
+PS C:\> $virtualNetwork = New-AzVirtualNetwork -Name myVNet -ResourceGroupName myRG -Location westus -AddressPrefix "110.0.0.0/16" -Subnet $frontendSubnet
+PS C:\> $myNetworkResId = (Get-AzVirtualNetwork -Name myVNet -ResourceGroupName myRG).Subnets[0].Id
+PS C:\> $ruleSet = New-AzKeyVaultNetworkRuleSetObject -DefaultAction Allow -Bypass AzureServices -IpAddressRange "110.0.1.0/24" -VirtualNetworkResourceId $myNetworkResId
+PS C:\> New-AzKeyVault -ResourceGroupName "myRg" -VaultName "myVault" -NetworkRuleSet $ruleSet
+```
+
+Creating a key vault and specifies network rules to allow access to the specified IP address from the virtual network identified by $myNetworkResId. See `New-AzKeyVaultNetworkRuleSetObject` for more information.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -DefaultProfile
@@ -123,9 +143,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -EnabledForDeployment
 Enables the Microsoft.Compute resource provider to retrieve secrets from this key vault when this
 key vault is referenced in resource creation, for example when creating a virtual machine.
+=======
+### -DisableSoftDelete
+If specified, 'soft delete' functionality is disabled for this key vault.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -135,12 +160,22 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### -EnabledForDiskEncryption
 Enables the Azure disk encryption service to get secrets and unwrap keys from this key vault.
+=======
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnabledForDeployment
+Enables the Microsoft.Compute resource provider to retrieve secrets from this key vault when this
+key vault is referenced in resource creation, for example when creating a virtual machine.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -154,8 +189,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -EnabledForTemplateDeployment
 Enables Azure Resource Manager to get secrets from this key vault when this key vault is referenced in a template deployment.
+=======
+### -EnabledForDiskEncryption
+Enables the Azure disk encryption service to get secrets and unwrap keys from this key vault.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -169,8 +209,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -EnablePurgeProtection
 If specified, protection against immediate deletion is enabled for this vault; requires soft delete to be enabled as well.
+=======
+### -EnabledForTemplateDeployment
+Enables Azure Resource Manager to get secrets from this key vault when this key vault is referenced in a template deployment.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,6 +225,7 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -187,6 +233,14 @@ Accept wildcard characters: False
 ### -EnableSoftDelete
 Specifies that the soft-delete functionality is enabled for this key vault. When soft-delete is enabled, for a grace period, you can recover this key vault and its contents after it is deleted.
 For more information about this functionality, see [Azure Key Vault soft-delete overview](https://docs.microsoft.com/azure/key-vault/key-vault-ovw-soft-delete). For how-to instructions, see [How to use Key Vault soft-delete with PowerShell](https://docs.microsoft.com/azure/key-vault/key-vault-soft-delete-powershell).
+=======
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -EnablePurgeProtection
+If specified, protection against immediate deletion is enabled for this vault; requires soft delete to be enabled as well.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -230,6 +284,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -NetworkRuleSet
+Specifies the network rule set of the vault. It governs the accessibility of the key vault from specific network locations. Created by `New-AzKeyVaultNetworkRuleSetObject`.
+
+```yaml
+Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultNetworkRuleSet
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ResourceGroupName
 Specifies the name of an existing resource group in which to create the key vault.
 
@@ -261,6 +333,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -SoftDeleteRetentionInDays
+Specifies how long deleted resources are retained, and how long until a vault or an object in the deleted state can be purged. The default is 90 days.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Tag
 Key-value pairs in the form of a hash table. For example:
 @{key0="value0";key1=$null;key2="value2"}

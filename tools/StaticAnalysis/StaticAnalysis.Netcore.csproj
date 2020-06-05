@@ -52,4 +52,13 @@
     <None Remove="StaticAnalysis.Test\**" />
     <Content Include="log4net.config" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
+<<<<<<< HEAD
+=======
+
+  <ItemGroup>
+    <Reference Include="Markdown.MAML">
+      <HintPath>lib\Markdown.MAML.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 </Project>

@@ -28,7 +28,11 @@ Statistics are aggregated across all pools that have ever existed in the account
 ```
 PS C:\>$Context = Get-AzBatchAccountKey -AccountName "ContosoBatchAccount"
 PS C:\> $PoolStatistics = Get-AzBatchPoolStatistic -BatchContext $Context
+<<<<<<< HEAD
 PS C:\> $PoolStatistics.ResourceStatistics 
+=======
+PS C:\> $PoolStatistics.ResourceStatistics
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 AverageCpuPercentage : 0.351232518750755
 AverageDiskGiB       : 55.2569014701165
 AverageMemoryGiB     : 2.87273772318252
@@ -99,8 +103,14 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Get-AzBatchAccountKey](./Get-AzBatchAccountKey.md)
 
+<<<<<<< HEAD
 [Get-AzBatchPoolUsageMetrics](./Get-AzBatchPoolUsageMetrics.md)
 
 [Get-AzBatchJobStatistic](./Get-AzBatchJobStatistic.md)
 
 
+=======
+[Get-AzBatchPoolUsageMetrics](./Get-AzBatchPoolUsageMetric.md)
+
+[Get-AzBatchJobStatistic](./Get-AzBatchJobStatistic.md)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

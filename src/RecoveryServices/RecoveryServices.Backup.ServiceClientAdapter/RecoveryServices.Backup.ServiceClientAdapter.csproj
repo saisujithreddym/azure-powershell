@@ -12,8 +12,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.RecoveryServices" Version="4.2.1-preview" />
     <PackageReference Include="Microsoft.Azure.Management.RecoveryServices.Backup" Version="4.0.0-preview" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.RecoveryServices" Version="4.3.0-preview" />
+    <PackageReference Include="Microsoft.Azure.Management.RecoveryServices.Backup" Version="4.0.1-preview" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.1" />
   </ItemGroup>
 

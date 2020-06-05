@@ -12,6 +12,7 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 using AutoMapper;
 using Microsoft.Azure.Commands.Network.Models;
 using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
@@ -24,6 +25,14 @@ using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
 using Microsoft.WindowsAzure.Commands.Utilities.Common;
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 using System.Linq;
+=======
+using Microsoft.Azure.Commands.Network.Models;
+using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
+using System;
+using System.Linq;
+using System.Management.Automation;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Network
 {
@@ -54,11 +63,19 @@ namespace Microsoft.Azure.Commands.Network
                 var resourceIdentifier = new ResourceIdentifier(this.ResourceId);
                 this.ResourceGroupName = resourceIdentifier.ResourceGroupName;
                 this.Name = resourceIdentifier.ResourceName;
+<<<<<<< HEAD
+=======
+                this.Subscription = resourceIdentifier.Subscription;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 this.PrivateLinkResourceType = resourceIdentifier.ResourceType.Substring(0, resourceIdentifier.ResourceType.LastIndexOf('/'));
                 this.ServiceName = resourceIdentifier.ParentResource.Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries).Last();
             }
 
+<<<<<<< HEAD
             IPrivateLinkProvider provider = BuildProvider(this.PrivateLinkResourceType);
+=======
+            IPrivateLinkProvider provider = BuildProvider(this.Subscription, this.PrivateLinkResourceType);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             var pec = provider.UpdatePrivateEndpointConnectionStatus(this.ResourceGroupName, this.ServiceName, this.Name, "Rejected", this.Description);
             WriteObject(pec);

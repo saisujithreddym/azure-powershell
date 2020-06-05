@@ -15,8 +15,14 @@ Creates a workspace.
 
 ```
 New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
+<<<<<<< HEAD
  [[-Sku] <String>] [[-CustomerId] <Guid>] [[-Tag] <Hashtable>] [[-RetentionInDays] <Int32>] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+ [[-Sku] <String>] [[-Tag] <Hashtable>] [[-RetentionInDays] <Int32>] [-Force]
+ [-DefaultProfile <IAzureContextContainer>] [[-PublicNetworkAccessForIngestion] <String>]
+ [[-PublicNetworkAccessForQuery] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -44,6 +50,7 @@ The command creates a standard SKU workspace named MyWorkspace that is linked to
 
 ## PARAMETERS
 
+<<<<<<< HEAD
 ### -CustomerId
 Specifies the account to which this workspace will be linked.
 The Get-AzOperationalInsightsLinkTargets cmdlet can also be used to list the potential accounts.
@@ -60,6 +67,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with azure
 
@@ -120,6 +129,39 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -PublicNetworkAccessForIngestion
+The network access type for accessing workspace ingestion. Value should be 'Enabled' or 'Disabled'
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PublicNetworkAccessForQuery
+The network access type for accessing workspace query. Value should be 'Enabled' or 'Disabled'
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 8
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ResourceGroupName
 Specifies the name of an Azure resource group.
 The workspace is created in this resource group.
@@ -165,7 +207,10 @@ Valid values are:
 Type: System.String
 Parameter Sets: (All)
 Aliases:
+<<<<<<< HEAD
 Accepted values: free, pergb2018, pernode, premium, standalone, standard
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: False
 Position: 3
@@ -221,7 +266,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

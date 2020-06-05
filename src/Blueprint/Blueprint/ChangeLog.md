@@ -18,6 +18,17 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Updated Blueprint .NET SDK version
+
+## Version 0.2.12
+* Added support for management group level Blueprint assignment
+
+## Version 0.2.11
+* Showed DependsOn property value in the table view
+* Added support to accept PolicyDefinitionParameter empty 
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 0.2.10
 * Added support to include subfolders when deploying blueprints with artifacts

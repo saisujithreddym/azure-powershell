@@ -13,6 +13,7 @@
 # ----------------------------------------------------------------------------------
 <#
 .SYNOPSIS
+<<<<<<< HEAD
 Helper Function NewExchangeConnectionV4V6 
 #>
 function NewExchangeConnectionV4V6($facilityId, $v4, $v6)
@@ -100,11 +101,34 @@ function Test-UpdateExchangeIPv4OnInputObject
 	$update =  $peering | Update-AzPeering 
 	Assert-AreEqual $newipv4 $update.Connections[0].BgpSession.PeerSessionIPv4Address 
 	Assert-AreEqual $newipv42 $update.Connections[1].BgpSession.PeerSessionIPv4Address 
+=======
+Helper New Asn Exchange
+#>
+function Test-UpdateExchangeIPv4OnInputObject {
+    # Hard coded name because the resource has to exist and cant be created ad-hoc.
+    $randNum = getRandomNumber
+    Write-Debug "Random Number $randNum";
+    $peerAsn = makePeerAsn $randNum
+    $resourceGroups = TestSetup-CreateResourceGroup
+    $resourceGroup = $resourceGroups.ResourceGroupName
+    $peering = CreateExchangePeering $resourceGroup $peerAsn.Name
+    Assert-NotNull $peering
+    $ipv4 = $peering.Connections[0].BgpSession.PeerSessionIPv4Address
+    $newipv4 = getPeeringVariable "newIpv4" (changeIp "$ipv4/32" $false 15 $false)
+    $ipv42 = $peering.Connections[1].BgpSession.PeerSessionIPv4Address
+    $newipv42 = getPeeringVariable "newIpv42" (changeIp "$ipv4/32" $false 17 $false)
+    $oldpeering = $peering
+    $peering.Connections[0] = $peering.Connections[0] | Set-AzPeeringExchangeConnectionObject -PeerSessionIPv4Address $newipv4
+    $peering.Connections[1] = $peering.Connections[1] | Set-AzPeeringExchangeConnectionObject -PeerSessionIPv4Address $newipv42
+    Write-Debug "ResourceId: $peering.Id" 
+    Assert-ThrowsContains { $update = Update-AzPeering -ResourceId $peering.Id $peering.Connections } "BadArgument"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 <#
 .SYNOPSIS
 Helper New Asn Exchange changeIp $ipv4 $false $offset $withPrefix
 #>
+<<<<<<< HEAD
 function Test-UpdateExchangeIPv6OnResourceId
 {
 # Hard coded name because the resource has to exist and cant be created ad-hoc.
@@ -124,11 +148,28 @@ function Test-UpdateExchangeIPv6OnResourceId
 	Assert-NotNull $update
 	Assert-AreEqual $newipv6 $update.Connections[0].BgpSession.PeerSessionIPv6Address 
 	Assert-AreEqual $newipv62 $update.Connections[1].BgpSession.PeerSessionIPv6Address 
+=======
+function Test-UpdateExchangeIPv6OnResourceId {
+    # Hard coded name because the resource has to exist and cant be created ad-hoc.
+    $randNum = getRandomNumber
+    Write-Debug "Random Number $randNum";
+    $peerAsn = makePeerAsn $randNum
+    $resourceGroups = TestSetup-CreateResourceGroup
+    $resourceGroup = $resourceGroups.ResourceGroupName
+    $peering = CreateExchangePeering $resourceGroup $peerAsn.Name
+    Assert-NotNull $peering
+    $newipv6 = getPeeringVariable "newIpv6" (newIpV6Address $true $false 0 (getRandomNumber))
+    $oldpeering = $peering
+    $peering.Connections[0] = $peering.Connections[0] | Set-AzPeeringExchangeConnectionObject -PeerSessionIPv6Address $newipv6 
+    Write-Debug $peering.Name
+    Assert-ThrowsContains { $update = Update-AzPeering -ResourceId $peering.Id $peering.Connections } "BadArgument"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 <#
 .SYNOPSIS
 Helper Not supported
 #>
+<<<<<<< HEAD
 function Test-UpdateExchangeMd5OnNameAndResourceGroup
 {
 	$hash = getHash
@@ -144,4 +185,23 @@ function Test-UpdateExchangeMd5OnNameAndResourceGroup
 	$peering.Connections[0] = $peering.Connections[0] |  Set-AzPeeringExchangeConnectionObject -MD5AuthenticationKey $hash
 	$peering.Connections[1] = $peering.Connections[1] |  Set-AzPeeringExchangeConnectionObject -MD5AuthenticationKey $hash
 	Assert-ThrowsContains {$peering = $peering | Update-AzPeering} "not yet supported"
+=======
+function Test-UpdateExchangeMd5OnNameAndResourceGroup {
+    $hash = getHash
+    # Hard coded name because the resource has to exist and cant be created ad-hoc.
+    $randNum = getRandomNumber
+    Write-Debug "Random Number $randNum";
+    $peerAsn = makePeerAsn $randNum
+    $resourceGroups = TestSetup-CreateResourceGroup
+    $resourceGroup = $resourceGroups.ResourceGroupName
+    $peering = CreateExchangePeering $resourceGroup $peerAsn.Name
+    Assert-NotNull $peering
+    $resourceName = $peering.Name
+    $oldpeering = $peering
+    $peering = Get-AzPeering -ResourceId $peering.Id
+    $peering.Connections[0] = $peering.Connections[0] | Set-AzPeeringExchangeConnectionObject -MD5AuthenticationKey $hash
+    $peering.Connections[1] = $peering.Connections[1] | Set-AzPeeringExchangeConnectionObject -MD5AuthenticationKey $hash
+    $update = $peering | Update-AzPeering 
+    Assert-NotNull $update
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }

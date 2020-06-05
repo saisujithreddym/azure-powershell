@@ -24,6 +24,12 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
     {
         public FailoverTests(ITestOutputHelper output) : base(output)
         {
+<<<<<<< HEAD
+=======
+            base.resourceTypesToIgnoreApiVersion = new string[] {
+                "Microsoft.Sql/servers"
+            };
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         [Fact]
@@ -56,6 +62,23 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
+=======
+        public void TestFailoverDatabaseReadableSecondary()
+        {
+            RunPowerShellTest("Test-FailoverDatabaseReadableSecondary");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestFailoverStandardDatabaseReadableSecondary()
+        {
+            RunPowerShellTest("Test-FailoverStandardDatabaseReadableSecondary");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TestFailoverElasticPool()
         {
             RunPowerShellTest("Test-FailoverElasticPool");

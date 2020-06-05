@@ -36,6 +36,15 @@ namespace Microsoft.Azure.Commands.Sql.Database.Cmdlet
         public string DatabaseName { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Defines whether to failover the readable secondary
+        /// </summary>
+        [Parameter(Mandatory = false, HelpMessage = "Failover the readable secondary replica instead of the default primary replica")]
+        public SwitchParameter ReadableSecondary { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Gets or sets whether or not to run this cmdlet in the background as a job
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "Run cmdlet in the background")]
@@ -54,6 +63,19 @@ namespace Microsoft.Azure.Commands.Sql.Database.Cmdlet
         public SwitchParameter Force { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// String to indicate failover on primary replica of database
+        /// </summary>
+        public const string PrimaryReplica = "Primary";
+
+        /// <summary>
+        /// String to indicate failover on readable secondary replica of database
+        /// </summary>
+        public const string ReadableSecondaryReplica = "ReadableSecondary";
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Get the entities from the service
         /// </summary>
         /// <returns>The list of entities</returns>
@@ -81,7 +103,12 @@ namespace Microsoft.Azure.Commands.Sql.Database.Cmdlet
         /// <returns>The input entity</returns>
         protected override IEnumerable<AzureSqlDatabaseModel> PersistChanges(IEnumerable<AzureSqlDatabaseModel> entity)
         {
+<<<<<<< HEAD
             ModelAdapter.FailoverDatabase(this.ResourceGroupName, this.ServerName, this.DatabaseName);
+=======
+            string replicaType = this.ReadableSecondary.IsPresent ? ReadableSecondaryReplica : PrimaryReplica;
+            ModelAdapter.FailoverDatabase(this.ResourceGroupName, this.ServerName, this.DatabaseName, replicaType);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             return entity;
         }
 

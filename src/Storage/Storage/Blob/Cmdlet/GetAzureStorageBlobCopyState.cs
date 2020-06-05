@@ -25,7 +25,11 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Blob.Cmdlet
     using System.Threading;
     using System.Threading.Tasks;
 
+<<<<<<< HEAD
     [Cmdlet("Get", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageBlobCopyState", DefaultParameterSetName = NameParameterSet),OutputType(typeof(AzureStorageBlob))]
+=======
+    [Cmdlet("Get", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageBlobCopyState", DefaultParameterSetName = NameParameterSet),OutputType(typeof(CopyState))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class GetAzureStorageBlobCopyState : StorageCloudBlobCmdletBase
     {
         /// <summary>

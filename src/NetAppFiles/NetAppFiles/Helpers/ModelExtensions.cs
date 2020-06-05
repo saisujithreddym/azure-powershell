@@ -162,6 +162,41 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Helpers
             return PsExportPolicy;
         }
 
+<<<<<<< HEAD
+=======
+        public static PSNetAppFilesVolumeDataProtection ConvertDataProtectionToPs(VolumePropertiesDataProtection DataProtection)
+        {
+            var psDataProtection = new PSNetAppFilesVolumeDataProtection();
+            var replication = new PSNetAppFilesReplicationObject();
+
+            // replication.ReplicationId = DataProtection.Replication.ReplicationId;
+            replication.EndpointType = DataProtection.Replication.EndpointType;
+            replication.ReplicationSchedule = DataProtection.Replication.ReplicationSchedule;
+            replication.RemoteVolumeResourceId = DataProtection.Replication.RemoteVolumeResourceId;
+            // replication.RemoteVolumeRegion = DataProtection.Replication.RemoteVolumeRegion;
+            psDataProtection.Replication = replication;
+
+            return psDataProtection;
+        }
+
+
+        public static VolumePropertiesDataProtection ConvertDataProtectionFromPs(PSNetAppFilesVolumeDataProtection psDataProtection)
+        {
+            var dataProtection = new VolumePropertiesDataProtection();
+            var replication = new ReplicationObject();
+
+            // replication.ReplicationId = psDataProtection.Replication.ReplicationId;
+            replication.EndpointType = psDataProtection.Replication.EndpointType;
+            replication.ReplicationSchedule = psDataProtection.Replication.ReplicationSchedule;
+            replication.RemoteVolumeResourceId = psDataProtection.Replication.RemoteVolumeResourceId;
+            // replication.RemoteVolumeRegion = psDataProtection.Replication.RemoteVolumeRegion;
+
+            dataProtection.Replication = replication;
+
+            return dataProtection;
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public static PSNetAppFilesVolume ToPsNetAppFilesVolume(this Management.NetApp.Models.Volume volume)
         {
             return new PSNetAppFilesVolume
@@ -181,7 +216,15 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Helpers
                 MountTargets = volume.MountTargets,
                 SnapshotId = volume.SnapshotId,
                 BaremetalTenantId = volume.BaremetalTenantId,
+<<<<<<< HEAD
                 SubnetId = volume.SubnetId
+=======
+                SubnetId = volume.SubnetId,
+                CreationToken = volume.CreationToken,
+                VolumeType = volume.VolumeType,
+                DataProtection = (volume.DataProtection != null) ? ConvertDataProtectionToPs(volume.DataProtection) : null,
+                IsRestoring = volume.IsRestoring
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
         }
 
@@ -194,12 +237,30 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Helpers
                 Id = snapshot.Id,
                 Name = snapshot.Name,
                 Type = snapshot.Type,
+<<<<<<< HEAD
                 Tags = snapshot.Tags,
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 FileSystemId = snapshot.FileSystemId,
                 SnapshotId = snapshot.SnapshotId,
                 Created = snapshot.Created,
                 ProvisioningState = snapshot.ProvisioningState,
             };
         }
+<<<<<<< HEAD
+=======
+
+        public static PSNetAppFilesReplicationStatus ToPsNetAppFilesReplicationStatus(this Management.NetApp.Models.ReplicationStatus replicationStatus)
+        {
+            return new PSNetAppFilesReplicationStatus
+            {
+                Healthy = replicationStatus.Healthy,
+                RelationshipStatus = replicationStatus.RelationshipStatus,
+                MirrorState = replicationStatus.MirrorState,
+                TotalProgress = replicationStatus.TotalProgress,
+                ErrorMessage = replicationStatus.ErrorMessage
+            };
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

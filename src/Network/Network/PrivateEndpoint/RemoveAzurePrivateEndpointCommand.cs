@@ -52,6 +52,10 @@ namespace Microsoft.Azure.Commands.Network
             Mandatory = false)]
         public SwitchParameter PassThru { get; set; }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public override void Execute()
         {
             base.Execute();

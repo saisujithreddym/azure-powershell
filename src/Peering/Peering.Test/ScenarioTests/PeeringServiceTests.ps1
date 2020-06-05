@@ -17,10 +17,23 @@ GetPeeringServiceProviders
 #>
 function Test-GetPeeringServiceProviders {
     #static names are used because providers are not random.
+<<<<<<< HEAD
     $name = "TestPeer1"
     $provider = Get-AzPeeringServiceProvider
     Assert-NotNull $provider
     Assert-AreEqual $name $provider[0].ServiceProviderName
+=======
+    $provider = Get-AzPeeringServiceProvider
+    Assert-NotNull $provider
+}
+
+function Test-GetPeeringServiceCountry {
+    $locations = Get-AzPeeringServiceCountry
+    Assert-NotNull $locations
+    $country = $locations | Where-Object { $_.Name -match "United States" }
+    Assert-NotNull $state
+    return $country.Name
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -28,12 +41,22 @@ function Test-GetPeeringServiceProviders {
 GetPeeringServiceLocations
 #>
 function Test-GetPeeringServiceLocations {
+<<<<<<< HEAD
     $locations = Get-AzPeeringServiceLocation -Country "United States"
     Assert-NotNull $locations
     $state = $locations | Where-Object { $_.Name -match "Washington" }
     Assert-NotNull "Washington" $state
     $locations = Get-AzPeeringServiceLocation -Country "United States"
     Assert-NotNull $locations
+=======
+    $locations = Get-AzPeeringServiceCountry
+    Assert-NotNull $locations
+    $country = $locations | Where-Object { $_.Name -match "United States" }
+    $locations = Get-AzPeeringServiceLocation -Country $country.Name
+    Assert-NotNull $locations
+    $state = $locations | Where-Object { $_.Name -match "Washington" }
+    Assert-NotNull $state
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 
 <#
@@ -43,8 +66,13 @@ GetPeeringServiceProviders
 function Test-GetPeeringServiceByResourceGroup {
     #Hard Coded locations becuase of limitations in locations
     $name = getAssetName "myPeeringService";
+<<<<<<< HEAD
     $loc = "Florida"
     $provider = "AS56845-Global1191"
+=======
+    $loc = "Washington"
+    $provider = "Verizon Communications Inc."
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $resourceGroup = "Building40"
     $peeringService = New-AzPeeringService -ResourceGroupName $resourceGroup -Name $name -PeeringLocation $loc -PeeringServiceProvider $provider
     Assert-NotNull $peeringService
@@ -65,8 +93,13 @@ GetPeeringServiceLocations
 function Test-GetPeeringServiceByResourceId {
     #Hard Coded locations becuase of limitations in locations
     $name = getAssetName "myPeeringService";
+<<<<<<< HEAD
     $loc = "Florida"
     $provider = "AS56845-Global1191"
+=======
+    $loc = "Washington"
+    $provider = "Verizon Communications Inc."
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $resourceGroup = "Building40"
     $peeringService = New-AzPeeringService -ResourceGroupName $resourceGroup -Name $name -PeeringLocation $loc -PeeringServiceProvider $provider
     Assert-NotNull $peeringService
@@ -96,8 +129,13 @@ GetPeeringServiceLocations
 function Test-NewPeeringService {
     #Hard Coded locations becuase of limitations in locations
     $name = getAssetName "myPeeringService";
+<<<<<<< HEAD
     $loc = "Florida"
     $provider = "AS56845-Global1191"
+=======
+    $loc = "Washington"
+    $provider = "Verizon Communications Inc."
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $resourceGroup = "Building40"
     $peeringService = New-AzPeeringService -ResourceGroupName $resourceGroup -Name $name -PeeringLocation $loc -PeeringServiceProvider $provider
     Assert-NotNull $peeringService
@@ -114,19 +152,32 @@ function Test-NewPeeringServicePrefix {
     #Hard Coded locations becuase of limitations in locations
     $name = getAssetName "myPeeringService";
     $prefixName = getAssetName "myPrefix";
+<<<<<<< HEAD
 	$loc = "Florida"
     $provider = "AS56845-Global1191"
+=======
+	$loc = "Washington"
+    $provider = "Verizon Communications Inc."
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $resourceGroup = "Building40"
     $prefix = newIpV4Address $true $true 0 4
 	$peeringService = New-AzPeeringService -ResourceGroupName $resourceGroup -Name $name -PeeringLocation $loc -PeeringServiceProvider $provider
     $peeringService = Get-AzPeeringService -ResourceGroupName $resourceGroup -Name $name
+<<<<<<< HEAD
     $prefixService = $peeringService | New-AzPeeringServicePrefix -Name $prefixName -Prefix $prefix
+=======
+    $prefixService = $peeringService | New-AzPeeringServicePrefix -Name $prefixName -Prefix $prefix -ServiceKey $key
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     Assert-NotNull $prefixService
     <#
 	.SYNOPSIS
 	GetPeeringServicePrefix 
 	#>
+<<<<<<< HEAD
     $getPrefixService = Get-AzPeeringServicePrefix -ResourceGroupName $resourceGroup -PeeringServiceName $name -Name $prefixName
+=======
+    $getPrefixService = Get-AzPeeringServicePrefix -ResourceGroupName $resourceGroup -PeeringServiceName $name -Name $prefixName 
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     Assert-NotNull $getPrefixService
 
     <#

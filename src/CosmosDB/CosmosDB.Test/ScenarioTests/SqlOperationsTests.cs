@@ -40,5 +40,15 @@ namespace Microsoft.Azure.Commands.CosmosDB.Test.ScenarioTests.ScenarioTest
         {
             TestController.NewInstance.RunPowerShellTest(_logger, "Test-SqlOperationsCmdletsUsingInputObject");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestSqlThroughputCmdlets()
+        {
+            TestController.NewInstance.RunPowerShellTest(_logger, "Test-SqlThroughputCmdlets");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

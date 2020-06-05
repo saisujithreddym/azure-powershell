@@ -165,8 +165,49 @@ namespace Microsoft.Azure.Commands.Management.Storage
         public PSImmutabilityPolicy InputObject { get; set; }
 
         [Alias("ImmutabilityPeriodSinceCreationInDays")]
+<<<<<<< HEAD
         [Parameter(Mandatory = true, HelpMessage = "Immutability period since creation in days.")]
         public int ImmutabilityPeriod { get; set; }
+=======
+        [Parameter(Mandatory = false, ParameterSetName = AccountNameParameterSet, HelpMessage = "Immutability period since creation in days.")]
+        [Parameter(Mandatory = false, ParameterSetName = AccountObjectParameterSet, HelpMessage = "Immutability period since creation in days.")]
+        [Parameter(Mandatory = false, ParameterSetName = ContainerObjectParameterSet, HelpMessage = "Immutability period since creation in days.")]
+        [Parameter(Mandatory = false, ParameterSetName = ImmutabilityPolicyObjectParameterSet, HelpMessage = "Immutability period since creation in days.")]
+        [Parameter(Mandatory = true, ParameterSetName = ExtendAccountNameParameterSet, HelpMessage = "Immutability period since creation in days.")]
+        [Parameter(Mandatory = true, ParameterSetName = ExtendAccountObjectParameterSet, HelpMessage = "Immutability period since creation in days.")]
+        [Parameter(Mandatory = true, ParameterSetName = ExtendContainerObjectParameterSet, HelpMessage = "Immutability period since creation in days.")]
+        [Parameter(Mandatory = true, ParameterSetName = ExtendImmutabilityPolicyObjectParameterSet, HelpMessage = "Immutability period since creation in days.")]
+        public int ImmutabilityPeriod
+        {
+            get
+            {
+                return immutabilityPeriod is null ? 0 : immutabilityPeriod.Value;
+            }
+            set
+            {
+                immutabilityPeriod = value;
+            }
+        }
+
+        public int? immutabilityPeriod;
+
+        [Parameter(Mandatory = false, ParameterSetName = AccountNameParameterSet, HelpMessage = "This property can only be changed for unlocked time-based retention policies. With this property enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.")]
+        [Parameter(Mandatory = false, ParameterSetName = AccountObjectParameterSet, HelpMessage = "This property can only be changed for unlocked time-based retention policies. With this property enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.")]
+        [Parameter(Mandatory = false, ParameterSetName = ContainerObjectParameterSet, HelpMessage = "This property can only be changed for unlocked time-based retention policies. With this property enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.")]
+        [Parameter(Mandatory = false, ParameterSetName = ImmutabilityPolicyObjectParameterSet, HelpMessage = "This property can only be changed for unlocked time-based retention policies. With this property enabled, new blocks can be written to an append blob while maintaining immutability protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.")]
+        public bool AllowProtectedAppendWrite
+        {
+            get
+            {
+                return allowProtectedAppendWrite is null ? false : allowProtectedAppendWrite.Value;
+            }
+            set
+            {
+                allowProtectedAppendWrite = value;
+            }
+        }
+        private bool? allowProtectedAppendWrite;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         [Alias("IfMatch")]
         [Parameter(Mandatory = false, ParameterSetName = AccountNameParameterSet, HelpMessage = "Immutability policy etag.")]
@@ -220,8 +261,14 @@ namespace Microsoft.Azure.Commands.Management.Storage
                                 this.ResourceGroupName,
                                 this.StorageAccountName,
                                 this.ContainerName,
+<<<<<<< HEAD
                                 ImmutabilityPeriod,
                                 this.Etag);
+=======
+                                this.Etag,
+                                immutabilityPeriod,
+                                this.allowProtectedAppendWrite);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
                 else
                 {
@@ -230,7 +277,11 @@ namespace Microsoft.Azure.Commands.Management.Storage
                                 this.StorageAccountName,
                                 this.ContainerName,
                                 this.Etag,
+<<<<<<< HEAD
                                 ImmutabilityPeriod);
+=======
+                                immutabilityPeriod);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
                 WriteObject(new PSImmutabilityPolicy(policy));
             }

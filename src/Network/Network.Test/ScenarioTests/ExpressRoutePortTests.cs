@@ -25,7 +25,11 @@ namespace Commands.Network.Test.ScenarioTests
         {
         }
 
+<<<<<<< HEAD
         [Fact(Skip = "Resource under whitelisting")]
+=======
+        [Fact(Skip = "No bandwidth available")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         [Trait(Category.Owner, NrpTeamAlias.pgtm)]
         public void TestExpressRoutePortCRUDMinimalParameters()
@@ -33,7 +37,11 @@ namespace Commands.Network.Test.ScenarioTests
             TestRunner.RunTestScript(string.Format("Test-ExpressRoutePortCRUD"));
         }
 
+<<<<<<< HEAD
         [Fact(Skip = "Resource under whitelisting")]
+=======
+        [Fact(Skip = "No bandwidth available")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         [Trait(Category.Owner, NrpTeamAlias.pgtm)]
         public void TestExpressRoutePortIdentityCRUD()

@@ -34,6 +34,11 @@ if (%ISAZMODULE% -and ($PSEdition -eq 'Desktop'))
     Test-DotNet
 }
 
+<<<<<<< HEAD
+=======
+%AZURECOREPREREQUISITE%
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 if (Test-Path -Path "$PSScriptRoot\StartupScripts" -ErrorAction Ignore)
 {
     Get-ChildItem "$PSScriptRoot\StartupScripts" -ErrorAction Stop | ForEach-Object {
@@ -55,7 +60,17 @@ if($PSEdition -eq 'Desktop' -and (Test-Path $preloadPath -ErrorAction Ignore))
     try
     {
         Get-ChildItem -ErrorAction Stop -Path $preloadPath -Filter "*.dll" | ForEach-Object {
+<<<<<<< HEAD
             Add-Type -Path $_.FullName -ErrorAction Ignore | Out-Null
+=======
+            try
+            {
+                Add-Type -Path $_.FullName -ErrorAction Ignore | Out-Null
+            }
+            catch {
+                Write-Verbose $_
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
     catch {}
@@ -72,7 +87,17 @@ if($PSEdition -eq 'Core' -and (Test-Path $netCorePath -ErrorAction Ignore))
             $matches = ($loadedAssemblies | Where-Object {$_.Name -eq $assemblyName.Name})
             if (-not $matches)
             {
+<<<<<<< HEAD
                 Add-Type -Path $_.FullName -ErrorAction Ignore | Out-Null
+=======
+                try
+                {
+                    Add-Type -Path $_.FullName -ErrorAction Ignore | Out-Null
+                }
+                catch {
+                    Write-Verbose $_
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
         }
     }

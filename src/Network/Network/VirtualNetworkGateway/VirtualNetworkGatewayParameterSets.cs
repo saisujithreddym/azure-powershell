@@ -12,6 +12,11 @@ namespace Microsoft.Azure.Commands.Network.VirtualNetworkGateway
 
         public const string RadiusServerConfiguration = @"RadiusServerConfiguration";
 
+<<<<<<< HEAD
+=======
+        public const string MultipleRadiusServersConfiguration = @"MultipleRadiusServersConfiguration";
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public const string AadAuthenticationConfiguration = @"AadAuthenticationConfiguration";
 
         public const string UpdateResourceWithTags = @"UpdateResourceWithTags";

@@ -29,6 +29,7 @@
 
 The following cmdlets were affected this release:
 
+<<<<<<< HEAD
 **New-AzBatchTask**
  - The `-ResourceFile` parameter now takes a collection of `PSResourceFile` objects, which can be constructed using the new **New-AzBatchResourceFile** cmdlet.
  - The `-CommandLine` parameter is now required in the `JobId_Single` and `JobObject_Single` parameter sets.
@@ -81,3 +82,13 @@ The following cmdlets were affected this release:
 
 **Set-AzBatchPoolOSVersion**
  - Removed this cmdlet.
+=======
+**Get-AzBatchApplication**
+ - Removed `ApplicationPackages` property from `PSApplication` returned by the **Get-AzBatchApplication** cmdlet. This property was previously always `$null`.
+ - The specific packages inside of an application now can be retrieved using **Get-AzBatchApplicationPackage**. For example: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+
+**New-AzBatchPool**
+- When creating a pool using **New-AzBatchPool**, the `VirtualMachineImageId` property of `PSImageReference` can now only refer to a Shared Image Gallery image.
+- When creating a pool using **New-AzBatchPool**, the pool can be provisioned without a public IP using the new `PublicIPAddressConfiguration` property of `PSNetworkConfiguration`.
+  - The `PublicIPs` property of `PSNetworkConfiguration` has moved in to `PSPublicIPAddressConfiguration` as well. This property can only be specified if `IPAddressProvisioningType` is `UserManaged`.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

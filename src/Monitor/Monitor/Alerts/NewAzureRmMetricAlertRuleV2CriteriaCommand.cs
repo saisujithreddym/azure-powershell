@@ -33,9 +33,16 @@ namespace Microsoft.Azure.Commands.Insights.Alerts
     {
         const string StaticThresholdParameterSet = "StaticThresholdParameterSet";
         const string DynamicThresholdParameterSet = "DynamicThresholdParameterSet";
+<<<<<<< HEAD
 
         // Create a script for the Operator parameter completer based on the active Parameter Set 
         // Since Parameter Set isn't accesible - check if one of the dynamic threshold parameters are assigned
+=======
+        const string AvailabilityParameterSet = "WebtestParameterSet";
+
+        // Create a script for the Operator parameter completer based on the active Parameter Set 
+        // Since Parameter Set isn't accessible - check if one of the dynamic threshold parameters are assigned
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         const string IsDynamicThresholdParameterSetSelectedScript = "$fakeBoundParameters.DynamicThreshold -or $fakeBoundParameters.ThresholdSensitivity -ne $null -or $fakeBoundParameters.NumberOfViolations -ne $null -or $fakeBoundParameters.NumberOfExaminedAggregatedPoints -ne $null -or $fakeBoundParameters.IgnoreDataBefore -ne $null";
         const string DynamicOperatorValues = "'GreaterThan', 'LessThan', 'GreaterOrLessThan'";
         const string StaticOperatorValues = "'GreaterThan', 'GreaterThanOrEqual', 'LessThan', 'LessThanOrEqual'";
@@ -48,35 +55,70 @@ namespace Microsoft.Azure.Commands.Insights.Alerts
         public SwitchParameter DynamicThreshold { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets or sets the MetricName parameter
         /// </summary>
         [Parameter(Mandatory = true, HelpMessage = "The metric name for rule")]
+=======
+        /// Gets or sets the rule AvailabilityCriteria
+        /// </summary>
+        [Parameter(ParameterSetName = AvailabilityParameterSet, Mandatory = false, HelpMessage = "Switch parameter for using availability criteria Type")]
+        public SwitchParameter WebTest { get; set; }
+
+        /// <summary>
+        /// Gets or sets the MetricName parameter
+        /// </summary>
+        [Parameter(ParameterSetName = StaticThresholdParameterSet, Mandatory = true, HelpMessage = "The metric name for rule")]
+        [Parameter(ParameterSetName = DynamicThresholdParameterSet, Mandatory = true, HelpMessage = "The metric name for rule")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [ValidateNotNullOrEmpty]
         public string MetricName { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets or sets MetricNamespace  parameter of the cmdlet
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "The Namespace of the metric")]
+=======
+        /// Gets or sets MetricNamespace parameter of the cmdlet
+        /// </summary>
+        [Parameter(ParameterSetName = StaticThresholdParameterSet, Mandatory = false, HelpMessage = "The Namespace of the metric")]
+        [Parameter(ParameterSetName = DynamicThresholdParameterSet, Mandatory = false, HelpMessage = "The Namespace of the metric")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public String MetricNamespace { get; set; }
 
         /// <summary>
         /// Gets or sets Dimensions of the cmdlet
         /// </summary>
+<<<<<<< HEAD
         [Parameter(Mandatory = false, ValueFromPipeline = true, HelpMessage = "List of dimension conditions")]
+=======
+        [Parameter(ParameterSetName = StaticThresholdParameterSet, Mandatory = false, ValueFromPipeline = true, HelpMessage = "List of dimension conditions")]
+        [Parameter(ParameterSetName = DynamicThresholdParameterSet, Mandatory = false, ValueFromPipeline = true, HelpMessage = "List of dimension conditions")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public PSMetricDimension[] DimensionSelection { get; set; }
 
         /// <summary>
         /// Gets or sets the TimeAggregationType parameter
         /// </summary>
+<<<<<<< HEAD
         [Parameter(Mandatory = true,  HelpMessage = "The aggregation operation used to roll up multiple metric values across the window interval")]
+=======
+        [Parameter(ParameterSetName = StaticThresholdParameterSet, Mandatory = true, HelpMessage = "The aggregation operation used to roll up multiple metric values across the window interval")]
+        [Parameter(ParameterSetName = DynamicThresholdParameterSet, Mandatory = true,  HelpMessage = "The aggregation operation used to roll up multiple metric values across the window interval")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [PSArgumentCompleter("Average", "Minimum", "Maximum", "Total", "Count")]
         public String TimeAggregation { get; set; }
 
         /// <summary>
         /// Gets or sets the rule condition operator
         /// </summary>
+<<<<<<< HEAD
         [Parameter(Mandatory = true, HelpMessage = "The rule condition operator")]
+=======
+        [Parameter(ParameterSetName = StaticThresholdParameterSet, Mandatory = true, HelpMessage = "The rule condition operator")]
+        [Parameter(ParameterSetName = DynamicThresholdParameterSet, Mandatory = true, HelpMessage = "The rule condition operator")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [PSArgumentCompleterWithScript(OperatorCompleterScript)]
         public String Operator { get; set; }
 
@@ -114,6 +156,29 @@ namespace Microsoft.Azure.Commands.Insights.Alerts
         [Parameter(ParameterSetName = DynamicThresholdParameterSet, Mandatory = false, HelpMessage = "The date from which to start learning the metric historical data and calculate the dynamic thresholds")]
         public DateTime IgnoreDataBefore { get; set; }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Gets or sets the web test id
+        /// </summary>
+        [Parameter(ParameterSetName = AvailabilityParameterSet, Mandatory = true, HelpMessage = "The Application Insights web test Id.")]
+        public string WebTestId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the application insights id
+        /// </summary>
+        [Parameter(ParameterSetName = AvailabilityParameterSet, Mandatory = true, HelpMessage = "The Application Insights resource Id.")]
+        [Alias("componentId")]
+        public string ApplicationInsightsId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rule number of failed locations
+        /// </summary>
+        [Parameter(ParameterSetName = AvailabilityParameterSet, Mandatory = false, HelpMessage = "The minimum number of failed locations to raise an alert.")]
+        [Alias("AlertLocationThreshold")]
+        public int FailedLocationCount { get; set; } = 2;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         protected override void ProcessRecordInternal()
         {
             List<MetricDimension> metricDimensions = new List<MetricDimension>();
@@ -138,12 +203,21 @@ namespace Microsoft.Azure.Commands.Insights.Alerts
             }
 
             IPSMultiMetricCriteria result;
+<<<<<<< HEAD
             if (!this.DynamicThreshold.IsPresent)
             {
                 MetricCriteria metricCriteria = new MetricCriteria(name: "metric1", metricName: this.MetricName, operatorProperty: this.Operator, timeAggregation: this.TimeAggregation, threshold: this.Threshold, metricNamespace: this.MetricNamespace, dimensions: metricDimensions);
                 result = new PSMetricCriteria(metricCriteria);
             }
             else
+=======
+            if (this.WebTest.IsPresent || !string.IsNullOrWhiteSpace(this.WebTestId))
+            {
+                WebtestLocationAvailabilityCriteria webtestMetricCriteria = new WebtestLocationAvailabilityCriteria(this.WebTestId, this.ApplicationInsightsId, this.FailedLocationCount);
+                result = new PSWebtestLocationAvailabilityCriteria(webtestMetricCriteria);
+            }
+            else if (this.DynamicThreshold.IsPresent)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             {
                 DynamicThresholdFailingPeriods failingPeriods = new DynamicThresholdFailingPeriods(this.ExaminedAggregatedPointCount, this.ViolationCount);
                 DynamicMetricCriteria dynamicMetricCriteria = new DynamicMetricCriteria(name: "metric1",
@@ -157,6 +231,14 @@ namespace Microsoft.Azure.Commands.Insights.Alerts
                     ignoreDataBefore: this.IsParameterBound(c => c.IgnoreDataBefore) ? (DateTime?) this.IgnoreDataBefore : null);
                 result = new PSDynamicMetricCriteria(dynamicMetricCriteria);
             }
+<<<<<<< HEAD
+=======
+            else
+            {
+                MetricCriteria metricCriteria = new MetricCriteria(name: "metric1", metricName: this.MetricName, operatorProperty: this.Operator, timeAggregation: this.TimeAggregation, threshold: this.Threshold, metricNamespace: this.MetricNamespace, dimensions: metricDimensions);
+                result = new PSMetricCriteria(metricCriteria);
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             WriteObject(sendToPipeline: result);
         }

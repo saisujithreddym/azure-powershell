@@ -4,6 +4,10 @@ variables:
   TestFramework: netcoreapp2.2
   TestTarget: Test
   Configuration: Debug
+<<<<<<< HEAD
+=======
+  DebugLocalBuildTasks: true
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 jobs:
 - job: Build
@@ -66,4 +70,8 @@ jobs:
       osName: ${{ variables.WindowsName }}
       testFramework: ${{ variables.TestFramework }}
       testTarget: ${{ variables.TestTarget }}
+<<<<<<< HEAD
       configuration: ${{ variables.Configuration }}
+=======
+      configuration: ${{ variables.Configuration }}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

@@ -14,7 +14,11 @@
 
 <#
 .SYNOPSIS
+<<<<<<< HEAD
 Gets container registry name
+=======
+Gets container service name
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 #>
 function Get-RandomClusterName
 {
@@ -23,6 +27,18 @@ function Get-RandomClusterName
 
 <#
 .SYNOPSIS
+<<<<<<< HEAD
+=======
+Gets container registry name
+#>
+function Get-RandomRegistryName
+{
+    return 'acr' + (getAssetName)
+}
+
+<#
+.SYNOPSIS
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Gets resource group name
 #>
 function Get-RandomResourceGroupName
@@ -30,7 +46,11 @@ function Get-RandomResourceGroupName
     return 'rg' + (getAssetName)
 }
 
+<<<<<<< HEAD
 function isLive
+=======
+function IsLive
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 {
 	return [Microsoft.Azure.Test.HttpRecorder.HttpMockServer]::Mode -ne [Microsoft.Azure.Test.HttpRecorder.HttpRecorderMode]::Playback
 }

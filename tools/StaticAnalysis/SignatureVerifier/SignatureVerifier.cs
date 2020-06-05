@@ -104,6 +104,7 @@ namespace StaticAnalysis.SignatureVerifier
                     var psd1 = manifestFiles.FirstOrDefault();
                     var parentDirectory = Directory.GetParent(psd1).FullName;
                     var psd1FileName = Path.GetFileName(psd1);
+<<<<<<< HEAD
                     IEnumerable<string> nestedModules = null;
                     List<string> requiredModules = null;
                     var powershell = PowerShell.Create(RunspaceMode.NewRunspace);
@@ -113,6 +114,18 @@ namespace StaticAnalysis.SignatureVerifier
                     var cmdletResult = powershell.Invoke();
                     nestedModules = cmdletResult.Where(c => c.ToString().StartsWith(".")).Select(c => c.ToString().Substring(2));
                     requiredModules = cmdletResult.Where(c => !c.ToString().StartsWith(".")).Select(c => c.ToString()).ToList();
+=======
+                    var powershell = PowerShell.Create();
+
+                    var script = $"Import-LocalizedData -BaseDirectory {parentDirectory} -FileName {psd1FileName} -BindingVariable ModuleMetadata;";
+                    powershell.AddScript($"{script} $ModuleMetadata.NestedModules;");
+                    var cmdletResult = powershell.Invoke();
+                    var nestedModules = cmdletResult.Where(c => c != null).Select(c => c.ToString()).Select(c => (c.StartsWith(".") ? c.Substring(2) : c)).ToList();
+
+                    powershell.AddScript($"{script} $ModuleMetadata.RequiredModules | % {{ $_[\"ModuleName\"] }};");
+                    cmdletResult = powershell.Invoke();
+                    var requiredModules = cmdletResult.Where(c => !c.ToString().StartsWith(".")).Select(c => c.ToString()).ToList();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                     if (!nestedModules.Any()) continue;
 

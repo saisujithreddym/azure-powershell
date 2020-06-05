@@ -107,6 +107,10 @@ namespace Microsoft.Azure.Commands.Network
         {
             base.Execute();
             PSVirtualHub virtualHubToUpdate = null;
+<<<<<<< HEAD
+=======
+            Dictionary<string, List<string>> auxAuthHeader = null;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (ParameterSetName.Equals(CortexParameterSetNames.ByVirtualHubObject, StringComparison.OrdinalIgnoreCase))
             {
@@ -142,6 +146,22 @@ namespace Microsoft.Azure.Commands.Network
             {
                 virtualHubToUpdate.VirtualNetworkConnections = new List<PSHubVirtualNetworkConnection>();
                 virtualHubToUpdate.VirtualNetworkConnections.AddRange(this.HubVnetConnection);
+<<<<<<< HEAD
+=======
+
+                // get auth headers for cross-tenant hubvnet conn
+                List<string> resourceIds = new List<string>();
+                foreach (var connection in this.HubVnetConnection)
+                {
+                    resourceIds.Add(connection.RemoteVirtualNetwork.Id);
+                }
+
+                var auxHeaderDictionary = GetAuxilaryAuthHeaderFromResourceIds(resourceIds);
+                if (auxHeaderDictionary != null && auxHeaderDictionary.Count > 0)
+                {
+                    auxAuthHeader = new Dictionary<string, List<string>>(auxHeaderDictionary);
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             //// VirtualHubRouteTable
@@ -166,7 +186,12 @@ namespace Microsoft.Azure.Commands.Network
                             this.ResourceGroupName,
                             this.Name,
                             virtualHubToUpdate,
+<<<<<<< HEAD
                             this.Tag));
+=======
+                            this.Tag,
+                            auxAuthHeader));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     });
         }
     }

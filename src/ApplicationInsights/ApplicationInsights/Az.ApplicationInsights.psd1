@@ -53,7 +53,11 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
+<<<<<<< HEAD
 RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.1'; })
+=======
+RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.5'; })
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'Microsoft.Azure.Management.ApplicationInsights.dll'
@@ -76,6 +80,10 @@ FunctionsToExport = @()
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-AzApplicationInsights', 'New-AzApplicationInsights', 
                'Remove-AzApplicationInsights', 
+<<<<<<< HEAD
+=======
+               'Update-AzApplicationInsights', 
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                'Set-AzApplicationInsightsPricingPlan', 
                'Set-AzApplicationInsightsDailyCap', 
                'Get-AzApplicationInsightsContinuousExport', 
@@ -84,7 +92,15 @@ CmdletsToExport = 'Get-AzApplicationInsights', 'New-AzApplicationInsights',
                'Remove-AzApplicationInsightsContinuousExport', 
                'Get-AzApplicationInsightsApiKey', 
                'New-AzApplicationInsightsApiKey', 
+<<<<<<< HEAD
                'Remove-AzApplicationInsightsApiKey'
+=======
+               'Remove-AzApplicationInsightsApiKey', 
+               'Get-AZApplicationInsightsLinkedStorageAccount', 
+               'New-AZApplicationInsightsLinkedStorageAccount', 
+               'Update-AZApplicationInsightsLinkedStorageAccount', 
+               'Remove-AZApplicationInsightsLinkedStorageAccount'
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Variables to export from this module
 # VariablesToExport = @()

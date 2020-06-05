@@ -13,6 +13,10 @@
 // ----------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.Deployments;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels
 {
@@ -20,15 +24,30 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels
     {
         public string DeploymentName { get; set; }
 
+<<<<<<< HEAD
+=======
+        public DeploymentScopeType ScopeType { get; set; }
+
+        public string ManagementGroupId { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ResourceGroupName { get; set; }
 
         public List<string> ProvisioningStates { get; set; }
 
         public List<string> ExcludedProvisioningStates { get; set; }
 
+<<<<<<< HEAD
         public FilterDeploymentOptions()
         {
             DeploymentName = null;
+=======
+        public FilterDeploymentOptions(DeploymentScopeType scopeType)
+        {
+            ScopeType = scopeType;
+            DeploymentName = null;
+            ManagementGroupId = null;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             ResourceGroupName = null;
             ProvisioningStates = new List<string>();
             ExcludedProvisioningStates = new List<string>();

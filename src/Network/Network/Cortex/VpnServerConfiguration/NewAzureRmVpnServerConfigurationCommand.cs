@@ -87,6 +87,7 @@ namespace Microsoft.Azure.Commands.Network
         public string[] VpnClientRevokedCertificateFilesList { get; set; }
 
         [Parameter(
+<<<<<<< HEAD
             Mandatory = true,
             ParameterSetName = CortexParameterSetNames.ByVpnServerConfigurationName + CortexParameterSetNames.ByRadiusAuthentication,
             HelpMessage = "P2S External Radius server address.")]
@@ -98,11 +99,31 @@ namespace Microsoft.Azure.Commands.Network
             ParameterSetName = CortexParameterSetNames.ByVpnServerConfigurationName + CortexParameterSetNames.ByRadiusAuthentication,
             HelpMessage = "P2S External Radius server secret.")]
         [ValidateNotNullOrEmpty]
+=======
+            Mandatory = false,
+            ParameterSetName = CortexParameterSetNames.ByVpnServerConfigurationName + CortexParameterSetNames.ByRadiusAuthentication,
+            HelpMessage = "P2S External Radius server address.")]
+        public string RadiusServerAddress { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            ParameterSetName = CortexParameterSetNames.ByVpnServerConfigurationName + CortexParameterSetNames.ByRadiusAuthentication,
+            HelpMessage = "P2S External Radius server secret.")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public SecureString RadiusServerSecret { get; set; }
 
         [Parameter(
             Mandatory = false,
             ParameterSetName = CortexParameterSetNames.ByVpnServerConfigurationName + CortexParameterSetNames.ByRadiusAuthentication,
+<<<<<<< HEAD
+=======
+            HelpMessage = "P2S External multiple radius servers.")]
+        public PSRadiusServer[] RadiusServerList { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            ParameterSetName = CortexParameterSetNames.ByVpnServerConfigurationName + CortexParameterSetNames.ByRadiusAuthentication,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = "A list of RadiusClientRootCertificate files' paths")]
         public string[] RadiusServerRootCertificateFilesList { get; set; }
 
@@ -172,6 +193,10 @@ namespace Microsoft.Azure.Commands.Network
                 this.VpnClientRevokedCertificateFilesList,
                 this.RadiusServerAddress,
                 this.RadiusServerSecret,
+<<<<<<< HEAD
+=======
+                this.RadiusServerList,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 this.RadiusServerRootCertificateFilesList,
                 this.RadiusClientRootCertificateFilesList,
                 this.AadTenant,

@@ -188,4 +188,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [New-AzApiManagementApiRelease](./New-AzApiManagementApiRelease.md)
 
+<<<<<<< HEAD
 [Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+=======
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

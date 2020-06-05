@@ -53,7 +53,11 @@ namespace Microsoft.Azure.Commands.Common
         /// <returns>Amended pipeline for retrieving a response</returns>
         public Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken token, Action cancel, SignalDelegate signal, NextDelegate next)
         {
+<<<<<<< HEAD
             var userAgents = new ProductInfoHeaderValue[] { new ProductInfoHeaderValue("AzurePowerShell", $"Az4.0.0-preview") };
+=======
+            var userAgents = new ProductInfoHeaderValue[] { new ProductInfoHeaderValue("AzurePowershell", $"Az4.0.0-preview") };
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             // add user agent haeaders
 
             foreach (var userAgent in userAgents)

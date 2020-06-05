@@ -27,7 +27,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
     /// Get an existing resource.
     /// </summary>
     [Cmdlet(VerbsCommon.Get, AzureRMConstants.AzureRMPrefix + "PolicyAlias"), OutputType(typeof(PsResourceProviderAlias))]
+<<<<<<< HEAD
     public class GetAzurePolicyAlias : ResourceManagerCmdletBase
+=======
+    public class GetAzurePolicyAlias : ResourceManagerCmdletBaseWithAPiVersion
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     {
         /// <summary>
         /// Gets or sets the provider namespace match string
@@ -88,7 +92,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         /// <summary>
         /// Executes the cmdlet
         /// </summary>
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
+=======
+        protected override void OnProcessRecord()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             // remove leading and trailing whitespace
             this.NamespaceMatch = this.NamespaceMatch?.Trim() ?? string.Empty;
@@ -172,7 +180,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
             foreach (var provider in providers)
             {
                 var match = provider.ResourceTypes.Where(r => this.FilterFunction(r, listAvailable, resourceTypeMatch, aliasMatch, pathMatch, apiVersionMatch, locationMatch));
+<<<<<<< HEAD
                 rv.AddRange(match.Select(t => new PsResourceProviderAlias {Aliases = t.Aliases, ApiVersions = t.ApiVersions, Locations = t.Locations, Namespace = provider.NamespaceProperty, ResourceType = t.ResourceType}));
+=======
+                rv.AddRange(match.Select(t => new PsResourceProviderAlias { Aliases = t.Aliases, ApiVersions = t.ApiVersions, Locations = t.Locations, Namespace = provider.NamespaceProperty, ResourceType = t.ResourceType }));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return rv;

@@ -50,6 +50,10 @@ namespace Microsoft.Azure.Commands.KeyVault.Models
             EnabledForDiskEncryption = vault.Properties.EnabledForDiskEncryption;
             EnableSoftDelete = vault.Properties.EnableSoftDelete;
             EnablePurgeProtection = vault.Properties.EnablePurgeProtection;
+<<<<<<< HEAD
+=======
+            SoftDeleteRetentionInDays = vault.Properties.SoftDeleteRetentionInDays;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             AccessPolicies = vault.Properties.AccessPolicies.Select(s => new PSKeyVaultAccessPolicy(s, adClient)).ToArray();
             NetworkAcls = InitNetworkRuleSet(vault.Properties);
             OriginalVault = vault;
@@ -72,6 +76,11 @@ namespace Microsoft.Azure.Commands.KeyVault.Models
 
         public bool? EnablePurgeProtection { get; private set; }
 
+<<<<<<< HEAD
+=======
+        public int? SoftDeleteRetentionInDays { get; private set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public PSKeyVaultAccessPolicy[] AccessPolicies { get; private set; }
 
         public string AccessPoliciesText { get { return ModelExtensions.ConstructAccessPoliciesList(AccessPolicies); } }
@@ -80,7 +89,11 @@ namespace Microsoft.Azure.Commands.KeyVault.Models
 
         public string NetworkAclsText { get { return ModelExtensions.ConstructNetworkRuleSet(NetworkAcls); } }
 
+<<<<<<< HEAD
         //If we got this vault from the server, save the over-the-wire version, to 
+=======
+        //If we got this vault from the server, save the over-the-wire version, to
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         //allow easy updates
         public Vault OriginalVault { get; private set; }
 
@@ -107,7 +120,11 @@ namespace Microsoft.Azure.Commands.KeyVault.Models
                 bypass = PSKeyVaultNetworkRuleBypassEnum.AzureServices;
             }
 
+<<<<<<< HEAD
             IList <string> allowedIpAddresses = null;
+=======
+            IList<string> allowedIpAddresses = null;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (networkAcls.IpRules != null && networkAcls.IpRules.Count > 0)
             {
                 allowedIpAddresses = networkAcls.IpRules.Select(item => item.Value).ToList();

@@ -14,6 +14,7 @@
 
 using System;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Text.RegularExpressions;
 
 namespace Microsoft.Azure.Commands.FrontDoor.Models
@@ -53,6 +54,11 @@ namespace Microsoft.Azure.Commands.FrontDoor.Models
         public string CustomQueryString { get; set; }
     }
 
+=======
+
+namespace Microsoft.Azure.Commands.FrontDoor.Models
+{
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     /// <summary>
     /// Represents the properties of an Azure Front Door object.
     /// </summary>
@@ -71,5 +77,10 @@ namespace Microsoft.Azure.Commands.FrontDoor.Models
         public PSEnabledState? EnabledState { get; set; }
 
         public string ResourceState { get; set; }
+<<<<<<< HEAD
+=======
+
+        public string RulesEngineId { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

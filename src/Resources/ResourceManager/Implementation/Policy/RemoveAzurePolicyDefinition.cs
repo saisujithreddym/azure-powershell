@@ -63,6 +63,15 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         public Guid? SubscriptionId { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or sets the policy definition input object parameter.
+        /// </summary>
+        [Parameter(ParameterSetName = PolicyCmdletBase.InputObjectParameterSet, Mandatory = true, ValueFromPipeline = true, ValueFromPipelineByPropertyName = true, HelpMessage = PolicyHelpStrings.RemovePolicyDefinitionInputObjectHelp)]
+        public PsPolicyDefinition InputObject { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Executes the cmdlet.
         /// </summary>
         protected override void OnProcessRecord()
@@ -116,7 +125,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         /// </summary>
         private string GetResourceId()
         {
+<<<<<<< HEAD
             return this.Id ?? this.MakePolicyDefinitionId(this.ManagementGroupName, this.SubscriptionId, this.Name);
+=======
+            return this.Id ?? this.InputObject?.ResourceId ?? this.MakePolicyDefinitionId(this.ManagementGroupName, this.SubscriptionId, this.Name);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

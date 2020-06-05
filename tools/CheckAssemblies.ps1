@@ -17,6 +17,28 @@ param(
     [System.String]$BuildConfig
 )
 
+<<<<<<< HEAD
+=======
+function Get-PreloadAssemblies{
+    param(
+        [Parameter(Mandatory=$True)]
+        [string] $ModuleFolder
+    )
+
+    $preloadAssemblies = @()
+    if($PSEdition -eq 'Core') {
+        $preloadFolderName = "NetCoreAssemblies"
+    } else {
+        $preloadFolderName = "PreloadAssemblies"
+    }
+    $preloadFolder = [System.IO.Path]::Combine($ModuleFolder, $preloadFolderName)
+    if(Test-Path $preloadFolder){
+        $preloadAssemblies = (Get-ChildItem $preloadFolder -Filter "*.dll").Name | ForEach-Object { $_ -replace ".dll", ""}
+    }
+    $preloadAssemblies
+}
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 $ProjectPaths = @( "$PSScriptRoot\..\artifacts\$BuildConfig" )
 $DependencyMapPath = "$PSScriptRoot\..\artifacts\StaticAnalysisResults\DependencyMap.csv"
 
@@ -25,7 +47,11 @@ $DependencyMap = Import-Csv -Path $DependencyMapPath
 $ModuleManifestFiles = $ProjectPaths | ForEach-Object { Get-ChildItem -Path $_ -Filter "*.psd1" -Recurse | Where-Object { $_.FullName -like "*$($BuildConfig)*" -and `
             $_.FullName -notlike "*Netcore*" -and `
             $_.FullName -notlike "*dll-Help.psd1*" -and `
+<<<<<<< HEAD
             $_.FullName -notlike "*Stack*" } }
+=======
+            ($_.FullName -notlike "*Stack*" -or $_.FullName -like "*StackEdge*") } }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 foreach ($ModuleManifest in $ModuleManifestFiles) {
     Write-Host "checking $($ModuleManifest.Fullname)"
@@ -38,6 +64,10 @@ foreach ($ModuleManifest in $ModuleManifestFiles) {
         $LoadedAssemblies += $ModuleMetadata.RequiredAssemblies
     }
 
+<<<<<<< HEAD
+=======
+    $LoadedAssemblies += Get-PreloadAssemblies $ModuleManifest.Directory
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $LoadedAssemblies += $ModuleMetadata.NestedModules
 
     if ($ModuleMetadata.RequiredModules) {
@@ -58,9 +88,17 @@ foreach ($ModuleManifest in $ModuleManifestFiles) {
                 }
                 $LoadedAssemblies += $ModuleMetadata.NestedModules
             }
+<<<<<<< HEAD
         }
     }
 
+=======
+            $LoadedAssemblies += Get-PreloadAssemblies $RequiredModuleManifest.Directory
+        }
+    }
+
+    $LoadedAssemblies = $LoadedAssemblies | Where-Object { $_ }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $LoadedAssemblies = $LoadedAssemblies | ForEach-Object { $_.Replace(".dll", "") }
 
     $Found = @()
@@ -74,4 +112,8 @@ foreach ($ModuleManifest in $ModuleManifestFiles) {
     if ($Found.Count -gt 0) {
         throw
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

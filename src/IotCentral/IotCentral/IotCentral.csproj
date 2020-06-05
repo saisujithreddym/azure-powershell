@@ -12,7 +12,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.IotCentral" Version="2.1.0" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.IotCentral" Version="2.2.0" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </ItemGroup>
 
 </Project>

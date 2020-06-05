@@ -61,7 +61,11 @@ namespace Microsoft.Azure.Commands.Maps.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to By creating a Maps Account, you are consenting to the License (see https://azure.microsoft.com/en-us/support/legal/) and Privacy Statement (see https://go.microsoft.com/fwlink/?LinkId=521839&amp;clcid=0x409/)..
+=======
+        ///   Looks up a localized string similar to By creating a Maps Account, you are consenting to the License (see https://azure.microsoft.com/en-us/support/legal/) and Privacy Statement (see https://go.microsoft.com/fwlink/?LinkId=521839&amp;clcid=0x409/). Note - Azure Maps shares customer-provided address/location queries (“Queries”) with third party TomTom for mapping functionality purposes. Queries are not linked to any customer or end-user when shared with TomTom and cannot be used to identify individuals. Microsoft is currently in the process of adding [rest of string was truncated]&quot;;.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         internal static string NewAccount_Notice {
             get {

@@ -19,6 +19,16 @@
 -->
 ## Upcoming Release
 
+<<<<<<< HEAD
+=======
+## Version 1.3.0
+* Added `Start-AzPolicyComplianceScan` cmdlet for triggering policy compliance scans
+* Added policy definition, set definition, and assignment versions to `Get-AzPolicyState` output
+
+## Version 1.2.1
+* Improved error messages
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## Version 1.2.0
 * Support evaluating compliance prior to determining what resource to remediate
     - Add `-ResourceDiscoverMode` parameter to Start-AzPolicyRemediation

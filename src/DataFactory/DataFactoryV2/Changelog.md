@@ -18,6 +18,14 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Supported CRUD of data flow runtime properties in Managed IR.
+
+## Version 1.7.0
+* Updated ADF .Net SDK version to 4.8.0
+* Added optional parameters to `Invoke-AzDataFactoryV2Pipeline` command to support rerun
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 1.6.1
 * Update ADF .Net SDK version to 4.7.0

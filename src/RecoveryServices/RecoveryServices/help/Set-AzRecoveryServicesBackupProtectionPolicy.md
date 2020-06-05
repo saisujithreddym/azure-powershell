@@ -13,12 +13,25 @@ Modifies a Backup protection policy.
 
 ## SYNTAX
 
+<<<<<<< HEAD
+=======
+### ModifyPolicyParamSet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 Set-AzRecoveryServicesBackupProtectionPolicy [-Policy] <PolicyBase> [[-RetentionPolicy] <RetentionPolicyBase>]
  [[-SchedulePolicy] <SchedulePolicyBase>] [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### FixPolicyParamSet
+```
+Set-AzRecoveryServicesBackupProtectionPolicy [-Policy] <PolicyBase> [-FixForInconsistentItems]
+ [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## DESCRIPTION
 The **Set-AzBackupProtectionPolicy** cmdlet modifies an existing Azure Backup protection policy.
 You can modify the Backup schedule and retention policy components.
@@ -36,6 +49,11 @@ PS C:\> $SchPol.ScheduleRunTimes.Add($DT.ToUniversalTime())
 PS C:\> $RetPol = Get-AzRecoveryServicesBackupRetentionPolicyObject -WorkloadType "AzureVM" 
 PS C:\> $RetPol.DailySchedule.DurationCountInDays = 365
 PS C:\> $Pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "NewPolicy"
+<<<<<<< HEAD
+=======
+PS C:\> $Pol.AzureBackupRGName = "RG_prefix"
+PS C:\> $Pol.AzureBackupRGNameSuffix = "RG_suffix"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> Set-AzRecoveryServicesBackupProtectionPolicy -Policy $Pol -SchedulePolicy $SchPol -RetentionPolicy $RetPol
 ```
 
@@ -46,6 +64,10 @@ The fourth command adds the date and time in $DT to the schedule run time for th
 The fifth command gets a base retention policy object, and then stores it in the $RetPol variable.
 The sixth command sets the retention duration to 365 days.
 The seventh command gets the Backup protection policy named NewPolicy, and then stores it in the $Pol variable.
+<<<<<<< HEAD
+=======
+The eighth and ninth sets the resource group parameters associated with policy which stores the restore points.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 The final command modifies the Backup protection policy in $Pol using schedule policy in $SchPol and the retention policy in $RetPol.
 
 ## PARAMETERS
@@ -65,6 +87,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -FixForInconsistentItems
+Switch Parameter indicating whether or not to retry Policy Update for failed items.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: FixPolicyParamSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Policy
 Specifies the Backup protection policy that this cmdlet modifies.
 To obtain a **BackupProtectionPolicy** object, use the Get-AzRecoveryServicesBackupProtectionPolicy cmdlet.
@@ -87,7 +127,11 @@ To obtain a **RetentionPolicy** object, use the Get-AzRecoveryServicesBackupRete
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.RetentionPolicyBase
+<<<<<<< HEAD
 Parameter Sets: (All)
+=======
+Parameter Sets: ModifyPolicyParamSet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: False
@@ -103,7 +147,11 @@ To obtain a **SchedulePolicy** object, use the Get-AzRecoveryServicesBackupSched
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.SchedulePolicyBase
+<<<<<<< HEAD
 Parameter Sets: (All)
+=======
+Parameter Sets: ModifyPolicyParamSet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: False

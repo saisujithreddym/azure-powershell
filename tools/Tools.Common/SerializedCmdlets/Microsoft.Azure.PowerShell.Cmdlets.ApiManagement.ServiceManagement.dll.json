@@ -7781,6 +7781,10 @@
               "SigninPolicyName": "System.String",
               "ProfileEditingPolicyName": "System.String",
               "PasswordResetPolicyName": "System.String",
+<<<<<<< HEAD
+=======
+              "SigninTenant": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
               "Id": "System.String",
               "ResourceGroupName": "System.String",
               "ServiceName": "System.String",
@@ -26656,6 +26660,10 @@
               "SigninPolicyName": "System.String",
               "ProfileEditingPolicyName": "System.String",
               "PasswordResetPolicyName": "System.String",
+<<<<<<< HEAD
+=======
+              "SigninTenant": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
               "Id": "System.String",
               "ResourceGroupName": "System.String",
               "ServiceName": "System.String",
@@ -27005,6 +27013,27 @@
           "ValidateNotNullOrEmpty": false
         },
         {
+<<<<<<< HEAD
+=======
+          "Name": "SigninTenant",
+          "AliasList": [],
+          "Type": {
+            "Namespace": "System",
+            "Name": "System.String",
+            "AssemblyQualifiedName": "System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+            "Properties": {},
+            "ElementType": null,
+            "GenericTypeArguments": [],
+            "Methods": [],
+            "Constructors": []
+          },
+          "ValidateSet": [],
+          "ValidateRangeMin": null,
+          "ValidateRangeMax": null,
+          "ValidateNotNullOrEmpty": false
+        },
+        {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
           "Name": "DefaultProfile",
           "AliasList": [
             "AzContext",
@@ -27404,6 +27433,33 @@
             },
             {
               "ParameterMetadata": {
+<<<<<<< HEAD
+=======
+                "Name": "SigninTenant",
+                "AliasList": [],
+                "Type": {
+                  "Namespace": "System",
+                  "Name": "System.String",
+                  "AssemblyQualifiedName": "System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                  "Properties": {},
+                  "ElementType": null,
+                  "GenericTypeArguments": [],
+                  "Methods": [],
+                  "Constructors": []
+                },
+                "ValidateSet": [],
+                "ValidateRangeMin": null,
+                "ValidateRangeMax": null,
+                "ValidateNotNullOrEmpty": false
+              },
+              "Mandatory": false,
+              "Position": -2147483648,
+              "ValueFromPipeline": false,
+              "ValueFromPipelineByPropertyName": true
+            },
+            {
+              "ParameterMetadata": {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 "Name": "DefaultProfile",
                 "AliasList": [
                   "AzContext",
@@ -57484,6 +57540,10 @@
               "SigninPolicyName": "System.String",
               "ProfileEditingPolicyName": "System.String",
               "PasswordResetPolicyName": "System.String",
+<<<<<<< HEAD
+=======
+              "SigninTenant": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
               "Id": "System.String",
               "ResourceGroupName": "System.String",
               "ServiceName": "System.String",
@@ -57705,6 +57765,10 @@
               "SigninPolicyName": "System.String",
               "ProfileEditingPolicyName": "System.String",
               "PasswordResetPolicyName": "System.String",
+<<<<<<< HEAD
+=======
+              "SigninTenant": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
               "Id": "System.String",
               "ResourceGroupName": "System.String",
               "ServiceName": "System.String",
@@ -57897,6 +57961,27 @@
           "ValidateNotNullOrEmpty": false
         },
         {
+<<<<<<< HEAD
+=======
+          "Name": "SigninTenant",
+          "AliasList": [],
+          "Type": {
+            "Namespace": "System",
+            "Name": "System.String",
+            "AssemblyQualifiedName": "System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+            "Properties": {},
+            "ElementType": null,
+            "GenericTypeArguments": [],
+            "Methods": [],
+            "Constructors": []
+          },
+          "ValidateSet": [],
+          "ValidateRangeMin": null,
+          "ValidateRangeMax": null,
+          "ValidateNotNullOrEmpty": false
+        },
+        {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
           "Name": "PassThru",
           "AliasList": [],
           "Type": {
@@ -58314,6 +58399,33 @@
             },
             {
               "ParameterMetadata": {
+<<<<<<< HEAD
+=======
+                "Name": "SigninTenant",
+                "AliasList": [],
+                "Type": {
+                  "Namespace": "System",
+                  "Name": "System.String",
+                  "AssemblyQualifiedName": "System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                  "Properties": {},
+                  "ElementType": null,
+                  "GenericTypeArguments": [],
+                  "Methods": [],
+                  "Constructors": []
+                },
+                "ValidateSet": [],
+                "ValidateRangeMin": null,
+                "ValidateRangeMax": null,
+                "ValidateNotNullOrEmpty": false
+              },
+              "Mandatory": false,
+              "Position": -2147483648,
+              "ValueFromPipeline": false,
+              "ValueFromPipelineByPropertyName": true
+            },
+            {
+              "ParameterMetadata": {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 "Name": "PassThru",
                 "AliasList": [],
                 "Type": {
@@ -58397,6 +58509,10 @@
                     "SigninPolicyName": "System.String",
                     "ProfileEditingPolicyName": "System.String",
                     "PasswordResetPolicyName": "System.String",
+<<<<<<< HEAD
+=======
+                    "SigninTenant": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "Id": "System.String",
                     "ResourceGroupName": "System.String",
                     "ServiceName": "System.String",
@@ -58643,6 +58759,33 @@
             },
             {
               "ParameterMetadata": {
+<<<<<<< HEAD
+=======
+                "Name": "SigninTenant",
+                "AliasList": [],
+                "Type": {
+                  "Namespace": "System",
+                  "Name": "System.String",
+                  "AssemblyQualifiedName": "System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                  "Properties": {},
+                  "ElementType": null,
+                  "GenericTypeArguments": [],
+                  "Methods": [],
+                  "Constructors": []
+                },
+                "ValidateSet": [],
+                "ValidateRangeMin": null,
+                "ValidateRangeMax": null,
+                "ValidateNotNullOrEmpty": false
+              },
+              "Mandatory": false,
+              "Position": -2147483648,
+              "ValueFromPipeline": false,
+              "ValueFromPipelineByPropertyName": true
+            },
+            {
+              "ParameterMetadata": {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 "Name": "PassThru",
                 "AliasList": [],
                 "Type": {
@@ -58903,6 +59046,33 @@
             },
             {
               "ParameterMetadata": {
+<<<<<<< HEAD
+=======
+                "Name": "SigninTenant",
+                "AliasList": [],
+                "Type": {
+                  "Namespace": "System",
+                  "Name": "System.String",
+                  "AssemblyQualifiedName": "System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+                  "Properties": {},
+                  "ElementType": null,
+                  "GenericTypeArguments": [],
+                  "Methods": [],
+                  "Constructors": []
+                },
+                "ValidateSet": [],
+                "ValidateRangeMin": null,
+                "ValidateRangeMax": null,
+                "ValidateNotNullOrEmpty": false
+              },
+              "Mandatory": false,
+              "Position": -2147483648,
+              "ValueFromPipeline": false,
+              "ValueFromPipelineByPropertyName": true
+            },
+            {
+              "ParameterMetadata": {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 "Name": "PassThru",
                 "AliasList": [],
                 "Type": {

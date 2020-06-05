@@ -95,6 +95,10 @@ namespace Microsoft.Azure.Commands.Compute.Automation
             Position = 1,
             Mandatory = true,
             ValueFromPipelineByPropertyName = true)]
+<<<<<<< HEAD
+=======
+        [ResourceNameCompleter("Microsoft.Compute/galleries", "ResourceGroupName")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Name { get; set; }
 
         [Parameter(

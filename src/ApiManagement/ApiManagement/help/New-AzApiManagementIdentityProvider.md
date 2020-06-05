@@ -16,7 +16,11 @@ Creates a new Identity Provider configuration.
 New-AzApiManagementIdentityProvider -Context <PsApiManagementContext>
  -Type <PsApiManagementIdentityProviderType> -ClientId <String> -ClientSecret <String>
  [-AllowedTenants <String[]>] [-Authority <String>] [-SignupPolicyName <String>] [-SigninPolicyName <String>]
+<<<<<<< HEAD
  [-ProfileEditingPolicyName <String>] [-PasswordResetPolicyName <String>]
+=======
+ [-ProfileEditingPolicyName <String>] [-PasswordResetPolicyName <String>] [-SigninTenant <String>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -196,6 +200,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -SigninTenant
+Signin Tenant to override in AAD B2C instead of the `common` Tenant
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -SignupPolicyName
 Signup Policy Name. Only applies to AAD B2C Identity Provider. This parameter is optional.
 

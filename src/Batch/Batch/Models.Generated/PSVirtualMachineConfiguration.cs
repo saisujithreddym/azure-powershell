@@ -38,6 +38,11 @@ namespace Microsoft.Azure.Commands.Batch.Models
         
         private IList<PSDataDisk> dataDisks;
         
+<<<<<<< HEAD
+=======
+        private PSDiskEncryptionConfiguration diskEncryptionConfiguration;
+        
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private PSImageReference imageReference;
         
         private PSWindowsConfiguration windowsConfiguration;
@@ -116,6 +121,34 @@ namespace Microsoft.Azure.Commands.Batch.Models
             }
         }
         
+<<<<<<< HEAD
+=======
+        public PSDiskEncryptionConfiguration DiskEncryptionConfiguration
+        {
+            get
+            {
+                if (((this.diskEncryptionConfiguration == null) 
+                            && (this.omObject.DiskEncryptionConfiguration != null)))
+                {
+                    this.diskEncryptionConfiguration = new PSDiskEncryptionConfiguration(this.omObject.DiskEncryptionConfiguration);
+                }
+                return this.diskEncryptionConfiguration;
+            }
+            set
+            {
+                if ((value == null))
+                {
+                    this.omObject.DiskEncryptionConfiguration = null;
+                }
+                else
+                {
+                    this.omObject.DiskEncryptionConfiguration = value.omObject;
+                }
+                this.diskEncryptionConfiguration = value;
+            }
+        }
+        
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public PSImageReference ImageReference
         {
             get

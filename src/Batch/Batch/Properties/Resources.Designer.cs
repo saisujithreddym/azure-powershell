@@ -19,7 +19,11 @@ namespace Microsoft.Azure.Commands.Batch.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+=======
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -601,6 +605,45 @@ namespace Microsoft.Azure.Commands.Batch.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Getting private endpoint connection &quot;{0}&quot;.
+        /// </summary>
+        internal static string GetPrivateEndpointConnectionByName {
+            get {
+                return ResourceManager.GetString("GetPrivateEndpointConnectionByName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting all private endpoint connections in resource group &quot;{0}&quot;, account &quot;{0}&quot;.
+        /// </summary>
+        internal static string GetPrivateEndpointConnectionNoFilter {
+            get {
+                return ResourceManager.GetString("GetPrivateEndpointConnectionNoFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting private link resource  &quot;{0}&quot;.
+        /// </summary>
+        internal static string GetPrivateLinkResourceByName {
+            get {
+                return ResourceManager.GetString("GetPrivateLinkResourceByName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting all private link resources in resource group &quot;{0}&quot;, account &quot;{0}&quot;.
+        /// </summary>
+        internal static string GetPrivateLinkResourceNoFilter {
+            get {
+                return ResourceManager.GetString("GetPrivateLinkResourceNoFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Getting accounts in resource group {0}.
         /// </summary>
         internal static string GetResourceGroupAccounts {

@@ -242,5 +242,42 @@ namespace RecoveryServices.SiteRecovery.Test
                 this.VaultSettingsFilePath +
                 "\"");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(
+           Category.AcceptanceType,
+           Category.CheckIn)]
+        public void V2ACreateRPIWithDES()
+        {
+            this.VaultSettingsFilePath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "ScenarioTests", "V2A", "CMKInput","V2A.VaultCredentials");
+            this.RunPowerShellTest(
+                _logger,
+                Constants.NewModel,
+                "V2ACreateRPIWithDES -vaultSettingsFilePath \"" +
+                this.VaultSettingsFilePath +
+                "\"");
+        }
+
+        [Fact]
+        [Trait(
+           Category.AcceptanceType,
+           Category.CheckIn)]
+        public void V2ACreateRPIWithDESEnabledDiskInput()
+        {
+            this.VaultSettingsFilePath = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "ScenarioTests", "V2A", "CMKInput", "V2A.VaultCredentials");
+            this.RunPowerShellTest(
+                _logger,
+                Constants.NewModel,
+                "V2ACreateRPIWithDESEnabledDiskInput -vaultSettingsFilePath \"" +
+                this.VaultSettingsFilePath +
+                "\"");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

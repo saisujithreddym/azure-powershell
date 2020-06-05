@@ -20,5 +20,10 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         public const string Transit = "Transit";
         public const string Cdn = "Cdn";
         public const string Internal = "Internal";
+<<<<<<< HEAD
+=======
+        public const string Ix = "Ix";
+        public const string IxRs = "IxRs";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

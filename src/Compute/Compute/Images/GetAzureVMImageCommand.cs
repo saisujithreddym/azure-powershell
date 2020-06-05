@@ -12,13 +12,22 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
+=======
+using System.Linq;
+using System.Management.Automation;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Commands.Compute.Common;
 using Microsoft.Azure.Commands.Compute.Models;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Management.Compute.Models;
 using Microsoft.Rest.Azure.OData;
+<<<<<<< HEAD
 using System.Linq;
 using System.Management.Automation;
+=======
+using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Compute
 {
@@ -69,6 +78,7 @@ namespace Microsoft.Azure.Commands.Compute
         [ValidateNotNullOrEmpty]
         public string Skus { get; set; }
 
+<<<<<<< HEAD
         [Parameter(ParameterSetName = ListVMImageParamSetName,
             ValueFromPipelineByPropertyName = false),
         ValidateNotNullOrEmpty]
@@ -78,6 +88,12 @@ namespace Microsoft.Azure.Commands.Compute
             Mandatory = true,
             ValueFromPipelineByPropertyName = true),
         ValidateNotNullOrEmpty]
+=======
+        [Parameter(ParameterSetName = GetVMImageDetailParamSetName,
+            Mandatory = true,
+            ValueFromPipelineByPropertyName = true)]
+        [ValidateNotNullOrEmpty]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [SupportsWildcards]
         public string Version { get; set; }
 
@@ -89,14 +105,21 @@ namespace Microsoft.Azure.Commands.Compute
             {
                 if (this.ParameterSetName.Equals(ListVMImageParamSetName) || WildcardPattern.ContainsWildcardCharacters(Version))
                 {
+<<<<<<< HEAD
                     var filter = new ODataQuery<VirtualMachineImageResource>(this.FilterExpression);
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     var result = this.VirtualMachineImageClient.ListWithHttpMessagesAsync(
                         this.Location.Canonicalize(),
                         this.PublisherName,
                         this.Offer,
+<<<<<<< HEAD
                         this.Skus,
                         odataQuery: filter).GetAwaiter().GetResult();
+=======
+                        this.Skus).GetAwaiter().GetResult();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                     var images = from r in result.Body
                                  select new PSVirtualMachineImage
@@ -108,8 +131,12 @@ namespace Microsoft.Azure.Commands.Compute
                                      Version = r.Name,
                                      PublisherName = this.PublisherName,
                                      Offer = this.Offer,
+<<<<<<< HEAD
                                      Skus = this.Skus,
                                      FilterExpression = this.FilterExpression
+=======
+                                     Skus = this.Skus
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                                  };
 
                     WriteObject(SubResourceWildcardFilter(Version, images), true);

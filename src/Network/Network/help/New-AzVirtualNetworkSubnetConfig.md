@@ -19,7 +19,11 @@ New-AzVirtualNetworkSubnetConfig -Name <String> -AddressPrefix <String[]>
  [-NetworkSecurityGroup <PSNetworkSecurityGroup>] [-RouteTable <PSRouteTable>] [-InputObject <PSNatGateway>]
  [-ServiceEndpoint <String[]>] [-ServiceEndpointPolicy <PSServiceEndpointPolicy[]>]
  [-Delegation <PSDelegation[]>] [-PrivateEndpointNetworkPoliciesFlag <String>]
+<<<<<<< HEAD
  [-PrivateLinkServiceNetworkPoliciesFlag <String>] [-DefaultProfile <IAzureContextContainer>]
+=======
+ [-PrivateLinkServiceNetworkPoliciesFlag <String>] [-IpAllocation <PSIpAllocation[]>] [-DefaultProfile <IAzureContextContainer>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [<CommonParameters>]
 ```
 
@@ -29,7 +33,11 @@ New-AzVirtualNetworkSubnetConfig -Name <String> -AddressPrefix <String[]> [-Netw
  [-RouteTableId <String>] [-ResourceId <String>] [-ServiceEndpoint <String[]>]
  [-ServiceEndpointPolicy <PSServiceEndpointPolicy[]>] [-Delegation <PSDelegation[]>]
  [-PrivateEndpointNetworkPoliciesFlag <String>] [-PrivateLinkServiceNetworkPoliciesFlag <String>]
+<<<<<<< HEAD
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+ [-IpAllocation <PSIpAllocation[]>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -137,6 +145,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -IpAllocation
+Specifies IpAllocations for a subnet.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSIpAllocation[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Name
 Specifies the name of the subnet configuration to create.
 

@@ -22,6 +22,10 @@ using Microsoft.Azure.Management.RecoveryServices;
 using Microsoft.Azure.Portal.RecoveryServices.Models.Common;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
 using Microsoft.Azure.Common.Authentication;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Management.RecoveryServices.Backup;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.RecoveryServices
 {
@@ -48,6 +52,20 @@ namespace Microsoft.Azure.Commands.RecoveryServices
             }
         }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Gets the value of recovery services backup client.
+        /// </summary>
+        public RecoveryServicesBackupClient GetRecoveryServicesBackupClient
+        {
+            get
+            {
+                return this.recoveryServicesBackupClient;
+            }
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public ResourceManagementClient RmClient
         {
             get
@@ -80,6 +98,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices
 
         private ResourceManagementClient resourceManagementClient;
 
+<<<<<<< HEAD
+=======
+        private RecoveryServicesBackupClient recoveryServicesBackupClient;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <summary>
         /// Initializes a new instance of the <see cref="PSRecoveryServicesClient" /> class with 
         /// required current subscription.
@@ -103,6 +126,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices
             AzureSession.ClientFactory.CreateArmClient<RecoveryServicesClient>(
                 defaultContext, AzureEnvironment.Endpoint.ResourceManager);
 
+<<<<<<< HEAD
+=======
+            this.recoveryServicesBackupClient =
+            AzureSession.ClientFactory.CreateArmClient<RecoveryServicesBackupClient>(
+                defaultContext, AzureEnvironment.Endpoint.ResourceManager);
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             resourceManagementClient = AzureSession.ClientFactory.CreateArmClient<ResourceManagementClient>(defaultContext, AzureEnvironment.Endpoint.ResourceManager);
         }
 

@@ -13,7 +13,11 @@
 // ----------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Aks.Generated.Version2017_08_31.Models;
+=======
+using Microsoft.Azure.Management.ContainerService.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Newtonsoft.Json;
 
 namespace Microsoft.Azure.Commands.Aks.Models
@@ -51,20 +55,29 @@ namespace Microsoft.Azure.Commands.Aks.Models
         /// <summary>
         /// Gets or sets the ID for the service principal.
         /// </summary>
+<<<<<<< HEAD
         [JsonProperty(PropertyName = "clientId")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ClientId { get; set; }
 
         /// <summary>
         /// Gets or sets the secret password associated with the service
         /// principal in plain text.
         /// </summary>
+<<<<<<< HEAD
         [JsonProperty(PropertyName = "secret")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Secret { get; set; }
 
         /// <summary>
         /// Gets or sets reference to a secret stored in Azure Key Vault.
         /// </summary>
+<<<<<<< HEAD
         [JsonProperty(PropertyName = "keyVaultSecretRef")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public PSKeyVaultSecretRef KeyVaultSecretRef { get; set; }
     }
 }

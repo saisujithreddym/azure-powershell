@@ -88,6 +88,15 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Commands
             HelpMessage = "Password Reset Policy Name. Only applies to AAD B2C Identity Provider. This parameter is optional.")]
         public String PasswordResetPolicyName { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(
+            ValueFromPipelineByPropertyName = true,
+            Mandatory = false,
+            HelpMessage = "Signin Tenant to use for AAD Authentication. Only applies to AAD B2C Identity Provider. This parameter is optional.")]
+        public String SigninTenant { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public override void ExecuteApiManagementCmdlet()
         {
             if (ShouldProcess(Type.ToString("g"), "Creates a new Identity Provider"))
@@ -102,7 +111,12 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Commands
                     SigninPolicyName,
                     SignupPolicyName,
                     PasswordResetPolicyName,
+<<<<<<< HEAD
                     ProfileEditingPolicyName);
+=======
+                    ProfileEditingPolicyName,
+                    SigninTenant);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                 WriteObject(identityProvider);
             }

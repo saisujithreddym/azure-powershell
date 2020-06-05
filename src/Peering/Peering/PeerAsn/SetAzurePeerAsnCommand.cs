@@ -17,6 +17,10 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.PeerAsn
     using System.Management.Automation;
 
     using Microsoft.Azure.Commands.Peering.Properties;
+<<<<<<< HEAD
+=======
+    using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using Microsoft.Azure.Management.Peering;
     using Microsoft.Azure.Management.Peering.Models;
     using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
@@ -27,8 +31,13 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.PeerAsn
     /// </summary>
     [Cmdlet(
         VerbsCommon.Set,
+<<<<<<< HEAD
         "AzPeerAsn",
         DefaultParameterSetName = Constants.ParameterSetNameByName,
+=======
+        Constants.AzPeerAsn,
+        DefaultParameterSetName = Constants.ParameterSetNameInputObject,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         SupportsShouldProcess = true)]
     [OutputType(typeof(PSPeerAsn))]
     public class SetAzurePeerAsn : PeeringBaseCmdlet
@@ -41,6 +50,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.PeerAsn
             Mandatory = true,
             ValueFromPipeline = true,
             HelpMessage = Constants.PeerAsnHelp,
+<<<<<<< HEAD
             ParameterSetName = Constants.ParameterSetNameDefault)]
         public PSPeerAsn InputObject { get; set; }
 
@@ -74,6 +84,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.PeerAsn
             ParameterSetName = Constants.ParameterSetNameByName)]
         public string[] Phone { get; set; }
 
+=======
+            ParameterSetName = Constants.ParameterSetNameInputObject)]
+        public PSPeerAsn InputObject { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <summary>
         ///     The AsJob parameter to run in the background.
         /// </summary>
@@ -88,10 +103,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.PeerAsn
             try
             {
                 base.Execute();
+<<<<<<< HEAD
                 this.WriteObject(
                     this.ParameterSetName.Equals(Constants.ParameterSetNameByName)
                         ? this.ToPeeringAsnPs(this.GetAndSetContactInformation())
                         : this.ToPeeringAsnPs(this.UpdatePeerContactInfo()));
+=======
+                this.WriteObject(UpdatePeerContactInfo());
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             catch (InvalidOperationException mapException)
             {
@@ -112,6 +131,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.PeerAsn
         /// </returns>
         private object UpdatePeerContactInfo()
         {
+<<<<<<< HEAD
             // Get old and verify its the same
             var oldPeerAsn = this.PeeringManagementClient.PeerAsns.Get(this.InputObject.Name);
             if (oldPeerAsn.Name == this.InputObject.Name
@@ -171,6 +191,22 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.PeerAsn
             }
 
             throw new Exception($"Only contact information can be changed");
+=======
+            try
+            {
+                var peerAsn = this.PeerAsnClient.CreateOrUpdate(this.InputObject.Name, PeeringResourceManagerProfile.Mapper.Map<PeerAsn>(this.InputObject));
+                return PeeringResourceManagerProfile.Mapper.Map<PSPeerAsn>(peerAsn);
+            }
+            catch (InvalidOperationException mapException)
+            {
+                throw new InvalidOperationException(string.Format(Resources.Error_Mapping, mapException));
+            }
+            catch (ErrorResponseException ex)
+            {
+                var error = this.GetErrorCodeAndMessageFromArmOrErm(ex);
+                throw new ErrorResponseException(string.Format(Resources.Error_CloudError, error.Code, error.Message));
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

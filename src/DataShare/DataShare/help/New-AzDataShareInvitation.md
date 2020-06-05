@@ -50,7 +50,11 @@ Name             : AdsInvitation
 Type             : Microsoft.DataShare/Invitations
 ```
 
+<<<<<<< HEAD
 This command creates an invitation AdsInvitation for share AdsShare and sends it to target email adstest@micosoft.com.
+=======
+This command creates an invitation AdsInvitation for share AdsShare and sends it to target email adstest@microsoft.com.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## PARAMETERS
 
@@ -206,7 +210,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

@@ -108,9 +108,36 @@ namespace Microsoft.Azure.Commands.Insights.Test.ScenarioTests
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
+=======
+        public void TestAddAzureRmMetricAlertRuleV2WithoutActionGroup()
+        {
+            TestsController.NewInstance.RunPsTest(_logger, "Test-AddAzureRmMetricAlertRuleV2-NoActionGroup");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestAddAzureRmMetricAlertRuleV2WithActionGroupId()
+        {
+            TestsController.NewInstance.RunPsTest(_logger, "Test-AddAzureRmMetricAlertRuleV2-ActionGroupId");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TestAddAzureRmDynamicMetricAlertRuleV2()
         {
             TestsController.NewInstance.RunPsTest(_logger, "Test-AddAzureRmMetricAlertRuleV2-DynamicThreshold");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestAddAzureRmWebtestAlertRuleV2()
+        {
+            TestsController.NewInstance.RunPsTest(_logger, "Test-AddAzureRmMetricAlertRuleV2-Webtest");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

@@ -23,6 +23,12 @@ function Test-AzMaintenanceConfiguration
     $location = Get-ProviderLocation "Microsoft.Maintenance/MaintenanceConfigurations"
     $maintenanceScope = "Host"
 
+<<<<<<< HEAD
+=======
+    $resourceGroupName1 = Get-RandomResourceGroupName
+    $maintenanceConfigurationName1 = Get-RandomMaintenanceConfigurationName  
+        
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     try
     {
         New-AzResourceGroup -Name $resourceGroupName -Location $location
@@ -37,16 +43,59 @@ function Test-AzMaintenanceConfiguration
         Assert-AreEqual $maintenanceConfigurationCreated.MaintenanceScope $maintenanceScope
 		Assert-AreEqual $maintenanceConfigurationCreated.Type "Microsoft.Maintenance/MaintenanceConfigurations"
 
+<<<<<<< HEAD
 
         $retrievedMaintenanceConfiguration = Get-AzMaintenanceConfiguration -ResourceGroupName $resourceGroupName -Name $maintenanceConfigurationName
         Assert-MaintenanceConfiguration $maintenanceConfigurationCreated $retrievedMaintenanceConfiguration
 
         Remove-AzMaintenanceConfiguration -ResourceGroupName $resourceGroupName -Name $maintenanceConfigurationName -Force
+=======
+        $retrievedMaintenanceConfiguration = Get-AzMaintenanceConfiguration -ResourceGroupName $resourceGroupName -Name $maintenanceConfigurationName
+        Assert-MaintenanceConfiguration $maintenanceConfigurationCreated $retrievedMaintenanceConfiguration
+
+        New-AzResourceGroup -Name $resourceGroupName1 -Location $location
+		Write-Host "Created RG $location"
+
+        $maintenanceConfigurationCreated1 = New-AzMaintenanceConfiguration -ResourceGroupName $resourceGroupName1 -Name $maintenanceConfigurationName1 -MaintenanceScope $maintenanceScope -Location $location
+		Write-Host "Created configuration $maintenanceConfigurationName1"
+		Write-Output $maintenanceConfigurationCreated1
+        
+        Assert-AreEqual $maintenanceConfigurationCreated1.Name $maintenanceConfigurationName1
+        Assert-AreEqual $maintenanceConfigurationCreated1.Location $location
+        Assert-AreEqual $maintenanceConfigurationCreated1.MaintenanceScope $maintenanceScope
+		Assert-AreEqual $maintenanceConfigurationCreated1.Type "Microsoft.Maintenance/MaintenanceConfigurations"
+        
+        $retrievedMaintenanceConfigurationByRG = Get-AzMaintenanceConfiguration -ResourceGroupName $resourceGroupName
+        Assert-MaintenanceConfiguration $maintenanceConfigurationCreated $retrievedMaintenanceConfigurationByRG
+
+        $retrievedMaintenanceConfigurationByName = Get-AzMaintenanceConfiguration -Name $maintenanceConfigurationName1
+        Assert-MaintenanceConfiguration $maintenanceConfigurationCreated1 $retrievedMaintenanceConfigurationByName
+
+        $allRetrievedMaintenanceConfigurations = Get-AzMaintenanceConfiguration
+        foreach ($config in $allRetrievedMaintenanceConfigurations) 
+        {
+            if($config.Name -eq $maintenanceConfigurationName)
+            {
+                Assert-MaintenanceConfiguration $maintenanceConfigurationCreated $config
+            }
+            else
+            {
+                Assert-MaintenanceConfiguration $maintenanceConfigurationCreated1 $config
+            }
+        }
+
+        Remove-AzMaintenanceConfiguration -ResourceGroupName $resourceGroupName -Name $maintenanceConfigurationName -Force
+        Remove-AzMaintenanceConfiguration -ResourceGroupName $resourceGroupName1 -Name $maintenanceConfigurationName1 -Force
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
     finally
     {
         # Cleanup
         Clean-ResourceGroup $resourceGroupName
+<<<<<<< HEAD
+=======
+        Clean-ResourceGroup $resourceGroupName1
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }
 

@@ -91,6 +91,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         public string SessionPrefixV6 { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets the IPv4 session address on Microsoft's end.
         /// </summary>
         [JsonProperty(PropertyName = "microsoftSessionIPv4Address")]
@@ -101,6 +102,18 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         /// </summary>
         [JsonProperty(PropertyName = "microsoftSessionIPv6Address")]
         public string MicrosoftSessionIPv6Address { get; private set; }
+=======
+        /// Gets or sets the IPv4 session address on Microsoft's end.
+        /// </summary>
+        [JsonProperty(PropertyName = "microsoftSessionIPv4Address")]
+        public string MicrosoftSessionIPv4Address { get; set; }
+
+        /// <summary>
+        /// Gets or sets the IPv6 session address on Microsoft's end.
+        /// </summary>
+        [JsonProperty(PropertyName = "microsoftSessionIPv6Address")]
+        public string MicrosoftSessionIPv6Address { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         /// <summary>
         /// Gets or sets the IPv4 session address on peer's end.

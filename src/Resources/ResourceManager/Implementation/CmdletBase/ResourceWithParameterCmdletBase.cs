@@ -12,16 +12,25 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
 using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Utilities;
 using Microsoft.WindowsAzure.Commands.Common;
 using Microsoft.WindowsAzure.Commands.Utilities.Common;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Utilities;
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
 {
@@ -39,7 +48,10 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         protected const string TemplateUriParameterFileParameterSetName = "ByTemplateUriAndParameterFile";
         protected const string TemplateUriParameterUriParameterSetName = "ByTemplateUriAndParameterUri";
 
+<<<<<<< HEAD
         protected const string ParameterlessGalleryTemplateParameterSetName = "ByGalleryWithNoParameters";
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         protected const string ParameterlessTemplateObjectParameterSetName = "ByTemplateObjectWithNoParameters";
         protected const string ParameterlessTemplateFileParameterSetName = "ByTemplateFileWithNoParameters";
         protected const string ParameterlessTemplateUriParameterSetName = "ByTemplateUriWithNoParameters";
@@ -126,8 +138,12 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         {
             if (!this.IsParameterBound(c => c.SkipTemplateParameterPrompt))
             {
+<<<<<<< HEAD
                 if (TemplateObject != null &&
                 TemplateObject != templateObject)
+=======
+                if (TemplateObject != null && TemplateObject != templateObject)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {
                     templateObject = TemplateObject;
                     if (string.IsNullOrEmpty(TemplateParameterUri))

@@ -148,6 +148,52 @@ namespace Microsoft.Azure.Commands.HDInsight
             set { _config.AADTenantId = value; }
         }
 
+<<<<<<< HEAD
+=======
+        [Parameter(HelpMessage = "Gets or sets the minimal supported TLS version.")]
+        public string MinSupportedTlsVersion
+        {
+            get { return _config.MinSupportedTlsVersion; }
+            set { _config.MinSupportedTlsVersion = value; }
+        }
+
+        [Parameter(HelpMessage = "Gets or sets the assigned identity.")]
+        public string AssignedIdentity
+        {
+            get { return _config.AssignedIdentity; }
+            set { _config.AssignedIdentity = value; }
+        }
+
+        [Parameter(HelpMessage = "Gets or sets the encryption algorithm.")]
+        [ValidateSet(JsonWebKeyEncryptionAlgorithm.RSAOAEP, JsonWebKeyEncryptionAlgorithm.RSAOAEP256, JsonWebKeyEncryptionAlgorithm.RSA15)]
+        public string EncryptionAlgorithm
+        {
+            get { return _config.EncryptionAlgorithm; }
+            set { _config.EncryptionAlgorithm = value; }
+        }
+
+        [Parameter(HelpMessage = "Gets or sets the encryption key name.")]
+        public string EncryptionKeyName
+        {
+            get { return _config.EncryptionKeyName; }
+            set { _config.EncryptionKeyName = value; }
+        }
+
+        [Parameter(HelpMessage = "Gets or sets the encryption key version.")]
+        public string EncryptionKeyVersion
+        {
+            get { return _config.EncryptionKeyVersion; }
+            set { _config.EncryptionKeyVersion = value; }
+        }
+
+        [Parameter(HelpMessage = "Gets or sets the encryption vault uri.")]
+        public string EncryptionVaultUri
+        {
+            get { return _config.EncryptionVaultUri; }
+            set { _config.EncryptionVaultUri = value; }
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #endregion
 
         public NewAzureHDInsightClusterConfigCommand()

@@ -45,7 +45,11 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Model
         USER_CHANGE_PASSWORD_GROUP
     }
 
+<<<<<<< HEAD
     public enum StorageKeyKind { Primary, Secondary };
+=======
+    public enum StorageKeyKind { None, Primary, Secondary };
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     public class ServerAuditModel
     {

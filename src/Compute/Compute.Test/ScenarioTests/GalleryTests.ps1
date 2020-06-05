@@ -325,7 +325,11 @@ function Test-Gallery
         Assert-AreEqual 2 $imageConfig.StorageProfile.DataDisks.Count;
 
         $image = New-AzImage -Image $imageConfig -ImageName $imageName -ResourceGroupName $rgname
+<<<<<<< HEAD
         $targetRegions = @(@{Name='South Central US';ReplicaCount=1},@{Name='East US';ReplicaCount=2},@{Name='Central US'});        
+=======
+        $targetRegions = @(@{Name='South Central US';ReplicaCount=1},@{Name='East US';ReplicaCount=2});
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         $tag = @{test1 = "testval1"; test2 = "testval2" };
 
         New-AzGalleryImageVersion -ResourceGroupName $rgname -GalleryName $galleryName `
@@ -347,9 +351,17 @@ function Test-Gallery
         Verify-GalleryImageVersion $version $rgname $galleryImageVersionName $loc `
                                    $image.Id 1 $endOfLifeDate $targetRegions;
 
+<<<<<<< HEAD
         Update-AzGalleryImageVersion -ResourceGroupName $rgname -GalleryName $galleryName `
                                           -GalleryImageDefinitionName $galleryImageName -Name $galleryImageVersionName `
                                           -Tag $tag;
+=======
+        $targetRegions = @(@{Name='South Central US';ReplicaCount=1},@{Name='East US';ReplicaCount=2},@{Name='Central US';StorageAccountType="Standard_ZRS"});
+
+        Update-AzGalleryImageVersion -ResourceGroupName $rgname -GalleryName $galleryName `
+                                          -GalleryImageDefinitionName $galleryImageName -Name $galleryImageVersionName `
+                                          -TargetRegion $targetRegions -Tag $tag;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         $version = Get-AzGalleryImageVersion -ResourceGroupName $rgname -GalleryName $galleryName `
                                                   -GalleryImageDefinitionName $galleryImageName -Name $galleryImageVersionName;

@@ -11,4 +11,11 @@
     <RootNamespace>$(LegacyAssemblyPrefix)Tags</RootNamespace>
   </PropertyGroup>
 
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="3.7.1-preview" />
+  </ItemGroup>  
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 </Project>

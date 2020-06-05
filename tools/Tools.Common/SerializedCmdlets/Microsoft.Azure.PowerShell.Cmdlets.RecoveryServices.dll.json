@@ -14,7 +14,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ASRVaultBackupProperties",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ASRVaultBackupProperties, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ASRVaultBackupProperties, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "BackupStorageRedundancy": "System.String"
             },
@@ -67,7 +71,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
               "Name": "System.String",
@@ -174,7 +182,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -301,7 +313,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
               "Name": "System.String",
@@ -854,7 +870,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.VaultSettingsFilePath",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.VaultSettingsFilePath, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.VaultSettingsFilePath, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "FilePath": "System.String"
             },
@@ -907,7 +927,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
               "Name": "System.String",
@@ -1122,7 +1146,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -1360,7 +1388,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -1550,7 +1582,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -1740,7 +1776,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -1889,7 +1929,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
               "Name": "System.String",
@@ -2216,7 +2260,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.VaultOperationOutput",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.VaultOperationOutput, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.VaultOperationOutput, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Response": "System.String"
             },
@@ -2269,7 +2317,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
               "Name": "System.String",
@@ -2376,7 +2428,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -2520,7 +2576,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
               "Name": "System.String",
@@ -2588,7 +2648,11 @@
           "Type": {
             "Namespace": "System",
             "Name": "System.Nullable`1[Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+            "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [
@@ -2647,7 +2711,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -2721,7 +2789,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -2819,7 +2891,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
               "Name": "System.String",
@@ -2926,7 +3002,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -3192,7 +3272,11 @@
     "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties": {
       "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
       "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "ProvisioningState": "System.String"
       },
@@ -3426,7 +3510,11 @@
     "Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType": {
       "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
       "Name": "Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.5.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.AzureRmRecoveryServicesBackupStorageRedundancyType, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.8.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],

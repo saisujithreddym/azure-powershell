@@ -15,12 +15,20 @@ Deploys an Azure Web App from a ZIP, JAR, or WAR file using zipdeploy.
 ### FromResourceName
 ```
 Publish-AzWebApp -ArchivePath <String> [-AsJob] [-ResourceGroupName] <String> [-Name] <String>
+<<<<<<< HEAD
  [[-Slot] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+ [[-Slot] <String>]  [-Force] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### FromWebApp
 ```
+<<<<<<< HEAD
 Publish-AzWebApp -ArchivePath <String> [-AsJob] [-WebApp] <PSSite> [-DefaultProfile <IAzureContextContainer>]
+=======
+Publish-AzWebApp -ArchivePath <String> [-AsJob] [-WebApp] <PSSite> [-Force] [-DefaultProfile <IAzureContextContainer>] 
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [<CommonParameters>]
 ```
 
@@ -56,6 +64,14 @@ Uploads the contents of app.zip to the web app named ContosoApp belonging to the
 PS C:\> $app = Get-AzWebApp -ResourceGroupName ContosoRG -Name ContosoApp
 PS C:\> $app | Publish-AzWebApp -ArchivePath C:\project\java_app.jar
 ```
+<<<<<<< HEAD
+=======
+### Example 5
+```powershell
+PS C:\> $app = Get-AzWebApp -ResourceGroupName ContosoRG -Name ContosoApp
+PS C:\> Publish-AzWebApp -WebApp $app -ArchivePath C:\project\app.zip -Force
+```
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Uploads the contents of java_app.jar to the web app named ContosoApp belonging to the resource group ContosoRG.
 
@@ -91,6 +107,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -Force
+Forcefully Remove Option
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 

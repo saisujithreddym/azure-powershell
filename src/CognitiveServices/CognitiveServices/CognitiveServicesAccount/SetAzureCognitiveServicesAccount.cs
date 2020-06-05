@@ -17,6 +17,10 @@ using Microsoft.Azure.Commands.Management.CognitiveServices.Properties;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Management.CognitiveServices;
 using Microsoft.Azure.Management.CognitiveServices.Models;
+<<<<<<< HEAD
+=======
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections;
@@ -30,9 +34,25 @@ namespace Microsoft.Azure.Commands.Management.CognitiveServices
     /// <summary>
     /// Update a Cognitive Services Account (change SKU, Tags)
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet("Set", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CognitiveServicesAccount", SupportsShouldProcess = true), OutputType(typeof(CognitiveServicesModels.PSCognitiveServicesAccount))]
     public class SetAzureCognitiveServicesAccountCommand : CognitiveServicesAccountBaseCmdlet
     {
+=======
+    [Cmdlet("Set", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CognitiveServicesAccount", SupportsShouldProcess = true, DefaultParameterSetName = CognitiveServicesEncryptionParameterSet), OutputType(typeof(CognitiveServicesModels.PSCognitiveServicesAccount))]
+    public class SetAzureCognitiveServicesAccountCommand : CognitiveServicesAccountBaseCmdlet
+    {
+        /// <summary>
+        /// CognitiveServices Encryption parameter set name
+        /// </summary>
+        private const string CognitiveServicesEncryptionParameterSet = "CognitiveServicesEncryption";
+
+        /// <summary>
+        /// KeyVault Encryption parameter set name
+        /// </summary>
+        private const string KeyVaultEncryptionParameterSet = "KeyVaultEncryption";
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(
             Position = 0,
             Mandatory = true,
@@ -76,6 +96,56 @@ namespace Microsoft.Azure.Commands.Management.CognitiveServices
 
         [Parameter(
             Mandatory = false,
+<<<<<<< HEAD
+=======
+            HelpMessage = "Generate and assign a new Cognitive Services Account Identity for this storage account for use with key management services like Azure KeyVault.")]
+        public SwitchParameter AssignIdentity { get; set; }
+
+        [Parameter(
+            HelpMessage = "Type of managed service identity.",
+            Mandatory = false)]
+        public IdentityType? IdentityType { get; set; }
+
+        [Parameter(HelpMessage = "List of User Owned Storage Accounts.", Mandatory = false)]
+        [ValidateNotNull]
+        [AllowEmptyCollection]
+        public string[] StorageAccountId { get; set; }
+
+        [Parameter(
+            HelpMessage = "Whether to set Cognitive Services Account Encryption KeySource to Microsoft.CognitiveServices or not.",
+            Mandatory = false,
+            ParameterSetName = CognitiveServicesEncryptionParameterSet)]
+        public SwitchParameter CognitiveServicesEncryption { get; set; }
+
+        [Parameter(HelpMessage = "Whether to set Cognitive Services Account encryption keySource to Microsoft.KeyVault or not.",
+            Mandatory = false,
+            ParameterSetName = KeyVaultEncryptionParameterSet)]
+        public SwitchParameter KeyVaultEncryption { get; set; }
+
+        [Parameter(HelpMessage = "Cognitive Services Account encryption keySource KeyVault KeyName",
+                    Mandatory = true,
+                    ParameterSetName = KeyVaultEncryptionParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string KeyName { get; set; }
+
+        [Parameter(HelpMessage = "Cognitive Services Account encryption keySource KeyVault KeyVersion",
+        Mandatory = true,
+        ParameterSetName = KeyVaultEncryptionParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string KeyVersion { get; set; }
+
+        [Parameter(HelpMessage = "Cognitive Services Account encryption keySource KeyVault KeyVaultUri",
+        Mandatory = true,
+        ParameterSetName = KeyVaultEncryptionParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string KeyVaultUri
+        {
+            get; set;
+        }
+
+        [Parameter(
+            Mandatory = false,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = "NetworkRuleSet is used to define a set of configuration rules for firewalls and virtual networks, as well as to set values for network properties such as how to handle requests that don't match any of the defined rules")]
         [ValidateNotNull]
         [AllowEmptyCollection]
@@ -89,16 +159,28 @@ namespace Microsoft.Azure.Commands.Management.CognitiveServices
             base.ExecuteCmdlet();
 
             bool hasPropertiesChange = false;
+<<<<<<< HEAD
             var properties = new JObject();
             if (!string.IsNullOrWhiteSpace(CustomSubdomainName))
             {
                 hasPropertiesChange = true;
                 properties["customSubDomainName"] = CustomSubdomainName;
+=======
+            var properties = new CognitiveServicesAccountProperties();
+            if (!string.IsNullOrWhiteSpace(CustomSubdomainName))
+            {
+                hasPropertiesChange = true;
+                properties.CustomSubDomainName = CustomSubdomainName;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             if (NetworkRuleSet != null)
             {
                 hasPropertiesChange = true;
+<<<<<<< HEAD
                 properties["networkAcls"] = JToken.FromObject(NetworkRuleSet);
+=======
+                properties.NetworkAcls = NetworkRuleSet.ToNetworkRuleSet();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             Sku sku = null;
@@ -114,6 +196,57 @@ namespace Microsoft.Azure.Commands.Management.CognitiveServices
                 tags = tagDictionary ?? new Dictionary<string, string>();
             }
 
+<<<<<<< HEAD
+=======
+            CognitiveServicesAccount updateParameters = new CognitiveServicesAccount()
+            {
+                Sku = sku,
+                Tags = tags,
+                Properties = properties
+            };
+
+            if (AssignIdentity.IsPresent)
+            {
+                hasPropertiesChange = true;
+                updateParameters.Identity = new Identity(Microsoft.Azure.Management.CognitiveServices.Models.IdentityType.SystemAssigned);
+            }
+
+            if (this.IsParameterBound(c => c.IdentityType))
+            {
+                hasPropertiesChange = true;
+                updateParameters.Identity = new Identity(this.IdentityType);
+            }
+
+            if (CognitiveServicesEncryption.IsPresent)
+            {
+                hasPropertiesChange = true;
+                updateParameters.Properties.Encryption = new Encryption(null, KeySource.MicrosoftCognitiveServices);
+            }
+
+            if (ParameterSetName == KeyVaultEncryptionParameterSet)
+            {
+                hasPropertiesChange = true;
+                updateParameters.Properties.Encryption = new Encryption(
+                    new KeyVaultProperties()
+                    {
+                        KeyName = KeyName,
+                        KeyVersion = KeyVersion,
+                        KeyVaultUri = KeyVaultUri
+                    },
+                    KeySource.MicrosoftKeyVault);
+            }
+
+            if (StorageAccountId != null && StorageAccountId.Length > 0)
+            {
+                hasPropertiesChange = true;
+                updateParameters.Properties.UserOwnedStorage = new List<UserOwnedStorage>();
+                foreach (var storageAccountId in StorageAccountId)
+                {
+                    updateParameters.Properties.UserOwnedStorage.Add(new UserOwnedStorage(storageAccountId));
+                }
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             string processMessage = string.Empty;
             if (sku != null && tags != null)
             {
@@ -152,9 +285,14 @@ namespace Microsoft.Azure.Commands.Management.CognitiveServices
                     var updatedAccount = this.CognitiveServicesClient.Accounts.Update(
                         this.ResourceGroupName,
                         this.Name,
+<<<<<<< HEAD
                         sku,
                         tags,
                         properties);
+=======
+                        updateParameters
+                        );
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                     WriteCognitiveServicesAccount(updatedAccount);
                 });

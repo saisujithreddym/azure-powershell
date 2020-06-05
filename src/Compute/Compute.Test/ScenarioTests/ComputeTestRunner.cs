@@ -41,6 +41,10 @@ namespace Microsoft.Azure.Commands.Compute.Test.ScenarioTests
                     helper.GetRMModulePath("AzureRM.Compute.psd1"),
                     helper.GetRMModulePath("AzureRM.Network.psd1"),
                     helper.GetRMModulePath("AzureRM.KeyVault.psd1"),
+<<<<<<< HEAD
+=======
+                    helper.GetRMModulePath(@"Az.ManagedServiceIdentity.psd1"),
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                 })
                 .WithRecordMatcher(

@@ -16,7 +16,11 @@ Creates a SQL Database server.
 ```
 New-AzSqlServer -ServerName <String> -SqlAdministratorCredentials <PSCredential> -Location <String>
  [-Tags <Hashtable>] [-ServerVersion <String>] [-AssignIdentity] [-AsJob] [-ResourceGroupName] <String>
+<<<<<<< HEAD
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+ [-DefaultProfile <IAzureContextContainer>] [-PublicNetworkAccess <String>] [-MinimalTlsVersion <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -100,6 +104,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -PublicNetworkAccess
+Takes a flag, enabled/disabled, to specify whether public network access to server is allowed or not.
+When disabled, only connections made through Private Links can reach this server.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ResourceGroupName
 Specifies the name of the resource group to which this cmdlet assigns the server.
 
@@ -163,6 +186,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -MinimalTlsVersion
+The minimal TLS version to enforce for Sql Server
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Tags
 Key-value pairs in the form of a hash table. For example:
 @{key0="value0";key1=$null;key2="value2"}

@@ -14,9 +14,14 @@ Removes the advanced threat protection settings from a server.
 ## SYNTAX
 
 ```
+<<<<<<< HEAD
 Clear-AzSqlServerAdvancedThreatProtectionSetting [-PassThru] -ServerName <String>
  [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+=======
+Clear-AzSqlServerAdvancedThreatProtectionSetting [-PassThru] -ServerName <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION

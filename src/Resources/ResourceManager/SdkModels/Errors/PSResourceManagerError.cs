@@ -12,12 +12,24 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 
 using System.Collections.Generic;
+=======
+using System.Collections.Generic;
+using System.Text;
+using ProjectResources = Microsoft.Azure.Commands.ResourceManager.Cmdlets.Properties.Resources;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels
 {
     public class PSResourceManagerError
     {
+<<<<<<< HEAD
+=======
+        private const char Whitespace = ' ';
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Code { get; set; }
 
         public string Message { get; set; }

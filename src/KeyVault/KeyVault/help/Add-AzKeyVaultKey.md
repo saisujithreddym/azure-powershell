@@ -216,7 +216,11 @@ Version        : 929bfc14db84439b823ffd1bedadaf5f
 Id             : https://contoso.vault.azure.net:443/keys/ITPfxToHSM/929bfc14db84439b823ffd1bedadaf5f
 Enabled        : True
 Expires        : 5/21/2020 11:12:43 PM
+<<<<<<< HEAD
 Not Before     : 
+=======
+Not Before     :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Created        : 5/21/2018 11:13:17 PM
 Updated        : 5/21/2018 11:13:17 PM
 Purge Disabled : False
@@ -234,6 +238,18 @@ The final command imports a key as an HSM key from the specified location. The c
 the expiration time stored in $Expires and password stored in $Password, and applies the tags
 stored in $tags.
 
+<<<<<<< HEAD
+=======
+### Example 7: Generate a Key Exchange Key (KEK) for "bring your own key" (BYOK) feature
+
+```powershell
+PS C:\> $key = Add-AzKeyVaultKey -VaultName $vaultName -Name $keyName -Destination HSM -Size 2048 -KeyOps "import"
+```
+
+Generates a key (referred to as a Key Exchange Key (KEK)). The KEK must be an RSA-HSM key that has only the import key operation. Only Key Vault Premium SKU supports RSA-HSM keys.
+For more details please refer to https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -DefaultProfile
@@ -269,7 +285,11 @@ extension, it imports the key as a software-protected key.
 Type: System.String
 Parameter Sets: InteractiveCreate, InputObjectCreate, ResourceIdCreate
 Aliases:
+<<<<<<< HEAD
 Accepted values: HSM, Software, HSM, Software
+=======
+Accepted values: HSM, Software
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: Named
@@ -282,7 +302,11 @@ Accept wildcard characters: False
 Type: System.String
 Parameter Sets: InteractiveImport, InputObjectImport, ResourceIdImport
 Aliases:
+<<<<<<< HEAD
 Accepted values: HSM, Software, HSM, Software
+=======
+Accepted values: HSM, Software
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: False
 Position: Named
@@ -384,12 +408,22 @@ Specifies an array of operations that can be performed by using the key that thi
 If you do not specify this parameter, all operations can be performed.
 The acceptable values for this parameter are a comma-separated list of key operations as defined by
 the [JSON Web Key (JWK) specification](http://go.microsoft.com/fwlink/?LinkID=613300):
+<<<<<<< HEAD
 - Encrypt
 - Decrypt
 - Wrap
 - Unwrap
 - Sign
 - Verify
+=======
+- encrypt
+- decrypt
+- wrapKey
+- unwrapKey
+- sign
+- verify
+- import (for KEK only, see example 7)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String[]

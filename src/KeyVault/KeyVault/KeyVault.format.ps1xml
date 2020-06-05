@@ -371,6 +371,13 @@
                 <PropertyName>EnableSoftDelete</PropertyName>
               </ListItem>
               <ListItem>
+<<<<<<< HEAD
+=======
+                <Label>Soft Delete Retention Period (days)</Label>
+                <PropertyName>SoftDeleteRetentionInDays</PropertyName>
+              </ListItem>
+              <ListItem>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 <Label>Access Policies</Label>
                 <PropertyName>AccessPoliciesText</PropertyName>
               </ListItem>

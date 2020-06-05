@@ -299,6 +299,21 @@ function Test-ProximityPlacementGroupVM
         Assert-AreEqual $vm.Id $ppgStatus2.VirtualMachines[0].Id;
         Check-ColocationStatusUnknown $ppgStatus2.ColocationStatus;
 
+<<<<<<< HEAD
+=======
+        Update-AzVM -ResourceGroupName $rgname -VM $vm -ProximityPlacementGroupId "";
+        $vm = Get-AzVM -ResourceGroupName $rgname -Name $vmName;
+        Assert-Null $vm.ProximityPlacementGroup.Id;
+
+        $ppg2 = Get-AzProximityPlacementGroup -ResourceGroupName $rgname -Name $ppgname2;
+        Assert-AreEqual 0 $ppg2.VirtualMachines.Count;
+        Assert-Null $ppg2.ColocationStatus;
+
+        $ppgStatus2 =Get-AzProximityPlacementGroup -ResourceGroupName $rgname -Name $ppgname2 -ColocationStatus;
+        Assert-AreEqual 0 $ppgStatus2.VirtualMachines.Count;
+        Check-ColocationStatus $ppgStatus2.ColocationStatus;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         Remove-AzVM -ResourceGroupName $rgname -Name $vmName -Force;
         $ppg = Get-AzProximityPlacementGroup -ResourceGroupName $rgname -Name $ppgname;
         Assert-Null $ppg.VirtualMachines;

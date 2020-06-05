@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-AzScheduledQueryRuleLogMetricTrigger
 
 ## SYNOPSIS
+<<<<<<< HEAD
 Creates an object of type Log Metric Trigger
+=======
+Creates an object of type Log Metric Trigger.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## SYNTAX
 
@@ -47,7 +51,12 @@ Accept wildcard characters: False
 ```
 
 ### -MetricColumn
+<<<<<<< HEAD
 Column on which metric value is being aggregated
+=======
+Column on which metric value is being aggregated.
+The input is not validated. It will first be validated when New-AzScheduledQueryRule is eventually called.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -62,7 +71,12 @@ Accept wildcard characters: False
 ```
 
 ### -MetricTriggerType
+<<<<<<< HEAD
 The metric trigger type
+=======
+The metric trigger type.
+The input is not validated. It will first be validated when New-AzScheduledQueryRule is eventually called.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -77,7 +91,12 @@ Accept wildcard characters: False
 ```
 
 ### -Threshold
+<<<<<<< HEAD
 The metric threshold value
+=======
+The metric threshold value: Consecutive, Total.
+The input is not validated. It will first be validated when New-AzScheduledQueryRule is eventually called.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Double
@@ -92,7 +111,12 @@ Accept wildcard characters: False
 ```
 
 ### -ThresholdOperator
+<<<<<<< HEAD
 The metric threshold operator : GreaterThan, LessThan, Equal
+=======
+The metric threshold operator : GreaterThan, LessThan, Equal.
+The input is not validated. It will first be validated when New-AzScheduledQueryRule is eventually called.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String

@@ -5,6 +5,10 @@ using System.Linq;
 using System.Management.Automation;
 using System.Reflection;
 using System.Text.RegularExpressions;
+<<<<<<< HEAD
+=======
+using Tools.Common.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace VersionController.Models
 {
@@ -16,6 +20,11 @@ namespace VersionController.Models
         private string _oldVersion, _newVersion;
         private bool _isPreview;
 
+<<<<<<< HEAD
+=======
+        public AzurePSVersion MinimalVersion { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public VersionBumper(VersionFileHelper fileHelper)
         {
             _fileHelper = fileHelper;
@@ -44,12 +53,28 @@ namespace VersionController.Models
             }
 
             _newVersion = IsNewModule() ? _oldVersion : GetBumpedVersion();
+<<<<<<< HEAD
+=======
+            if(MinimalVersion != null && MinimalVersion > new AzurePSVersion(_newVersion))
+            {
+                Console.WriteLine($"Adjust version from {_newVersion} to {MinimalVersion} due to MinimalVersion.csv");
+                _newVersion = MinimalVersion.ToString();
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (_oldVersion == _newVersion)
             {
                 Console.WriteLine(_fileHelper.ModuleName + " is a new module. Keeping the version at " + _oldVersion);
 
+<<<<<<< HEAD
                 // Generate the serialized module metadata file
                 _metadataHelper.SerializeModule();
+=======
+                if (!_newVersion.StartsWith("0"))
+                {
+                    // Generate the serialized module metadata file
+                    _metadataHelper.SerializeModule();
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             else
             {

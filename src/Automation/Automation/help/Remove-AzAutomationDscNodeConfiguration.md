@@ -168,6 +168,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Import-AzAutomationDscNodeConfiguration](./Import-AzAutomationDscNodeConfiguration.md)
 
+<<<<<<< HEAD
 [Azure Automation Cmdlets](./Az.Automation.md)
 
 
+=======
+[Azure Automation Cmdlets](/powershell/module/Az.Automation/)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

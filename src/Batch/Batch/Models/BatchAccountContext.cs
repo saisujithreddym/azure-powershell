@@ -147,6 +147,19 @@ namespace Microsoft.Azure.Commands.Batch
         public KeyVaultReference KeyVaultReference { get; private set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// A list of private endpoint connections associated with the account.
+        /// </summary>
+        public IList<PrivateEndpointConnection> PrivateEndpointConnections { get; private set; }
+
+        /// <summary>
+        /// The public network access type
+        /// </summary>
+        public PublicNetworkAccessType? PublicNetworkAccess { get; private set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// The key to use when interacting with the Batch service. Be default, the primary key will be used.
         /// </summary>
         public AccountKeyType KeyInUse
@@ -224,7 +237,12 @@ namespace Microsoft.Azure.Commands.Batch
             this.PoolQuota = resource.PoolQuota;
             this.ActiveJobAndJobScheduleQuota = resource.ActiveJobAndJobScheduleQuota;
             this.PoolAllocationMode = resource.PoolAllocationMode;
+<<<<<<< HEAD
             
+=======
+            this.PublicNetworkAccess = resource.PublicNetworkAccess;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (resource.AutoStorage != null)
             {
                 this.AutoStorageProperties = new AutoStorageProperties()
@@ -239,6 +257,11 @@ namespace Microsoft.Azure.Commands.Batch
                 this.KeyVaultReference = resource.KeyVaultReference;
             }
 
+<<<<<<< HEAD
+=======
+            this.PrivateEndpointConnections = resource.PrivateEndpointConnections;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             // extract the host and strip off the account name for the TaskTenantUrl and AccountName
             var hostParts = accountEndpoint.Split('.');
             this.AccountName = hostParts[0];

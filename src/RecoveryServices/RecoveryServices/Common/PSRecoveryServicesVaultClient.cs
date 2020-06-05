@@ -16,6 +16,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Azure.Management.Internal.Resources.Models;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Management.RecoveryServices.Backup.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Management.RecoveryServices.Models;
 using Microsoft.Rest.Azure;
 
@@ -99,10 +103,17 @@ namespace Microsoft.Azure.Commands.RecoveryServices
         /// <param name="vaultStorageUpdateRequest">Backup Properties Update</param>  
         /// <returns>Azure Operation response object.</returns>  
         public void UpdateVaultStorageType(string resouceGroupName, string vaultName,
+<<<<<<< HEAD
             BackupStorageConfig backupStorageConfig)
         {
             GetRecoveryServicesClient.BackupStorageConfigs.UpdateWithHttpMessagesAsync(
                 resouceGroupName, vaultName, backupStorageConfig, GetRequestHeaders());
+=======
+            BackupResourceConfigResource backupStorageConfig)
+        {
+            GetRecoveryServicesBackupClient.BackupResourceStorageConfigs.UpdateWithHttpMessagesAsync(
+                vaultName, resouceGroupName, backupStorageConfig, GetRequestHeaders());
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>  
@@ -111,10 +122,17 @@ namespace Microsoft.Azure.Commands.RecoveryServices
         /// <param name="resouceGroupName">Name of the resouce group</param>  
         /// <param name="vaultName">Name of the vault</param>  
         /// <returns>Azure Resource Storage response object.</returns>  
+<<<<<<< HEAD
         public BackupStorageConfig GetVaultStorageType(string resouceGroupName, string vaultName)
         {
             return GetRecoveryServicesClient.BackupStorageConfigs.GetWithHttpMessagesAsync(
                 resouceGroupName, vaultName, GetRequestHeaders()).Result.Body;
+=======
+        public BackupResourceConfigResource GetVaultStorageType(string resouceGroupName, string vaultName)
+        {
+            return GetRecoveryServicesBackupClient.BackupResourceStorageConfigs.GetWithHttpMessagesAsync(
+                vaultName, resouceGroupName, GetRequestHeaders()).Result.Body;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

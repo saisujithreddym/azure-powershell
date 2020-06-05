@@ -105,12 +105,15 @@ namespace Microsoft.Azure.Commands.Compute.Automation
 
         [Parameter(
             Mandatory = false)]
+<<<<<<< HEAD
         [CmdletParameterBreakingChange("AutomaticRepairMaxInstanceRepairsPercent",
             ChangeDescription = "AutomaticRepairMaxInstanceRepairsPercent is not supported until future.")]
         public int AutomaticRepairMaxInstanceRepairsPercent { get; set; }
 
         [Parameter(
             Mandatory = false)]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public bool BootDiagnosticsEnabled { get; set; }
 
         [Parameter(
@@ -251,7 +254,11 @@ namespace Microsoft.Azure.Commands.Compute.Automation
 
         [Parameter(
             Mandatory = false)]
+<<<<<<< HEAD
         [ValidateNotNullOrEmpty]
+=======
+        [AllowEmptyString]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ProximityPlacementGroupId { get; set; }
 
         [Parameter(
@@ -1097,6 +1104,16 @@ namespace Microsoft.Azure.Commands.Compute.Automation
             }
 
             if (this.VirtualMachineScaleSetUpdate != null
+<<<<<<< HEAD
+=======
+                && this.VirtualMachineScaleSetUpdate.ProximityPlacementGroup != null
+                && string.IsNullOrEmpty(this.VirtualMachineScaleSetUpdate.ProximityPlacementGroup.Id))
+            {
+                this.VirtualMachineScaleSetUpdate.ProximityPlacementGroup.Id = null;
+            }
+
+            if (this.VirtualMachineScaleSetUpdate != null
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 && this.VirtualMachineScaleSetUpdate.VirtualMachineProfile != null
                 && this.VirtualMachineScaleSetUpdate.VirtualMachineProfile.OsProfile != null
                 && this.VirtualMachineScaleSetUpdate.VirtualMachineProfile.OsProfile.WindowsConfiguration != null
@@ -1125,7 +1142,11 @@ namespace Microsoft.Azure.Commands.Compute.Automation
             {
                 if (this.VirtualMachineScaleSet.AutomaticRepairsPolicy == null)
                 {
+<<<<<<< HEAD
                     this.VirtualMachineScaleSet.AutomaticRepairsPolicy = new PSAutomaticRepairsPolicy();
+=======
+                    this.VirtualMachineScaleSet.AutomaticRepairsPolicy = new AutomaticRepairsPolicy();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
                 this.VirtualMachineScaleSet.AutomaticRepairsPolicy.GracePeriod = this.AutomaticRepairGracePeriod;
             }
@@ -1211,7 +1232,11 @@ namespace Microsoft.Azure.Commands.Compute.Automation
             {
                 if (this.VirtualMachineScaleSet.AutomaticRepairsPolicy == null)
                 {
+<<<<<<< HEAD
                     this.VirtualMachineScaleSet.AutomaticRepairsPolicy = new PSAutomaticRepairsPolicy();
+=======
+                    this.VirtualMachineScaleSet.AutomaticRepairsPolicy = new AutomaticRepairsPolicy();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
                 this.VirtualMachineScaleSet.AutomaticRepairsPolicy.Enabled = this.EnableAutomaticRepair;
             }
@@ -1700,6 +1725,16 @@ namespace Microsoft.Azure.Commands.Compute.Automation
             }
 
             if (this.VirtualMachineScaleSet != null
+<<<<<<< HEAD
+=======
+                && this.VirtualMachineScaleSet.ProximityPlacementGroup != null
+                && string.IsNullOrEmpty(this.VirtualMachineScaleSet.ProximityPlacementGroup.Id))
+            {
+                this.VirtualMachineScaleSet.ProximityPlacementGroup.Id = null;
+            }
+
+            if (this.VirtualMachineScaleSet != null
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 && this.VirtualMachineScaleSet.VirtualMachineProfile != null
                 && this.VirtualMachineScaleSet.VirtualMachineProfile.OsProfile != null
                 && this.VirtualMachineScaleSet.VirtualMachineProfile.OsProfile.WindowsConfiguration != null

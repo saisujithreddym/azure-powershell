@@ -75,7 +75,11 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Cmdlets.Remediation
         /// <summary>
         /// Executes the cmdlet to create a remediation resource
         /// </summary>
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
+=======
+        public override void Execute()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             if (!string.IsNullOrEmpty(this.Name) && new[] { this.Scope, this.ManagementGroupName, this.ResourceGroupName }.Count(s => s != null) > 1)
             {

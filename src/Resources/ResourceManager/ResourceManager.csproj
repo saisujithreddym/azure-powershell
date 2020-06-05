@@ -12,12 +12,35 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="3.0.0-preview" />
+=======
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="3.7.1-preview" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     <None Update="ResourceManagerStartup.ps1" CopyToOutputDirectory="Never" />
   </ItemGroup>
 

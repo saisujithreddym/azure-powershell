@@ -51,7 +51,11 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
+<<<<<<< HEAD
 RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.1'; })
+=======
+RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.5'; })
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'Microsoft.Azure.Management.Subscription.dll'
@@ -110,7 +114,11 @@ PrivateData = @{
         ReleaseNotes = '* Update references in .psd1 to use relative path'
 
         # Prerelease string of this module
+<<<<<<< HEAD
         Prerelease = 'preview'
+=======
+        # Prerelease = ''
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         # Flag to indicate whether the module requires explicit user acceptance for install/update/save
         # RequireLicenseAcceptance = $false

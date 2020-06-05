@@ -29,7 +29,11 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
     {
         public virtual PSStorageInsight GetStorageInsight(string resourceGroupName, string workspaceName, string storageInsightName)
         {
+<<<<<<< HEAD
             var response = OperationalInsightsManagementClient.StorageInsights.Get(resourceGroupName, workspaceName, storageInsightName);
+=======
+            var response = OperationalInsightsManagementClient.StorageInsightConfigs.Get(resourceGroupName, workspaceName, storageInsightName);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return new PSStorageInsight(response, resourceGroupName, workspaceName);
         }
@@ -38,7 +42,11 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
         {
             List<PSStorageInsight> storageInsights = new List<PSStorageInsight>();
 
+<<<<<<< HEAD
             var response = OperationalInsightsManagementClient.StorageInsights.ListByWorkspace(resourceGroupName, workspaceName);
+=======
+            var response = OperationalInsightsManagementClient.StorageInsightConfigs.ListByWorkspace(resourceGroupName, workspaceName);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (response != null)
             {
@@ -50,7 +58,11 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
 
         public virtual HttpStatusCode DeleteStorageInsight(string resourceGroupName, string workspaceName, string storageInsightName)
         {
+<<<<<<< HEAD
             Rest.Azure.AzureOperationResponse result = OperationalInsightsManagementClient.StorageInsights.DeleteWithHttpMessagesAsync(resourceGroupName, workspaceName, storageInsightName).GetAwaiter().GetResult();
+=======
+            Rest.Azure.AzureOperationResponse result = OperationalInsightsManagementClient.StorageInsightConfigs.DeleteWithHttpMessagesAsync(resourceGroupName, workspaceName, storageInsightName).GetAwaiter().GetResult();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             return result.Response.StatusCode;
         }
 
@@ -70,7 +82,11 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
                 properties.StorageAccount = new StorageAccount { Id = storageAccountResourceId, Key = storageAccountKey };
             }
 
+<<<<<<< HEAD
             var response = OperationalInsightsManagementClient.StorageInsights.CreateOrUpdate(
+=======
+            var response = OperationalInsightsManagementClient.StorageInsightConfigs.CreateOrUpdate(
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 resourceGroupName,
                 workspaceName,
                 name,
@@ -82,7 +98,11 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Client
         public virtual PSStorageInsight UpdatePSStorageInsight(UpdatePSStorageInsightParameters parameters)
         {
             // Get the existing storage insight
+<<<<<<< HEAD
             StorageInsight storageInsight = OperationalInsightsManagementClient.StorageInsights.Get(parameters.ResourceGroupName, parameters.WorkspaceName, parameters.Name);
+=======
+            StorageInsight storageInsight = OperationalInsightsManagementClient.StorageInsightConfigs.Get(parameters.ResourceGroupName, parameters.WorkspaceName, parameters.Name);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             // Execute the update
             StorageInsight updatedStorageInsight = CreateOrUpdateStorageInsight(

@@ -16,8 +16,16 @@ using Microsoft.Azure.Commands.KeyVault.Models;
 using Microsoft.Azure.Commands.KeyVault.Properties;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Management.KeyVault.Models;
+<<<<<<< HEAD
 using System;
 using System.Collections;
+=======
+using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
+using System;
+using System.Collections;
+using System.Linq;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Management.Automation;
 
 namespace Microsoft.Azure.Commands.KeyVault
@@ -25,7 +33,11 @@ namespace Microsoft.Azure.Commands.KeyVault
     /// <summary>
     /// Create a new key vault.
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "KeyVault",SupportsShouldProcess = true)]
+=======
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "KeyVault", SupportsShouldProcess = true)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSKeyVault))]
     public class NewAzureKeyVault : KeyVaultManagementCmdletBase
     {
@@ -82,6 +94,7 @@ namespace Microsoft.Azure.Commands.KeyVault
         public SwitchParameter EnabledForDiskEncryption { get; set; }
 
         [Parameter(Mandatory = false,
+<<<<<<< HEAD
             ValueFromPipelineByPropertyName = false,
             HelpMessage = "If specified, 'soft delete' functionality is enabled for this key vault.")]
         public SwitchParameter EnableSoftDelete { get; set; }
@@ -91,6 +104,20 @@ namespace Microsoft.Azure.Commands.KeyVault
             HelpMessage = "If specified, protection against immediate deletion is enabled for this vault; requires soft delete to be enabled as well.")]
         public SwitchParameter EnablePurgeProtection { get; set; }
 
+=======
+            HelpMessage = "If specified, 'soft delete' functionality is disabled for this key vault.")]
+        public SwitchParameter DisableSoftDelete { get; set; }
+
+        [Parameter(Mandatory = false,
+            HelpMessage = "If specified, protection against immediate deletion is enabled for this vault; requires soft delete to be enabled as well. Enabling 'purge protection' on a key vault is an irreversible action. Once enabled, it cannot be changed or removed.")]
+        public SwitchParameter EnablePurgeProtection { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = "Specifies how long deleted resources are retained, and how long until a vault or an object in the deleted state can be purged. The default is " + Constants.DefaultSoftDeleteRetentionDaysString + " days.")]
+        [ValidateRange(Constants.MinSoftDeleteRetentionDays, Constants.MaxSoftDeleteRetentionDays)]
+        [ValidateNotNullOrEmpty]
+        public int SoftDeleteRetentionInDays { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = false,
             ValueFromPipelineByPropertyName = true,
             HelpMessage = "Specifies the SKU of the key vault instance. For information about which features are available for each SKU, see the Azure Key Vault Pricing website (http://go.microsoft.com/fwlink/?linkid=512521).")]
@@ -102,6 +129,12 @@ namespace Microsoft.Azure.Commands.KeyVault
         [Alias(Constants.TagsAlias)]
         public Hashtable Tag { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(Mandatory = false, HelpMessage = "Specifies the network rule set of the vault. It governs the accessibility of the key vault from specific network locations. Created by `New-AzKeyVaultNetworkRuleSetObject`.")]
+        public PSKeyVaultNetworkRuleSet NetworkRuleSet { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #endregion
 
         public override void ExecuteCmdlet()
@@ -144,6 +177,7 @@ namespace Microsoft.Azure.Commands.KeyVault
                 }
 
                 var newVault = KeyVaultManagementClient.CreateNewVault(new VaultCreationParameters()
+<<<<<<< HEAD
                     {
                         VaultName = this.Name,
                         ResourceGroupName = this.ResourceGroupName,
@@ -161,6 +195,36 @@ namespace Microsoft.Azure.Commands.KeyVault
                         Tags = this.Tag
                     },
                     ActiveDirectoryClient);
+=======
+                {
+                    VaultName = this.Name,
+                    ResourceGroupName = this.ResourceGroupName,
+                    Location = this.Location,
+                    EnabledForDeployment = this.EnabledForDeployment.IsPresent,
+                    EnabledForTemplateDeployment = EnabledForTemplateDeployment.IsPresent,
+                    EnabledForDiskEncryption = EnabledForDiskEncryption.IsPresent,
+                    EnableSoftDelete = !DisableSoftDelete.IsPresent,
+                    EnablePurgeProtection = EnablePurgeProtection.IsPresent ? true : (bool?)null, // false is not accepted
+                    /*
+                     * If soft delete is enabled, but retention days is not specified, use the default value,
+                     * else use the vault user provides,
+                     * else use null
+                     */
+                    SoftDeleteRetentionInDays = DisableSoftDelete.IsPresent
+                        ? null as int?
+                        : (this.IsParameterBound(c => c.SoftDeleteRetentionInDays)
+                            ? SoftDeleteRetentionInDays
+                            : Constants.DefaultSoftDeleteRetentionDays),
+                    SkuFamilyName = DefaultSkuFamily,
+                    SkuName = this.Sku,
+                    TenantId = GetTenantId(),
+                    AccessPolicy = accessPolicy,
+                    NetworkAcls = new NetworkRuleSet(),     // New key-vault takes in default network rule set
+                    Tags = this.Tag
+                },
+                    ActiveDirectoryClient,
+                    NetworkRuleSet);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                 this.WriteObject(newVault);
 
@@ -170,7 +234,10 @@ namespace Microsoft.Azure.Commands.KeyVault
                 }
             }
         }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

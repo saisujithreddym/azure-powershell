@@ -28,7 +28,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Direct
     /// </summary>
     [Cmdlet(
         VerbsCommon.Set,
+<<<<<<< HEAD
         "AzPeeringDirectConnectionObject",
+=======
+        Constants.AzPeeringDirectConnectionObject,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         DefaultParameterSetName = Constants.ParameterSetNameBandwidth, SupportsShouldProcess = false)]
     [OutputType(typeof(PSDirectConnection))]
     public class SetAzureDirectPeeringConnectionCommand : PeeringBaseCmdlet

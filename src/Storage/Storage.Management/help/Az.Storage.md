@@ -41,6 +41,18 @@ Enable delete retention policy  for the Azure Storage Blob service.
 ### [Enable-AzStorageStaticWebsite](Enable-AzStorageStaticWebsite.md)
 Enable static website for the Azure Storage account.
 
+<<<<<<< HEAD
+=======
+### [Get-AzDataLakeGen2ChildItem](Get-AzDataLakeGen2ChildItem.md)
+Lists sub directorys and files from a directory or filesystem root.
+
+### [Get-AzDataLakeGen2Item](Get-AzDataLakeGen2Item.md)
+Gets the details of a file or directory in a filesystem.
+
+### [Get-AzDataLakeGen2ItemContent](Get-AzDataLakeGen2ItemContent.md)
+Download a file.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzRmStorageContainer](Get-AzRmStorageContainer.md)
 Gets or lists Storage blob containers
 
@@ -128,9 +140,24 @@ Gets the stored access policy or policies for an Azure storage table.
 ### [Get-AzStorageUsage](Get-AzStorageUsage.md)
 Gets the Storage resource usage of the current subscription.
 
+<<<<<<< HEAD
 ### [Lock-AzRmStorageContainerImmutabilityPolicy](Lock-AzRmStorageContainerImmutabilityPolicy.md)
 Locks ImmutabilityPolicy of a Storage blob containers
 
+=======
+### [Invoke-AzStorageAccountFailover](Invoke-AzStorageAccountFailover.md)
+Invokes failover of a Storage account.
+
+### [Lock-AzRmStorageContainerImmutabilityPolicy](Lock-AzRmStorageContainerImmutabilityPolicy.md)
+Locks ImmutabilityPolicy of a Storage blob containers
+
+### [Move-AzDataLakeGen2Item](Move-AzDataLakeGen2Item.md)
+Move a file or directory to another a file or directory in same Storage account.
+
+### [New-AzDataLakeGen2Item](New-AzDataLakeGen2Item.md)
+Create a file or directory in a filesystem.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [New-AzRmStorageContainer](New-AzRmStorageContainer.md)
 Creates a Storage blob container
 
@@ -200,6 +227,12 @@ Generates an SAS token for an Azure Storage table.
 ### [New-AzStorageTableStoredAccessPolicy](New-AzStorageTableStoredAccessPolicy.md)
 Creates a stored access policy for an Azure storage table.
 
+<<<<<<< HEAD
+=======
+### [Remove-AzDataLakeGen2Item](Remove-AzDataLakeGen2Item.md)
+Remove a file or directory.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Remove-AzRmStorageContainer](Remove-AzRmStorageContainer.md)
 Removes a Storage blob container
 
@@ -263,6 +296,12 @@ Revoke all User Delegation keys of a Storage account.
 ### [Set-AzCurrentStorageAccount](Set-AzCurrentStorageAccount.md)
 Modifies the current Storage account of the specified subscription.
 
+<<<<<<< HEAD
+=======
+### [Set-AzDataLakeGen2ItemAclObject](Set-AzDataLakeGen2ItemAclObject.md)
+Creates/Updates a DataLake gen2 item ACL object, which can be used in Update-AzDataLakeGen2Item cmdlet.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Set-AzRmStorageContainerImmutabilityPolicy](Set-AzRmStorageContainerImmutabilityPolicy.md)
 Creates or updates ImmutabilityPolicy of a Storage blob containers
 
@@ -320,6 +359,12 @@ Stops a copy operation.
 ### [Stop-AzStorageFileCopy](Stop-AzStorageFileCopy.md)
 Stops a copy operation to the specified destination file.
 
+<<<<<<< HEAD
+=======
+### [Update-AzDataLakeGen2Item](Update-AzDataLakeGen2Item.md)
+Update a file or directory on properties, metadata, permission, ACL, and owner.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Update-AzRmStorageContainer](Update-AzRmStorageContainer.md)
 Modifies a Storage blob container
 

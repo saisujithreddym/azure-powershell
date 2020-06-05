@@ -32,6 +32,12 @@ namespace Microsoft.Azure.Commands.Network.Models
         public bool EnableBgp { get; set; }
 
         [Ps1Xml(Target = ViewControl.Table)]
+<<<<<<< HEAD
+=======
+        public bool EnablePrivateIpAddress { get; set; }
+
+        [Ps1Xml(Target = ViewControl.Table)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public bool ActiveActive { get; set; }
 
         public PSResourceId GatewayDefaultSite { get; set; }

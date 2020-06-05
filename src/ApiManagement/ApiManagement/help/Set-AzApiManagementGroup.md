@@ -27,7 +27,11 @@ The **Set-AzApiManagementGroup** cmdlet configures an API management group.
 ### Example 1: Configure a management group
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
+<<<<<<< HEAD
 PS C:\>Set-AzApiManagementGroup -Context $apimContext -Description "Updated Management Group" -Name "Group0001"
+=======
+PS C:\>Set-AzApiManagementGroup -Context $apimContext -GroupId "0001" -Description "Updated Management Group" -Name "Group0001"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 This command configures a management group named Group0001.

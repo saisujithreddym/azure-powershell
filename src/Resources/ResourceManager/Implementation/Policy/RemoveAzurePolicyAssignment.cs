@@ -47,6 +47,15 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         public string Id { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or sets the policy assignment input object parameter.
+        /// </summary>
+        [Parameter(ParameterSetName = PolicyCmdletBase.InputObjectParameterSet, Mandatory = true, ValueFromPipeline = true, ValueFromPipelineByPropertyName = true, HelpMessage = PolicyHelpStrings.RemovePolicyAssignmentInputObjectHelp)]
+        public PsPolicyAssignment InputObject { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Executes the cmdlet.
         /// </summary>
         protected override void OnProcessRecord()
@@ -98,7 +107,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         /// </summary>
         private string GetResourceId()
         {
+<<<<<<< HEAD
             return this.Id ?? this.MakePolicyAssignmentId(this.Scope, this.Name);
+=======
+            return this.Id ?? this.InputObject?.ResourceId ?? this.MakePolicyAssignmentId(this.Scope, this.Name);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

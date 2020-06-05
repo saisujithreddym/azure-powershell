@@ -367,6 +367,7 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Blob
             }
 
             base.DoEndProcessing();
+<<<<<<< HEAD
         }
 
         //only support the common blob properties for block blob and page blob
@@ -454,6 +455,9 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Blob
                 }
             }
         }
+=======
+        }        
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         /// <summary>
         /// set blob AccessTier

@@ -17,19 +17,67 @@ Adds or updates a V2 (non-classic) metric-based alert rule.
 Add-AzMetricAlertRuleV2 -Name <String> -ResourceGroupName <String> -WindowSize <TimeSpan> -Frequency <TimeSpan>
  -TargetResourceId <String>
  -Condition <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.IPSMultiMetricCriteria]>
+<<<<<<< HEAD
+=======
+ [-DisableRule] [-Description <String>] -Severity <Int32> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### CreateAlertByResourceIdAndActionGroup
+```
+Add-AzMetricAlertRuleV2 -Name <String> -ResourceGroupName <String> -WindowSize <TimeSpan> -Frequency <TimeSpan>
+ -TargetResourceId <String>
+ -Condition <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.IPSMultiMetricCriteria]>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  -ActionGroup <ActivityLogAlertActionGroup[]> [-DisableRule] [-Description <String>] -Severity <Int32>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### CreateAlertByResourceIdAndActionGroupId
+```
+Add-AzMetricAlertRuleV2 -Name <String> -ResourceGroupName <String> -WindowSize <TimeSpan> -Frequency <TimeSpan>
+ -TargetResourceId <String>
+ -Condition <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.IPSMultiMetricCriteria]>
+ -ActionGroupId <String[]> [-DisableRule] [-Description <String>] -Severity <Int32>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### CreateAlertByScopes
 ```
 Add-AzMetricAlertRuleV2 -Name <String> -ResourceGroupName <String> -WindowSize <TimeSpan> -Frequency <TimeSpan>
  -TargetResourceScope <String[]> -TargetResourceType <String> -TargetResourceRegion <String>
  -Condition <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.IPSMultiMetricCriteria]>
+<<<<<<< HEAD
+=======
+ [-DisableRule] [-Description <String>] -Severity <Int32> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### CreateAlertByScopesAndActionGroup
+```
+Add-AzMetricAlertRuleV2 -Name <String> -ResourceGroupName <String> -WindowSize <TimeSpan> -Frequency <TimeSpan>
+ -TargetResourceScope <String[]> -TargetResourceType <String> -TargetResourceRegion <String>
+ -Condition <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.IPSMultiMetricCriteria]>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  -ActionGroup <ActivityLogAlertActionGroup[]> [-DisableRule] [-Description <String>] -Severity <Int32>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### CreateAlertByScopesAndActionGroupId
+```
+Add-AzMetricAlertRuleV2 -Name <String> -ResourceGroupName <String> -WindowSize <TimeSpan> -Frequency <TimeSpan>
+ -TargetResourceScope <String[]> -TargetResourceType <String> -TargetResourceRegion <String>
+ -Condition <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.IPSMultiMetricCriteria]>
+ -ActionGroupId <String[]> [-DisableRule] [-Description <String>] -Severity <Int32>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## DESCRIPTION
 Adds or updates a **V2 (non-classic) metric-based alert rule**. The added rule is associated with a resource group and has a name. This cmdlet implements the ShouldProcess pattern, i.e. it might request confirmation from the user before actually creating, modifying, or removing the resource.
 
@@ -149,13 +197,36 @@ The Action Group for rule
 
 ```yaml
 Type: Microsoft.Azure.Management.Monitor.Models.ActivityLogAlertActionGroup[]
+<<<<<<< HEAD
 Parameter Sets: (All)
+=======
+Parameter Sets: CreateAlertByResourceIdAndActionGroup, CreateAlertByScopesAndActionGroup
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases: Actions
 
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByPropertyName, ByValue)
+=======
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ActionGroupId
+The Action Group id for rule
+
+```yaml
+Type: System.String[]
+Parameter Sets: CreateAlertByResourceIdAndActionGroupId, CreateAlertByScopesAndActionGroupId
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -284,7 +355,11 @@ The target resource id for rule
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: CreateAlertByResourceId
+=======
+Parameter Sets: CreateAlertByResourceId, CreateAlertByResourceIdAndActionGroup, CreateAlertByResourceIdAndActionGroupId
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -299,7 +374,11 @@ The target resource region for rule
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: CreateAlertByScopes
+=======
+Parameter Sets: CreateAlertByScopes, CreateAlertByScopesAndActionGroup, CreateAlertByScopesAndActionGroupId
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -314,7 +393,11 @@ The target resource scope for rule
 
 ```yaml
 Type: System.String[]
+<<<<<<< HEAD
 Parameter Sets: CreateAlertByScopes
+=======
+Parameter Sets: CreateAlertByScopes, CreateAlertByScopesAndActionGroup, CreateAlertByScopesAndActionGroupId
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases: Scopes
 
 Required: True
@@ -329,7 +412,11 @@ The target resource type for rule
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: CreateAlertByScopes
+=======
+Parameter Sets: CreateAlertByScopes, CreateAlertByScopesAndActionGroup, CreateAlertByScopesAndActionGroupId
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True

@@ -29,8 +29,13 @@ The **New-AzBatchJob** cmdlet creates a job in the Azure Batch service in the ac
 
 ### Example 1: Create a job
 ```
+<<<<<<< HEAD
 PS C:\>$PoolInformation = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSPoolInformation" 
 PS C:\> $PoolInformation.PoolId = "Pool22" 
+=======
+PS C:\>$PoolInformation = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSPoolInformation"
+PS C:\> $PoolInformation.PoolId = "Pool22"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> New-AzBatchJob -Id "ContosoJob35" -PoolInformation $PoolInformation -BatchContext $Context
 ```
 
@@ -312,6 +317,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Stop-AzBatchJob](./Stop-AzBatchJob.md)
 
+<<<<<<< HEAD
 [Azure Batch Cmdlets](./Az.Batch.md)
 
 
+=======
+[Azure Batch Cmdlets](/powershell/module/Az.Batch/)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

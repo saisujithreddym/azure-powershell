@@ -2,6 +2,13 @@
   "tool": "Credential Scanner",
   "suppressions": [
     {
+<<<<<<< HEAD
+=======
+      "file": "src\\KeyVault\\KeyVault.Test\\SessionRecords\\Microsoft.Azure.Commands.KeyVault.Test.ScenarioTests.KeyVaultManagementTests\\TestCreateNewVault.json",
+      "_justification": "The 'ocp-aad-diagnostics-server-name' header in response is falsely recognized as a password."
+    },
+    {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "file": "\\documentation\\development-docs\\azure-powershell-developer-guide.md",
       "_justification": "Documentation with non-live passwords in sample connection strings"
     },
@@ -498,6 +505,13 @@
       "_justification": "Test resource is deleted"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "src\\HDInsight\\HDInsight.Test\\SessionRecords\\Commands.HDInsight.Test.ScenarioTests.HDInsightClusterTests\\TestCmkClusterRelatedCommands.json",
+      "_justification": "Test resource is deleted"
+    },
+    {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "file": "src\\KeyVault\\KeyVault.Test\\Scripts\\VaultCertificateTests.ps1",
       "_justification": "Resource creation is mocked"
     },
@@ -529,6 +543,7 @@
       "file": "src\\IotHub\\IotHub.Test\\ScenarioTests\\IotHubRoutingTests.ps1",
       "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
     },
+<<<<<<< HEAD
 	  {
 	    "file": "src\\IotHub\\IotHub.Test\\SessionRecords\\Microsoft.Azure.Commands.IotHub.Test.ScenarioTests.IotHubRoutingTests\\TestAzureIotHubRoutingLifeCycle.json",
 	    "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
@@ -537,6 +552,32 @@
 	    "file": "src\\IotHub\\IotHub.Test\\SessionRecords\\Microsoft.Azure.Commands.IotHub.Test.ScenarioTests.IotHubTests\\TestAzureIotHubLifeCycle.json",
 	    "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
 	  },
+=======
+	{
+	  "file": "src\\IotHub\\IotHub.Test\\SessionRecords\\Microsoft.Azure.Commands.IotHub.Test.ScenarioTests.IotHubRoutingTests\\TestAzureIotHubRoutingLifeCycle.json",
+	  "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
+	},
+	{
+	  "file": "src\\IotHub\\IotHub.Test\\SessionRecords\\Microsoft.Azure.Commands.IotHub.Test.ScenarioTests.IotHubTests\\TestAzureIotHubLifeCycle.json",
+	  "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
+	},
+	{
+	  "file": "src\\IotHub\\IotHub.Test\\SessionRecords\\Microsoft.Azure.Commands.IotHub.Test.ScenarioTests.IotHubDPDeviceTests\\TestAzureIotHubDeviceLifecycle.json",
+	  "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
+	},
+	{
+	  "file": "src\\IotHub\\IotHub.Test\\SessionRecords\\Microsoft.Azure.Commands.IotHub.Test.ScenarioTests.IotHubDPModuleTests\\TestAzureIotHubModuleLifecycle.json",
+	  "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
+	},
+	{
+	  "file": "src\\IotHub\\IotHub.Test\\SessionRecords\\Microsoft.Azure.Commands.IotHub.Test.ScenarioTests.IotHubDPTracingTests\\TestAzureIotHubTracing.json",
+	  "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
+	},
+	{
+	  "file": "src\\IotHub\\IotHub.Test\\SessionRecords\\Microsoft.Azure.Commands.IotHub.Test.ScenarioTests.IotHubDPConfigurationTests\\TestAzureIotHubConfigurationLifecycle.json",
+	  "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
+	},
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     {
       "file": "src\\Compute\\Compute.Test\\SessionRecords\\Microsoft.Azure.Commands.Compute.Test.ScenarioTests.AEMExtensionTests\\TestAEMExtensionAdvancedLinux.json",
       "_justification": "Mocked test resource. The resources are being deleted after the test run in Record mode."
@@ -894,6 +935,13 @@
       "_justification": "Generated test resource group, deleted after test execution"
     },
     {
+<<<<<<< HEAD
+=======
+      "file": "src\\Network\\Network.Test\\SessionRecords\\Commands.Network.Test.ScenarioTests.CortexTests\\TestP2SCortexCRUD.json",
+      "_justification": "Generated test resource group, deleted after test execution"
+    },	
+    {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "file": "src\\EventGrid\\EventGrid.Test\\SessionRecords\\Microsoft.Azure.Commands.EventGrid.Tests.ScenarioTests.EventSubscriptionTests\\EventGrid_EventSubscriptionToAzureSubscription.json",
       "_justification": "Keys do not persist after test as resources got deleted"
     },
@@ -948,6 +996,36 @@
     {
       "file": "src\\CosmosDB\\CosmosDB.Test\\SessionRecords\\Microsoft.Azure.Commands.CosmosDB.Test.ScenarioTests.ScenarioTest.AccountTests\\TestAccountRelatedCmdletsUsingRid.json",
       "_justification": "Keys do not persist after test as resources got deleted"
+<<<<<<< HEAD
     }
   ]
 }
+=======
+    },
+    {
+      "file": "src\\Compute\\generated\\cmdlets\\UpdateAzVM_UpdateExpanded1.cs",
+      "_justification": "Generated cs, specified disallowed password values"
+    },
+    {
+      "file": "src\\TimeSeriesInsights\\test\\env.json",
+      "_justification": "Test resource is deleted"
+    },
+    {
+      "file": "src\\TimeSeriesInsights\\test\\New-AzTimeSeriesInsightsEnvironment.Recording.json",
+      "_justification": "Test resource is deleted"
+    },
+    {
+      "file": "src\\Functions\\test\\Get-Update-Remove-AzFunctionAppSetting.Recording.json",
+      "_justification": "Test resource is deleted"
+    },
+    {
+      "file": "src\\Functions\\test\\New-Update-Remove-AzFunctionApp.Tests.Recording.json",
+      "_justification": "Test resource is deleted"
+    },
+    {
+      "file": "src\\Functions\\test\\New-AzFunctionApp.Recording.json",
+      "_justification": "Test resource is deleted"
+    }
+  ]
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

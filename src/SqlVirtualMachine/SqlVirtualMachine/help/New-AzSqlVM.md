@@ -14,14 +14,23 @@ Creates a new sql virtual machine.
 
 ### NameParamaterList (Default)
 ```
+<<<<<<< HEAD
 New-AzSqlVM [-ResourceGroupName] <String> [-Name] <String> [-LicenseType] <String> [-Location <String>]
  [-AsJob] [-Offer <String>] [-Sku <String>] [-SqlManagementType <String>] [-Tag <Hashtable>]
+=======
+New-AzSqlVM [-ResourceGroupName] <String> [-Name] <String> [-LicenseType] <String> -Location <String> [-AsJob]
+ [-Offer <String>] [-Sku <String>] [-SqlManagementType <String>] [-Tag <Hashtable>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### NameInputObject
 ```
+<<<<<<< HEAD
 New-AzSqlVM [-ResourceGroupName] <String> [-Name] <String> [-SqlVM] <AzureSqlVMModel> [-Location <String>]
+=======
+New-AzSqlVM [-ResourceGroupName] <String> [-Name] <String> [-SqlVM] <AzureSqlVMModel> -Location <String>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -95,7 +104,11 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 
+<<<<<<< HEAD
 Required: False
+=======
+Required: True
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Position: Named
 Default value: None
 Accept pipeline input: False

@@ -12,21 +12,36 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels;
+=======
+using System;
+using System.Management.Automation;
+using Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels;
+using Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.Deployments;
+using Microsoft.Azure.Commands.ResourceManager.Common;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Management.ResourceManager.Models;
 using Microsoft.WindowsAzure.Commands.Utilities.Common;
 using ProjectResources = Microsoft.Azure.Commands.ResourceManager.Cmdlets.Properties.Resources;
+<<<<<<< HEAD
 using System;
 using System.Collections.Generic;
 using System.Management.Automation;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
 {
     /// <summary>
     /// Validate a template to see whether it's using the right syntax, resource providers, resource types, etc.
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet("Test", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "ResourceGroupDeployment", DefaultParameterSetName = ParameterlessTemplateFileParameterSetName), OutputType(typeof(PSResourceManagerError))]
+=======
+    [Cmdlet("Test", AzureRMConstants.AzureRMPrefix + "ResourceGroupDeployment", DefaultParameterSetName = ParameterlessTemplateFileParameterSetName), OutputType(typeof(PSResourceManagerError))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class TestAzureResourceGroupDeploymentCmdlet : ResourceWithParameterCmdletBase, IDynamicParameters
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, HelpMessage = "The resource group name.")]
@@ -50,7 +65,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
             this.Mode = DeploymentMode.Incremental;
         }
 
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
+=======
+        protected override void OnProcessRecord()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             if (RollbackToLastDeployment && !string.IsNullOrEmpty(RollBackDeploymentName))
             {
@@ -59,8 +78,15 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
 
             PSDeploymentCmdletParameters parameters = new PSDeploymentCmdletParameters()
             {
+<<<<<<< HEAD
                 DeploymentName = DeploymentName ?? Guid.NewGuid().ToString(),
                 ResourceGroupName = ResourceGroupName,
+=======
+                ScopeType = DeploymentScopeType.ResourceGroup,
+                DeploymentName = DeploymentName ?? Guid.NewGuid().ToString(),
+                ResourceGroupName = ResourceGroupName,
+                DeploymentMode = Mode,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 TemplateFile = TemplateUri ?? this.ResolvePath(TemplateFile),
                 TemplateObject = TemplateObject,
                 TemplateParameterObject = GetTemplateParameterObject(TemplateParameterObject),
@@ -74,7 +100,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
                     : null
             };
 
+<<<<<<< HEAD
             WriteObject(ResourceManagerSdkClient.ValidateDeployment(parameters, Mode));
+=======
+            WriteObject(ResourceManagerSdkClient.ValidateDeployment(parameters));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

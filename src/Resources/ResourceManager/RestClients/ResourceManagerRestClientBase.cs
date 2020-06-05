@@ -15,6 +15,10 @@
 namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.RestClients
 {
     using System;
+<<<<<<< HEAD
+=======
+    using System.Linq;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using System.Net.Http;
     using System.Text;
     using System.Threading;
@@ -263,11 +267,40 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.RestClients
         /// <param name="response">The <see cref="HttpResponseMessage"/> to read.</param>
         /// <param name="errorResponse">The <see cref="ErrorResponseMessage"/>.</param>
         /// <returns></returns>
+<<<<<<< HEAD
         private static Task<string> GetErrorMessage(HttpRequestMessage request, HttpResponseMessage response, ErrorResponseMessage errorResponse)
         {
             return errorResponse != null
                  ? Task.FromResult(string.Format("{0} : {1}", errorResponse.Error.Code, errorResponse.Error.Message))
                  : response.Content.ReadAsStringAsync();
+=======
+        private static async Task<string> GetErrorMessage(HttpRequestMessage request, HttpResponseMessage response, ErrorResponseMessage errorResponse)
+        {
+            var sb = new StringBuilder();
+
+            if (errorResponse != null)
+            {
+                sb.Append($"{errorResponse.Error.Code} : {errorResponse.Error.Message}");
+            }
+            else
+            {
+                var rawResponse = await  response.Content.ReadAsStringAsync();
+                sb.Append(rawResponse);
+            }
+
+            var headers = response?.Headers;
+            if (response?.Headers == null)
+            {
+                return sb.ToString();
+            }
+
+            if (response.Headers.TryGetValues("x-ms-correlation-request-id", out var correlationIds))
+            {
+                sb.AppendLine().AppendFormat("CorrelationId: {0}", correlationIds.First());
+            }
+
+            return sb.ToString();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>

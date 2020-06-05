@@ -25,13 +25,19 @@ The **New-AzIpGroup** cmdlet creates an Azure IpGroup
 
 ### Example 1
 ```powershell
+<<<<<<< HEAD
 $ipGroup = '/subscriptions/8c992d64-fce9-426d-b278-85642dfeab03/resourceGroups/ipGroupRG/providers/Microsoft.Network/virtualNetworkGateways/erGateway'
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 New-AzIpGroup -Name ipGroup -ResourceGroupName ipGroupRG -Location 'West US'
 ```
 
 ### Example 2
 ```powershell
+<<<<<<< HEAD
 $ipGroup = '/subscriptions/8c992d64-fce9-426d-b278-85642dfeab03/resourceGroups/ipGroupRG/providers/Microsoft.Network/virtualNetworkGateways/erGateway'
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 New-AzIpGroup -Name ipGroup -ResourceGroupName ipGroupRG -Location 'West US' -IpAddress 10.0.0.0/24,11.9.0.0/24
 ```
 

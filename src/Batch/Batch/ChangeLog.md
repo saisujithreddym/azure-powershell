@@ -18,6 +18,16 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Updated Az.Batch to use `Microsoft.Azure.Batch` SDK version 13.0.0 and `Microsoft.Azure.Management.Batch` SDK version 9.0.0.
+* Added the ability to select the kind of certificate being added using the new `-CertificateKind` parameter to `New-AzBatchCertificate`.
+* Removed `ApplicationPackages` property from `PSApplication` which was previously always `$null`.
+  - The specific packages inside of an application now can be retrieved using `Get-AzBatchApplicationPackage`. For example: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+* When creating a pool using `New-AzBatchPool`, the `VirtualMachineImageId` property of `PSImageReference` can now only refer to a Shared Image Gallery image.
+* When creating a pool using `New-AzBatchPool`, the pool can be provisioned without a public IP using the new `PublicIPAddressConfiguration` property of `PSNetworkConfiguration`.
+  - The `PublicIPs` property of `PSNetworkConfiguration` has moved in to `PSPublicIPAddressConfiguration` as well. This property can only be specified if `IPAddressProvisioningType` is `UserManaged`.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 2.0.2
 * Update references in .psd1 to use relative path

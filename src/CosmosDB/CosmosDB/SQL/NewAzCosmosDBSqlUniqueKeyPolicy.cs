@@ -21,18 +21,31 @@ namespace Microsoft.Azure.Commands.CosmosDB
     [Cmdlet(VerbsCommon.New, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBSqlUniqueKeyPolicy"), OutputType(typeof(PSSqlUniqueKeyPolicy))]
     public class NewAzCosmosDBSqlUniqueKeyPolicy : AzureCosmosDBCmdletBase
     {
+<<<<<<< HEAD
         [Parameter(Mandatory = true, HelpMessage = Constants.DatabaseNameHelpMessage)]
+=======
+        [Parameter(Mandatory = true, HelpMessage = Constants.SqlUniqueKeysHelpMessage)]
+        [ValidateNotNullOrEmpty]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public PSSqlUniqueKey[] UniqueKey { get; set; }
 
         public override void ExecuteCmdlet()
         {
             PSSqlUniqueKeyPolicy uniqueKeyPolicy = new PSSqlUniqueKeyPolicy
             {
+<<<<<<< HEAD
                 UniqueKey = UniqueKey
+=======
+                UniqueKeys = UniqueKey
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
 
             WriteObject(uniqueKeyPolicy);
             return;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

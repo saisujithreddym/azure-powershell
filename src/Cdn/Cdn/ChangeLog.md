@@ -20,6 +20,12 @@
 
 ## Upcoming Release
 
+<<<<<<< HEAD
+=======
+## Version 1.4.3
+* Fixed ChinaCDN related pricing SKU display
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## Version 1.4.2
 * Display error response detail in New-AzCdnEndpoint cmdlet
 

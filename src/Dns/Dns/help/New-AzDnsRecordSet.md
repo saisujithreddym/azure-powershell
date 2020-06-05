@@ -104,7 +104,11 @@ To create a **RecordSet** using only one line of pn_PowerShell_short, or to crea
 ```
 PS C:\> $Records = @()
 PS C:\> $Records += New-AzDnsRecordConfig -Exchange "mail.microsoft.com" -Preference 5
+<<<<<<< HEAD
 PS C:\> $RecordSet = New-AzDnsRecordSet -Name "www" -RecordType AAAA -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+=======
+PS C:\> $RecordSet = New-AzDnsRecordSet -Name "mail" -RecordType MX -ResourceGroupName "MyResourceGroup" -TTL 3600 -ZoneName "myzone.com" -DnsRecords $Records
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 This command creates a **RecordSet** named www in the zone myzone.com.
@@ -239,7 +243,11 @@ Accept wildcard characters: False
 
 ### -Metadata
 Specifies an array of metadata to associate with the RecordSet.
+<<<<<<< HEAD
 Metadata is specified using name-value pairs that are represented as hash tables, for example @(@{"Name"="dept"; "Value"="shopping"}, @{"Name"="env"; "Value"="production"}).
+=======
+Metadata is specified using name-value pairs that are represented as hash tables, for example @{"dept"="shopping";"env"="production"}.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Collections.Hashtable

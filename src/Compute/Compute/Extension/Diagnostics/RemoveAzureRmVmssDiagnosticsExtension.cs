@@ -22,7 +22,10 @@ using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
 namespace Microsoft.Azure.Commands.Compute
 {
     [Cmdlet("Remove", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "VmssDiagnosticsExtension",SupportsShouldProcess = true)]
+<<<<<<< HEAD
     [CmdletOutputBreakingChangeAttribute(typeof(PSAutomaticRepairsPolicy), "MaxInstanceRepairsPercent property will be removed.")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSVirtualMachineScaleSet))]
     public class RemoveAzureRmVmssDiagnosticsExtension : Microsoft.Azure.Commands.ResourceManager.Common.AzureRMCmdlet
     {

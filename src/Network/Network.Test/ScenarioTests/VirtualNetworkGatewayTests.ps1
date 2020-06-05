@@ -112,7 +112,14 @@ function Test-VirtualNetworkGatewayCRUD
 
       # Create & Get virtualnetworkgateway
       $vnetIpConfig = New-AzVirtualNetworkGatewayIpConfig -Name $vnetGatewayConfigName -PublicIpAddress $publicip -Subnet $subnet
+<<<<<<< HEAD
       $job = New-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname -location $location -IpConfigurations $vnetIpConfig -GatewayType Vpn -VpnType RouteBased -EnableBgp $false -AsJob
+=======
+      $ipconfigurationId = $vnetIpConfig.id
+      $addresslist = @('169.254.21.25')
+      $gw1ipconfBgp = New-AzIpConfigurationBgpPeeringAddressObject -IpConfigurationId $ipconfigurationId -CustomAddress $addresslist
+      $job = New-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname -location $location -IpConfigurations $vnetIpConfig -IpConfigurationBgpPeeringAddresses $gw1ipconfBgp -GatewayType Vpn -VpnType RouteBased -EnableBgp $false -AsJob
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	  $job | Wait-Job
 	  $actual = $job | Receive-Job
       $expected = Get-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname
@@ -120,6 +127,10 @@ function Test-VirtualNetworkGatewayCRUD
       Assert-AreEqual $expected.Name $actual.Name	
       Assert-AreEqual "Vpn" $expected.GatewayType
       Assert-AreEqual "RouteBased" $expected.VpnType
+<<<<<<< HEAD
+=======
+      Assert-AreEqual 1 @($expected.BgpSettings.BGPPeeringAddresses).Count
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 	  # List virtualNetworkGateways
       $list = Get-AzVirtualNetworkGateway -ResourceGroupName $rgname
@@ -281,6 +292,16 @@ function Test-SetVirtualNetworkGatewayCRUD
 	  Assert-AreEqual $asn $gateway.BgpSettings.Asn 
 	  Assert-AreEqual $peerWeight $gateway.BgpSettings.PeerWeight
 
+<<<<<<< HEAD
+=======
+      # BGPPeeringAddresses
+      $ipconfigurationId1 = $gateway.ipconfigurations[0].id
+      $addresslist1 = @('169.254.21.10')
+      $gw1ipconfBgp1 = New-AzIpConfigurationBgpPeeringAddressObject -IpConfigurationId $ipconfigurationId1 -CustomAddress $addresslist1
+      $gateway = Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gateway -IpConfigurationBgpPeeringAddresses $gw1ipconfBgp1
+       Assert-AreEqual $ipconfigurationId1 $gateway.BgpSettings.BGPPeeringAddresses[0].IpConfigurationId
+      
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	  # Tags
 	  $gateway = Set-AzVirtualNetworkGateway -VirtualNetworkGateway $gateway -Tag @{ testtagKey="SomeTagKey"; testtagValue="SomeKeyValue" }
 	  Assert-AreEqual 2 $gateway.Tag.Count
@@ -639,6 +660,83 @@ function Test-VirtualNetworkGatewayIkeV2
 
 <#
 .SYNOPSIS
+<<<<<<< HEAD
+=======
+Virtual network gateway P2S radius API test
+#>
+function Test-VirtualNetworkGatewayRadius
+{
+    # Setup
+    $rgname = Get-ResourceGroupName
+    $rname = Get-ResourceName
+    $domainNameLabel = Get-ResourceName
+    $vnetName = Get-ResourceName
+    $publicIpName = Get-ResourceName
+    $vnetGatewayConfigName = Get-ResourceName
+    $rglocation = Get-ProviderLocation ResourceManagement
+    $resourceTypeParent = "Microsoft.Network/virtualNetworkGateways"
+    $location = Get-ProviderLocation $resourceTypeParent
+
+	try 
+	{
+        # Create the multiple radius servers settings
+        #[SuppressMessage("Microsoft.Security", "CS002:SecretInNextLine")]
+        $radiuspd = ConvertTo-SecureString -String "radiuspd" -AsPlainText -Force
+        $radiusServer1 = New-AzRadiusServer -RadiusServerAddress 10.1.0.1 -RadiusServerSecret $radiuspd -RadiusServerScore 30
+        $radiusServer2 = New-AzRadiusServer -RadiusServerAddress 10.1.0.2 -RadiusServerSecret $radiuspd -RadiusServerScore 1
+        $radiusServer3 = New-AzRadiusServer -RadiusServerAddress 10.1.0.3 -RadiusServerSecret $radiuspd -RadiusServerScore 15
+        $radiusServers = @( $radiusServer1, $radiusServer2 )
+
+		# Create the resource group
+		$resourceGroup = New-AzResourceGroup -Name $rgname -Location $rglocation -Tags @{ testtag = "testval" }
+	
+		# Create the Virtual Network
+		$subnet = New-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -AddressPrefix 10.0.0.0/24
+		$vnet = New-AzVirtualNetwork -Name $vnetName -ResourceGroupName $rgname -Location $location -AddressPrefix 10.0.0.0/16 -Subnet $subnet
+		$vnet = Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $rgname      
+		$subnet = Get-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
+
+		# Create the IP config
+		$publicip = New-AzPublicIpAddress -ResourceGroupName $rgname -name $publicIpName -location $location -AllocationMethod Dynamic -DomainNameLabel $domainNameLabel
+		$vnetIpConfig = New-AzVirtualNetworkGatewayIpConfig -Name $vnetGatewayConfigName -PublicIpAddress $publicip -Subnet $subnet
+
+		# Create & Get virtualnetworkgateway
+		New-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname -location $location -IpConfigurations $vnetIpConfig -GatewayType Vpn -VpnType RouteBased -EnableBgp $false -GatewaySku VpnGw1 -VpnClientAddressPool 201.169.0.0/16 -VpnClientProtocol "IkeV2" -RadiusServerList $radiusServers
+		$actual = Get-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname
+        Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers.Count 2 
+		Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers[0].RadiusServerAddress $radiusServer1.RadiusServerAddress
+		Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers[0].RadiusServerScore $radiusServer1.RadiusServerScore
+		Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers[1].RadiusServerAddress $radiusServer2.RadiusServerAddress
+		Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers[1].RadiusServerScore $radiusServer2.RadiusServerScore
+		 
+		# Update gateway to singular radius
+        Set-AzVirtualNetworkGateway -VirtualNetworkGateway $actual -VpnClientAddressPool 201.169.0.0/16 -VpnClientProtocol "IkeV2" -RadiusServerAddress 10.1.0.2 -RadiusServerSecret $radiuspd
+        $actual = Get-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname
+        Assert-Null  $actual.VpnClientConfiguration.RadiusServers
+        Assert-AreEqual $actual.VpnClientConfiguration.RadiusServerAddress 10.1.0.2
+
+		# Update gateway radius settings
+        $radiusServers = @($radiusServer3, $radiusServer1)
+		Set-AzVirtualNetworkGateway -VirtualNetworkGateway $actual -VpnClientAddressPool 201.169.0.0/16 -VpnClientProtocol "IkeV2" -RadiusServerList $radiusServers
+		$actual = Get-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname
+        Assert-Null  $actual.VpnClientConfiguration.RadiusServerAddress
+        Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers.Count 2 
+		Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers[0].RadiusServerAddress $radiusServer3.RadiusServerAddress
+		Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers[0].RadiusServerScore $radiusServer3.RadiusServerScore
+		Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers[1].RadiusServerAddress $radiusServer1.RadiusServerAddress
+		Assert-AreEqual $actual.VpnClientConfiguration.RadiusServers[1].RadiusServerScore $radiusServer1.RadiusServerScore
+	}
+    finally
+    {
+		# Cleanup
+        Clean-ResourceGroup $rgname
+    }
+}
+
+
+<#
+.SYNOPSIS
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Virtual network gateway P2S OpenVPN API test
 #>
 function Test-VirtualNetworkGatewayOpenVPN
@@ -1065,4 +1163,65 @@ function Test-VirtualNetworKGatewayPacketCapture
         # Cleanup
         Clean-ResourceGroup $rgname
      }
+<<<<<<< HEAD
 }
+=======
+}
+
+<# 
+.SYNOPSIS
+Disconnect Virtual network gateway Vpn Client Connection
+#>
+function Test-DisconnectVNGVpnConnection
+{
+	param 
+    ( 
+        $basedir = ".\" 
+    )
+
+	# Setup
+    $rgname = Get-ResourceGroupName
+    $rname = Get-ResourceName
+    $domainNameLabel = Get-ResourceName
+    $vnetName = Get-ResourceName
+    $publicIpName = Get-ResourceName
+    $vnetGatewayConfigName = Get-ResourceName
+    $rglocation = "East US"
+    $location = $rglocation
+
+	try 
+	{
+		# Create the resource group
+		New-AzResourceGroup -Name $rgname -Location $rglocation -Tags @{ testtag = "testval" }
+	
+		# create the client root cert
+		$clientRootCertName = "BrkLiteTestMSFTRootCA.cer"
+		#[SuppressMessage("Microsoft.Security", "CS002:SecretInNextLine")]
+		$samplePublicCertData = "MIIDUzCCAj+gAwIBAgIQRggGmrpGj4pCblTanQRNUjAJBgUrDgMCHQUAMDQxEjAQBgNVBAoTCU1pY3Jvc29mdDEeMBwGA1UEAxMVQnJrIExpdGUgVGVzdCBSb290IENBMB4XDTEzMDExOTAwMjQxOFoXDTIxMDExOTAwMjQxN1owNDESMBAGA1UEChMJTWljcm9zb2Z0MR4wHAYDVQQDExVCcmsgTGl0ZSBUZXN0IFJvb3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC7SmE+iPULK0Rs7mQBO/6a6B6/G9BaMxHgDGzAmSG0Qsyt5e08aqgFnPdkMl3zRJw3lPKGha/JCvHRNrO8UpeAfc4IXWaqxx2iBipHjwmHPHh7+VB8lU0EJcUe7WBAI2n/sgfCwc+xKtuyRVlOhT6qw/nAi8e5don/iHPU6q7GCcnqoqtceQ/pJ8m66cvAnxwJlBFOTninhb2VjtvOfMQ07zPP+ZuYDPxvX5v3nd6yDa98yW4dZPuiGO2s6zJAfOPT2BrtyvLekItnSgAw3U5C0bOb+8XVKaDZQXbGEtOw6NZvD4L2yLd47nGkN2QXloiPLGyetrj3Z2pZYcrZBo8hAgMBAAGjaTBnMGUGA1UdAQReMFyAEOncRAPNcvJDoe4WP/gH2U+hNjA0MRIwEAYDVQQKEwlNaWNyb3NvZnQxHjAcBgNVBAMTFUJyayBMaXRlIFRlc3QgUm9vdCBDQYIQRggGmrpGj4pCblTanQRNUjAJBgUrDgMCHQUAA4IBAQCGyHhMdygS0g2tEUtRT4KFM+qqUY5HBpbIXNAav1a1dmXpHQCziuuxxzu3iq4XwnWUF1OabdDE2cpxNDOWxSsIxfEBf9ifaoz/O1ToJ0K757q2Rm2NWqQ7bNN8ArhvkNWa95S9gk9ZHZLUcjqanf0F8taJCYgzcbUSp+VBe9DcN89sJpYvfiBiAsMVqGPc/fHJgTScK+8QYrTRMubtFmXHbzBSO/KTAP5rBTxse88EGjK5F8wcedvge2Ksk6XjL3sZ19+Oj8KTQ72wihN900p1WQldHrrnbixSpmHBXbHr9U0NQigrJp5NphfuU5j81C8ixvfUdwyLmTv7rNA7GTAD";
+		$rootCert = New-AzVpnClientRootCertificate -Name $clientRootCertName -PublicCertData $samplePublicCertData
+
+		# Create the Virtual Network
+		$subnet = New-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -AddressPrefix 10.0.0.0/24
+		$vnet = New-AzVirtualNetwork -Name $vnetName -ResourceGroupName $rgname -Location $location -AddressPrefix 10.0.0.0/16 -Subnet $subnet
+		$vnet = Get-AzVirtualNetwork -Name $vnetName -ResourceGroupName $rgname
+		$subnet = Get-AzVirtualNetworkSubnetConfig -Name "GatewaySubnet" -VirtualNetwork $vnet
+
+		# Create the IP config
+		$publicip = New-AzPublicIpAddress -ResourceGroupName $rgname -name $publicIpName -location $location -AllocationMethod Dynamic -DomainNameLabel $domainNameLabel
+		$vnetIpConfig = New-AzVirtualNetworkGatewayIpConfig -Name $vnetGatewayConfigName -PublicIpAddress $publicip -Subnet $subnet
+      
+		# Create & Get P2S virtualnetworkgateway
+		New-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname -location $location -IpConfigurations $vnetIpConfig -GatewayType Vpn -VpnType RouteBased -EnableBgp $false -GatewaySku VpnGw1 -VpnClientAddressPool 201.169.0.0/16 -VpnClientRootCertificates $rootCert
+		$actual = Get-AzVirtualNetworkGateway -ResourceGroupName $rgname -name $rname
+		Assert-AreEqual "Succeeded" $actual.ProvisioningState
+		
+        $expected = Disconnect-AzVirtualNetworkGatewayVpnConnection -ResourceGroupName $rgname -ResourceName $rname -VpnConnectionId @("IKEv2_1e1cfe59-5c7c-4315-a876-b11fbfdfeed4")
+        Assert-AreEqual $expected.Name $actual.Name
+	}
+	finally
+    {
+		# Cleanup
+        Clean-ResourceGroup $rgname
+    }
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

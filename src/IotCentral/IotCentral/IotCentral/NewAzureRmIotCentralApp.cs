@@ -57,8 +57,13 @@ namespace Microsoft.Azure.Commands.Management.IotCentral
         [Parameter(
             Mandatory = false,
             ValueFromPipelineByPropertyName = true,
+<<<<<<< HEAD
             HelpMessage = "Pricing tier for IoT Central applications. Default value is S1.")]
         [PSArgumentCompleter("S1")]
+=======
+            HelpMessage = "Pricing tier for IoT Central applications. Default value is ST2.")]
+        [PSArgumentCompleter("ST2")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [ValidateNotNullOrEmpty]
         public string Sku { get; set; }
 
@@ -112,7 +117,11 @@ namespace Microsoft.Azure.Commands.Management.IotCentral
 
         private string GetAppSkuName()
         {
+<<<<<<< HEAD
             return this.Sku ?? PSIotCentralAppSku.S1.ToString();
+=======
+            return this.Sku ?? PSIotCentralAppSku.ST2.ToString();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         private string GetDisplayName()

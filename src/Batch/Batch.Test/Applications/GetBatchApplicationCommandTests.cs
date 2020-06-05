@@ -46,8 +46,11 @@ namespace Microsoft.Azure.Commands.Batch.Test.Accounts
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void ListBatchApplicationsTest()
         {
+<<<<<<< HEAD
             List<BatchAccountContext> pipelineOutput = new List<BatchAccountContext>();
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             string accountName01 = "account01";
             string resourceGroup = "resourceGroup";
 

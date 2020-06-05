@@ -21,7 +21,13 @@ using Microsoft.Rest.Azure.OData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+<<<<<<< HEAD
 using CmdletModel = Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models;
+=======
+using BackupManagementType = Microsoft.Azure.Management.RecoveryServices.Backup.Models.BackupManagementType;
+using CmdletModel = Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models;
+using ScheduleRunType = Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ScheduleRunType;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using ServiceClientModel = Microsoft.Azure.Management.RecoveryServices.Backup.Models;
 using SystemNet = System.Net;
 
@@ -248,7 +254,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
             return ConversionHelpers.GetContainerModelList(listResponse);
         }
 
+<<<<<<< HEAD
         public void ValidateSimpleSchedulePolicy(CmdletModel.SchedulePolicyBase policy)
+=======
+        public void ValidateSimpleSchedulePolicy(CmdletModel.SchedulePolicyBase policy, string backupManagementType = "")
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             if (policy == null || policy.GetType() != typeof(CmdletModel.SimpleSchedulePolicy))
             {
@@ -256,6 +266,15 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
                                             typeof(CmdletModel.SimpleSchedulePolicy).ToString()));
             }
 
+<<<<<<< HEAD
+=======
+            if(backupManagementType == BackupManagementType.AzureStorage &&
+                ((CmdletModel.SimpleSchedulePolicy)policy).ScheduleRunFrequency == ScheduleRunType.Weekly)
+            {
+                throw new ArgumentException(Resources.AFSWeeklyScheduleNotAllowed);
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             // call validation
             policy.Validate();
         }
@@ -272,7 +291,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.ProviderModel
             policy.Validate();
         }
 
+<<<<<<< HEAD
         public void ValidateLongTermRetentionPolicy(CmdletModel.RetentionPolicyBase policy)
+=======
+        public void ValidateLongTermRetentionPolicy(CmdletModel.RetentionPolicyBase policy, string backupManagementType = "")
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             if (policy == null || policy.GetType() != typeof(CmdletModel.LongTermRetentionPolicy))
             {

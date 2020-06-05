@@ -14,6 +14,7 @@ Removes a new peering service prefix
 
 ### ByName (Default)
 ```
+<<<<<<< HEAD
 Remove-AzPeeringServicePrefix [-ResourceGroupName] <String> [-Name] <String> [-PeeringServiceName] <String>
  [-Force] [-AsJob] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
@@ -22,6 +23,15 @@ Remove-AzPeeringServicePrefix [-ResourceGroupName] <String> [-Name] <String> [-P
 ### Default
 ```
 Remove-AzPeeringServicePrefix -InputObject <PSPeeringServicePrefix> [-Force] [-AsJob] [-PassThru]
+=======
+Remove-AzPeeringServicePrefix [-ResourceGroupName] <String> [-Name] <String> [-PrefixName] <String> [-Force]
+ [-AsJob] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### InputObject
+```
+Remove-AzPeeringServicePrefix [-InputObject] <PSPeeringServicePrefix> [-Force] [-AsJob] [-PassThru]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -113,11 +123,19 @@ Use a Get-AzPeeringServicePrefix
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringServicePrefix
+<<<<<<< HEAD
 Parameter Sets: Default
 Aliases:
 
 Required: True
 Position: Named
+=======
+Parameter Sets: InputObject
+Aliases:
+
+Required: True
+Position: 0
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
@@ -153,8 +171,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -PeeringServiceName
 The unique name of the PSPeering.
+=======
+### -PrefixName
+The name of prefix.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String

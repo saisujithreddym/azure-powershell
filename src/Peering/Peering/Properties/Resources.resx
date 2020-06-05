@@ -183,6 +183,12 @@
   <data name="Error_ProviderNotFound" xml:space="preserve">
     <value>The provider {0} was not found at location {1}. Status: {2}</value>
   </data>
+<<<<<<< HEAD
+=======
+  <data name="Error_Sku" xml:space="preserve">
+    <value>Sku should be of type {0}</value>
+  </data>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   <data name="Error_UnableToConvertLegacy" xml:space="preserve">
     <value>Unable to convert legacy peering because {0} was null or empty.</value>
   </data>

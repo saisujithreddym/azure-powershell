@@ -19,7 +19,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Blueprint.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+=======
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -88,7 +92,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Blueprint.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to An assignment with name &apos;{0}&apos; in subscription &apos;{1}&apos; already exists. Please use Set-AzBlueprintAssignment to update an existing assignment..
+=======
+        ///   Looks up a localized string similar to An assignment with name &apos;{0}&apos; in scope &apos;{1}&apos; already exists. Please use Set-AzBlueprintAssignment to update an existing assignment..
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         internal static string AssignmentExists {
             get {
@@ -97,7 +105,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Blueprint.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to An assignment with name &apos;{0}&apos; in subscription &apos;{1}&apos; does not exist. Please use New-AzBlueprintAssignment to create a new assignment..
+=======
+        ///   Looks up a localized string similar to An assignment with name &apos;{0}&apos; in scope &apos;{1}&apos; does not exist. Please use New-AzBlueprintAssignment to create a new assignment..
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         internal static string AssignmentNotExist {
             get {

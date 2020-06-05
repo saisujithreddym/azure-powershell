@@ -18,6 +18,62 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Added message warning about view delay when creating a new Role Definition
+* Changed policy cmdlets to output strongly-typed objects
+* Removed `-TenantLevel` parameter used for on the `Get-AzResourceLock` cmdlet [#11335]
+* Fixed `Remove-AzResourceGroup -Id ResourceId`[#9882]
+* Added new cmdlet for getting ARM template What-If results at resource group scope: `Get-AzDeploymentResourceGroupWhatIfResult`
+* Added new cmdlet for getting ARM template What-If results at subscription scope: `Get-AzDeploymentWhatIfResult`
+   - Alias: `Get-AzSubscriptionDeploymentWhatIf`
+* Overrode `-WhatIf` and `-Confirm` parameters for `New-AzDeployment` and `New-AzResourceGroupDeployment` to use ARM template What-If results
+* Added deprecation message for `ApiVersion` parameter in deployment cmdlets
+* Added capability to show improved error messages for deployment failures
+* Added correlationId logging for deployment failures
+* Added `error` property to the deployment script output
+* Updated nuget Microsoft.Azure.Management.ResourceManager to "3.7.1-preview"
+* Removed specific test cases as Error property in DeploymentValidateResult has changed to readonly from nuget 3.7.1-preview
+* Brought GenericResourceExpanded from SDK ResourceManager 3.7.1-preview
+* Added tag support for all Get cmdlets for deployment, as well as
+    - `New-AzDeployment`
+    - `New-AzManagementGroupDeployment`
+    - `New-AzResourceGroupDeployment`
+    - `New-AzTenantDeployment`
+
+## Version 1.13.0
+* Fixed `Get-AzResource -ResourceGroupName -Name -ExpandProperties -ResourceType` to use actual apiVersion of resources instead of default apiVersion [#11267]
+* Added correlationId logging for error scenarios
+* Small documentation change to `Get-AzResourceLock`. Added example.
+* Escaped single quote in parameter value of `Get-AzADUser` [#11317]
+* Added new cmdlets for Deployment Scripts (`Get-AzDeploymentScript`, `Get-AzDeploymentScriptLog`, `Save-AzDeploymentScriptLog`, `Remove-AzDeploymentScript`)
+
+## Version 1.12.0
+* Fixed for null reference bug in `Get-AzRoleAssignment`
+* Marked switch `-Force` and `-PassThru` optional in `Remove-AzADGroup` [#10849]
+* Fixed issue that `MailNickname` doesn't return in `Remove-AzADGroup` [#11167]
+* Fixed issue that `Remove-AzADGroup` pipe operation doesn't work [#11171]
+* Fixed for null reference bug in GetAzureRoleAssignmentCommand
+* Added breaking change attributes for upcoming changes to policy cmdlets
+* Updated `Get-AzResourceGroup` to perform resource group tag filtering on server-side
+* Extended Tag cmdlets to accept -ResourceId
+    - Get-AzTag -ResourceId
+    - New-AzTag -ResourceId
+    - Remove-AzTag -ResourceId
+* Added new Tag cmdlet
+    - Update-AzTag -ResourceId
+* Brought ScopedDeployment from SDK 3.3.0 
+
+## Version 1.11.0
+* Refactored template deployment cmdlets
+    - Added new cmdlets for managing deployments at management group: *-AzManagementGroupDeployment
+    - Added new cmdlets for managing deployments at tenant scope: *-AzTenantDeployment
+    - Refactored *-AzDeployment cmdlets to work specifically at subscription scope
+    - Created aliases *-AzSubscriptionDeployment for *-AzDeployment cmdlets
+* Fixed `Update-AzADApplication` when parameter `AvailableToOtherTenants` is not set
+* Removed ApplicationObjectWithoutCredentialParameterSet to avoid AmbiguousParameterSetException.
+* Regenerated help files
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 1.10.0
 * Make -Scope optional in *-AzPolicyAssignment cmdlets with default to context subscription

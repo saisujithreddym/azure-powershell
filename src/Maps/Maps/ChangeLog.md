@@ -19,6 +19,13 @@
 -->
 ## Upcoming Release
 
+<<<<<<< HEAD
+=======
+## Version 0.7.3
+* Update the privacy notice text displayed during account creation
+    - Per CELA guidance we have updated the privacy notice text shown while you create an account.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## Version 0.7.2
 * Update references in .psd1 to use relative path
 

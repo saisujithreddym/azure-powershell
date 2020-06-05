@@ -24,14 +24,23 @@ the user depending on the switch parameters specified by the user.
 ## EXAMPLES
 
 ### Example 1
+<<<<<<< HEAD
 ```
+=======
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> Clear-AzDefault
 ```
 
 This command removes all the defaults set by the user in the current context.
 
+<<<<<<< HEAD
 ### Example 1
 ```
+=======
+### Example 2
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> Clear-AzDefault -ResourceGroup
 ```
 

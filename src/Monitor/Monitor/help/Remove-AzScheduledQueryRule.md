@@ -35,17 +35,29 @@ Removes a Log Alert Rule
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### Example 1 - Remove by rule name
+=======
+### Example 1: Remove by rule name
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```powershell
 PS C:\> Remove-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup" -Name "LogAlertRule1"
 ```
 
+<<<<<<< HEAD
 ### Example 2 - Remove by input object
+=======
+### Example 2: Remove by input object
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```powershell
 PS C:\> Remove-AzScheduledQueryRule -InputObject $PSScheduledQueryRuleResource
 ```
 
+<<<<<<< HEAD
 ### Example 3 - Remove by resource Id
+=======
+### Example 3: Remove by resource Id
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```powershell
 PS C:\> Remove-AzScheduledQueryRule -ResourceId "/subscriptions/b67f7fec-69fc-4974-9099-a26bd6ffeda3/resourceGroups/MyResourceGroup/providers/microsoft.insights/scheduledQueryRules/LogAlertRule1"
 ```

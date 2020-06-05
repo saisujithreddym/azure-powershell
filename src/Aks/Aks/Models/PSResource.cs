@@ -1,9 +1,28 @@
+<<<<<<< HEAD
 using System.Management.Automation;
 
 namespace Microsoft.Azure.Commands.Aks.Models
 {
     using Microsoft.Rest.Azure;
     using Newtonsoft.Json;
+=======
+// ----------------------------------------------------------------------------------
+//
+// Copyright Microsoft Corporation
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// http://www.apache.org/licenses/LICENSE-2.0
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+// ----------------------------------------------------------------------------------
+
+namespace Microsoft.Azure.Commands.Aks.Models
+{
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using System.Collections.Generic;
 
     /// <summary>
@@ -36,31 +55,46 @@ namespace Microsoft.Azure.Commands.Aks.Models
         /// <summary>
         /// Gets resource Id
         /// </summary>
+<<<<<<< HEAD
         [JsonProperty(PropertyName = "id")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Id { get; private set; }
 
         /// <summary>
         /// Gets resource name
         /// </summary>
+<<<<<<< HEAD
         [JsonProperty(PropertyName = "name")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Name { get; private set; }
 
         /// <summary>
         /// Gets resource type
         /// </summary>
+<<<<<<< HEAD
         [JsonProperty(PropertyName = "type")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Type { get; private set; }
 
         /// <summary>
         /// Gets or sets resource location
         /// </summary>
+<<<<<<< HEAD
         [JsonProperty(PropertyName = "location")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Location { get; set; }
 
         /// <summary>
         /// Gets or sets resource tags
         /// </summary>
+<<<<<<< HEAD
         [JsonProperty(PropertyName = "tags")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public IDictionary<string, string> Tags { get; set; }
     }
 }

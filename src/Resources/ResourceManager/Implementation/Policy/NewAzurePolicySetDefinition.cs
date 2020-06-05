@@ -17,6 +17,10 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Components;
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Entities.Policy;
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Extensions;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using Newtonsoft.Json.Linq;
     using Policy;
     using System;
@@ -25,7 +29,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
     /// <summary>
     /// Creates the policy set definition.
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "PolicySetDefinition", DefaultParameterSetName = PolicyCmdletBase.NameParameterSet, SupportsShouldProcess = true), OutputType(typeof(PSObject))]
+=======
+    [Cmdlet(VerbsCommon.New, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "PolicySetDefinition", DefaultParameterSetName = PolicyCmdletBase.NameParameterSet, SupportsShouldProcess = true), OutputType(typeof(PsPolicySetDefinition))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class NewAzurePolicySetDefinitionCmdlet : PolicyCmdletBase
     {
         /// <summary>
@@ -123,7 +131,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
                 var result = this.GetLongRunningOperationTracker(activityName: activity, isResourceCreateOrUpdate: true)
                     .WaitOnOperation(operationResult: operationResult);
 
+<<<<<<< HEAD
                 this.WriteObject(this.GetOutputObjects("PolicySetDefinitionId", JObject.Parse(result)), enumerateCollection: true);
+=======
+                this.WriteObject(this.GetOutputPolicySetDefinitions(JObject.Parse(result)), enumerateCollection: true);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
         }
 

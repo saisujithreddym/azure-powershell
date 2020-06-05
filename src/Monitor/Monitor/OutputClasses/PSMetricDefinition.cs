@@ -26,7 +26,11 @@ namespace Microsoft.Azure.Commands.Insights.OutputClasses
         /// </summary>
         /// <param name="metricDefinition">The MetricDefinition</param>
         public PSMetricDefinition(MetricDefinition metricDefinition)
+<<<<<<< HEAD
             : base(name: new PSLocalizableString(metricDefinition.Name), metricAvailabilities: new PSMetricAvailabilityCollection(metricDefinition.MetricAvailabilities), primaryAggregationType: metricDefinition.PrimaryAggregationType, resourceId: metricDefinition.ResourceId, unit: metricDefinition.Unit, id: metricDefinition.Id)
+=======
+            : base(name: new PSLocalizableString(metricDefinition.Name), metricAvailabilities: new PSMetricAvailabilityCollection(metricDefinition.MetricAvailabilities), primaryAggregationType: metricDefinition.PrimaryAggregationType, resourceId: metricDefinition.ResourceId, unit: metricDefinition.Unit, id: metricDefinition.Id, dimensions: metricDefinition.Dimensions, supportedAggregationTypes: metricDefinition.SupportedAggregationTypes)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
         }
     }

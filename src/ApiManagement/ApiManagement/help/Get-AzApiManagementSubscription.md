@@ -51,6 +51,10 @@ Get-AzApiManagementSubscription -Context <PsApiManagementContext> -Scope <String
 
 ## DESCRIPTION
 The **Get-AzApiManagementSubscription** cmdlet gets a specified subscription, or all subscriptions, if no subscription is specified.
+<<<<<<< HEAD
+=======
+Keys will not be included into result details. To get keys, use **Get-AzApiManagementSubscriptionKey**.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 

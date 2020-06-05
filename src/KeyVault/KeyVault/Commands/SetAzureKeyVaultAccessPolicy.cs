@@ -22,7 +22,11 @@ using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 
 namespace Microsoft.Azure.Commands.KeyVault
 {
+<<<<<<< HEAD
     [Cmdlet("Set", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "KeyVaultAccessPolicy",SupportsShouldProcess = true,DefaultParameterSetName = ByUserPrincipalName)]
+=======
+    [Cmdlet("Set", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "KeyVaultAccessPolicy", SupportsShouldProcess = true, DefaultParameterSetName = ByUserPrincipalName)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSKeyVault))]
     public class SetAzureKeyVaultAccessPolicy : KeyVaultManagementCmdletBase
     {
@@ -371,6 +375,7 @@ namespace Microsoft.Azure.Commands.KeyVault
         /// <summary>
         /// Permissions to Storage
         /// </summary>
+<<<<<<< HEAD
         [Parameter( Mandatory = false,
             ParameterSetName = ByObjectId,
             HelpMessage = "Specifies managed storage account and sas definition operation permissions to grant to a user or service principal." )]
@@ -380,6 +385,17 @@ namespace Microsoft.Azure.Commands.KeyVault
         [Parameter( Mandatory = false,
             ParameterSetName = ByUserPrincipalName,
             HelpMessage = "Specifies managed storage account and sas definition operation permissions to grant to a user or service principal." )]
+=======
+        [Parameter(Mandatory = false,
+            ParameterSetName = ByObjectId,
+            HelpMessage = "Specifies managed storage account and sas definition operation permissions to grant to a user or service principal.")]
+        [Parameter(Mandatory = false,
+            ParameterSetName = ByServicePrincipalName,
+            HelpMessage = "Specifies managed storage account and sas definition operation permissions to grant to a user or service principal.")]
+        [Parameter(Mandatory = false,
+            ParameterSetName = ByUserPrincipalName,
+            HelpMessage = "Specifies managed storage account and sas definition operation permissions to grant to a user or service principal.")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = false,
             ParameterSetName = ByEmailAddress,
             HelpMessage = "Specifies managed storage account and sas definition  operation permissions to grant to a user or service principal.")]
@@ -407,7 +423,11 @@ namespace Microsoft.Azure.Commands.KeyVault
         [Parameter(Mandatory = false,
             ParameterSetName = ResourceIdByEmailAddress,
             HelpMessage = "Specifies managed storage account and sas definition  operation permissions to grant to a user or service principal.")]
+<<<<<<< HEAD
         [ValidateSet( "get", "list", "delete", "set", "update", "regeneratekey", "getsas", "listsas", "deletesas", "setsas", "recover", "backup", "restore", "purge")]
+=======
+        [ValidateSet("get", "list", "delete", "set", "update", "regeneratekey", "getsas", "listsas", "deletesas", "setsas", "recover", "backup", "restore", "purge")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string[] PermissionsToStorage { get; set; }
 
         [Parameter(Mandatory = false,
@@ -529,7 +549,11 @@ namespace Microsoft.Azure.Commands.KeyVault
                         throw new ArgumentException(Resources.InvalidApplicationId);
 
                     //All permission arrays cannot be null
+<<<<<<< HEAD
                     if ( PermissionsToKeys == null && PermissionsToSecrets == null && PermissionsToCertificates == null && PermissionsToStorage == null )
+=======
+                    if (PermissionsToKeys == null && PermissionsToSecrets == null && PermissionsToCertificates == null && PermissionsToStorage == null)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         throw new ArgumentException(Resources.PermissionsNotSpecified);
                     else
                     {
@@ -547,6 +571,7 @@ namespace Microsoft.Azure.Commands.KeyVault
                         var certificates = PermissionsToCertificates ?? (existingPolicy != null && existingPolicy.PermissionsToCertificates != null ?
                             existingPolicy.PermissionsToCertificates.ToArray() : null);
 
+<<<<<<< HEAD
                         var managedStorage = PermissionsToStorage ?? ( existingPolicy != null && existingPolicy.PermissionsToStorage != null ?
                             existingPolicy.PermissionsToStorage.ToArray() : null );
 
@@ -555,6 +580,16 @@ namespace Microsoft.Azure.Commands.KeyVault
                         if ( ( keys != null && keys.Length > 0 ) || ( secrets != null && secrets.Length > 0 ) || ( certificates != null && certificates.Length > 0 ) || ( managedStorage != null && managedStorage.Length > 0 ) )
                         {
                             var policy = new PSKeyVaultAccessPolicy( vault.TenantId, objId, this.ApplicationId, keys, secrets, certificates, managedStorage );
+=======
+                        var managedStorage = PermissionsToStorage ?? (existingPolicy != null && existingPolicy.PermissionsToStorage != null ?
+                            existingPolicy.PermissionsToStorage.ToArray() : null);
+
+                        //Remove old policies for this policy identity and add a new one with the right permissions, iff there were some non-empty permissions
+                        updatedListOfAccessPolicies = vault.AccessPolicies.Where(ap => !MatchVaultAccessPolicyIdentity(ap, objId, this.ApplicationId)).ToArray();
+                        if ((keys != null && keys.Length > 0) || (secrets != null && secrets.Length > 0) || (certificates != null && certificates.Length > 0) || (managedStorage != null && managedStorage.Length > 0))
+                        {
+                            var policy = new PSKeyVaultAccessPolicy(vault.TenantId, objId, this.ApplicationId, keys, secrets, certificates, managedStorage);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                             updatedListOfAccessPolicies = updatedListOfAccessPolicies.Concat(new[] { policy }).ToArray();
                         }
 
@@ -563,13 +598,21 @@ namespace Microsoft.Azure.Commands.KeyVault
 
                 // Update the vault
                 var updatedVault = KeyVaultManagementClient.UpdateVault(
+<<<<<<< HEAD
                     vault, 
+=======
+                    vault,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     updatedListOfAccessPolicies,
                     EnabledForDeployment.IsPresent ? true : vault.EnabledForDeployment,
                     EnabledForTemplateDeployment.IsPresent ? true : vault.EnabledForTemplateDeployment,
                     EnabledForDiskEncryption.IsPresent ? true : vault.EnabledForDiskEncryption,
                     vault.EnableSoftDelete,
                     vault.EnablePurgeProtection,
+<<<<<<< HEAD
+=======
+                    vault.SoftDeleteRetentionInDays,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     vault.NetworkAcls,
                     ActiveDirectoryClient);
 

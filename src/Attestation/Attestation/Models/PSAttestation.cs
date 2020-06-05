@@ -12,8 +12,16 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 using Microsoft.Azure.Management.Attestation.Models;
+=======
+using System.Collections;
+using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+using Microsoft.Azure.Management.Attestation.Models;
+using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
+using Microsoft.Azure.Management.Internal.Resources.Utilities;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Attestation.Models
 {
@@ -21,6 +29,7 @@ namespace Microsoft.Azure.Commands.Attestation.Models
     {
         public  PSAttestation(AttestationProvider attestation)
         {
+<<<<<<< HEAD
             Name = attestation.Name;
             Id = attestation.Id;
             Type = attestation.Type;
@@ -31,10 +40,21 @@ namespace Microsoft.Azure.Commands.Attestation.Models
 
             ResourceGroupName = identifier.ResourceGroupName;
             SubscriptionId = identifier.Subscription;
+=======
+            Id = attestation.Id;
+            Location = attestation.Location;
+            ResourceGroupName = new ResourceIdentifier(attestation.Id).ResourceGroupName;
+            Name = attestation.Name;
+            Status = attestation.Status;
+            TrustModel = attestation.TrustModel;
+            AttestUri = attestation.AttestUri;
+            Tags = TagsConversionHelper.CreateTagHashtable(attestation.Tags);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
    
         public string Id { get; protected set; }
 
+<<<<<<< HEAD
         public string Name { get; protected set; }
 
         public string Type { get; protected set; }
@@ -47,5 +67,22 @@ namespace Microsoft.Azure.Commands.Attestation.Models
 
         public string SubscriptionId { get; protected set; }
 
+=======
+        public string Location { get; protected set; }
+
+        public string ResourceGroupName { get; protected set; }
+
+        public string Name { get; protected set; }
+
+        public string Status { get; protected set; }
+
+        public string TrustModel { get; protected set; }
+
+        public string AttestUri { get; protected set; }
+
+        public Hashtable Tags { get; protected set; }
+
+        public string TagsTable => ResourcesExtensions.ConstructTagsTable(Tags);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

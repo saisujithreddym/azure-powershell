@@ -18,7 +18,12 @@ Restores the data and configuration for a Backup item to a recovery point.
 ```
 Restore-AzRecoveryServicesBackupItem [-VaultLocation <String>] [-RecoveryPoint] <RecoveryPointBase>
  [-StorageAccountName] <String> [-StorageAccountResourceGroupName] <String>
+<<<<<<< HEAD
  [[-TargetResourceGroupName] <String>] [-UseOriginalStorageAccount] [-VaultId <String>]
+=======
+ [[-TargetResourceGroupName] <String>] [-UseOriginalStorageAccount] [-RestoreOnlyOSDisk]
+ [-RestoreDiskList <String[]>] [-RestoreAsUnmanagedDisks] [-VaultId <String>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -27,8 +32,13 @@ Restore-AzRecoveryServicesBackupItem [-VaultLocation <String>] [-RecoveryPoint] 
 Restore-AzRecoveryServicesBackupItem [-VaultLocation <String>] [-RecoveryPoint] <RecoveryPointBase>
  -ResolveConflict <RestoreFSResolveConflictOption> [-SourceFilePath <String>]
  [-SourceFileType <SourceFileType>] [-TargetStorageAccountName <String>] [-TargetFileShareName <String>]
+<<<<<<< HEAD
  [-TargetFolder <String>] [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+=======
+ [-TargetFolder <String>] [-MultipleSourceFilePath <String[]>] [-VaultId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### AzureWorkloadParameterSet
@@ -42,7 +52,11 @@ Restore-AzRecoveryServicesBackupItem [-VaultLocation <String>] [-WLRecoveryConfi
 The **Restore-AzRecoveryServicesBackupItem** cmdlet restores the data and configuration for an Azure Backup item to a specified recovery point.
 This cmdlet starts the restore from the Recovery Services vault to customer's storage account.
 The restore operation does not restore the full virtual machine.
+<<<<<<< HEAD
 It restores the disk data and configuration information.
+=======
+It restores the managed disks to a target resource group and configuration information to customer storage account
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 After the restore operation is finished, you must create the virtual machine and start it.
 Set the vault context by using the -VaultId parameter.
 
@@ -54,12 +68,21 @@ Note: To successfully execute this cmdlet in addition to -VaultId parameter -Vau
 
 ```powershell
 PS C:\> $vault = Get-AzRecoveryServicesVault -ResourceGroupName "resourceGroup" -Name "vaultName"
+<<<<<<< HEAD
 PS C:\>$Container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -Status Registered -Name "V2VM" -VaultId $vault.ID
+=======
+PS C:\> $Container = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -Status Registered -Name "V2VM" -VaultId $vault.ID
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> $BackupItem = Get-AzRecoveryServicesBackupItem -ContainerType AzureVM -WorkloadType AzureVM -VaultId $vault.ID
 PS C:\> $StartDate = (Get-Date).AddDays(-7)
 PS C:\> $EndDate = Get-Date
 PS C:\> $RP = Get-AzRecoveryServicesBackupRecoveryPoint -Item $BackupItem -StartDate $StartDate.ToUniversalTime() -EndDate $EndDate.ToUniversalTime() -VaultId $vault.ID
+<<<<<<< HEAD
 PS C:\> $RestoreJob = Restore-AzRecoveryServicesBackupItem -RecoveryPoint $RP[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -VaultId $vault.ID -VaultLocation $vault.Location
+=======
+PS C:\> $restoreDiskLUNs = ("0", "1")
+PS C:\> $RestoreJob = Restore-AzRecoveryServicesBackupItem -RecoveryPoint $RP[0] -TargetRG $ManagedDiskRG -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -RestoreDiskList $restoreDiskLUNs -VaultId $vault.ID -VaultLocation $vault.Location
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     WorkloadName    Operation       Status          StartTime              EndTime
     ------------    ---------       ------          ---------              -------
     V2VM            Restore         InProgress      26-Apr-16 1:14:01 PM   01-Jan-01 12:00:00 AM
@@ -71,8 +94,41 @@ The third command gets the date from seven days earlier, and then stores it in t
 The fourth command gets the current date, and then stores it in the $EndDate variable.
 The fifth command gets a list of recovery points for the specific backup item filtered by $StartDate and $EndDate.
 The date range specified is the last 7 days.
+<<<<<<< HEAD
 The last command restores the disks to the target storage account DestAccount in the DestRG resource group.
 
+=======
+The seventh command specifies which disks to restore from the recovery point and stores it in $restoreDiskLUNs variable.
+The last command restores the disks to the target storage account DestAccount in the DestRG resource group.
+
+### Example 2: Restore Multiple files of an AzureFileShare item
+
+```powershell
+PS C:\> $vault = Get-AzRecoveryServicesVault -ResourceGroupName "resourceGroup" -Name "vaultName"
+PS C:\> $BackupItem = Get-AzRecoveryServicesBackupItem -BackupManagementType AzureStorage -WorkloadType AzureVM -VaultId $vault.ID -Name "fileshareitem"
+PS C:\> $RP = Get-AzRecoveryServicesBackupRecoveryPoint -Item $BackupItem -VaultId $vault.ID
+PS C:\> $files = ("file1.txt", "file2.txt")
+PS C:\> $RestoreJob = Restore-AzRecoveryServicesBackupItem -RecoveryPoint $RP[0] -MultipleSourceFilePath $files -SourceFileType File -ResolveConflict Overwrite -VaultId $vault.ID -VaultLocation $vault.Location
+    WorkloadName    Operation       Status          StartTime              EndTime
+    ------------    ---------       ------          ---------              -------
+    fileshareitem            Restore         InProgress      26-Apr-16 1:14:01 PM   01-Jan-01 12:00:00 AM
+```
+
+The first command gets the Backup container of type AzureVM, and then stores it in the $Container variable.
+The second command gets the Backup item named fileshareitem and then stores it in the $BackupItem variable.
+The third command gets a list of recovery points for the specific backup item.
+The fourth command spceifies which files to restore and stores it in $files variable.
+The last command restores the specified files to its original location.
+
+### Example 3
+
+Restores the data and configuration for a Backup item to a recovery point. (autogenerated)
+
+```powershell <!-- Aladdin Generated Example --> 
+Restore-AzRecoveryServicesBackupItem -VaultId $vault.ID -WLRecoveryConfig <RecoveryConfigBase>
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -DefaultProfile
@@ -91,6 +147,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -MultipleSourceFilePath
+Used for Multiple files restore from a file share. The paths of the items to be restored within the file share.
+
+```yaml
+Type: System.String[]
+Parameter Sets: AzureFileParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -RecoveryPoint
 
 Specifies the recovery point to which to restore the virtual machine.
@@ -129,6 +203,54 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -RestoreAsUnmanagedDisks
+Use this switch to specify to restore as unmanaged disks
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AzureVMParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RestoreDiskList
+Specify which disks to recover of the backed up VM
+
+```yaml
+Type: System.String[]
+Parameter Sets: AzureVMParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RestoreOnlyOSDisk
+Use this switch to restore only OS disks of a backed up VM
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AzureVMParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -SourceFilePath
 
 Used for a particular item restore from a file share. The path of the item to be restored within the file share.

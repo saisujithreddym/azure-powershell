@@ -63,3 +63,17 @@ function Get-ProviderLocation()
 
 	return "East US"
 }
+<<<<<<< HEAD
+=======
+
+<#
+.SYNOPSIS
+Cleans the created resource groups
+#>
+function Clean-ResourceGroup($rgname)
+{
+    if ([Microsoft.Azure.Test.HttpRecorder.HttpMockServer]::Mode -ne [Microsoft.Azure.Test.HttpRecorder.HttpRecorderMode]::Playback) {
+        Remove-AzResourceGroup -Name $rgname -Force
+    }
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

@@ -43,11 +43,14 @@ namespace Microsoft.Azure.Commands.Network
         {
             base.Execute();
 
+<<<<<<< HEAD
             var circuitconnection = new PSExpressRouteCircuitConnection();
 
             circuitconnection.Name = this.Name;
             circuitconnection.AddressPrefix = this.AddressPrefix;
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var peering =
                     this.ExpressRouteCircuit.Peerings.SingleOrDefault(
                         resource =>
@@ -55,9 +58,28 @@ namespace Microsoft.Azure.Commands.Network
 
             if (peering == null)
             {
+<<<<<<< HEAD
                 throw new ArgumentException("Private Peering needs to be configured on the Express Route Circuit");
             }
 
+=======
+                throw new ArgumentException(Properties.Resources.ExpressRoutePrivatePeeringNotFound);
+            }
+
+            var circuitconnection = peering.Connections.SingleOrDefault(
+                    resource =>
+                        string.Equals(resource.Name, Name, System.StringComparison.CurrentCultureIgnoreCase));
+
+            if (circuitconnection != null)
+            {
+                throw new ArgumentException(string.Format(Properties.Resources.ExpressRouteCircuitConnectionAlreadyAdded, Name));
+            }
+
+            circuitconnection = new PSExpressRouteCircuitConnection();
+
+            circuitconnection.Name = this.Name;
+ 
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             circuitconnection.ExpressRouteCircuitPeering = new PSResourceId();
             circuitconnection.ExpressRouteCircuitPeering.Id = peering.Id;
 
@@ -69,6 +91,22 @@ namespace Microsoft.Azure.Commands.Network
                 circuitconnection.AuthorizationKey = this.AuthorizationKey;
             }
 
+<<<<<<< HEAD
+=======
+            if (this.AddressPrefixType == IPv6)
+            {
+                // Create new PSExpressRouteIPv6AddressPrefix()
+                var expressRouteIPv6AddressPrefix = new PSExpressRouteCircuitConnectionIPv6ConnectionConfig();
+                expressRouteIPv6AddressPrefix.AddressPrefix = AddressPrefix;
+                circuitconnection.IPv6CircuitConnectionConfig = expressRouteIPv6AddressPrefix;
+            }
+            else
+            {
+                // For IPv4 
+                circuitconnection.AddressPrefix = this.AddressPrefix;
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             peering.Connections.Add(circuitconnection);
 
             WriteObject(this.ExpressRouteCircuit);

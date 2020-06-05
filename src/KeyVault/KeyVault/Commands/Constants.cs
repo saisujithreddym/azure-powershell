@@ -24,6 +24,16 @@ namespace Microsoft.Azure.Commands.KeyVault
         public const string P521 = "P-521";
         public const string P256K = "P-256K";
         public const string SECP256K1 = "SECP256K1";
+<<<<<<< HEAD
+=======
+
+        public const int MinSoftDeleteRetentionDays = 7;
+        public const int MaxSoftDeleteRetentionDays = 90;
+        public const int DefaultSoftDeleteRetentionDays = 90;
+        public const string DefaultSoftDeleteRetentionDaysString = "90";
+
+        public const string KeyOpsImport = "import";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 
     public static class CmdletNoun

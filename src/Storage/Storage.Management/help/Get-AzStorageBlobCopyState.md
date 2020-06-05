@@ -36,6 +36,10 @@ Get-AzStorageBlobCopyState -CloudBlobContainer <CloudBlobContainer> [-Blob] <Str
 
 ## DESCRIPTION
 The **Get-AzStorageBlobCopyState** cmdlet gets the copy status of an Azure Storage blob.
+<<<<<<< HEAD
+=======
+It should run on the copy destination blob.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 
@@ -62,6 +66,19 @@ C:\PS>Get-AzStorageContainer -Name "ContosoUploads" | Get-AzStorageBlobCopyState
 This command gets the container named by using the **Get-AzStorageBlob** cmdlet, and then passes the result to the current cmdlet.
 The **Get-AzStorageContainer** cmdlet gets the copy status for the blob named ContosoPlanning2015 in that container.
 
+<<<<<<< HEAD
+=======
+### Example 4: Start Copy and pipeline to get the copy status
+```
+C:\PS> $destBlob = Start-AzStorageBlobCopy -SrcContainer "contosouploads" -SrcBlob "ContosoPlanning2015" -DestContainer "contosouploads2" -DestBlob "ContosoPlanning2015_copy"
+
+C:\PS> $destBlob | Get-AzStorageBlobCopyState
+```
+
+The first command starts copy blob "ContosoPlanning2015" to "ContosoPlanning2015_copy", and output the destiantion blob object. 
+The second command pipeline the destiantion blob object to Get-AzStorageBlobCopyState, to get blob copy state. 
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -Blob
@@ -241,7 +258,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+<<<<<<< HEAD
 ### Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageBlob
+=======
+### Microsoft.Azure.Storage.Blob.CopyState
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## NOTES
 

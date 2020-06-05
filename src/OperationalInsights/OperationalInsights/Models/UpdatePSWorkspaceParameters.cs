@@ -23,5 +23,12 @@ namespace Microsoft.Azure.Commands.OperationalInsights
         public Hashtable Tags { get; set; }
 
         public int? RetentionInDays { get; set; }
+<<<<<<< HEAD
+=======
+
+        public string PublicNetworkAccessForIngestion { get; set; }
+
+        public string PublicNetworkAccessForQuery { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

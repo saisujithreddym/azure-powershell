@@ -23,7 +23,11 @@ using System;
 
 namespace Microsoft.Azure.Commands.CosmosDB
 {
+<<<<<<< HEAD
     [Cmdlet(VerbsCommon.Get, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBSqlContainer", DefaultParameterSetName = NameParameterSet), OutputType(typeof(PSSqlContainerGetResults), typeof(PSThroughputSettingsGetResults))]
+=======
+    [Cmdlet(VerbsCommon.Get, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBSqlContainer", DefaultParameterSetName = NameParameterSet), OutputType(typeof(PSSqlContainerGetResults))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class GetAzCosmosDBSqlContainer : AzureCosmosDBCmdletBase
     {
         [Parameter(Mandatory = true, ParameterSetName = NameParameterSet, HelpMessage = Constants.AccountNameHelpMessage)]
@@ -45,16 +49,24 @@ namespace Microsoft.Azure.Commands.CosmosDB
 
         [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ParentObjectParameterSet, HelpMessage = Constants.SqlDatabaseObjectHelpMessage )]
         [ValidateNotNull]
+<<<<<<< HEAD
         public PSSqlDatabaseGetResults InputObject{ get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = Constants.SqlContainerDetailedParamHelpMessage)]
         public SwitchParameter Detailed { get; set; }
+=======
+        public PSSqlDatabaseGetResults ParentObject{ get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         public override void ExecuteCmdlet()
         {
             if(ParameterSetName.Equals(ParentObjectParameterSet, StringComparison.Ordinal))
             {
+<<<<<<< HEAD
                 ResourceIdentifier resourceIdentifier = new ResourceIdentifier(InputObject.Id);
+=======
+                ResourceIdentifier resourceIdentifier = new ResourceIdentifier(ParentObject.Id);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ResourceGroupName = resourceIdentifier.ResourceGroupName;
                 DatabaseName = resourceIdentifier.ResourceName;
                 AccountName = ResourceIdentifierExtensions.GetDatabaseAccountName(resourceIdentifier);
@@ -64,12 +76,15 @@ namespace Microsoft.Azure.Commands.CosmosDB
             {
                 SqlContainerGetResults sqlContainerGetResults = CosmosDBManagementClient.SqlResources.GetSqlContainerWithHttpMessagesAsync(ResourceGroupName, AccountName, DatabaseName, Name).GetAwaiter().GetResult().Body;
                 WriteObject(new PSSqlContainerGetResults(sqlContainerGetResults));
+<<<<<<< HEAD
 
                 if (Detailed)
                 {
                     ThroughputSettingsGetResults throughputSettingsGetResults = CosmosDBManagementClient.SqlResources.GetSqlContainerThroughputWithHttpMessagesAsync(ResourceGroupName, AccountName, DatabaseName, Name).GetAwaiter().GetResult().Body;
                     WriteObject(throughputSettingsGetResults);
                 }
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             else
             {

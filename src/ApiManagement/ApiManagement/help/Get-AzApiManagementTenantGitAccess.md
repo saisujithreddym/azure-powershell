@@ -20,6 +20,10 @@ Get-AzApiManagementTenantGitAccess -Context <PsApiManagementContext> [-DefaultPr
 
 ## DESCRIPTION
 The **Get-AzApiManagementTenantGitAccess** cmdlet gets the Git access configuration for a tenant.
+<<<<<<< HEAD
+=======
+Keys will not be included into result details. To get client secret, use **Get-AzApiManagementTenantGitAccessSecret**.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 

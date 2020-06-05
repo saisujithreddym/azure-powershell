@@ -41,6 +41,21 @@ namespace Microsoft.Azure.Commands.ResourceManager.Common
         private IAzureTokenCache _cache;
         public Action<string> WarningLog;
 
+<<<<<<< HEAD
+=======
+        private IAzureContext DefaultContext
+        {
+            get
+            {
+                if(_profile == null || _profile.DefaultContext == null || _profile.DefaultContext.Account == null)
+                {
+                    throw new PSInvalidOperationException(ResourceMessages.RunConnectAccount);
+                }
+                return _profile.DefaultContext;
+            }
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public RMProfileClient(IProfileOperations profile)
         {
             _profile = profile;
@@ -368,7 +383,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Common
                 return new List<AzureTenant>() { CreateTenant(tenant) };
             }
 
+<<<<<<< HEAD
             List<AzureTenant> tenants = ListAccountTenants(_profile.DefaultContext.Account, _profile.DefaultContext.Environment, null, ShowDialog.Never, null);
+=======
+            List<AzureTenant> tenants = ListAccountTenants(DefaultContext.Account, DefaultContext.Environment, null, ShowDialog.Never, null);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             return tenants.Where(t => string.IsNullOrEmpty(tenant) ||
                                          tenant.Equals(t.Id.ToString(), StringComparison.OrdinalIgnoreCase) ||
                                          tenant.Equals(t.Directory, StringComparison.OrdinalIgnoreCase))

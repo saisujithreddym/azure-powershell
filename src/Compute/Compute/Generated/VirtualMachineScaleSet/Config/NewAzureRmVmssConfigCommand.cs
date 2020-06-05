@@ -164,6 +164,7 @@ namespace Microsoft.Azure.Commands.Compute.Automation
         public string AutomaticRepairGracePeriod { get; set; }
 
         [Parameter(
+<<<<<<< HEAD
             Mandatory = false,
             ValueFromPipelineByPropertyName = true)]
         [CmdletParameterBreakingChange("AutomaticRepairMaxInstanceRepairsPercent",
@@ -171,6 +172,8 @@ namespace Microsoft.Azure.Commands.Compute.Automation
         public int AutomaticRepairMaxInstanceRepairsPercent { get; set; }
 
         [Parameter(
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Mandatory = false)]
         public SwitchParameter AutoOSUpgrade { get; set; }
 
@@ -268,7 +271,11 @@ namespace Microsoft.Azure.Commands.Compute.Automation
             UpgradePolicy vUpgradePolicy = null;
 
             // AutomaticRepairsPolicy
+<<<<<<< HEAD
             PSAutomaticRepairsPolicy vAutomaticRepairsPolicy = null;
+=======
+            AutomaticRepairsPolicy vAutomaticRepairsPolicy = null;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             // VirtualMachineProfile
             PSVirtualMachineScaleSetVMProfile vVirtualMachineProfile = null;
@@ -376,17 +383,32 @@ namespace Microsoft.Azure.Commands.Compute.Automation
             }
             vUpgradePolicy.AutomaticOSUpgradePolicy.EnableAutomaticOSUpgrade = this.AutoOSUpgrade.IsPresent;
 
+<<<<<<< HEAD
             if (vAutomaticRepairsPolicy == null)
             {
                 vAutomaticRepairsPolicy = new PSAutomaticRepairsPolicy();
             }
             vAutomaticRepairsPolicy.Enabled = this.EnableAutomaticRepair.IsPresent;
+=======
+            if (this.EnableAutomaticRepair.IsPresent)
+            {
+                if (vAutomaticRepairsPolicy == null)
+                {
+                    vAutomaticRepairsPolicy = new AutomaticRepairsPolicy();
+                }
+                vAutomaticRepairsPolicy.Enabled = this.EnableAutomaticRepair.IsPresent;
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (this.IsParameterBound(c => c.AutomaticRepairGracePeriod))
             {
                 if (vAutomaticRepairsPolicy == null)
                 {
+<<<<<<< HEAD
                     vAutomaticRepairsPolicy = new PSAutomaticRepairsPolicy();
+=======
+                    vAutomaticRepairsPolicy = new AutomaticRepairsPolicy();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
                 vAutomaticRepairsPolicy.GracePeriod = this.AutomaticRepairGracePeriod;
             }
@@ -578,6 +600,7 @@ namespace Microsoft.Azure.Commands.Compute.Automation
                 vScaleInPolicy.Rules = this.ScaleInPolicy;
             }
 
+<<<<<<< HEAD
             if (this.AssignIdentity.IsPresent)
             {
                 if (vIdentity == null)
@@ -587,6 +610,8 @@ namespace Microsoft.Azure.Commands.Compute.Automation
                 vIdentity.Type = ResourceIdentityType.SystemAssigned;
             }
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (this.IsParameterBound(c => c.IdentityType))
             {
                 if (vIdentity == null)

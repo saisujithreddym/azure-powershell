@@ -20,6 +20,12 @@
 
 ## Upcoming Release
 
+<<<<<<< HEAD
+=======
+## Version 0.1.2
+* Update references to use latest Nuget package version
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## Version 0.1.1
 * Update references in .psd1 to use relative path
 

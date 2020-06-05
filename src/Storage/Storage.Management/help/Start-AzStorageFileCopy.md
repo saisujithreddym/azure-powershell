@@ -359,12 +359,20 @@ You can create a cloud file or obtain one by using **Get-AzStorageFile**.
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFile
 Parameter Sets: FileInstanceToFilePath, FileInstanceToFileInstance
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFile
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -390,7 +398,11 @@ You can create a cloud file share or obtain one by using the Get-AzStorageShare 
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFileShare
 Parameter Sets: ShareInstance
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFileShare
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: Named
@@ -446,7 +458,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 
@@ -458,7 +474,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+<<<<<<< HEAD
 ### System.Void
+=======
+### Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageFile
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## NOTES
 

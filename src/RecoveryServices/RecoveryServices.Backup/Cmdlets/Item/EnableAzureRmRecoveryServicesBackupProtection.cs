@@ -43,7 +43,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
         /// <summary>
         /// Policy to be associated with this item as part of the protection operation.
         /// </summary>
+<<<<<<< HEAD
         [Parameter(Position = 1, Mandatory = true, HelpMessage = ParamHelpMsgs.Policy.ProtectionPolicy)]
+=======
+        [Parameter(Position = 1, Mandatory = false, HelpMessage = ParamHelpMsgs.Policy.ProtectionPolicy)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [ValidateNotNullOrEmpty]
         public PolicyBase Policy { get; set; }
 
@@ -97,6 +101,49 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
         [ValidateNotNullOrEmpty]
         public ItemBase Item { get; set; }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// List of Disk LUNs to include in backup
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMClassicComputeParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.inclusionDiskList)]
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMComputeParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.inclusionDiskList)]
+        [Parameter(Mandatory = false, ParameterSetName = ModifyProtectionParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.inclusionDiskList)]
+        public string[] InclusionDisksList { get; set; }
+
+        /// <summary>
+        /// List of Disk LUNs to exclude in backup
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMClassicComputeParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.exclusionDiskList)]
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMComputeParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.exclusionDiskList)]
+        [Parameter(Mandatory = false, ParameterSetName = ModifyProtectionParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.exclusionDiskList)]
+        public string[] ExclusionDisksList { get; set; }
+
+        /// <summary>
+        /// Reset Disk Exclusion Settings
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = ModifyProtectionParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.resetExclusionSettings)]
+        public SwitchParameter ResetExclusionSettings { get; set; }
+
+        /// <summary>
+        /// Backup OS disks of VM only
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMClassicComputeParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.excludeAllDataDisks)]
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMComputeParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.excludeAllDataDisks)]
+        [Parameter(Mandatory = false, ParameterSetName = ModifyProtectionParameterSet,
+            HelpMessage = ParamHelpMsgs.Item.excludeAllDataDisks)]
+        public SwitchParameter ExcludeAllDataDisks { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public override void ExecuteCmdlet()
         {
             ExecutionBlock(() =>
@@ -108,7 +155,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
                 string resourceGroupName = resourceIdentifier.ResourceGroupName;
 
                 string shouldProcessName = Name;
+<<<<<<< HEAD
                 if (ParameterSetName == ModifyProtectionParameterSet)
+=======
+                if (ParameterSetName.Contains("Modify"))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {
                     shouldProcessName = Item.Name;
                 }
@@ -199,6 +250,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
                                 { ItemParams.Item, Item },
                                 { ItemParams.ProtectableItem, ProtectableItem  },
                                 { ItemParams.ParameterSetName, this.ParameterSetName },
+<<<<<<< HEAD
+=======
+                                { ItemParams.InclusionDisksList, InclusionDisksList },
+                                { ItemParams.ExclusionDisksList, ExclusionDisksList },
+                                { ItemParams.ResetExclusionSettings, ResetExclusionSettings },
+                                { ItemParams.ExcludeAllDataDisks, ExcludeAllDataDisks.IsPresent }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                             }, ServiceClientAdapter);
 
                         IPsBackupProvider psBackupProvider = (Item != null) ?

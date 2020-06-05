@@ -18,6 +18,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models
         Wadl = 1,
         Swagger = 2,
         Wsdl = 3,
+<<<<<<< HEAD
         OpenApi = 4
+=======
+        OpenApi = 4,
+        OpenApiJson = 5
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

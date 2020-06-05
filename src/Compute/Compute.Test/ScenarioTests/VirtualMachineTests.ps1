@@ -708,21 +708,30 @@ function Test-VirtualMachineImageList
 
         $skusName = Get-ComputeTestResourceName;
         Assert-ThrowsContains { $s4 = Get-AzVMImage -Location $locStr -PublisherName $publisherName -Offer $offerName -Skus $skusName; } "was not found";
+<<<<<<< HEAD
 
         $filter = "name eq 'latest'";
         Assert-ThrowsContains { $s5 = Get-AzVMImage -Location $locStr -PublisherName $publisherName -Offer $offerName -Skus $skusName -FilterExpression $filter; } "was not found";
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         $version = '1.0.0';
         Assert-ThrowsContains { $s6 = Get-AzVMImage -Location $locStr -PublisherName $publisherName -Offer $offerName -Skus $skusName -Version $version; } "was not found";
 
         # Extension Images
         $type = Get-ComputeTestResourceName;
+<<<<<<< HEAD
         Assert-ThrowsContains { $s7 = Get-AzVMExtensionImage -Location $locStr -PublisherName $publisherName -Type $type -FilterExpression $filter -Version $version; } "was not found";
 
         Assert-ThrowsContains { $s8 = Get-AzVMExtensionImageType -Location $locStr -PublisherName $publisherName; } "was not found";
 
         Assert-ThrowsContains { $s9 = Get-AzVMExtensionImage -Location $locStr -PublisherName $publisherName -Type $type -FilterExpression $filter; } "was not found";
 
+=======
+
+        Assert-ThrowsContains { $s8 = Get-AzVMExtensionImageType -Location $locStr -PublisherName $publisherName; } "was not found";
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         $passed = $true;
     }
     finally
@@ -2971,12 +2980,25 @@ function Test-VirtualMachineGetStatus
         Assert-True {$a.Contains("Statuses");}
 
         $vms = Get-AzVM -ResourceGroupName $rgname -Status;
+<<<<<<< HEAD
         $a = $vms | Out-String;
         Write-Verbose($a);
 
         $vms = Get-AzVM -Status;
         $a = $vms | Out-String;
         Write-Verbose($a);
+=======
+        Assert-AreEqual "VM running" ($vms | ? {$_.Name -eq $vmname}).PowerState;
+        $a = $vms | Out-String;
+        Write-Verbose($a);
+        Assert-True {$a.Contains("VM running")};
+
+        $vms = Get-AzVM -Status;
+        Assert-AreEqual "VM running" ($vms | ? {$_.Name -eq $vmname}).PowerState;
+        $a = $vms | Out-String;
+        Write-Verbose($a);
+        Assert-True {$a.Contains("VM running")};
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         # VM Compact output
         $a = $vms[0] | Format-Custom | Out-String;
@@ -3257,7 +3279,11 @@ function Test-VirtualMachineIdentity
         $computerName = 'test';
         $vhdContainer = "https://$stoname.blob.core.windows.net/test";
 
+<<<<<<< HEAD
         $p = New-AzVMConfig -VMName $vmname -VMSize $vmsize -AssignIdentity `
+=======
+        $p = New-AzVMConfig -VMName $vmname -VMSize $vmsize -IdentityType "SystemAssigned" `
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
              | Add-AzVMNetworkInterface -Id $nicId -Primary `
              | Set-AzVMOSDisk -Name $osDiskName -VhdUri $osDiskVhdUri -Caching $osDiskCaching -CreateOption FromImage `
              | Set-AzVMOperatingSystem -Windows -ComputerName $computerName -Credential $cred;
@@ -3355,7 +3381,11 @@ function Test-VirtualMachineIdentityUpdate
         $vms_output = $vms | Out-String;
         Write-Verbose($vms_output);
 
+<<<<<<< HEAD
         $st = $vm1 | Update-AzVM -AssignIdentity;
+=======
+        $st = $vm1 | Update-AzVM -IdentityType "SystemAssigned";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         # Get VM
         $vm1 = Get-AzVM -Name $vmname -ResourceGroupName $rgname -DisplayHint "Expand";
@@ -3685,13 +3715,21 @@ function Test-VirtualMachineStop
         # Get VM
         $vm = Get-AzVM -ResourceGroupName $rgname -Name $vmname;
         $vmstate = Get-AzVM -ResourceGroupName $rgname -Name $vmname -Status;
+<<<<<<< HEAD
         Assert-AreEqual "PowerState/running" $vmstate.Statuses[1].Code
+=======
+        Assert-AreEqual "PowerState/running" $vmstate.Statuses[1].Code;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         # Stop the VM
         Stop-AzVM -ResourceGroupName $rgname -Name $vmname -StayProvisioned -SkipShutdown -Force;
         $vm = Get-AzVM -ResourceGroupName $rgname -Name $vmname;
         $vmstate = Get-AzVM -ResourceGroupName $rgname -Name $vmname -Status;
+<<<<<<< HEAD
         Assert-AreEqual "PowerState/stopped" $vmstate.Statuses[1].Code
+=======
+        Assert-AreEqual "PowerState/stopped" $vmstate.Statuses[1].Code;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         Remove-AzVM -ResourceGroupName $rgname -Name $vmname -Force;
     }

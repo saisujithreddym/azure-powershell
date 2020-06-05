@@ -47,7 +47,11 @@ namespace Microsoft.Azure.Commands.Compute
 
         [Parameter(
             Mandatory = false)]
+<<<<<<< HEAD
         [ValidateNotNullOrEmpty]
+=======
+        [AllowEmptyString]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ProximityPlacementGroupId { get; set; }
 
         [Parameter(
@@ -79,6 +83,14 @@ namespace Microsoft.Azure.Commands.Compute
                                                 : this.AvailabilitySet.ProximityPlacementGroup
                     };
 
+<<<<<<< HEAD
+=======
+                    if (avSetParams.ProximityPlacementGroup != null && string.IsNullOrEmpty(avSetParams.ProximityPlacementGroup.Id))
+                    {
+                        avSetParams.ProximityPlacementGroup.Id = null;
+                    }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     var result = this.AvailabilitySetClient.CreateOrUpdateWithHttpMessagesAsync(
                         this.AvailabilitySet.ResourceGroupName,
                         this.AvailabilitySet.Name,

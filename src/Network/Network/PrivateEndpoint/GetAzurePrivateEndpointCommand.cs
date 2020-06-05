@@ -19,7 +19,10 @@ using System.Management.Automation;
 using Microsoft.Azure.Management.Network.Models;
 using Microsoft.Rest.Azure;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
+<<<<<<< HEAD
 using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Network
 {

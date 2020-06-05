@@ -62,8 +62,11 @@ namespace Microsoft.Azure.Commands.Management.Storage
             }
         }
 
+<<<<<<< HEAD
         public const string ChangeDesc = "The DefaultAction value will change in a future release from: Allow = 1, Deny = 0, to: Allow = 0, Deny = 1.";
         [CmdletParameterBreakingChange("DefaultAction", ChangeDescription = ChangeDesc)]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(
             Mandatory = false,
             HelpMessage = "Storage Account NetworkRule DefaultAction.")]

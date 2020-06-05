@@ -191,6 +191,12 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [New-AzApiManagementCache](./New-AzApiManagementCache)
 
+<<<<<<< HEAD
 [Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
 
 [Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
+=======
+[Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

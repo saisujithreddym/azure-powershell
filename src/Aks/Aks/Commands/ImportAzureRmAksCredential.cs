@@ -18,7 +18,11 @@ using System.IO;
 using System.Linq;
 using System.Management.Automation;
 using System.Text;
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Aks.Generated.Version2017_08_31;
+=======
+using Microsoft.Azure.Management.ContainerService;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Commands.Aks.Models;
 using Microsoft.Azure.Commands.Aks.Properties;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
@@ -140,11 +144,19 @@ namespace Microsoft.Azure.Commands.Aks
                         WriteVerbose(Admin
                             ? Resources.FetchingTheClusterAdminKubectlConfig
                             : Resources.FetchingTheDefaultClusterUserKubectlConfig);
+<<<<<<< HEAD
                         var accessProfile = Client.ManagedClusters.GetAccessProfiles(ResourceGroupName, Name,
                             Admin ? "clusterAdmin" : "clusterUser");
 
                         var decodedKubeConfig =
                             Encoding.UTF8.GetString(Convert.FromBase64String(accessProfile.KubeConfig));
+=======
+                        var accessProfile = Client.ManagedClusters.GetAccessProfile(ResourceGroupName, Name,
+                            Admin ? "clusterAdmin" : "clusterUser");
+
+                        var decodedKubeConfig =
+                            Encoding.UTF8.GetString(accessProfile.KubeConfig);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         if (ConfigPath == "-")
                         {
                             WriteObject(decodedKubeConfig);

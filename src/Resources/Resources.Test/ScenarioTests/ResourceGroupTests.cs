@@ -109,8 +109,12 @@ namespace Microsoft.Azure.Commands.Resources.Test.ScenarioTests
             TestRunner.RunTestScript("Test-NewDeploymentAndProviderRegistration");
         }
 
+<<<<<<< HEAD
         [Fact(Skip = "Need service team to re-record test after changes to the ClientRuntime.")]
         [Trait("Re-record", "ClientRuntime changes")]
+=======
+        [Fact]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestRemoveDeployment()
         {

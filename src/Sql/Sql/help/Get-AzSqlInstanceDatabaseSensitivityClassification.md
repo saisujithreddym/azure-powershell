@@ -52,6 +52,7 @@ ResourceGroupName : resourceGroup
 InstanceName      : managedInstance
 DatabaseName      : database
 SensitivityLabels : {{
+<<<<<<< HEAD
                         SchemaName: schema1,
                         TableName: table1,
                         ColumnName: column1,
@@ -67,6 +68,25 @@ SensitivityLabels : {{
                         TableName: table3,
                         ColumnName: column3,
                         SensitivityLabel: label3,
+=======
+                        SchemaName: dbo,
+                        TableName: Report,
+                        ColumnName: ReportEmailBody,
+                        InformationType: Contact Info
+                    }, {
+                        SchemaName: dbo,
+                        TableName: Report,
+                        ColumnName: ReportEmailSubject,
+                        SensitivityLabel: Confidential,
+                        Rank: Medium
+                    }, {
+                        SchemaName: dbo,
+                        TableName: EMailLog,
+                        ColumnName: BounceEmailSubject,
+                        SensitivityLabel: Confidential,
+                        InformationType: Contact Info,
+                        Rank: Medium
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }}
 ```
 
@@ -78,6 +98,7 @@ ResourceGroupName : resourceGroup
 InstanceName      : managedInstance
 DatabaseName      : database
 SensitivityLabels : {{
+<<<<<<< HEAD
                         SchemaName: schema1,
                         TableName: table1,
                         ColumnName: column1,
@@ -93,38 +114,83 @@ SensitivityLabels : {{
                         TableName: table3,
                         ColumnName: column3,
                         SensitivityLabel: label3,
+=======
+                        SchemaName: dbo,
+                        TableName: Report,
+                        ColumnName: ReportEmailBody,
+                        InformationType: Contact Info
+                    }, {
+                        SchemaName: dbo,
+                        TableName: Report,
+                        ColumnName: ReportEmailSubject,
+                        SensitivityLabel: Confidential,
+                        Rank: Medium
+                    }, {
+                        SchemaName: dbo,
+                        TableName: EMailLog,
+                        ColumnName: BounceEmailSubject,
+                        SensitivityLabel: Confidential,
+                        InformationType: Contact Info,
+                        Rank: Medium
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }}
 ```
 
 ### Example 3: Get current information type and sensitivity label of a specific column of an Azure SQL managed instance database.
 ```powershell
+<<<<<<< HEAD
 PS C:\> Get-AzSqlInstanceDatabaseSensitivityClassification -ResourceGroupName resourceGroup -InstanceName managedInstance -DatabaseName database -SchemaName schema -TableName table -ColumnName column
+=======
+PS C:\> Get-AzSqlInstanceDatabaseSensitivityClassification -ResourceGroupName resourceGroup -InstanceName managedInstance -DatabaseName database -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ResourceGroupName : resourceGroup
 InstanceName      : managedInstance
 DatabaseName      : database
 SensitivityLabels : {{
+<<<<<<< HEAD
                         SchemaName: schema,
                         TableName: table,
                         ColumnName: column,
                         SensitivityLabel: label,
                         InformationType: informationType,
+=======
+                        SchemaName: dbo,
+                        TableName: EMailLog,
+                        ColumnName: BounceEmailSubject,
+                        SensitivityLabel: Confidential,
+                        InformationType: Contact Info,
+                        Rank: Medium
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }}
 ```
 
 ### Example 4: Get current information type and sensitivity label of a specific column of an Azure SQL managed instance database using Piping.
 ```powershell
+<<<<<<< HEAD
 PS C:\> Get-AzSqlInstanceDatabase -ResourceGroupName resourceGroup -InstanceName managedInstance -Name database | Get-AzSqlInstanceDatabaseSensitivityClassification -SchemaName schema -TableName table -ColumnName column
+=======
+PS C:\> Get-AzSqlInstanceDatabase -ResourceGroupName resourceGroup -InstanceName managedInstance -Name database | Get-AzSqlInstanceDatabaseSensitivityClassification -SchemaName dbo -TableName EMailLog -ColumnName BounceEmailSubject
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ResourceGroupName : resourceGroup
 InstanceName      : managedInstance
 DatabaseName      : database
 SensitivityLabels : {{
+<<<<<<< HEAD
                         SchemaName: schema,
                         TableName: table,
                         ColumnName: column,
                         SensitivityLabel: label,
                         InformationType: informationType,
+=======
+                        SchemaName: dbo,
+                        TableName: EMailLog,
+                        ColumnName: BounceEmailSubject,
+                        SensitivityLabel: Confidential,
+                        InformationType: Contact Info,
+                        Rank: Medium
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }}
 ```
 

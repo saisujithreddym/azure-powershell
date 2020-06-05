@@ -47,7 +47,11 @@ namespace Microsoft.Azure.Commands.DataLakeStore
             HelpMessage =
                 "Optionally indicates the encoding for the content being uploaded as part of 'Value'. Default is UTF8")]
         [ArgumentToEncodingTransformation]
+<<<<<<< HEAD
         [PSArgumentCompleter(EncodingUtils.Unknown, EncodingUtils.String, EncodingUtils.Unicode, EncodingUtils.BigEndianUnicode, EncodingUtils.Ascii, EncodingUtils.Utf8, EncodingUtils.Utf7, EncodingUtils.Utf32, EncodingUtils.Default, EncodingUtils.Oem, EncodingUtils.BigEndianUtf32)]
+=======
+        [PSArgumentCompleter(EncodingUtils.Unknown, EncodingUtils.String, EncodingUtils.Unicode, EncodingUtils.BigEndianUnicode, EncodingUtils.Ascii, EncodingUtils.Utf8, EncodingUtils.Utf7, EncodingUtils.Utf32, EncodingUtils.Default, EncodingUtils.Oem, EncodingUtils.BigEndianUtf32, EncodingUtils.Byte)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public Encoding Encoding { get; set; } = Encoding.UTF8;
 
         public override void ExecuteCmdlet()

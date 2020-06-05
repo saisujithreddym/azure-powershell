@@ -126,6 +126,18 @@
   <data name="AddIotHubCertificate" xml:space="preserve">
     <value>Add or Update an Iot Hub Certificate</value>
   </data>
+<<<<<<< HEAD
+=======
+  <data name="AddIotHubDevice" xml:space="preserve">
+    <value>Add Device</value>
+  </data>
+  <data name="RemoveIotHubDevice" xml:space="preserve">
+    <value>Remove Device</value>
+  </data>
+  <data name="UpdateIotHubDevice" xml:space="preserve">
+    <value>Update Device</value>
+  </data>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   <data name="AddIotHubKey" xml:space="preserve">
     <value>Add an IoT Hub Key</value>
   </data>
@@ -189,4 +201,58 @@
   <data name="VerifyIotHubCertificate" xml:space="preserve">
     <value>Verify an Iot Hub Certificate</value>
   </data>
+<<<<<<< HEAD
+=======
+  <data name="AddIotHubModule" xml:space="preserve">
+    <value>Add Module</value>
+  </data>
+  <data name="RemoveIotHubModule" xml:space="preserve">
+    <value>Remove Module</value>
+  </data>
+  <data name="UpdateIotHubModule" xml:space="preserve">
+    <value>Update Module</value>
+  </data>
+  <data name="SetParentDevice" xml:space="preserve">
+    <value>Set Parent Device</value>
+  </data>
+  <data name="AddIotHubDeviceChildren" xml:space="preserve">
+    <value>Add Device Children</value>
+  </data>
+  <data name="RemoveIotHubDeviceChildren" xml:space="preserve">
+    <value>Remove Device Children</value>
+  </data>
+  <data name="SetIotHubDistributedTracing" xml:space="preserve">
+    <value>Update Distributed Tracing</value>
+  </data>
+  <data name="UpdateIotHubDeviceTwin" xml:space="preserve">
+    <value>Update Device Twin</value>
+  </data>
+  <data name="InvokeIotHubDeviceMethod" xml:space="preserve">
+    <value>Invoke Direct Method on a device</value>
+  </data>
+  <data name="UpdateIotHubModuleTwin" xml:space="preserve">
+    <value>Update Device Module Twin</value>
+  </data>
+  <data name="AddIotHubConfiguration" xml:space="preserve">
+    <value>Add Configuration</value>
+  </data>
+  <data name="RemoveIotHubConfiguration" xml:space="preserve">
+    <value>Remove Configuration</value>
+  </data>
+  <data name="SetIotHubConfiguration" xml:space="preserve">
+    <value>Set Configuration</value>
+  </data>
+  <data name="InvokeIotHubQuery" xml:space="preserve">
+    <value>Query an Iot Hub</value>
+  </data>
+  <data name="NewIotHubSasToken" xml:space="preserve">
+    <value>Generate Sas Token</value>
+  </data>
+  <data name="InvokeIotHubConfigurationMetricsQuery" xml:space="preserve">
+    <value>Execute Metrics Query</value>
+  </data>
+  <data name="SetIotHubEdgeModules" xml:space="preserve">
+    <value>Apply Configuration on Edge Devices</value>
+  </data>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 </root>

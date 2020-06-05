@@ -12,12 +12,26 @@ Creates an Azure VpnSiteLink object.
 
 ## SYNTAX
 
+<<<<<<< HEAD
+=======
+### ByVpnSiteLinkIpAddress
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 New-AzVpnSiteLink -Name <String> -IPAddress <String> [-LinkProviderName <String>] [-LinkSpeedInMbps <UInt32>]
  [-BGPAsn <UInt32>] [-BGPPeeringAddress <String>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### ByVpnSiteLinkFqdn
+```
+New-AzVpnSiteLink -Name <String> -Fqdn <String> [-LinkProviderName <String>] [-LinkSpeedInMbps <UInt32>]
+ [-BGPAsn <UInt32>] [-BGPPeeringAddress <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## DESCRIPTION
 Creates an Azure VpnSiteLink object.
 
@@ -84,12 +98,34 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -Fqdn
+The Next Hop Fqdn.
+
+```yaml
+Type: System.String
+Parameter Sets: ByVpnSiteLinkFqdn
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -IPAddress
 The Next Hop IpAddress.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: (All)
+=======
+Parameter Sets: ByVpnSiteLinkIpAddress
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True

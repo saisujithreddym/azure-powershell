@@ -23,7 +23,11 @@ using Microsoft.WindowsAzure.Commands.Utilities.Common;
 
 namespace Microsoft.Azure.Commands.Compute
 {
+<<<<<<< HEAD
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "VMConfig",DefaultParameterSetName = "DefaultParameterSet"),OutputType(typeof(PSVirtualMachine))]
+=======
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "VMConfig", DefaultParameterSetName = "DefaultParameterSet"), OutputType(typeof(PSVirtualMachine))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class NewAzureVMConfigCommand : Microsoft.Azure.Commands.ResourceManager.Common.AzureRMCmdlet
     {
         [Alias("ResourceName", "Name")]
@@ -71,6 +75,7 @@ namespace Microsoft.Azure.Commands.Compute
         public string[] IdentityId { get; set; }
 
         [Parameter(
+<<<<<<< HEAD
             Mandatory = true,
             ParameterSetName = "AssignIdentityParameterSet",
             ValueFromPipelineByPropertyName = false)]
@@ -78,6 +83,8 @@ namespace Microsoft.Azure.Commands.Compute
         public SwitchParameter AssignIdentity { get; set; }
 
         [Parameter(
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
            Mandatory = false,
            ValueFromPipelineByPropertyName = true)]
         public string [] Zone { get; set; }
@@ -140,7 +147,11 @@ namespace Microsoft.Azure.Commands.Compute
                     Id = this.AvailabilitySetId
                 },
                 LicenseType = this.LicenseType,
+<<<<<<< HEAD
                 Identity = this.AssignIdentity.IsPresent ? new VirtualMachineIdentity(null, null, ResourceIdentityType.SystemAssigned) : null,
+=======
+                Identity = null,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 Tags = this.Tags != null ? this.Tags.ToDictionary() : null,
                 Zones = this.Zone,
                 EvictionPolicy = this.EvictionPolicy,

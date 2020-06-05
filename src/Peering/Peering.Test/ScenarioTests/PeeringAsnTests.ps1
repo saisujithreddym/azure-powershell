@@ -11,6 +11,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ----------------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 <#
 .SYNOPSIS
 Tests new Exchange Peering 
@@ -18,6 +22,7 @@ Tests new Exchange Peering
 function Test-NewPeerAsn()
 {
 	#asn has to be hard coded because its unique and finite amoungst locations
+<<<<<<< HEAD
 	$asnId = 65000
 	$asnPeerName = getAssetName "Global"
 	$asnPeer = getAssetName 
@@ -32,6 +37,24 @@ function Test-NewPeerAsn()
 	Assert-AreEqual $asnId $asn.PeerAsnProperty
 	Assert-AreEqual $asnPeer $asn.PeerName
 	Assert-True {$emails | % {$_ -like "noc@*.com"}}
+=======
+	$asnId = (getRandomNumber)
+	$asnPeerName = getAssetName "Global"
+	$asnPeer = getAssetName 
+	$contact0 = NewContactDetail "Noc" $asnPeer
+	$contact1 = NewContactDetail "Policy" $asnPeer
+	$contacts = @($contact0, $contact1)
+	try{
+	$created = NewAzPeerAsn $asnPeerName $asnPeer $asnId $contacts
+	$asn = Get-AzPeerAsn -Name $asnPeerName
+	Assert-NotNull $asn
+	Assert-NotNull $created
+	Assert-AreEqual $created.ValidationState $asn.ValidationState
+	Assert-AreEqual $created.Name $asn.Name
+	Assert-AreEqual $created.PeerAsnProperty $asn.PeerAsnProperty
+	Assert-AreEqual $created.PeerName $asn.PeerName
+	Assert-True {$asn.PeerContactDetail | % {$_.Email -like "*@*.com"}}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	}
 	finally{
 		Remove-AzPeerAsn -Name $asnPeerName -Force
@@ -44,6 +67,7 @@ Tests new Exchange Peering Pipe
 function Test-GetPeerAsn
 {
 	#asn has to be hard coded because its unique and finite amoungst locations
+<<<<<<< HEAD
 	$asnId = 65000
 	$asnPeerName = getAssetName "Global"
 	$asnPeer = getAssetName 
@@ -51,6 +75,16 @@ function Test-GetPeerAsn
 	$phone = getAssetName
 	try{
 	$created = New-AzPeerAsn -Name $asnPeerName -PeerName $asnPeer -PeerAsn $asnId -Email $emails -Phone $phone
+=======
+	$asnId = (getRandomNumber)
+	$asnPeerName = getAssetName "Global"
+	$asnPeer = getAssetName 
+	$contact0 = NewContactDetail "Noc" $asnPeer
+	$contact1 = NewContactDetail "Policy" $asnPeer
+	$contacts = @($contact0, $contact1)
+	try{
+	$created = NewAzPeerAsn $asnPeerName $asnPeer $asnId $contacts
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	$asn = Get-AzPeerAsn -Name $asnPeerName
 	Assert-NotNull $asn
 	Assert-NotNull $created
@@ -58,10 +92,16 @@ function Test-GetPeerAsn
 	Assert-AreEqual $created.Name $asn.Name
 	Assert-AreEqual $created.PeerAsnProperty $asn.PeerAsnProperty
 	Assert-AreEqual $created.PeerName $asn.PeerName
+<<<<<<< HEAD
 	Assert-True {$emails | % {$_ -like "noc@*.com"}}
 	}
 	finally{
 		Remove-AzPeerAsn -Name $asnPeerName -Force
+=======
+	Assert-True {$asn.PeerContactDetail | % {$_.Email -like "*@*.com"}}
+	}
+	finally{
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	}
 }
 <#
@@ -71,9 +111,15 @@ Tests new Exchange Peering Pipe
 function Test-ListPeerAsn
 {
 	#asn has to be hard coded because its unique and finite amoungst locations
+<<<<<<< HEAD
 	makePeerAsn 65000
 	makePeerAsn 65001
 	makePeerAsn 65002
+=======
+	makePeerAsn (getRandomNumber)
+	makePeerAsn (getRandomNumber)
+	makePeerAsn (getRandomNumber)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	try{
 	$asn = Get-AzPeerAsn
 	Assert-NotNull $asn
@@ -92,6 +138,7 @@ Tests set email
 #>
 function Test-SetPeerAsn
 {
+<<<<<<< HEAD
 	$createdPeerAsn = makePeerAsn 65000
 	Assert-NotNull $createdPeerAsn
 	$name = $createdPeerAsn.Name
@@ -103,6 +150,23 @@ function Test-SetPeerAsn
 	$peerasn = Get-AzPeerAsn
 	Assert-True { $peerasn.PeerContactInfo.Emails | Where-Object { $_ -match "$email" } | % {$_ -like $email} }
 	Remove-AzPeerAsn -Name $name -Force
+=======
+	try{
+		$createdPeerAsn = makePeerAsn (getRandomNumber)
+		Assert-NotNull $createdPeerAsn
+		$name = $createdPeerAsn.Name
+		$getPeerAsn = Get-AzPeerAsn -Name $name
+		#new email contact 
+		$email = getAssetName
+		$email = "$email@$name.com"
+		$getPeerAsn.PeerContactDetail[0].Email = $email
+		$getPeerAsn | Set-AzPeerAsn
+		$peerasn = Get-AzPeerAsn
+		Assert-True { $peerasn.PeerContactDetail.Email | Where-Object { $_ -match "$email" } | % {$_ -like $email} }
+	}catch {
+		Remove-AzPeerAsn -Name $name -Force
+	}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }
 <#
 .SYNOPSIS
@@ -110,12 +174,20 @@ Tests new Exchange Peering Pipe Two Connections
 #>
 function Test-RemovePeerAsn
 {
+<<<<<<< HEAD
 	$createdPeerAsn = makePeerAsn 65000
+=======
+	$createdPeerAsn = makePeerAsn (getRandomNumber)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	Assert-NotNull $createdPeerAsn
 	$name = $createdPeerAsn.Name
 	$getPeerAsn = Get-AzPeerAsn -Name $name
 	Assert-NotNull $getPeerAsn
+<<<<<<< HEAD
 	$remove = Remove-AzPeerAsn $name -PassThru -Force
+=======
+	$remove = Remove-AzPeerAsn -Name $name -PassThru -Force
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	Assert-NotNull $remove
 	Assert-AreEqual $remove "$true"
 	Assert-ThrowsContains {Get-AzPeerAsn -Name $name} "Error"

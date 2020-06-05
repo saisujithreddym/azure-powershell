@@ -20,7 +20,11 @@ function Test-NewExchangePeering()
 #Hard Coded locations becuase of limitations in locations
 	$resourceName = getAssetName "NewExchangePeeringCVS"
     $resourceGroup = "testCarrier"
+<<<<<<< HEAD
     $peeringLocation = "Berlin"
+=======
+    $peeringLocation = "Seattle"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	$kind = IsDirect $false
 	Write-Debug "Getting the Facility Information"
 	try {
@@ -30,10 +34,17 @@ function Test-NewExchangePeering()
 	$peerAsn = makePeerAsn $randNum
 	$asn = $peerAsn.Id
 	$facility = Get-AzPeeringLocation -PeeringLocation $peeringLocation -Kind $kind
+<<<<<<< HEAD
 	$microsoftIpAddressV4 = $facility[0].MicrosoftIPv4Address.Split(',') | Select-Object -First 1
 	$microsoftIpAddressV6 = $facility[0].MicrosoftIPv6Address.Split(',') | Select-Object -First 1
 	$facilityId = $facility[0].PeeringDBFacilityId
 	$peeringLocation = $facility[0].PeeringLocation
+=======
+	$microsoftIpAddressV4 = $facility[1].MicrosoftIPv4Address.Split(',') | Select-Object -First 1
+	$microsoftIpAddressV6 = $facility[1].MicrosoftIPv6Address.Split(',') | Select-Object -First 1
+	$facilityId = $facility[1].PeeringDBFacilityId
+	$peeringLocation = $facility[1].PeeringLocation
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	Write-Debug "Creating Connections"
 	$connection1 = NewExchangeConnectionV4V6 $facilityId $microsoftIpAddressV4 $microsoftIpAddressV6
 	$connection2 = NewExchangeConnectionV4V6 $facilityId $microsoftIpAddressV4 $microsoftIpAddressV6

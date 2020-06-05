@@ -94,6 +94,14 @@ namespace Microsoft.Azure.Commands.Sql.ManagedDatabase.Model
         public string RestorableDroppedDatabaseId { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or sets the long term retention backup resource ID
+        /// </summary>
+        public string LongTermRetentionBackupResourceId { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Construct AzureSqlManagedDatabaseModel
         /// </summary>
         public AzureSqlManagedDatabaseModel()
@@ -128,6 +136,10 @@ namespace Microsoft.Azure.Commands.Sql.ManagedDatabase.Model
             FailoverGroupId = database.FailoverGroupId;
             RecoverableDatabaseId = database.RecoverableDatabaseId;
             RestorableDroppedDatabaseId = database.RestorableDroppedDatabaseId;
+<<<<<<< HEAD
+=======
+            LongTermRetentionBackupResourceId = database.LongTermRetentionBackupResourceId;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

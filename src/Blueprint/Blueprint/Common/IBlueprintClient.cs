@@ -30,6 +30,7 @@ namespace Microsoft.Azure.Commands.Blueprint.Common
 
         PSPublishedBlueprint GetLatestPublishedBlueprint(string scope, string blueprintName);
 
+<<<<<<< HEAD
         IEnumerable<PSBlueprintAssignment> ListBlueprintAssignments(string subscriptionId);
 
         PSBlueprintAssignment GetBlueprintAssignment(string subscriptionId, string blueprintAssignmentName);
@@ -37,6 +38,15 @@ namespace Microsoft.Azure.Commands.Blueprint.Common
         PSBlueprintAssignment DeleteBlueprintAssignment(string subscriptionId, string blueprintAssignmentName);
 
         PSBlueprintAssignment CreateOrUpdateBlueprintAssignment(string subscriptionId, string assignmentName, Assignment assignment);
+=======
+        IEnumerable<PSBlueprintAssignment> ListBlueprintAssignments(string scope);
+
+        PSBlueprintAssignment GetBlueprintAssignment(string scope, string blueprintAssignmentName);
+
+        PSBlueprintAssignment DeleteBlueprintAssignment(string scope, string blueprintAssignmentName);
+
+        PSBlueprintAssignment CreateOrUpdateBlueprintAssignment(string scope, string assignmentName, Assignment assignment);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         PSBlueprint CreateOrUpdateBlueprint(string scope, string name, BlueprintModel bp);
 

@@ -297,7 +297,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                        dest.SchemaDocument = Utils.GetSchemaDocumentValue(src));
 
                 cfg
+<<<<<<< HEAD
                 .CreateMap<PsApiManagementApiSchema, SchemaCreateOrUpdateContract>()
+=======
+                .CreateMap<PsApiManagementApiSchema, SchemaContract>()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.SchemaDocument))
                 .ForMember(dest => dest.ContentType, opt => opt.MapFrom(src => Utils.GetApiSchemaContentTypeFromPsSchemaContentType(src.SchemaDocumentContentType)));
                 
@@ -320,6 +324,14 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                     .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.DisplayName));
 
                 cfg
+<<<<<<< HEAD
+=======
+                    .CreateMap<SubscriptionKeysContract, PsApiManagementSubscriptionKey>()
+                    .ForMember(dest => dest.PrimaryKey, opt => opt.MapFrom(src => src.PrimaryKey))
+                    .ForMember(dest => dest.SecondaryKey, opt => opt.MapFrom(src => src.SecondaryKey));
+
+                cfg
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     .CreateMap<PsApiManagementSubscription, SubscriptionUpdateParameters>()
                     .ForMember(dest => dest.Scope, opt => opt.MapFrom(src => src.Scope))
                     .ForMember(dest => dest.OwnerId, opt => opt.MapFrom(src => src.OwnerId))
@@ -379,15 +391,28 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                     .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.LoggerType));
 
                 cfg
+<<<<<<< HEAD
                     .CreateMap<PropertyContract, PsApiManagementProperty>()
                     .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                     .ForMember(dest => dest.PropertyId, opt => opt.MapFrom(src => src.Name))
+=======
+                    .CreateMap<NamedValueContract, PsApiManagementNamedValue>()
+                    .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                    .ForMember(dest => dest.NamedValueId, opt => opt.MapFrom(src => src.Name))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.DisplayName))
                     .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value))
                     .ForMember(dest => dest.Secret, opt => opt.MapFrom(src => src.Secret))
                     .ForMember(dest => dest.Tags, opt => opt.MapFrom(src => src.Tags == null ? new string[0] : src.Tags.ToArray()));
 
                 cfg
+<<<<<<< HEAD
+=======
+                    .CreateMap<PropertyValueContract, PsApiManagementNamedValueSecretValue>()
+                    .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value));
+
+                cfg
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     .CreateMap<OpenidConnectProviderContract, PsApiManagementOpenIdConnectProvider>()
                     .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                     .ForMember(dest => dest.OpenIdConnectProviderId, opt => opt.MapFrom(src => src.Name))
@@ -416,7 +441,12 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                     .ForMember(dest => dest.SignupPolicyName, opt => opt.MapFrom(src => src.SignupPolicyName))
                     .ForMember(dest => dest.ProfileEditingPolicyName, opt => opt.MapFrom(src => src.ProfileEditingPolicyName))
                     .ForMember(dest => dest.PasswordResetPolicyName, opt => opt.MapFrom(src => src.PasswordResetPolicyName))
+<<<<<<< HEAD
                     .ForMember(dest => dest.Authority, opt => opt.MapFrom(src => src.Authority))
+=======
+                    .ForMember(dest => dest.Authority, opt => opt.MapFrom(src => src.Authority))                    
+                    .ForMember(dest => dest.SigninTenant, opt => opt.MapFrom(src => src.SigninTenant))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     .ForMember(dest => dest.AllowedTenants, opt => opt.MapFrom(src => src.AllowedTenants == null ? new string[0] : src.AllowedTenants.ToArray()));
 
                 cfg
@@ -531,7 +561,10 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                 cfg
                     .CreateMap<PsApiManagementDiagnostic, DiagnosticContract>()
                     .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.DiagnosticId))
+<<<<<<< HEAD
                     .ForMember(dest => dest.EnableHttpCorrelationHeaders, opt => opt.MapFrom(src => src.EnableHttpCorrelationHeader))
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     .ForMember(dest => dest.Sampling, opt => opt.MapFrom(src => src.SamplingSetting))
                     .ForMember(dest => dest.Frontend, opt => opt.MapFrom(src => src.FrontendSetting))
                     .ForMember(dest => dest.LoggerId, opt => opt.Ignore())
@@ -567,13 +600,23 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                 cfg
                     .CreateMap<DiagnosticContract, PsApiManagementDiagnostic>()
                     .ForMember(dest => dest.DiagnosticId, opt => opt.MapFrom(src => src.Name))
+<<<<<<< HEAD
                     .ForMember(dest => dest.EnableHttpCorrelationHeader, opt => opt.MapFrom(src => src.EnableHttpCorrelationHeaders))
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     .ForMember(dest => dest.LoggerId, opt => opt.MapFrom(src => Utils.GetLoggerIdentifier(src.LoggerId)))
                     .ForMember(dest => dest.SamplingSetting, opt => opt.MapFrom(src => src.Sampling))
                     .ForMember(dest => dest.FrontendSetting, opt => opt.MapFrom(src => src.Frontend))
                     .ForMember(dest => dest.BackendSetting, opt => opt.MapFrom(src => src.Backend));
 
                 cfg.CreateMap<Hashtable, Hashtable>();
+<<<<<<< HEAD
+=======
+
+                cfg
+                    .CreateMap<ClientSecretContract, PsApiManagementClientSecret>()
+                    .ForMember(dest => dest.ClientSecret, opt => opt.MapFrom(src => src.ClientSecret));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             });
 
             _mapper = config.CreateMapper();
@@ -1077,7 +1120,14 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                     headerValue = fromFile ? ContentFormat.SwaggerJson : ContentFormat.SwaggerLinkJson; 
                     break;
                 case PsApiManagementApiFormat.OpenApi:
+<<<<<<< HEAD
                     headerValue = fromFile ? ContentFormat.Openapijson : ContentFormat.OpenapiLink;
+=======
+                    headerValue = fromFile ? ContentFormat.Openapi : ContentFormat.OpenapiLink;
+                    break;
+                case PsApiManagementApiFormat.OpenApiJson:
+                    headerValue = fromFile ? ContentFormat.Openapijson : ContentFormat.OpenapijsonLink;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     break;
                 case PsApiManagementApiFormat.Wsdl:
                     headerValue = fromFile ? ContentFormat.Wsdl : ContentFormat.WsdlLink; 
@@ -1107,6 +1157,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                     return ExportFormat.Swagger;
                 case PsApiManagementApiFormat.OpenApi:
                     return ExportFormat.Openapi;
+<<<<<<< HEAD
+=======
+                case PsApiManagementApiFormat.OpenApiJson:
+                    return ExportFormat.OpenapiJson;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 case PsApiManagementApiFormat.Wadl:
                     return ExportFormat.Wadl;
                 case PsApiManagementApiFormat.Wsdl:
@@ -1308,7 +1363,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             string document)
         {
             var contentType = Utils.GetApiSchemaContentTypeFromPsSchemaContentType(schemaDocumentContentType);
+<<<<<<< HEAD
             var apiSchemaCreateContract = new SchemaCreateOrUpdateContract
+=======
+            var apiSchemaCreateContract = new SchemaContract
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             {
                 ContentType = contentType,
                 Value = document
@@ -1333,7 +1392,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
            string document,
            PsApiManagementApiSchema inputObject)
         {
+<<<<<<< HEAD
             SchemaCreateOrUpdateContract apiSchemaCreateOrUpdate;
+=======
+            SchemaContract apiSchemaCreateOrUpdate;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (inputObject == null)
             {
                 var apiSchemaContract = Client.ApiSchema.Get(
@@ -1342,13 +1405,21 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                     apiId,
                     schemaId);
 
+<<<<<<< HEAD
                 apiSchemaCreateOrUpdate = new SchemaCreateOrUpdateContract();
+=======
+                apiSchemaCreateOrUpdate = new SchemaContract();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 apiSchemaCreateOrUpdate.ContentType = apiSchemaContract.ContentType;
                 apiSchemaCreateOrUpdate.Value = Utils.GetSchemaDocumentValue(apiSchemaContract);
             }
             else
             {
+<<<<<<< HEAD
                 apiSchemaCreateOrUpdate = Mapper.Map<SchemaCreateOrUpdateContract>(inputObject);
+=======
+                apiSchemaCreateOrUpdate = Mapper.Map<SchemaContract>(inputObject);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             var contentType = Utils.GetApiSchemaContentTypeFromPsSchemaContentType(schemaDocumentContentType);
@@ -1833,6 +1904,23 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             return subscription;
         }
 
+<<<<<<< HEAD
+=======
+        public PsApiManagementSubscriptionKey SubscriptionKeyById(
+            string resourceGroupName,
+            string serviceName,
+            string subscriptionId)
+        {
+            var response = Client.Subscription.ListSecrets(
+                resourceGroupName,
+                serviceName,
+                subscriptionId);
+            var keys = Mapper.Map<PsApiManagementSubscriptionKey>(response);
+
+            return keys;
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public PsApiManagementSubscription SubscriptionCreate(
             PsApiManagementContext context,
             string subscriptionId,
@@ -2432,6 +2520,19 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             return server;
         }
 
+<<<<<<< HEAD
+=======
+        public PsApiManagementClientSecret AuthorizationServerClientSecretById(
+            string resourceGroupName, string serviceName, string serverId)
+        {
+            var response = Client.AuthorizationServer.ListSecrets(resourceGroupName, serviceName, serverId);
+
+            var server = Mapper.Map<PsApiManagementClientSecret>(response);
+            return server;
+        }
+
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public PsApiManagementOAuth2AuthorizationServer AuthorizationServerCreate(
             PsApiManagementContext context,
             string serverId,
@@ -2739,7 +2840,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
         #endregion
 
         #region Properties
+<<<<<<< HEAD
         public PsApiManagementProperty PropertyCreate(
+=======
+        public PsApiManagementNamedValue NamedValueCreate(
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             PsApiManagementContext context,
             string propertyId,
             string propertyName,
@@ -2747,32 +2852,53 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             bool secret,
             IList<string> tags = null)
         {
+<<<<<<< HEAD
             var propertyCreateParameters = new PropertyContract(propertyName, propertyValue)
+=======
+            var propertyCreateParameters = new NamedValueCreateContract(propertyName, propertyValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             {
                 Secret = secret,
                 Tags = tags
             };
 
+<<<<<<< HEAD
             var propertyResponse = Client.Property.CreateOrUpdate(
+=======
+            var propertyResponse = Client.NamedValue.CreateOrUpdate(
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 context.ResourceGroupName, 
                 context.ServiceName, 
                 propertyId,
                 propertyCreateParameters);
 
+<<<<<<< HEAD
             var property = Mapper.Map<PsApiManagementProperty>(propertyResponse);
+=======
+            var property = Mapper.Map<PsApiManagementNamedValue>(propertyResponse);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return property;
         }
 
+<<<<<<< HEAD
         public IList<PsApiManagementProperty> PropertiesList(PsApiManagementContext context)
         {
             var results = ListPagedAndMap<PsApiManagementProperty, PropertyContract>(
                 () => Client.Property.ListByService(context.ResourceGroupName, context.ServiceName, null),
                 nextLink => Client.Property.ListByServiceNext(nextLink));
+=======
+        public IList<PsApiManagementNamedValue> NamedValuesList(PsApiManagementContext context)
+        {
+            var results = ListPagedAndMap<PsApiManagementNamedValue, NamedValueContract>(
+                () => Client.NamedValue.ListByService(context.ResourceGroupName, context.ServiceName, null),
+                nextLink => Client.NamedValue.ListByServiceNext(nextLink));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return results;
         }
 
+<<<<<<< HEAD
         public IList<PsApiManagementProperty> PropertyByName(PsApiManagementContext context, string propertyName)
         {
             var results = ListPagedAndMap<PsApiManagementProperty, PropertyContract>(
@@ -2784,10 +2910,24 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                        Filter = string.Format("substringof('{0}',properties/displayName)", propertyName)
                    }),
                nextLink => Client.Property.ListByServiceNext(nextLink));
+=======
+        public IList<PsApiManagementNamedValue> NamedValueByName(PsApiManagementContext context, string propertyName)
+        {
+            var results = ListPagedAndMap<PsApiManagementNamedValue, NamedValueContract>(
+               () => Client.NamedValue.ListByService(
+                   context.ResourceGroupName,
+                   context.ServiceName,
+                   new Rest.Azure.OData.ODataQuery<NamedValueContract>()
+                   {
+                       Filter = string.Format("substringof('{0}',properties/displayName)", propertyName)
+                   }),
+               nextLink => Client.NamedValue.ListByServiceNext(nextLink));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return results;
         }
 
+<<<<<<< HEAD
         public IList<PsApiManagementProperty> PropertyByTag(PsApiManagementContext context, string propertyTag)
         {
             var results = ListPagedAndMap<PsApiManagementProperty, PropertyContract>(
@@ -2799,24 +2939,61 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                         Filter = string.Format("tags/any(t: t eq '{0}')", propertyTag)
                     }),
                 nextLink => Client.Property.ListByServiceNext(nextLink));
+=======
+        public IList<PsApiManagementNamedValue> NamedValueByTag(PsApiManagementContext context, string propertyTag)
+        {
+            var results = ListPagedAndMap<PsApiManagementNamedValue, NamedValueContract>(
+                () => Client.NamedValue.ListByService(
+                    context.ResourceGroupName,
+                    context.ServiceName,
+                    new Rest.Azure.OData.ODataQuery<NamedValueContract>()
+                    {
+                        Filter = string.Format("tags/any(t: t eq '{0}')", propertyTag)
+                    }),
+                nextLink => Client.NamedValue.ListByServiceNext(nextLink));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return results;
         }
 
+<<<<<<< HEAD
         public PsApiManagementProperty PropertyById(PsApiManagementContext context, string propertyId)
         {
             var response = Client.Property.Get(context.ResourceGroupName, context.ServiceName, propertyId);
             var property = Mapper.Map<PsApiManagementProperty>(response);
+=======
+        public PsApiManagementNamedValue NamedValueById(PsApiManagementContext context, string propertyId)
+        {
+            var response = Client.NamedValue.Get(context.ResourceGroupName, context.ServiceName, propertyId);
+            var property = Mapper.Map<PsApiManagementNamedValue>(response);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return property;
         }
 
+<<<<<<< HEAD
         public void PropertyRemove(PsApiManagementContext context, string propertyId)
         {
             Client.Property.Delete(context.ResourceGroupName, context.ServiceName, propertyId, "*");
         }
 
         public void PropertySet(
+=======
+        public PsApiManagementNamedValueSecretValue NamedValueSecretValueById(PsApiManagementContext context, string propertyId)
+        {
+            var response = Client.NamedValue.ListValue(context.ResourceGroupName, context.ServiceName, propertyId);
+            var property = Mapper.Map<PsApiManagementNamedValueSecretValue>(response);
+
+            return property;
+        }
+
+        public void NamedValueRemove(PsApiManagementContext context, string propertyId)
+        {
+            Client.NamedValue.Delete(context.ResourceGroupName, context.ServiceName, propertyId, "*");
+        }
+
+        public void NamedValueSet(
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             PsApiManagementContext context,
             string propertyId,
             string propertyName,
@@ -2824,7 +3001,20 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             bool? isSecret,
             IList<string> tags = null)
         {
+<<<<<<< HEAD
             var propertyToUpdate = Client.Property.Get(context.ResourceGroupName, context.ServiceName, propertyId);
+=======
+            var existingProperty = Client.NamedValue.Get(context.ResourceGroupName, context.ServiceName, propertyId);
+            if (existingProperty.Secret == true)
+            {
+                var existingPropertySecretValue = Client.NamedValue.ListValue(context.ResourceGroupName, context.ServiceName, propertyId);
+                existingProperty.Value = existingPropertySecretValue.Value;
+            }
+
+            var propertyToUpdate = new NamedValueCreateContract(existingProperty.DisplayName, existingProperty.Value, existingProperty.Id,
+                existingProperty.Name, existingProperty.Type, existingProperty.Tags, existingProperty.Secret);
+            
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (!string.IsNullOrWhiteSpace(propertyName))
             {
@@ -2846,7 +3036,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                 propertyToUpdate.Tags = tags;
             }
 
+<<<<<<< HEAD
             Client.Property.CreateOrUpdate(
+=======
+            Client.NamedValue.CreateOrUpdate(
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 context.ResourceGroupName,
                 context.ServiceName,
                 propertyId,
@@ -2925,6 +3119,21 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             return openIdConnectProvider;
         }
 
+<<<<<<< HEAD
+=======
+        public PsApiManagementClientSecret OpenIdConnectProviderClientSecretById(PsApiManagementContext context, string openIdConnectProviderId)
+        {
+            var response = Client.OpenIdConnectProvider.ListSecrets(
+                context.ResourceGroupName,
+                context.ServiceName,
+                openIdConnectProviderId);
+
+            var openIdConnectProvider = Mapper.Map<PsApiManagementClientSecret>(response);
+
+            return openIdConnectProvider;
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void OpenIdConnectProviderRemove(PsApiManagementContext context, string openIdConnectProviderId)
         {
             Client.OpenIdConnectProvider.Delete(context.ResourceGroupName, context.ServiceName, openIdConnectProviderId, "*");
@@ -2984,6 +3193,19 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
 
             return Mapper.Map<PsApiManagementAccessInformation>(response);
         }
+<<<<<<< HEAD
+=======
+
+        public PsApiManagementAccessInformation GetTenantGitAccessInformationSecrets(PsApiManagementContext context)
+        {
+            var response = Client.TenantAccessGit.ListSecrets(
+                context.ResourceGroupName,
+                context.ServiceName);
+
+            return Mapper.Map<PsApiManagementAccessInformation>(response);
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #endregion
 
         #region TenantConfiguration
@@ -3064,6 +3286,18 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             return Mapper.Map<PsApiManagementAccessInformation>(response);
         }
 
+<<<<<<< HEAD
+=======
+        public PsApiManagementAccessInformation GetTenantAccessInformationSecrets(PsApiManagementContext context)
+        {
+            var response = Client.TenantAccess.ListSecrets(
+                context.ResourceGroupName,
+                context.ServiceName);
+
+            return Mapper.Map<PsApiManagementAccessInformation>(response);
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TenantAccessSet(
             PsApiManagementContext context,
             bool enabledTenantAccess)
@@ -3087,9 +3321,16 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             string signinPolicyName,
             string signupPolicyName,
             string passwordResetPolicyName,
+<<<<<<< HEAD
             string profileEditPolicyName)
         {
             var identityProviderCreateParameters = new IdentityProviderContract(clientId, clientSecret);
+=======
+            string profileEditPolicyName,
+            string signinTenant)
+        {
+            var identityProviderCreateParameters = new IdentityProviderCreateContract(clientId, clientSecret);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (allowedTenants != null)
             {
                 identityProviderCreateParameters.AllowedTenants = allowedTenants;
@@ -3120,6 +3361,14 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                 identityProviderCreateParameters.PasswordResetPolicyName = passwordResetPolicyName;
             }
 
+<<<<<<< HEAD
+=======
+            if (!string.IsNullOrEmpty(signinTenant))
+            {
+                identityProviderCreateParameters.SigninTenant = signinTenant;
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var response = Client.IdentityProvider.CreateOrUpdate(
                 context.ResourceGroupName,
                 context.ServiceName,
@@ -3152,6 +3401,21 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             return identityProvider;
         }
 
+<<<<<<< HEAD
+=======
+        public PsApiManagementClientSecret IdentityProviderClientSecretByName(string resourceGroupName, string serviceName, string identityProviderName)
+        {
+            var response = Client.IdentityProvider.ListSecrets(
+                resourceGroupName,
+                serviceName,
+                identityProviderName);
+            var identityProvider = Mapper.Map<PsApiManagementClientSecret>(response);
+
+            return identityProvider;
+        }
+
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void IdentityProviderRemove(PsApiManagementContext context, string identityProviderName)
         {
             Client.IdentityProvider.Delete(context.ResourceGroupName, context.ServiceName, identityProviderName, "*");
@@ -3169,6 +3433,10 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
             string signupPolicyName,
             string passwordResetPolicyName,
             string profileEditPolicyName,
+<<<<<<< HEAD
+=======
+            string signinTenant,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             PsApiManagementIdentityProvider identityProvider)
         {            
             var parameters = new IdentityProviderUpdateParameters();
@@ -3218,6 +3486,14 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                 parameters.PasswordResetPolicyName = passwordResetPolicyName;
             }
 
+<<<<<<< HEAD
+=======
+            if (!string.IsNullOrEmpty(signinTenant))
+            {
+                parameters.SigninTenant = signinTenant;
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Client.IdentityProvider.Update(
                 resourceGroupName,
                 serviceName,

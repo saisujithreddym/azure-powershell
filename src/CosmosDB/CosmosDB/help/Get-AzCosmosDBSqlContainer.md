@@ -14,13 +14,21 @@ Gets the CosmosDB Sql Container.
 
 ### ByNameParameterSet (Default)
 ```
+<<<<<<< HEAD
 Get-AzCosmosDBSqlContainer -ResourceGroupName <String> [-Name <String>] [-Detailed]
+=======
+Get-AzCosmosDBSqlContainer -ResourceGroupName <String> [-Name <String>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] -AccountName <String> -DatabaseName <String> [<CommonParameters>]
 ```
 
 ### ByParentObjectParameterSet
 ```
+<<<<<<< HEAD
 Get-AzCosmosDBSqlContainer [-Name <String>] -InputObject <PSSqlDatabaseGetResults> [-Detailed]
+=======
+Get-AzCosmosDBSqlContainer [-Name <String>] -ParentObject <PSSqlDatabaseGetResults>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -35,6 +43,7 @@ PS C:\> Get-AzCosmosDBSqlContainer -AccountName {accountName} -ResourceGroupName
 
 Name                     : {containerName1}
 Id                       : Id
+<<<<<<< HEAD
 SqlContainerGetResultsId :
 IndexingPolicy           :
 PartitionKey             :
@@ -44,6 +53,9 @@ ConflictResolutionPolicy :
 _rid                     :
 _ts                      :
 _etag                    :
+=======
+Resource                 : Microsoft.Azure.Commands.CosmosDB.Models.PSSqlContainerGetPropertiesResource
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## PARAMETERS
@@ -93,11 +105,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -Detailed
 If provided then, the cmdlet returns the container with the throughput value.
 
 ```yaml
 Type: SwitchParameter
+=======
+### -Name
+Container name.
+
+```yaml
+Type: String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -108,7 +128,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -InputObject
+=======
+### -ParentObject
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Sql Database object.
 
 ```yaml
@@ -119,6 +143,7 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -135,6 +160,9 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 

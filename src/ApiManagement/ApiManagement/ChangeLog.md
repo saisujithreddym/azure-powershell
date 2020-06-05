@@ -18,6 +18,7 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
 
 ## Version 1.3.4
 * **Get-AzApiManagementApiSchema** Fixed getting Open-Api Schema associated with an API
@@ -28,6 +29,35 @@
 
 * **Set-AzApiManagementApi**
     Added example to show how to update the ServiceUrl using the cmdlet
+=======
+* `New-AzApiManagement` and `Set-AzApiManagement`: [-AssignIdentity] parameter renamed as [-SystemAssignedIdentity]
+* `New-AzApiManagement` and `Set-AzApiManagement`: New parameter added: [-UserAssignedIdentity <String[]>]
+* `Get-AzApiManagementProperty`: renamed as `Get-AzApiManagementNamedValue`. PropertyId parameter renamed as NamedValueId.
+* `New-AzApiManagementProperty`: renamed as `New-AzApiManagementNamedValue`. PropertyId parameter renamed as NamedValueId. 
+* `Set-AzApiManagementProperty`: renamed as `Set-AzApiManagementNamedValue`. PropertyId parameter renamed as NamedValueId.
+* `Remove-AzApiManagementProperty`: renamed as `Remove-AzApiManagementNamedValue`. PropertyId parameter renamed as NamedValueId.
+* Added new `Get-AzApiManagementAuthorizationServerClientSecret` cmdlet and `Get-AzApiManagementAuthorizationServer` will not return client secret anymore.
+* Added new `Get-AzApiManagementNamedValueSecretValue` cmdlet and `Get-AzApiManagementNamedValue` will not return secret value.
+* Added new `Get-AzApiManagementOpenIdConnectProviderClientSecret` cmdlet and `Get-AzApiManagementOpenIdConnectProvider` will not return client secret anymore.
+* Added new `Get-AzApiManagementSubscriptionKey` cmdlet and `Get-AzApiManagementSubscription` will not return subscription keys anymore.
+* Added new `Get-AzApiManagementTenantAccessSecret` cmdlet and `Get-AzApiManagementTenantAccess` will not return keys anymore.
+* Added new `Get-AzApiManagementTenantGitAccessSecret` cmdlet and `Get-AzApiManagementTenantGitAccess` will not return keys anymore.
+
+## Version 1.4.1
+* Added breaking change notice for Azure File cmdlets output change in a future release
+* `Set-AzApiManagementGroup` Updated documentation to specify the GroupId parameter
+
+## Version 1.4.0
+* Added support for retrieving and configuring Custom Domain on the DeveloperPortal Endpoint [#11007]
+* `Export-AzApiManagementApi` Added support for downloading Api Definition in Json format [#9987]
+* `Import-AzApiManagementApi` Added support for importing OpenApi 3.0 definition from Json document
+* `New-AzApiManagementIdentityProvider` and `Set-AzApiManagementIdentityProvider` Added support for configuring `Signin Tenant` for AAD B2C Provider [#9784]
+
+## Version 1.3.4
+* `Get-AzApiManagementApiSchema` Fixed getting Open-Api Schema associated with an API [#10626]
+* `New-AzApiManagementProduct` and `Set-AzApiManagementProduct` Fixed documentation for [#10472]
+* `Set-AzApiManagementApi` Added example to show how to update the ServiceUrl using the cmdlet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 1.3.3
 * Update references in .psd1 to use relative path

@@ -281,7 +281,11 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Common
             var context = inContext as AzureStorageContext;
             if (context == null && inContext != null)
             {
+<<<<<<< HEAD
                 context = new AzureStorageContext(inContext.GetCloudStorageAccount());
+=======
+                context = new AzureStorageContext(inContext.GetCloudStorageAccount(), null, DefaultContext, WriteDebug);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             if (context != null)
@@ -313,7 +317,11 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Common
                 }
 
                 //Set the storage context and use it in pipeline
+<<<<<<< HEAD
                 context = new AzureStorageContext(account);
+=======
+                context = new AzureStorageContext(account, null, DefaultContext, WriteDebug);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return context;

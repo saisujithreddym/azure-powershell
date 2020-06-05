@@ -13,6 +13,10 @@ Creates a Local Network Gateway
 
 ## SYNTAX
 
+<<<<<<< HEAD
+=======
+### ByLocalNetworkGatewayIpAddress
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 New-AzLocalNetworkGateway -Name <String> -ResourceGroupName <String> -Location <String>
  [-GatewayIpAddress <String>] [-AddressPrefix <String[]>] [-Asn <UInt32>] [-BgpPeeringAddress <String>]
@@ -20,6 +24,17 @@ New-AzLocalNetworkGateway -Name <String> -ResourceGroupName <String> -Location <
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### ByLocalNetworkGatewayFqdn
+```
+New-AzLocalNetworkGateway -Name <String> -ResourceGroupName <String> -Location <String> [-Fqdn <String>]
+ [-AddressPrefix <String[]>] [-Asn <UInt32>] [-BgpPeeringAddress <String>] [-PeerWeight <Int32>]
+ [-Tag <Hashtable>] [-Force] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## DESCRIPTION
 The Local Network Gateway is the object representing your VPN device On-Premises.
 The **New-AzLocalNetworkGateway** cmdlet creates the object representing your on-prem gateway
@@ -123,10 +138,32 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -GatewayIpAddress
 ```yaml
 Type: System.String
 Parameter Sets: (All)
+=======
+### -Fqdn
+FQDN of local network gateway.
+
+```yaml
+Type: System.String
+Parameter Sets: ByLocalNetworkGatewayFqdn
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -GatewayIpAddress
+```yaml
+Type: System.String
+Parameter Sets: ByLocalNetworkGatewayIpAddress
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: False
@@ -238,7 +275,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

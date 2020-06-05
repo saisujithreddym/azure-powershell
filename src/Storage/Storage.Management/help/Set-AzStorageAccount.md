@@ -27,12 +27,31 @@ Set-AzStorageAccount [-ResourceGroupName] <String> [-Name] <String> [-Force] [-S
 ```
 Set-AzStorageAccount [-ResourceGroupName] <String> [-Name] <String> [-Force] [-SkuName <String>]
  [-AccessTier <String>] [-CustomDomainName <String>] [-UseSubDomain <Boolean>] [-Tag <Hashtable>]
+<<<<<<< HEAD
  [-EnableHttpsTrafficOnly <Boolean>] [-KeyvaultEncryption] -KeyName <String> -KeyVersion <String>
+=======
+ [-EnableHttpsTrafficOnly <Boolean>] [-KeyvaultEncryption] -KeyName <String> [-KeyVersion <String>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  -KeyVaultUri <String> [-AssignIdentity] [-NetworkRuleSet <PSNetworkRuleSet>] [-UpgradeToStorageV2]
  [-EnableAzureActiveDirectoryDomainServicesForFile <Boolean>] [-EnableLargeFileShare] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### ActiveDirectoryDomainServicesForFile
+```
+Set-AzStorageAccount [-ResourceGroupName] <String> [-Name] <String> [-Force] [-SkuName <String>]
+ [-AccessTier <String>] [-CustomDomainName <String>] [-UseSubDomain <Boolean>] [-Tag <Hashtable>]
+ [-EnableHttpsTrafficOnly <Boolean>] [-AssignIdentity] [-NetworkRuleSet <PSNetworkRuleSet>]
+ [-UpgradeToStorageV2] [-EnableLargeFileShare] -EnableActiveDirectoryDomainServicesForFile <Boolean>
+ [-ActiveDirectoryDomainName <String>] [-ActiveDirectoryNetBiosDomainName <String>]
+ [-ActiveDirectoryForestName <String>] [-ActiveDirectoryDomainGuid <String>]
+ [-ActiveDirectoryDomainSid <String>] [-ActiveDirectoryAzureStorageSid <String>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## DESCRIPTION
 The **Set-AzStorageAccount** cmdlet modifies an Azure Storage account.
 You can use this cmdlet to modify the account type, update a customer domain, or set tags on a Storage account.
@@ -117,11 +136,46 @@ The command upgrade a Storage account with Kind "Storage" or "BlobStorage" to "S
 
 ### Example 10: Update a Storage account by enable Azure Files AAD DS Authentication.
 ```
+<<<<<<< HEAD
 PS C:\> Set-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -EnableAzureActiveDirectoryDomainServicesForFile $true
+=======
+PS C:\> $account = Set-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -EnableAzureActiveDirectoryDomainServicesForFile $true PS
+
+PS C:\> $account.AzureFilesIdentityBasedAuth.DirectoryServiceOptions
+AADDS
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 The command update a Storage account by enable Azure Files AAD DS Authentication.
 
+<<<<<<< HEAD
+=======
+### Example 11: Update a Storage account by enable Files Active Directory Domain Service Authentication, and then show the File Identity Based authentication setting
+```
+PS C:\> $account = Set-AzStorageAccount -ResourceGroupName "MyResourceGroup" -AccountName "mystorageaccount" -EnableActiveDirectoryDomainServicesForFile $true `
+        -ActiveDirectoryDomainName "mydomain.com" `
+        -ActiveDirectoryNetBiosDomainName "mydomain.com" `
+        -ActiveDirectoryForestName "mydomain.com" `
+        -ActiveDirectoryDomainGuid "12345678-1234-1234-1234-123456789012" `
+        -ActiveDirectoryDomainSid "S-1-5-21-1234567890-1234567890-1234567890" `
+        -ActiveDirectoryAzureStorageSid "S-1-5-21-1234567890-1234567890-1234567890-1234"
+		
+PS C:\> $account.AzureFilesIdentityBasedAuth.DirectoryServiceOptions
+AD
+
+PS C:\> $account.AzureFilesIdentityBasedAuth.ActiveDirectoryProperties
+
+DomainName        : mydomain.com
+NetBiosDomainName : mydomain.com
+ForestName        : mydomain.com
+DomainGuid        : 12345678-1234-1234-1234-123456789012
+DomainSid         : S-1-5-21-1234567890-1234567890-1234567890
+AzureStorageSid   : S-1-5-21-1234567890-1234567890-1234567890-1234
+```
+
+The command updates a Storage account by enable Azure Files Active Directory Domain Service Authentication, and then shows the File Identity Based authentication setting
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -AccessTier
@@ -145,6 +199,99 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -ActiveDirectoryAzureStorageSid
+Specifies the security identifier (SID) for Azure Storage. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryDomainGuid
+Specifies the domain GUID. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryDomainName
+Specifies the primary domain that the AD DNS server is authoritative for. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryDomainSid
+Specifies the security identifier (SID). This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryForestName
+Specifies the Active Directory forest to get. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ActiveDirectoryNetBiosDomainName
+Specifies the NetBIOS domain name. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.
+
+```yaml
+Type: System.String
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -AsJob
 Run cmdlet in the background
 
@@ -205,12 +352,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -EnableAzureActiveDirectoryDomainServicesForFile
 Enable Azure Files Azure Active Directory Domain Service Authentication for the storage account.
 
 ```yaml
 Type: System.Boolean
 Parameter Sets: (All)
+=======
+### -EnableActiveDirectoryDomainServicesForFile
+Enable Azure Files Active Directory Domain Service Authentication for the storage account.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: ActiveDirectoryDomainServicesForFile
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EnableAzureActiveDirectoryDomainServicesForFile
+Enable Azure Files Active Directory Domain Service Authentication for the storage account.
+
+```yaml
+Type: System.Boolean
+Parameter Sets: StorageEncryption, KeyvaultEncryption
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: False
@@ -322,7 +493,11 @@ Type: System.String
 Parameter Sets: KeyvaultEncryption
 Aliases:
 
+<<<<<<< HEAD
 Required: True
+=======
+Required: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -382,6 +557,11 @@ The acceptable values for this parameter are:
 - Standard_GRS - Geo-redundant storage.
 - Standard_RAGRS - Read access geo-redundant storage.
 - Premium_LRS - Premium locally-redundant storage.
+<<<<<<< HEAD
+=======
+- Standard_GZRS - Geo-redundant zone-redundant storage.
+- Standard_RAGZRS - Read access geo-redundant zone-redundant storage.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 You cannot change Standard_ZRS and Premium_LRS types to other account types.
 You cannot change other account types to Standard_ZRS or Premium_LRS.
 
@@ -389,7 +569,11 @@ You cannot change other account types to Standard_ZRS or Premium_LRS.
 Type: System.String
 Parameter Sets: (All)
 Aliases: StorageAccountType, AccountType, Type
+<<<<<<< HEAD
 Accepted values: Standard_LRS, Standard_ZRS, Standard_GRS, Standard_RAGRS, Premium_LRS
+=======
+Accepted values: Standard_LRS, Standard_ZRS, Standard_GRS, Standard_RAGRS, Premium_LRS, Standard_GZRS, Standard_RAGZRS
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: False
 Position: Named
@@ -491,7 +675,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

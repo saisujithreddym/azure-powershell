@@ -17,8 +17,13 @@ Set-AzRecoveryServicesAsrReplicationProtectedItem -InputObject <ASRReplicationPr
  [-Size <String>] [-UpdateNic <String>] [-RecoveryNetworkId <String>] [-PrimaryNic <String>]
  [-RecoveryCloudServiceId <String>] [-RecoveryNicSubnetName <String>] [-RecoveryNicStaticIPAddress <String>]
  [-NicSelectionType <String>] [-RecoveryResourceGroupId <String>] [-LicenseType <String>]
+<<<<<<< HEAD
  [-RecoveryAvailabilitySet <String>] [-EnableAcceleratedNetworkingOnRecovery]
  [-RecoveryBootDiagStorageAccountId <String>]
+=======
+ [-RecoveryAvailabilitySet <String>] [-RecoveryProximityPlacementGroupId <String>]
+ [-EnableAcceleratedNetworkingOnRecovery] [-RecoveryBootDiagStorageAccountId <String>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-AzureToAzureUpdateReplicationConfiguration <ASRAzuretoAzureDiskReplicationConfig[]>]
  [-DiskEncryptionVaultId <String>] [-DiskEncryptionSecretUrl <String>] [-KeyEncryptionKeyUrl <String>]
  [-KeyEncryptionVaultId <String>] [-UseManagedDisk <String>]
@@ -80,6 +85,17 @@ PS C:\> $currentJob = Set-AzureRmRecoveryServicesAsrReplicationProtectedItem -In
 
 Start the update operation for the specified encrypted replication protected item to use supplied encryption details for failover VM.
 
+<<<<<<< HEAD
+=======
+### Example 7
+```
+PS C:\> $currentJob = Set-AzureRmRecoveryServicesAsrReplicationProtectedItem -InputObject $ rpi -RecoveryProximityPlacementGroupId $ppg
+```
+
+Start the update operation for the specified replication protected item to use the supplied proximity placement group for failover VM.
+
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -ASRVMNicConfiguration
@@ -417,6 +433,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -RecoveryProximityPlacementGroupId
+Specifies the Resource Id of the recovery proximity placement group to failover teh virtual machine to.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -RecoveryPublicIPAddressId
 Specifies the ID of the public IP address resource to be associated with the recovery NIC.
 

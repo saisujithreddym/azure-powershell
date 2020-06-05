@@ -90,22 +90,36 @@ namespace Microsoft.Azure.Commands.Resources.Test.ScenarioTests
         {
             public static IList<string> DefaultApiVersions { get; } = new List<string> { "2018-01-01", "2016-01-01" };
             private string Name { get; }
+<<<<<<< HEAD
             private List<AliasPathType> Paths { get; } = new List<AliasPathType>();
+=======
+            private List<AliasPath> Paths { get; } = new List<AliasPath>();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             public AliasBuilder(string name)
             {
                 this.Name = name;
             }
 
+<<<<<<< HEAD
             public AliasType Alias => new AliasType
+=======
+            public Alias Alias => new Alias
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             {
                 Name = this.Name,
                 Paths = this.Paths
             };
 
+<<<<<<< HEAD
             public AliasPathType AddAliasPath(string path, IEnumerable<string> apiVersions = null)
             {
                 var rv = new AliasPathType
+=======
+            public AliasPath AddAliasPath(string path, IEnumerable<string> apiVersions = null)
+            {
+                var rv = new AliasPath
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {
                     Path = path,
                     ApiVersions = apiVersions?.ToList() ?? AliasBuilder.DefaultApiVersions

@@ -18,6 +18,11 @@ using Microsoft.Azure.Management.WebSites.Models;
 using System.Management.Automation;
 using System.Text.RegularExpressions;
 using Microsoft.Azure.Commands.WebApps.Models.WebApp;
+<<<<<<< HEAD
+=======
+using System.Collections;
+using System.Collections.Generic;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.WebApps.Cmdlets.AppServicePlans
 {
@@ -48,7 +53,12 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.AppServicePlans
 
         [Parameter(Mandatory = false, HelpMessage = "Run cmdlet in the background")]
         public SwitchParameter AsJob { get; set; }
+<<<<<<< HEAD
 
+=======
+        [Parameter(ParameterSetName = ParameterSet1Name, Mandatory = false, HelpMessage = "Tags are name/value pairs that enable you to categorize resources")]
+        public Hashtable Tag { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public override void ExecuteCmdlet()
         {
             base.ExecuteCmdlet();
@@ -62,6 +72,10 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.AppServicePlans
                     int.TryParse(Regex.Match(AppServicePlan.Sku.Name, @"\d+").Value, out workerSizeAsNumber);
                     AppServicePlan.Sku.Name = string.IsNullOrWhiteSpace(WorkerSize) ? CmdletHelpers.GetSkuName(AppServicePlan.Sku.Tier, workerSizeAsNumber) : CmdletHelpers.GetSkuName(AppServicePlan.Sku.Tier, WorkerSize);
                     AppServicePlan.PerSiteScaling = PerSiteScaling;
+<<<<<<< HEAD
+=======
+                    AppServicePlan.Tags = (IDictionary<string, string>)CmdletHelpers.ConvertToStringDictionary(Tag);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     break;
             }
 

@@ -1113,7 +1113,11 @@ function Test-VirtualMachineScaleSetIdentity
         $extname2 = 'csetest2';
 
         $ipCfg = New-AzVmssIPConfig -Name 'test' -SubnetId $subnetId;
+<<<<<<< HEAD
         $vmss = New-AzVmssConfig -Location $loc -SkuCapacity 2 -SkuName 'Standard_A0' -UpgradePolicyMode 'Manual' -AssignIdentity `
+=======
+        $vmss = New-AzVmssConfig -Location $loc -SkuCapacity 2 -SkuName 'Standard_A0' -UpgradePolicyMode 'Manual' -IdentityType "SystemAssigned" `
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             | Add-AzVmssNetworkInterfaceConfiguration -Name 'test' -Primary $true -IPConfiguration $ipCfg `
             | Set-AzVmssOSProfile -ComputerNamePrefix 'test' -AdminUsername $adminUsername -AdminPassword $adminPassword `
             | Set-AzVmssStorageProfile -Name 'test' -OsDiskCreateOption 'FromImage' -OsDiskCaching 'None' `
@@ -2322,9 +2326,33 @@ function Test-VirtualMachineScaleSetAutoRepair
         New-AzVmss -ResourceGroupName $rgname -Name $vmssName -VirtualMachineScaleSet $vmss;
 
         $vmssResult = Get-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssName;
+<<<<<<< HEAD
 
         Assert-True { $vmssResult.AutomaticRepairsPolicy.Enabled };
         Assert-AreEqual "PT10S" $vmssResult.AutomaticRepairsPolicy.GracePeriod;
+=======
+        Assert-True { $vmssResult.AutomaticRepairsPolicy.Enabled };
+        Assert-AreEqual "PT10S" $vmssResult.AutomaticRepairsPolicy.GracePeriod;
+        $vmssInstanceViewResult = Get-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssName -InstanceView;
+        Assert-AreEqual "AutomaticRepairs" $vmssInstanceViewResult.OrchestrationServices[0].ServiceName;
+        Assert-AreEqual "Running" $vmssInstanceViewResult.OrchestrationServices[0].ServiceState;
+
+        Set-AzVmssOrchestrationServiceState -ResourceGroupName $rgname -VMScaleSetName $vmssName -ServiceName "AutomaticRepairs" -Action "Suspend";
+        $vmssResult = Get-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssName;
+        Assert-True { $vmssResult.AutomaticRepairsPolicy.Enabled };
+        Assert-AreEqual "PT10S" $vmssResult.AutomaticRepairsPolicy.GracePeriod;
+        $vmssInstanceViewResult = Get-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssName -InstanceView;
+        Assert-AreEqual "AutomaticRepairs" $vmssInstanceViewResult.OrchestrationServices[0].ServiceName;
+        Assert-AreEqual "Suspended" $vmssInstanceViewResult.OrchestrationServices[0].ServiceState;
+
+        $vmssResult | Set-AzVmssOrchestrationServiceState -ServiceName "AutomaticRepairs" -Action "Resume";
+        $vmssResult = Get-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssName;
+        Assert-True { $vmssResult.AutomaticRepairsPolicy.Enabled };
+        Assert-AreEqual "PT10S" $vmssResult.AutomaticRepairsPolicy.GracePeriod;
+        $vmssInstanceViewResult = Get-AzVmss -ResourceGroupName $rgname -VMScaleSetName $vmssName -InstanceView;
+        Assert-AreEqual "AutomaticRepairs" $vmssInstanceViewResult.OrchestrationServices[0].ServiceName;
+        Assert-AreEqual "Running" $vmssInstanceViewResult.OrchestrationServices[0].ServiceState;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         Update-AzVmss -ResourceGroupName $rgname -Name $vmssName -EnableAutomaticRepair $false;
 
@@ -2339,4 +2367,7 @@ function Test-VirtualMachineScaleSetAutoRepair
         Clean-ResourceGroup $rgname
     }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

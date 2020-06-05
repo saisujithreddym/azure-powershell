@@ -126,7 +126,12 @@ namespace Microsoft.Azure.Commands.Sql.ManagedInstance.Adapter
                 DnsZonePartner = model.DnsZonePartner,
                 InstancePoolId = model.InstancePoolName != null ?
                     string.Format("/subscriptions/{0}/resourceGroups/{1}/providers/Microsoft.Sql/instancePools/{2}",
+<<<<<<< HEAD
                         Context.Subscription.Id, model.ResourceGroupName, model.InstancePoolName): null
+=======
+                        Context.Subscription.Id, model.ResourceGroupName, model.InstancePoolName): null,
+                MinimalTlsVersion = model.MinimalTlsVersion
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             });
 
             return CreateManagedInstanceModelFromResponse(resp);
@@ -201,10 +206,18 @@ namespace Microsoft.Azure.Commands.Sql.ManagedInstance.Adapter
             managedInstance.DnsZone = resp.DnsZone;
             managedInstance.InstancePoolName = resp.InstancePoolId != null ?
                 new ResourceIdentifier(resp.InstancePoolId).ResourceName : null;
+<<<<<<< HEAD
+=======
+            managedInstance.MinimalTlsVersion = resp.MinimalTlsVersion;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             Management.Internal.Resources.Models.Sku sku = new Management.Internal.Resources.Models.Sku();
             sku.Name = resp.Sku.Name;
             sku.Tier = resp.Sku.Tier;
+<<<<<<< HEAD
+=======
+            sku.Family = resp.Sku.Family;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             managedInstance.Sku = sku;
 

@@ -45,7 +45,11 @@ namespace Microsoft.Azure.Commands.CosmosDB
 
         [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ObjectParameterSet, HelpMessage = Constants.AccountObjectHelpMessage)]
         [ValidateNotNullOrEmpty]
+<<<<<<< HEAD
         public PSDatabaseAccount InputObject { get; set; }
+=======
+        public PSDatabaseAccountGetResults InputObject { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         [Parameter(Mandatory = false, HelpMessage = Constants.AsJobHelpMessage)]
         public SwitchParameter AsJob { get; set; }

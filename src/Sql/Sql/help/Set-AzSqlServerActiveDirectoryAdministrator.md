@@ -14,9 +14,15 @@ Provisions an Azure AD administrator for SQL Server.
 ## SYNTAX
 
 ```
+<<<<<<< HEAD
 Set-AzSqlServerActiveDirectoryAdministrator [-DisplayName] <String> [[-ObjectId] <Guid>] [-ServerName] <String>
  [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
+=======
+Set-AzSqlServerActiveDirectoryAdministrator [-DisplayName] <String> [[-ObjectId] <Guid>]
+ [[-IsAzureADOnlyAuthentication] <Boolean>] [-ServerName] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -36,9 +42,15 @@ We recommend that you provision a dedicated Azure AD group as an administrator.
 ### Example 1: Provision an administrator group for a server
 ```
 PS C:\>Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "DBAs" 
+<<<<<<< HEAD
 ResourceGroupName ServerName DisplayName ObjectId 
 ----------------- ---------- ----------- -------- 
 ResourceGroup01   Server01   DBAs        40b79501-b343-44ed-9ce7-da4c8cc7353b
+=======
+ResourceGroupName ServerName DisplayName ObjectId IsAzureADOnlyAuthentication
+----------------- ---------- ----------- -------- ---------------------------
+ResourceGroup01   Server01   DBAs        40b79501-b343-44ed-9ce7-da4c8cc7353b False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 This command provisions an Azure AD administrator group named DBAs for the server named Server01.
@@ -47,9 +59,15 @@ This server is associated with resource group ResourceGroup01.
 ### Example 2: Provision an administrator user for a server
 ```
 PS C:\>Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "David Chew"
+<<<<<<< HEAD
 ResourceGroupName ServerName DisplayName ObjectId 
 ----------------- ---------- ----------- -------- 
 resourcegroup01   server01   David Chew  11E95548-B179-4FE1-9AF4-ACA49D13ABB9
+=======
+ResourceGroupName ServerName DisplayName ObjectId IsAzureADOnlyAuthentication
+----------------- ---------- ----------- -------- 
+resourcegroup01   server01   David Chew  11E95548-B179-4FE1-9AF4-ACA49D13ABB9 False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 This command provisions an Azure AD user as an administrator for the server named Server01.
@@ -57,9 +75,15 @@ This command provisions an Azure AD user as an administrator for the server name
 ### Example 3: Provision an administrator group by specifying its ID
 ```
 PS C:\>Set-AzSqlServerActiveDirectoryAdministrator -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DisplayName "DBAs" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353b"
+<<<<<<< HEAD
 ResourceGroupName ServerName DisplayName ObjectId 
 ----------------- ---------- ----------- -------- 
 ResourceGroup01   Server01   DBAs        40b79501-b343-44ed-9ce7-da4c8cc7353b
+=======
+ResourceGroupName ServerName DisplayName ObjectId IsAzureADOnlyAuthentication 
+----------------- ---------- ----------- -------- 
+ResourceGroup01   Server01   DBAs        40b79501-b343-44ed-9ce7-da4c8cc7353b False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 This command provisions an Azure AD administrator group named DBAs for the server named Server01.
@@ -98,6 +122,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -IsAzureADOnlyAuthentication
+Specifies if only Azure Active Directory authentication is allowed.
+
+```yaml
+Type: System.Nullable`1[System.Boolean]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ObjectId
 Specifies the unique ID of the Azure AD administrator that this cmdlet provisions.
 If the display name is not unique, you must specify a value for this parameter.
@@ -196,6 +238,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Remove-AzSqlServerActiveDirectoryAdministrator](./Remove-AzSqlServerActiveDirectoryAdministrator.md)
 
+<<<<<<< HEAD
+=======
+[Disable-AzSqlServerActiveDirectoryOnlyAuthentication](./Disable-AzSqlServerActiveDirectoryOnlyAuthentication.md)
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 [SQL Database Documentation](https://docs.microsoft.com/azure/sql-database/)
 
 

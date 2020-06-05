@@ -11,7 +11,43 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.SecurityCenter" Version="1.0.0" />
   </ItemGroup>
 
+=======
+    <PackageReference Include="Microsoft.Azure.Management.SecurityCenter" Version="1.1.3" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="SqlInformationProtectionPolicies\Empty.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SqlInformationProtectionPolicies\InformationTypeAndSensitivityLabelSharingSameDisplayName.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SqlInformationProtectionPolicies\InformationTypeAndSensitivityLabelSharingSameId.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SqlInformationProtectionPolicies\InformationTypesSharingSameDisplayName.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SqlInformationProtectionPolicies\InformationTypesSharingSameId.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SqlInformationProtectionPolicies\InvalidRank.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SqlInformationProtectionPolicies\MissingRank.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SqlInformationProtectionPolicies\SensitivityLabelsSharingSameDisplayName.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SqlInformationProtectionPolicies\SensitivityLabelsSharingSameId.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 </Project>

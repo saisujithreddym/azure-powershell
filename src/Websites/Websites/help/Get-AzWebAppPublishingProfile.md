@@ -30,8 +30,13 @@ The **Get-AzWebAppPublishingProfile** cmdlet gets an Azure Web App publishing pr
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### 1:
 ```
+=======
+### Example 1
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> Get-AzWebAppPublishingProfile -ResourceGroupName "Default-Web-WestUS" -Name "ContosoWebApp" -Format "Ftp" -OutputFile "C:\Users\contoso\outputfile.publishsettings"
 ```
 

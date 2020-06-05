@@ -31,6 +31,11 @@ New-AzHDInsightCluster [-Location] <String> [-ResourceGroupName] <String> [-Clus
  [-SshCredential <PSCredential>] [-SshPublicKey <String>] [-RdpCredential <PSCredential>]
  [-RdpAccessExpiry <DateTime>] [-ObjectId <Guid>] [-ApplicationId <Guid>] [-CertificatePassword <String>]
  [-AadTenantId <Guid>] [-SecurityProfile <AzureHDInsightSecurityProfile>] [-DisksPerWorkerNode <Int32>]
+<<<<<<< HEAD
+=======
+ [-MinSupportedTlsVersion <String>] [-AssignedIdentity <String>] [-EncryptionAlgorithm <String>]
+ [-EncryptionKeyName <String>] [-EncryptionKeyVersion <String>] [-EncryptionVaultUri <String>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -52,7 +57,13 @@ New-AzHDInsightCluster [-Location] <String> [-ResourceGroupName] <String> [-Clus
  [-SshCredential <PSCredential>] [-SshPublicKey <String>] [-RdpCredential <PSCredential>]
  [-RdpAccessExpiry <DateTime>] [-ObjectId <Guid>] [-ApplicationId <Guid>] [-CertificateFilePath <String>]
  [-CertificatePassword <String>] [-AadTenantId <Guid>] [-SecurityProfile <AzureHDInsightSecurityProfile>]
+<<<<<<< HEAD
  [-DisksPerWorkerNode <Int32>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+ [-DisksPerWorkerNode <Int32>] [-MinSupportedTlsVersion <String>] [-AssignedIdentity <String>]
+ [-EncryptionAlgorithm <String>] [-EncryptionKeyName <String>] [-EncryptionKeyVersion <String>]
+ [-EncryptionVaultUri <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### CertificateFileContents
@@ -73,7 +84,13 @@ New-AzHDInsightCluster [-Location] <String> [-ResourceGroupName] <String> [-Clus
  [-SshCredential <PSCredential>] [-SshPublicKey <String>] [-RdpCredential <PSCredential>]
  [-RdpAccessExpiry <DateTime>] [-ObjectId <Guid>] [-ApplicationId <Guid>] [-CertificateFileContents <Byte[]>]
  [-CertificatePassword <String>] [-AadTenantId <Guid>] [-SecurityProfile <AzureHDInsightSecurityProfile>]
+<<<<<<< HEAD
  [-DisksPerWorkerNode <Int32>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+ [-DisksPerWorkerNode <Int32>] [-MinSupportedTlsVersion <String>] [-AssignedIdentity <String>]
+ [-EncryptionAlgorithm <String>] [-EncryptionKeyName <String>] [-EncryptionKeyVersion <String>]
+ [-EncryptionVaultUri <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -103,7 +120,10 @@ PS C:\&gt; # Primary storage account info
         # Create the cluster
         New-AzHDInsightCluster `
             -ClusterType Hadoop `
+<<<<<<< HEAD
             -OSType Windows `
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             -ClusterSizeInNodes 4 `
             -ResourceGroupName $clusterResourceGroupName `
             -ClusterName $clusterName `
@@ -111,11 +131,62 @@ PS C:\&gt; # Primary storage account info
             -Location $location `
             -DefaultStorageAccountName "$storageAccountName.blob.core.contoso.net" `
             -DefaultStorageAccountKey $storageAccountKey `
+<<<<<<< HEAD
             -DefaultStorageContainer $storageContainer
+=======
+            -DefaultStorageContainer $storageContainer `
+			-SshCredential $clusterCreds `
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 This command creates a cluster in the current subscription.
 
+<<<<<<< HEAD
+=======
+### Example 2: Create cluster with customer-managed key disk encryption
+```
+PS C:\&gt; # Primary storage account info
+        $storageAccountResourceGroupName = "Group"
+        $storageAccountName = "yourstorageacct001"
+        $storageAccountKey = Get-AzStorageAccountKey `
+            -ResourceGroupName $storageAccountResourceGroupName `
+            -Name $storageAccountName | %{ $_.Key1 }
+        $storageContainer = "container002"
+
+        # Cluster configuration info
+        $location = "East US 2"
+        $clusterResourceGroupName = "Group"
+        $clusterName = "your-cmk-cluster"
+        $clusterCreds = Get-Credential
+
+		# Customer-managed Key info
+		$assignedIdentity = "your-ami-resource-id"
+		$encryptionKeyName = "new-key"
+		$encryptionVaultUri = "https://MyKeyVault.vault.azure.net"
+		$encryptionKeyVersion = "00000000000000000000000000000000"
+
+        # If the cluster's resource group doesn't exist yet, run:
+        #   New-AzResourceGroup -Name $clusterResourceGroupName -Location $location
+
+        # Create the cluster
+        New-AzHDInsightCluster `
+            -ClusterType Spark `
+            -ClusterSizeInNodes 4 `
+            -ResourceGroupName $clusterResourceGroupName `
+            -ClusterName $clusterName `
+            -HttpCredential $clusterCreds `
+            -Location $location `
+            -DefaultStorageAccountName "$storageAccountName.blob.core.contoso.net" `
+            -DefaultStorageAccountKey $storageAccountKey `
+            -DefaultStorageContainer $storageContainer `
+			-SshCredential $clusterCreds `
+			-AssignedIdentity $assignedIdentity `
+			-EncryptionKeyName $encryptionKeyName `
+			-EncryptionVaultUri $encryptionVaultUri `
+			-EncryptionKeyVersion $encryptionKeyVersion
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -AadTenantId
@@ -164,6 +235,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -AssignedIdentity
+Gets or sets the assigned identity.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -CertificateFileContents
 Specifies file contents of the certificate that will be used when accessing Azure Data Lake Store.
 
@@ -444,6 +533,69 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -EncryptionAlgorithm
+Gets or sets the encryption algorithm.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionKeyName
+Gets or sets the encryption key name.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionKeyVersion
+Gets or sets the encryption key version.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionVaultUri
+Gets or sets the encryption vault uri.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -HeadNodeSize
 Specifies the size of the virtual machine for the Head node.
 Use Get-AzVMSize for acceptable VM sizes, and see HDInsight's pricing page.
@@ -506,6 +658,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -MinSupportedTlsVersion
+Gets or sets the minimal supported TLS version.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ObjectId
 Specifies the Azure AD object ID (a GUID) of the Azure AD Service Principal that represents the cluster.
 The cluster will use this when accessing Azure Data Lake Store.

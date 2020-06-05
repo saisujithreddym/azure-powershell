@@ -136,7 +136,17 @@ namespace Microsoft.Azure.Commands.HDInsight
                     CertificateFilePath = CertificateFilePath,
                     CertificatePassword = CertificatePassword,
                     SecurityProfile = SecurityProfile,
+<<<<<<< HEAD
                     DisksPerWorkerNode = DisksPerWorkerNode
+=======
+                    DisksPerWorkerNode = DisksPerWorkerNode,
+                    MinSupportedTlsVersion = MinSupportedTlsVersion,
+                    AssignedIdentity = AssignedIdentity,
+                    EncryptionAlgorithm = EncryptionAlgorithm,
+                    EncryptionKeyName = EncryptionKeyName,
+                    EncryptionKeyVersion = EncryptionKeyVersion,
+                    EncryptionVaultUri = EncryptionVaultUri
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 };
                 foreach (
                     var storageAccount in
@@ -190,6 +200,15 @@ namespace Microsoft.Azure.Commands.HDInsight
                 CertificatePassword = value.CertificatePassword;
                 SecurityProfile = value.SecurityProfile;
                 DisksPerWorkerNode = value.DisksPerWorkerNode;
+<<<<<<< HEAD
+=======
+                MinSupportedTlsVersion = value.MinSupportedTlsVersion;
+                AssignedIdentity = value.AssignedIdentity;
+                EncryptionAlgorithm = value.EncryptionAlgorithm;
+                EncryptionKeyName = value.EncryptionKeyName;
+                EncryptionKeyVersion = value.EncryptionKeyVersion;
+                EncryptionVaultUri = value.EncryptionVaultUri;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                 foreach (
                     var storageAccount in
@@ -353,8 +372,31 @@ namespace Microsoft.Azure.Commands.HDInsight
         [Parameter(HelpMessage = "Gets or sets the number of disks for worker node role in the cluster.")]
         public int DisksPerWorkerNode { get; set; }
 
+<<<<<<< HEAD
         #endregion
 
+=======
+        [Parameter(HelpMessage = "Gets or sets the minimal supported TLS version.")]
+        public string MinSupportedTlsVersion { get; set; }
+
+        [Parameter(HelpMessage = "Gets or sets the assigned identity.")]
+        public string  AssignedIdentity { get; set; }
+
+        [Parameter(HelpMessage = "Gets or sets the encryption algorithm.")]
+        [ValidateSet(JsonWebKeyEncryptionAlgorithm.RSAOAEP, JsonWebKeyEncryptionAlgorithm.RSAOAEP256, JsonWebKeyEncryptionAlgorithm.RSA15)]
+        public string EncryptionAlgorithm { get; set; }
+
+        [Parameter(HelpMessage = "Gets or sets the encryption key name.")]
+        public string EncryptionKeyName { get; set; }
+
+        [Parameter(HelpMessage = "Gets or sets the encryption key version.")]
+        public string EncryptionKeyVersion { get; set; }
+
+        [Parameter(HelpMessage = "Gets or sets the encryption vault uri.")]
+        public string EncryptionVaultUri { get; set; }
+
+        #endregion
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         public NewAzureHDInsightClusterCommand()
         {
@@ -473,7 +515,31 @@ namespace Microsoft.Azure.Commands.HDInsight
                 };
             }
 
+<<<<<<< HEAD
             var cluster = HDInsightManagementClient.CreateNewCluster(ResourceGroupName, ClusterName, OSType, parameters);
+=======
+            if (EncryptionKeyName != null && EncryptionKeyVersion != null && EncryptionVaultUri !=null && AssignedIdentity != null)
+            {
+                parameters.ClusterIdentity = new ClusterIdentity
+                {
+                    Type = ResourceIdentityType.UserAssigned,
+                    UserAssignedIdentities = new Dictionary<string, ClusterIdentityUserAssignedIdentitiesValue>
+                    {
+                        { AssignedIdentity, new ClusterIdentityUserAssignedIdentitiesValue() }
+                    }
+                };
+                parameters.DiskEncryptionProperties = new DiskEncryptionProperties()
+                {
+                    KeyName = EncryptionKeyName,
+                    KeyVersion = EncryptionKeyVersion,
+                    VaultUri = EncryptionVaultUri,
+                    EncryptionAlgorithm = EncryptionAlgorithm != null ? EncryptionAlgorithm : JsonWebKeyEncryptionAlgorithm.RSAOAEP,
+                    MsiResourceId = AssignedIdentity
+                };
+            }
+
+            var cluster = HDInsightManagementClient.CreateNewCluster(ResourceGroupName, ClusterName, OSType, parameters, MinSupportedTlsVersion);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (cluster != null)
             {

@@ -44,12 +44,15 @@ Get-AzResourceLock [-LockName <String>] [-AtScope] -ResourceName <String> -Resou
  [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
 ### ByTenantLevel
 ```
 Get-AzResourceLock [-LockName <String>] [-AtScope] -ResourceName <String> -ResourceType <String> [-TenantLevel]
  [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### ByLockId
 ```
 Get-AzResourceLock [-AtScope] -LockId <String> [-ApiVersion <String>] [-Pre]
@@ -68,6 +71,16 @@ PS C:\>Get-AzResourceLock -LockName "ContosoSiteLock" -ResourceName "ContosoSite
 
 This command gets the resource lock named ContosoSiteLock.
 
+<<<<<<< HEAD
+=======
+### Example 2: Get locks at resource group level or higher
+```
+PS C:\> Get-AzResourceLock -ResourceGroupName "ResourceGroup11" -AtScope
+```
+
+This command gets the resource locks on the resource group or the subscription.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -ApiVersion
@@ -137,7 +150,11 @@ Specifies the name of the lock that this cmdlet gets.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: ByResourceGroup, ByResourceGroupLevel, BySpecifiedScope, BySubscription, BySubscriptionLevel, ByTenantLevel
+=======
+Parameter Sets: ByResourceGroup, ByResourceGroupLevel, BySpecifiedScope, BySubscription, BySubscriptionLevel
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases: ExtensionResourceName, Name
 
 Required: False
@@ -184,7 +201,11 @@ This cmdlet gets locks for this resource.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel, ByTenantLevel
+=======
+Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -200,7 +221,11 @@ This cmdlet gets locks for this resource.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel, ByTenantLevel
+=======
+Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -226,6 +251,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -TenantLevel
 Indicates that this cmdlet operates at the tenant level.
 
@@ -243,6 +269,10 @@ Accept wildcard characters: False
 
 ### CommonParameters
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+### CommonParameters
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

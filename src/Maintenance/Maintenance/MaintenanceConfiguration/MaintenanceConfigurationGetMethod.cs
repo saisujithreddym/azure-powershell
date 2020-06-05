@@ -28,6 +28,11 @@ namespace Microsoft.Azure.Commands.Maintenance
     [OutputType(typeof(PSMaintenanceConfiguration))]
     public partial class GetAzureRmMaintenanceConfiguration : MaintenanceAutomationBaseCmdlet
     {
+<<<<<<< HEAD
+=======
+        private readonly string[] uriSplit = new string[] { "/" };
+                
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public override void ExecuteCmdlet()
         {
             base.ExecuteCmdlet();
@@ -35,7 +40,10 @@ namespace Microsoft.Azure.Commands.Maintenance
             {
                 string resourceGroupName = this.ResourceGroupName;
                 string name = this.Name;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 if (!string.IsNullOrEmpty(resourceGroupName) && !string.IsNullOrEmpty(name))
                 {
                     var result = MaintenanceConfigurationsClient.Get(resourceGroupName, name);
@@ -49,6 +57,23 @@ namespace Microsoft.Azure.Commands.Maintenance
 
                     foreach (var maintenanceConfiguration in result)
                     {
+<<<<<<< HEAD
+=======
+                        string[] mcInfo = maintenanceConfiguration.Id.Split(uriSplit, StringSplitOptions.RemoveEmptyEntries);
+                        if (null != mcInfo && mcInfo.Length == 8)
+                        {
+                            if(!string.IsNullOrEmpty(resourceGroupName) && !mcInfo[3].Equals(resourceGroupName))
+                            {
+                                continue;
+                            }
+
+                            if(!string.IsNullOrEmpty(name) && !maintenanceConfiguration.Name.Equals(name))
+                            {
+                                continue;
+                            }
+                        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         PSMaintenanceConfiguration psMaintenanceConfiguration = new PSMaintenanceConfiguration();
                         MaintenanceAutomationAutoMapperProfile.Mapper.Map<MaintenanceConfiguration, PSMaintenanceConfiguration>(maintenanceConfiguration, psMaintenanceConfiguration);
                         psObject.Add(psMaintenanceConfiguration);

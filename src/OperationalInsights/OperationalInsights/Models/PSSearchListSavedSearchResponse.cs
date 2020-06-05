@@ -31,8 +31,11 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Models
                 throw new ArgumentNullException("saved search response");
             }
 
+<<<<<<< HEAD
             SearchMetadata m = searchResponse.Metadata;
             this.Metadata = new PSSearchMetadata(searchResponse.Metadata);
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             this.Value = new List<PSSavedSearchValue>();
             foreach (SavedSearch v in searchResponse.Value)
             {
@@ -40,8 +43,11 @@ namespace Microsoft.Azure.Commands.OperationalInsights.Models
             }
         }
 
+<<<<<<< HEAD
         public PSSearchMetadata Metadata { get; set; }
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public List<PSSavedSearchValue> Value { get; set; }
     }
 }

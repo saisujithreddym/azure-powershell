@@ -38,6 +38,7 @@ ResourceGroupName : resourceGroup
 InstanceName      : managedInstance
 DatabaseName      : database
 SensitivityLabels : {{
+<<<<<<< HEAD
                         SchemaName: schema1,
                         TableName: table1,
                         ColumnName: column1,
@@ -53,6 +54,25 @@ SensitivityLabels : {{
                         TableName: table3,
                         ColumnName: column3,
                         SensitivityLabel: label3,
+=======
+                        SchemaName: dbo,
+                        TableName: Report,
+                        ColumnName: ReportEmailBody,
+                        InformationType: Contact Info
+                    }, {
+                        SchemaName: dbo,
+                        TableName: Report,
+                        ColumnName: ReportEmailSubject,
+                        SensitivityLabel: Confidential,
+                        Rank: Medium
+                    }, {
+                        SchemaName: dbo,
+                        TableName: EMailLog,
+                        ColumnName: BounceEmailSubject,
+                        SensitivityLabel: Confidential,
+                        InformationType: Contact Info,
+                        Rank: Medium
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }}
 ```
 
@@ -64,6 +84,7 @@ ResourceGroupName : resourceGroup
 InstanceName      : managedInstance
 DatabaseName      : database
 SensitivityLabels : {{
+<<<<<<< HEAD
                         SchemaName: schema1,
                         TableName: table1,
                         ColumnName: column1,
@@ -79,6 +100,25 @@ SensitivityLabels : {{
                         TableName: table3,
                         ColumnName: column3,
                         SensitivityLabel: label3,
+=======
+                        SchemaName: dbo,
+                        TableName: Report,
+                        ColumnName: ReportEmailBody,
+                        InformationType: Contact Info
+                    }, {
+                        SchemaName: dbo,
+                        TableName: Report,
+                        ColumnName: ReportEmailSubject,
+                        SensitivityLabel: Confidential,
+                        Rank: Medium
+                    }, {
+                        SchemaName: dbo,
+                        TableName: EMailLog,
+                        ColumnName: BounceEmailSubject,
+                        SensitivityLabel: Confidential,
+                        InformationType: Contact Info,
+                        Rank: Medium
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }}
 ```
 

@@ -22,6 +22,10 @@ namespace Microsoft.WindowsAzure.Commands.Storage.Table.Cmdlet
     using System.Collections.Generic;
     using System.Management.Automation;
     using System.Security.Permissions;
+<<<<<<< HEAD
+=======
+    using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     /// <summary>
     /// list azure tables

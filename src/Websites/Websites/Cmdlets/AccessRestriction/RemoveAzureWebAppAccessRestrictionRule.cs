@@ -17,7 +17,11 @@ using Microsoft.Azure.Commands.WebApps.Models;
 using System.Management.Automation;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Management.WebSites.Models;
+<<<<<<< HEAD
 using Microsoft.Azure.Management.Internal.Network.Version2017_10_01.Models;
+=======
+using Microsoft.Azure.Commands.WebApps.Utilities;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.WebApps.Cmdlets.WebApps
 {
@@ -38,10 +42,22 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.WebApps
         [ValidateNotNullOrEmpty]
         public string WebAppName { get; set; }
 
+<<<<<<< HEAD
         [Parameter(Mandatory = true, HelpMessage = "Access Restriction rule name. E.g.: DeveloperWorkstation.")]        
         [ValidateNotNullOrEmpty]
         public string Name { get; set; }
 
+=======
+        [Parameter(Mandatory = false, HelpMessage = "Access Restriction rule name. E.g.: DeveloperWorkstation.")]
+        [ValidateNotNullOrEmpty]
+        public string Name { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = "Allow or Deny rule.")]
+        [ValidateNotNullOrEmpty]
+        [ValidateSet("Allow", "Deny")]
+        public string Action { get; set; } = "Allow";
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = false, HelpMessage = "Rule is aimed for Main site or Scm site.")]
         [ValidateNotNullOrEmpty]
         public SwitchParameter TargetScmSite { get; set; }
@@ -49,6 +65,25 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.WebApps
         [Parameter(Mandatory = false, HelpMessage = "Deployment Slot name.")]
         public string SlotName { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(Mandatory = false, HelpMessage = "Ip Address v4 or v6 CIDR range. E.g.: 192.168.0.0/24")]
+        [ValidateNotNullOrEmpty]
+        public string IpAddress { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = "Name of Subnet.")]
+        [ValidateNotNullOrEmpty]
+        public string SubnetName { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = "Name of Virtual Network (must be in same resource group as Web App).")]
+        [ValidateNotNullOrEmpty]
+        public string VirtualNetworkName { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = "ResourceId of Subnet.")]
+        [ValidateNotNullOrEmpty]
+        public string SubnetId { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = false, HelpMessage = "Return the access restriction config object.")]
         public SwitchParameter PassThru { get; set; }
 
@@ -56,7 +91,11 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.WebApps
         {
             if (!string.IsNullOrWhiteSpace(ResourceGroupName) && !string.IsNullOrWhiteSpace(WebAppName))
             {
+<<<<<<< HEAD
                 if (ShouldProcess(WebAppName, $"Removing Access Restriction Rule '{Name}' from Web App '{WebAppName}'"))
+=======
+                if (ShouldProcess(WebAppName, $"Removing Access Restriction Rule from Web App '{WebAppName}'"))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {
                     var webApp = new PSSite(WebsitesClient.GetWebApp(ResourceGroupName, WebAppName, SlotName));
                     SiteConfig siteConfig = webApp.SiteConfig;
@@ -66,12 +105,53 @@ namespace Microsoft.Azure.Commands.WebApps.Cmdlets.WebApps
 
                     foreach (var accessRestriction in accessRestrictionList)
                     {
+<<<<<<< HEAD
                         if (accessRestriction.Name.ToLowerInvariant() == Name.ToLowerInvariant())
                         {
                             ipSecurityRestriction = accessRestriction;
                             accessRestrictionExists = true;
                             break;
                         }
+=======
+                        if (!string.IsNullOrWhiteSpace(Name))
+                        {
+                            if (!string.IsNullOrWhiteSpace(accessRestriction.Name) &&  accessRestriction.Name.ToLowerInvariant() == Name.ToLowerInvariant() && accessRestriction.Action.ToLowerInvariant() == Action.ToLowerInvariant())
+                            {
+                                ipSecurityRestriction = accessRestriction;
+                                accessRestrictionExists = true;
+                                break;
+                            }
+                        }
+                        else if (!string.IsNullOrWhiteSpace(IpAddress))
+                        {
+                            if (!string.IsNullOrWhiteSpace(accessRestriction.IpAddress) && accessRestriction.IpAddress.ToLowerInvariant() == IpAddress.ToLowerInvariant() && accessRestriction.Action.ToLowerInvariant() == Action.ToLowerInvariant())
+                            {
+                                if (!string.IsNullOrWhiteSpace(Name))                                
+                                    if (!string.IsNullOrWhiteSpace(accessRestriction.Name) && accessRestriction.Name.ToLowerInvariant() == Name.ToLowerInvariant() && accessRestriction.Action.ToLowerInvariant() == Action.ToLowerInvariant())                                    
+                                        continue;                                    
+                                
+                                ipSecurityRestriction = accessRestriction;
+                                accessRestrictionExists = true;
+                                break;
+                            }
+                        }
+                        else if (!string.IsNullOrWhiteSpace(SubnetId) || (!string.IsNullOrWhiteSpace(SubnetName) && !string.IsNullOrWhiteSpace(VirtualNetworkName)))
+                        {
+                            var subnet = !string.IsNullOrWhiteSpace(SubnetId) ? SubnetId : SubnetName;
+                            var subnetResourceId = CmdletHelpers.ValidateSubnet(subnet, VirtualNetworkName, ResourceGroupName, DefaultContext.Subscription.Id);
+                            if (!string.IsNullOrWhiteSpace(accessRestriction.VnetSubnetResourceId) && accessRestriction.VnetSubnetResourceId.ToLowerInvariant() == subnetResourceId.ToLowerInvariant() && accessRestriction.Action.ToLowerInvariant() == Action.ToLowerInvariant())
+                            {
+                                if (!string.IsNullOrWhiteSpace(Name))
+                                    if (!string.IsNullOrWhiteSpace(accessRestriction.Name) && accessRestriction.Name.ToLowerInvariant() == Name.ToLowerInvariant() && accessRestriction.Action.ToLowerInvariant() == Action.ToLowerInvariant())
+                                        continue;
+
+                                ipSecurityRestriction = accessRestriction;
+                                accessRestrictionExists = true;
+                                break;
+                            }
+                        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }
                     if (accessRestrictionExists)
                     {

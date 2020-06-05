@@ -50,12 +50,22 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
         /// </summary>
         public IAzureContext Context { get; set; }
 
+<<<<<<< HEAD
         public SqlAuditAdapter(IAzureContext context)
+=======
+        private Guid RoleAssignmentId { get; }
+
+        public SqlAuditAdapter(IAzureContext context, Guid roleAssignmentId = default(Guid))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             Context = context;
             Subscription = context?.Subscription;
             Communicator = new AuditingEndpointsCommunicator(Context);
             AzureCommunicator = new AzureEndpointsCommunicator(Context);
+<<<<<<< HEAD
+=======
+            RoleAssignmentId = roleAssignmentId;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         internal void GetAuditingSettings(
@@ -140,15 +150,30 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
                 }
 
                 model.StorageAccountResourceId = AzureCommunicator.RetrieveStorageAccountIdAsync(
+<<<<<<< HEAD
                     (Guid)storageAccountSubscriptionId,
                     GetStorageAccountName(storageEndpoint)).GetAwaiter().GetResult();
+=======
+                    storageAccountSubscriptionId.Value,
+                    GetStorageAccountName(storageEndpoint)).GetAwaiter().GetResult();
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ModelizeRetentionInfo(model, retentionDays);
             }
         }
 
         private static StorageKeyKind GetStorageKeyKind(bool? isSecondary)
         {
+<<<<<<< HEAD
             return (isSecondary ?? false) ? StorageKeyKind.Secondary : StorageKeyKind.Primary;
+=======
+            if (isSecondary.HasValue)
+            {
+                return isSecondary.Value ? StorageKeyKind.Secondary : StorageKeyKind.Primary;
+            }
+
+            return StorageKeyKind.Primary;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         private static string GetStorageAccountName(string storageEndpoint)
@@ -373,7 +398,11 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
             IList<DiagnosticSettingsResource> diagnosticsEnablingAuditCategory = model.DiagnosticsEnablingAuditCategory;
             DiagnosticSettingsResource settings = diagnosticsEnablingAuditCategory.FirstOrDefault();
             if (settings == null ||
+<<<<<<< HEAD
                 (model is DatabaseAuditModel dbModel  ?
+=======
+                (model is DatabaseAuditModel dbModel ?
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 Communicator.RemoveDiagnosticSettings(settings.Name, dbModel.ResourceGroupName, dbModel.ServerName, dbModel.DatabaseName) :
                 Communicator.RemoveDiagnosticSettings(settings.Name, model.ResourceGroupName, model.ServerName)) == false)
             {
@@ -420,6 +449,7 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
         private void PolicizeStorageInfo(ServerAuditModel model, dynamic policy)
         {
             ExtractStorageAccountProperties(model.StorageAccountResourceId, out string storageAccountName, out Guid storageAccountSubscriptionId);
+<<<<<<< HEAD
             string storageEndpointSuffix = Context.Environment.GetEndpoint(AzureEnvironment.Endpoint.StorageEndpointSuffix);
 
             policy.StorageEndpoint = GetStorageAccountEndpoint(storageAccountName, storageEndpointSuffix);
@@ -427,6 +457,23 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
             policy.IsStorageSecondaryKeyInUse = model.StorageKeyType == StorageKeyKind.Secondary;
             policy.StorageAccountSubscriptionId = storageAccountSubscriptionId;
 
+=======
+            policy.StorageEndpoint = GetStorageAccountEndpoint(storageAccountName);
+            policy.StorageAccountSubscriptionId = storageAccountSubscriptionId;
+
+            if (AzureCommunicator.IsStorageAccountInVNet(model.StorageAccountResourceId))
+            {
+                Guid? principalId = Communicator.AssignServerIdentityIfNotAssigned(model.ResourceGroupName, model.ServerName);
+                AzureCommunicator.AssignRoleForServerIdentityOnStorageIfNotAssigned(model.StorageAccountResourceId, principalId.Value, RoleAssignmentId);
+            }
+            else
+            {
+                policy.IsStorageSecondaryKeyInUse = model.StorageKeyType == StorageKeyKind.Secondary;
+                policy.StorageAccountAccessKey = AzureCommunicator.RetrieveStorageKeysAsync(
+                    model.StorageAccountResourceId).GetAwaiter().GetResult()[model.StorageKeyType == StorageKeyKind.Secondary ? StorageKeyKind.Secondary : StorageKeyKind.Primary];
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (model.RetentionInDays != null)
             {
                 policy.RetentionDays = (int)model.RetentionInDays;
@@ -464,9 +511,15 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
         /// <summary>
         /// Extracts the storage account name from the given model
         /// </summary>
+<<<<<<< HEAD
         private static string GetStorageAccountEndpoint(string storageAccountName, string endpointSuffix)
         {
             return string.Format("https://{0}.blob.{1}", storageAccountName, endpointSuffix);
+=======
+        private string GetStorageAccountEndpoint(string storageAccountName)
+        {
+            return string.Format("https://{0}.blob.{1}", storageAccountName, Context.Environment.GetEndpoint(AzureEnvironment.Endpoint.StorageEndpointSuffix));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         internal void PersistAuditChanges(ServerAuditModel model)

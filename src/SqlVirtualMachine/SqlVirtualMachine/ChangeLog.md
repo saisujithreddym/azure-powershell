@@ -19,6 +19,12 @@
 -->
 ## Upcoming Release
 
+<<<<<<< HEAD
+=======
+## Version 1.1.0
+* Added cmdlets for Availability Group Listener
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## Version 1.0.2
 * Add DR as a new valid License type
 

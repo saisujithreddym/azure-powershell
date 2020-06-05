@@ -14,6 +14,10 @@
 
 using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Commands.Sql.Common;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Management.Monitor.Version2018_09_01;
 using Microsoft.Azure.Management.Monitor.Version2018_09_01.Models;
 using Microsoft.Azure.Management.Sql;
@@ -53,19 +57,39 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
         public bool SetAuditingPolicy(string resourceGroupName, string serverName,
             string databaseName, DatabaseBlobAuditingPolicy policy)
         {
+<<<<<<< HEAD
             IDatabaseBlobAuditingPoliciesOperations operations = GetCurrentSqlClient().DatabaseBlobAuditingPolicies;
             return operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName,
                 serverName, databaseName, policy).Result.Response.IsSuccessStatusCode;
+=======
+            return SetAuditingPolicyInternal(() =>
+            {
+                IDatabaseBlobAuditingPoliciesOperations operations = GetCurrentSqlClient().DatabaseBlobAuditingPolicies;
+                return operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName,
+                    serverName, databaseName, policy).Result.Response.IsSuccessStatusCode;
+            });
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public bool SetAuditingPolicy(string resourceGroupName, string serverName,
             ServerBlobAuditingPolicy policy)
         {
+<<<<<<< HEAD
             SqlManagementClient client = GetCurrentSqlClient();
             AzureOperationResponse<ServerBlobAuditingPolicy> response =
                 client.ServerBlobAuditingPolicies.BeginCreateOrUpdateWithHttpMessagesAsync(
                 resourceGroupName, serverName, policy).Result;
             return client.GetLongRunningOperationResultAsync(response, null, CancellationToken.None).Result.Response.IsSuccessStatusCode;
+=======
+            return SetAuditingPolicyInternal(() =>
+            {
+                SqlManagementClient client = GetCurrentSqlClient();
+                AzureOperationResponse<ServerBlobAuditingPolicy> response =
+                    client.ServerBlobAuditingPolicies.BeginCreateOrUpdateWithHttpMessagesAsync(
+                        resourceGroupName, serverName, policy).Result;
+                return client.GetLongRunningOperationResultAsync(response, null, CancellationToken.None).Result.Response.IsSuccessStatusCode;
+            });
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public ExtendedDatabaseBlobAuditingPolicy GetAuditingPolicy(string resourceGroupName,
@@ -85,20 +109,41 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
         public bool SetExtendedAuditingPolicy(string resourceGroupName, string serverName,
             string databaseName, ExtendedDatabaseBlobAuditingPolicy policy)
         {
+<<<<<<< HEAD
             IExtendedDatabaseBlobAuditingPoliciesOperations operations = GetCurrentSqlClient().ExtendedDatabaseBlobAuditingPolicies;
             return operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName,
                 serverName, databaseName, policy).Result.Response.IsSuccessStatusCode;
+=======
+            return SetAuditingPolicyInternal(() =>
+            {
+                IExtendedDatabaseBlobAuditingPoliciesOperations operations = GetCurrentSqlClient().ExtendedDatabaseBlobAuditingPolicies;
+                return operations.CreateOrUpdateWithHttpMessagesAsync(resourceGroupName,
+                    serverName, databaseName, policy).Result.Response.IsSuccessStatusCode;
+            });
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public bool SetExtendedAuditingPolicy(string resourceGroupName, string serverName,
             ExtendedServerBlobAuditingPolicy policy)
         {
+<<<<<<< HEAD
             SqlManagementClient client = GetCurrentSqlClient();
             AzureOperationResponse<ExtendedServerBlobAuditingPolicy> response =
                 client.ExtendedServerBlobAuditingPolicies.BeginCreateOrUpdateWithHttpMessagesAsync(
                 resourceGroupName, serverName, policy).Result;
             return client.GetLongRunningOperationResultAsync(response, null,
                 CancellationToken.None).Result.Response.IsSuccessStatusCode;
+=======
+            return SetAuditingPolicyInternal(() =>
+            {
+                SqlManagementClient client = GetCurrentSqlClient();
+                AzureOperationResponse<ExtendedServerBlobAuditingPolicy> response =
+                    client.ExtendedServerBlobAuditingPolicies.BeginCreateOrUpdateWithHttpMessagesAsync(
+                    resourceGroupName, serverName, policy).Result;
+                return client.GetLongRunningOperationResultAsync(response, null,
+                    CancellationToken.None).Result.Response.IsSuccessStatusCode;
+            });
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public IList<DiagnosticSettingsResource> GetDiagnosticsEnablingAuditCategory(
@@ -182,6 +227,22 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
                 GetResourceUri(resourceGroupName, serverName, databaseName), settings, settings.Name).Result;
         }
 
+<<<<<<< HEAD
+=======
+        public Guid? AssignServerIdentityIfNotAssigned(string resourceGroupName, string serverName)
+        {
+            var server = GetCurrentSqlClient().Servers.Get(resourceGroupName, serverName);
+            if (server.Identity == null ||
+                server.Identity.Type != ResourceIdentityType.SystemAssigned.ToString())
+            {
+                server.Identity = ResourceIdentityHelper.GetIdentityObjectFromType(true);
+                server = GetCurrentSqlClient().Servers.CreateOrUpdate(resourceGroupName, serverName, server);
+            }
+
+            return server.Identity.PrincipalId;
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private static string GetNextDiagnosticSettingsName(IList<DiagnosticSettingsResource> settings)
         {
             int nextIndex = (settings?.Where(
@@ -224,5 +285,42 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Services
 
             return MonitorClient;
         }
+<<<<<<< HEAD
+=======
+
+        private bool SetAuditingPolicyInternal(Func<bool> setAuditingPolicy)
+        {
+            SqlManagementClient client = GetCurrentSqlClient();
+
+            const int SecondsToSleepBetweenTries = 5;
+            int numberOfTries = 3;
+            bool isARetry = false;
+            do
+            {
+                if (isARetry)
+                {
+                    Thread.Sleep(SecondsToSleepBetweenTries);
+                }
+
+                try
+                {
+                    return setAuditingPolicy();
+                }
+                catch (Exception e)
+                {
+                    if (!(e.InnerException is CloudException cloudException) ||
+                        cloudException.Body.Code != "BlobAuditingInsufficientStorageAccountPermissions")
+                    {
+                        throw;
+                    }
+                }
+
+                numberOfTries--;
+                isARetry = true;
+            } while (numberOfTries > 0);
+
+            return false;
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

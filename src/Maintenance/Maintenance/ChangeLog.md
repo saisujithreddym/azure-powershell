@@ -20,6 +20,15 @@
 
 ## Upcoming Release
 
+<<<<<<< HEAD
+=======
+## Version 1.0.0
+* Publishing release version of Maintenance cmdlets for GA
+
+## Version 0.1.3
+* Got `Az-MaintenanceConfiguration` will honor filters while listing maintenance configurations
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## Version 0.1.2
 * Update command will display pending updates by default
 * Added sample output to help documentation of Get-AZMaintenanceUpdate

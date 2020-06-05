@@ -253,7 +253,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices
                     Vault.ResourceGroupName,
                     Vault.Name,
                     friendlyName,
+<<<<<<< HEAD
                     certificateArgs,
+=======
+                    certificateArgs.Properties,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     RecoveryServicesClient.GetRequestHeaders()).Result.Body;
                 WriteDebug(string.Format(CultureInfo.InvariantCulture, Resources.UploadedCertToIdmgmt));
             }
@@ -316,7 +320,10 @@ namespace Microsoft.Azure.Commands.RecoveryServices
                     Properties = new RawCertificateData {Certificate = bytes, AuthType = AuthType.AAD}
                 };
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 var dateString = DateTime.Now.ToString("M-d-yyyy");
 
                 var friendlyName = string.Format("{0}{1}-{2}-vaultcredentials", Vault.Name, subscriptionId, dateString);
@@ -324,7 +331,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices
                     Vault.ResourceGroupName,
                     Vault.Name,
                     friendlyName,
+<<<<<<< HEAD
                     certificateArgs,
+=======
+                    certificateArgs.Properties,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     RecoveryServicesClient.GetRequestHeaders()).Result.Body;
                 WriteDebug(string.Format(CultureInfo.InvariantCulture, Resources.UploadedCertToIdmgmt));
 
@@ -667,7 +678,12 @@ namespace Microsoft.Azure.Commands.RecoveryServices
                         },
                         ChannelIntegrityKey = RecoveryServicesClient.GetCurrentVaultChannelIntegrityKey(),
                         SiteId = asrSite.ID ?? String.Empty,
+<<<<<<< HEAD
                         SiteName = asrSite.Name ?? String.Empty
+=======
+                        SiteName = asrSite.Name ?? String.Empty,
+                        PrivateEndpointStateForSiteRecovery = Vault.Properties.PrivateEndpointStateForSiteRecovery
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     };
 
                     var serializer = new DataContractSerializer(typeof(RSVaultAsrCreds));

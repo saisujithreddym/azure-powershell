@@ -131,6 +131,15 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         public string RecoveryAvailabilitySet { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///     Gets or sets the proximity placement group Id for replication protected item after failover.
+        /// </summary>
+        [Parameter]
+        public string RecoveryProximityPlacementGroupId { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///     Gets or sets the availability set for replication protected item after failover.
         /// </summary>
         [Parameter]
@@ -271,6 +280,10 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                     string.IsNullOrEmpty(this.PrimaryNic) &&
                     this.UseManagedDisk == null &&
                     this.IsParameterBound(c => c.RecoveryAvailabilitySet) &&
+<<<<<<< HEAD
+=======
+                    this.IsParameterBound(c => c.RecoveryProximityPlacementGroupId) &&
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     string.IsNullOrEmpty(this.RecoveryCloudServiceId) &&
                     string.IsNullOrEmpty(this.RecoveryResourceGroupId) &&
                     string.IsNullOrEmpty(this.LicenseType) &&
@@ -324,6 +337,10 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                 var recoveryCloudServiceId = this.RecoveryCloudServiceId;
                 var useManagedDisk = this.UseManagedDisk;
                 var availabilitySetId = this.RecoveryAvailabilitySet;
+<<<<<<< HEAD
+=======
+                var proximityPlacementGroupId = this.RecoveryProximityPlacementGroupId;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 var primaryNic = this.PrimaryNic;
                 var diskIdToDiskEncryptionMap = this.DiskIdToDiskEncryptionSetMap;
                 var tfoNetworkId = string.Empty;
@@ -502,6 +519,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                         vmRecoveryNetworkId = providerSpecificDetails.SelectedRecoveryAzureNetworkId;
                     }
 
+<<<<<<< HEAD
+=======
+                    proximityPlacementGroupId = this.IsParameterBound(c => c.RecoveryProximityPlacementGroupId)
+                       ? this.RecoveryProximityPlacementGroupId
+                       : providerSpecificDetails.RecoveryProximityPlacementGroupId;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     if (!this.MyInvocation.BoundParameters.ContainsKey(
                             Utilities.GetMemberName(() => this.RecoveryCloudServiceId)))
                     {
@@ -555,7 +579,16 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                                     managedDisk.RecoveryTargetDiskAccountType,
                                     managedDisk.RecoveryReplicaDiskAccountType,
                                     failoverDiskName: managedDisk.FailoverDiskName,
+<<<<<<< HEAD
                                     tfoDiskName: managedDisk.TfoDiskName));
+=======
+                                    tfoDiskName: managedDisk.TfoDiskName,
+                                    diskEncryptionInfo: Utilities.A2AEncryptionDetails(
+                                        managedDisk.DiskEncryptionSecretUrl,
+                                        managedDisk.DiskEncryptionVaultId,
+                                        managedDisk.KeyEncryptionKeyUrl,
+                                        managedDisk.KeyEncryptionVaultId)));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         }
                     }
 
@@ -563,10 +596,22 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                     {
                         RecoveryCloudServiceId = this.RecoveryCloudServiceId,
                         RecoveryResourceGroupId = this.RecoveryResourceGroupId,
+<<<<<<< HEAD
                         RecoveryBootDiagStorageAccountId = this.RecoveryBootDiagStorageAccountId,
                         ManagedDiskUpdateDetails = managedDiskUpdateDetails,
                         DiskEncryptionInfo = this.A2AEncryptionDetails(provider),
                         TfoAzureVMName = this.TfoAzureVMName
+=======
+                        RecoveryProximityPlacementGroupId = this.RecoveryProximityPlacementGroupId,
+                        RecoveryBootDiagStorageAccountId = this.RecoveryBootDiagStorageAccountId,
+                        ManagedDiskUpdateDetails = managedDiskUpdateDetails,
+                        TfoAzureVMName = this.TfoAzureVMName,
+                        DiskEncryptionInfo = Utilities.A2AEncryptionDetails(
+                            this.DiskEncryptionSecretUrl,
+                            this.DiskEncryptionVaultId,
+                            this.KeyEncryptionKeyUrl,
+                            this.KeyEncryptionVaultId)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     };
 
                     if (this.ASRVMNicConfiguration != null &&

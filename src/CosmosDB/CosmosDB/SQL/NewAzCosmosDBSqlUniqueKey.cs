@@ -22,13 +22,29 @@ namespace Microsoft.Azure.Commands.CosmosDB
     public class NewAzCosmosDBSqlUniqueKey : AzureCosmosDBCmdletBase
     {
         [Parameter(Mandatory = true, HelpMessage = Constants.UniqueKeyPathHelpMessage)]
+<<<<<<< HEAD
+=======
+        [ValidateNotNullOrEmpty]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string[] Path { get; set; }
 
         public override void ExecuteCmdlet()
         {
+<<<<<<< HEAD
             PSSqlUniqueKey uniqueKey = new PSSqlUniqueKey(Path);
+=======
+            PSSqlUniqueKey uniqueKey = new PSSqlUniqueKey
+            {
+                Paths = Path
+            };
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             WriteObject(uniqueKey);
             return;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

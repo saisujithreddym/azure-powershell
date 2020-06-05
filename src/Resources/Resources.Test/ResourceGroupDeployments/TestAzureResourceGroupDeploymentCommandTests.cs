@@ -80,9 +80,15 @@ namespace Microsoft.Azure.Commands.Resources.Test.Resources
                 }
             };
             resourcesClientMock.Setup(f => f.ValidateDeployment(
+<<<<<<< HEAD
                 It.IsAny<PSDeploymentCmdletParameters>(), DeploymentMode.Incremental))
                 .Returns(expected)
                 .Callback((PSDeploymentCmdletParameters p, DeploymentMode m) => { actualParameters = p; m = DeploymentMode.Incremental; });
+=======
+                It.IsAny<PSDeploymentCmdletParameters>()))
+                .Returns(expected)
+                .Callback((PSDeploymentCmdletParameters p) => { actualParameters = p; });
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             cmdlet.ResourceGroupName = resourceGroupName;
             cmdlet.TemplateFile = expectedParameters.TemplateFile;

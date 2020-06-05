@@ -50,6 +50,12 @@ Get the details of the API Version Sets
 ### [Get-AzApiManagementAuthorizationServer](Get-AzApiManagementAuthorizationServer.md)
 Gets an API Management authorization server.
 
+<<<<<<< HEAD
+=======
+### [Get-AzApiManagementAuthorizationServerClientSecret](Get-AzApiManagementAuthorizationServerClientSecret.md)
+Gets an API Management authorization server client secret.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzApiManagementBackend](Get-AzApiManagementBackend.md)
 Get the details of the Backend.
 
@@ -68,15 +74,36 @@ Gets all or specific API management groups.
 ### [Get-AzApiManagementIdentityProvider](Get-AzApiManagementIdentityProvider.md)
 Get the identity provider configuration details.
 
+<<<<<<< HEAD
 ### [Get-AzApiManagementLogger](Get-AzApiManagementLogger.md)
 Gets API Management Logger objects.
 
+=======
+### [Get-AzApiManagementIdentityProviderClientSecret](Get-AzApiManagementIdentityProviderClientSecret.md)
+Get the identity provider client secret.
+
+### [Get-AzApiManagementLogger](Get-AzApiManagementLogger.md)
+Gets API Management Logger objects.
+
+### [Get-AzApiManagementNamedValue](Get-AzApiManagementNamedValue.md)
+Gets a list or a particular Named Value.
+
+### [Get-AzApiManagementNamedValueSecretValue](Get-AzApiManagementNamedValueSecretValue.md)
+Gets a secret value of the particular Named Value.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzApiManagementNetworkStatus](Get-AzApiManagementNetworkStatus.md)
 Gets the Connectivity Status to the external resources on which the Api Management service depends from inside the Cloud Service. This also returns the DNS Servers as visible to the CloudService.
 
 ### [Get-AzApiManagementOpenIdConnectProvider](Get-AzApiManagementOpenIdConnectProvider.md)
 Gets OpenID Connect providers.
 
+<<<<<<< HEAD
+=======
+### [Get-AzApiManagementOpenIdConnectProviderClientSecret](Get-AzApiManagementOpenIdConnectProviderClientSecret.md)
+Gets OpenID Connect provider client secret.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzApiManagementOperation](Get-AzApiManagementOperation.md)
 Gets a list or a specified API Operation.
 
@@ -86,21 +113,42 @@ Gets the specified scope policy.
 ### [Get-AzApiManagementProduct](Get-AzApiManagementProduct.md)
 Gets a list or a particular product.
 
+<<<<<<< HEAD
 ### [Get-AzApiManagementProperty](Get-AzApiManagementProperty.md)
 Gets a list or a particular Property (Named-Value).
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzApiManagementSsoToken](Get-AzApiManagementSsoToken.md)
 Gets a link with an SSO token to a deployed management portal of an API Management service.
 
 ### [Get-AzApiManagementSubscription](Get-AzApiManagementSubscription.md)
 Gets subscriptions.
 
+<<<<<<< HEAD
 ### [Get-AzApiManagementTenantAccess](Get-AzApiManagementTenantAccess.md)
 Gets the access configuration for a tenant.
 
 ### [Get-AzApiManagementTenantGitAccess](Get-AzApiManagementTenantGitAccess.md)
 Gets the Git access configuration for a tenant.
 
+=======
+### [Get-AzApiManagementSubscriptionKey](Get-AzApiManagementSubscriptionKey.md)
+Gets subscription keys.
+
+### [Get-AzApiManagementTenantAccess](Get-AzApiManagementTenantAccess.md)
+Gets the access configuration for a tenant.
+
+### [Get-AzApiManagementTenantAccessSecret](Get-AzApiManagementTenantAccessSecret.md)
+Gets the access configuration keys for a tenant.
+
+### [Get-AzApiManagementTenantGitAccess](Get-AzApiManagementTenantGitAccess.md)
+Gets the Git access configuration for a tenant.
+
+### [Get-AzApiManagementTenantGitAccessSecret](Get-AzApiManagementTenantGitAccessSecret.md)
+Gets the Git access configuration keys for a tenant.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzApiManagementTenantSyncState](Get-AzApiManagementTenantSyncState.md)
 Gets the status of the most recent synchronization between the configuration database and the Git repository.
 
@@ -173,6 +221,12 @@ Creates a new Identity Provider configuration.
 ### [New-AzApiManagementLogger](New-AzApiManagementLogger.md)
 Creates an API Management Logger.
 
+<<<<<<< HEAD
+=======
+### [New-AzApiManagementNamedValue](New-AzApiManagementNamedValue.md)
+Creates new Named Value.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [New-AzApiManagementOpenIdConnectProvider](New-AzApiManagementOpenIdConnectProvider.md)
 Creates an OpenID Connect provider.
 
@@ -185,9 +239,12 @@ Create Diagnostic settings for incoming/outgoing HTTP messages to the Gateway.
 ### [New-AzApiManagementProduct](New-AzApiManagementProduct.md)
 Creates an API Management product.
 
+<<<<<<< HEAD
 ### [New-AzApiManagementProperty](New-AzApiManagementProperty.md)
 Creates a new Property.
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [New-AzApiManagementRegion](New-AzApiManagementRegion.md)
 Creates an instance of PsApiManagementRegion.
 
@@ -260,6 +317,12 @@ Removes an existing Identity Provider Configuration.
 ### [Remove-AzApiManagementLogger](Remove-AzApiManagementLogger.md)
 Removes an API Management Logger.
 
+<<<<<<< HEAD
+=======
+### [Remove-AzApiManagementNamedValue](Remove-AzApiManagementNamedValue.md)
+Removes an API Management Named Value.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Remove-AzApiManagementOpenIdConnectProvider](Remove-AzApiManagementOpenIdConnectProvider.md)
 Removes an OpenID Connect provider.
 
@@ -275,9 +338,12 @@ Removes an existing API Management product.
 ### [Remove-AzApiManagementProductFromGroup](Remove-AzApiManagementProductFromGroup.md)
 Removes a product from a group.
 
+<<<<<<< HEAD
 ### [Remove-AzApiManagementProperty](Remove-AzApiManagementProperty.md)
 Removes an API Management Property.
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Remove-AzApiManagementRegion](Remove-AzApiManagementRegion.md)
 Removes an existing deployment region from PsApiManagement instance.
 
@@ -332,6 +398,12 @@ Updates the Configuration of an existing Identity Provider.
 ### [Set-AzApiManagementLogger](Set-AzApiManagementLogger.md)
 Modifies an API Management Logger.
 
+<<<<<<< HEAD
+=======
+### [Set-AzApiManagementNamedValue](Set-AzApiManagementNamedValue.md)
+Modifies an API Management Named Value.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Set-AzApiManagementOpenIdConnectProvider](Set-AzApiManagementOpenIdConnectProvider.md)
 Modifies an OpenID Connect provider.
 
@@ -344,9 +416,12 @@ Sets the specified scope policy for API Management.
 ### [Set-AzApiManagementProduct](Set-AzApiManagementProduct.md)
 Sets the API Management product details.
 
+<<<<<<< HEAD
 ### [Set-AzApiManagementProperty](Set-AzApiManagementProperty.md)
 Modifies an API Management Property.
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Set-AzApiManagementSubscription](Set-AzApiManagementSubscription.md)
 Sets existing subscription details.
 

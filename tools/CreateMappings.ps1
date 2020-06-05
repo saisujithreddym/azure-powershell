@@ -16,7 +16,11 @@ $results = @{};
 $warnings = @();
 
 # Find all cmdlet names by help file names in the repository.
+<<<<<<< HEAD
 $cmdlets = Get-ChildItem $RootPath -Recurse | Where-Object { $_.FullName -cmatch ".*\\help\\.*-.*.md" -and $_.Fullname -notlike "*Stack*" };
+=======
+$cmdlets = Get-ChildItem $RootPath -Recurse | Where-Object { $_.FullName -cmatch ".*\\help\\.*-.*.md" -and ($_.FullName -notlike "*Stack*" -or $_.FullName -like "*StackEdge*") };
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 $k = 0;
 $cmdlets | ForEach-Object {

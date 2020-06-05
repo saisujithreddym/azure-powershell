@@ -45,6 +45,17 @@ namespace Microsoft.Azure.Commands.Attestation.Test.ScenarioTests
         {
             AttestationController.NewInstance.RunPowerShellTest(_logger, "Test-CreateAttestationWithPolicySigningCertificate");
         }
+<<<<<<< HEAD
+=======
+
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestCreateAttestationWithTags()
+        {
+            AttestationController.NewInstance.RunPowerShellTest(_logger, "Test-CreateAttestationWithTags");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #endregion
 
         #region Get-AzureRmAttestation

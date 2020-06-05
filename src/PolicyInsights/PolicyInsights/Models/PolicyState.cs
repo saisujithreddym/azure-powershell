@@ -178,6 +178,24 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Models
         public IList<string> PolicyDefinitionGroupNames { get; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets the version of the policy definition.
+        /// </summary>
+        public string PolicyDefinitionVersion { get; }
+
+        /// <summary>
+        /// Gets the version of the policy set definition.
+        /// </summary>
+        public string PolicySetDefinitionVersion { get; }
+
+        /// <summary>
+        /// Gets the version of the policy assignment.
+        /// </summary>
+        public string PolicyAssignmentVersion { get; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Initializes a new instance of the <see cref="PolicyState" /> class.
         /// </summary>
         /// <param name="policyState">Policy state.</param>
@@ -217,6 +235,12 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Models
             this.ManagementGroupIds = policyState.ManagementGroupIds;
             this.PolicyDefinitionReferenceId = policyState.PolicyDefinitionReferenceId;
             this.ComplianceState = policyState.ComplianceState;
+<<<<<<< HEAD
+=======
+            this.PolicyDefinitionVersion = policyState.PolicyDefinitionVersion;
+            this.PolicySetDefinitionVersion = policyState.PolicySetDefinitionVersion;
+            this.PolicyAssignmentVersion = policyState.PolicyAssignmentVersion;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (policyState.PolicyEvaluationDetails != null)
             {

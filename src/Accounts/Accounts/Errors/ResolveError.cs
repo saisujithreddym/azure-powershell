@@ -17,6 +17,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Commands.Profile.Common;
+using Microsoft.Azure.Commands.Profile.Properties;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Collections;
 using Microsoft.Azure.Commands.ResourceManager.Common;
 using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
@@ -79,6 +84,13 @@ namespace Microsoft.Azure.Commands.Profile.Errors
                     HandleError(record);
                 }
             }
+<<<<<<< HEAD
+=======
+            var informationMessage = new HostInformationMessage();
+            informationMessage.Message = $"{Environment.NewLine}{AzureProfileConstants.AzurePowerShellFeedbackMessage}{Environment.NewLine}";
+            informationMessage.NoNewLine = false;
+            WriteInformation(informationMessage, new string[] { "PSHOST" });
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         private IEnumerable<ErrorRecord> GetErrorVariable()

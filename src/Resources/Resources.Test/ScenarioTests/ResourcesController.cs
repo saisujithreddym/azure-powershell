@@ -49,6 +49,11 @@ namespace Microsoft.Azure.Commands.Resources.Test.ScenarioTests
 
         public ResourceManagementClient ResourceManagementClient { get; private set; }
 
+<<<<<<< HEAD
+=======
+        public DeploymentScriptsClient DeploymentScriptsClient { get; private set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public FeatureClient FeatureClient { get; private set; }
 
         public Internal.Subscriptions.SubscriptionClient SubscriptionClient { get; private set; }
@@ -143,6 +148,10 @@ namespace Microsoft.Azure.Commands.Resources.Test.ScenarioTests
             GraphClient = GetGraphClient(context);
             ManagementGroupsApiClient = GetManagementGroupsApiClient(context);
             FeatureClient = GetFeatureClient(context);
+<<<<<<< HEAD
+=======
+            DeploymentScriptsClient = GetDeploymentScriptsClient(context);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var testEnvironment = TestEnvironmentFactory.GetTestEnvironment();
             var credentials = testEnvironment.TokenInfo[TokenAudience.Management];
             HttpClientHelperFactory.Instance = new TestHttpClientHelperFactory(credentials);
@@ -152,7 +161,12 @@ namespace Microsoft.Azure.Commands.Resources.Test.ScenarioTests
                 AuthorizationManagementClient,
                 GraphClient,
                 FeatureClient,
+<<<<<<< HEAD
                 ManagementGroupsApiClient);
+=======
+                ManagementGroupsApiClient,
+                DeploymentScriptsClient);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         private GraphRbacManagementClient GetGraphClient(MockContext context)
@@ -211,6 +225,14 @@ namespace Microsoft.Azure.Commands.Resources.Test.ScenarioTests
             return context.GetServiceClient<ResourceManagementClient>(TestEnvironmentFactory.GetTestEnvironment());
         }
 
+<<<<<<< HEAD
+=======
+        private static DeploymentScriptsClient GetDeploymentScriptsClient(MockContext context)
+        {
+            return context.GetServiceClient<DeploymentScriptsClient>(TestEnvironmentFactory.GetTestEnvironment());
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private static Internal.Subscriptions.SubscriptionClient GetSubscriptionClient(MockContext context)
         {
             return context.GetServiceClient<Internal.Subscriptions.SubscriptionClient>(TestEnvironmentFactory.GetTestEnvironment());

@@ -40,7 +40,11 @@ namespace Microsoft.Azure.Commands.CosmosDB
 
         [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ParentObjectParameterSet, HelpMessage = Constants.AccountObjectHelpMessage)]
         [ValidateNotNull]
+<<<<<<< HEAD
         public PSDatabaseAccount InputObject { get; set; }
+=======
+        public PSDatabaseAccountGetResults InputObject { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         public override void ExecuteCmdlet()
         {

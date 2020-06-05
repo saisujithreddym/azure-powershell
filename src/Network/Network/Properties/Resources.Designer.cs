@@ -19,7 +19,11 @@ namespace Microsoft.Azure.Commands.Network.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+=======
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -554,7 +558,45 @@ namespace Microsoft.Azure.Commands.Network.Properties {
                 return ResourceManager.GetString("ExpressRouteGatewayRequiredToCreateExpressRouteConnection", resourceCulture);
             }
         }
+<<<<<<< HEAD
         
+=======
+
+        /// <summary>
+        ///   Looks up a localized string similar to A valid ExpressRouteGateway reference is required to create an ExpressRouteConnection..
+        /// </summary>
+        internal static string ExpressRoutePrivatePeeringNotFound
+        {
+            get
+            {
+                return ResourceManager.GetString("ExpressRoutePrivatePeeringNotFound", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to A valid ExpressRouteGateway reference is required to create an ExpressRouteConnection..
+        /// </summary>
+        internal static string ExpressRouteCircuitConnectionNotFound
+        {
+            get
+            {
+                return ResourceManager.GetString("ExpressRouteCircuitConnectionNotFound", resourceCulture);
+            }
+        }
+
+
+        /// <summary>
+        ///   Looks up a localized string similar to A valid ExpressRouteGateway reference is required to create an ExpressRouteConnection..
+        /// </summary>
+        internal static string ExpressRouteCircuitConnectionAlreadyAdded
+        {
+            get
+            {
+                return ResourceManager.GetString("ExpressRouteCircuitConnectionAlreadyAdded", resourceCulture);
+            }
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <summary>
         ///   Looks up a localized string similar to The hub virtual network connection to modify could not be found..
         /// </summary>
@@ -601,6 +643,45 @@ namespace Microsoft.Azure.Commands.Network.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Invalid format type. Supported value is &apos;JSON&apos;..
+        /// </summary>
+        internal static string InvalidFlowLogFormatType {
+            get {
+                return ResourceManager.GetString("InvalidFlowLogFormatType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid format version. Supported values are 0, 1 and 2..
+        /// </summary>
+        internal static string InvalidFlowLogFormatVersion {
+            get {
+                return ResourceManager.GetString("InvalidFlowLogFormatVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Provided flowLog resourceId is invalid..
+        /// </summary>
+        internal static string InvalidFlowLogResourceId {
+            get {
+                return ResourceManager.GetString("InvalidFlowLogResourceId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Fqdn specified is invalid..
+        /// </summary>
+        internal static string InvalidFqdn {
+            get {
+                return ResourceManager.GetString("InvalidFqdn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Invalid HTTP request header in HTTPConfiguration. Both name and value should be populated..
         /// </summary>
         internal static string InvalidHTTPRequestHeader {
@@ -682,6 +763,18 @@ namespace Microsoft.Azure.Commands.Network.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Number of days in retention policy should be greater than 0..
+        /// </summary>
+        internal static string InvalidRetentionPolicyDaysValue {
+            get {
+                return ResourceManager.GetString("InvalidRetentionPolicyDaysValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to RoundTripTimeMs for success threshold should be a positive value. The specified value is invalid..
         /// </summary>
         internal static string InvalidRoundtripTimeMs {
@@ -700,7 +793,38 @@ namespace Microsoft.Azure.Commands.Network.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to WorkspaceResourceId specified in connection monitor output is not a valid resource Id of Log analytics workspace..
+=======
+        ///   Looks up a localized string similar to StorageId specified in flow log is not a valid ID of storage account..
+        /// </summary>
+        internal static string InvalidStorageId {
+            get {
+                return ResourceManager.GetString("InvalidStorageId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TargetResourceId specified in flow log is not a valid resource ID of Network security group..
+        /// </summary>
+        internal static string InvalidTargetResourceId {
+            get {
+                return ResourceManager.GetString("InvalidTargetResourceId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TrafficAnalyticsInterval is invalid. Supported values are 10 and 60..
+        /// </summary>
+        internal static string InvalidTrafficAnalyticsInterval {
+            get {
+                return ResourceManager.GetString("InvalidTrafficAnalyticsInterval", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TrafficAnalyticsWorkspaceResourceId specified in flow log is not a valid ID of LocAnalytics workspace..
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         internal static string InvalidWorkspaceResourceId {
             get {
@@ -1276,6 +1400,18 @@ namespace Microsoft.Azure.Commands.Network.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Workspace resourceID should be provided if traffic analytics is enabled..
+        /// </summary>
+        internal static string TrafficAnalyticsWorkspaceResourceIdIsMissing {
+            get {
+                return ResourceManager.GetString("TrafficAnalyticsWorkspaceResourceIdIsMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Please check the availability of UltraPerformance gateway on https://azure.microsoft.com/en-us/documentation/articles/expressroute-about-virtual-network-gateways/. You will be billed for this gateway once this command succeeds..
         /// </summary>
         internal static string UltraPerformaceGatewayWarning {

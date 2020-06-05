@@ -24,7 +24,11 @@ using Microsoft.Azure.Management.CosmosDB.Models;
 
 namespace Microsoft.Azure.Commands.CosmosDB
 {
+<<<<<<< HEAD
     [Cmdlet(VerbsCommon.Get, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBSqlDatabase", DefaultParameterSetName = NameParameterSet), OutputType(typeof(PSSqlContainerGetResults), typeof(PSThroughputSettingsGetResults))]
+=======
+    [Cmdlet(VerbsCommon.Get, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBSqlDatabase", DefaultParameterSetName = NameParameterSet), OutputType(typeof(PSSqlContainerGetResults))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class GetAzCosmosDBSqlDatabase : AzureCosmosDBCmdletBase
     {
         [Parameter(Mandatory = true, ParameterSetName = NameParameterSet, HelpMessage = Constants.ResourceGroupNameHelpMessage)]
@@ -40,6 +44,7 @@ namespace Microsoft.Azure.Commands.CosmosDB
         [ValidateNotNullOrEmpty]
         public string Name { get; set; }
 
+<<<<<<< HEAD
         [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ObjectParameterSet, HelpMessage = Constants.AccountObjectHelpMessage)]
         [ValidateNotNull]
         public PSDatabaseAccount InputObject { get; set; }
@@ -52,6 +57,17 @@ namespace Microsoft.Azure.Commands.CosmosDB
             if(ParameterSetName.Equals(ObjectParameterSet, StringComparison.Ordinal))
             {
                 ResourceIdentifier resourceIdentifier = new ResourceIdentifier(InputObject.Id);
+=======
+        [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ParentObjectParameterSet, HelpMessage = Constants.AccountObjectHelpMessage)]
+        [ValidateNotNull]
+        public PSDatabaseAccountGetResults ParentObject { get; set; }
+
+        public override void ExecuteCmdlet()
+        {
+            if (ParameterSetName.Equals(ParentObjectParameterSet, StringComparison.Ordinal))
+            {
+                ResourceIdentifier resourceIdentifier = new ResourceIdentifier(ParentObject.Id);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 AccountName = resourceIdentifier.ResourceName;
                 ResourceGroupName = resourceIdentifier.ResourceGroupName;
             }
@@ -60,12 +76,15 @@ namespace Microsoft.Azure.Commands.CosmosDB
             {
                 SqlDatabaseGetResults sqlDatabaseGetResults = CosmosDBManagementClient.SqlResources.GetSqlDatabaseWithHttpMessagesAsync(ResourceGroupName, AccountName, Name).GetAwaiter().GetResult().Body;
                 WriteObject(new PSSqlDatabaseGetResults(sqlDatabaseGetResults));
+<<<<<<< HEAD
 
                 if (Detailed)
                 {
                     ThroughputSettingsGetResults throughputSettingsGetResults = CosmosDBManagementClient.SqlResources.GetSqlDatabaseThroughputWithHttpMessagesAsync(ResourceGroupName, AccountName, Name).GetAwaiter().GetResult().Body;
                     WriteObject(throughputSettingsGetResults);
                 }
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             else
             {

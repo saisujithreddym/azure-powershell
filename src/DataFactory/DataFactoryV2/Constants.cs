@@ -138,6 +138,15 @@ namespace Microsoft.Azure.Commands.DataFactoryV2
 
         public const string HelpIntegrationRuntimePublicIP = "The static public IP addresses which the integration runtime will use.";
 
+<<<<<<< HEAD
+=======
+        public const string HelpIntegrationRuntimeDataFlowCoreCount = "Core count of the data flow cluster which will execute data flow job.";
+
+        public const string HelpIntegrationRuntimeDataFlowComputeType = "Compute type of the data flow cluster which will execute data flow job.";
+
+        public const string HelpIntegrationRuntimeDataFlowTimeToLive = "Time to live (in minutes) setting of the data flow cluster which will execute data flow job.";
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public const string HelpIntegrationRuntimeSetupScriptContainerSasUri = "The SAS URI of the Azure blob container that contains the custom setup script.";
 
         public const string HelpIntegrationRuntimeEdition = "The edition for SSIS integration runtime which could be Standard or Enterprise, default is Standard if it is not specified.";
@@ -182,6 +191,17 @@ namespace Microsoft.Azure.Commands.DataFactoryV2
 
         public const string HelpParameterFileForRun = "The name of the file with parameters for pipeline run.";
 
+<<<<<<< HEAD
+=======
+        public const string HelpReferencePipelineRunIdForRun = "The pipeline run ID for rerun. If run ID is specified, the parameters of the specified run will be used to create a new run.";
+
+        public const string HelpIsRecoveryForRun = "Recovery mode flag. If recovery mode is set to true, the specified referenced pipeline run and the new run will be grouped under the same groupId.";
+
+        public const string HelpStartActivityNameForRun = "In recovery mode, the rerun will start from this activity. If not specified, all activities will run.";
+
+        public const string HelpStartFromFailureForRun = "Start rerun from failed activities flag. In recovery mode, if specified, the rerun will start from failed activities.";
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public const string HelpQueryParametersForRun = "Query parameters for pipeline run.";
 
         public const string HelpRunStartedAfter = "The time at or after which the pipeline run started to execute in ISO8601 format.";

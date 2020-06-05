@@ -17,7 +17,11 @@ Install-Module -Name platyPS -Scope CurrentUser
 **Note:** this module will need to be installed from the [PowerShell Gallery](http://www.powershellgallery.com/). If, for some reason, this isn't a registered repository when running the `Get-PSRepository` cmdlet, then you will need to register it by running the following command:
 
 ```powershell
+<<<<<<< HEAD
 Register-PSRepository -Name PSGallery -SourceLocation https://www.powershellgallery.com/api/v2/
+=======
+Register-PSRepository -Default -InstallationPolicy Trusted
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## Using `platyPS`
@@ -68,7 +72,11 @@ Whenever the public interface for a cmdlet has changed, the corresponding markdo
 To update all of the markdown files for a single module, use the [`Update-MarkdownHelpModule`](https://github.com/PowerShell/platyPS/blob/master/docs/Update-MarkdownHelpModule.md) cmdlet:
 
 ```powershell
+<<<<<<< HEAD
 $PathToModuleManifest = "../../<module.psd1" # Full path to the module manifest that you have updated
+=======
+$PathToModuleManifest = "../../<module>.psd1" # Full path to the module manifest that you have updated
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Import-Module -Name $PathToModuleManifest
 
 $PathToHelpFolder = "../../help" # Full path to help folder containing markdown files to be updated

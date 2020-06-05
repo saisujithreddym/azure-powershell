@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-AzNetworkWatcherConnectionMonitorTestGroupObject
 
 ## SYNOPSIS
+<<<<<<< HEAD
 Create a connection monitro test group.
+=======
+Create a connection monitor test group.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## SYNTAX
 

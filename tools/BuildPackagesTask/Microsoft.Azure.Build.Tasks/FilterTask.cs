@@ -77,6 +77,18 @@ namespace Microsoft.WindowsAzure.Build.Tasks
             }
             else
             {
+<<<<<<< HEAD
+=======
+                if (debug)
+                {
+                    Console.WriteLine("Debug: ModuleMapping.json");
+                    var lines = File.ReadAllLines(MapFilePath);
+                    foreach (var line in lines)
+                    {
+                        Console.WriteLine(line);
+                    }
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 var set = new HashSet<string>();
                 var dictionary = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(File.ReadAllText(MapFilePath));
                 foreach (KeyValuePair<string, string[]> pair in dictionary)

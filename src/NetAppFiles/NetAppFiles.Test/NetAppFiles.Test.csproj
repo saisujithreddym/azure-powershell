@@ -11,8 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.NetApp" Version="1.3.0" />
     <PackageReference Include="Microsoft.Azure.Management.Network" Version="19.18.0-preview" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.NetApp" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Azure.Management.Network" Version="20.0.1-preview" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </ItemGroup>
 
 </Project>

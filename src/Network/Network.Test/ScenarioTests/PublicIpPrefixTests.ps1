@@ -67,17 +67,28 @@ function Test-PublicIpPrefixCRUD
         Assert-AreEqual 30 $list[0].PrefixLength
         Assert-AreEqual "Succeeded" $list[0].ProvisioningState
 
+<<<<<<< HEAD
         $list = Get-AzPublicIpPrefix
         Assert-NotNull $list
 
         $list = Get-AzPublicIpPrefix -ResourceGroupName "*"
+=======
+        #$list = Get-AzPublicIpPrefix
+        #Assert-NotNull $list
+
+        <#$list = Get-AzPublicIpPrefix -ResourceGroupName "*"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         Assert-True { $list.Count -ge 0 }
 
         $list = Get-AzPublicIpPrefix -Name "*"
         Assert-True { $list.Count -ge 0 }
 
         $list = Get-AzPublicIpPrefix -ResourceGroupName "*" -Name "*"
+<<<<<<< HEAD
         Assert-True { $list.Count -ge 0 }
+=======
+        Assert-True { $list.Count -ge 0 }#>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         $expected.Tag = @{ testtag = "testvalSet" }
 

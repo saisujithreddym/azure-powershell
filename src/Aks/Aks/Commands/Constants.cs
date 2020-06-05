@@ -18,5 +18,17 @@ namespace Microsoft.Azure.Commands.Aks
     {
         public const string AksHelpUri = "https://docs.microsoft.com/en-us/powershell/module/?view=azurermps-5.0.0";
         public const string Name = "Name";
+<<<<<<< HEAD
+=======
+        public const string DefaultParameterSet = "defaultParameterSet";
+        public const string IdParameterSet = "IdParameterSet";
+        public const string GroupNameParameterSet = "GroupNameParameterSet";
+        public const string InputObjectParameterSet = "InputObjectParameterSet";
+        public const string NameParameterSet = "NameParameterSet";
+        public const string ParentNameParameterSet = "ParentNameParameterSet";
+        public const string ParentObjectParameterSet = "ParentObjectParameterSet";
+
+        public const string NodePool = "AksNodePool";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

@@ -142,7 +142,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
+<<<<<<< HEAD
 ### Microsoft.Azure.Storage.File.CloudFileShare
+=======
+### Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel.AzureStorageFileShare
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## NOTES
 

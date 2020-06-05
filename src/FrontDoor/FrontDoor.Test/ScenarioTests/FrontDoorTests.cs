@@ -12,7 +12,10 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.FrontDoor.Test.ScenarioTests.ScenarioTest;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.WindowsAzure.Commands.ScenarioTest;
 using Xunit;
 
@@ -49,12 +52,21 @@ namespace Microsoft.Azure.Commands.FrontDoor.Test.ScenarioTests.ScenarioTest
             TestController.NewInstance.RunPowerShellTest(_logger, "Test-FrontDoorCrudWithPiping");
         }
 
+<<<<<<< HEAD
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestFrontDoorEndpointCustomDomainHTTPSFrontDoor()
         {
             TestController.NewInstance.RunPowerShellTest(_logger, "Test-FrontDoorEndpointCustomDomainHTTPS-FrontDoor");
         }
+=======
+        //[Fact]
+        //[Trait(Category.AcceptanceType, Category.CheckIn)]
+        //public void TestFrontDoorEndpointCustomDomainHTTPSFrontDoor()
+        //{
+        //    TestController.NewInstance.RunPowerShellTest(_logger, "Test-FrontDoorEndpointCustomDomainHTTPS-FrontDoor");
+        //}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]

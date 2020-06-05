@@ -41,6 +41,11 @@ namespace Microsoft.Azure.Commands.Network.Models
 
         public PSPrivateLinkServiceConnectionState PrivateLinkServiceConnectionState { get; set; }
 
+<<<<<<< HEAD
+=======
+        public string GroupId { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string LinkIdentifier { get; set; }
 
         [JsonIgnore]

@@ -52,10 +52,17 @@ IPAddress             : 10.14.121.1
 AffinityId            : TVM:tvm-2316545714_1-20150725t213220z
 VirtualMachineSize    : standard_d1_v2
 TotalTasksRun         : 1
+<<<<<<< HEAD
 StartTaskInformation  : 
 RecentTasks           : {}
 StartTask             : 
 CertificateReferences : 
+=======
+StartTaskInformation  :
+RecentTasks           : {}
+StartTask             :
+CertificateReferences :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Errors                :
 ```
 
@@ -75,11 +82,19 @@ IPAddress             : 10.14.121.1
 AffinityId            : TVM:tvm-2316545714_1-20150725t213220z
 VirtualMachineSize    : standard_d1_v2
 TotalTasksRun         : 1
+<<<<<<< HEAD
 StartTaskInformation  : 
 RecentTasks           : {}
 StartTask             : 
 CertificateReferences : 
 Errors                : 
+=======
+StartTaskInformation  :
+RecentTasks           : {}
+StartTask             :
+CertificateReferences :
+Errors                :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Id                    : tvm-2316545714_2-20150726t172920z
 Url                   : https://cmdletexample.westus.batch.azure.com/pools/MyPool/nodes/tvm-2316545714_2-20150726t172920z
@@ -91,10 +106,17 @@ IPAddress             : 10.14.121.38
 AffinityId            : TVM:tvm-2316545714_2-20150726t172920z
 VirtualMachineSize    : standard_d1_v2
 TotalTasksRun         : 0
+<<<<<<< HEAD
 StartTaskInformation  : 
 RecentTasks           : 
 StartTask             : 
 CertificateReferences : 
+=======
+StartTaskInformation  :
+RecentTasks           :
+StartTask             :
+CertificateReferences :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Errors                :
 ```
 
@@ -114,11 +136,19 @@ IPAddress             : 10.14.121.1
 AffinityId            : TVM:tvm-2316545714_1-20150725t213220z
 VirtualMachineSize    : standard_d1_v2
 TotalTasksRun         : 1
+<<<<<<< HEAD
 StartTaskInformation  : 
 RecentTasks           : {}
 StartTask             : 
 CertificateReferences : 
 Errors                : 
+=======
+StartTaskInformation  :
+RecentTasks           : {}
+StartTask             :
+CertificateReferences :
+Errors                :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 
 Id                    : tvm-2316545714_2-20150726t172920z
@@ -132,10 +162,17 @@ IPAddress             : 10.14.121.38
 AffinityId            : TVM:tvm-2316545714_2-20150726t172920z
 VirtualMachineSize    : standard_d1_v2
 TotalTasksRun         : 0
+<<<<<<< HEAD
 StartTaskInformation  : 
 RecentTasks           : 
 StartTask             : 
 CertificateReferences : 
+=======
+StartTaskInformation  :
+RecentTasks           :
+StartTask             :
+CertificateReferences :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Errors                :
 ```
 
@@ -304,6 +341,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Restart-AzBatchComputeNode](./Restart-AzBatchComputeNode.md)
 
+<<<<<<< HEAD
 [Azure Batch Cmdlets](./Az.Batch.md)
 
 
+=======
+[Azure Batch Cmdlets](/powershell/module/Az.Batch/)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

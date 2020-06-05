@@ -45,19 +45,32 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         /// state</param>
         /// <param name="events">The list of events for peering service
         /// prefix</param>
+<<<<<<< HEAD
+=======
+        /// <param name="peeringServicePrefixKey">The peering service prefix
+        /// key</param>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <param name="provisioningState">The provisioning state of the
         /// resource. Possible values include: 'Succeeded', 'Updating',
         /// 'Deleting', 'Failed'</param>
         /// <param name="name">The name of the resource.</param>
         /// <param name="id">The ID of the resource.</param>
         /// <param name="type">The type of the resource.</param>
+<<<<<<< HEAD
         public PSPeeringServicePrefix(string prefix = default(string), string prefixValidationState = default(string), string learnedType = default(string), string errorMessage = default(string), IList<PSPeeringServicePrefixEvent> events = default(IList<PSPeeringServicePrefixEvent>), string provisioningState = default(string), string name = default(string), string id = default(string), string type = default(string))
+=======
+        public PSPeeringServicePrefix(string prefix = default(string), string prefixValidationState = default(string), string learnedType = default(string), string errorMessage = default(string), IList<PSPeeringServicePrefixEvent> events = default(IList<PSPeeringServicePrefixEvent>), string peeringServicePrefixKey = default(string), string provisioningState = default(string), string name = default(string), string id = default(string), string type = default(string))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             Prefix = prefix;
             PrefixValidationState = prefixValidationState;
             LearnedType = learnedType;
             ErrorMessage = errorMessage;
             Events = events;
+<<<<<<< HEAD
+=======
+            PeeringServicePrefixKey = peeringServicePrefixKey;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             ProvisioningState = provisioningState;
             Name = name;
             Id = id;
@@ -103,6 +116,15 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         public IList<PSPeeringServicePrefixEvent> Events { get; private set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or sets the peering service prefix key
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.peeringServicePrefixKey")]
+        public string PeeringServicePrefixKey { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Gets the provisioning state of the resource. Possible values
         /// include: 'Succeeded', 'Updating', 'Deleting', 'Failed'
         /// </summary>

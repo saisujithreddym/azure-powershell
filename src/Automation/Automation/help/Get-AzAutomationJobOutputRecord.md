@@ -23,7 +23,10 @@ The **Get-AzAutomationJobOutputRecord** cmdlet gets the full output of an Automa
 Although the **Get-AzAutomationJobOutput** cmdlet lists one or more job output records, it returns only a summary, as a string, of the value of any output record.
 It does not return the full value of an output record's outputted value in its original type.
 In addition, the summary has a maximum length, which the full value that this cmdlet outputs may exceed.
+<<<<<<< HEAD
 Unlike **Get-AzAutomationJobOutput**, this cmdlet returns the full value in its originally outputted type, for any output record's outputted value.
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 

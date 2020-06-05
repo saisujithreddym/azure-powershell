@@ -29,8 +29,13 @@ The **Remove-AzWebAppBackup** cmdlet removes the specified backup of an Azure We
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### 1:
 ```
+=======
+### Example 1
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\>Remove-AzWebAppBackup -ResourceGroupName "Default-Web-WestUS" -Name "WebAppStandard" -BackupId "12345"
 ```
 

@@ -11,12 +11,24 @@ Locale: en-US
 The topics in this section document the Azure PowerShell cmdlets for Azure NetApp Files in the Azure Resource Manager (ARM) framework. The cmdlets exist in the Microsoft.Azure.Commands.NetAppFiles namespace.
 
 ## Az.NetAppFiles Cmdlets
+<<<<<<< HEAD
+=======
+### [Approve-AzNetAppFilesReplication](Approve-AzNetAppFilesReplication.md)
+Approve/Authorize replication connection on the source volume
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzNetAppFilesAccount](Get-AzNetAppFilesAccount.md)
 Gets details of an Azure NetApp Files (ANF) account.
 
 ### [Get-AzNetAppFilesPool](Get-AzNetAppFilesPool.md)
 Gets details of an Azure NetApp Files (ANF) pool.
 
+<<<<<<< HEAD
+=======
+### [Get-AzNetAppFilesReplicationStatus](Get-AzNetAppFilesReplicationStatus.md)
+Get the status of the replication
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzNetAppFilesSnapshot](Get-AzNetAppFilesSnapshot.md)
 Gets details of an Azure NetApp Files (ANF) snapshot.
 
@@ -41,12 +53,19 @@ Deletes an Azure NetApp Files (ANF) account.
 ### [Remove-AzNetAppFilesPool](Remove-AzNetAppFilesPool.md)
 Deletes an Azure NetApp Files (ANF) pool.
 
+<<<<<<< HEAD
+=======
+### [Remove-AzNetAppFilesReplication](Remove-AzNetAppFilesReplication.md)
+Remove/Delete the replication connection on the destination volume, and send release to the source replication
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Remove-AzNetAppFilesSnapshot](Remove-AzNetAppFilesSnapshot.md)
 Deletes an Azure NetApp Files (ANF) snapshot.
 
 ### [Remove-AzNetAppFilesVolume](Remove-AzNetAppFilesVolume.md)
 Deletes an Azure NetApp Files (ANF) volume.
 
+<<<<<<< HEAD
 ### [Set-AzNetAppFilesAccount](Set-AzNetAppFilesAccount.md)
 Provide a full new dataset for an Azure NetApp Files (ANF) account.
 
@@ -58,4 +77,23 @@ Updates an Azure NetApp Files (ANF) pool.
 
 ### [Update-AzNetAppFilesVolume](Update-AzNetAppFilesVolume.md)
 Updates an Azure NetApp Files (ANF) volume.
+=======
+### [Resume-AzNetAppFilesReplication](Resume-AzNetAppFilesReplication.md)
+Resume/Resync the connection on the destination volume. If the operation is ran on the source volume it will reverse-resync the connection and sync from source to destination.
+
+### [Set-AzNetAppFilesAccount](Set-AzNetAppFilesAccount.md)
+Updates an Azure NetApp Files (ANF) account with the new data set. Useful for deletion of associated active directories.
+
+### [Suspend-AzNetAppFilesReplication](Suspend-AzNetAppFilesReplication.md)
+Suspend/break the replication connection on the destination volume
+
+### [Update-AzNetAppFilesAccount](Update-AzNetAppFilesAccount.md)
+Updates an Azure NetApp Files (ANF) account according to the optional modifiers provided.
+
+### [Update-AzNetAppFilesPool](Update-AzNetAppFilesPool.md)
+Updates an Azure NetApp Files (ANF) pool according to the optional modifiers provided.
+
+### [Update-AzNetAppFilesVolume](Update-AzNetAppFilesVolume.md)
+Updates an Azure NetApp Files (ANF) volume according to the optional modifiers provided.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 

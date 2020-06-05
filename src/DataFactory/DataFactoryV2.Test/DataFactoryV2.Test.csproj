@@ -11,7 +11,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.DataFactory" Version="4.7.0" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.DataFactory" Version="4.8.0" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     <PackageReference Include="Microsoft.DataTransfer.Gateway.Encryption" Version="3.11.6898.1" />
   </ItemGroup>
 

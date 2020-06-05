@@ -26,7 +26,11 @@ using System;
 
 namespace Microsoft.Azure.Commands.CosmosDB
 {
+<<<<<<< HEAD
     [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBAccount", DefaultParameterSetName = NameParameterSet, SupportsShouldProcess = true), OutputType(typeof(PSDatabaseAccount))]
+=======
+    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBAccount", DefaultParameterSetName = NameParameterSet, SupportsShouldProcess = true), OutputType(typeof(PSDatabaseAccountGetResults))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class UpdateAzCosmosDBAccount : AzureCosmosDBCmdletBase
     {
         [Parameter(Mandatory = true, ParameterSetName = NameParameterSet, HelpMessage = Constants.ResourceGroupNameHelpMessage)]
@@ -44,13 +48,18 @@ namespace Microsoft.Azure.Commands.CosmosDB
 
         [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ObjectParameterSet, HelpMessage = Constants.AccountObjectHelpMessage)]
         [ValidateNotNull]
+<<<<<<< HEAD
         public PSDatabaseAccount InputObject { get; set; }
+=======
+        public PSDatabaseAccountGetResults InputObject { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         [Parameter(Mandatory = false, HelpMessage = Constants.DefaultConsistencyLevelHelpMessage)]
         [PSArgumentCompleter("BoundedStaleness", "ConsistentPrefix", "Eventual", "Session", "Strong")]
         public string DefaultConsistencyLevel { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = Constants.EnableAutomaticFailoverHelpMessage)]
+<<<<<<< HEAD
         public bool EnableAutomaticFailover { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = Constants.EnableMultipleWriteLocationsHelpMessage)]
@@ -61,6 +70,18 @@ namespace Microsoft.Azure.Commands.CosmosDB
 
         [Parameter(Mandatory = false, HelpMessage = Constants.IpRangeFilterHelpMessage)]
         [ValidateNotNullOrEmpty]
+=======
+        public bool? EnableAutomaticFailover { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.EnableMultipleWriteLocationsHelpMessage)]
+        public bool? EnableMultipleWriteLocations { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.EnableVirtualNetworkHelpMessage)]
+        public bool? EnableVirtualNetwork { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.IpRangeFilterHelpMessage)]
+        [ValidateNotNull]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string[] IpRangeFilter { get; set; }
         
         [Parameter(Mandatory = false, HelpMessage = Constants.MaxStalenessIntervalInSecondsHelpMessage)]
@@ -81,6 +102,19 @@ namespace Microsoft.Azure.Commands.CosmosDB
         [ValidateNotNullOrEmpty]
         public PSVirtualNetworkRule[] VirtualNetworkRuleObject { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(Mandatory = false, HelpMessage = Constants.DisableKeyBasedMetadataWriteAccessHelpMessage)]
+        public bool? DisableKeyBasedMetadataWriteAccess { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.PublicNetworkAccessHelpMessage)]
+        [PSArgumentCompleter("Disabled", "Enabled")]
+        public string PublicNetworkAccess { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.KeyVaultUriHelpMessage)]
+        public string KeyVaultKeyUri { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = false, HelpMessage = Constants.AsJobHelpMessage)]
         public SwitchParameter AsJob { get; set; }
 
@@ -103,10 +137,38 @@ namespace Microsoft.Azure.Commands.CosmosDB
 
             DatabaseAccountGetResults readDatabase = CosmosDBManagementClient.DatabaseAccounts.GetWithHttpMessagesAsync(ResourceGroupName, Name).GetAwaiter().GetResult().Body;
 
+<<<<<<< HEAD
             DatabaseAccountUpdateParameters databaseAccountUpdateParameters = new DatabaseAccountUpdateParameters(locations: readDatabase.ReadLocations, location: readDatabase.WriteLocations.ElementAt(0).LocationName);
             databaseAccountUpdateParameters.EnableMultipleWriteLocations = EnableMultipleWriteLocations;
             databaseAccountUpdateParameters.IsVirtualNetworkFilterEnabled = EnableVirtualNetwork;
             databaseAccountUpdateParameters.EnableAutomaticFailover = EnableAutomaticFailover;
+=======
+            DatabaseAccountUpdateParameters databaseAccountUpdateParameters = new DatabaseAccountUpdateParameters(locations: readDatabase.Locations, location: readDatabase.WriteLocations.ElementAt(0).LocationName);
+            if (EnableMultipleWriteLocations != null)
+            {
+                databaseAccountUpdateParameters.EnableMultipleWriteLocations = EnableMultipleWriteLocations;
+            }
+            if (EnableVirtualNetwork != null)
+            {
+                databaseAccountUpdateParameters.IsVirtualNetworkFilterEnabled = EnableVirtualNetwork;
+            }
+            if (EnableAutomaticFailover != null)
+            {
+                databaseAccountUpdateParameters.EnableAutomaticFailover = EnableAutomaticFailover;
+            }
+            if (DisableKeyBasedMetadataWriteAccess != null)
+            {
+                databaseAccountUpdateParameters.DisableKeyBasedMetadataWriteAccess = DisableKeyBasedMetadataWriteAccess;
+            }
+            if (PublicNetworkAccess != null)
+            {
+                databaseAccountUpdateParameters.PublicNetworkAccess = PublicNetworkAccess;
+            }
+            if (KeyVaultKeyUri != null)
+            {
+                databaseAccountUpdateParameters.KeyVaultKeyUri = KeyVaultKeyUri;
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (!string.IsNullOrEmpty(DefaultConsistencyLevel))
             {
@@ -152,6 +214,7 @@ namespace Microsoft.Azure.Commands.CosmosDB
                 databaseAccountUpdateParameters.Tags = tags;
             }
 
+<<<<<<< HEAD
             if ( ( VirtualNetworkRule != null && VirtualNetworkRule.Length > 0) ||
                 (VirtualNetworkRuleObject != null && VirtualNetworkRuleObject.Length > 0))
             {
@@ -184,13 +247,42 @@ namespace Microsoft.Azure.Commands.CosmosDB
                     IpRangeFilterAsString = string.Concat(IpRangeFilterAsString, ",", IpRangeFilter[i]);
                 }
 
+=======
+            if (VirtualNetworkRule != null || VirtualNetworkRuleObject != null)
+            {
+                Collection<VirtualNetworkRule> virtualNetworkRule = new Collection<VirtualNetworkRule>();
+                if (VirtualNetworkRule != null && VirtualNetworkRule.Length > 0)
+                {
+                    foreach (string id in VirtualNetworkRule)
+                    {
+                        virtualNetworkRule.Add(new VirtualNetworkRule(id: id));
+                    }
+                }
+                if (VirtualNetworkRuleObject != null && VirtualNetworkRuleObject.Length > 0)
+                {
+                    foreach (PSVirtualNetworkRule psVirtualNetworkRule in VirtualNetworkRuleObject)
+                    {
+                        virtualNetworkRule.Add(PSVirtualNetworkRule.ToSDKModel(psVirtualNetworkRule));
+                    }
+                }
+                databaseAccountUpdateParameters.VirtualNetworkRules = virtualNetworkRule;
+            }
+
+            if (IpRangeFilter != null)
+            {
+                string IpRangeFilterAsString = IpRangeFilter?.Aggregate(string.Empty, (output, next) => string.Concat(output, (!string.IsNullOrWhiteSpace(output) && !string.IsNullOrWhiteSpace(next) ? "," : string.Empty), next)) ?? string.Empty;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 databaseAccountUpdateParameters.IpRangeFilter = IpRangeFilterAsString;
             }
 
             if (ShouldProcess(Name, "Updating Database Account"))
             {
                 DatabaseAccountGetResults cosmosDBAccount = CosmosDBManagementClient.DatabaseAccounts.UpdateWithHttpMessagesAsync(ResourceGroupName, Name, databaseAccountUpdateParameters).GetAwaiter().GetResult().Body;
+<<<<<<< HEAD
                 WriteObject(new PSDatabaseAccount(cosmosDBAccount));
+=======
+                WriteObject(new PSDatabaseAccountGetResults(cosmosDBAccount));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return;

@@ -31,6 +31,13 @@ namespace Microsoft.Azure.Commands.OperationalInsights
 
         public int? RetentionInDays { get; set; }
 
+<<<<<<< HEAD
+=======
+        public string PublicNetworkAccessForIngestion { get; set; }
+
+        public string PublicNetworkAccessForQuery { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public Action<bool, string, string, string, Action, Func<bool>> ConfirmAction { get; set; }
     }
 }

@@ -100,9 +100,16 @@ namespace Microsoft.Azure.Commands.DataFactoryV2
             return pipelines;
         }
 
+<<<<<<< HEAD
         public virtual string CreatePipelineRun(string resourceGroupName, string dataFactoryName, string pipelineName, Dictionary<string, object> paramDictionary)
         {
             CreateRunResponse response = this.DataFactoryManagementClient.Pipelines.CreateRun(resourceGroupName, dataFactoryName, pipelineName, parameters: paramDictionary);
+=======
+        public virtual string CreatePipelineRun(string resourceGroupName, string dataFactoryName, string pipelineName, Dictionary<string, object> paramDictionary, string referencePipelineRunId, bool? isRecovery, string startActivityName, bool? startFromFailure)
+        {
+            CreateRunResponse response = this.DataFactoryManagementClient.Pipelines.CreateRun(resourceGroupName, dataFactoryName, pipelineName, parameters: paramDictionary,
+                referencePipelineRunId: referencePipelineRunId, isRecovery: isRecovery, startActivityName: startActivityName, startFromFailure: startFromFailure);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return response.RunId;
         }

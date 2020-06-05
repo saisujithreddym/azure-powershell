@@ -104,6 +104,20 @@ Default value: None
 Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 
+<<<<<<< HEAD
+=======
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.PSDataShare
+Parameter Sets: ByObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ### -Name
 Azure data share name
@@ -119,6 +133,20 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 
+<<<<<<< HEAD
+=======
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ### -PassThru
 Return object (if specified).
@@ -134,6 +162,20 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 
+<<<<<<< HEAD
+=======
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ### -ResourceGroupName
 The resource group name of the azure data share account
@@ -149,6 +191,20 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 
+<<<<<<< HEAD
+=======
+```yaml
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ### -ResourceId
 The resource id of the Azure data share
@@ -164,6 +220,7 @@ Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 
+<<<<<<< HEAD
 
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
@@ -183,17 +240,38 @@ Accept wildcard characters: False
 ### -WhatIf
 Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
+=======
+```yaml
+Type: System.String
+Parameter Sets: ByResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -Confirm
+Prompts you for confirmation before running the cmdlet.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 yaml
 Type: SwitchParameter
 Parameter Sets: (All)
+<<<<<<< HEAD
 Aliases: wi
+=======
+Aliases: cf
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
+<<<<<<< HEAD
 ```
 
 ```yaml
@@ -217,12 +295,22 @@ Parameter Sets: ByFieldsParameterSet
 Aliases:
 
 Required: True
+=======
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -PassThru
 Return object (if specified).
 
@@ -230,12 +318,23 @@ Return object (if specified).
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
+=======
+### -WhatIf
+Shows what would happen if the cmdlet runs.
+The cmdlet is not run.
+
+yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
+<<<<<<< HEAD
 ```
 
 ### -ResourceGroupName
@@ -259,11 +358,21 @@ The resource id of the Azure data share
 ```yaml
 Type: System.String
 Parameter Sets: ByResourceIdParameterSet
+=======
+
+
+
+
+yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models.PSDataShare
+Parameter Sets: ByObjectParameterSet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
@@ -285,6 +394,10 @@ Accept wildcard characters: False
 
 ### -WhatIf
 Shows what would happen if the cmdlet runs. The cmdlet is not run.
+=======
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -299,7 +412,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

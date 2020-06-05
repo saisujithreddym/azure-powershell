@@ -23,9 +23,24 @@ Gets the Peering Resources for a subscription
 ### [Get-AzPeeringLocation](Get-AzPeeringLocation.md)
 Gets the Peering locations offered by Microsoft
 
+<<<<<<< HEAD
 ### [Get-AzPeeringService](Get-AzPeeringService.md)
 Get a list of peering service objects of a single object.
 
+=======
+### [Get-AzPeeringRegisteredAsn](Get-AzPeeringRegisteredAsn.md)
+Gets the registered ASN for internet exchange route server type peerings.
+
+### [Get-AzPeeringRegisteredPrefix](Get-AzPeeringRegisteredPrefix.md)
+Gets or lists the registered prefix for peerings.
+
+### [Get-AzPeeringService](Get-AzPeeringService.md)
+Get a list of peering service objects of a single object.
+
+### [Get-AzPeeringServiceCountry](Get-AzPeeringServiceCountry.md)
+Lists the countries available for peering service.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzPeeringServiceLocation](Get-AzPeeringServiceLocation.md)
 Gets a list of peering service locations offered by Microsoft.
 
@@ -38,6 +53,12 @@ Gets a list of peering service providers partnered with Microsoft.
 ### [New-AzPeerAsn](New-AzPeerAsn.md)
 Creates a new Peer ASN 
 
+<<<<<<< HEAD
+=======
+### [New-AzPeerAsnContactDetail](New-AzPeerAsnContactDetail.md)
+Creates an in memory contact detail for PeerAsn. 
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [New-AzPeering](New-AzPeering.md)
 Creates a new Peering ARM Resource
 
@@ -47,6 +68,15 @@ Creates a in memory PSObject to be used for creating or modifying a Peering.
 ### [New-AzPeeringExchangeConnectionObject](New-AzPeeringExchangeConnectionObject.md)
 Creates a in memory PSObject to be used for creating or modifying a Peering.
 
+<<<<<<< HEAD
+=======
+### [New-AzPeeringRegisteredAsn](New-AzPeeringRegisteredAsn.md)
+Create registered ASN for peering
+
+### [New-AzPeeringRegisteredPrefix](New-AzPeeringRegisteredPrefix.md)
+Create registered prefixes for peering objects.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [New-AzPeeringService](New-AzPeeringService.md)
 Creates a new peering service.
 
@@ -56,6 +86,18 @@ Creates a new peering service prefix
 ### [Remove-AzPeerAsn](Remove-AzPeerAsn.md)
 Remove Peer Asn
 
+<<<<<<< HEAD
+=======
+### [Remove-AzPeering](Remove-AzPeering.md)
+Delete or remove a peering. This will delete all child resources or alerting on the resource.
+
+### [Remove-AzPeeringRegisteredAsn](Remove-AzPeeringRegisteredAsn.md)
+Delete or remove a registered ASN from the parent peering resource.
+
+### [Remove-AzPeeringRegisteredPrefix](Remove-AzPeeringRegisteredPrefix.md)
+Delete or remove a registered prefix from the parent peering resource.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Remove-AzPeeringServicePrefix](Remove-AzPeeringServicePrefix.md)
 Removes a new peering service prefix
 
@@ -68,6 +110,15 @@ Sets or updates the Direct Connection information.
 ### [Set-AzPeeringExchangeConnectionObject](Set-AzPeeringExchangeConnectionObject.md)
 Sets or updates the Exchange Connection information. 
 
+<<<<<<< HEAD
+=======
+### [Set-AzPeeringRegisteredAsn](Set-AzPeeringRegisteredAsn.md)
+Sets or updates a registered ASN from the parent peering resource.
+
+### [Set-AzPeeringRegisteredPrefix](Set-AzPeeringRegisteredPrefix.md)
+Sets or updates a registered prefix from the parent peering resource.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Update-AzPeering](Update-AzPeering.md)
 Sets the Peering. Use this Command in conjunction with `Set-AzDirectPeeringConnectionObject` or `Set-AzExchangePeeringConnectionObject`.
 

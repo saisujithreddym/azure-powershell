@@ -43,7 +43,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         /// Gets or sets the aliases that are supported by this resource type.
         /// </summary>
         [Ps1Xml(Target = ViewControl.All, Position = 2)]
+<<<<<<< HEAD
         public IList<AliasType> Aliases { get; set; }
+=======
+        public IList<Alias> Aliases { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         /// <summary>Gets or sets the API version collection.</summary>
         [Ps1Xml(Target = ViewControl.List, Position = 3)]

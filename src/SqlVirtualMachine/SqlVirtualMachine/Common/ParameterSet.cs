@@ -21,6 +21,10 @@ namespace Microsoft.Azure.Commands.SqlVirtualMachine.Common
     {
         public const string ResourceId = "ResourceId";
         public const string InputObject = "InputObject";
+<<<<<<< HEAD
+=======
+        public const string SqlVMGroupObject = "SqlVmGroupObject";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public const string Name = "Name";
         public const string ParameterList = "ParamaterList";
 

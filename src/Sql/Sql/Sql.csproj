@@ -21,7 +21,11 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.Sql" Version="1.37.0-preview" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.Sql" Version="1.41.0-preview" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     <PackageReference Include="System.Security.Permissions" Version="4.5.0" />
   </ItemGroup>
 
@@ -44,4 +48,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+<<<<<<< HEAD
 </Project>
+=======
+</Project>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

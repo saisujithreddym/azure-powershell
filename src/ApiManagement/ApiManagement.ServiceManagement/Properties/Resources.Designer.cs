@@ -19,7 +19,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+=======
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -322,6 +326,18 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Creating Named Value.
+        /// </summary>
+        internal static string CreateNamedValue {
+            get {
+                return ResourceManager.GetString("CreateNamedValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Removing Diagnostic &quot;{0}&quot;..
         /// </summary>
         internal static string DiagnosticRemoveDescription {
@@ -394,6 +410,27 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Removing Named Value &quot;{0}&quot;.
+        /// </summary>
+        internal static string NamedValueRemoveDescription {
+            get {
+                return ResourceManager.GetString("NamedValueRemoveDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to remove Named Value &quot;{0}&quot;?.
+        /// </summary>
+        internal static string NamedValueRemoveWarning {
+            get {
+                return ResourceManager.GetString("NamedValueRemoveWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Removing OpenID Connect Provider &quot;{0}&quot;..
         /// </summary>
         internal static string OpenIdConnectProviderRemoveDescription {
@@ -466,6 +503,7 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to Removing Property &quot;{0}&quot;.
         /// </summary>
         internal static string PropertyRemoveDescription {
@@ -484,6 +522,8 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Properties {
         }
         
         /// <summary>
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Subscriptions to products which are deleted will be also be deleted..
         /// </summary>
         internal static string PublishTenantConfigurationDescription {
@@ -610,6 +650,18 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Set Named Value.
+        /// </summary>
+        internal static string SetNamedValue {
+            get {
+                return ResourceManager.GetString("SetNamedValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Set OpenIdConnectProvider.
         /// </summary>
         internal static string SetOpenIdConnectProvider {
@@ -637,6 +689,7 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to Set Property.
         /// </summary>
         internal static string SetProperty {
@@ -646,6 +699,8 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Properties {
         }
         
         /// <summary>
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Set Subscription.
         /// </summary>
         internal static string SetSubscription {

@@ -13,7 +13,11 @@
 // ----------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Aks.Generated.Version2017_08_31.Models;
+=======
+using Microsoft.Azure.Management.ContainerService.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Newtonsoft.Json;
 
 namespace Microsoft.Azure.Commands.Aks.Models

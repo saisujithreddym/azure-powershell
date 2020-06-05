@@ -13,6 +13,10 @@
 // ----------------------------------------------------------------------------------
 
 using Microsoft.Azure.Commands.Sql.Auditing.Model;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Commands.Sql.Auditing.Services;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Commands.Sql.Common;
 using System;
 using System.Management.Automation;
@@ -108,6 +112,11 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Cmdlet
             HelpMessage = AuditingHelpMessages.PassThruHelpMessage)]
         public SwitchParameter PassThru { get; set; }
 
+<<<<<<< HEAD
+=======
+        public Guid RoleAssignmentId { get; set; } = default(Guid);
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         protected override DatabaseAuditModel ApplyUserInputToModel(DatabaseAuditModel model)
         {
             base.ApplyUserInputToModel(model);
@@ -183,5 +192,15 @@ namespace Microsoft.Azure.Commands.Sql.Auditing.Cmdlet
             ModelAdapter.PersistAuditChanges(entity);
             return null;
         }
+<<<<<<< HEAD
+=======
+
+        protected override SqlAuditAdapter InitModelAdapter()
+        {
+            return new SqlAuditAdapter(DefaultProfile.DefaultContext, RoleAssignmentId);
+        }
+
+        protected override bool WriteResult() => PassThru;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

@@ -16,7 +16,11 @@ Gets all the versions of a VMImage.
 ### ListVMImage
 ```
 Get-AzVMImage -Location <String> -PublisherName <String> -Offer <String> -Skus <String>
+<<<<<<< HEAD
  [-FilterExpression <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### GetVMImageDetail
@@ -106,6 +110,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -FilterExpression
 Specifies a filter expression.
 
@@ -121,6 +126,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Location
 Specifies the location of a VMImage.
 

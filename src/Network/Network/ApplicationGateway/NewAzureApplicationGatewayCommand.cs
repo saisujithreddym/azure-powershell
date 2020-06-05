@@ -185,6 +185,14 @@ namespace Microsoft.Azure.Commands.Network
 
         [Parameter(
             Mandatory = false,
+<<<<<<< HEAD
+=======
+            HelpMessage = " Whether Force firewallPolicy association is enabled.")]
+        public SwitchParameter ForceFirewallPolicyAssociation { get; set; }
+        
+        [Parameter(
+            Mandatory = false,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = "A list of availability zones denoting where the application gateway needs to come from.")]
         public string[] Zone { get; set; }
 
@@ -360,6 +368,14 @@ namespace Microsoft.Azure.Commands.Network
                 applicationGateway.EnableFips = true;
             }
 
+<<<<<<< HEAD
+=======
+            if (this.ForceFirewallPolicyAssociation.IsPresent)
+            {
+                applicationGateway.ForceFirewallPolicyAssociation = true;
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (this.Zone != null)
             {
                 applicationGateway.Zones = this.Zone?.ToList();

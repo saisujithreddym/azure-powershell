@@ -107,6 +107,10 @@ namespace Microsoft.Azure.Commands.Network
         public override void Execute()
         {
             base.Execute();
+<<<<<<< HEAD
+=======
+            Dictionary<string, List<string>> auxAuthHeader = null;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (this.IsVirtualHubPresent(this.ResourceGroupName, this.Name))
             {
@@ -155,6 +159,22 @@ namespace Microsoft.Azure.Commands.Network
                     if (this.HubVnetConnection != null)
                     {
                         virtualHub.VirtualNetworkConnections.AddRange(this.HubVnetConnection);
+<<<<<<< HEAD
+=======
+
+                        // get auth headers for cross-tenant hubvnet conn
+                        List<string> resourceIds = new List<string>();
+                        foreach (var connection in this.HubVnetConnection)
+                        {
+                            resourceIds.Add(connection.RemoteVirtualNetwork.Id);
+                        }
+
+                        var auxHeaderDictionary = GetAuxilaryAuthHeaderFromResourceIds(resourceIds);
+                        if (auxHeaderDictionary != null && auxHeaderDictionary.Count > 0)
+                        {
+                            auxAuthHeader = new Dictionary<string, List<string>>(auxHeaderDictionary);
+                        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }
 
                     virtualHub.RouteTable = this.RouteTable;
@@ -169,7 +189,12 @@ namespace Microsoft.Azure.Commands.Network
                         this.ResourceGroupName,
                         this.Name,
                         virtualHub,
+<<<<<<< HEAD
                         this.Tag));
+=======
+                        this.Tag,
+                        auxAuthHeader));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 });
         }
     }

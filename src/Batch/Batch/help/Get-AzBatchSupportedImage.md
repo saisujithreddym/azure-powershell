@@ -73,7 +73,11 @@ When using shared key authentication, the primary access key is used by default.
 To change the key to use, set the BatchAccountContext.KeyInUse property.
 
 ```yaml
+<<<<<<< HEAD
 Type: BatchAccountContext
+=======
+Type: Microsoft.Azure.Commands.Batch.BatchAccountContext
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -88,7 +92,11 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
+<<<<<<< HEAD
 Type: IAzureContextContainer
+=======
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -104,7 +112,11 @@ Specifies an OData filter clause for supported images.
 If you do not specify a filter, this cmdlet returns all images the Batch account supports.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -119,7 +131,11 @@ Accept wildcard characters: False
 Specifies the maximum number of supported images to return.
 
 ```yaml
+<<<<<<< HEAD
 Type: Int32
+=======
+Type: System.Int32
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -144,4 +160,8 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 [Get-AzBatchAccountKey](./Get-AzBatchAccountKey.md)

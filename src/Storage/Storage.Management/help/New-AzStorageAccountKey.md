@@ -52,12 +52,21 @@ Specifies which key to regenerate.
 The acceptable values for this parameter are:
 - key1
 - key2
+<<<<<<< HEAD
+=======
+- kerb1
+- kerb2
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
+<<<<<<< HEAD
 Accepted values: key1, key2
+=======
+Accepted values: key1, key2, kerb1, kerb2
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 2

@@ -48,12 +48,17 @@ namespace Microsoft.Azure.Commands.Compute.Automation
                 {
                     string resourceGroupName;
                     string galleryName;
+<<<<<<< HEAD
                     string galleryImageName;
+=======
+                    string galleryImageDefinitionName;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     string galleryImageVersionName;
                     switch (this.ParameterSetName)
                     {
                         case "ResourceIdParameter":
                             resourceGroupName = GetResourceGroupName(this.ResourceId);
+<<<<<<< HEAD
                             galleryName = GetResourceName(this.ResourceId, "Microsoft.Compute/Galleries", "Images", "Versions");
                             galleryImageName = GetInstanceId(this.ResourceId, "Microsoft.Compute/Galleries", "Images", "Versions");
                             galleryImageVersionName = GetVersion(this.ResourceId, "Microsoft.Compute/Galleries", "Images", "Versions");
@@ -63,16 +68,35 @@ namespace Microsoft.Azure.Commands.Compute.Automation
                             galleryName = GetResourceName(this.InputObject.Id, "Microsoft.Compute/Galleries", "Images", "Versions");
                             galleryImageName = GetInstanceId(this.InputObject.Id, "Microsoft.Compute/Galleries", "Images", "Versions");
                             galleryImageVersionName = GetVersion(this.InputObject.Id, "Microsoft.Compute/Galleries", "Images", "Versions");
+=======
+                            galleryName = GetResourceName(this.ResourceId, "Microsoft.Compute/galleries", "images", "versions");
+                            galleryImageDefinitionName = GetInstanceId(this.ResourceId, "Microsoft.Compute/galleries", "images", "versions");
+                            galleryImageVersionName = GetVersion(this.ResourceId, "Microsoft.Compute/galleries", "images", "versions");
+                            break;
+                        case "ObjectParameter":
+                            resourceGroupName = GetResourceGroupName(this.InputObject.Id);
+                            galleryName = GetResourceName(this.InputObject.Id, "Microsoft.Compute/galleries", "images", "versions");
+                            galleryImageDefinitionName = GetInstanceId(this.InputObject.Id, "Microsoft.Compute/galleries", "images", "versions");
+                            galleryImageVersionName = GetVersion(this.InputObject.Id, "Microsoft.Compute/galleries", "images", "versions");
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                             break;
                         default:
                             resourceGroupName = this.ResourceGroupName;
                             galleryName = this.GalleryName;
+<<<<<<< HEAD
                             galleryImageName = this.GalleryImageDefinitionName;
+=======
+                            galleryImageDefinitionName = this.GalleryImageDefinitionName;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                             galleryImageVersionName = this.Name;
                             break;
                     }
 
+<<<<<<< HEAD
                     var result = GalleryImageVersionsClient.DeleteWithHttpMessagesAsync(resourceGroupName, galleryName, galleryImageName, galleryImageVersionName).GetAwaiter().GetResult();
+=======
+                    var result = GalleryImageVersionsClient.DeleteWithHttpMessagesAsync(resourceGroupName, galleryName, galleryImageDefinitionName, galleryImageVersionName).GetAwaiter().GetResult();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     PSOperationStatusResponse output = new PSOperationStatusResponse
                     {
                         StartTime = this.StartTime,

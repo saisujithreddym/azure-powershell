@@ -43,11 +43,28 @@ namespace Microsoft.Azure.Commands.Network
         public bool? EnableBgp { get; set; }
 
         [Parameter(
+<<<<<<< HEAD
+=======
+        Mandatory = false,
+        ValueFromPipelineByPropertyName = true,
+        HelpMessage = "Dead Peer Detection Timeout of the connection in seconds.")]
+        public int? DpdTimeoutInSeconds { get; set; }
+
+        [Parameter(
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Mandatory = false,
             HelpMessage = "Whether to use policy-based traffic selectors for a S2S connection")]
         public bool? UsePolicyBasedTrafficSelectors { get; set; }
 
         [Parameter(
+<<<<<<< HEAD
+=======
+            Mandatory = false,
+            HelpMessage = "Whether to use PrivateIP for a S2S connection")]
+        public bool? UseLocalAzureIpAddress { get; set; }
+
+        [Parameter(
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
              Mandatory = false,
              ValueFromPipelineByPropertyName = true,
              HelpMessage = "A list of IPSec policies.")]
@@ -94,11 +111,27 @@ namespace Microsoft.Azure.Commands.Network
                         this.VirtualNetworkGatewayConnection.EnableBgp = this.EnableBgp.Value;
                     }
 
+<<<<<<< HEAD
+=======
+                    if (this.DpdTimeoutInSeconds.HasValue)
+                    {
+                        this.VirtualNetworkGatewayConnection.DpdTimeoutSeconds = this.DpdTimeoutInSeconds.Value;
+                    }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     if (this.UsePolicyBasedTrafficSelectors.HasValue)
                     {
                         this.VirtualNetworkGatewayConnection.UsePolicyBasedTrafficSelectors = this.UsePolicyBasedTrafficSelectors.Value;
                     }
 
+<<<<<<< HEAD
+=======
+                    if (this.UseLocalAzureIpAddress.HasValue)
+                    {
+                        this.VirtualNetworkGatewayConnection.UseLocalAzureIpAddress = this.UseLocalAzureIpAddress.Value;
+                    }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     if (this.IpsecPolicies != null)
                     {
                         this.VirtualNetworkGatewayConnection.IpsecPolicies = this.IpsecPolicies?.ToList();

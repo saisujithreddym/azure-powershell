@@ -42,7 +42,10 @@ namespace Microsoft.Azure.Commands.ActiveDirectory
         public const string ApplicationWithPasswordCredential = "ApplicationWithPasswordCredentialParameterSet";
         public const string ApplicationWithKeyPlain = "ApplicationWithKeyPlainParameterSet";
         public const string ApplicationWithKeyCredential = "ApplicationWithKeyCredentialParameterSet";
+<<<<<<< HEAD
         public const string ApplicationObjectWithoutCredential = "ApplicationObjectWithoutCredentialParameterSet";
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public const string ApplicationObjectWithPasswordPlain = "ApplicationObjectWithPasswordPlainParameterSet";
         public const string ApplicationObjectWithPasswordCredential = "ApplicationObjectWithPasswordCredentialParameterSet";
         public const string ApplicationObjectWithKeyPlain = "ApplicationObjectWithKeyPlainParameterSet";

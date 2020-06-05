@@ -20,6 +20,10 @@ using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Management.RecoveryServices.Models;
 using Microsoft.WindowsAzure.Commands.Common;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Management.RecoveryServices.Backup.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.RecoveryServices
 {
@@ -49,10 +53,17 @@ namespace Microsoft.Azure.Commands.RecoveryServices
         {
             try
             {
+<<<<<<< HEAD
                 BackupStorageConfig getStorageResponse = RecoveryServicesClient.GetVaultStorageType(
                                                                         this.Vault.ResourceGroupName, this.Vault.Name);
                 ASRVaultBackupProperties vaultBackupProperties = new ASRVaultBackupProperties();
                 vaultBackupProperties.BackupStorageRedundancy = getStorageResponse.StorageType;
+=======
+                BackupResourceConfigResource getStorageResponse = RecoveryServicesClient.GetVaultStorageType(
+                                                                        this.Vault.ResourceGroupName, this.Vault.Name);
+                ASRVaultBackupProperties vaultBackupProperties = new ASRVaultBackupProperties();
+                vaultBackupProperties.BackupStorageRedundancy = getStorageResponse.Properties.StorageType;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 this.WriteObject(vaultBackupProperties);
             }
             catch (Exception exception)

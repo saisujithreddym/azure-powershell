@@ -19,7 +19,11 @@ namespace Microsoft.Azure.Commands.KeyVault.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+=======
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -316,6 +320,18 @@ namespace Microsoft.Azure.Commands.KeyVault.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Key type &apos;{0}&apos; is not supported for downloading. (Supported types: RSA, RSA-HSM).
+        /// </summary>
+        internal static string DownloadNotSupported {
+            get {
+                return ResourceManager.GetString("DownloadNotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Overwrite File ?.
         /// </summary>
         internal static string FileOverwriteCaption {
@@ -595,6 +611,18 @@ namespace Microsoft.Azure.Commands.KeyVault.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to When KeyOps is &apos;import&apos;, Destination must be HSM..
+        /// </summary>
+        internal static string KEKMustBeHSM {
+            get {
+                return ResourceManager.GetString("KEKMustBeHSM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Can not find key file &apos;{0}&apos;..
         /// </summary>
         internal static string KeyFileNotFound {
@@ -604,6 +632,18 @@ namespace Microsoft.Azure.Commands.KeyVault.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to The &quot;import&quot; operation is exclusive, it cannot be combined with any other value(s)..
+        /// </summary>
+        internal static string KeyOpsImportIsExclusive {
+            get {
+                return ResourceManager.GetString("KeyOpsImportIsExclusive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to There is no default user account associated with this subscription. Certificate accounts are not supported with Azure Key Vault..
         /// </summary>
         internal static string NoDefaultUserAccount {
@@ -640,6 +680,18 @@ namespace Microsoft.Azure.Commands.KeyVault.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Public key saved at &apos;{0}&apos;..
+        /// </summary>
+        internal static string PublicKeySavedAt {
+            get {
+                return ResourceManager.GetString("PublicKeySavedAt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Are you sure you want to remove vault &apos;{0}&apos; forever..
         /// </summary>
         internal static string PurgeVaultWarning {

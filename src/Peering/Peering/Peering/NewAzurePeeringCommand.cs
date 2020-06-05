@@ -31,7 +31,13 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
     /// <summary>
     /// New Azure InputObject Command-let
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet(VerbsCommon.New, "AzPeering", DefaultParameterSetName = Constants.Exchange, SupportsShouldProcess = true)]
+=======
+    [Cmdlet(VerbsCommon.New, Constants.AzPeering,
+        DefaultParameterSetName = Constants.Exchange,
+        SupportsShouldProcess = true)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSPeering))]
     public class NewAzurePeeringCommand : PeeringBaseCmdlet
     {
@@ -106,6 +112,20 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
         public string PeeringLocation { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or sets the Sku type
+        /// </summary>
+        [Parameter(
+            Mandatory = true,
+            HelpMessage = Constants.MicrosoftNetworkHelp,
+            ParameterSetName = Constants.Direct)]
+        [PSArgumentCompleter(Constants.Edge8075, Constants.CDN8069, Constants.Ix, Constants.IxRs)]
+        [PSDefaultValue(Value = Constants.Edge8075)]
+        public string MicrosoftNetwork { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Gets or sets The PeerAsn.
         /// </summary>
         [Parameter(
@@ -155,7 +175,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
         public PSDirectConnection[] DirectConnection { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets or sets the Microsoft Network
+=======
+        /// Gets or sets the Sku type
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         [Parameter(
             Mandatory = true,
@@ -242,9 +266,15 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
                     PeeringLocation = this.PeeringLocation,
                     Direct = new PSPeeringPropertiesDirect
                     {
+<<<<<<< HEAD
                         DirectPeeringType = Constants.Edge,
                         Connections = new List<PSDirectConnection>(),
                         PeerAsn = new PSSubResource(this.PeerAsnResourceId)
+=======
+                        DirectPeeringType = this.ConvertToDirectPeeringType(this.MicrosoftNetwork),
+                        Connections = new List<PSDirectConnection>(),
+                        PeerAsn = new PSSubResource(this.PeerAsnResourceId),
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     },
                     Tags = TagsConversionHelper.CreateTagDictionary(this.Tag, true),
                 };
@@ -259,6 +289,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
                     peeringRequest.Direct.Connections.Add(psDirectConnection);
             }
 
+<<<<<<< HEAD
             if (this.Sku.Equals(Constants.PremiumDirectMetered, StringComparison.InvariantCultureIgnoreCase) || this.Sku.Equals(Constants.PremiumDirectUnlimited, StringComparison.InvariantCultureIgnoreCase))
             {
                 peeringRequest.Direct.DirectPeeringType = Constants.CDN;
@@ -266,6 +297,15 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
             else
             {
                 peeringRequest.Sku = this.DirectConnection.Any((c) => c.UseForPeeringService == true) ? new PSPeeringSku { Name = Constants.PremiumDirectFree } : new PSPeeringSku { Name = Constants.BasicDirectFree };
+=======
+
+            if (this.DirectConnection.Any((c) => c.UseForPeeringService == true))
+            {
+                if(this.Sku != Constants.PremiumDirectFree && this.Sku != Constants.PremiumDirectMetered && this.Sku != Constants.PremiumDirectUnlimited)
+                {
+                    throw new PSArgumentException(string.Format(Resources.Error_Sku, $"{Constants.PremiumDirectFree},{Constants.PremiumDirectMetered},{Constants.PremiumDirectUnlimited}"));
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             if (this.ParameterSetName.Equals(Constants.Direct))

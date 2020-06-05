@@ -140,6 +140,39 @@ namespace Microsoft.Azure.Commands.HDInsight.Models
         /// </summary>
         public int DisksPerWorkerNode { get; set; }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Gets or sets the minimal supported TLS version.
+        /// </summary>
+        public string MinSupportedTlsVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the assigned identity.
+        /// </summary>
+        public string AssignedIdentity { get; set; }
+
+        /// <summary>
+        /// Gets or sets the encryption algorithm.
+        /// </summary>
+        public string EncryptionAlgorithm { get; set; }
+
+        /// <summary>
+        /// Gets or sets the encryption key name.
+        /// </summary>
+        public string EncryptionKeyName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the encryption key version.
+        /// </summary>
+        public string EncryptionKeyVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the encryption vault uri.
+        /// </summary>
+        public string EncryptionVaultUri { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public AzureHDInsightConfig()
         {
             ClusterType = Constants.Hadoop;

@@ -43,8 +43,13 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 
+<<<<<<< HEAD
 [assembly: AssemblyVersion("1.7.1")]
 [assembly: AssemblyFileVersion("1.7.1")]
+=======
+[assembly: AssemblyVersion("1.7.5")]
+[assembly: AssemblyFileVersion("1.7.5")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 #if !SIGN
 [assembly: InternalsVisibleTo("Microsoft.Azure.PowerShell.Cmdlets.Accounts.Test")]
 #endif

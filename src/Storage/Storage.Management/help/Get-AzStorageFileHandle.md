@@ -64,7 +64,11 @@ HandleId    Path                  ClientIp       ClientPort OpenTime            
 
 This command lists file handles on a file share, and sort the output by ClientIp, then by OpenTime.
 
+<<<<<<< HEAD
 ### Example 2: List first 2 file handles on a file directory recursively 
+=======
+### Example 2: List first 2 file handles on a file directory recursively
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 PS C:\>Get-AzStorageFileHandle -ShareName "mysharename" -Path 'dir1/dir2'  -Recursive -First 2
 
@@ -76,7 +80,11 @@ HandleId    Path      ClientIp       ClientPort OpenTime             LastReconne
 
 This command lists first 2 file handles on a file directory recursively .
 
+<<<<<<< HEAD
 ### Example 3: List the 3rd to the 6th file handles on a file 
+=======
+### Example 3: List the 3rd to the 6th file handles on a file
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 PS C:\>Get-AzStorageFileHandle -ShareName "mysharename" -Path 'dir1/dir2/test.txt' -skip 2 -First 4 
 
@@ -159,12 +167,20 @@ CloudFileDirectory object indicated the base folder where the files/directories 
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFileDirectory
 Parameter Sets: Directory
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFileDirectory
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -174,12 +190,20 @@ CloudFile object indicated the file to list File Handles.
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFile
 Parameter Sets: File
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFile
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -235,12 +259,20 @@ CloudFileShare object indicated the share where the files/directories would be l
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFileShare
 Parameter Sets: Share
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFileShare
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -306,7 +338,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

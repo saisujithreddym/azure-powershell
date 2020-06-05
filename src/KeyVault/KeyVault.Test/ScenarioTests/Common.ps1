@@ -88,4 +88,19 @@ function Clean-ResourceGroup($rgname)
     if ((Get-KeyVaultTestMode) -ne 'Playback') {
         Remove-AzResourceGroup -Name $rgname -Force
     }
+<<<<<<< HEAD
+=======
+}
+
+<#
+.SYNOPSIS
+Sleeps but only during recording.
+#>
+function Start-TestSleep($milliseconds)
+{
+    if ([Microsoft.Azure.Test.HttpRecorder.HttpMockServer]::Mode -ne [Microsoft.Azure.Test.HttpRecorder.HttpRecorderMode]::Playback)
+    {
+        Start-Sleep -Milliseconds $milliseconds
+    }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }

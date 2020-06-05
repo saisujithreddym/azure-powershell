@@ -63,6 +63,17 @@ namespace Microsoft.Azure.Commands.Network
 
             subnet.AddressPrefix = this.AddressPrefix?.ToList();
 
+<<<<<<< HEAD
+=======
+            if (this.IpAllocation != null)
+            {
+                foreach (var allocation in this.IpAllocation)
+                {
+                    subnet.IpAllocations.Add(allocation);
+                }
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (!string.IsNullOrEmpty(this.NetworkSecurityGroupId))
             {
                 subnet.NetworkSecurityGroup = new PSNetworkSecurityGroup();

@@ -12,6 +12,11 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Commands.Common.Compute.Version_2018_04.Models;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models
 {
     /// <summary>
@@ -28,6 +33,19 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models
         /// Object defining the number of associated items for the policy
         /// </summary>
         public int? ProtectedItemsCount { get; set; }
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// object defining the RG Name to store Restore Points
+        /// </summary>
+        public string AzureBackupRGName { get; set; }
+
+        /// <summary>
+        /// object defining the RG Name suffix to store Restore Points
+        /// </summary>
+        public string AzureBackupRGNameSuffix { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 
 }

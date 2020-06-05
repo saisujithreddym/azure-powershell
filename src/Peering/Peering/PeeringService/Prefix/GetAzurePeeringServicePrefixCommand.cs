@@ -29,7 +29,12 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
     /// <summary>
     /// The get azure peering service prefix command.
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet(VerbsCommon.Get, "AzPeeringServicePrefix", DefaultParameterSetName = Constants.ParameterSetNameByResourceAndName)]
+=======
+    [Cmdlet(VerbsCommon.Get, Constants.AzPeeringServicePrefix,
+        DefaultParameterSetName = Constants.ParameterSetNameByResourceAndName)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSPeeringServicePrefix))]
     public class GetAzurePeeringServicePrefixCommand : PeeringBaseCmdlet
     {
@@ -41,7 +46,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
             Mandatory = true,
             HelpMessage = Constants.PrefixInputObjectHelp,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = Constants.ParameterSetNameDefault)]
+=======
+            ParameterSetName = Constants.ParameterSetNameInputObject)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [ValidateNotNullOrEmpty]
         public PSPeeringService PeeringServiceObject { get; set; }
 
@@ -77,7 +86,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
         [Parameter(
             Mandatory = false,
             HelpMessage = Constants.PeeringNameHelp,
+<<<<<<< HEAD
             ParameterSetName = Constants.ParameterSetNameDefault)]
+=======
+            ParameterSetName = Constants.ParameterSetNameInputObject)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Name { get; set; }
 
         /// <summary>
@@ -98,7 +111,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
         [Parameter(
             Mandatory = false, 
             HelpMessage = Constants.PeeringServicePrefixEventHelp,
+<<<<<<< HEAD
             ParameterSetName = Constants.ParameterSetNameDefault)]
+=======
+            ParameterSetName = Constants.ParameterSetNameInputObject)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(
             Mandatory = false,
             HelpMessage = Constants.PeeringServicePrefixEventHelp,
@@ -141,13 +158,21 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
                     var resourceId = new ResourceIdentifier(this.ResourceId);
                     this.ResourceGroupName = resourceId.ResourceGroupName;
                     this.Name = resourceId.ResourceName;
+<<<<<<< HEAD
                     this.PeeringServiceName = resourceId.ParentResource.Split('/')?[1];
+=======
+                    this.PeeringServiceName = resourceId?.ParentResource?.Split('/')?[1];
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     var item = this.GetPeeringServicePrefixByResourceAndName();
                     this.WriteObject(item);
                 }
                 else if (string.Equals(
                   this.ParameterSetName,
+<<<<<<< HEAD
                   Constants.ParameterSetNameDefault,
+=======
+                  Constants.ParameterSetNameInputObject,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   StringComparison.OrdinalIgnoreCase))
                 {
                     var resourceId = new ResourceIdentifier(this.PeeringServiceObject.Id);

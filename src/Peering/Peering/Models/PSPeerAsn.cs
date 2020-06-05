@@ -13,13 +13,22 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
     using Newtonsoft.Json;
+<<<<<<< HEAD
+=======
+    using System.Collections;
+    using System.Collections.Generic;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using System.Linq;
 
     /// <summary>
     /// The essential information related to the peer's ASN.
     /// </summary>
     [Rest.Serialization.JsonTransformation]
+<<<<<<< HEAD
     public partial class PSPeerAsn : PSResource
+=======
+    public partial class PSPeerAsn
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     {
         /// <summary>
         /// Initializes a new instance of the PSPeerAsn class.
@@ -32,10 +41,16 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         /// <summary>
         /// Initializes a new instance of the PSPeerAsn class.
         /// </summary>
+<<<<<<< HEAD
         /// <param name="name">The name of the resource.</param>
         /// <param name="id">The ID of the resource.</param>
         /// <param name="type">The type of the resource.</param>
         /// <param name="peerContactInfo">The contact information of the
+=======
+        /// <param name="peerAsnProperty">The Autonomous System Number (ASN) of
+        /// the peer.</param>
+        /// <param name="peerContactDetail">The contact details of the
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// peer.</param>
         /// <param name="peerName">The name of the peer.</param>
         /// <param name="validationState">The validation state of the ASN
@@ -43,6 +58,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         /// 'Pending', 'Approved', 'Failed'</param>
         /// <param name="errorMessage">The error message for the validation
         /// state</param>
+<<<<<<< HEAD
         /// <param name="peerAsnProperty">The Autonomous System Number (ASN) of
         /// the peer.</param>
         public PSPeerAsn(string name = default(string), string id = default(string), string type = default(string), PSContactInfo peerContactInfo = default(PSContactInfo), string peerName = default(string), string validationState = default(string), string errorMessage = default(string), int? peerAsnProperty = default(int?))
@@ -53,6 +69,21 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
             ValidationState = validationState;
             ErrorMessage = errorMessage;
             PeerAsnProperty = peerAsnProperty;
+=======
+        /// <param name="name">The name of the resource.</param>
+        /// <param name="id">The ID of the resource.</param>
+        /// <param name="type">The type of the resource.</param>
+        public PSPeerAsn(int? peerAsnProperty = default(int?), IList<PSContactDetail> peerContactDetail = default(IList<PSContactDetail>), string peerName = default(string), string validationState = default(string), string errorMessage = default(string), string name = default(string), string id = default(string), string type = default(string))
+        {
+            PeerAsnProperty = peerAsnProperty;
+            PeerContactDetail = peerContactDetail;
+            PeerName = peerName;
+            ValidationState = validationState;
+            ErrorMessage = errorMessage;
+            Name = name;
+            Id = id;
+            Type = type;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             CustomInit();
         }
 
@@ -62,10 +93,23 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         partial void CustomInit();
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets or sets the contact information of the peer.
         /// </summary>
         [JsonProperty(PropertyName = "properties.peerContactInfo")]
         public PSContactInfo PeerContactInfo { get; set; }
+=======
+        /// Gets or sets the Autonomous System Number (ASN) of the peer.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.peerAsnProperty")]
+        public int? PeerAsnProperty { get; set; }
+
+        /// <summary>
+        /// Gets or sets the contact details of the peer.
+        /// </summary>
+        [JsonProperty(PropertyName = "properties.peerContactDetail")]
+        public IList<PSContactDetail> PeerContactDetail { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         /// <summary>
         /// Gets or sets the name of the peer.
@@ -88,10 +132,29 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         public string ErrorMessage { get; private set; }
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets or sets the Autonomous System Number (ASN) of the peer.
         /// </summary>
         [JsonProperty(PropertyName = "properties.peerAsnProperty")]
         public int? PeerAsnProperty { get; set; }
+=======
+        /// Gets the name of the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "name")]
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// Gets the ID of the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "id")]
+        public string Id { get; private set; }
+
+        /// <summary>
+        /// Gets the type of the resource.
+        /// </summary>
+        [JsonProperty(PropertyName = "type")]
+        public string Type { get; private set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     }
 }

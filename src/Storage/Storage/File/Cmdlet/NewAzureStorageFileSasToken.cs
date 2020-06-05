@@ -84,6 +84,10 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
             ValueFromPipelineByPropertyName = true,
             ParameterSetName = CloudFileSasPolicyParmeterSet)]
         [ValidateNotNull]
+<<<<<<< HEAD
+=======
+        [Alias("CloudFile")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFile File { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = "Policy Identifier", ParameterSetName = NameSasPolicyParmeterSet)]

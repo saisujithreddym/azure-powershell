@@ -11,11 +11,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.Peering" Version="1.0.1-preview" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.Peering" Version="2.0.1-preview" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Peering\Peering.csproj" />
   </ItemGroup>
 
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <Folder Include="SessionRecords\Microsoft.Azure.Commands.Peering.Test.ScenarioTests.RegisteredAsn\" />
+    <Folder Include="SessionRecords\Microsoft.Azure.Commands.Peering.Test.ScenarioTests.RegisteredPrefix\" />
+  </ItemGroup>
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 </Project>

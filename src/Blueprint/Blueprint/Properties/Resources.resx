@@ -127,10 +127,17 @@
     <value>Artifact type is not supported.</value>
   </data>
   <data name="AssignmentExists" xml:space="preserve">
+<<<<<<< HEAD
     <value>An assignment with name '{0}' in subscription '{1}' already exists. Please use Set-AzBlueprintAssignment to update an existing assignment.</value>
   </data>
   <data name="AssignmentNotExist" xml:space="preserve">
     <value>An assignment with name '{0}' in subscription '{1}' does not exist. Please use New-AzBlueprintAssignment to create a new assignment.</value>
+=======
+    <value>An assignment with name '{0}' in scope '{1}' already exists. Please use Set-AzBlueprintAssignment to update an existing assignment.</value>
+  </data>
+  <data name="AssignmentNotExist" xml:space="preserve">
+    <value>An assignment with name '{0}' in scope '{1}' does not exist. Please use New-AzBlueprintAssignment to create a new assignment.</value>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </data>
   <data name="BlueprintExists" xml:space="preserve">
     <value>A blueprint with name '{0}' in subscription '{1}' already exists. Please use Set-AzBlueprint to update an existing blueprint.</value>

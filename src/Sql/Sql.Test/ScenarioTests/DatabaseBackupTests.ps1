@@ -436,9 +436,12 @@ function Test-ShortTermRetentionPolicy
 	$rg = Create-ResourceGroupForTest $location
 	$server = Create-ServerForTest $rg $location
 
+<<<<<<< HEAD
  	# Not divisible by 7, client should error
 	$invalidRetention = 20
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  	try
 	{
 		# Create db with default values
@@ -481,6 +484,7 @@ function Test-ShortTermRetentionPolicy
 		$policy = $db | Get-AzureRmSqlDatabaseBackupShortTermRetentionPolicy
 		Assert-AreEqual 1 $policy.Count
 		Assert-AreEqual $retention $policy[0].RetentionDays
+<<<<<<< HEAD
 
  		# Test client-side error handling
 		try {
@@ -490,6 +494,8 @@ function Test-ShortTermRetentionPolicy
 			# We expect an error here
 			Assert-AreEqual $_.Count 1
 		}
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  	}
 	finally
 	{

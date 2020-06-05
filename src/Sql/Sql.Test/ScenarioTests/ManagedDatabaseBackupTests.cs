@@ -34,7 +34,12 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
         public ManagedDatabaseBackupTests(ITestOutputHelper output) : base(output)
         {
             base.resourceTypesToIgnoreApiVersion = new string[] {
+<<<<<<< HEAD
                 "Microsoft.Sql/managedInstances"
+=======
+                "Microsoft.Sql/managedInstances",
+                "Microsoft.Sql/managedInstances/databases"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
         }
 
@@ -51,5 +56,29 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
         {
             RunPowerShellTest("Test-ManagedDeletedDatabaseShortTermRetentionPolicy");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestManagedInstanceLongTermRetentionPolicy()
+        {
+            RunPowerShellTest("Test-ManagedInstanceLongTermRetentionPolicy");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestManagedInstanceLongTermRetentionBackup()
+        {
+            RunPowerShellTest("Test-ManagedInstanceLongTermRetentionBackup");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestManagedInstanceLongTermRetentionResourceGroupBasedBackup()
+        {
+            RunPowerShellTest("Test-ManagedInstanceLongTermRetentionResourceGroupBasedBackup");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

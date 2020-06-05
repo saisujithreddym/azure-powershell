@@ -180,7 +180,11 @@ function Test-AzMarkdownHelp
                     "## EXAMPLES"
                     {
                         # Move the index to the start of the PowerShell code
+<<<<<<< HEAD
                         while ($content[$idx] -notcontains "``````" -and $content[$idx] -notcontains "``````powershell")
+=======
+                        while (-not $content[$idx].StartsWith("``````"))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         {
                             $idx++
                             if ($idx -ge $content.Length)

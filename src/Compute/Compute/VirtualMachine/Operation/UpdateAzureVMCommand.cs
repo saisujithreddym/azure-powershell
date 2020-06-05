@@ -24,13 +24,20 @@ using System.Management.Automation;
 
 namespace Microsoft.Azure.Commands.Compute
 {
+<<<<<<< HEAD
     [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "VM",SupportsShouldProcess = true,DefaultParameterSetName = ResourceGroupNameParameterSet)]
+=======
+    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "VM", SupportsShouldProcess = true, DefaultParameterSetName = ResourceGroupNameParameterSet)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSAzureOperationResponse))]
     public class UpdateAzureVMCommand : VirtualMachineBaseCmdlet
     {
         private const string ResourceGroupNameParameterSet = "ResourceGroupNameParameterSetName";
         private const string IdParameterSet = "IdParameterSetName";
+<<<<<<< HEAD
         private const string AssignIdentityParameterSet = "AssignIdentityParameterSet";
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private const string ExplicitIdentityParameterSet = "ExplicitIdentityParameterSet";
 
         [Parameter(
@@ -42,12 +49,15 @@ namespace Microsoft.Azure.Commands.Compute
         [Parameter(
            Mandatory = true,
            Position = 0,
+<<<<<<< HEAD
            ParameterSetName = AssignIdentityParameterSet,
            ValueFromPipelineByPropertyName = true,
            HelpMessage = "The resource group name.")]
         [Parameter(
            Mandatory = true,
            Position = 0,
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
            ParameterSetName = ExplicitIdentityParameterSet,
            ValueFromPipelineByPropertyName = true,
            HelpMessage = "The resource group name.")]
@@ -86,6 +96,7 @@ namespace Microsoft.Azure.Commands.Compute
         public string[] IdentityId { get; set; }
 
         [Parameter(
+<<<<<<< HEAD
             Mandatory = true,
             ParameterSetName = AssignIdentityParameterSet,
             ValueFromPipelineByPropertyName = false)]
@@ -93,6 +104,8 @@ namespace Microsoft.Azure.Commands.Compute
         public SwitchParameter AssignIdentity { get; set; }
 
         [Parameter(
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Mandatory = false,
             ValueFromPipelineByPropertyName = false)]
         public bool OsDiskWriteAccelerator { get; set; }
@@ -109,9 +122,20 @@ namespace Microsoft.Azure.Commands.Compute
 
         [Parameter(
             Mandatory = false)]
+<<<<<<< HEAD
         [ValidateNotNullOrEmpty]
         public string ProximityPlacementGroupId { get; set; }
 
+=======
+        [AllowEmptyString]
+        public string ProximityPlacementGroupId { get; set; }
+
+        [Parameter(
+            ValueFromPipelineByPropertyName = true,
+            HelpMessage = "The Id of Host")]
+        public string HostId { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = false, HelpMessage = "Run cmdlet in the background")]
         public SwitchParameter AsJob { get; set; }
 
@@ -144,20 +168,43 @@ namespace Microsoft.Azure.Commands.Compute
                         Location = this.VM.Location,
                         LicenseType = this.VM.LicenseType,
                         Tags = this.Tag != null ? this.Tag.ToDictionary() : this.VM.Tags,
+<<<<<<< HEAD
                         Identity = this.AssignIdentity.IsPresent 
                                    ? new VirtualMachineIdentity(null, null, ResourceIdentityType.SystemAssigned, null)
                                    : ComputeAutoMapperProfile.Mapper.Map<VirtualMachineIdentity>(this.VM.Identity),
+=======
+                        Identity = ComputeAutoMapperProfile.Mapper.Map<VirtualMachineIdentity>(this.VM.Identity),
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         Zones = (this.VM.Zones != null && this.VM.Zones.Count > 0) ? this.VM.Zones : null,
                         ProximityPlacementGroup = this.IsParameterBound(c => c.ProximityPlacementGroupId)
                                                 ? new SubResource(this.ProximityPlacementGroupId)
                                                 : this.VM.ProximityPlacementGroup,
+<<<<<<< HEAD
                         Host = this.VM.Host,
+=======
+                        Host = this.IsParameterBound(c => c.HostId)
+                             ? new SubResource(this.HostId)
+                             : this.VM.Host,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         VirtualMachineScaleSet = this.VM.VirtualMachineScaleSet,
                         AdditionalCapabilities = this.VM.AdditionalCapabilities,
                         EvictionPolicy = this.VM.EvictionPolicy,
                         Priority = this.VM.Priority
                     };
 
+<<<<<<< HEAD
+=======
+                    if (parameters.Host != null && string.IsNullOrWhiteSpace(parameters.Host.Id))
+                    {
+                        parameters.Host.Id = null;
+                    }
+
+                    if (parameters.ProximityPlacementGroup != null && string.IsNullOrWhiteSpace(parameters.ProximityPlacementGroup.Id))
+                    {
+                        parameters.ProximityPlacementGroup.Id = null;
+                    }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     if (this.IsParameterBound(c => c.IdentityType))
                     {
                         parameters.Identity = new VirtualMachineIdentity(null, null, this.IdentityType, null);

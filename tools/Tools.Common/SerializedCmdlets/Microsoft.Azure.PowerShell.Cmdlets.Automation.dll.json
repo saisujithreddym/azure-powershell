@@ -1432,7 +1432,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Tags": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -1798,7 +1802,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.AgentRegistration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AgentRegistration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AgentRegistration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "ResourceGroupName": "System.String",
               "AutomationAccountName": "System.String",
@@ -2047,7 +2055,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Exportable": "System.Boolean",
               "ExpiryTime": "System.DateTimeOffset",
@@ -2438,7 +2450,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.DscConfiguration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "LogVerbose": "System.Boolean",
               "Tags": "System.Collections.Hashtable",
@@ -2835,7 +2851,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Connection",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Connection, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Connection, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "FieldDefinitionValues": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -3359,7 +3379,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "CreationTime": "System.DateTimeOffset",
               "LastModifiedTime": "System.DateTimeOffset",
@@ -3748,7 +3772,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CompilationJob",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CompilationJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CompilationJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "JobParameters": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -4622,7 +4650,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.JobStream",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobStream, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobStream, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Time": "System.DateTimeOffset",
               "JobId": "System.Guid",
@@ -4723,7 +4755,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Common",
             "Name": "Microsoft.Azure.Commands.Automation.Common.CompilationJobStreamType",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.CompilationJobStreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.CompilationJobStreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -4952,7 +4988,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Common",
                   "Name": "Microsoft.Azure.Commands.Automation.Common.CompilationJobStreamType",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.CompilationJobStreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.CompilationJobStreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -5191,7 +5231,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.DscNode",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscNode, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscNode, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "RegistrationTime": "System.DateTimeOffset",
               "LastSeen": "System.DateTimeOffset",
@@ -5290,7 +5334,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Common",
             "Name": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -5649,7 +5697,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Common",
                   "Name": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -5883,7 +5935,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Common",
                   "Name": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -6115,7 +6171,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Common",
                   "Name": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.DscNodeStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -6538,7 +6598,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CompilationJob",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CompilationJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CompilationJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "JobParameters": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -7234,7 +7298,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Job": "Microsoft.Azure.Commands.Automation.Model.Job",
               "JobSchedule": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
@@ -8001,7 +8069,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeploymentSchedule",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeploymentSchedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeploymentSchedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "JobSchedule": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
               "JobScheduleId": "System.Guid",
@@ -8388,7 +8460,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.DscNode",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscNode, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscNode, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "RegistrationTime": "System.DateTimeOffset",
               "LastSeen": "System.DateTimeOffset",
@@ -9187,7 +9263,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.DscOnboardingMetaconfig",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscOnboardingMetaconfig, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscOnboardingMetaconfig, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "ResourceGroupName": "System.String",
               "AutomationAccountName": "System.String",
@@ -9560,7 +9640,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorkerGroup",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorkerGroup, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorkerGroup, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "RunbookWorker": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker]",
               "ResourceGroupName": "System.String",
@@ -9951,7 +10035,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Job",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Job, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Job, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "JobParameters": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -10842,7 +10930,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.JobStream",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobStream, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobStream, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Time": "System.DateTimeOffset",
               "JobId": "System.Guid",
@@ -10943,7 +11035,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Common",
             "Name": "Microsoft.Azure.Commands.Automation.Common.StreamType",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.StreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.StreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -11167,7 +11263,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Common",
                   "Name": "Microsoft.Azure.Commands.Automation.Common.StreamType",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.StreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.StreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -11401,7 +11501,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.JobStreamRecord",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobStreamRecord, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobStreamRecord, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Value": "System.Collections.Hashtable",
               "Time": "System.DateTimeOffset",
@@ -11745,7 +11849,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Module",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Module, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Module, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "IsGlobal": "System.Boolean",
               "CreationTime": "System.DateTimeOffset",
@@ -12137,7 +12245,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Runbook",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "LogVerbose": "System.Boolean",
               "LogProgress": "System.Boolean",
@@ -12538,7 +12650,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
               "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -12944,7 +13060,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobSchedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobSchedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Parameters": "System.Collections.Hashtable",
               "ResourceGroupName": "System.String",
@@ -13752,7 +13872,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.SourceControl",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControl, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControl, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "AutoSync": "System.Boolean",
               "PublishRunbook": "System.Boolean",
@@ -14284,7 +14408,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJob",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "CreationTime": "System.DateTimeOffset",
               "SourceControlSyncJobId": "System.Guid",
@@ -14363,7 +14491,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobRecord",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobRecord, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobRecord, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "CreationTime": "System.DateTimeOffset",
               "SourceControlSyncJobId": "System.Guid",
@@ -14713,7 +14845,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobStream",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobStream, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobStream, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "SourceControlSyncJobId": "System.Guid",
               "Time": "System.Nullable`1[System.DateTimeOffset]",
@@ -14795,7 +14931,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobStreamRecord",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobStreamRecord, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJobStreamRecord, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Value": "System.Collections.Hashtable",
               "SourceControlSyncJobId": "System.Guid",
@@ -14923,7 +15063,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Common",
             "Name": "Microsoft.Azure.Commands.Automation.Common.SourceControlSyncJobStreamType",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.SourceControlSyncJobStreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.SourceControlSyncJobStreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -15173,7 +15317,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Common",
                   "Name": "Microsoft.Azure.Commands.Automation.Common.SourceControlSyncJobStreamType",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.SourceControlSyncJobStreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Common.SourceControlSyncJobStreamType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -15407,7 +15555,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Variable",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Variable, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Variable, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Encrypted": "System.Boolean",
               "CreationTime": "System.DateTimeOffset",
@@ -15797,7 +15949,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Webhook",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Webhook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Webhook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Parameters": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -16329,7 +16485,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.DscConfiguration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "LogVerbose": "System.Boolean",
               "Tags": "System.Collections.Hashtable",
@@ -16848,7 +17008,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.NodeConfiguration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "CreationTime": "System.DateTimeOffset",
               "LastModifiedTime": "System.DateTimeOffset",
@@ -17233,7 +17397,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Runbook",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "LogVerbose": "System.Boolean",
               "LogProgress": "System.Boolean",
@@ -17904,7 +18072,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Tags": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -18294,7 +18466,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Exportable": "System.Boolean",
               "ExpiryTime": "System.DateTimeOffset",
@@ -18873,7 +19049,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Connection",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Connection, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Connection, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "FieldDefinitionValues": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -19385,7 +19565,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "CreationTime": "System.DateTimeOffset",
               "LastModifiedTime": "System.DateTimeOffset",
@@ -19854,7 +20038,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.AgentRegistration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AgentRegistration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AgentRegistration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "ResourceGroupName": "System.String",
               "AutomationAccountName": "System.String",
@@ -20151,7 +20339,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Module",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Module, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Module, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "IsGlobal": "System.Boolean",
               "CreationTime": "System.DateTimeOffset",
@@ -20495,7 +20687,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Runbook",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "LogVerbose": "System.Boolean",
               "LogProgress": "System.Boolean",
@@ -21261,7 +21457,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
               "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -21423,7 +21623,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Cmdlet",
             "Name": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth[]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth",
             "GenericTypeArguments": [],
@@ -21461,7 +21665,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Cmdlet",
             "Name": "Microsoft.Azure.Commands.Automation.Cmdlet.DayOfWeekOccurrence",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DayOfWeekOccurrence, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DayOfWeekOccurrence, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -22279,7 +22487,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Cmdlet",
                   "Name": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth",
                   "GenericTypeArguments": [],
@@ -22589,7 +22801,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Cmdlet",
                   "Name": "Microsoft.Azure.Commands.Automation.Cmdlet.DayOfWeekOccurrence",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DayOfWeekOccurrence, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DayOfWeekOccurrence, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -23721,7 +23937,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.SourceControl",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControl, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControl, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "AutoSync": "System.Boolean",
               "PublishRunbook": "System.Boolean",
@@ -24363,7 +24583,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Variable",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Variable, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Variable, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Encrypted": "System.Boolean",
               "CreationTime": "System.DateTimeOffset",
@@ -24875,7 +25099,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Webhook",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Webhook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Webhook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Parameters": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -25429,7 +25657,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Runbook",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "LogVerbose": "System.Boolean",
               "LogProgress": "System.Boolean",
@@ -26453,7 +26685,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobSchedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobSchedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Parameters": "System.Collections.Hashtable",
               "ResourceGroupName": "System.String",
@@ -26977,7 +27213,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Tags": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -31760,7 +32000,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.AutomationAccount, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Tags": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -32108,7 +32352,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CertificateInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Exportable": "System.Boolean",
               "ExpiryTime": "System.DateTimeOffset",
@@ -32693,7 +32941,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Connection",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Connection, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Connection, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "FieldDefinitionValues": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -33163,7 +33415,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CredentialInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "CreationTime": "System.DateTimeOffset",
               "LastModifiedTime": "System.DateTimeOffset",
@@ -33632,7 +33888,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.DscNode",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscNode, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscNode, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "RegistrationTime": "System.DateTimeOffset",
               "LastSeen": "System.DateTimeOffset",
@@ -34155,7 +34415,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Module",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Module, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Module, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "IsGlobal": "System.Boolean",
               "CreationTime": "System.DateTimeOffset",
@@ -34681,7 +34945,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Runbook",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Runbook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "LogVerbose": "System.Boolean",
               "LogProgress": "System.Boolean",
@@ -35354,7 +35622,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
               "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -35890,7 +36162,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Variable",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Variable, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Variable, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Encrypted": "System.Boolean",
               "CreationTime": "System.DateTimeOffset",
@@ -36518,7 +36794,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Webhook",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Webhook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Webhook, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Parameters": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -36904,7 +37184,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.CompilationJob",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CompilationJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.CompilationJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "JobParameters": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -37291,7 +37575,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Job": "Microsoft.Azure.Commands.Automation.Model.Job",
               "JobSchedule": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
@@ -37538,7 +37826,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
               "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -37645,7 +37937,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Job": "Microsoft.Azure.Commands.Automation.Model.Job",
               "JobSchedule": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
@@ -37978,7 +38274,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
                     "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -38239,7 +38539,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Job": "Microsoft.Azure.Commands.Automation.Model.Job",
                     "JobSchedule": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
@@ -38644,7 +38948,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Job",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Job, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Job, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "JobParameters": "System.Collections.Hashtable",
               "CreationTime": "System.DateTimeOffset",
@@ -39420,7 +39728,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJob",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControlSyncJob, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "CreationTime": "System.DateTimeOffset",
               "SourceControlSyncJobId": "System.Guid",
@@ -39842,7 +40154,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Job": "Microsoft.Azure.Commands.Automation.Model.Job",
               "JobSchedule": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
@@ -40405,7 +40721,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.NodeConfigurationDeployment, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Job": "Microsoft.Azure.Commands.Automation.Model.Job",
                     "JobSchedule": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
@@ -41220,7 +41540,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.DscNode",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscNode, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DscNode, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "RegistrationTime": "System.DateTimeOffset",
               "LastSeen": "System.DateTimeOffset",
@@ -42278,7 +42602,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.SourceControl",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControl, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.SourceControl, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "AutoSync": "System.Boolean",
               "PublishRunbook": "System.Boolean",
@@ -42836,7 +43164,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "ScheduleConfiguration": "Microsoft.Azure.Commands.Automation.Model.Schedule",
               "ErrorInfo": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo",
@@ -43339,7 +43671,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRun",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRun, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRun, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "TargetComputerType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ComputerType",
               "OperatingSystem": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType",
@@ -43433,7 +43769,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "OperatingSystem": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType",
               "Status": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus",
@@ -43494,7 +43834,11 @@
           "Type": {
             "Namespace": "System",
             "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+            "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [
@@ -43747,7 +44091,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -43889,7 +44237,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "OperatingSystem": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType",
                     "Status": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus",
@@ -43956,7 +44308,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -44098,7 +44454,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -44339,7 +44699,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRun, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "OperatingSystem": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType",
               "Status": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus",
@@ -44437,7 +44801,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "ScheduleConfiguration": "Microsoft.Azure.Commands.Automation.Model.Schedule",
               "ErrorInfo": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo",
@@ -44493,7 +44861,11 @@
           "Type": {
             "Namespace": "System",
             "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+            "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [
@@ -44513,7 +44885,11 @@
           "Type": {
             "Namespace": "System",
             "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+            "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [
@@ -44766,7 +45142,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -44792,7 +45172,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -44934,7 +45318,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "ScheduleConfiguration": "Microsoft.Azure.Commands.Automation.Model.Schedule",
                     "ErrorInfo": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo",
@@ -44996,7 +45384,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -45022,7 +45414,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -45164,7 +45560,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -45190,7 +45590,11 @@
                 "Type": {
                   "Namespace": "System",
                   "Name": "System.Nullable`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+                  "AssemblyQualifiedName": "System.Nullable`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [
@@ -45431,7 +45835,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "TagSettings": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagSettings",
               "Locations": "System.String[]",
@@ -45542,7 +45950,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -45794,7 +46206,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -46002,7 +46418,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "ScheduleConfiguration": "Microsoft.Azure.Commands.Automation.Model.Schedule",
               "ErrorInfo": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo",
@@ -46059,7 +46479,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model",
             "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
               "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -46310,7 +46734,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties",
             "GenericTypeArguments": [],
@@ -46328,7 +46756,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties",
             "GenericTypeArguments": [],
@@ -46364,7 +46796,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -46467,7 +46903,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses[]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses",
             "GenericTypeArguments": [],
@@ -46521,7 +46961,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses[]",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {},
             "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses",
             "GenericTypeArguments": [],
@@ -46650,7 +47094,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
                     "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -46913,7 +47361,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties",
                   "GenericTypeArguments": [],
@@ -46937,7 +47389,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties",
                   "GenericTypeArguments": [],
@@ -46985,7 +47441,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -47210,7 +47670,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses",
                   "GenericTypeArguments": [],
@@ -47282,7 +47746,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
                     "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -47545,7 +48013,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties",
                   "GenericTypeArguments": [],
@@ -47569,7 +48041,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties",
                   "GenericTypeArguments": [],
@@ -47617,7 +48093,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -47842,7 +48322,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses",
                   "GenericTypeArguments": [],
@@ -47914,7 +48398,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
                     "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -48177,7 +48665,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties",
                   "GenericTypeArguments": [],
@@ -48201,7 +48693,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[]",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties[], Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties",
                   "GenericTypeArguments": [],
@@ -48249,7 +48745,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {},
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -48509,7 +49009,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
             "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "ScheduleConfiguration": "Microsoft.Azure.Commands.Automation.Model.Schedule",
               "ErrorInfo": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo",
@@ -48798,7 +49302,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
                   "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "ScheduleConfiguration": "Microsoft.Azure.Commands.Automation.Model.Schedule",
                     "ErrorInfo": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo",
@@ -49482,7 +49990,11 @@
     "Microsoft.Azure.Commands.Automation.Model.Job": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model",
       "Name": "Microsoft.Azure.Commands.Automation.Model.Job",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Job, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Job, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "JobParameters": "System.Collections.Hashtable",
         "CreationTime": "System.DateTimeOffset",
@@ -49576,7 +50088,11 @@
     "Microsoft.Azure.Commands.Automation.Model.JobSchedule": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model",
       "Name": "Microsoft.Azure.Commands.Automation.Model.JobSchedule",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobSchedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.JobSchedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "Parameters": "System.Collections.Hashtable",
         "ResourceGroupName": "System.String",
@@ -49657,7 +50173,11 @@
     "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker]": {
       "Namespace": "System.Collections.Generic",
       "Name": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker]",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+      "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [
@@ -49669,7 +50189,11 @@
     "Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model",
       "Name": "Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.HybridRunbookWorker, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "RegistrationTime": "System.DateTimeOffset",
         "LastSeenDateTime": "System.DateTimeOffset",
@@ -49726,7 +50250,11 @@
     "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model",
       "Name": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "DayOfWeek": "Microsoft.Azure.Commands.Automation.Model.DayOfWeek",
         "DaysOfMonth": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth]"
@@ -49771,7 +50299,11 @@
     "Microsoft.Azure.Commands.Automation.Model.DayOfWeek": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model",
       "Name": "Microsoft.Azure.Commands.Automation.Model.DayOfWeek",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DayOfWeek, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.DayOfWeek, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "Occurrence": "System.String",
         "Day": "System.String"
@@ -49816,7 +50348,11 @@
     "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth]": {
       "Namespace": "System.Collections.Generic",
       "Name": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth]",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+      "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [
@@ -49828,7 +50364,11 @@
     "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Cmdlet",
       "Name": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Cmdlet.DaysOfMonth, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -49923,7 +50463,11 @@
     "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model",
       "Name": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -50018,7 +50562,11 @@
     "Microsoft.Azure.Commands.Automation.Model.WeeklyScheduleOptions": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model",
       "Name": "Microsoft.Azure.Commands.Automation.Model.WeeklyScheduleOptions",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.WeeklyScheduleOptions, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.WeeklyScheduleOptions, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "DaysOfWeek": "System.Collections.Generic.IList`1[System.String]"
       },
@@ -50275,7 +50823,11 @@
     "Microsoft.Azure.Commands.Automation.Model.Schedule": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model",
       "Name": "Microsoft.Azure.Commands.Automation.Model.Schedule",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.Schedule, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "MonthlyScheduleOptions": "Microsoft.Azure.Commands.Automation.Model.MonthlyScheduleOptions",
         "Frequency": "Microsoft.Azure.Commands.Automation.Model.ScheduleFrequency",
@@ -50356,7 +50908,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ErrorInfo, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "Code": "System.String",
         "Message": "System.String"
@@ -50401,7 +50957,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Tasks": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Tasks",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Tasks, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Tasks, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "PreTask": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Task",
         "PostTask": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Task"
@@ -50446,7 +51006,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Task": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Task",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Task, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.Task, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "parameters": "System.Collections.Generic.IDictionary`2[System.String,System.String]",
         "source": "System.String"
@@ -50491,7 +51055,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.UpdateConfiguration": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.UpdateConfiguration",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.UpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.UpdateConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "Linux": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxConfiguration",
         "OperatingSystem": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType",
@@ -50541,7 +51109,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxConfiguration": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxConfiguration",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "rebootSetting": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting",
         "IncludedPackageClassifications": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses]",
@@ -50588,7 +51160,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -50683,7 +51259,11 @@
     "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses]": {
       "Namespace": "System.Collections.Generic",
       "Name": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses]",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+      "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [
@@ -50695,7 +51275,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.LinuxPackageClasses, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -50790,7 +51374,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.OperatingSystemType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -50885,7 +51473,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.UpdateTargets": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.UpdateTargets",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.UpdateTargets, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.UpdateTargets, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "AzureQueries": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties]",
         "NonAzureQueries": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties]"
@@ -50930,7 +51522,11 @@
     "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties]": {
       "Namespace": "System.Collections.Generic",
       "Name": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties]",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+      "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [
@@ -50942,7 +51538,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.AzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "TagSettings": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagSettings",
         "Locations": "System.String[]",
@@ -50988,7 +51588,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagSettings": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagSettings",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagSettings, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagSettings, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "FilterOperator": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators",
         "Tags": "System.Collections.Generic.IDictionary`2[System.String,System.Collections.Generic.List`1[System.String]]"
@@ -51033,7 +51637,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.TagOperators, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -51153,7 +51761,11 @@
     "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties]": {
       "Namespace": "System.Collections.Generic",
       "Name": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties]",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+      "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [
@@ -51165,7 +51777,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.NonAzureQueryProperties, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "FunctionAlias": "System.String",
         "WorkspaceResourceId": "System.String"
@@ -51210,7 +51826,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsConfiguration": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsConfiguration",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsConfiguration, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "rebootSetting": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.RebootSetting",
         "IncludedUpdateClassifications": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses]",
@@ -51257,7 +51877,11 @@
     "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses]": {
       "Namespace": "System.Collections.Generic",
       "Name": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses]",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+      "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [
@@ -51269,7 +51893,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.WindowsUpdateClasses, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -51386,7 +52014,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ComputerType": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ComputerType",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ComputerType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.ComputerType, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -51481,7 +52113,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateMachineRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -51576,7 +52212,11 @@
     "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus": {
       "Namespace": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement",
       "Name": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.5.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.Automation.Model.UpdateManagement.SoftwareUpdateRunStatus, Microsoft.Azure.PowerShell.Cmdlets.Automation, Version=1.3.6.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],

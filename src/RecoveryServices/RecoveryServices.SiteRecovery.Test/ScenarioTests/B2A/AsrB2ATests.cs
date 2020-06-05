@@ -119,5 +119,25 @@ namespace RecoveryServices.SiteRecovery.Test
                 this.VaultSettingsFilePath +
                 "\"");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(
+            Category.AcceptanceType,
+            Category.CheckIn)]
+        public void TestUpdateRPIWithDES()
+        {
+            this.VaultSettingsFilePath = System.IO.Path.Combine(
+                System.AppDomain.CurrentDomain.BaseDirectory,
+                "ScenarioTests", "B2A", "CMKInput", "B2A.VaultCredentials");
+            this.RunPowerShellTest(
+                _logger,
+                Constants.NewModel,
+                "Test-UpdateRPIWithDiskEncryptionSetMap -vaultSettingsFilePath \"" +
+                this.VaultSettingsFilePath +
+                "\"");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

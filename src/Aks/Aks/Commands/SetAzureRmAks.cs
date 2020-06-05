@@ -15,12 +15,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Aks.Generated.Version2017_08_31;
 using Microsoft.Azure.Commands.Aks.Generated.Version2017_08_31.Models;
 using Microsoft.Azure.Commands.Aks.Models;
 using Microsoft.Azure.Commands.Aks.Properties;
 using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+=======
+using Microsoft.Azure.Commands.Aks.Models;
+using Microsoft.Azure.Commands.Aks.Properties;
+using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
+using Microsoft.Azure.Management.ContainerService;
+using Microsoft.Azure.Management.ContainerService.Models;
+using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Aks
 {
@@ -88,18 +98,30 @@ namespace Microsoft.Azure.Commands.Aks
                             cluster = Client.ManagedClusters.Get(ResourceGroupName, Name);
                         }
 
+<<<<<<< HEAD
                         if (MyInvocation.BoundParameters.ContainsKey("Location"))
+=======
+                        if (this.IsParameterBound(c => c.Location))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         {
                             throw new CmdletInvocationException(Resources.LocationCannotBeUpdateForExistingCluster);
                         }
 
+<<<<<<< HEAD
                         if (MyInvocation.BoundParameters.ContainsKey("DnsNamePrefix"))
+=======
+                        if (this.IsParameterBound(c => c.DnsNamePrefix))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         {
                             WriteVerbose(Resources.UpdatingDnsNamePrefix);
                             cluster.DnsPrefix = DnsNamePrefix;
                         }
 
+<<<<<<< HEAD
                         if (MyInvocation.BoundParameters.ContainsKey("SshKeyValue"))
+=======
+                        if (this.IsParameterBound(c => c.SshKeyValue))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         {
                             WriteVerbose(Resources.UpdatingSshKeyValue);
                             cluster.LinuxProfile.Ssh.PublicKeys = new List<ContainerServiceSshPublicKey>
@@ -107,18 +129,27 @@ namespace Microsoft.Azure.Commands.Aks
                                 new ContainerServiceSshPublicKey(GetSshKey(SshKeyValue))
                             };
                         }
+<<<<<<< HEAD
 
                         if (ParameterSetName == SpParamSet)
+=======
+                        if (this.IsParameterBound(c => c.ClientIdAndSecret))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         {
                             WriteVerbose(Resources.UpdatingServicePrincipal);
                             var acsServicePrincipal = EnsureServicePrincipal(ClientIdAndSecret.UserName, ClientIdAndSecret.Password.ToString());
 
+<<<<<<< HEAD
                             var spProfile = new ContainerServiceServicePrincipalProfile(
+=======
+                            var spProfile = new ManagedClusterServicePrincipalProfile(
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                                 acsServicePrincipal.SpId,
                                 acsServicePrincipal.ClientSecret);
                             cluster.ServicePrincipalProfile = spProfile;
                         }
 
+<<<<<<< HEAD
                         if (MyInvocation.BoundParameters.ContainsKey("AdminUserName"))
                         {
                             WriteVerbose(Resources.UpdatingAdminUsername);
@@ -160,17 +191,93 @@ namespace Microsoft.Azure.Commands.Aks
                         }
 
                         if (MyInvocation.BoundParameters.ContainsKey("KubernetesVersion"))
+=======
+                        if (this.IsParameterBound(c => c.LinuxProfileAdminUserName))
+                        {
+                            WriteVerbose(Resources.UpdatingAdminUsername);
+                            cluster.LinuxProfile.AdminUsername = LinuxProfileAdminUserName;
+                        }
+
+                        if (NeedUpdateNodeAgentPool())
+                        {
+                            ManagedClusterAgentPoolProfile defaultAgentPoolProfile;
+
+                            string nodePoolName = "default";
+                            if (this.IsParameterBound(c => c.NodeName))
+                            {
+                                nodePoolName = NodeName;
+                            }
+
+                            if (cluster.AgentPoolProfiles.Any(x => x.Name == nodePoolName))
+                            {
+                                defaultAgentPoolProfile = cluster.AgentPoolProfiles.First(x => x.Name == nodePoolName);
+                            }
+                            else
+                            {
+                                throw new PSArgumentException(Resources.SpecifiedAgentPoolDoesNotExist);
+                            }
+
+                            if (this.IsParameterBound(c => c.NodeMinCount))
+                            {
+                                defaultAgentPoolProfile.MinCount = NodeMinCount;
+                            }
+                            if (this.IsParameterBound(c => c.NodeMaxCount))
+                            {
+                                defaultAgentPoolProfile.MaxCount = NodeMaxCount;
+                            }
+                            if (this.IsParameterBound(c => c.EnableNodeAutoScaling))
+                            {
+                                defaultAgentPoolProfile.EnableAutoScaling = EnableNodeAutoScaling.ToBool();
+                            }
+                            if (this.IsParameterBound(c => c.NodeVmSize))
+                            {
+                                WriteVerbose(Resources.UpdatingNodeVmSize);
+                                defaultAgentPoolProfile.VmSize = NodeVmSize;
+                            }
+
+                            if (this.IsParameterBound(c => c.NodeCount))
+                            {
+                                WriteVerbose(Resources.UpdatingNodeCount);
+                                defaultAgentPoolProfile.Count = NodeCount;
+                            }
+
+                            if (this.IsParameterBound(c => c.NodeOsDiskSize))
+                            {
+                                WriteVerbose(Resources.UpdatingNodeOsDiskSize);
+                                defaultAgentPoolProfile.OsDiskSizeGB = NodeOsDiskSize;
+                            }
+                        }
+
+                        if (this.IsParameterBound(c => c.KubernetesVersion))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         {
                             WriteVerbose(Resources.UpdatingKubernetesVersion);
                             cluster.KubernetesVersion = KubernetesVersion;
                         }
 
+<<<<<<< HEAD
                         if (MyInvocation.BoundParameters.ContainsKey("Tag"))
+=======
+                        if (this.IsParameterBound(c => c.Tag))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         {
                             WriteVerbose(Resources.UpdatingTags);
                             cluster.Tags = TagsConversionHelper.CreateTagDictionary(Tag, true);
                         }
 
+<<<<<<< HEAD
+=======
+                        //To avoid server error: for agentPoolProfiles.availabilityZones, server will expect
+                        //$null instead of empty collection, otherwise it will throw error.
+                        foreach(var profile in cluster.AgentPoolProfiles)
+                        {
+                            if(profile.AvailabilityZones?.Count == 0)
+                            {
+                                profile.AvailabilityZones = null;
+                            }
+                        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         WriteVerbose(Resources.UpdatingYourManagedKubernetesCluster);
                     }
                     else
@@ -184,5 +291,15 @@ namespace Microsoft.Azure.Commands.Aks
                 });
             }
         }
+<<<<<<< HEAD
+=======
+
+        private bool NeedUpdateNodeAgentPool()
+        {
+            return this.IsParameterBound(c => c.NodeCount) || this.IsParameterBound(c => c.NodeOsDiskSize) ||
+                this.IsParameterBound(c => c.NodeVmSize) || this.IsParameterBound(c => c.EnableNodeAutoScaling) ||
+                this.IsParameterBound(c => c.NodeMinCount) || this.IsParameterBound(c => c.NodeMaxCount);
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

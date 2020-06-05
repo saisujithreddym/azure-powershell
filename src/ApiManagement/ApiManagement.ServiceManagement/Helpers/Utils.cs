@@ -389,6 +389,7 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
 
         public static string GetSchemaDocumentValue(SchemaContract schemaContract)
         {
+<<<<<<< HEAD
             switch (schemaContract.ContentType.ToLower())
             {
                 case ApiSchemaContentType.SwaggerDefinition:
@@ -406,6 +407,22 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement
                     {
                         throw new Exception($"Unable for parse Schema Document for ContentType {schemaContract.ContentType}.", ex);
                     }
+=======
+            if (!string.IsNullOrEmpty(schemaContract.Value))
+            {
+                return schemaContract.Value;
+            }
+            else
+            {
+                try
+                {
+                    return (schemaContract.Definitions as JObject)?.ToString();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Unable for parse Schema Document for ContentType {schemaContract.ContentType}.", ex);
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
         }
 

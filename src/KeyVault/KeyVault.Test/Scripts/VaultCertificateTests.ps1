@@ -399,6 +399,7 @@ Various organization details/admin details settings
 
 function Test_NewOrganizationDetails
 {
+<<<<<<< HEAD
     $admin1Details = New-AzKeyVaultCertificateAdministratorDetails -EmailAddress "admin1@contoso.com"
     Assert-NotNull $admin1Details
 
@@ -406,6 +407,15 @@ function Test_NewOrganizationDetails
     Assert-NotNull $admin2Details
 
     $orgDetails = New-AzKeyVaultCertificateOrganizationDetails -Id "MSFT" -AdministratorDetails $admin1Details, $admin2Details
+=======
+    $admin1Details = New-AzKeyVaultCertificateAdministratorDetail -EmailAddress "admin1@contoso.com"
+    Assert-NotNull $admin1Details
+
+    $admin2Details = New-AzKeyVaultCertificateAdministratorDetail -EmailAddress "admin2@contoso.com" -FirstName "admin" -LastName "2"
+    Assert-NotNull $admin2Details
+
+    $orgDetails = New-AzKeyVaultCertificateOrganizationDetail -Id "MSFT" -AdministratorDetails $admin1Details, $admin2Details
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     Assert-NotNull $orgDetails
 }
 
@@ -420,10 +430,17 @@ function Test_CreateSSLAdminIssuer
     $issuerName = "SSLAdminIssuer"
     $issuerProvider = "SSLAdmin"
 
+<<<<<<< HEAD
     $admin1Details = New-AzKeyVaultCertificateAdministratorDetails -EmailAddress "admin1@contoso.com"
     $admin2Details = New-AzKeyVaultCertificateAdministratorDetails -EmailAddress "admin2@contoso.com" -FirstName "admin" -LastName "2"
     $admin3Details = New-AzKeyVaultCertificateAdministratorDetails -EmailAddress "admin3@contoso.com" -FirstName "admin" -LastName "3" -PhoneNumber "425-555-5555"
     $orgDetails = New-AzKeyVaultCertificateOrganizationDetails -AdministratorDetails $admin1Details, $admin2Details, $admin3Details
+=======
+    $admin1Details = New-AzKeyVaultCertificateAdministratorDetail -EmailAddress "admin1@contoso.com"
+    $admin2Details = New-AzKeyVaultCertificateAdministratorDetail -EmailAddress "admin2@contoso.com" -FirstName "admin" -LastName "2"
+    $admin3Details = New-AzKeyVaultCertificateAdministratorDetail -EmailAddress "admin3@contoso.com" -FirstName "admin" -LastName "3" -PhoneNumber "425-555-5555"
+    $orgDetails = New-AzKeyVaultCertificateOrganizationDetail -AdministratorDetails $admin1Details, $admin2Details, $admin3Details
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     $issuer1 = Set-AzKeyVaultCertificateIssuer $keyVault $issuerName -IssuerProvider $issuerProvider -OrganizationDetails $orgDetails -PassThru
     Assert-NotNull $issuer1
@@ -448,8 +465,13 @@ function Test_CreateAndGetTestIssuer
     $issuer01Name = "getissuer01"
     $nonExistingIssuerName = "non-existingissuer"
 
+<<<<<<< HEAD
     $adminDetails = New-AzKeyVaultCertificateAdministratorDetails -EmailAddress "admin@contoso.com" -FirstName "admin" -LastName "admin" -PhoneNumber "425-555-5555"
     $orgDetails = New-AzKeyVaultCertificateOrganizationDetails -Id "MSFT" -AdministratorDetails $adminDetails
+=======
+    $adminDetails = New-AzKeyVaultCertificateAdministratorDetail -EmailAddress "admin@contoso.com" -FirstName "admin" -LastName "admin" -PhoneNumber "425-555-5555"
+    $orgDetails = New-AzKeyVaultCertificateOrganizationDetail -Id "MSFT" -AdministratorDetails $adminDetails
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     $issuerAdded = Set-AzKeyVaultCertificateIssuer $keyVault $issuer01Name -IssuerProvider "Test" -OrganizationDetails $orgDetails -PassThru
     $issuerGotten = Get-AzKeyVaultCertificateIssuer $keyVault $issuer01Name

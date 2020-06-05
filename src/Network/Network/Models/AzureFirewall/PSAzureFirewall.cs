@@ -66,6 +66,15 @@ namespace Microsoft.Azure.Commands.Network.Models
             }
         }
 
+<<<<<<< HEAD
+=======
+        public string DNSEnableProxy { get; set; }
+
+        public string DNSRequireProxyForNetworkRules { get; set; }
+
+        public string[] DNSServer { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ProvisioningState { get; set; }
 
         public List<string> Zones { get; set; }
@@ -112,6 +121,15 @@ namespace Microsoft.Azure.Commands.Network.Models
             get { return JsonConvert.SerializeObject(PrivateRange, Formatting.Indented); }
         }
 
+<<<<<<< HEAD
+=======
+        [JsonIgnore]
+        public string DNSServersText
+        {
+            get { return JsonConvert.SerializeObject(DNSServer, Formatting.Indented); }
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #region Ip Configuration Operations
 
         public void Allocate(PSVirtualNetwork virtualNetwork, PSPublicIpAddress[] publicIpAddresses, PSPublicIpAddress ManagementPublicIpAddress = null)
@@ -184,9 +202,17 @@ namespace Microsoft.Azure.Commands.Network.Models
                 throw new ArgumentNullException(nameof(publicIpAddress), "Public IP Address cannot be null!");
             }
 
+<<<<<<< HEAD
             if (this.IpConfigurations.Count > 0)
             {
                 var conflictingIpConfig = this.IpConfigurations.SingleOrDefault
+=======
+            PSAzureFirewallIpConfiguration conflictingIpConfig = null;
+
+            if (this.IpConfigurations.Count > 0)
+            {
+                conflictingIpConfig = this.IpConfigurations.SingleOrDefault
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     (ipConfig => string.Equals(ipConfig.PublicIpAddress?.Id, publicIpAddress.Id, System.StringComparison.CurrentCultureIgnoreCase));
 
                 if (conflictingIpConfig != null)
@@ -199,14 +225,34 @@ namespace Microsoft.Azure.Commands.Network.Models
                 throw new InvalidOperationException($"Please invoke {nameof(Allocate)} to attach the firewall to a Virtual Network");
             }
 
+<<<<<<< HEAD
             this.IpConfigurations.Add(
                 new PSAzureFirewallIpConfiguration
                 {
                     Name = $"{AzureFirewallIpConfigurationName}{this.IpConfigurations.Count}",
+=======
+            var i = 0;
+            conflictingIpConfig = null;
+            var newIpConfigName = "";
+
+            do
+            {
+                newIpConfigName = $"{AzureFirewallIpConfigurationName}{this.IpConfigurations.Count + i}";
+                conflictingIpConfig = this.IpConfigurations.SingleOrDefault
+                    (ipConfig => string.Equals(ipConfig.Name, newIpConfigName, System.StringComparison.CurrentCultureIgnoreCase));
+                i++;
+            } while (conflictingIpConfig != null);
+
+            this.IpConfigurations.Add(
+                new PSAzureFirewallIpConfiguration
+                {
+                    Name = newIpConfigName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     PublicIpAddress = new PSResourceId { Id = publicIpAddress.Id }
                 });
         }
 
+<<<<<<< HEAD
         public void SetManagementIpConfiguration(PSVirtualNetwork virtualNetwork, PSPublicIpAddress publicIpAddress)
         {
             if (publicIpAddress == null)
@@ -237,6 +283,8 @@ namespace Microsoft.Azure.Commands.Network.Models
             };
         }
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void RemovePublicIpAddress(PSPublicIpAddress publicIpAddress)
         {
             if (publicIpAddress == null)
@@ -252,6 +300,14 @@ namespace Microsoft.Azure.Commands.Network.Models
                 throw new ArgumentException($"Public IP Address {publicIpAddress.Id} is not attached to firewall {this.Name}");
             }
 
+<<<<<<< HEAD
+=======
+            if (this.IpConfigurations.Count > 1 && ipConfigToRemove.Subnet != null)
+            {
+                throw new InvalidOperationException($"Cannot remove IpConfiguration {ipConfigToRemove.Name} because it references subnet {ipConfigToRemove.Subnet.Id}. Move the subnet reference to another IpConfiguration and try again.");
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (this.IpConfigurations.Count == 1)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
@@ -407,6 +463,48 @@ namespace Microsoft.Azure.Commands.Network.Models
 
         #endregion
 
+<<<<<<< HEAD
+=======
+        #region DNS Proxy Validation
+
+        public void ValidateDNSProxyRequirements()
+        {
+            if (string.Equals(this.DNSEnableProxy, "true", StringComparison.OrdinalIgnoreCase))
+            {
+                // Nothing to validate since they have enabled DNS Proxy
+                return;
+            }
+
+            if (string.Equals(this.DNSRequireProxyForNetworkRules, "false", StringComparison.OrdinalIgnoreCase))
+            {
+                // Nothing to validate since both DNS Proxy and Requiring Proxy for Network Rules is disabled
+                return;
+            }
+
+            // Need to check if any Network Rules have FQDNs
+            var netRuleCollections = this.NetworkRuleCollections?.Where(rc => rc?.Rules != null && rc.Rules.Any()).ToList();
+            if (netRuleCollections == null)
+            {
+                // No network rules so nothing to do
+                return;
+            }
+
+            foreach (var netRuleCollection in netRuleCollections)
+            {
+                foreach (var rule in netRuleCollection.Rules)
+                {
+                    if (rule?.DestinationFqdns != null && rule.DestinationFqdns.Any())
+                    {
+                        throw new PSArgumentException(string.Format("Found FQDNs {0} in network rule collection {1} rule {2} without DNS proxy being enabled or requirement setting disabled",
+                            rule.DestinationFqdns, netRuleCollection.Name, rule.Name));
+                    }
+                }
+            }
+        }
+
+        #endregion
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #region Private Methods
 
         private List<BaseRuleCollection> AddRuleCollection<BaseRuleCollection>(BaseRuleCollection ruleCollection, List<BaseRuleCollection> existingRuleCollections) where BaseRuleCollection : PSAzureFirewallBaseRuleCollection

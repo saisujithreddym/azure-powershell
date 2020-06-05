@@ -13,6 +13,10 @@
 // ----------------------------------------------------------------------------------
 
 using System;
+<<<<<<< HEAD
+=======
+using System.Collections.Generic;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Management.RecoveryServices.Backup.Models;
 
 namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models
@@ -26,6 +30,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models
 
         public string HealthStatus { get; set; }
 
+<<<<<<< HEAD
+=======
+        public bool? IsInclusionList { get; set; }
+
+        public IList<int?> DiskLunList { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <summary>
         /// Constructor. Takes the service client object representing the protected item 
         /// and converts it in to the PS protected item model
@@ -53,6 +64,17 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models
                 DateOfPurge = protectedItem.DeferredDeleteTimeInUTC.Value.AddDays(14);
                 DeleteState = EnumUtils.GetEnum<ItemDeleteState>("ToBeDeleted");
             }
+<<<<<<< HEAD
+=======
+
+            if (protectedItem.ExtendedProperties != null &&
+                protectedItem.ExtendedProperties.DiskExclusionProperties != null)
+            {
+                DiskExclusionProperties diskExclusionProperties = protectedItem.ExtendedProperties.DiskExclusionProperties;
+                IsInclusionList = diskExclusionProperties.IsInclusionList;
+                DiskLunList = diskExclusionProperties.DiskLunList;
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 

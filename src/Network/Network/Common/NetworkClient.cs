@@ -14,10 +14,15 @@
 
 using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Common.Authentication.Models;
 using Microsoft.Azure.Management.Network;
 using Microsoft.Azure.Management.Network.Models;
 using Microsoft.Azure.Management.Sql;
+=======
+using Microsoft.Azure.Management.Network;
+using Microsoft.Azure.Management.Network.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Rest;
 using Microsoft.Rest.Azure;
 using Newtonsoft.Json;
@@ -37,6 +42,7 @@ namespace Microsoft.Azure.Commands.Network
     {
         public INetworkManagementClient NetworkManagementClient { get; set; }
 
+<<<<<<< HEAD
         public ISqlManagementClient SqlManagementClient
         {
             get
@@ -54,6 +60,8 @@ namespace Microsoft.Azure.Commands.Network
         }
         private ISqlManagementClient sqlManagementClient = null;
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private IAzureContext azureContext;
 
         public Action<string> VerboseLogger { get; set; }

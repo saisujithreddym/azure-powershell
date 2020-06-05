@@ -12,7 +12,14 @@ Param(
     [string]$ModuleName,
 
     [Parameter()]
+<<<<<<< HEAD
     [string]$GalleryName = "PSGallery"
+=======
+    [string]$GalleryName = "PSGallery",
+
+    [Parameter()]
+    [switch]$SkipAzInstall
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 )
 
 enum PSVersion
@@ -134,7 +141,11 @@ function Get-ReleaseNotes
                                                                                                           $_.FullName -notlike "*Debug*" -and `
                                                                                                           $_.FullName -notlike "*Netcore*" -and `
                                                                                                           $_.FullName -notlike "*dll-Help.psd1*" -and `
+<<<<<<< HEAD
                                                                                                           $_.FullName -notlike "*Stack*" } }
+=======
+                                                                                                          ($_.FullName -notlike "*Stack*" -or $_.FullName -like "*StackEdge*") } }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     Import-LocalizedData -BindingVariable ModuleMetadata -BaseDirectory $ModuleManifestFile.DirectoryName -FileName $ModuleManifestFile.Name
     return $ModuleMetadata.PrivateData.PSData.ReleaseNotes
@@ -154,6 +165,22 @@ function Update-ChangeLog
     ($Content + $ChangeLogContent) | Set-Content -Path $ChangeLogFile.FullName -Encoding UTF8
 }
 
+<<<<<<< HEAD
+=======
+function Update-Image-Releases
+{
+    Param(
+        [Parameter(Mandatory = $true)]
+        [string]$ReleaseProps,
+        [Parameter(Mandatory = $true)]
+        [string]$AzVersion
+    )
+
+    $content = Get-Content $ReleaseProps
+    $content -Replace "az.version=\d+\.\d+\.\d+", "az.version=$AzVersion" | Set-Content $ReleaseProps
+}
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 function Get-ExistSerializedCmdletJsonFile
 {
     return $(ls "$PSScriptRoot\Tools.Common\SerializedCmdlets").Name
@@ -163,6 +190,10 @@ switch ($PSCmdlet.ParameterSetName)
 {
     "ReleaseSingleModule"
     {
+<<<<<<< HEAD
+=======
+        Write-Host executing dotnet $PSScriptRoot/../artifacts/VersionController/VersionController.Netcore.dll $PSScriptRoot/../artifacts/VersionController/Exceptions $ModuleName
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         dotnet $PSScriptRoot/../artifacts/VersionController/VersionController.Netcore.dll $PSScriptRoot/../artifacts/VersionController/Exceptions $ModuleName
     }
 
@@ -172,7 +203,11 @@ switch ($PSCmdlet.ParameterSetName)
         # clean the unnecessary SerializedCmdlets json file
         $ExistSerializedCmdletJsonFile = Get-ExistSerializedCmdletJsonFile
         $ExpectJsonHashSet = @{}
+<<<<<<< HEAD
         $SrcPath = "..\src"
+=======
+        $SrcPath = Join-Path -Path $PSScriptRoot -ChildPath "..\src"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         foreach ($ModuleName in $(Get-ChildItem $SrcPath -Directory).Name)
         {
             $ModulePath = $(Join-Path -Path $SrcPath -ChildPath $ModuleName)
@@ -202,13 +237,24 @@ switch ($PSCmdlet.ParameterSetName)
         }
         try
         {
+<<<<<<< HEAD
             Install-Module Az -Repository $GalleryName -Force -AllowClobber
+=======
+            if(!$SkipAzInstall.IsPresent)
+            {
+                Install-Module Az -Repository $GalleryName -Force -AllowClobber
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
         catch
         {
             throw "Please rerun in Administrator mode."
         }
 
+<<<<<<< HEAD
+=======
+        Write-Host executing dotnet $PSScriptRoot/../artifacts/VersionController/VersionController.Netcore.dll
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         dotnet $PSScriptRoot/../artifacts/VersionController/VersionController.Netcore.dll
 
         Write-Host "Getting local Az information..." -ForegroundColor Yellow

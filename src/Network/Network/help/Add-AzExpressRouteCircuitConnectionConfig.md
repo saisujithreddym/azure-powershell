@@ -16,21 +16,33 @@ Adds a circuit connection configuration to Private Peering of an Express Route C
 ### SetByResource (Default)
 ```
 Add-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
+<<<<<<< HEAD
  [-AddressPrefix] <String> [-AuthorizationKey <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+=======
+ [-AddressPrefix] <String> [-AddressPrefixType <String>] [-AuthorizationKey <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-Confirm] [<CommonParameters>]
 ```
 
 ### SetByResourceId
 ```
 Add-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
+<<<<<<< HEAD
  [-PeerExpressRouteCircuitPeering] <String> [-AddressPrefix] <String> [-AuthorizationKey <String>]
+=======
+ [-PeerExpressRouteCircuitPeering] <String> [-AddressPrefix] <String> -[AddressPrefixType <String>] [-AuthorizationKey <String>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 The **Add-AzExpressRouteCircuitConnectionConfig** cmdlet adds a circuit connection configuration to
 private peering for an ExpressRoute circuit. This allows peering two Express Route Circuits 
+<<<<<<< HEAD
 across regions or subscriptions.Note that, after running **Add-AzExpressRouteCircuitPeeringConfig**, 
+=======
+across regions or subscriptions.Note that, after running **Add-AzExpressRouteCircuitConnectionConfig**, 
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 you must call the Set-AzExpressRouteCircuit cmdlet to activate the configuration.
 
 ## EXAMPLES
@@ -40,7 +52,12 @@ you must call the Set-AzExpressRouteCircuit cmdlet to activate the configuration
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 $circuit_peer = Get-AzExpressRouteCircuit -Name $peeringCircuitName -ResourceGroupName $rg
 $addressSpace = '60.0.0.0/29'
+<<<<<<< HEAD
 Add-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init -PeerExpressRouteCircuitPeering $circuit_peer.Peerings[0].Id -AddressPrefix $addressSpace -AuthorizationKey $circuit_peer.Authorizations[0].AuthorizationKey
+=======
+$addressPrefixType = 'IPv4'
+Add-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init -PeerExpressRouteCircuitPeering $circuit_peer.Peerings[0].Id -AddressPrefix $addressSpace -AddressPrefixType $addressPrefixType -AuthorizationKey $circuit_peer.Authorizations[0].AuthorizationKey
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
@@ -54,7 +71,12 @@ Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Ad
 ## PARAMETERS
 
 ### -AddressPrefix
+<<<<<<< HEAD
 A minimum /29 customer address space to create VxLan tunnels between Express Route Circuits
+=======
+A minimum /29 customer address space to create VxLan tunnels between Express Route Circuits for IPv4 tunnels.
+or a minimum of /125 customer address space to create VxLan tunnels between Express Route Circuits for IPv6 tunnels.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -67,6 +89,24 @@ Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
+<<<<<<< HEAD
+=======
+### -AddressPrefixType
+This specifies the Address Family that address prefix belongs to.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+Accepted values: IPv4, IPv6
+
+Required: False
+Position: Named
+Default value: IPv4
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ### -AuthorizationKey
 Authorization Key to peer Express Route Circuit in another subscription. Authorization on peer circuit can be created using existing commands.
@@ -191,16 +231,22 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
+<<<<<<< HEAD
 [Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 [Get-AzExpressRouteCircuitConnectionConfig](Get-AzExpressRouteCircuitConnectionConfig.md)
 
 [Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
 [Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
+<<<<<<< HEAD
 [New-AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 [Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 
 [Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)

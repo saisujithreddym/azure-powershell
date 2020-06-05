@@ -18,7 +18,11 @@ New-AzSqlInstance [-Name] <String> [-ResourceGroupName] <String> -AdministratorC
  -Location <String> -SubnetId <String> [-LicenseType <String>] [-StorageSizeInGB <Int32>] -VCore <Int32>
  -Edition <String> -ComputeGeneration <String> [-Collation <String>] [-PublicDataEndpointEnabled]
  [-ProxyOverride <String>] [-TimezoneId <String>] [-Tag <Hashtable>] [-AssignIdentity]
+<<<<<<< HEAD
  [-DnsZonePartner <String>] [-InstancePoolName <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+=======
+ [-DnsZonePartner <String>] [-InstancePoolName <String>] [-AsJob] [-MinimalTlsVersion <String>] [-DefaultProfile <IAzureContextContainer>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -308,6 +312,24 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -MinimalTlsVersion
+The minimal TLS version to enforce for Managed instance 
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -InstancePoolName
 The instance pool to place this instance in.
 

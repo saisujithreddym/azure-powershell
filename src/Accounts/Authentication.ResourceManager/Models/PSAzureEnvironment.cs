@@ -114,6 +114,12 @@ namespace Microsoft.Azure.Commands.Profile.Models
             AzureAttestationServiceEndpointResourceId =
                 other.GetProperty<string>(nameof(AzureAttestationServiceEndpointResourceId));
             AzureAttestationServiceEndpointSuffix = other.GetProperty<string>(nameof(AzureAttestationServiceEndpointSuffix));
+<<<<<<< HEAD
+=======
+            AzureSynapseAnalyticsEndpointResourceId =
+                other.GetProperty<string>(nameof(AzureSynapseAnalyticsEndpointResourceId));
+            AzureSynapseAnalyticsEndpointSuffix = other.GetProperty<string>(nameof(AzureSynapseAnalyticsEndpointSuffix));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             VersionProfiles.Populate(nameof(VersionProfiles), other);
             this.PopulateExtensions(other);
         }
@@ -324,6 +330,39 @@ namespace Microsoft.Azure.Commands.Profile.Models
             }
         }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// The domain name suffix for Azure Synapse Analyticss
+        /// </summary>
+        public string AzureSynapseAnalyticsEndpointSuffix
+        {
+            get
+            {
+                return this.GetEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointSuffix);
+            }
+            set
+            {
+                this.SetEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointSuffix, value);
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the resource Id to use for contacting the Synapse Analyticss endpoint
+        /// </summary>
+        public string AzureSynapseAnalyticsEndpointResourceId
+        {
+            get
+            {
+                return this.GetEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointResourceId);
+            }
+            set
+            {
+                this.SetEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointResourceId, value);
+            }
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public IList<string> VersionProfiles { get; } = new List<string>();
 
         public IDictionary<string, string> ExtendedProperties { get; } = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);

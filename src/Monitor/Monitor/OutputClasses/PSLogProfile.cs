@@ -22,11 +22,14 @@ namespace Microsoft.Azure.Commands.Insights.OutputClasses
     public class PSLogProfile : LogProfileResource
     {
         /// <summary>
+<<<<<<< HEAD
         /// Gets or sets the RetentionPolicy of the LogProfile
         /// </summary>
         public new Management.Monitor.Management.Models.RetentionPolicy RetentionPolicy { get; set; }
 
         /// <summary>
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Initializes a new instance of the <see cref="PSLogProfile"/> class.
         /// </summary>
         /// <param name="logProfile">The input logProfile</param>

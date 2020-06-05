@@ -104,6 +104,10 @@ namespace Microsoft.Azure.Commands.Network
             string[] vpnClientRevokedCertificateFilesList,
             string radiusServerAddress,
             SecureString radiusServerSecret,
+<<<<<<< HEAD
+=======
+            PSRadiusServer[] radiusServers,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             string[] radiusServerRootCertificateFilesList,
             string[] radiusClientRootCertificateFilesList,
             string aadTenant,
@@ -172,6 +176,7 @@ namespace Microsoft.Azure.Commands.Network
             // VpnAuthenticationType = Radius related validations.
             else if (vpnAuthenticationType.Contains(MNM.VpnAuthenticationType.Radius))
             {
+<<<<<<< HEAD
                 if (radiusServerAddress == null || radiusServerSecret == null)
                 {
                     throw new ArgumentException("Both radius server address and secret must be specified if VpnAuthenticationType is being configured as Radius.");
@@ -179,6 +184,19 @@ namespace Microsoft.Azure.Commands.Network
 
                 vpnServerConfiguration.RadiusServerAddress = radiusServerAddress;
                 vpnServerConfiguration.RadiusServerSecret = SecureStringExtensions.ConvertToString(radiusServerSecret);
+=======
+                if (radiusServerAddress != null)
+                {
+                    vpnServerConfiguration.RadiusServerAddress = radiusServerAddress;
+                }
+
+                if (radiusServerSecret != null)
+                {
+                    vpnServerConfiguration.RadiusServerSecret = SecureStringExtensions.ConvertToString(radiusServerSecret);
+                }
+
+                vpnServerConfiguration.RadiusServers = radiusServers?.ToList();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                 // Read the RadiusServerRootCertificates if present
                 if (radiusServerRootCertificateFilesList != null)

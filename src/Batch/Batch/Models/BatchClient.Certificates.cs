@@ -84,6 +84,7 @@ namespace Microsoft.Azure.Commands.Batch.Models
 
             if (!string.IsNullOrWhiteSpace(parameters.FilePath))
             {
+<<<<<<< HEAD
                 if (string.IsNullOrWhiteSpace(parameters.Password))
                 {
                     unboundCert = certOperations.CreateCertificate(parameters.FilePath);
@@ -91,10 +92,20 @@ namespace Microsoft.Azure.Commands.Batch.Models
                 else
                 {
                     unboundCert = certOperations.CreateCertificate(parameters.FilePath, parameters.Password);
+=======
+                if (parameters.CertificateKind == PSCertificateKind.Cer)
+                {
+                    unboundCert = certOperations.CreateCertificateFromCer(parameters.FilePath);
+                }
+                else
+                {
+                    unboundCert = certOperations.CreateCertificateFromPfx(parameters.FilePath, parameters.Password);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
             }
             else
             {
+<<<<<<< HEAD
                 if (string.IsNullOrWhiteSpace(parameters.Password))
                 {
                     unboundCert = certOperations.CreateCertificate(parameters.RawData);
@@ -102,6 +113,15 @@ namespace Microsoft.Azure.Commands.Batch.Models
                 else
                 {
                     unboundCert = certOperations.CreateCertificate(parameters.RawData, parameters.Password);
+=======
+                if (parameters.CertificateKind == PSCertificateKind.Cer)
+                {
+                    unboundCert = certOperations.CreateCertificateFromCer(parameters.RawData);
+                }
+                else
+                {
+                    unboundCert = certOperations.CreateCertificateFromPfx(parameters.RawData, parameters.Password);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
             }
 

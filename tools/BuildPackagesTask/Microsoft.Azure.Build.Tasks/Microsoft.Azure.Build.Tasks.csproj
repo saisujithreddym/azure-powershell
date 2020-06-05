@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <Project Sdk="Microsoft.NET.Sdk">
+=======
+﻿<Project Sdk="Microsoft.NET.Sdk">
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
   <Import Project="$(MSBuildThisFileDirectory)..\..\..\Repo.props" />
 
@@ -23,7 +27,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.9.20" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+<<<<<<< HEAD
     <PackageReference Include="Octokit" Version="0.32.0" />
+=======
+    <PackageReference Include="Octokit" Version="0.46.0" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </ItemGroup>
 
   <ItemGroup>

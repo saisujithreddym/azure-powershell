@@ -28,12 +28,20 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
     /// Get all locations with the supported providers.
     /// </summary>
     [Cmdlet(VerbsCommon.Get, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "Location"), OutputType(typeof(PSResourceProviderLocation))]
+<<<<<<< HEAD
     public class GetAzureLocationCmdlet : ResourceManagerCmdletBase
+=======
+    public class GetAzureLocationCmdlet : ResourceManagerCmdletBaseWithAPiVersion
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     {
         /// <summary>
         /// Executes the cmdlet
         /// </summary>
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
+=======
+        protected override void OnProcessRecord()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             if(DefaultContext.Subscription == null)
             {

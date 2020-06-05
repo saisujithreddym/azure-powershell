@@ -134,12 +134,46 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
         public string TargetFolder { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Array of source file paths to be recovered
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = AzureFileParameterSet,
+            HelpMessage = ParamHelpMsgs.RestoreFS.MultipleSourceFilePath)]
+        public string[] MultipleSourceFilePath { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Use this switch if the disks from the recovery point are to be restored to their original storage accounts
         /// </summary>
         [Parameter(Mandatory = false, ParameterSetName = AzureVMParameterSet,
             HelpMessage = ParamHelpMsgs.RestoreVM.OsaOption)]
         public SwitchParameter UseOriginalStorageAccount { get; set; }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Use this switch to restore only OS disks of the backed up VM
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMParameterSet,
+            HelpMessage = ParamHelpMsgs.RestoreVM.RestoreOnlyOSDisk)]
+        public SwitchParameter RestoreOnlyOSDisk { get; set; }
+
+        /// <summary>
+        /// Specify which disks to recover of the backed up VM
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMParameterSet,
+            HelpMessage = ParamHelpMsgs.RestoreVM.RestoreDiskList)]
+        public string[] RestoreDiskList { get; set; }
+
+        /// <summary>
+        /// Use this switch to specify to restore as unmanaged disks
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = AzureVMParameterSet,
+            HelpMessage = ParamHelpMsgs.RestoreVM.RestoreAsUnmanagedDisks)]
+        public SwitchParameter RestoreAsUnmanagedDisks { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public override void ExecuteCmdlet()
         {
             ExecutionBlock(() =>
@@ -162,6 +196,12 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
                 providerParameters.Add(RestoreFSBackupItemParams.TargetFileShareName, TargetFileShareName);
                 providerParameters.Add(RestoreFSBackupItemParams.TargetFolder, TargetFolder);
                 providerParameters.Add(RestoreWLBackupItemParams.WLRecoveryConfig, WLRecoveryConfig);
+<<<<<<< HEAD
+=======
+                providerParameters.Add(RestoreVMBackupItemParams.RestoreDiskList, RestoreDiskList);
+                providerParameters.Add(RestoreVMBackupItemParams.RestoreOnlyOSDisk, RestoreOnlyOSDisk);
+                providerParameters.Add(RestoreVMBackupItemParams.RestoreAsUnmanagedDisks, RestoreAsUnmanagedDisks);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                 if (StorageAccountName != null)
                 {
@@ -183,6 +223,14 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
                     providerParameters.Add(RestoreFSBackupItemParams.SourceFileType, SourceFileType.ToString());
                 }
 
+<<<<<<< HEAD
+=======
+                if(MultipleSourceFilePath != null)
+                {
+                    providerParameters.Add(RestoreFSBackupItemParams.MultipleSourceFilePath, MultipleSourceFilePath);
+                }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 PsBackupProviderManager providerManager =
                     new PsBackupProviderManager(providerParameters, ServiceClientAdapter);
                 IPsBackupProvider psBackupProvider = null;

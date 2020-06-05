@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <Project Sdk="Microsoft.NET.Sdk">
+=======
+﻿<Project Sdk="Microsoft.NET.Sdk">
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
   <PropertyGroup>
     <PsModuleName>Aks</PsModuleName>
@@ -12,6 +16,10 @@
 
   <ItemGroup>
     <PackageReference Include="YamlDotNet.Signed" Version="5.2.1" />
+<<<<<<< HEAD
+=======
+    <PackageReference Include="Microsoft.Azure.Management.ContainerService" Version="1.0.0" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </ItemGroup>
 
   <ItemGroup>

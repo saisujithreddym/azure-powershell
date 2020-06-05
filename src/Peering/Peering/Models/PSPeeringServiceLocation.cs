@@ -16,7 +16,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
     using System.Linq;
 
     /// <summary>
+<<<<<<< HEAD
     /// PeeringService location
+=======
+    /// The peering service location.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     /// </summary>
     [Rest.Serialization.JsonTransformation]
     public partial class PSPeeringServiceLocation

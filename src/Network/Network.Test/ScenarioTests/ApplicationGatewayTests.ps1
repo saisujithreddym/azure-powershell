@@ -2223,7 +2223,11 @@ function Test-ApplicationGatewayTopLevelFirewallPolicy
 		$sslCert = New-AzApplicationGatewaySslCertificate -Name $sslCert01Name -CertificateFile $sslCert01Path -Password $pw01
 
 		# Create Application Gateway
+<<<<<<< HEAD
 		$appgw = New-AzApplicationGateway -Name $appgwName -ResourceGroupName $rgname -Location $location -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting01 -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp01,$fp02 -HttpListeners $listener01 -RequestRoutingRules $rule01 -Sku $sku -AutoscaleConfiguration $autoscaleConfig -UrlPathMap $urlPathMap,$urlPathMap2 -RedirectConfiguration $redirectConfig -Probe $probe -SslCertificate $sslCert -RewriteRuleSet $rewriteRuleSet
+=======
+		$appgw = New-AzApplicationGateway -Name $appgwName -ResourceGroupName $rgname -Location $location -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting01 -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp01,$fp02 -HttpListeners $listener01 -RequestRoutingRules $rule01 -Sku $sku -AutoscaleConfiguration $autoscaleConfig -UrlPathMap $urlPathMap,$urlPathMap2 -RedirectConfiguration $redirectConfig -Probe $probe -SslCertificate $sslCert -RewriteRuleSet $rewriteRuleSet -ForceFirewallPolicyAssociation
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 		$certFilePath = $basedir + "/ScenarioTests/Data/ApplicationGatewayAuthCert.cer"
 		$certFilePath2 = $basedir + "/ScenarioTests/Data/TrustedRootCertificate.cer"
@@ -2407,7 +2411,11 @@ function Test-ApplicationGatewayWithFirewallPolicy
 	{
 		# The Per-Site firewall policy can only be enabled in regions which have the dynamic setting set to true.
 		# Currently Central US EUAP region has it enabled so hardcoding it to this region, This can be removed once it is enabled on regions in production.
+<<<<<<< HEAD
 		$location = "centraluseuap"
+=======
+		$location = "westus"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		$resourceGroup = New-AzResourceGroup -Name $rgname -Location $location -Tags @{ testtag = "APPGw tag"}
 		# Create the Virtual Network
 		$gwSubnet = New-AzVirtualNetworkSubnetConfig -Name $gwSubnetName -AddressPrefix 10.0.0.0/24

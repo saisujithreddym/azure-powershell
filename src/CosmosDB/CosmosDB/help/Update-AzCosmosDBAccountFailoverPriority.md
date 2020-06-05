@@ -26,8 +26,13 @@ Update-AzCosmosDBAccountFailoverPriority -ResourceId <String> -FailoverPolicy <S
 
 ### ByObjectParameterSet
 ```
+<<<<<<< HEAD
 Update-AzCosmosDBAccountFailoverPriority -FailoverPolicy <String[]> -InputObject <PSDatabaseAccount> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+Update-AzCosmosDBAccountFailoverPriority -FailoverPolicy <String[]> -InputObject <PSDatabaseAccountGetResults>
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -109,14 +114,22 @@ Accept wildcard characters: False
 CosmosDB Account object
 
 ```yaml
+<<<<<<< HEAD
 Type: PSDatabaseAccount
+=======
+Type: PSDatabaseAccountGetResults
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByObjectParameterSet
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: False
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 

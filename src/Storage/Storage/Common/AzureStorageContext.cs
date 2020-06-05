@@ -20,6 +20,10 @@ namespace Microsoft.WindowsAzure.Commands.Storage
     using XTable = Microsoft.Azure.Cosmos.Table;
     using System;
     using System.Collections.Generic;
+<<<<<<< HEAD
+=======
+    using Microsoft.WindowsAzure.Commands.Storage.Common;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     /// <summary>
     /// Storage context
@@ -74,6 +78,14 @@ namespace Microsoft.WindowsAzure.Commands.Storage
         public virtual XTable.CloudStorageAccount TableStorageAccount { get; protected set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Storage Library Track2 Oauth credential
+        /// </summary>
+        public virtual AzureSessionCredential Track2OauthToken { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Endpoint suffix (everything after "table.", "blob." or "queue.")
         /// </summary>
         /// <returns>
@@ -136,7 +148,11 @@ namespace Microsoft.WindowsAzure.Commands.Storage
         /// Create a storage context usign cloud storage account
         /// </summary>
         /// <param name="account">cloud storage account</param>
+<<<<<<< HEAD
         public AzureStorageContext(CloudStorageAccount account, string accountName = null)
+=======
+        public AzureStorageContext(CloudStorageAccount account, string accountName = null, IAzureContext DefaultContext = null, DebugLogWriter logWriter = null)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             StorageAccount = account;
             TableStorageAccount = XTable.CloudStorageAccount.Parse(StorageAccount.ToString(true));
@@ -180,6 +196,13 @@ namespace Microsoft.WindowsAzure.Commands.Storage
                     StorageAccountName = "[Anonymous]";
                 }
             }
+<<<<<<< HEAD
+=======
+            if (account.Credentials.IsToken)
+            {
+                Track2OauthToken = new AzureSessionCredential(DefaultContext, logWriter);
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>

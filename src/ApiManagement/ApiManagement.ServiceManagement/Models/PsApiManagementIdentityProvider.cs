@@ -68,5 +68,14 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models
         /// Identity Provider.
         /// </summary>
         public string PasswordResetPolicyName { get; set; }
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// Gets or sets the SignIn Tenant to override the `common` AAD Tenant
+        /// configuration.
+        /// </summary>
+        public string SigninTenant { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

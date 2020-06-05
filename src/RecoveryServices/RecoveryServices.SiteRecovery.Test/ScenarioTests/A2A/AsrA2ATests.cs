@@ -89,5 +89,29 @@ namespace RecoveryServices.SiteRecovery.Test
         {
             this.RunPowerShellTest(_logger, Constants.NewModel, "Test-RemoveReplicationProtectedItemDisk");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void A2AReplicateProximityPlacementGroupVm()
+        {
+            this.RunPowerShellTest(_logger, Constants.NewModel, "Test-ReplicateProximityPlacementGroupVm");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void A2AZoneToZoneRecoveryPlanReplication()
+        {
+            this.RunPowerShellTest(_logger, Constants.NewModel, "Test-ZoneToZoneRecoveryPlanReplication");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void A2ARecoveryPlanReplication()
+        {
+            this.RunPowerShellTest(_logger, Constants.NewModel, "Test-RecoveryPlanReplication");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

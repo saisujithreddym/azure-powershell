@@ -4421,6 +4421,7 @@
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
             "Properties": {
               "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
               "LastHeartbeat": "System.Nullable`1[System.DateTime]",
               "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
               "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -4434,14 +4435,42 @@
               "ReplicationPairCount": "System.String",
               "MemoryUsageStatus": "System.String",
               "OsType": "System.String",
+=======
+              "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+              "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+              "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+              "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+              "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+              "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+              "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+              "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+              "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+              "AgentVersion": "System.String",
+              "ThroughputStatus": "System.String",
+              "Health": "System.String",
+              "VersionStatus": "System.String",
+              "SystemLoadStatus": "System.String",
+              "SystemLoad": "System.String",
+              "ServerCount": "System.String",
+              "MarsCommunicationStatus": "System.String",
+              "ReplicationPairCount": "System.String",
+              "PsServiceStatus": "System.String",
+              "OsType": "System.String",
+              "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
               "IpAddress": "System.String",
               "Id": "System.String",
               "HostId": "System.String",
               "FriendlyName": "System.String",
               "CpuLoadStatus": "System.String",
               "CpuLoad": "System.String",
+<<<<<<< HEAD
               "PsServiceStatus": "System.String",
               "VersionStatus": "System.String"
+=======
+              "SpaceUsageStatus": "System.String",
+              "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             },
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -4499,6 +4528,7 @@
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
             "Properties": {
               "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
               "LastHeartbeat": "System.Nullable`1[System.DateTime]",
               "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
               "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -4512,14 +4542,42 @@
               "ReplicationPairCount": "System.String",
               "MemoryUsageStatus": "System.String",
               "OsType": "System.String",
+=======
+              "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+              "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+              "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+              "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+              "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+              "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+              "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+              "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+              "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+              "AgentVersion": "System.String",
+              "ThroughputStatus": "System.String",
+              "Health": "System.String",
+              "VersionStatus": "System.String",
+              "SystemLoadStatus": "System.String",
+              "SystemLoad": "System.String",
+              "ServerCount": "System.String",
+              "MarsCommunicationStatus": "System.String",
+              "ReplicationPairCount": "System.String",
+              "PsServiceStatus": "System.String",
+              "OsType": "System.String",
+              "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
               "IpAddress": "System.String",
               "Id": "System.String",
               "HostId": "System.String",
               "FriendlyName": "System.String",
               "CpuLoadStatus": "System.String",
               "CpuLoad": "System.String",
+<<<<<<< HEAD
               "PsServiceStatus": "System.String",
               "VersionStatus": "System.String"
+=======
+              "SpaceUsageStatus": "System.String",
+              "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             },
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -4712,6 +4770,7 @@
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
                   "Properties": {
                     "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
                     "LastHeartbeat": "System.Nullable`1[System.DateTime]",
                     "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
                     "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -4725,14 +4784,42 @@
                     "ReplicationPairCount": "System.String",
                     "MemoryUsageStatus": "System.String",
                     "OsType": "System.String",
+=======
+                    "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+                    "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+                    "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+                    "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AgentVersion": "System.String",
+                    "ThroughputStatus": "System.String",
+                    "Health": "System.String",
+                    "VersionStatus": "System.String",
+                    "SystemLoadStatus": "System.String",
+                    "SystemLoad": "System.String",
+                    "ServerCount": "System.String",
+                    "MarsCommunicationStatus": "System.String",
+                    "ReplicationPairCount": "System.String",
+                    "PsServiceStatus": "System.String",
+                    "OsType": "System.String",
+                    "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "IpAddress": "System.String",
                     "Id": "System.String",
                     "HostId": "System.String",
                     "FriendlyName": "System.String",
                     "CpuLoadStatus": "System.String",
                     "CpuLoad": "System.String",
+<<<<<<< HEAD
                     "PsServiceStatus": "System.String",
                     "VersionStatus": "System.String"
+=======
+                    "SpaceUsageStatus": "System.String",
+                    "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   },
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -4796,6 +4883,7 @@
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
                   "Properties": {
                     "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
                     "LastHeartbeat": "System.Nullable`1[System.DateTime]",
                     "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
                     "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -4809,14 +4897,42 @@
                     "ReplicationPairCount": "System.String",
                     "MemoryUsageStatus": "System.String",
                     "OsType": "System.String",
+=======
+                    "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+                    "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+                    "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+                    "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AgentVersion": "System.String",
+                    "ThroughputStatus": "System.String",
+                    "Health": "System.String",
+                    "VersionStatus": "System.String",
+                    "SystemLoadStatus": "System.String",
+                    "SystemLoad": "System.String",
+                    "ServerCount": "System.String",
+                    "MarsCommunicationStatus": "System.String",
+                    "ReplicationPairCount": "System.String",
+                    "PsServiceStatus": "System.String",
+                    "OsType": "System.String",
+                    "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "IpAddress": "System.String",
                     "Id": "System.String",
                     "HostId": "System.String",
                     "FriendlyName": "System.String",
                     "CpuLoadStatus": "System.String",
                     "CpuLoad": "System.String",
+<<<<<<< HEAD
                     "PsServiceStatus": "System.String",
                     "VersionStatus": "System.String"
+=======
+                    "SpaceUsageStatus": "System.String",
+                    "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   },
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -29528,6 +29644,7 @@
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
             "Properties": {
               "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
               "LastHeartbeat": "System.Nullable`1[System.DateTime]",
               "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
               "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -29541,14 +29658,42 @@
               "ReplicationPairCount": "System.String",
               "MemoryUsageStatus": "System.String",
               "OsType": "System.String",
+=======
+              "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+              "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+              "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+              "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+              "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+              "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+              "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+              "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+              "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+              "AgentVersion": "System.String",
+              "ThroughputStatus": "System.String",
+              "Health": "System.String",
+              "VersionStatus": "System.String",
+              "SystemLoadStatus": "System.String",
+              "SystemLoad": "System.String",
+              "ServerCount": "System.String",
+              "MarsCommunicationStatus": "System.String",
+              "ReplicationPairCount": "System.String",
+              "PsServiceStatus": "System.String",
+              "OsType": "System.String",
+              "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
               "IpAddress": "System.String",
               "Id": "System.String",
               "HostId": "System.String",
               "FriendlyName": "System.String",
               "CpuLoadStatus": "System.String",
               "CpuLoad": "System.String",
+<<<<<<< HEAD
               "PsServiceStatus": "System.String",
               "VersionStatus": "System.String"
+=======
+              "SpaceUsageStatus": "System.String",
+              "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             },
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -30132,6 +30277,7 @@
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
                   "Properties": {
                     "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
                     "LastHeartbeat": "System.Nullable`1[System.DateTime]",
                     "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
                     "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -30145,14 +30291,42 @@
                     "ReplicationPairCount": "System.String",
                     "MemoryUsageStatus": "System.String",
                     "OsType": "System.String",
+=======
+                    "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+                    "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+                    "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+                    "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AgentVersion": "System.String",
+                    "ThroughputStatus": "System.String",
+                    "Health": "System.String",
+                    "VersionStatus": "System.String",
+                    "SystemLoadStatus": "System.String",
+                    "SystemLoad": "System.String",
+                    "ServerCount": "System.String",
+                    "MarsCommunicationStatus": "System.String",
+                    "ReplicationPairCount": "System.String",
+                    "PsServiceStatus": "System.String",
+                    "OsType": "System.String",
+                    "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "IpAddress": "System.String",
                     "Id": "System.String",
                     "HostId": "System.String",
                     "FriendlyName": "System.String",
                     "CpuLoadStatus": "System.String",
                     "CpuLoad": "System.String",
+<<<<<<< HEAD
                     "PsServiceStatus": "System.String",
                     "VersionStatus": "System.String"
+=======
+                    "SpaceUsageStatus": "System.String",
+                    "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   },
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -30773,6 +30947,7 @@
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
                   "Properties": {
                     "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
                     "LastHeartbeat": "System.Nullable`1[System.DateTime]",
                     "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
                     "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -30786,14 +30961,42 @@
                     "ReplicationPairCount": "System.String",
                     "MemoryUsageStatus": "System.String",
                     "OsType": "System.String",
+=======
+                    "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+                    "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+                    "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+                    "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AgentVersion": "System.String",
+                    "ThroughputStatus": "System.String",
+                    "Health": "System.String",
+                    "VersionStatus": "System.String",
+                    "SystemLoadStatus": "System.String",
+                    "SystemLoad": "System.String",
+                    "ServerCount": "System.String",
+                    "MarsCommunicationStatus": "System.String",
+                    "ReplicationPairCount": "System.String",
+                    "PsServiceStatus": "System.String",
+                    "OsType": "System.String",
+                    "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "IpAddress": "System.String",
                     "Id": "System.String",
                     "HostId": "System.String",
                     "FriendlyName": "System.String",
                     "CpuLoadStatus": "System.String",
                     "CpuLoad": "System.String",
+<<<<<<< HEAD
                     "PsServiceStatus": "System.String",
                     "VersionStatus": "System.String"
+=======
+                    "SpaceUsageStatus": "System.String",
+                    "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   },
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -45150,6 +45353,7 @@
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
             "Properties": {
               "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
               "LastHeartbeat": "System.Nullable`1[System.DateTime]",
               "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
               "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -45163,14 +45367,42 @@
               "ReplicationPairCount": "System.String",
               "MemoryUsageStatus": "System.String",
               "OsType": "System.String",
+=======
+              "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+              "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+              "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+              "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+              "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+              "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+              "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+              "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+              "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+              "AgentVersion": "System.String",
+              "ThroughputStatus": "System.String",
+              "Health": "System.String",
+              "VersionStatus": "System.String",
+              "SystemLoadStatus": "System.String",
+              "SystemLoad": "System.String",
+              "ServerCount": "System.String",
+              "MarsCommunicationStatus": "System.String",
+              "ReplicationPairCount": "System.String",
+              "PsServiceStatus": "System.String",
+              "OsType": "System.String",
+              "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
               "IpAddress": "System.String",
               "Id": "System.String",
               "HostId": "System.String",
               "FriendlyName": "System.String",
               "CpuLoadStatus": "System.String",
               "CpuLoad": "System.String",
+<<<<<<< HEAD
               "PsServiceStatus": "System.String",
               "VersionStatus": "System.String"
+=======
+              "SpaceUsageStatus": "System.String",
+              "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             },
             "ElementType": null,
             "GenericTypeArguments": [],
@@ -46021,6 +46253,7 @@
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
                   "Properties": {
                     "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
                     "LastHeartbeat": "System.Nullable`1[System.DateTime]",
                     "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
                     "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -46034,14 +46267,42 @@
                     "ReplicationPairCount": "System.String",
                     "MemoryUsageStatus": "System.String",
                     "OsType": "System.String",
+=======
+                    "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+                    "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+                    "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+                    "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AgentVersion": "System.String",
+                    "ThroughputStatus": "System.String",
+                    "Health": "System.String",
+                    "VersionStatus": "System.String",
+                    "SystemLoadStatus": "System.String",
+                    "SystemLoad": "System.String",
+                    "ServerCount": "System.String",
+                    "MarsCommunicationStatus": "System.String",
+                    "ReplicationPairCount": "System.String",
+                    "PsServiceStatus": "System.String",
+                    "OsType": "System.String",
+                    "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "IpAddress": "System.String",
                     "Id": "System.String",
                     "HostId": "System.String",
                     "FriendlyName": "System.String",
                     "CpuLoadStatus": "System.String",
                     "CpuLoad": "System.String",
+<<<<<<< HEAD
                     "PsServiceStatus": "System.String",
                     "VersionStatus": "System.String"
+=======
+                    "SpaceUsageStatus": "System.String",
+                    "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   },
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -46585,6 +46846,7 @@
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProcessServer, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery, Version=1.0.1.0, Culture=neutral, PublicKeyToken=null",
                   "Properties": {
                     "Updates": "System.Collections.Generic.IList`1[Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRMobilityServiceUpdate]",
+<<<<<<< HEAD
                     "LastHeartbeat": "System.Nullable`1[System.DateTime]",
                     "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
                     "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
@@ -46598,14 +46860,42 @@
                     "ReplicationPairCount": "System.String",
                     "MemoryUsageStatus": "System.String",
                     "OsType": "System.String",
+=======
+                    "PSStatsRefreshTime": "System.Nullable`1[System.DateTime]",
+                    "LastHeartbeat": "System.Nullable`1[System.DateTime]",
+                    "AvailableMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AvailableSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInBytes": "System.Nullable`1[System.Int64]",
+                    "ThroughputInMBps": "System.Nullable`1[System.Int64]",
+                    "ThroughputUploadPendingDataInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalSpaceInBytes": "System.Nullable`1[System.Int64]",
+                    "TotalMemoryInBytes": "System.Nullable`1[System.Int64]",
+                    "AgentVersion": "System.String",
+                    "ThroughputStatus": "System.String",
+                    "Health": "System.String",
+                    "VersionStatus": "System.String",
+                    "SystemLoadStatus": "System.String",
+                    "SystemLoad": "System.String",
+                    "ServerCount": "System.String",
+                    "MarsCommunicationStatus": "System.String",
+                    "ReplicationPairCount": "System.String",
+                    "PsServiceStatus": "System.String",
+                    "OsType": "System.String",
+                    "MemoryUsageStatus": "System.String",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "IpAddress": "System.String",
                     "Id": "System.String",
                     "HostId": "System.String",
                     "FriendlyName": "System.String",
                     "CpuLoadStatus": "System.String",
                     "CpuLoad": "System.String",
+<<<<<<< HEAD
                     "PsServiceStatus": "System.String",
                     "VersionStatus": "System.String"
+=======
+                    "SpaceUsageStatus": "System.String",
+                    "MarsRegistrationStatus": "System.String"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   },
                   "ElementType": null,
                   "GenericTypeArguments": [],
@@ -51178,7 +51468,11 @@
           "Type": {
             "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
             "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
             "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+            "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.7.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             "Properties": {
               "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
               "Name": "System.String",
@@ -51285,7 +51579,11 @@
                 "Type": {
                   "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
                   "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVault",
+<<<<<<< HEAD
                   "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+                  "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVault, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.7.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                   "Properties": {
                     "Properties": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
                     "Name": "System.String",
@@ -54984,7 +55282,11 @@
     "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.CurrentScenarioDetails": {
       "Namespace": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models",
       "Name": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.CurrentScenarioDetails",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.CurrentScenarioDetails, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.CurrentScenarioDetails, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "StartTime": "System.Nullable`1[System.DateTime]",
         "JobId": "System.String",
@@ -55134,7 +55436,11 @@
     "System.Collections.Generic.List`1[Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.IPConfig]": {
       "Namespace": "System.Collections.Generic",
       "Name": "System.Collections.Generic.List`1[Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.IPConfig]",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "System.Collections.Generic.List`1[[Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.IPConfig, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+      "AssemblyQualifiedName": "System.Collections.Generic.List`1[[Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.IPConfig, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [
@@ -55146,7 +55452,11 @@
     "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.IPConfig": {
       "Namespace": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models",
       "Name": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.IPConfig",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.IPConfig, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.IPConfig, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "LBBackendAddressPoolIds": "System.Collections.Generic.IList`1[System.String]",
         "PublicIpAddressId": "System.String",
@@ -55222,7 +55532,11 @@
     "System.Collections.Generic.IList`1[Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.Subnet]": {
       "Namespace": "System.Collections.Generic",
       "Name": "System.Collections.Generic.IList`1[Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.Subnet]",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.Subnet, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+=======
+      "AssemblyQualifiedName": "System.Collections.Generic.IList`1[[Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.Subnet, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]], System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [
@@ -55234,7 +55548,11 @@
     "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.Subnet": {
       "Namespace": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models",
       "Name": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.Subnet",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.Subnet, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.Subnet, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "AddressList": "System.Collections.Generic.IList`1[System.String]",
         "FriendlyName": "System.String",
@@ -55953,7 +56271,11 @@
     "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanAction": {
       "Namespace": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models",
       "Name": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanAction",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanAction, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanAction, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "CustomDetails": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanActionDetails",
         "FailoverTypes": "System.Collections.Generic.IList`1[System.String]",
@@ -56027,7 +56349,11 @@
     "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanActionDetails": {
       "Namespace": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models",
       "Name": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanActionDetails",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanActionDetails, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models.RecoveryPlanActionDetails, Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {},
       "ElementType": null,
       "GenericTypeArguments": [],
@@ -56445,7 +56771,11 @@
     "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties": {
       "Namespace": "Microsoft.Azure.Commands.RecoveryServices",
       "Name": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties",
+<<<<<<< HEAD
       "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.4.0.0, Culture=neutral, PublicKeyToken=null",
+=======
+      "AssemblyQualifiedName": "Microsoft.Azure.Commands.RecoveryServices.ARSVaultProperties, Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices, Version=2.7.0.0, Culture=neutral, PublicKeyToken=null",
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
       "Properties": {
         "ProvisioningState": "System.String"
       },

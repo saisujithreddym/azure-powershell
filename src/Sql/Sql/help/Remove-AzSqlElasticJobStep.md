@@ -36,8 +36,13 @@ The Remove-AzSqlElasticJobStep cmdlet removes a job step from a job
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### Example 1 - Removes a job step from a job
 ```
+=======
+### Example 1: Removes a job step from a job
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> $jobStep = Get-AzSqlElasticJobStep -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -JobName job1 -Name step1
 $jobStep | Remove-AzSqlElasticJobStep
 
@@ -48,6 +53,15 @@ job1    step1    1      tg1             cred1                 SELECT 1
 
 Removes a job step from a job
 
+<<<<<<< HEAD
+=======
+### Example 2
+
+```powershell <!-- Aladdin Generated Example --> 
+Remove-AzSqlElasticJobStep -AgentName agent -JobName job1 -Name step1 -ResourceGroupName MyResourceGroup -ServerName s1
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -AgentName

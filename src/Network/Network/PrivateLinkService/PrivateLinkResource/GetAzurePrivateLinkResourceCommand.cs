@@ -13,6 +13,7 @@
 // ----------------------------------------------------------------------------------
 
 using Microsoft.Azure.Commands.Network.Models;
+<<<<<<< HEAD
 using Microsoft.Azure.Management.Network;
 using System.Collections.Generic;
 using System.Management.Automation;
@@ -24,6 +25,13 @@ using Microsoft.WindowsAzure.Commands.Utilities.Common;
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 using System;
 using System.Linq;
+=======
+using Microsoft.Azure.Commands.Network.PrivateLinkService.PrivateLinkServiceProvider;
+using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+using Microsoft.Azure.Management.Network.Models;
+using System;
+using System.Management.Automation;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Network
 {
@@ -46,16 +54,25 @@ namespace Microsoft.Azure.Commands.Network
             string Name = resourceIdentifier.ResourceName;
             string ResourceType = resourceIdentifier.ResourceType;
 
+<<<<<<< HEAD
             IPrivateLinkProvider provider = BuildProvider(ResourceType);
+=======
+            IPrivateLinkProvider provider = PrivateLinkProviderFactory.CreatePrivateLinkProvder(this, resourceIdentifier.Subscription, ResourceType);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (provider == null)
             {
                 throw new ArgumentException(string.Format(Properties.Resources.InvalidResourceId, this.PrivateLinkResourceId));
             }
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var plrs = provider.ListPrivateLinkResource(ResourceGroupName, Name);
             WriteObject(plrs, true);
 
         }
+<<<<<<< HEAD
 
         protected IPrivateLinkProvider BuildProvider(string resourceType)
         {
@@ -72,5 +89,7 @@ namespace Microsoft.Azure.Commands.Network
 
             return provider;
         }
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

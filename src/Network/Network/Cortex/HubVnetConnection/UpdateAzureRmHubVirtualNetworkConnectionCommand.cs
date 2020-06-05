@@ -89,6 +89,10 @@ namespace Microsoft.Azure.Commands.Network
         public override void Execute()
         {
             base.Execute();
+<<<<<<< HEAD
+=======
+            Dictionary<string, List<string>> auxAuthHeader = null;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             //// Resolve the VirtualHub
             if (ParameterSetName.Equals(CortexParameterSetNames.ByHubVirtualNetworkConnectionObject, StringComparison.OrdinalIgnoreCase))
@@ -127,12 +131,27 @@ namespace Microsoft.Azure.Commands.Network
                 connectionToModify.EnableInternetSecurity = this.EnableInternetSecurity.Value;
             }
 
+<<<<<<< HEAD
+=======
+            List<string> resourceIds = new List<string>();
+            resourceIds.Add(connectionToModify.RemoteVirtualNetwork.Id);
+            var auxHeaderDictionary = GetAuxilaryAuthHeaderFromResourceIds(resourceIds);
+            if (auxHeaderDictionary != null && auxHeaderDictionary.Count > 0)
+            {
+                auxAuthHeader = new Dictionary<string, List<string>>(auxHeaderDictionary);
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             ConfirmAction(
                     Properties.Resources.SettingResourceMessage,
                     this.Name,
                     () =>
                     {
+<<<<<<< HEAD
                         this.CreateOrUpdateVirtualHub(this.ResourceGroupName, this.ParentResourceName, parentVirtualHub, parentVirtualHub.Tag);
+=======
+                        this.CreateOrUpdateVirtualHub(this.ResourceGroupName, this.ParentResourceName, parentVirtualHub, parentVirtualHub.Tag, auxAuthHeader);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         var updatedVirtualHub = this.GetVirtualHub(this.ResourceGroupName, this.ParentResourceName);
 
                         WriteObject(updatedVirtualHub.VirtualNetworkConnections.FirstOrDefault(hubConnection => hubConnection.Name.Equals(this.Name, StringComparison.OrdinalIgnoreCase)));

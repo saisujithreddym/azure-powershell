@@ -297,6 +297,18 @@ namespace Microsoft.Azure.Commands.Sql.ManagedInstance.Cmdlet
         public string InstancePoolName { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or sets the managed instance minimal tls version
+        /// </summary>
+        [Parameter(Mandatory = false,
+            HelpMessage = "The Minimal Tls Version for the Sql Azure Managed Instance. Options are: None, 1.0, 1.1 and 1.2 ")]
+        [ValidateSet("None", "1.0", "1.1", "1.2")]
+        [PSArgumentCompleter("None", "1.0", "1.1", "1.2")]
+        public string MinimalTlsVersion { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Gets or sets whether or not to run this cmdlet in the background as a job
         /// </summary>
         [Parameter(Mandatory = false, HelpMessage = "Run cmdlet in the background")]
@@ -425,7 +437,12 @@ namespace Microsoft.Azure.Commands.Sql.ManagedInstance.Cmdlet
                 ProxyOverride = this.ProxyOverride,
                 TimezoneId = this.TimezoneId,
                 DnsZonePartner = this.DnsZonePartner,
+<<<<<<< HEAD
                 InstancePoolName = this.InstancePoolName
+=======
+                InstancePoolName = this.InstancePoolName,
+                MinimalTlsVersion = this.MinimalTlsVersion
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             });
             return newEntity;
         }

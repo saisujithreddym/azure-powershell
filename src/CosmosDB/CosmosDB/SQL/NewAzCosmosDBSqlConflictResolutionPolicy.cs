@@ -16,30 +16,54 @@ using System.Management.Automation;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Commands.CosmosDB.Helpers;
 using Microsoft.Azure.Commands.CosmosDB.Models;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Management.CosmosDB.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.CosmosDB
 {
     [Cmdlet(VerbsCommon.New, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBSqlConflictResolutionPolicy"), OutputType(typeof(PSSqlConflictResolutionPolicy))]
     public class NewAzCosmosDBSqlConflictResolutionPolicy : AzureCosmosDBCmdletBase
     {
+<<<<<<< HEAD
         [Parameter(Mandatory = true, HelpMessage = Constants.ConflictResolutionPolicyTypeHelpMessage)]
         [ValidateNotNullOrEmpty]
         [PSArgumentCompleter("LastWriterWins", "Custom", "Manual")]
+=======
+        [Parameter(Mandatory = true, HelpMessage = Constants.ConflictResolutionPolicyModeHelpMessage)]
+        [ValidateNotNullOrEmpty]
+        [PSArgumentCompleter(ConflictResolutionMode.Custom, ConflictResolutionMode.LastWriterWins)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string Type { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = Constants.ConflictResolutionPolicyPathHelpMessage)]
         public string Path { get; set; }
 
+<<<<<<< HEAD
         [Parameter(Mandatory = false, HelpMessage = Constants.ConflictResolutionPolicyStoredProcedureNameHelpMessage)]
+=======
+        [Parameter(Mandatory = false, HelpMessage = Constants.ConflictResolutionPolicyProcedureHelpMessage)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [ValidateNotNullOrEmpty]
         public string ConflictResolutionProcedure { get; set; }
 
         public override void ExecuteCmdlet()
         {
+<<<<<<< HEAD
             PSSqlConflictResolutionPolicy conflictResolutionPolicy = new PSSqlConflictResolutionPolicy(Type);
 
             if (!string.IsNullOrEmpty(Path))
                 conflictResolutionPolicy.Path = Path;
+=======
+            PSSqlConflictResolutionPolicy conflictResolutionPolicy = new PSSqlConflictResolutionPolicy
+            {
+                Mode = Type
+            };
+
+            if (!string.IsNullOrEmpty(Path))
+                conflictResolutionPolicy.ConflictResolutionPath = Path;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (!string.IsNullOrEmpty(ConflictResolutionProcedure))
                 conflictResolutionPolicy.ConflictResolutionProcedure = ConflictResolutionProcedure;
@@ -49,4 +73,8 @@ namespace Microsoft.Azure.Commands.CosmosDB
         }
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

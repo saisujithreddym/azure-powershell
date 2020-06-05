@@ -237,23 +237,49 @@ function Test-NewDeploymentAndProviderRegistration
 
 <#
 .SYNOPSIS
+<<<<<<< HEAD
 Tests deployment delete is successful
+=======
+Tests delete resource group deployment 
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 #>
 function Test-RemoveDeployment
 {
     # Setup
     $deploymentName = "Test"
+<<<<<<< HEAD
     $templateUri = "https://gallery.azure.com/artifact/20140901/Microsoft.ResourceGroup.1.0.0/DeploymentTemplates/Template.json"
+=======
+    $templateUri = "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-storage-account-create/azuredeploy.json"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $rgName = "TestSDK0123"
 
     try
     {
+<<<<<<< HEAD
         # Test
+=======
+        # First create new resource group deployment
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         New-AzResourceGroup -Name $rgName -Location "East US"
         $job = New-AzResourceGroupDeployment -ResourceGroupName $rgName -Name $deploymentName -TemplateUri $templateUri -AsJob
 		Wait-Job $job
 		$deployment = Receive-Job $job
+<<<<<<< HEAD
 		Assert-True { Remove-AzResourceGroupDeployment -ResourceGroupName $deployment.ResourceGroupName -Name $deployment.DeploymentName }
+=======
+
+        # Test
+        $res = Remove-AzResourceGroupDeployment -ResourceGroupName $deployment.ResourceGroupName -Name $deployment.DeploymentName
+
+        # Assert
+		Assert-True { $res }
+
+        # After deletion, try to get the given deployment should throw an error
+        Get-AzResourceGroupDeployment -ResourceGroupName $rgName -Name $deploymentName -ErrorAction SilentlyContinue
+        Assert-True { $Error[0] -like "*Deployment 'Test' could not be found.*" }
+        $Error.Clear()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
     finally
     {
@@ -279,7 +305,11 @@ function Test-FindResourceGroup
     {
         # Test
         $actual = New-AzResourceGroup -Name $rgname -Location $location -Tag @{ testtag = "testval" }
+<<<<<<< HEAD
         $actual2 = New-AzResourceGroup -Name $rgname2 -Location $location -Tag @{ testtag = "testval2" }
+=======
+        $actual2 = New-AzResourceGroup -Name $rgname2 -Location $location -Tag @{ testtag2 = "testval2"; testtag = "test_val" }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         $expected1 = Get-AzResourceGroup -Name $rgname
         # Assert
@@ -316,7 +346,23 @@ function Test-FindResourceGroup
 
 		$expected6 = Get-AzResourceGroup -Tag @{ testtag2 = $null }
         # Assert
+<<<<<<< HEAD
         Assert-AreEqual @($expected6).Count 0
+=======
+        Assert-AreEqual @($expected6).Count 1
+
+		$expected7 = Get-AzResourceGroup -Tag @{ testtag2 = "testval" }
+        # Assert
+        Assert-AreEqual @($expected7).Count 0
+
+		$expected8 = Get-AzResourceGroup -Tag @{ testtagX = $null }
+        # Assert
+        Assert-AreEqual @($expected8).Count 0
+
+		$expected9 = Get-AzResourceGroup -Tag @{ testtagY = "testval" }
+        # Assert
+        Assert-AreEqual @($expected9).Count 0
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
     finally
     {
@@ -357,7 +403,11 @@ function Test-ExportResourceGroup
 		# Test
 		New-AzResourceGroup -Name $rgname -Location $rglocation
                 #[SuppressMessage("Microsoft.Security", "CS002:SecretInNextLine")]
+<<<<<<< HEAD
 		$r = New-AzResource -Name $rname -Location "centralus" -Tags @{ testtag = "testval"} -ResourceGroupName $rgname -ResourceType $resourceType -PropertyObject @{"administratorLogin" = "adminuser"; "administratorLoginPassword" = "P@ssword1"} -SkuObject @{ Name = "A0" } -ApiVersion $apiversion -Force
+=======
+		$r = New-AzResource -Name $rname -Location "centralus" -Tags @{ testtag = "testval" } -ResourceGroupName $rgname -ResourceType $resourceType -PropertyObject @{"administratorLogin" = "adminuser"; "administratorLoginPassword" = "P@ssword1"} -SkuObject @{ Name = "A0" } -ApiVersion $apiversion -Force
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		Assert-AreEqual $r.ResourceGroupName $rgname
 
 		$exportOutput = Export-AzResourceGroup -ResourceGroupName $rgname -Force
@@ -393,11 +443,19 @@ function Test-ExportResourceGroupWithFiltering
         New-AzResourceGroup -Name $rgname -Location $rglocation
 
         #[SuppressMessage("Microsoft.Security", "CS002:SecretInNextLine")]
+<<<<<<< HEAD
         $r1 = New-AzResource -Name $rname1 -Location "centralus" -Tags @{ testtag = "testval"} -ResourceGroupName $rgname -ResourceType $resourceType -PropertyObject @{"administratorLogin" = "adminuser"; "administratorLoginPassword" = "P@ssword1"} -SkuObject @{ Name = "A0" } -ApiVersion $apiversion -Force
         Assert-NotNull $r1.ResourceId
 
         #[SuppressMessage("Microsoft.Security", "CS002:SecretInNextLine")]
         $r2 = New-AzResource -Name $rname2 -Location "centralus" -Tags @{ testtag = "testval"} -ResourceGroupName $rgname -ResourceType $resourceType -PropertyObject @{"administratorLogin" = "adminuser"; "administratorLoginPassword" = "P@ssword1"} -SkuObject @{ Name = "A0" } -ApiVersion $apiversion -Force
+=======
+        $r1 = New-AzResource -Name $rname1 -Location "centralus" -Tags @{ testtag = "testval" } -ResourceGroupName $rgname -ResourceType $resourceType -PropertyObject @{"administratorLogin" = "adminuser"; "administratorLoginPassword" = "P@ssword1"} -SkuObject @{ Name = "A0" } -ApiVersion $apiversion -Force
+        Assert-NotNull $r1.ResourceId
+
+        #[SuppressMessage("Microsoft.Security", "CS002:SecretInNextLine")]
+        $r2 = New-AzResource -Name $rname2 -Location "centralus" -Tags @{ testtag = "testval" } -ResourceGroupName $rgname -ResourceType $resourceType -PropertyObject @{"administratorLogin" = "adminuser"; "administratorLoginPassword" = "P@ssword1"} -SkuObject @{ Name = "A0" } -ApiVersion $apiversion -Force
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         Assert-NotNull $r2.ResourceId
 
         $exportOutput = Export-AzResourceGroup -ResourceGroupName $rgname -Force -Resource @($r2.ResourceId) -IncludeParameterDefaultValue -IncludeComments

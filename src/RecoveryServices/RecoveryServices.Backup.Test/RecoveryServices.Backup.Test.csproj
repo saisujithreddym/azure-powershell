@@ -11,10 +11,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.Compute" Version="31.0.0" />
     <PackageReference Include="Microsoft.Azure.Management.Network" Version="19.18.0-preview" />
     <PackageReference Include="Microsoft.Azure.Management.RecoveryServices" Version="4.2.1-preview" />
     <PackageReference Include="Microsoft.Azure.Management.RecoveryServices.Backup" Version="4.0.0-preview" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.Compute" Version="36.0.0" />
+    <PackageReference Include="Microsoft.Azure.Management.Network" Version="20.0.1-preview" />
+    <PackageReference Include="Microsoft.Azure.Management.RecoveryServices" Version="4.3.0-preview" />
+    <PackageReference Include="Microsoft.Azure.Management.RecoveryServices.Backup" Version="4.0.1-preview" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
   </ItemGroup>
 
   <ItemGroup>
@@ -25,4 +32,8 @@
     <None Update="ScenarioTests\**\*.ps1" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+<<<<<<< HEAD
 </Project>
+=======
+</Project>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

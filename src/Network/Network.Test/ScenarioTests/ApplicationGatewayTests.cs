@@ -85,13 +85,20 @@ namespace Commands.Network.Test.ScenarioTests
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         [Trait(Category.Owner, NrpTeamAlias.nvadev)]
+<<<<<<< HEAD
         public void TestApplicationGatewayCRUDRewriteRuleSet()
         {
             TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayCRUDRewriteRuleSet -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));
+=======
+        public void TestAvailableServerVariableAndHeader()
+        {
+            TestRunner.RunTestScript("Test-AvailableServerVariableAndHeader");
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
         [Trait(Category.Owner, NrpTeamAlias.nvadev)]
         public void TestAvailableServerVariableAndHeader()
         {
@@ -101,6 +108,17 @@ namespace Commands.Network.Test.ScenarioTests
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         [Trait(Category.Owner, NrpTeamAlias.nvadev)]
+=======
+        [Trait(Category.Owner, NrpTeamAlias.nvadev_subset1)]
+        public void TestApplicationGatewayCRUDRewriteRuleSet()
+        {
+            TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayCRUDRewriteRuleSet -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        [Trait(Category.Owner, NrpTeamAlias.nvadev_subset1)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TestApplicationGatewayCRUDRewriteRuleSetWithConditions()
         {
             TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayCRUDRewriteRuleSetWithConditions -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));
@@ -108,7 +126,11 @@ namespace Commands.Network.Test.ScenarioTests
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
         [Trait(Category.Owner, NrpTeamAlias.nvadev)]
+=======
+        [Trait(Category.Owner, NrpTeamAlias.nvadev_subset1)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TestTopLevelWafResourceWithApplicationGateway()
         {
             TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayTopLevelFirewallPolicy -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));
@@ -116,7 +138,11 @@ namespace Commands.Network.Test.ScenarioTests
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
         [Trait(Category.Owner, NrpTeamAlias.nvadev)]
+=======
+        [Trait(Category.Owner, NrpTeamAlias.nvadev_subset1)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TestApplicationGatewayWithFirewallPolicy()
         {
             TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayWithFirewallPolicy -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));
@@ -124,7 +150,11 @@ namespace Commands.Network.Test.ScenarioTests
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
         [Trait(Category.Owner, NrpTeamAlias.nvadev)]
+=======
+        [Trait(Category.Owner, NrpTeamAlias.nvadev_subset1)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TestApplicationGatewayCRUDRewriteRuleSetUrlConfiguration()
         {
             TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayCRUDRewriteRuleSetWithUrlConfiguration -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));
@@ -132,7 +162,11 @@ namespace Commands.Network.Test.ScenarioTests
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
         [Trait(Category.Owner, NrpTeamAlias.nvadev)]
+=======
+        [Trait(Category.Owner, NrpTeamAlias.nvadev_subset1)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void TestApplicationGatewayWithListenerHostNames()
         {
             TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayWithListenerHostNames -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));

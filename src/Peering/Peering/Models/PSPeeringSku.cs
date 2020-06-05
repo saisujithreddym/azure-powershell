@@ -29,10 +29,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         /// <summary>
         /// Initializes a new instance of the PSPeeringSku class.
         /// </summary>
+<<<<<<< HEAD
         /// <param name="name">The name of the peering SKU. Possible values
         /// include: 'Basic_Exchange_Free', 'Basic_Direct_Free',
         /// 'Premium_Direct_Free', 'Premium_Exchange_Metered',
         /// 'Premium_Direct_Metered', 'Premium_Direct_Unlimited'</param>
+=======
+        /// <param name="name">The name of the peering SKU.</param>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <param name="tier">The tier of the peering SKU. Possible values
         /// include: 'Basic', 'Premium'</param>
         /// <param name="family">The family of the peering SKU. Possible values
@@ -54,10 +58,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
         partial void CustomInit();
 
         /// <summary>
+<<<<<<< HEAD
         /// Gets or sets the name of the peering SKU. Possible values include:
         /// 'Basic_Exchange_Free', 'Basic_Direct_Free', 'Premium_Direct_Free',
         /// 'Premium_Exchange_Metered', 'Premium_Direct_Metered',
         /// 'Premium_Direct_Unlimited'
+=======
+        /// Gets or sets the name of the peering SKU.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// </summary>
         [JsonProperty(PropertyName = "name")]
         public string Name { get; set; }

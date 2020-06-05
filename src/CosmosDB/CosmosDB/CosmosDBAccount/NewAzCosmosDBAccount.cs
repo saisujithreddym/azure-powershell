@@ -16,6 +16,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+<<<<<<< HEAD
+=======
+using System.Linq;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Management.Automation;
 using Microsoft.Azure.Commands.CosmosDB.Helpers;
 using Microsoft.Azure.Commands.CosmosDB.Models;
@@ -25,7 +29,11 @@ using Microsoft.Azure.Management.CosmosDB.Models;
 
 namespace Microsoft.Azure.Commands.CosmosDB
 {
+<<<<<<< HEAD
     [Cmdlet(VerbsCommon.New, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBAccount", DefaultParameterSetName = NameParameterSet, SupportsShouldProcess = true), OutputType(typeof(PSDatabaseAccount))]
+=======
+    [Cmdlet(VerbsCommon.New, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBAccount", DefaultParameterSetName = NameParameterSet, SupportsShouldProcess = true), OutputType(typeof(PSDatabaseAccountGetResults))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class NewAzCosmosDBAccount : AzureCosmosDBCmdletBase
     {
         [Parameter(Mandatory = true, ParameterSetName = NameParameterSet, HelpMessage = Constants.ResourceGroupNameHelpMessage)]
@@ -51,7 +59,11 @@ namespace Microsoft.Azure.Commands.CosmosDB
         public SwitchParameter EnableVirtualNetwork { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = Constants.IpRangeFilterHelpMessage)]
+<<<<<<< HEAD
         [ValidateNotNullOrEmpty]
+=======
+        [ValidateNotNull]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string[] IpRangeFilter { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = Constants.LocationHelpMessage)]
@@ -81,9 +93,25 @@ namespace Microsoft.Azure.Commands.CosmosDB
         public PSVirtualNetworkRule[] VirtualNetworkRuleObject { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = Constants.ApiKindHelpMessage)]
+<<<<<<< HEAD
         [PSArgumentCompleter("GlobalDocumentDB", "MongoDB", "Others")]
         public string ApiKind { get; set; }
 
+=======
+        [PSArgumentCompleter("Sql", "MongoDB", "Gremlin", "Cassandra", "Table")]
+        public string ApiKind { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.PublicNetworkAccessHelpMessage)]
+        [PSArgumentCompleter("Disabled", "Enabled")]
+        public string PublicNetworkAccess { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.DisableKeyBasedMetadataWriteAccessHelpMessage)]
+        public SwitchParameter DisableKeyBasedMetadataWriteAccess { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.KeyVaultUriHelpMessage)]
+        public string KeyVaultKeyUri { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = false, HelpMessage = Constants.AsJobHelpMessage)]
         public SwitchParameter AsJob { get; set; }
 
@@ -121,6 +149,7 @@ namespace Microsoft.Azure.Commands.CosmosDB
                 }
             }
 
+<<<<<<< HEAD
             if(!string.IsNullOrEmpty(ApiKind))
             {
                 if (!ApiKind.Equals("GlobalDocumentDB", StringComparison.OrdinalIgnoreCase) && !ApiKind.Equals("MongoDB", StringComparison.OrdinalIgnoreCase))
@@ -133,6 +162,8 @@ namespace Microsoft.Azure.Commands.CosmosDB
             else
                 ApiKind = "GlobalDocumentDB";
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             string writeLocation = null;
             Collection<Location> LocationCollection = new Collection<Location>();
 
@@ -155,13 +186,21 @@ namespace Microsoft.Azure.Commands.CosmosDB
             {
                 if(writeLocation != null)
                 {
+<<<<<<< HEAD
                     WriteError(new ErrorRecord(new PSArgumentException("Cannot accept Location and LocationObject simultaneously as parameters"), string.Empty, ErrorCategory.CloseError, null));
+=======
+                    WriteWarning("Cannot accept Location and LocationObject simultaneously as parameters");
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     return;
                 }
 
                 foreach (PSLocation psLocation in LocationObject)
                 {
+<<<<<<< HEAD
                     LocationCollection.Add(PSLocation.ConvertPSLocationToLocation(psLocation));
+=======
+                    LocationCollection.Add(PSLocation.ToSDKModel(psLocation));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     if (psLocation.FailoverPriority == 0)
                     {
                         writeLocation = psLocation.LocationName;
@@ -171,7 +210,11 @@ namespace Microsoft.Azure.Commands.CosmosDB
 
             if(string.IsNullOrEmpty(writeLocation))
             {
+<<<<<<< HEAD
                 WriteError(new ErrorRecord(new PSArgumentException("Cannot create Account without a Write Location."), string.Empty, ErrorCategory.CloseError, null));
+=======
+                WriteWarning("Cannot create Account without a Write Location.");
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 return;
             }
 
@@ -185,24 +228,39 @@ namespace Microsoft.Azure.Commands.CosmosDB
             }
 
             Collection<VirtualNetworkRule> virtualNetworkRule = new Collection<VirtualNetworkRule>();
+<<<<<<< HEAD
             if ((VirtualNetworkRule != null && VirtualNetworkRule.Length > 0) ||
                 (VirtualNetworkRuleObject != null && VirtualNetworkRuleObject.Length > 0))
             {
 
+=======
+            if (VirtualNetworkRule != null && VirtualNetworkRule.Length > 0)
+            {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 foreach (string id in VirtualNetworkRule)
                 {
                     virtualNetworkRule.Add(new VirtualNetworkRule(id: id));
                 }
+<<<<<<< HEAD
 
                 foreach (PSVirtualNetworkRule psVirtualNetworkRule in VirtualNetworkRuleObject)
                 {
                     virtualNetworkRule.Add(PSVirtualNetworkRule.ConvertPSVirtualNetworkRuleToVirtualNetworkRule(psVirtualNetworkRule));
+=======
+            }
+            if(VirtualNetworkRuleObject != null && VirtualNetworkRuleObject.Length > 0) 
+            { 
+                foreach (PSVirtualNetworkRule psVirtualNetworkRule in VirtualNetworkRuleObject)
+                {
+                    virtualNetworkRule.Add(PSVirtualNetworkRule.ToSDKModel(psVirtualNetworkRule));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
             }
 
             string IpRangeFilterAsString = null;
             if (IpRangeFilter != null && IpRangeFilter.Length > 0)
             {
+<<<<<<< HEAD
                 for (int i = 0; i < IpRangeFilter.Length; i++)
                 {
                     if (i == 0)
@@ -215,15 +273,64 @@ namespace Microsoft.Azure.Commands.CosmosDB
             }
 
             DatabaseAccountCreateUpdateParameters databaseAccountCreateUpdateParameters = new DatabaseAccountCreateUpdateParameters(locations:LocationCollection, location: writeLocation, name:Name, kind:ApiKind, consistencyPolicy:consistencyPolicy, tags:tags, ipRangeFilter:IpRangeFilterAsString);
+=======
+                IpRangeFilterAsString = IpRangeFilter?.Aggregate(string.Empty, (output, next) => string.Concat(output, (!string.IsNullOrWhiteSpace(output) && !string.IsNullOrWhiteSpace(next) ? "," : string.Empty), next)) ?? string.Empty;
+            }
+
+            DatabaseAccountCreateUpdateParameters databaseAccountCreateUpdateParameters = new DatabaseAccountCreateUpdateParameters(locations:LocationCollection, location: writeLocation, name:Name, consistencyPolicy:consistencyPolicy, tags:tags, ipRangeFilter:IpRangeFilterAsString);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             databaseAccountCreateUpdateParameters.EnableMultipleWriteLocations = EnableMultipleWriteLocations;
             databaseAccountCreateUpdateParameters.IsVirtualNetworkFilterEnabled = EnableVirtualNetwork;
             databaseAccountCreateUpdateParameters.EnableAutomaticFailover = EnableAutomaticFailover;
             databaseAccountCreateUpdateParameters.VirtualNetworkRules = virtualNetworkRule;
+<<<<<<< HEAD
+=======
+            databaseAccountCreateUpdateParameters.DisableKeyBasedMetadataWriteAccess = DisableKeyBasedMetadataWriteAccess;
+            databaseAccountCreateUpdateParameters.IpRangeFilter = IpRangeFilterAsString;
+            databaseAccountCreateUpdateParameters.PublicNetworkAccess = PublicNetworkAccess;
+            
+            if (KeyVaultKeyUri != null)
+            {
+                databaseAccountCreateUpdateParameters.KeyVaultKeyUri = KeyVaultKeyUri;
+            }
+
+            if (!string.IsNullOrEmpty(ApiKind))
+            {
+                if (!ApiKind.Equals("MongoDB", StringComparison.OrdinalIgnoreCase))
+                {
+                    switch (ApiKind)
+                    {
+                        case "Cassandra":
+                            databaseAccountCreateUpdateParameters.Capabilities = new List<Capability> { new Capability { Name = "EnableCassandra" } };
+                            break;
+                        case "Gremlin":
+                            databaseAccountCreateUpdateParameters.Capabilities = new List<Capability> { new Capability { Name = "EnableGremlin" } };
+                            break;
+                        case "Table":
+                            databaseAccountCreateUpdateParameters.Capabilities = new List<Capability> { new Capability { Name = "EnableTable" } };
+                            break;
+                        case "Sql":
+                            break;
+                    }
+
+                    ApiKind = null;
+                }
+            }
+            else
+            {
+                ApiKind = "GlobalDocumentDB";
+            }
+            databaseAccountCreateUpdateParameters.Kind = ApiKind;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (ShouldProcess(Name, "Creating Database Account"))
             {
                 DatabaseAccountGetResults cosmosDBAccount = CosmosDBManagementClient.DatabaseAccounts.CreateOrUpdateWithHttpMessagesAsync(ResourceGroupName, Name, databaseAccountCreateUpdateParameters).GetAwaiter().GetResult().Body;
+<<<<<<< HEAD
                 WriteObject(new PSDatabaseAccount(cosmosDBAccount));
+=======
+                WriteObject(new PSDatabaseAccountGetResults(cosmosDBAccount));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return;

@@ -20,7 +20,11 @@ Get-AzCosmosDBSqlStoredProcedure -ResourceGroupName <String> -AccountName <Strin
 
 ### ByParentObjectParameterSet
 ```
+<<<<<<< HEAD
 Get-AzCosmosDBSqlStoredProcedure [-Name <String>] -InputObject <PSSqlContainerGetResults>
+=======
+Get-AzCosmosDBSqlStoredProcedure [-Name <String>] -ParentObject <PSSqlContainerGetResults>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -35,11 +39,15 @@ PS C:\> Get-AzCosmosDBSqlStoredProcedure -AccountName {accountName} -ResourceGro
 
 Name                           : {storedProcedureName}
 Id                             : {storedProcedureId}
+<<<<<<< HEAD
 SqlStoredProcedureGetResultsId :
 Body                           :
 _rid                           :
 _ts                            :
 _etag                          :
+=======
+Resource                       : Microsoft.Azure.Commands.CosmosDB.Models.PSSqlStoredProcedureGetPropertiesResource
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## PARAMETERS
@@ -104,6 +112,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -InputObject
 Sql Container object.
 
@@ -113,12 +122,24 @@ Parameter Sets: ByParentObjectParameterSet
 Aliases:
 
 Required: True
+=======
+### -Name
+Stored Prcodecure Name.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Position: Named
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -Name
 Stored Prcodecure Name.
 
@@ -131,6 +152,20 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+=======
+### -ParentObject
+Sql Container object.
+
+```yaml
+Type: PSSqlContainerGetResults
+Parameter Sets: ByParentObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 

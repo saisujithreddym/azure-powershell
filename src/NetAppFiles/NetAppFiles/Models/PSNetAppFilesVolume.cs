@@ -137,5 +137,25 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Models
         /// </summary>
         public string SubnetId { get; set; }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Gets or sets the type of the volume
+        /// </summary>
+        public string VolumeType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the DataProtection properties
+        /// </summary>
+        /// <remarks>
+        /// DataProtection type volumes include an object containing details of the replication
+        /// </remarks>
+        public PSNetAppFilesVolumeDataProtection DataProtection { get; set; }
+
+        /// <summary>
+        /// Gets or sets restoring
+        /// </summary>
+        public bool? IsRestoring { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

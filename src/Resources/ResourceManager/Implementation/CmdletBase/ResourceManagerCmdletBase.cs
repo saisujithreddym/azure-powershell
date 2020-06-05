@@ -13,18 +13,30 @@
 // ----------------------------------------------------------------------------------
 
 using Microsoft.Azure.Commands.Common.Authentication;
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Common.Authentication.Models;
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
 {
     using Commands.Common.Authentication.Abstractions;
     using Common;
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Components;
+<<<<<<< HEAD
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Entities.ErrorResponses;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Entities.Resources;
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Extensions;
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.RestClients;
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkClient;
+<<<<<<< HEAD
+=======
+    using Microsoft.Rest.Azure;
+    using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using Newtonsoft.Json.Linq;
     using System;
     using System.Collections.Generic;
@@ -68,9 +80,16 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         /// <summary>
         /// Gets or sets the API version.
         /// </summary>
+<<<<<<< HEAD
         [Parameter(Mandatory = false, HelpMessage = "When set, indicates the version of the resource provider API to use. If not specified, the API version is automatically determined as the latest available.")]
         [ValidateNotNullOrEmpty]
         public string ApiVersion { get; set; }
+=======
+        [CmdletParameterBreakingChange("ApiVersion", ChangeDescription = "Parameter is being deprecated without being replaced")]
+        [Parameter(Mandatory = false, HelpMessage = "When set, indicates the version of the resource provider API to use. If not specified, the API version is automatically determined as the latest available.")]
+        [ValidateNotNullOrEmpty]
+        public virtual string ApiVersion { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         /// <summary>
         /// Gets or sets the switch that indicates if pre-release API version should be considered.
@@ -165,7 +184,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         /// <summary>
         /// The <c>ProcessRecord</c> method.
         /// </summary>
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
+=======
+        public sealed override void ExecuteCmdlet()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             try
             {
@@ -413,6 +436,28 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets the source exception from a captured exception.
+        /// </summary>
+        /// <param name="capturedException">The captured exception</param>
+        private static Exception GetSourceException(ExceptionDispatchInfo capturedException)
+        {
+            if (capturedException.SourceException is AggregateException aggregateException)
+            {
+                var innerException = aggregateException.InnerExceptions?.SingleOrDefault();
+
+                if (innerException != null) 
+                {
+                    return innerException;
+                }
+            }
+
+            return capturedException.SourceException;
+        }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Provides specialized exception handling.
         /// </summary>
         /// <param name="capturedException">The captured exception</param>
@@ -420,6 +465,7 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         {
             try
             {
+<<<<<<< HEAD
                 var errorResponseException = capturedException.SourceException as ErrorResponseMessageException;
                 if (errorResponseException != null)
                 {
@@ -447,6 +493,16 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
                 }
 
                 throw capturedException.SourceException;
+=======
+                var sourceException = GetSourceException(capturedException);
+
+                if (sourceException is CloudException cloudException)
+                {
+                    throw new ResourceManagerCloudException(cloudException);
+                }
+
+                throw sourceException;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             finally
             {

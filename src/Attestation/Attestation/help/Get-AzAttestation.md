@@ -18,7 +18,11 @@ Get-AzAttestation [-Name] <String> [-ResourceGroupName] <String> [-DefaultProfil
  [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
 ### ResourceGroupParameterSet
+=======
+### ResourceIdParameterSet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 Get-AzAttestation [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
@@ -30,6 +34,7 @@ The Get-AzAttestation cmdlet gets information about the attestation in a subscri
 
 ### Example 1
 ```powershell
+<<<<<<< HEAD
 PS C:\> Get-AzAttestation -Name example -ResourceGroupName rg1 
 Id                  : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx/resourceGroups/rg1/providers/Microsoft.Attestation/attestationProviders/example
 Name                : example
@@ -40,6 +45,25 @@ ResoureGroupName    : rg1
 SubscriptionId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx
 ```
 Get Attestation "example" in Resource Group "rg1". 
+=======
+PS C:\> Get-AzAttestation -Name pshtest -ResourceGroupName psh-test-rg                                                                                                                                                                                                                                                       
+Id                : subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxxx/resourceGroups/psh-test-rg/providers/Microsoft.Attestation/attestationProviders/pshtest
+Location          : East US
+ResourceGroupName : psh-test-rg
+Name              : pshtest
+Status            : Ready
+TrustModel        : AAD
+AttestUri         : https://pshtest.us.attest.azure.net
+Tags              : {Production, Example}
+TagsTable         :
+                    Name        Value
+                    ==========  =====
+                    Production  False
+                    Example     True
+```
+
+Get Attestation Provider *pshtest* in Resource Group *psh-test-rg*.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## PARAMETERS
 
@@ -47,7 +71,11 @@ Get Attestation "example" in Resource Group "rg1".
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
+<<<<<<< HEAD
 Type: IAzureContextContainer
+=======
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -62,7 +90,11 @@ Accept wildcard characters: False
 Attestation Name.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -77,7 +109,11 @@ Accept wildcard characters: False
 Specifies the name of the resource group associated with the attestation being queried.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: NameParameterSet
 Aliases:
 
@@ -92,8 +128,13 @@ Accept wildcard characters: False
 Specifies the name of the ResourceID associated with the attestation being queried
 
 ```yaml
+<<<<<<< HEAD
 Type: String
 Parameter Sets: ResourceGroupParameterSet
+=======
+Type: System.String
+Parameter Sets: ResourceIdParameterSet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True

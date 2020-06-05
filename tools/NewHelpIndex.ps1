@@ -68,7 +68,13 @@ $HelpFolders = @()
 
 $resourceManagerPath = "$PSScriptRoot/../artifacts/$BuildConfig/"
 
+<<<<<<< HEAD
 $RMpsd1s += Get-ChildItem -Path $resourceManagerPath -Depth 2 | Where-Object { $_.Name -like "*.psd1" -and $_.FullName -notlike "*dll-Help*" }
+=======
+$RMpsd1s += Get-ChildItem -Path $resourceManagerPath -Depth 2 | Where-Object { 
+    $_.Name -like "*.psd1" -and $_.FullName -notlike "*dll-Help*" -and $_.Name -ne "SecretManagementExtension.psd1"
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 $HelpFolders += Get-ChildItem -Path "$PSScriptRoot/../src" -Recurse -Directory | where { $_.Name -eq "help" -and $_.FullName -notlike "*\Stack\*" -and $_.FullName -notlike "*\bin\*"}
 
@@ -93,7 +99,15 @@ $RMpsd1s | ForEach-Object {
 
     $outputCmdlets = @{}
 
+<<<<<<< HEAD
     $parsedPsd1.CmdletsToExport | ForEach-Object {
+=======
+    $cmdletsToExport = $parsedPsd1.CmdletsToExport | Where-Object { $_ }
+    $functionsToExport = $parsedPsd1.FunctionsToExport | Where-Object { $_ }
+    $cmdletsToExport = $cmdletsToExport + $functionsToExport
+
+    $cmdletsToExport | ForEach-Object {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         $cmdletHelpFile = $HelpFileMapping["$_.md"]
         if ($cmdletHelpFile -eq $null -and $Target -eq "Latest")
         {

@@ -17,7 +17,11 @@ Updates the Configuration of an existing Identity Provider.
 Set-AzApiManagementIdentityProvider -Context <PsApiManagementContext>
  -Type <PsApiManagementIdentityProviderType> [-ClientId <String>] [-ClientSecret <String>]
  [-AllowedTenants <String[]>] [-Authority <String>] [-SignupPolicyName <String>] [-SigninPolicyName <String>]
+<<<<<<< HEAD
  [-ProfileEditingPolicyName <String>] [-PasswordResetPolicyName <String>] [-PassThru]
+=======
+ [-ProfileEditingPolicyName <String>] [-PasswordResetPolicyName <String>] [-SigninTenant <String>] [-PassThru]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -26,7 +30,12 @@ Set-AzApiManagementIdentityProvider -Context <PsApiManagementContext>
 Set-AzApiManagementIdentityProvider -InputObject <PsApiManagementIdentityProvider> [-ClientId <String>]
  [-ClientSecret <String>] [-AllowedTenants <String[]>] [-Authority <String>] [-SignupPolicyName <String>]
  [-SigninPolicyName <String>] [-ProfileEditingPolicyName <String>] [-PasswordResetPolicyName <String>]
+<<<<<<< HEAD
  [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+ [-SigninTenant <String>] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -212,6 +221,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -SigninTenant
+Signin Tenant to override in AAD B2C instead of the `common` Tenant
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -SignupPolicyName
 Signup Policy Name. Only applies to AAD B2C Identity Provider. This parameter is optional.
 

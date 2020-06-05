@@ -1,7 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.CosmosDB.dll-Help.xml
 Module Name: Az.CosmosDB
+<<<<<<< HEAD
 online version: https://docs.microsoft.com/en-us/powershell/module/az.cosmosdb/new-azcosmosdbaccountkey
+=======
+online version: https://docs.microsoft.com/en-us/powershell/module/az.cosmosdb/new-azcosmosdbaccount
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 schema: 2.0.0
 ---
 
@@ -15,9 +19,16 @@ Create a new CosmosDB Account.
 ```
 New-AzCosmosDBAccount -ResourceGroupName <String> -Name <String> [-DefaultConsistencyLevel <String>]
  [-EnableAutomaticFailover] [-EnableMultipleWriteLocations] [-EnableVirtualNetwork] [-IpRangeFilter <String[]>]
+<<<<<<< HEAD
  -Location <String[]> -LocationObject <PSLocation[]> [-MaxStalenessIntervalInSeconds <Int32>]
  [-MaxStalenessPrefix <Int32>] [-Tag <Hashtable>] [-VirtualNetworkRule <String[]>]
  [-VirtualNetworkRuleObject <PSVirtualNetworkRule[]>] [-ApiKind <String>] [-AsJob]
+=======
+ [-Location <String[]>] [-LocationObject <PSLocation[]>] [-MaxStalenessIntervalInSeconds <Int32>]
+ [-MaxStalenessPrefix <Int32>] [-Tag <Hashtable>] [-VirtualNetworkRule <String[]>]
+ [-VirtualNetworkRuleObject <PSVirtualNetworkRule[]>] [-ApiKind <String>] [-PublicNetworkAccess <String>]
+ [-DisableKeyBasedMetadataWriteAccess] [-KeyVaultKeyUri <String>] [-AsJob]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -37,7 +48,11 @@ DatabaseAccountOfferType      : Standard
 IpRangeFilter                 :
 IsVirtualNetworkFilterEnabled : False
 EnableAutomaticFailover       : False
+<<<<<<< HEAD
 ConsistencyPolicy             : Microsoft.Azure.Management.CosmosDB.Fluent.Models.ConsistencyPolicy
+=======
+ConsistencyPolicy             : Microsoft.Azure.Management.CosmosDB.Models.ConsistencyPolicy
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Capabilities                  : {}
 WriteLocations                : {databaseAccountName-eastus}
 ReadLocations                 : {databaseAccountName-eastus}
@@ -57,7 +72,11 @@ A new CosmosDB Account with name databaseAccountName is created in the ResourceG
 
 ### -ApiKind
 The type of Cosmos DB database account to create.
+<<<<<<< HEAD
 Accepted values: GlobalDocumentDB, Sql, MongoDB, Gremlin, Table, Cassandra.
+=======
+Accepted values: GlobalDocumentDB, MongoDB, Gremlin, Table, Cassandra.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: GlobalDocumentDB
 
 ```yaml
@@ -133,6 +152,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -DisableKeyBasedMetadataWriteAccess
+Disable write operations on metadata resources (databases, containers, throughput) via account keys
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -EnableAutomaticFailover
 Enables automatic failover of the write region in the rare event that the region is unavailable due to an outage.
 Automatic failover will result in a new write region for the account and is chosen based on the failover priorities configured for the account.
@@ -198,6 +235,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -KeyVaultKeyUri
+URI of the KeyVault
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Location
 Add a location to the Cosmos DB database account.
 Array of strings, ordered by failover priority.
@@ -207,7 +262,11 @@ Type: String[]
 Parameter Sets: (All)
 Aliases:
 
+<<<<<<< HEAD
 Required: True
+=======
+Required: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -222,7 +281,11 @@ Type: PSLocation[]
 Parameter Sets: (All)
 Aliases:
 
+<<<<<<< HEAD
 Required: True
+=======
+Required: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -276,6 +339,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -PublicNetworkAccess
+Whether or not public endpoint access is allowed for this server. Possible values include: 'Enabled', 'Disabled'
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ResourceGroupName
 Name of resource group.
 

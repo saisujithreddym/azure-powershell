@@ -14,8 +14,16 @@
 
 namespace Microsoft.Azure.Commands.Blueprint.Models
 {
+<<<<<<< HEAD
     public class PSParameterValue : PSParameterValueBase
     {
         public object Value { get; set; }
+=======
+    public class PSParameterValue
+    {
+        public object Value { get; set; }
+
+        public PSSecretValueReference Reference { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

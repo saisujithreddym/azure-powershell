@@ -13,8 +13,14 @@ Updates an Azure Api Management service
 ## SYNTAX
 
 ```
+<<<<<<< HEAD
 Set-AzApiManagement -InputObject <PsApiManagement> [-AssignIdentity] [-AsJob] [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+Set-AzApiManagement -InputObject <PsApiManagement> [-SystemAssignedIdentity]
+ [-UserAssignedIdentity <String[]>] [-AsJob] [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -54,7 +60,11 @@ PS C:\>$proxyCustomConfig = @($proxy1,$proxy2)
 PS C:\>$apim = Get-AzApiManagement -ResourceGroupName "ContosoGroup" -Name "ContosoApi"
 PS C:\>$apim.PortalCustomHostnameConfiguration = $portal
 PS C:\>$apim.ProxyCustomHostnameConfiguration = $proxyCustomConfig 
+<<<<<<< HEAD
 PS C:\>Set-AzApiManagement -InputObject $apim -AssignIdentity
+=======
+PS C:\>Set-AzApiManagement -InputObject $apim -SystemAssignedIdentity
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### Example 4: Update Publisher Email, NotificationSender Email and Organization Name
@@ -83,6 +93,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -AssignIdentity
 Generate and assign an Azure Active Directory Identity for this server for use with key management services like Azure KeyVault.
 
@@ -98,6 +109,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -143,6 +156,39 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -SystemAssignedIdentity
+Generate and assign an Azure Active Directory Identity for this server for use with key management services like Azure KeyVault.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UserAssignedIdentity
+Assign User Identities to this server for use with key management services like Azure KeyVault.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 

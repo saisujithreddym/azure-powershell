@@ -19,7 +19,13 @@ New-AzHDInsightClusterConfig [-DefaultStorageAccountName <String>] [-DefaultStor
  [-HiveMetastore <AzureHDInsightMetastore>] [-HeadNodeSize <String>] [-WorkerNodeSize <String>]
  [-EdgeNodeSize <String>] [-ZookeeperNodeSize <String>] [-ClusterType <String>] [-ClusterTier <Tier>]
  [-ObjectId <Guid>] [-ApplicationId <Guid>] [-CertificateFileContents <Byte[]>] [-CertificateFilePath <String>]
+<<<<<<< HEAD
  [-CertificatePassword <String>] [-AadTenantId <Guid>] [-DefaultProfile <IAzureContextContainer>]
+=======
+ [-CertificatePassword <String>] [-AadTenantId <Guid>] [-MinSupportedTlsVersion <String>]
+ [-AssignedIdentity <String>] [-EncryptionAlgorithm <String>] [-EncryptionKeyName <String>]
+ [-EncryptionKeyVersion <String>] [-EncryptionVaultUri <String>] [-DefaultProfile <IAzureContextContainer>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [<CommonParameters>]
 ```
 
@@ -99,6 +105,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -AssignedIdentity
+Gets or sets the assigned identity.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -CertificateFileContents
 Specifies file contents of the certificate that will be used when accessing Azure Data Lake Store.
 
@@ -174,6 +198,12 @@ The acceptable values for this parameter are:
 - HBase
 - Storm
 - Spark
+<<<<<<< HEAD
+=======
+- INTERACTIVEHIVE
+- Kafka
+- RServer
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -263,6 +293,69 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -EncryptionAlgorithm
+Gets or sets the encryption algorithm.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionKeyName
+Gets or sets the encryption key name.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionKeyVersion
+Gets or sets the encryption key version.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -EncryptionVaultUri
+Gets or sets the encryption vault uri.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -HeadNodeSize
 Specifies the size of the virtual machine for the Head node.
 Use Get-AzVMSize for acceptable VM sizes, and see HDInsight's pricing page.
@@ -295,6 +388,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -MinSupportedTlsVersion
+Gets or sets the minimal supported TLS version.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ObjectId
 Specifies the Azure AD object ID (a GUID) of the Azure AD Service Principal that represents the cluster.
 The cluster will use this when accessing Azure Data Lake Store.

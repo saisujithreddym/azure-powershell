@@ -41,5 +41,15 @@ namespace Microsoft.Azure.Commands.Batch.Test.ScenarioTests
         {
             BatchController.NewInstance.RunPsTest(_logger, "Test-GetBatchSupportedImage");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestCreateNewBatchAccountWithNoPublicIp()
+        {
+            BatchController.NewInstance.RunPsTest(_logger, "Test-CreateNewBatchAccountWithNoPublicIp");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

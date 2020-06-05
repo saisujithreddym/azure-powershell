@@ -51,6 +51,7 @@ Remove-AzResourceLock -LockName <String> [-Force] -ResourceName <String> -Resour
  [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
 ### ByTenantLevel
 ```
 Remove-AzResourceLock -LockName <String> [-Force] -ResourceName <String> -ResourceType <String> [-TenantLevel]
@@ -58,6 +59,8 @@ Remove-AzResourceLock -LockName <String> [-Force] -ResourceName <String> -Resour
  [<CommonParameters>]
 ```
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## DESCRIPTION
 The **Remove-AzResourceLock** cmdlet removes an Azure resource lock.
 
@@ -138,7 +141,11 @@ Specifies the name of the lock that this cmdlet removes.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: ByResourceGroup, ByResourceGroupLevel, BySpecifiedScope, BySubscription, BySubscriptionLevel, ByTenantLevel
+=======
+Parameter Sets: ByResourceGroup, ByResourceGroupLevel, BySpecifiedScope, BySubscription, BySubscriptionLevel
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases: ExtensionResourceName, Name
 
 Required: True
@@ -185,7 +192,11 @@ Server`/`Database
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel, ByTenantLevel
+=======
+Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -200,7 +211,11 @@ Specifies the resource type of the resource for which the lock applies.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel, ByTenantLevel
+=======
+Parameter Sets: ByResourceGroupLevel, BySubscriptionLevel
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -225,6 +240,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -TenantLevel
 Indicates that this cmdlet operates at the tenant level.
 
@@ -240,6 +256,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 
@@ -272,7 +290,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

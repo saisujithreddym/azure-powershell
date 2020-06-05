@@ -87,7 +87,11 @@ PS C:\>Get-AzStorageFileHandle -ShareName "mysharename" -Path 'dir1/dir2' -Recur
 
 This command lists all file handles on a file directory recursively, filters out the handles which are opened 1 day ago, and then close them.
 
+<<<<<<< HEAD
 ### Example 4: Close all file handles on a file 
+=======
+### Example 4: Close all file handles on a file
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 PS C:\>Close-AzStorageFileHandle -ShareName "mysharename" -Path 'dir1/dir2/test.txt' -CloseAll
 ```
@@ -193,12 +197,20 @@ CloudFileDirectory object indicated the base folder where the files/directories 
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFileDirectory
 Parameter Sets: DirectoryCloseAll
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFileDirectory
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -208,12 +220,20 @@ CloudFile object indicated the file to close handle.
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFile
 Parameter Sets: FileCloseAll
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFile
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -299,12 +319,20 @@ CloudFileShare object indicated the share where the files/directories would be l
 ```yaml
 Type: Microsoft.Azure.Storage.File.CloudFileShare
 Parameter Sets: ShareCloseAll, ShareCloseSingle
+<<<<<<< HEAD
 Aliases:
+=======
+Aliases: CloudFileShare
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: True
 Position: 0
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByValue)
+=======
+Accept pipeline input: True (ByPropertyName, ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -355,7 +383,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

@@ -22,6 +22,10 @@ using System.Xml;
 using Microsoft.Azure.Commands.Insights.OutputClasses;
 using Microsoft.Azure.Management.Monitor;
 using Microsoft.Azure.Management.Monitor.Models;
+<<<<<<< HEAD
+=======
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.Insights.Diagnostics
 {
@@ -373,6 +377,7 @@ namespace Microsoft.Azure.Commands.Insights.Diagnostics
                 Days = this.RetentionInDays.Value
             };
 
+<<<<<<< HEAD
             if (properties.Logs != null)
             {
                 WriteDebugWithTimestamp("Setting retention policy for logs");
@@ -389,6 +394,32 @@ namespace Microsoft.Azure.Commands.Insights.Diagnostics
                 {
                     metricSettings.RetentionPolicy = retentionPolicy;
                 }
+=======
+            if (properties.Logs != null && this.IsParameterBound(c => c.Category))
+            {
+                WriteDebugWithTimestamp("Setting retention policy for logs");
+                properties.Logs = properties.Logs.Select(setting => 
+                {
+                    if (setting != null)
+                    {
+                        setting.RetentionPolicy = this.Category.Contains(setting.Category) ? retentionPolicy : (setting.RetentionPolicy == null ? null : setting.RetentionPolicy);
+                    }
+                    return setting; 
+                }).ToList();
+            }
+
+            if (properties.Metrics != null && this.IsParameterBound(c => c.MetricCategory))
+            {
+                WriteDebugWithTimestamp("Setting retention policy for metrics");
+                properties.Metrics = properties.Metrics.Select(setting =>
+                {
+                    if (setting != null)
+                    {
+                        setting.RetentionPolicy = this.MetricCategory.Contains(setting.Category) ? retentionPolicy : (setting.RetentionPolicy == null ? null : setting.RetentionPolicy);
+                    }
+                    return setting;
+                }).ToList();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
         }
 

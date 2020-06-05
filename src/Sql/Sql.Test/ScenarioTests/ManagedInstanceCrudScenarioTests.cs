@@ -70,5 +70,15 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
         {
             RunPowerShellTest("Test-CreateManagedInstanceWithIdentity");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestCreateUpdateManagedInstanceWithMinimalTlsVersion()
+        {
+            RunPowerShellTest("Test-CreateUpdateManagedInstanceWithMinimalTlsVersion");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

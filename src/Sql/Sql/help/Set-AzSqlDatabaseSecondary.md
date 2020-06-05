@@ -36,14 +36,24 @@ In the latter case, the secondary database is synchronized with the primary befo
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### 1: Initiate a planned failover
 ```
+=======
+### Example 1: Initiate a planned failover
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 $database = Get-AzSqlDatabase -DatabaseName $databaseName -ResourceGroupName $secondaryResourceGroupName -ServerName $secondaryServerName
 $database | Set-AzSqlDatabaseSecondary -PartnerResourceGroupName $primaryResourceGroupName -Failover
 ```
 
+<<<<<<< HEAD
 ### 2: Initiate a forced failover (with potential data loss)
 ```
+=======
+### Example 2: Initiate a forced failover (with potential data loss)
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 $database = Get-AzSqlDatabase -DatabaseName $databaseName -ResourceGroupName $secondaryResourceGroupName -ServerName $secondaryServerName
 $database | Set-AzSqlDatabaseSecondary -PartnerResourceGroupName $primaryResourceGroupName -Failover -AllowDataLoss
 ```

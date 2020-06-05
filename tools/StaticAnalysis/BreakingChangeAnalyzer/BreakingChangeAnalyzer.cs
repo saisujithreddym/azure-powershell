@@ -135,7 +135,11 @@ namespace StaticAnalysis.BreakingChangeAnalyzer
                     var script = $"Import-LocalizedData -BaseDirectory {parentDirectory} -FileName {psd1FileName} -BindingVariable ModuleMetadata;";
                     powershell.AddScript($"{script} $ModuleMetadata.NestedModules;");
                     var cmdletResult = powershell.Invoke();
+<<<<<<< HEAD
                     var nestedModules = cmdletResult.Select(c => c.ToString()).Select(c => (c.StartsWith(".") ? c.Substring(2) : c)).ToList();
+=======
+                    var nestedModules = cmdletResult.Where(c => c != null).Select(c => c.ToString()).Select(c => (c.StartsWith(".") ? c.Substring(2) : c)).ToList();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                     powershell.AddScript($"{script} $ModuleMetadata.RequiredModules | % {{ $_[\"ModuleName\"] }};");
                     cmdletResult = powershell.Invoke();

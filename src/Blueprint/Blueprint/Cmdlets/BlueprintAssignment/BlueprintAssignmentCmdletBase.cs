@@ -62,7 +62,11 @@ namespace Microsoft.Azure.Commands.Blueprint.Cmdlets
                 Location = bpLocation,
                 BlueprintId = blueprintId,
                 Locks = new AssignmentLockSettings { Mode = lockMode == null ? PSLockMode.None.ToString() : lockMode.ToString() },
+<<<<<<< HEAD
                 Parameters = new Dictionary<string, ParameterValueBase>(),
+=======
+                Parameters = new Dictionary<string, ParameterValue>(),
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ResourceGroups = new Dictionary<string, ResourceGroupValue>()
             };
 
@@ -102,7 +106,11 @@ namespace Microsoft.Azure.Commands.Blueprint.Cmdlets
                         }
                     }
 
+<<<<<<< HEAD
                     var secretValue = new SecretReferenceParameterValue(new SecretValueReference(new KeyVaultReference(keyVaultId), secretName, secretVersion));
+=======
+                    var secretValue = new ParameterValue(reference: new SecretValueReference(new KeyVaultReference(keyVaultId), secretName, secretVersion));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     localAssignment.Parameters.Add(key.ToString(), secretValue);
                 }
             }
@@ -161,10 +169,15 @@ namespace Microsoft.Azure.Commands.Blueprint.Cmdlets
         /// </summary>
         /// <param name="subscriptionId"></param>
         /// <param name="spnObjectId"></param>
+<<<<<<< HEAD
         protected void AssignOwnerPermission(string subscriptionId, string spnObjectId)
         {
             string scope = string.Format(BlueprintConstants.SubscriptionScope, subscriptionId);
 
+=======
+        protected void AssignOwnerPermission(string scope, string spnObjectId)
+        {
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var filter = new Rest.Azure.OData.ODataQuery<RoleAssignmentFilter>();
             filter.SetFilter(a => a.AssignedTo(spnObjectId));
 

@@ -240,7 +240,11 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+<<<<<<< HEAD
 Accept wildcard characters: True
+=======
+Accept wildcard characters: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### -Tag
@@ -271,7 +275,11 @@ Required: False
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+<<<<<<< HEAD
 Accept wildcard characters: True
+=======
+Accept wildcard characters: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ```yaml
@@ -283,7 +291,11 @@ Required: True
 Position: 0
 Default value: None
 Accept pipeline input: True (ByPropertyName)
+<<<<<<< HEAD
 Accept wildcard characters: True
+=======
+Accept wildcard characters: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### CommonParameters

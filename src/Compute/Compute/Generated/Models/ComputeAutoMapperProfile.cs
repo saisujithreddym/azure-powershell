@@ -98,12 +98,15 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
                     .ForMember(c => c.Zones, o => o.Condition(r => (r.Zones != null)));
                 cfg.CreateMap<TO.PSVirtualMachineScaleSet, TO.PSVirtualMachineScaleSetList>()
                     .ForMember(c => c.Zones, o => o.Condition(r => (r.Zones != null)));
+<<<<<<< HEAD
                 cfg.CreateMap<FROM.VirtualMachineScaleSet, TO.PSVirtualMachineScaleSetList>()
                     .ForMember(c => c.Zones, o => o.Condition(r => (r.Zones != null)));
                 cfg.CreateMap<TO.PSVirtualMachineScaleSetList, TO.PSVirtualMachineScaleSet>()
                     .ForMember(c => c.Zones, o => o.Condition(r => (r.Zones != null)));
                 cfg.CreateMap<TO.PSVirtualMachineScaleSet, TO.PSVirtualMachineScaleSetList>()
                     .ForMember(c => c.Zones, o => o.Condition(r => (r.Zones != null)));
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 cfg.CreateMap<FROM.VirtualMachineScaleSetVM, TO.PSVirtualMachineScaleSetVMList>();
                 cfg.CreateMap<TO.PSVirtualMachineScaleSetVMList, TO.PSVirtualMachineScaleSetVM>();
                 cfg.CreateMap<TO.PSVirtualMachineScaleSetVM, TO.PSVirtualMachineScaleSetVMList>();
@@ -139,6 +142,7 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
                 cfg.CreateMap<TO.PSImage, FROM.Image>();
                 cfg.CreateMap<FROM.LogAnalyticsOperationResult, TO.PSLogAnalyticsOperationResult>();
                 cfg.CreateMap<TO.PSLogAnalyticsOperationResult, FROM.LogAnalyticsOperationResult>();
+<<<<<<< HEAD
                 cfg.CreateMap<FROM.ProximityPlacementGroup, TO.PSProximityPlacementGroup>()
                     .ForMember(c => c.AvailabilitySetsColocationStatus, o => o.MapFrom(r => r.AvailabilitySets))
                     .ForMember(c => c.VirtualMachinesColocationStatus, o => o.MapFrom(r => r.VirtualMachines))
@@ -147,6 +151,10 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
                     .ForMember(c => c.AvailabilitySets, o => o.MapFrom(r => r.AvailabilitySetsColocationStatus))
                     .ForMember(c => c.VirtualMachines, o => o.MapFrom(r => r.VirtualMachinesColocationStatus))
                     .ForMember(c => c.VirtualMachineScaleSets, o => o.MapFrom(r => r.VirtualMachineScaleSetsColocationStatus));
+=======
+                cfg.CreateMap<FROM.ProximityPlacementGroup, TO.PSProximityPlacementGroup>();
+                cfg.CreateMap<TO.PSProximityPlacementGroup, FROM.ProximityPlacementGroup>();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 cfg.CreateMap<FROM.ResourceSku, TO.PSResourceSku>();
                 cfg.CreateMap<TO.PSResourceSku, FROM.ResourceSku>();
                 cfg.CreateMap<FROM.Snapshot, TO.PSSnapshot>();
@@ -186,15 +194,21 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
 
                 cfg.CreateMap<FROM.VirtualMachineScaleSetVMProfile, TO.PSVirtualMachineScaleSetVMProfile>();
                 cfg.CreateMap<TO.PSVirtualMachineScaleSetVMProfile, FROM.VirtualMachineScaleSetVMProfile>();
+<<<<<<< HEAD
                 cfg.CreateMap<FROM.AutomaticRepairsPolicy, TO.PSAutomaticRepairsPolicy>();
                 cfg.CreateMap<TO.PSAutomaticRepairsPolicy, FROM.AutomaticRepairsPolicy>();
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 cfg.CreateMap<FROM.VirtualMachineScaleSetExtensionProfile, TO.PSVirtualMachineScaleSetExtensionProfile>();
                 cfg.CreateMap<TO.PSVirtualMachineScaleSetExtensionProfile, FROM.VirtualMachineScaleSetExtensionProfile>();
                 cfg.CreateMap<FROM.VirtualMachineScaleSetExtension, TO.PSVirtualMachineScaleSetExtension>()
                     .ForMember(c => c.Type, o => o.MapFrom(r => r.Type1));
                 cfg.CreateMap<TO.PSVirtualMachineScaleSetExtension, FROM.VirtualMachineScaleSetExtension>()
                     .ForMember(c => c.Type1, o => o.MapFrom(r => r.Type));
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             });
             _mapper = config.CreateMapper();
         }

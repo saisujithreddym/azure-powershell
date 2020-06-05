@@ -28,8 +28,15 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
     using LocalConstants = Microsoft.WindowsAzure.Commands.Storage.File.Constants;
     using System.Runtime.InteropServices;
     using Microsoft.Azure.Storage.DataMovement;
+<<<<<<< HEAD
 
     [Cmdlet("Set", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageFileContent", SupportsShouldProcess = true, DefaultParameterSetName = LocalConstants.ShareNameParameterSetName), OutputType(typeof(CloudFile))]
+=======
+    using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+    using Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel;
+
+    [Cmdlet("Set", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageFileContent", SupportsShouldProcess = true, DefaultParameterSetName = LocalConstants.ShareNameParameterSetName), OutputType(typeof(AzureStorageFile))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class SetAzureStorageFileContent : StorageFileDataManagementCmdletBase, IDynamicParameters
     {
         [Parameter(
@@ -44,18 +51,34 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
             Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = LocalConstants.ShareParameterSetName,
             HelpMessage = "CloudFileShare object indicated the share where the file would be uploaded to.")]
         [ValidateNotNull]
+=======
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = LocalConstants.ShareParameterSetName,
+            HelpMessage = "CloudFileShare object indicated the share where the file would be uploaded to.")]
+        [ValidateNotNull]
+        [Alias("CloudFileShare")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFileShare Share { get; set; }
 
         [Parameter(
             Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = LocalConstants.DirectoryParameterSetName,
             HelpMessage = "CloudFileDirectory object indicated the cloud directory where the file would be uploaded.")]
         [ValidateNotNull]
+=======
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = LocalConstants.DirectoryParameterSetName,
+            HelpMessage = "CloudFileDirectory object indicated the cloud directory where the file would be uploaded.")]
+        [ValidateNotNull]
+        [Alias("CloudFileDirectory")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFileDirectory Directory { get; set; }
 
         [Alias("FullName")]
@@ -143,7 +166,11 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
 
                     if (this.PassThru)
                     {
+<<<<<<< HEAD
                         this.OutputStream.WriteObject(taskId, cloudFileToBeUploaded);
+=======
+                        WriteCloudFileObject(taskId, this.Channel, cloudFileToBeUploaded);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }
                 });
             }

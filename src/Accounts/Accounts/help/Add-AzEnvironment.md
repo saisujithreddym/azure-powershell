@@ -26,7 +26,12 @@ Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-Servi
  [[-BatchEndpointResourceId] <String>] [[-AzureOperationalInsightsEndpointResourceId] <String>]
  [[-AzureOperationalInsightsEndpoint] <String>] [-AzureAnalysisServicesEndpointSuffix <String>]
  [-AzureAnalysisServicesEndpointResourceId <String>] [-AzureAttestationServiceEndpointSuffix <String>]
+<<<<<<< HEAD
  [-AzureAttestationServiceEndpointResourceId <String>] [-Scope <ContextModificationScope>]
+=======
+ [-AzureAttestationServiceEndpointResourceId <String>] [-AzureSynapseAnalyticsEndpointSuffix <String>]
+ [-AzureSynapseAnalyticsEndpointResourceId <String>] [-Scope <ContextModificationScope>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -38,6 +43,10 @@ Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] 
  [[-AzureOperationalInsightsEndpointResourceId] <String>] [[-AzureOperationalInsightsEndpoint] <String>]
  [-AzureAnalysisServicesEndpointSuffix <String>] [-AzureAnalysisServicesEndpointResourceId <String>]
  [-AzureAttestationServiceEndpointSuffix <String>] [-AzureAttestationServiceEndpointResourceId <String>]
+<<<<<<< HEAD
+=======
+ [-AzureSynapseAnalyticsEndpointSuffix <String>] [-AzureSynapseAnalyticsEndpointResourceId <String>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-Scope <ContextModificationScope>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -91,6 +100,11 @@ AzureOperationalInsightsEndpoint                  :
 AzureAnalysisServicesEndpointSuffix               :
 AzureAttestationServiceEndpointSuffix             :
 AzureAttestationServiceEndpointResourceId         :
+<<<<<<< HEAD
+=======
+AzureSynapseAnalyticsEndpointSuffix               :
+AzureSynapseAnalyticsEndpointResourceId           :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 VersionProfiles                                   : {}
 ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
@@ -310,6 +324,39 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -AzureSynapseAnalyticsEndpointResourceId
+The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AzureSynapseAnalyticsEndpointSuffix
+Dns suffix of Azure Synapse Analytics.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -BatchEndpointResourceId
 The resource identifier of the Azure Batch service that is the recipient of the requested token
 

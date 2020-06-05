@@ -26,6 +26,16 @@ New-AzRecoveryServicesAsrRecoveryPlan -Name <String> -PrimaryFabric <ASRFabric> 
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### AzureZoneToZone
+```
+New-AzRecoveryServicesAsrRecoveryPlan -Name <String> -PrimaryFabric <ASRFabric> -PrimaryZone <String>
+ -RecoveryZone <String> [-AzureZoneToZone] -ReplicationProtectedItem <ASRReplicationProtectedItem[]>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### ByRPFile
 ```
 New-AzRecoveryServicesAsrRecoveryPlan -Path <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
@@ -46,6 +56,16 @@ PS C:\> $currentJob = New-AzRecoveryServicesAsrRecoveryPlan -Name $RPName -Prima
 
 Starts the recovery plan creation operation with the specified parameters and returns the ASR job used to track the operation.
 
+<<<<<<< HEAD
+=======
+### Example 2
+```
+PS C:\> $currentJob = New-AzRecoveryServicesAsrRecoveryPlan -Name $RPName -PrimaryFabric $PrimaryFabric -PrimaryZone $pZone-RecoveryZone $rZone -ReplicationProtectedItem $RPI
+```
+
+Starts the recovery plan creation operation for Azure zone to zone replicated items and returns the ASR job used to track the operation.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -Azure
@@ -63,6 +83,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -AzureZoneToZone
+Switch parameter specifies creating the replicated item in azure zone to zone scenario.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: AzureZoneToZone
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -DefaultProfile
 The credentials, account, tenant, and subscription used for communication with Azure.
 
@@ -100,7 +138,11 @@ Name of the recovery plan.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: EnterpriseToEnterprise, EnterpriseToAzure
+=======
+Parameter Sets: EnterpriseToEnterprise, EnterpriseToAzure, AzureZoneToZone
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -130,7 +172,26 @@ Specifies the ASR fabric object for the primary ASR fabric of the replication pr
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRFabric
+<<<<<<< HEAD
 Parameter Sets: EnterpriseToEnterprise, EnterpriseToAzure
+=======
+Parameter Sets: EnterpriseToEnterprise, EnterpriseToAzure, AzureZoneToZone
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PrimaryZone
+Specifies the primary Availabilty zone of the replication protected items that will be part of this recovery plan.
+
+```yaml
+Type: System.String
+Parameter Sets: AzureZoneToZone
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -155,6 +216,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -RecoveryZone
+Specifies the primary Availabilty zone of the replication protected items that will be part of this recovery plan.
+
+```yaml
+Type: System.String
+Parameter Sets: AzureZoneToZone
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ReplicationProtectedItem
 The list of replication protected items to add to the first group of the recovery plan.
 
@@ -170,6 +249,21 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem[]
+Parameter Sets: AzureZoneToZone
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Confirm
 Prompts you for confirmation before running the cmdlet.
 

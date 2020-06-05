@@ -123,5 +123,41 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Extensions
 
             return propertyValue.ToString();
         }
+<<<<<<< HEAD
     }
 }
+=======
+
+        /// <summary>
+        /// Checks if a <see cref="JToken"/> is a leaf node.
+        /// </summary>
+        /// <param name="value">The <see cref="JToken"/> value to check.</param>
+        internal static bool IsLeaf(this JToken value)
+        {
+            return value == null ||
+                   value is JValue ||
+                   value is JArray arrayValue && arrayValue.Count == 0 ||
+                   value is JObject objectValue && objectValue.Count == 0;
+        }
+
+        /// <summary>
+        /// Checks if a <see cref="JToken"/> is a non empty <see cref="JArray"/>.
+        /// </summary>
+        /// <param name="value">The <see cref="JToken"/> value to check.</param>
+        internal static bool IsNonEmptyArray(this JToken value)
+        {
+            return value is JArray arrayValue && arrayValue.Count > 0;
+        }
+
+        /// <summary>
+        /// Checks if a <see cref="JToken"/> is a non empty <see cref="JObject"/>.
+        /// </summary>
+        /// <param name="value">The <see cref="JToken"/> value to check.</param>
+        internal static bool IsNonEmptyObject(this JToken value)
+        {
+            return value is JObject objectValue && objectValue.Count > 0;
+        }
+    }
+}
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

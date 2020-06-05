@@ -28,6 +28,13 @@ namespace Microsoft.Azure.Commands.Network.Models
 
         public PSResourceId ExpressRouteGateway { get; set; }
 
+<<<<<<< HEAD
+=======
+        public PSResourceId SecurityPartnerProvider { get; set; }
+
+        public PSResourceId AzureFirewall { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public List<PSHubVirtualNetworkConnection> VirtualNetworkConnections { get; set; }
 
         public List<PSVirtualHubRouteTable> RouteTables { get; set; }

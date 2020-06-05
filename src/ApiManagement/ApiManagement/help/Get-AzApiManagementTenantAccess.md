@@ -20,6 +20,10 @@ Get-AzApiManagementTenantAccess -Context <PsApiManagementContext> [-DefaultProfi
 
 ## DESCRIPTION
 The **Get-AzApiManagementTenantAccess** cmdlet gets the tenant access configuration for a tenant.
+<<<<<<< HEAD
+=======
+Keys will not be included into result details. To get client secret, use **Get-AzApiManagementTenantAccessSecret**.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 

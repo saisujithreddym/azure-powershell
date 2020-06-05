@@ -12,10 +12,23 @@ Updates an Azure NetApp Files (ANF) account with the new data set. Useful for de
 
 ## SYNTAX
 
+<<<<<<< HEAD
 ```
 Set-AzNetAppFilesAccount -ResourceGroupName <String> -Location <String> -Name <String>
  [-ActiveDirectories <PSNetAppFilesActiveDirectory[]>] [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
+=======
+### ByFieldsParameterSet (Default)
+```
+Set-AzNetAppFilesAccount -ResourceGroupName <String> -Location <String> -Name <String> [-Tag <Hashtable>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByResourceActiveDirectory
+```
+Set-AzNetAppFilesAccount -Location <String> -Name <String> [-ActiveDirectory <PSNetAppFilesActiveDirectory[]>]
+ [-Tag <Hashtable>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -43,12 +56,21 @@ This command performs an update on the given account. The absence of the active 
 
 ## PARAMETERS
 
+<<<<<<< HEAD
 ### -ActiveDirectories
 A hashtable array which represents the active directories
 
 ```yaml
 Type: PSNetAppFilesActiveDirectory[]
 Parameter Sets: (All)
+=======
+### -ActiveDirectory
+A hashtable array which represents the active directories
+
+```yaml
+Type: Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesActiveDirectory[]
+Parameter Sets: SetByResourceActiveDirectory
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: False
@@ -62,7 +84,11 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
+<<<<<<< HEAD
 Type: IAzureContextContainer
+=======
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -77,7 +103,11 @@ Accept wildcard characters: False
 The location of the resource
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -92,7 +122,11 @@ Accept wildcard characters: False
 The name of the ANF account
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: AccountName
 
@@ -107,8 +141,13 @@ Accept wildcard characters: False
 The resource group of the ANF account
 
 ```yaml
+<<<<<<< HEAD
 Type: String
 Parameter Sets: (All)
+=======
+Type: System.String
+Parameter Sets: ByFieldsParameterSet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -122,7 +161,11 @@ Accept wildcard characters: False
 A hashtable which represents resource tags
 
 ```yaml
+<<<<<<< HEAD
 Type: Hashtable
+=======
+Type: System.Collections.Hashtable
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: Tags
 
@@ -137,7 +180,11 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
+<<<<<<< HEAD
 Type: SwitchParameter
+=======
+Type: System.Management.Automation.SwitchParameter
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: cf
 
@@ -153,7 +200,11 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
+<<<<<<< HEAD
 Type: SwitchParameter
+=======
+Type: System.Management.Automation.SwitchParameter
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: wi
 
@@ -165,8 +216,12 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

@@ -48,7 +48,11 @@ namespace Microsoft.Azure.Commands.Compute.Automation
                 {
                     string resourceGroupName = this.ResourceGroupName;
                     string vmScaleSetName = this.VMScaleSetName;
+<<<<<<< HEAD
                     System.Collections.Generic.IList<string> instanceIds = this.InstanceId;
+=======
+                    IList<string> instanceIds = this.InstanceId;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                     Rest.Azure.AzureOperationResponse result = null;
                     if (this.ParameterSetName.Equals("FriendMethod"))

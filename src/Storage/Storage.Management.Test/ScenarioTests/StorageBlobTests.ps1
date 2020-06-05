@@ -216,11 +216,19 @@ function Test-StorageBlobContainerImmutabilityPolicy
 		Assert-AreEqual "" $policy.Etag
 
 		$immutabilityPeriod =3
+<<<<<<< HEAD
         Set-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $rgname -StorageAccountName $stoname  -ContainerName $containerName -ImmutabilityPeriod $immutabilityPeriod
+=======
+        Set-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $rgname -StorageAccountName $stoname  -ContainerName $containerName -ImmutabilityPeriod $immutabilityPeriod -AllowProtectedAppendWrite $true
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		$policy = Get-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $rgname -StorageAccountName $stoname  -ContainerName $containerName
 		Assert-AreEqual $immutabilityPeriod $policy.ImmutabilityPeriodSinceCreationInDays
 		Assert-AreEqual Unlocked $policy.State
 		Assert-AreNotEqual $null $policy.Etag
+<<<<<<< HEAD
+=======
+		Assert-AreEqual $true $policy.AllowProtectedAppendWrites
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		$container = Get-AzRmStorageContainer -ResourceGroupName $rgname -StorageAccountName $stoname -Name $containerName
 		Assert-AreEqual $containerName $container.Name
 		Assert-AreEqual $immutabilityPeriod $container.ImmutabilityPolicy.ImmutabilityPeriodSinceCreationInDays
@@ -230,13 +238,24 @@ function Test-StorageBlobContainerImmutabilityPolicy
 		Assert-AreEqual $immutabilityPeriod $container.ImmutabilityPolicy.UpdateHistory[0].ImmutabilityPeriodSinceCreationInDays
 		Assert-AreNotEqual $null $container.ImmutabilityPolicy.UpdateHistory[0].Timestamp
 		Assert-AreNotEqual $null $container.ImmutabilityPolicy.UpdateHistory[0].ObjectIdentifier
+<<<<<<< HEAD
 		
 		$immutabilityPeriod =2
         Set-AzRmStorageContainerImmutabilityPolicy -inputObject $policy -ImmutabilityPeriod $immutabilityPeriod		
+=======
+		Assert-AreEqual $true $container.ImmutabilityPolicy.AllowProtectedAppendWrites
+		
+		$immutabilityPeriod =2
+        Set-AzRmStorageContainerImmutabilityPolicy -inputObject $policy -ImmutabilityPeriod $immutabilityPeriod -AllowProtectedAppendWrite $false
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		$policy = Get-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $rgname -StorageAccountName $stoname  -ContainerName $containerName 
 		Assert-AreEqual $immutabilityPeriod $policy.ImmutabilityPeriodSinceCreationInDays
 		Assert-AreEqual Unlocked $policy.State
 		Assert-AreNotEqual $null $policy.Etag
+<<<<<<< HEAD
+=======
+		Assert-AreEqual $false $policy.AllowProtectedAppendWrites
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		$container = Get-AzRmStorageContainer -ResourceGroupName $rgname -StorageAccountName $stoname -Name $containerName		
 		Assert-AreEqual $containerName $container.Name
 		Assert-AreEqual $immutabilityPeriod $container.ImmutabilityPolicy.ImmutabilityPeriodSinceCreationInDays
@@ -246,6 +265,10 @@ function Test-StorageBlobContainerImmutabilityPolicy
 		Assert-AreEqual $immutabilityPeriod $container.ImmutabilityPolicy.UpdateHistory[0].ImmutabilityPeriodSinceCreationInDays
 		Assert-AreNotEqual $null $container.ImmutabilityPolicy.UpdateHistory[0].Timestamp
 		Assert-AreNotEqual $null $container.ImmutabilityPolicy.UpdateHistory[0].ObjectIdentifier
+<<<<<<< HEAD
+=======
+		Assert-AreEqual $false $container.ImmutabilityPolicy.AllowProtectedAppendWrites
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         Remove-AzRmStorageContainerImmutabilityPolicy -inputObject $policy 
 		$policy = Get-AzRmStorageContainerImmutabilityPolicy -ResourceGroupName $rgname -StorageAccountName $stoname  -ContainerName $containerName 

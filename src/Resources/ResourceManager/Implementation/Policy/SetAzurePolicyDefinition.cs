@@ -18,6 +18,10 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Entities.Policy;
     using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Extensions;
     using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using Newtonsoft.Json.Linq;
     using Policy;
     using System;
@@ -26,7 +30,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
     /// <summary>
     /// Sets the policy definition.
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet("Set", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "PolicyDefinition", DefaultParameterSetName = PolicyCmdletBase.NameParameterSet), OutputType(typeof(PSObject))]
+=======
+    [Cmdlet(VerbsCommon.Set, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "PolicyDefinition", DefaultParameterSetName = PolicyCmdletBase.NameParameterSet), OutputType(typeof(PsPolicyDefinition))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class SetAzurePolicyDefinitionCmdlet : PolicyCmdletBase
     {
         /// <summary>
@@ -104,6 +112,15 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         public Guid? SubscriptionId { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or sets the policy definition input object parameter.
+        /// </summary>
+        [Parameter(ParameterSetName = PolicyCmdletBase.InputObjectParameterSet, Mandatory = true, ValueFromPipeline = true, ValueFromPipelineByPropertyName = true, HelpMessage = PolicyHelpStrings.SetPolicyDefinitionInputObjectHelp)]
+        public PsPolicyDefinition InputObject { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Executes the cmdlet.
         /// </summary>
         protected override void OnProcessRecord()
@@ -131,7 +148,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
             var result = this.GetLongRunningOperationTracker(activityName: activity, isResourceCreateOrUpdate: true)
                 .WaitOnOperation(operationResult: operationResult);
 
+<<<<<<< HEAD
             this.WriteObject(this.GetOutputObjects("PolicyDefinitionId", JObject.Parse(result)), enumerateCollection: true);
+=======
+            this.WriteObject(this.GetOutputPolicyDefinitions(JObject.Parse(result)), enumerateCollection: true);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>
@@ -141,6 +162,15 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         {
             var resource = this.GetExistingResource(resourceId, apiVersion).Result.ToResource();
 
+<<<<<<< HEAD
+=======
+            // apply incoming object properties if present
+            if (this.InputObject != null)
+            {
+                resource.Properties = this.InputObject.Properties.ToJToken();
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var policyDefinitionObject = new PolicyDefinition
             {
                 Name = this.Name ?? resource.Name,
@@ -183,7 +213,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         /// </summary>
         private string GetResourceId()
         {
+<<<<<<< HEAD
             return this.Id ?? this.MakePolicyDefinitionId(this.ManagementGroupName, this.SubscriptionId, this.Name);
+=======
+            return this.Id ?? this.InputObject?.ResourceId ?? this.MakePolicyDefinitionId(this.ManagementGroupName, this.SubscriptionId, this.Name);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

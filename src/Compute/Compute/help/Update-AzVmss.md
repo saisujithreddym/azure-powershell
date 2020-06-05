@@ -17,9 +17,15 @@ Updates the state of a VMSS.
 ```
 Update-AzVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String>
  [[-VirtualMachineScaleSet] <PSVirtualMachineScaleSet>] [-AutomaticOSUpgrade <Boolean>]
+<<<<<<< HEAD
  [-AutomaticRepairGracePeriod <String>] [-AutomaticRepairMaxInstanceRepairsPercent <Int32>]
  [-BootDiagnosticsEnabled <Boolean>] [-BootDiagnosticsStorageUri <String>] [-CustomData <String>]
  [-DisableAutoRollback <Boolean>] [-DisablePasswordAuthentication <Boolean>] [-EnableAutomaticRepair <Boolean>]
+=======
+ [-AutomaticRepairGracePeriod <String>] [-BootDiagnosticsEnabled <Boolean>]
+ [-BootDiagnosticsStorageUri <String>] [-CustomData <String>] [-DisableAutoRollback <Boolean>]
+ [-DisablePasswordAuthentication <Boolean>] [-EnableAutomaticRepair <Boolean>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-EnableAutomaticUpdate <Boolean>] [-ImageReferenceId <String>] [-ImageReferenceOffer <String>]
  [-ImageReferencePublisher <String>] [-ImageReferenceSku <String>] [-ImageReferenceVersion <String>]
  [-ImageUri <String>] [-LicenseType <String>] [-ManagedDiskStorageAccountType <String>]
@@ -40,9 +46,15 @@ Update-AzVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String>
 ```
 Update-AzVmss [-ResourceGroupName] <String> [-VMScaleSetName] <String>
  [[-VirtualMachineScaleSet] <PSVirtualMachineScaleSet>] [-AutomaticOSUpgrade <Boolean>]
+<<<<<<< HEAD
  [-AutomaticRepairGracePeriod <String>] [-AutomaticRepairMaxInstanceRepairsPercent <Int32>]
  [-BootDiagnosticsEnabled <Boolean>] [-BootDiagnosticsStorageUri <String>] [-CustomData <String>]
  [-DisableAutoRollback <Boolean>] [-DisablePasswordAuthentication <Boolean>] [-EnableAutomaticRepair <Boolean>]
+=======
+ [-AutomaticRepairGracePeriod <String>] [-BootDiagnosticsEnabled <Boolean>]
+ [-BootDiagnosticsStorageUri <String>] [-CustomData <String>] [-DisableAutoRollback <Boolean>]
+ [-DisablePasswordAuthentication <Boolean>] [-EnableAutomaticRepair <Boolean>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-EnableAutomaticUpdate <Boolean>] [-IdentityId <String[]>] -IdentityType <ResourceIdentityType>
  [-ImageReferenceId <String>] [-ImageReferenceOffer <String>] [-ImageReferencePublisher <String>]
  [-ImageReferenceSku <String>] [-ImageReferenceVersion <String>] [-ImageUri <String>] [-LicenseType <String>]
@@ -104,7 +116,11 @@ Accept wildcard characters: False
 ```
 
 ### -AutomaticRepairGracePeriod
+<<<<<<< HEAD
 The amount of time for which automatic repairs are suspended due to a state change on VM. The grace time starts after the state change has completed. This helps avoid premature or accidental repairs. The time duration should be specified in ISO 8601 format. The default value is 5 minutes (PT5M).
+=======
+The amount of time for which automatic repairs are suspended due to a state change on VM. The grace time starts after the state change has completed. This helps avoid premature or accidental repairs. The time duration should be specified in ISO 8601 format. The minimum allowed grace period is 30 minutes (PT30M), which is also the default value. The maximum allowed grace period is 90 minutes (PT90M).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -118,6 +134,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -AutomaticRepairMaxInstanceRepairsPercent
 The percentage (capacity of scaleset) of virtual machines that will be simultaneously repaired. The default value is 20%.
 
@@ -133,6 +150,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -BootDiagnosticsEnabled
 Whether boot diagnostics should be enabled on the virtual machine scale set.
 
@@ -166,7 +185,12 @@ Accept wildcard characters: False
 ### -CustomData
 Specifies a base-64 encoded string of custom data.
 This is decoded to a binary array that is saved as a file on the virtual machine.
+<<<<<<< HEAD
 The maximum length of the binary array is 65535 bytes.
+=======
+The maximum length of the binary array is 65535 bytes. <br>
+For using cloud-init for your VM, see [Using cloud-init to customize a Linux VM during creation](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-using-cloud-init?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -804,7 +828,12 @@ Accept wildcard characters: False
 ```
 
 ### -TimeZone
+<<<<<<< HEAD
 Specifies the time zone for Windows OS.
+=======
+Specifies the time zone for Windows OS. e.g. \"Pacific Standard Time\". <br>
+Possible values can be [TimeZoneInfo.Id](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.id?#System_TimeZoneInfo_Id) value from time zones returned by [TimeZoneInfo.GetSystemTimeZones](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.getsystemtimezones).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String

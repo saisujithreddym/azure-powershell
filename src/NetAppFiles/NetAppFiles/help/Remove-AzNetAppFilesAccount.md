@@ -48,7 +48,11 @@ This command deletes the ANF account "MyAnfAccount".
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
+<<<<<<< HEAD
 Type: IAzureContextContainer
+=======
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -63,7 +67,11 @@ Accept wildcard characters: False
 The account object to remove
 
 ```yaml
+<<<<<<< HEAD
 Type: PSNetAppFilesAccount
+=======
+Type: Microsoft.Azure.Commands.NetAppFiles.Models.PSNetAppFilesAccount
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByObjectParameterSet
 Aliases:
 
@@ -78,7 +86,11 @@ Accept wildcard characters: False
 The name of the ANF account
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByFieldsParameterSet
 Aliases: AccountName
 
@@ -93,7 +105,11 @@ Accept wildcard characters: False
 Return whether the specified account was successfully removed
 
 ```yaml
+<<<<<<< HEAD
 Type: SwitchParameter
+=======
+Type: System.Management.Automation.SwitchParameter
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -108,7 +124,11 @@ Accept wildcard characters: False
 The resource group of the ANF account
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByFieldsParameterSet
 Aliases:
 
@@ -123,7 +143,11 @@ Accept wildcard characters: False
 The resource id of the ANF account
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByResourceIdParameterSet
 Aliases:
 
@@ -138,7 +162,11 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
+<<<<<<< HEAD
 Type: SwitchParameter
+=======
+Type: System.Management.Automation.SwitchParameter
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: cf
 
@@ -154,7 +182,11 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
+<<<<<<< HEAD
 Type: SwitchParameter
+=======
+Type: System.Management.Automation.SwitchParameter
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: wi
 
@@ -166,8 +198,12 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.
 For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

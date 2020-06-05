@@ -1,3 +1,7 @@
 "Directory","Assembly Name","Assembly Version","Referencing Assembly","Severity","ProblemId","Description","Remediation"
 "Az.IotHub","Microsoft.Win32.Registry","4.1.1.0","System.Management.Automation","0","3000","Missing assembly Microsoft.Win32.Registry referenced from System.Management.Automation","Ensure that the assembly is included in the Wix file or directory"
 "Az.IotHub","Microsoft.PowerShell.CoreCLR.Eventing","6.1.0.0","System.Management.Automation","0","3000","Missing assembly Microsoft.PowerShell.CoreCLR.Eventing referenced from System.Management.Automation","Ensure that the assembly is included in the Wix file or directory"
+<<<<<<< HEAD
+=======
+"Az.IotHub","System.Reflection.TypeExtensions","4.0.0.0","Microsoft.Azure.Amqp","0","3000","Missing assembly System.Reflection.TypeExtensions referenced from Microsoft.Azure.Amqp","Ensure that the assembly is included in the Wix file or directory"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

@@ -24,7 +24,10 @@ using Microsoft.Azure.Management.DataFactory.Models;
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 using Microsoft.Rest.Azure;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 namespace Microsoft.Azure.Commands.DataFactoryV2
 {
     [Cmdlet("Set", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "DataFactoryV2IntegrationRuntime",DefaultParameterSetName = ParameterSetNames.ByIntegrationRuntimeName,SupportsShouldProcess = true),OutputType(typeof(PSIntegrationRuntime))]
@@ -263,6 +266,55 @@ namespace Microsoft.Azure.Commands.DataFactoryV2
         [Parameter(
             ParameterSetName = ParameterSetNames.ByIntegrationRuntimeName,
             Mandatory = false,
+<<<<<<< HEAD
+=======
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowComputeType)]
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByResourceId,
+            Mandatory = false,
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowComputeType)]
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByIntegrationRuntimeObject,
+            Mandatory = false,
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowComputeType)]
+        [PSArgumentCompleter(Management.DataFactory.Models.DataFlowComputeType.General, 
+            Management.DataFactory.Models.DataFlowComputeType.MemoryOptimized, 
+            Management.DataFactory.Models.DataFlowComputeType.ComputeOptimized)]
+        [ValidateNotNullOrEmpty]
+        public string DataFlowComputeType { get; set; }
+
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByIntegrationRuntimeName,
+            Mandatory = false,
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowCoreCount)]
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByResourceId,
+            Mandatory = false,
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowCoreCount)]
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByIntegrationRuntimeObject,
+            Mandatory = false,
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowCoreCount)]
+        public int? DataFlowCoreCount { get; set; }
+
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByIntegrationRuntimeName,
+            Mandatory = false,
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowTimeToLive)]
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByResourceId,
+            Mandatory = false,
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowTimeToLive)]
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByIntegrationRuntimeObject,
+            Mandatory = false,
+            HelpMessage = Constants.HelpIntegrationRuntimeDataFlowTimeToLive)]
+        public int? DataFlowTimeToLive { get; set; }
+
+        [Parameter(
+            ParameterSetName = ParameterSetNames.ByIntegrationRuntimeName,
+            Mandatory = false,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = Constants.HelpIntegrationRuntimeSetupScriptContainerSasUri)]
         [Parameter(
             ParameterSetName = ParameterSetNames.ByResourceId,
@@ -728,6 +780,25 @@ namespace Microsoft.Azure.Commands.DataFactoryV2
                 }
             }
 
+<<<<<<< HEAD
+=======
+            if (!string.IsNullOrWhiteSpace(DataFlowComputeType) || DataFlowCoreCount != null || DataFlowTimeToLive != null)
+            {
+                if (integrationRuntime.ComputeProperties == null)
+                {
+                    integrationRuntime.ComputeProperties = new IntegrationRuntimeComputeProperties();
+                }
+                if (integrationRuntime.ComputeProperties.DataFlowProperties == null)
+                {
+                    integrationRuntime.ComputeProperties.DataFlowProperties = new IntegrationRuntimeDataFlowProperties();
+                }
+
+                integrationRuntime.ComputeProperties.DataFlowProperties.ComputeType = DataFlowComputeType ?? integrationRuntime.ComputeProperties.DataFlowProperties.ComputeType;
+                integrationRuntime.ComputeProperties.DataFlowProperties.CoreCount = DataFlowCoreCount ?? integrationRuntime.ComputeProperties.DataFlowProperties.CoreCount;
+                integrationRuntime.ComputeProperties.DataFlowProperties.TimeToLive = DataFlowTimeToLive ?? integrationRuntime.ComputeProperties.DataFlowProperties.TimeToLive;
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (PublicIPs != null)
             {
                 if (string.IsNullOrWhiteSpace(VNetId))

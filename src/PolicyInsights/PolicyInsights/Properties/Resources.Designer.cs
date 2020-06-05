@@ -19,7 +19,11 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
+<<<<<<< HEAD
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+=======
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -115,6 +119,18 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Properties {
         }
         
         /// <summary>
+<<<<<<< HEAD
+=======
+        ///   Looks up a localized string similar to Triggering a policy compliance scan at scope &apos;{0}&apos;..
+        /// </summary>
+        internal static string StartComplianceScan {
+            get {
+                return ResourceManager.GetString("StartComplianceScan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///   Looks up a localized string similar to Waiting for completion of remediation at scope &apos;{0}&apos; with name &apos;{1}&apos;..
         /// </summary>
         internal static string WaitingForRemediationCompletion {

@@ -12,16 +12,28 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels;
 using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
 using Microsoft.Azure.Management.ResourceManager.Models;
 using Microsoft.WindowsAzure.Commands.Utilities.Common;
 using Newtonsoft.Json;
+<<<<<<< HEAD
+=======
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using ProjectResources = Microsoft.Azure.Commands.ResourceManager.Cmdlets.Properties.Resources;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
 {
@@ -48,19 +60,31 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
 
             if (result != null)
             {
+<<<<<<< HEAD
                 deployment = CreatePSResourceGroupDeployment(result.Name, resourceGroup, result.Properties);
+=======
+                deployment = CreatePSResourceGroupDeployment(result, resourceGroup);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return deployment;
         }
 
+<<<<<<< HEAD
         public static PSDeployment ToPSDeployment(this DeploymentExtended result)
+=======
+        public static PSDeployment ToPSDeployment(this DeploymentExtended result, string managementGroupId = null, string resourceGroupName = null)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             PSDeployment deployment = new PSDeployment();
 
             if (result != null)
             {
+<<<<<<< HEAD
                 deployment = CreatePSDeployment(result.Name, result.Location, result.Properties);
+=======
+                deployment = CreatePSDeployment(result, managementGroupId, resourceGroupName);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return deployment;
@@ -76,7 +100,15 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
                     OperationId = result.OperationId,
                     ProvisioningState = result.Properties.ProvisioningState,
                     StatusCode = result.Properties.StatusCode,
+<<<<<<< HEAD
                     StatusMessage = result.Properties.StatusMessage,
+=======
+                    StatusMessage = DeploymentOperationErrorInfo
+                                    .DeserializeDeploymentOperationError(result.Properties?.StatusMessage?.ToString())?
+                                    .ToFormattedString()?
+                                    .TrimEnd(System.Environment.NewLine.ToCharArray())
+                                        ?? result.Properties.StatusMessage, // To-Do: With the new API version this work will move to error model extensions.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     TargetResource = result.Properties.TargetResource?.Id
                 };
             }
@@ -84,7 +116,10 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
             return null;
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public static PSResourceManagerError ToPSResourceManagerError(this ErrorResponse error)
         {
             PSResourceManagerError rmError = new PSResourceManagerError
@@ -104,6 +139,31 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
             return rmError;
         }
 
+<<<<<<< HEAD
+=======
+        public static string ToFormattedString(this ErrorResponse error, int level = 0)
+        {
+            if (error.Details == null)
+            {
+                return string.Format(ProjectResources.DeploymentOperationErrorMessageNoDetails, error.Message, error.Code);
+            }
+
+            string errorDetail = null;
+
+            foreach (ErrorResponse detail in error.Details)
+            {
+                errorDetail += GetIndentation(level) + ToFormattedString(detail, level + 1) + System.Environment.NewLine;
+            }
+
+            return string.Format(ProjectResources.DeploymentOperationErrorMessage, error.Message, error.Code, errorDetail);
+        }
+
+        private static string GetIndentation(int l)
+        {
+            return new StringBuilder().Append(' ', l * 2).Append(" - ").ToString();
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public static PSResourceProvider ToPSResourceProvider(this Provider provider)
         {
             return new PSResourceProvider
@@ -201,6 +261,7 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
         }
 
         private static PSDeployment CreatePSDeployment(
+<<<<<<< HEAD
             string name,
             string location,
             DeploymentPropertiesExtended properties)
@@ -211,11 +272,29 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
             deploymentObject.Location = location;
 
             SetDeploymentProperties(deploymentObject, properties);
+=======
+            DeploymentExtended deployment,
+            string managementGroupId,
+            string resourceGroup)
+        {
+            PSDeployment deploymentObject = new PSDeployment
+            {
+                Id = deployment.Id,
+                DeploymentName = deployment.Name,
+                Location = deployment.Location,
+                ManagementGroupId = managementGroupId,
+                ResourceGroupName = resourceGroup,
+                Tags = deployment.Tags == null ? new Dictionary<string, string>() : new Dictionary<string, string>(deployment.Tags)
+            };
+
+            SetDeploymentProperties(deploymentObject, deployment.Properties);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return deploymentObject;
         }
 
         private static PSResourceGroupDeployment CreatePSResourceGroupDeployment(
+<<<<<<< HEAD
             string name,
             string resourceGroup,
             DeploymentPropertiesExtended properties)
@@ -226,6 +305,19 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
             deploymentObject.ResourceGroupName = resourceGroup;
 
             SetDeploymentProperties(deploymentObject, properties);
+=======
+            DeploymentExtended deployment,
+            string resourceGroup)
+        {
+            PSResourceGroupDeployment deploymentObject = new PSResourceGroupDeployment
+            {
+                DeploymentName = deployment.Name,
+                ResourceGroupName = resourceGroup,
+                Tags = deployment.Tags == null ? null : new Dictionary<string, string>(deployment.Tags)
+            };
+
+            SetDeploymentProperties(deploymentObject, deployment.Properties);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return deploymentObject;
         }
@@ -277,8 +369,13 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions
         public static Hashtable ToHashtable(this object obj)
         {
             return new Hashtable(obj.GetType()
+<<<<<<< HEAD
                                     .GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public)
                                     .ToDictionary(p => p.Name, p => p.GetValue(obj, null)));
+=======
+                .GetProperties(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public)
+                .ToDictionary(p => p.Name, p => p.GetValue(obj, null)));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         }
     }

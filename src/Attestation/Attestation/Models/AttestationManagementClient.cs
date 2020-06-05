@@ -19,7 +19,11 @@ using Microsoft.Azure.Management.Attestation;
 using Microsoft.Azure.Management.Attestation.Models;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
 using System.Security.Cryptography.X509Certificates;
+<<<<<<< HEAD
 using Microsoft.IdentityModel.JsonWebTokens;
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 namespace Microsoft.Azure.Commands.Attestation.Models
 {
     public class AttestationManagementClient
@@ -34,6 +38,7 @@ namespace Microsoft.Azure.Commands.Attestation.Models
         public AttestationManagementClient()
         {
         }
+<<<<<<< HEAD
         public PSAttestation CreateNewAttestation(AttestationCreationParameters parameters)
         {
             if (parameters == null)
@@ -63,6 +68,26 @@ namespace Microsoft.Azure.Commands.Attestation.Models
                 resourceGroupName: parameters.ResourceGroupName,
                 providerName: parameters.ProviderName,
                 creationParams: _creationParams);
+=======
+        public PSAttestation CreateNewAttestation(AttestationCreationParameters newServiceParams)
+        {
+            if (newServiceParams == null)
+            {
+                throw new ArgumentNullException(nameof(newServiceParams));
+            }
+            if (string.IsNullOrEmpty(newServiceParams.ProviderName))
+            {
+                throw new ArgumentNullException(nameof(newServiceParams.ProviderName));
+            }
+            if (string.IsNullOrEmpty(newServiceParams.ResourceGroupName))
+            {
+                throw new ArgumentNullException(nameof(newServiceParams.ResourceGroupName));
+            }
+            var response = attestationClient.AttestationProviders.Create(
+                resourceGroupName: newServiceParams.ResourceGroupName,
+                providerName: newServiceParams.ProviderName,
+                creationParams: newServiceParams.CreationParameters);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             return new PSAttestation(response);
         }
 
@@ -70,11 +95,19 @@ namespace Microsoft.Azure.Commands.Attestation.Models
         {
             if (string.IsNullOrEmpty(attestationName))
             {
+<<<<<<< HEAD
                 throw new ArgumentNullException("attestationName");
             }
             if (string.IsNullOrEmpty(resourceGroupName))
             {
                 throw new ArgumentNullException("resourceGroupName");
+=======
+                throw new ArgumentNullException(nameof(attestationName));
+            }
+            if (string.IsNullOrEmpty(resourceGroupName))
+            {
+                throw new ArgumentNullException(nameof(resourceGroupName));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             var response = attestationClient.AttestationProviders.Get(resourceGroupName, attestationName);
             return new PSAttestation(response);
@@ -83,16 +116,25 @@ namespace Microsoft.Azure.Commands.Attestation.Models
         {
             if (string.IsNullOrEmpty(attestationName))
             {
+<<<<<<< HEAD
                 throw new ArgumentNullException("attestationName");
+=======
+                throw new ArgumentNullException(nameof(attestationName));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             if (string.IsNullOrEmpty(resourceGroupName))
             {
+<<<<<<< HEAD
                 throw new ArgumentNullException("resourceGroupName");
+=======
+                throw new ArgumentNullException(nameof(resourceGroupName));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             attestationClient.AttestationProviders.Delete(resourceGroupName, attestationName);
         }
 
+<<<<<<< HEAD
         public X509Certificate2Collection GetX509CertificateFromPEM(string pemString, string section)
         {
             X509Certificate2Collection certificateCollection = new X509Certificate2Collection();
@@ -131,5 +173,7 @@ namespace Microsoft.Azure.Commands.Attestation.Models
             }
             return jwks;
         }
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

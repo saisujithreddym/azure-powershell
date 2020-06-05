@@ -20,7 +20,11 @@ Get-AzDeployment [[-Name] <String>] [-ApiVersion <String>] [-Pre] [-DefaultProfi
 
 ### GetByDeploymentId
 ```
+<<<<<<< HEAD
 Get-AzDeployment [-Id <String>] [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>]
+=======
+Get-AzDeployment -Id <String> [-ApiVersion <String>] [-Pre] [-DefaultProfile <IAzureContextContainer>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [<CommonParameters>]
 ```
 
@@ -89,7 +93,11 @@ Type: System.String
 Parameter Sets: GetByDeploymentId
 Aliases: DeploymentId, ResourceId
 
+<<<<<<< HEAD
 Required: False
+=======
+Required: True
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -105,7 +113,11 @@ Parameter Sets: GetByDeploymentName
 Aliases: DeploymentName
 
 Required: False
+<<<<<<< HEAD
 Position: 0
+=======
+Position: 1
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
@@ -127,7 +139,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

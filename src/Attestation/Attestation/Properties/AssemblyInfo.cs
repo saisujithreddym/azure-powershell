@@ -29,8 +29,13 @@ using System.Runtime.InteropServices;
 [assembly: CLSCompliant(false)]
 
 [assembly: Guid("2994548F-69B9-4DC2-8D19-52CC0C0C85BC")]
+<<<<<<< HEAD
 [assembly: AssemblyVersion("0.1.3")]
 [assembly: AssemblyFileVersion("0.1.3")]
+=======
+[assembly: AssemblyVersion("0.1.7")]
+[assembly: AssemblyFileVersion("0.1.7")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 #if !SIGN
 [assembly: InternalsVisibleTo("Microsoft.Azure.PowerShell.Cmdlets.Attestation.Test")]
 #endif

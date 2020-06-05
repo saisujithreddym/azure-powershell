@@ -16,22 +16,48 @@ using System.Management.Automation;
 using Microsoft.Azure.Commands.CosmosDB.Models;
 using Microsoft.Azure.Commands.CosmosDB.Helpers;
 using System;
+<<<<<<< HEAD
+=======
+using System.Collections.Generic;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.CosmosDB
 {
     [Cmdlet(VerbsCommon.New, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBSqlIndexingPolicy"), OutputType(typeof(PSSqlIndexingPolicy))]
     public class NewAzCosmosDBSqlIndexingPolicy : AzureCosmosDBCmdletBase
     {
+<<<<<<< HEAD
         [Parameter(Mandatory = true, HelpMessage = Constants.IndexingPolicyIncludedPathHelpMessage)]
         public string[] IncludedPath { get; set; }
 
         [Parameter(Mandatory = true, HelpMessage = Constants.IndexingPolicyExcludedPathHelpMessage)]
+=======
+        [Parameter(Mandatory = false, HelpMessage = Constants.IndexingPolicyIncludedPathHelpMessage)]
+        [ValidateNotNullOrEmpty]
+        public PSIncludedPath[] IncludedPath { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.IndexingPolicySpatialIndexHelpMessage)]
+        [ValidateNotNullOrEmpty]
+        public PSSpatialSpec[] SpatialSpec { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.IndexingPolicyCompositePathHelpMessage)]
+        [ValidateNotNullOrEmpty]
+        public PSCompositePath[][] CompositePath { get; set; }
+
+        [Parameter(Mandatory = false, HelpMessage = Constants.IndexingPolicyExcludedPathHelpMessage)]
+        [ValidateNotNullOrEmpty]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string[] ExcludedPath { get; set; }
 
         [Parameter(Mandatory = false, HelpMessage = Constants.IndexingPolicyAutomaticHelpMessage)]
         public bool? Automatic { get; set; }
 
+<<<<<<< HEAD
         [Parameter(Mandatory = true, HelpMessage = Constants.IndexingPolicyIndexingModeIndexHelpMessage)]
+=======
+        [Parameter(Mandatory = false, HelpMessage = Constants.IndexingPolicyIndexingModeIndexHelpMessage)]
+        [ValidateNotNullOrEmpty]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string IndexingMode { get; set; }
 
         public override void ExecuteCmdlet()
@@ -39,18 +65,54 @@ namespace Microsoft.Azure.Commands.CosmosDB
             PSSqlIndexingPolicy sqlIndexingPolicy = new PSSqlIndexingPolicy();
 
             if (IncludedPath != null && IncludedPath.Length > 0)
+<<<<<<< HEAD
                 sqlIndexingPolicy.IncludedPaths = IncludedPath;
 
             if (ExcludedPath != null && ExcludedPath.Length > 0)
                 sqlIndexingPolicy.ExcludedPaths = ExcludedPath;
+=======
+            {
+                sqlIndexingPolicy.IncludedPaths = new List<PSIncludedPath>(IncludedPath);
+            }
+
+
+            if (ExcludedPath != null && ExcludedPath.Length > 0)
+            {
+                sqlIndexingPolicy.ExcludedPaths = new List<PSExcludedPath>();
+                foreach (string path in ExcludedPath)
+                {
+                    sqlIndexingPolicy.ExcludedPaths.Add(new PSExcludedPath{ Path = path });
+                }
+            }
+
+            if(SpatialSpec != null)
+            {
+                sqlIndexingPolicy.SpatialIndexes = SpatialSpec;
+            }
+
+            if(CompositePath != null)
+            {
+                sqlIndexingPolicy.CompositeIndexes = CompositePath;
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             sqlIndexingPolicy.Automatic = Automatic;
 
             if (IndexingMode != null)
+<<<<<<< HEAD
                 sqlIndexingPolicy.IndexingMode = IndexingMode;
+=======
+            {
+                sqlIndexingPolicy.IndexingMode = IndexingMode;
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             WriteObject(sqlIndexingPolicy);
             return;
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

@@ -98,6 +98,12 @@ Gets remote logon settings for a compute node.
 ### [Get-AzBatchSubtask](Get-AzBatchSubtask.md)
 Gets the subtask information of the specified task.
 
+<<<<<<< HEAD
+=======
+### [Get-AzBatchSupportedImage](Get-AzBatchSupportedImage.md)
+Gets Batch supported images for a Batch account.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### [Get-AzBatchTask](Get-AzBatchTask.md)
 Gets the Batch tasks for a job.
 

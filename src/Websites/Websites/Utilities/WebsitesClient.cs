@@ -97,11 +97,19 @@ namespace Microsoft.Azure.Commands.WebApps.Utilities
             return CmdletHelpers.CreateHostingEnvironmentProfile(WrappedWebsitesClient.SubscriptionId, resourceGroupName, aseResourceGroupName, aseName);
         }
 
+<<<<<<< HEAD
         public void UpdateWebApp(string resourceGroupName, string location, string webAppName, string slotName, string appServicePlan, Site siteEnvelope =null)
         {
             var webSiteToUpdate = new Site()
             {
                 ServerFarmId = appServicePlan,
+=======
+        public void UpdateWebApp(string resourceGroupName, string location, string webAppName, string slotName, string appServicePlan, Site siteEnvelope =null, string appServicePlanRg = null)
+        {
+            var webSiteToUpdate = new Site()
+            {
+                ServerFarmId = (string.IsNullOrEmpty(appServicePlanRg) && resourceGroupName != appServicePlanRg) ? appServicePlan : siteEnvelope.ServerFarmId,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 Location = location,
                 Tags = siteEnvelope?.Tags
             };
@@ -112,7 +120,11 @@ namespace Microsoft.Azure.Commands.WebApps.Utilities
             }
 
             // make sure the serverfarm ID is nt overwritten to the old value
+<<<<<<< HEAD
             if (appServicePlan != null)
+=======
+            if (appServicePlan != null && (string.IsNullOrEmpty(appServicePlanRg) && resourceGroupName != appServicePlanRg))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             {
                 webSiteToUpdate.ServerFarmId = appServicePlan;
             }
@@ -128,9 +140,17 @@ namespace Microsoft.Azure.Commands.WebApps.Utilities
             }
         }
 
+<<<<<<< HEAD
         public void AddCustomHostNames(string resourceGroupName, string location, string webAppName, string[] hostNames)
         {
             var webApp = WrappedWebsitesClient.WebApps().Get(resourceGroupName, webAppName);
+=======
+        public void AddCustomHostNames(string resourceGroupName, string location, string webAppName, string[] hostNames, string slotName=null)
+        {
+            var webApp = (slotName == null)
+                ? WrappedWebsitesClient.WebApps().Get(resourceGroupName, webAppName)
+                : GetWebApp(resourceGroupName, webAppName, slotName);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var currentHostNames = webApp.HostNames;
 
             // Add new hostnames
@@ -140,16 +160,38 @@ namespace Microsoft.Azure.Commands.WebApps.Utilities
                 {
                     if (!currentHostNames.Contains(hostName, StringComparer.OrdinalIgnoreCase))
                     {
+<<<<<<< HEAD
                         WrappedWebsitesClient.WebApps().CreateOrUpdateHostNameBinding(resourceGroupName, webAppName,
+=======
+                        if (slotName == null)
+                        {
+                            WrappedWebsitesClient.WebApps().CreateOrUpdateHostNameBinding(resourceGroupName, webAppName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                             hostName, new HostNameBinding
                             {
                                 SiteName = webAppName,
                             });
+<<<<<<< HEAD
+=======
+                        }
+                        else
+                        {
+                            WrappedWebsitesClient.WebApps().CreateOrUpdateHostNameBindingSlot(resourceGroupName, webAppName,
+                                hostName, new HostNameBinding
+                                {
+                                    SiteName = webAppName,
+                                }, slotName);
+                        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }
                 }
                 catch (Exception e)
                 {
                     WriteWarning("Could not set custom hostname '{0}'. Details: {1}", hostName, e.ToString());
+<<<<<<< HEAD
+=======
+                    return;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
             }
 
@@ -160,7 +202,18 @@ namespace Microsoft.Azure.Commands.WebApps.Utilities
                 {
                     if (!hostNames.Contains(hostName, StringComparer.OrdinalIgnoreCase))
                     {
+<<<<<<< HEAD
                         WrappedWebsitesClient.WebApps().DeleteHostNameBinding(resourceGroupName, webAppName, hostName);
+=======
+                        if (slotName == null)
+                        {
+                            WrappedWebsitesClient.WebApps().DeleteHostNameBinding(resourceGroupName, webAppName, hostName);
+                        }
+                        else
+                        {
+                            WrappedWebsitesClient.WebApps().DeleteHostNameBindingSlot(resourceGroupName, webAppName, slotName, hostName);
+                        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     }
                 }
                 catch (Exception e)

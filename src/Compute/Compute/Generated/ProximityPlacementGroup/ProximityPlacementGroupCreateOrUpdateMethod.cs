@@ -34,9 +34,12 @@ using Microsoft.WindowsAzure.Commands.Utilities.Common;
 namespace Microsoft.Azure.Commands.Compute.Automation
 {
     [Cmdlet(VerbsCommon.New, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "ProximityPlacementGroup", DefaultParameterSetName = "DefaultParameter", SupportsShouldProcess = true)]
+<<<<<<< HEAD
     [CmdletOutputBreakingChangeAttribute(typeof(PSProximityPlacementGroup),
         "AvailabilitySetsColocationStatus, VirtualMachinesColocationStatus and VirtualMachineScaleSetsColocationStatus properties will be removed "
         + "when the types of AvailabilitySets, VirtualMachines and VirtualMachineScaleSets are changed from SubResource to SubResourceWithColocationStatus.")]
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSProximityPlacementGroup))]
     public partial class NewAzureRmProximityPlacementGroup : ComputeAutomationBaseCmdlet
     {

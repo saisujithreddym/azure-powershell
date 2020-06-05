@@ -647,6 +647,16 @@ function Test-DataLakeStoreFileSystem
 		Assert-AreEqual 3 $headTailResult[0]
 		Assert-AreEqual 4 $headTailResult[1]
 
+<<<<<<< HEAD
+=======
+        #Create a file with byte and read it
+        $byteDataFile="/byteData/filetest.txt"
+        [byte[]] $byteData = 1,2,3,4,5
+        New-AdlStoreItem -Account $accountName -Path $byteDataFile -Force -Value $byteData -Encoding Byte
+        $result = Get-AdlStoreItemContent -Account $accountName -path $byteDataFile -Encoding Byte
+        Assert-True {@(Compare-Object $byteData $result -SyncWindow 0).Length -eq 0}
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		# Import and get file
 		$localFileInfo = Get-ChildItem $fileToCopy
 		$result = Import-AdlStoreItem -Account $accountName -Path $fileToCopy -Destination $importFile
@@ -701,11 +711,19 @@ function Test-DataLakeStoreFileSystem
 		Assert-AreEqual $result.FileCount 1
 
 		# Export DiskUsage
+<<<<<<< HEAD
 		$targetFile = Join-Path $currentDir "DuOutputAlias"
 		Export-AdlStoreChildItemProperties -Account $accountName -Path $summaryFolder -OutputPath $targetFile -GetDiskUsage -IncludeFile
 		$result = Get-Item -Path $targetFile
 		Assert-NotNull $result "No file was created on export properties"
         Remove-Item -Path $targetFile
+=======
+		#$targetFile = Join-Path $currentDir "DuOutputAlias"
+		#Export-AdlStoreChildItemProperties -Account $accountName -Path $summaryFolder -OutputPath $targetFile -GetDiskUsage -IncludeFile
+		#$result = Get-Item -Path $targetFile
+		#Assert-NotNull $result "No file was created on export properties"
+        #Remove-Item -Path $targetFile
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 		# delete a file
 		Assert-True {Remove-AdlStoreItem -Account $accountName -paths "$moveFolder/movefile.txt" -force -passthru } "Remove File Failed"

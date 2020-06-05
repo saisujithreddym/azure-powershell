@@ -15,7 +15,11 @@ Create a connection monitor test configuration.
 ```
 New-AzNetworkWatcherConnectionMonitorTestConfigurationObject -Name <String> -TestFrequencySec <Int32>
  -ProtocolConfiguration <PSNetworkWatcherConnectionMonitorProtocolConfiguration>
+<<<<<<< HEAD
  [-SuccessThresholdChecksFailedPercent <Int32>] [-SuccessThresholdRoundTripTimeMs <Int32>]
+=======
+ [-SuccessThresholdChecksFailedPercent <Int32>] [-SuccessThresholdRoundTripTimeMs <Double>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-PreferredIPVersion <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
@@ -135,7 +139,11 @@ Accept wildcard characters: False
 The maximum round-trip time in milliseconds permitted for a test to evaluate as successful.
 
 ```yaml
+<<<<<<< HEAD
 Type: System.Nullable`1[System.Int32]
+=======
+Type: System.Nullable`1[System.Double]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 

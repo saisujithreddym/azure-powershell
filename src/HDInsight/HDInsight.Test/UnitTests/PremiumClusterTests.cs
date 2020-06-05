@@ -113,7 +113,11 @@ namespace Microsoft.Azure.Commands.HDInsight.Test
                     parameters.SshUserName == _httpCred.UserName &&
                     parameters.SshPassword == _httpCred.Password.ConvertToString() &&
                     parameters.ClusterType == ClusterType &&
+<<<<<<< HEAD
                     parameters.ClusterTier == Tier.Premium)))
+=======
+                    parameters.ClusterTier == Tier.Premium), It.IsAny<string>()))
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             .Returns(cluster)
             .Verifiable();
 

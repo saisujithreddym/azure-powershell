@@ -84,6 +84,17 @@ namespace CognitiveServices.Test.ScenarioTests
         {
             TestController.NewInstance.RunPsTest(traceInterceptor, "Test-GetAzureCognitiveServiceAccount");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestAsyncAccountOperations()
+        {
+            TestController.NewInstance.RunPsTest(traceInterceptor, "Test-AsyncAccountOperations");
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestSetAccount()
@@ -168,5 +179,29 @@ namespace CognitiveServices.Test.ScenarioTests
         {
             TestController.NewInstance.RunPsTest(traceInterceptor, "Test-GetUsages");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestManagedIdentity()
+        {
+            TestController.NewInstance.RunPsTest(traceInterceptor, "Test-ManagedIdentity");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestEncryption()
+        {
+            TestController.NewInstance.RunPsTest(traceInterceptor, "Test-Encryption");
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestUserOwnedStorage()
+        {
+            TestController.NewInstance.RunPsTest(traceInterceptor, "Test-UserOwnedStorage");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

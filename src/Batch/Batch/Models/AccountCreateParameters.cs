@@ -81,5 +81,13 @@ namespace Microsoft.Azure.Commands.Batch.Models
         /// The user specified tags associated with the account.
         /// </summary>
         public Hashtable Tags { get; set; }
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// The public network access type
+        /// </summary>
+        public PublicNetworkAccessType PublicNetworkAccess { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

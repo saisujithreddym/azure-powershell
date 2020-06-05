@@ -12,18 +12,30 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 using System;
 using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Components;
 using System.Management.Automation;
 using ProjectResources = Microsoft.Azure.Commands.ResourceManager.Cmdlets.Properties.Resources;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
+=======
+using System.Management.Automation;
+using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Components;
+using Microsoft.Azure.Commands.ResourceManager.Common;
+using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
+using ProjectResources = Microsoft.Azure.Commands.ResourceManager.Cmdlets.Properties.Resources;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
 {
     /// <summary>
     /// Deletes a deployment.
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet("Remove", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "ResourceGroupDeployment", SupportsShouldProcess = true,DefaultParameterSetName = RemoveAzureResourceGroupDeploymentCmdlet.DeploymentNameParameterSet), OutputType(typeof(bool))]
+=======
+    [Cmdlet("Remove", AzureRMConstants.AzureRMPrefix + "ResourceGroupDeployment", SupportsShouldProcess = true,DefaultParameterSetName = RemoveAzureResourceGroupDeploymentCmdlet.DeploymentNameParameterSet), OutputType(typeof(bool))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class RemoveAzureResourceGroupDeploymentCmdlet : ResourceManagerCmdletBase
     {
         /// <summary>
@@ -54,13 +66,18 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         [ValidateNotNullOrEmpty]
         public string Id { get; set; }
 
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
+=======
+        protected override void OnProcessRecord()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             ConfirmAction(
                 ProjectResources.DeleteDeploymentMessage,
                 ResourceGroupName,
                 () =>
                 {
+<<<<<<< HEAD
                     if (string.IsNullOrEmpty(ResourceGroupName) && string.IsNullOrEmpty(Name))
                     {
                         ResourceGroupName = ResourceIdUtility.GetResourceGroupName(Id);
@@ -68,6 +85,12 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
                     }
 
                     ResourceManagerSdkClient.DeleteDeployment(ResourceGroupName, Name);
+=======
+                    var resourceGroupName = !string.IsNullOrEmpty(this.ResourceGroupName) ? this.ResourceGroupName : ResourceIdUtility.GetResourceGroupName(Id);
+                    var deploymentName = !string.IsNullOrEmpty(this.Name) ? this.Name : ResourceIdUtility.GetResourceName(Id);
+
+                    ResourceManagerSdkClient.DeleteDeploymentAtResourceGroup(resourceGroupName, deploymentName);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     WriteObject(true);
                 });
         }

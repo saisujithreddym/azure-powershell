@@ -50,7 +50,11 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                 Name = setting.Name,
                 Type = setting.Type,
                 CreatedAt = setting.CreatedAt,
+<<<<<<< HEAD
                 CreatedBy = setting.CreatedBy,
+=======
+                CreatedBy = setting.UserName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ProvisioningState = (PSProvisioningState)Enum.Parse(
                     typeof(PSProvisioningState),
                     setting.ProvisioningState),
@@ -72,7 +76,11 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                     account.ProvisioningState),
                 Type = account.Type,
                 CreatedAt = account.CreatedAt,
+<<<<<<< HEAD
                 CreatedBy = account.CreatedBy,
+=======
+                CreatedBy = account.UserEmail ?? account.UserName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 Location = account.Location,
                 Identity = account.Identity.ToPsIdentity(),
                 Tags = account.Tags.ToHashTableTags()
@@ -90,7 +98,11 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                     share.ProvisioningState),
                 Type = share.Type,
                 CreatedAt = share.CreatedAt,
+<<<<<<< HEAD
                 CreatedBy = share.CreatedBy,
+=======
+                CreatedBy = share.UserEmail ?? share.UserName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ShareKind = share.ShareKind,
                 Description = share.Description,
                 Terms = share.Terms
@@ -106,7 +118,11 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                 Type = invitation.Type,
                 InvitationId = invitation.InvitationId,
                 InvitationStatus = invitation.InvitationStatus,
+<<<<<<< HEAD
                 Sender = invitation.Sender,
+=======
+                Sender = invitation.UserEmail ?? invitation.UserName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 SentAt = invitation.SentAt,
                 TargetEmail = string.IsNullOrEmpty(invitation.TargetEmail) ? null : invitation.TargetEmail,
                 TargetObjectId = string.IsNullOrEmpty(invitation.TargetObjectId) ? null : invitation.TargetObjectId,
@@ -122,7 +138,11 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                 Name = shareSubscription.Name,
                 Type = shareSubscription.Type,
                 CreatedAt = shareSubscription.CreatedAt,
+<<<<<<< HEAD
                 CreatedBy = shareSubscription.CreatedBy,
+=======
+                CreatedBy = shareSubscription.UserEmail ?? shareSubscription.UserName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 InvitationId = shareSubscription.InvitationId,
                 ProvisioningState = (PSProvisioningState)Enum.Parse(
                     typeof(PSProvisioningState),
@@ -130,10 +150,18 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                 ShareName = shareSubscription.ShareName,
                 ShareKind = shareSubscription.ShareKind,
                 ShareDescription = shareSubscription.ShareDescription,
+<<<<<<< HEAD
                 ShareSender = shareSubscription.ShareSender,
                 ShareSenderCompanyName = shareSubscription.ShareSenderCompanyName,
                 ShareTerms = shareSubscription.ShareTerms,
                 ShareSubscriptionStatus = shareSubscription.ShareSubscriptionStatus
+=======
+                ShareSender = shareSubscription.ProviderEmail ?? shareSubscription.ProviderName,
+                ShareSenderCompanyName = shareSubscription.ProviderTenantName,
+                ShareTerms = shareSubscription.ShareTerms,
+                ShareSubscriptionStatus = shareSubscription.ShareSubscriptionStatus,
+                SourceShareLocation = shareSubscription.SourceShareLocation,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
         }
 
@@ -146,9 +174,15 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                 Type = consumerInvitation.Type,
                 InvitationId = consumerInvitation.InvitationId,
                 InvitationStatus = consumerInvitation.InvitationStatus,
+<<<<<<< HEAD
                 Sender = consumerInvitation.Sender,
                 SentAt = consumerInvitation.SentAt,
                 SenderCompanyName = consumerInvitation.SenderCompanyName,
+=======
+                Sender = consumerInvitation.UserEmail ?? consumerInvitation.UserName,
+                SentAt = consumerInvitation.SentAt,
+                SenderCompanyName = consumerInvitation.ProviderTenantName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 DataSetCount = consumerInvitation.DataSetCount,
                 Description = consumerInvitation.Description,
                 Terms = consumerInvitation.TermsOfUse,
@@ -434,11 +468,19 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                 Id = providerShareSubscription.Id,
                 Name = providerShareSubscription.Name,
                 Type = providerShareSubscription.Type,
+<<<<<<< HEAD
                 Company = providerShareSubscription.Company,
                 CreatedAt = providerShareSubscription.CreatedAt,
                 CreatedBy = providerShareSubscription.CreatedBy,
                 SharedAt = providerShareSubscription.SharedAt,
                 SharedBy = providerShareSubscription.SharedBy,
+=======
+                Company = providerShareSubscription.ConsumerTenantName,
+                CreatedAt = providerShareSubscription.CreatedAt,
+                CreatedBy = providerShareSubscription.ConsumerEmail ?? providerShareSubscription.ConsumerName,
+                SharedAt = providerShareSubscription.SharedAt,
+                SharedBy = providerShareSubscription.ProviderEmail ?? providerShareSubscription.ProviderName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ShareSubscriptionObjectId = providerShareSubscription.ShareSubscriptionObjectId,
                 ShareSubscriptionStatus = providerShareSubscription.ShareSubscriptionStatus
             };
@@ -457,7 +499,11 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
                     typeof(PSProvisioningState),
                     trigger.ProvisioningState),
                 CreatedAt = trigger.CreatedAt,
+<<<<<<< HEAD
                 CreatedBy = trigger.CreatedBy,
+=======
+                CreatedBy = trigger.UserName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 RecurrenceInterval = trigger.RecurrenceInterval,
                 SynchronizationMode = trigger.SynchronizationMode,
                 SynchronizationTime = trigger.SynchronizationTime,
@@ -482,7 +528,11 @@ namespace Microsoft.Azure.Commands.DataShare.Helpers
         {
             return new PSDataShareSynchronization
             {
+<<<<<<< HEAD
                 Company = shareSynchronization.Company,
+=======
+                Company = shareSynchronization.ConsumerTenantName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 DurationMs = shareSynchronization.DurationMs,
                 StartTime = shareSynchronization.StartTime,
                 EndTime = shareSynchronization.EndTime,

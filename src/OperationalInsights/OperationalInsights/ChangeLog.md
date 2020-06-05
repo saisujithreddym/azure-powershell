@@ -18,6 +18,13 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Updated legacy code to apply new generated SDK
+* Added parameters for `Set-AzOperationalInsightsWorkspace` and `New-AzOperationalInsightsWorkspace`
+* Created cmdlets for Linked Stoarge Account
+* Created cmdlets for Clusters and Linked Service
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 1.3.4
 * Update references in .psd1 to use relative path

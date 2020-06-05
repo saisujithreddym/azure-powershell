@@ -17,6 +17,7 @@ Creates a Virtual Network Gateway
 ```
 New-AzVirtualNetworkGateway -Name <String> -ResourceGroupName <String> -Location <String>
  [-IpConfigurations <PSVirtualNetworkGatewayIpConfiguration[]>] [-GatewayType <String>] [-VpnType <String>]
+<<<<<<< HEAD
  [-EnableBgp <Boolean>] [-EnableActiveActiveFeature] [-GatewaySku <String>]
  [-GatewayDefaultSite <PSLocalNetworkGateway>] [-VpnClientAddressPool <String[]>]
  [-VpnClientProtocol <String[]>] [-VpnClientRootCertificates <PSVpnClientRootCertificate[]>]
@@ -39,10 +40,52 @@ New-AzVirtualNetworkGateway -Name <String> -ResourceGroupName <String> -Location
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
+=======
+ [-EnableBgp <Boolean>] [-EnableActiveActiveFeature] [-EnablePrivateIpAddress] [-GatewaySku <String>]
+ [-GatewayDefaultSite <PSLocalNetworkGateway>] [-VpnClientAddressPool <String[]>]
+ [-VpnClientProtocol <String[]>] [-VpnClientRootCertificates <PSVpnClientRootCertificate[]>]
+ [-VpnClientRevokedCertificates <PSVpnClientRevokedCertificate[]>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
+ [-Asn <UInt32>] [-PeerWeight <Int32>]
+ [-IpConfigurationBgpPeeringAddresses <PSIpConfigurationBgpPeeringAddress[]>] [-Tag <Hashtable>] [-Force]
+ [-CustomRoute <String[]>] [-VpnGatewayGeneration <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### MultipleRadiusServersConfiguration
+```
+New-AzVirtualNetworkGateway -Name <String> -ResourceGroupName <String> -Location <String>
+ [-IpConfigurations <PSVirtualNetworkGatewayIpConfiguration[]>] [-GatewayType <String>] [-VpnType <String>]
+ [-EnableBgp <Boolean>] [-EnableActiveActiveFeature] [-EnablePrivateIpAddress] [-GatewaySku <String>]
+ [-GatewayDefaultSite <PSLocalNetworkGateway>] [-VpnClientAddressPool <String[]>]
+ [-VpnClientProtocol <String[]>] [-VpnClientRootCertificates <PSVpnClientRootCertificate[]>]
+ [-VpnClientRevokedCertificates <PSVpnClientRevokedCertificate[]>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
+ [-Asn <UInt32>] [-PeerWeight <Int32>]
+ [-IpConfigurationBgpPeeringAddresses <PSIpConfigurationBgpPeeringAddress[]>] [-Tag <Hashtable>] [-Force]
+ -RadiusServerList <PSRadiusServer[]> [-CustomRoute <String[]>] [-VpnGatewayGeneration <String>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### RadiusServerConfiguration
+```
+New-AzVirtualNetworkGateway -Name <String> -ResourceGroupName <String> -Location <String>
+ [-IpConfigurations <PSVirtualNetworkGatewayIpConfiguration[]>] [-GatewayType <String>] [-VpnType <String>]
+ [-EnableBgp <Boolean>] [-EnableActiveActiveFeature] [-EnablePrivateIpAddress] [-GatewaySku <String>]
+ [-GatewayDefaultSite <PSLocalNetworkGateway>] [-VpnClientAddressPool <String[]>]
+ [-VpnClientProtocol <String[]>] [-VpnClientRootCertificates <PSVpnClientRootCertificate[]>]
+ [-VpnClientRevokedCertificates <PSVpnClientRevokedCertificate[]>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
+ [-Asn <UInt32>] [-PeerWeight <Int32>]
+ [-IpConfigurationBgpPeeringAddresses <PSIpConfigurationBgpPeeringAddress[]>] [-Tag <Hashtable>] [-Force]
+ -RadiusServerAddress <String> -RadiusServerSecret <SecureString> [-CustomRoute <String[]>]
+ [-VpnGatewayGeneration <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### AadAuthenticationConfiguration
 ```
 New-AzVirtualNetworkGateway -Name <String> -ResourceGroupName <String> -Location <String>
  [-IpConfigurations <PSVirtualNetworkGatewayIpConfiguration[]>] [-GatewayType <String>] [-VpnType <String>]
+<<<<<<< HEAD
  [-EnableBgp <Boolean>] [-EnableActiveActiveFeature] [-GatewaySku <String>]
  [-GatewayDefaultSite <PSLocalNetworkGateway>] [-VpnClientAddressPool <String[]>]
  [-VpnClientProtocol <String[]>] [-VpnClientRootCertificates <PSVpnClientRootCertificate[]>]
@@ -50,6 +93,17 @@ New-AzVirtualNetworkGateway -Name <String> -ResourceGroupName <String> -Location
  [-Asn <UInt32>] [-PeerWeight <Int32>] [-Tag <Hashtable>] [-Force] -AadTenantUri <String>
  -AadAudienceId <String> -AadIssuerUri <String> [-CustomRoute <String[]>] [-VpnGatewayGeneration <String>]
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+ [-EnableBgp <Boolean>] [-EnableActiveActiveFeature] [-EnablePrivateIpAddress] [-GatewaySku <String>]
+ [-GatewayDefaultSite <PSLocalNetworkGateway>] [-VpnClientAddressPool <String[]>]
+ [-VpnClientProtocol <String[]>] [-VpnClientRootCertificates <PSVpnClientRootCertificate[]>]
+ [-VpnClientRevokedCertificates <PSVpnClientRevokedCertificate[]>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
+ [-Asn <UInt32>] [-PeerWeight <Int32>]
+ [-IpConfigurationBgpPeeringAddresses <PSIpConfigurationBgpPeeringAddress[]>] [-Tag <Hashtable>] [-Force]
+ -AadTenantUri <String> -AadAudienceId <String> -AadIssuerUri <String> [-CustomRoute <String[]>]
+ [-VpnGatewayGeneration <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -158,6 +212,33 @@ The gateway will be called "myNGW" within the resource group "vnet-gateway" in t
 with the previously created IP configurations saved in the variable "ngwIPConfig," the
 gateway type of "VPN", the vpn type "RouteBased", the sku "VpnGw4" and VpnGatewayGeneration Generation2 enabled.
 
+<<<<<<< HEAD
+=======
+### 6: Create a Virtual Network Gateway with IpConfigurationBgpPeeringAddresses
+```
+New-AzResourceGroup -Location "UK West" -Name "resourcegroup1"
+$subnet = New-AzVirtualNetworkSubnetConfig -Name 'gatewaysubnet' -AddressPrefix '10.254.0.0/27'
+
+$ngwpip = New-AzPublicIpAddress -Name ngwpip -ResourceGroupName "resourcegroup1" -Location "UK West" -AllocationMethod Dynamic
+$vnet = New-AzVirtualNetwork -AddressPrefix "10.254.0.0/27" -Location "UK West" -Name vnet-gateway -ResourceGroupName "resourcegroup1" -Subnet $subnet
+$subnet = Get-AzVirtualNetworkSubnetConfig -name 'gatewaysubnet' -VirtualNetwork $vnet
+$ngwipconfig = New-AzVirtualNetworkGatewayIpConfig -Name ipconfig1 -SubnetId $subnet.Id -PublicIpAddressId $ngwpip.Id
+
+$ipconfigurationId1 = ngwipconfig.id
+$addresslist1 = @('169.254.21.10')
+$gw1ipconfBgp1 = New-AzIpConfigurationBgpPeeringAddressObject -IpConfigurationId $ipconfigurationId1 -CustomAddress $addresslist1
+
+New-AzVirtualNetworkGateway -Name gateway1 -ResourceGroupName vnet-gateway -Location "UK West" -IpConfigurations $ngwIpConfig -IpConfigurationBgpPeeringAddresses $gw1ipconfBgp1 -GatewayType "Vpn" -VpnType "RouteBased" -GatewaySku "VpnGw4" -VpnGatewayGeneration "Generation2"
+```
+
+The above will create a resource group, request a Public IP Address, create a Virtual Network and
+subnet and create a Virtual Network Gateway in Azure.
+ipconfigurationId1 of gateway ipconfiguration just created and stored in ngwipconfig.
+The gateway will be called "gateway1" within the resource group "resourcegroup1resourcegroup1" in the location "UK West" 
+with the previously created IP configurations Bgppeering address saved in the variable "gw1ipconfBgp1," the
+gateway type of "VPN", the vpn type "RouteBased", the sku "VpnGw4" and VpnGatewayGeneration Generation2 enabled.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -AadAudienceId
@@ -221,6 +302,10 @@ Accept wildcard characters: False
 ```
 
 ### -Asn
+<<<<<<< HEAD
+=======
+The virtual network gateway's ASN for BGP over VPN
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.UInt32
@@ -250,7 +335,11 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
+<<<<<<< HEAD
 The credentials, account, tenant, and subscription used for communication with azure.
+=======
+The credentials, account, tenant, and subscription used for communication with Azure.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -265,7 +354,11 @@ Accept wildcard characters: False
 ```
 
 ### -EnableActiveActiveFeature
+<<<<<<< HEAD
 Enables the active-active feature.
+=======
+Flag to enable Active Active feature on virtual network gateway
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -280,6 +373,10 @@ Accept wildcard characters: False
 ```
 
 ### -EnableBgp
+<<<<<<< HEAD
+=======
+EnableBgp Flag
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Boolean
@@ -293,8 +390,28 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -Force
 Forces the command to run without asking for user confirmation.
+=======
+### -EnablePrivateIpAddress
+Flag to enable private IPAddress on virtual network gateway
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Force
+Do not ask for confirmation if you want to overwrite a resource
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -309,6 +426,10 @@ Accept wildcard characters: False
 ```
 
 ### -GatewayDefaultSite
+<<<<<<< HEAD
+=======
+GatewayDefaultSite
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSLocalNetworkGateway
@@ -323,6 +444,10 @@ Accept wildcard characters: False
 ```
 
 ### -GatewaySku
+<<<<<<< HEAD
+=======
+The Gateway Sku Tier
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -338,6 +463,10 @@ Accept wildcard characters: False
 ```
 
 ### -GatewayType
+<<<<<<< HEAD
+=======
+The type of this virtual network gateway: Vpn, ExoressRoute
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -352,7 +481,27 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -IpConfigurations
+=======
+### -IpConfigurationBgpPeeringAddresses
+The BgpPeeringAddresses for Virtual network gateway bgpsettings.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSIpConfigurationBgpPeeringAddress[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -IpConfigurations
+The IpConfigurations for Virtual network gateway.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGatewayIpConfiguration[]
@@ -367,6 +516,10 @@ Accept wildcard characters: False
 ```
 
 ### -Location
+<<<<<<< HEAD
+=======
+location.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -381,6 +534,10 @@ Accept wildcard characters: False
 ```
 
 ### -Name
+<<<<<<< HEAD
+=======
+The resource name.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -395,6 +552,10 @@ Accept wildcard characters: False
 ```
 
 ### -PeerWeight
+<<<<<<< HEAD
+=======
+The weight added to routes learned over BGP from this virtual network gateway
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Int32
@@ -423,6 +584,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -RadiusServerList
+P2S multiple external Radius server servers.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSRadiusServer[]
+Parameter Sets: MultipleRadiusServersConfiguration
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -RadiusServerSecret
 P2S External Radius server secret.
 
@@ -439,6 +618,10 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
+<<<<<<< HEAD
+=======
+The resource group name.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -453,8 +636,12 @@ Accept wildcard characters: False
 ```
 
 ### -Tag
+<<<<<<< HEAD
 Key-value pairs in the form of a hash table. For example:
 @{key0="value0";key1=$null;key2="value2"}
+=======
+A hashtable which represents resource tags.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -469,6 +656,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpnClientAddressPool
+<<<<<<< HEAD
+=======
+P2S VpnClient AddressPool
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String[]
@@ -514,6 +705,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpnClientRevokedCertificates
+<<<<<<< HEAD
+=======
+The list of VpnClientCertificates to be revoked.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVpnClientRevokedCertificate[]
@@ -528,6 +723,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpnClientRootCertificates
+<<<<<<< HEAD
+=======
+The list of VpnClientRootCertificates to be added.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVpnClientRootCertificate[]
@@ -542,14 +741,22 @@ Accept wildcard characters: False
 ```
 
 ### -VpnGatewayGeneration
+<<<<<<< HEAD
 The generation for this VirtualNetwork VPN gateway. Must be None if GatewayType is not VPN. 
 Once set, this property cannot be changed over the lifetime of the gateway.
+=======
+The generation for this VirtualNetwork VPN gateway.
+Must be None if GatewayType is not VPN.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
 Parameter Sets: (All)
 Aliases:
+<<<<<<< HEAD
 Accepted values: None, Generation1, Generation2
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 Required: False
 Position: Named
@@ -559,6 +766,10 @@ Accept wildcard characters: False
 ```
 
 ### -VpnType
+<<<<<<< HEAD
+=======
+The type of the Vpn:PolicyBased/RouteBased
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String
@@ -583,7 +794,11 @@ Aliases: cf
 
 Required: False
 Position: Named
+<<<<<<< HEAD
 Default value: False
+=======
+Default value: None
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -599,13 +814,21 @@ Aliases: wi
 
 Required: False
 Position: Named
+<<<<<<< HEAD
 Default value: False
+=======
+Default value: None
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 
@@ -629,6 +852,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### System.Int32
 
+<<<<<<< HEAD
+=======
+### Microsoft.Azure.Commands.Network.Models.PSIpConfigurationBgpPeeringAddress[]
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### System.Collections.Hashtable
 
 ### System.Security.SecureString
@@ -640,6 +868,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## NOTES
 
 ## RELATED LINKS
+<<<<<<< HEAD
 
 [Get-AzVirtualNetworkGateway](./Get-AzVirtualNetworkGateway.md)
 
@@ -650,3 +879,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 [Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
 
 [Set-AzVirtualNetworkGateway](./Set-AzVirtualNetworkGateway.md)
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

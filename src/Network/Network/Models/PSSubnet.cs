@@ -68,6 +68,12 @@ namespace Microsoft.Azure.Commands.Network.Models
         [Ps1Xml(Target = ViewControl.Table)]
         public string PrivateLinkServiceNetworkPolicies { get; set; }
 
+<<<<<<< HEAD
+=======
+        [JsonProperty(Order = 1)]
+        public List<PSResourceId> IpAllocations { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [JsonIgnore]
         public string IpConfigurationsText
         {
@@ -162,5 +168,14 @@ namespace Microsoft.Azure.Commands.Network.Models
         {
             get { return JsonConvert.SerializeObject(Delegations, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }); }
         }
+<<<<<<< HEAD
+=======
+
+        [JsonIgnore]
+        public string IpAllocationsText
+        {
+            get { return JsonConvert.SerializeObject(IpAllocations, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }); }
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

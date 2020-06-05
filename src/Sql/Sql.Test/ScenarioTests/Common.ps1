@@ -32,6 +32,7 @@ Gets the values of the parameters used at the blob auditing tests
 function Get-SqlBlobAuditingTestEnvironmentParameters ($testSuffix)
 {
 	$subscriptionId = (Get-AzContext).Subscription.Id
+<<<<<<< HEAD
 	return @{ rgname = "blob-audit-cmdlet-test-rg" + $testSuffix;
 			  serverName = "blob-audit-cmdlet-server" + $testSuffix;
 			  databaseName = "blob-audit-cmdlet-db" + $testSuffix;
@@ -39,6 +40,15 @@ function Get-SqlBlobAuditingTestEnvironmentParameters ($testSuffix)
 			  eventHubNamespace = "audit-cmdlet-event-hub-ns" + $testSuffix
 			  workspaceName = "audit-cmdlet-workspace" +$testSuffix
 			  storageAccountResourceId = "/subscriptions/" + $subscriptionId + "/resourceGroups/" + "blob-audit-cmdlet-test-rg" + $testSuffix + "/providers/Microsoft.Storage/storageAccounts/" + "blobaudit" + $testSuffix
+=======
+	return @{ rgname = "audit-cmdlet-test-rg" + $testSuffix;
+			  serverName = "audit-cmdlet-server" + $testSuffix;
+			  databaseName = "audit-cmdlet-db" + $testSuffix;
+			  storageAccount = "blobaudit" + $testSuffix
+			  eventHubNamespace = "audit-cmdlet-event-hub-ns" + $testSuffix
+			  workspaceName = "audit-cmdlet-workspace" +$testSuffix
+			  storageAccountResourceId = "/subscriptions/" + $subscriptionId + "/resourceGroups/" + "audit-cmdlet-test-rg" + $testSuffix + "/providers/Microsoft.Storage/storageAccounts/" + "blobaudit" + $testSuffix
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		}
 }
 
@@ -79,6 +89,7 @@ function Get-SqlDataMaskingTestEnvironmentParameters ($testSuffix)
 
 <#
 .SYNOPSIS
+<<<<<<< HEAD
 Creates the test environment needed to perform the Sql auditing tests
 #>
 function Create-AuditingTestEnvironment ($testSuffix, $location = "West Central US", $serverVersion = "12.0")
@@ -95,6 +106,14 @@ function Create-BlobAuditingTestEnvironment ($testSuffix, $location = "West Cent
 {
 	$params = Get-SqlBlobAuditingTestEnvironmentParameters $testSuffix
 	Create-TestEnvironmentWithParams $params $location $serverVersion
+=======
+Creates the test environment needed to perform the Sql blob auditing tests
+#>
+function Create-BlobAuditingTestEnvironment ($testSuffix, $location = "West Central US", $serverVersion = "12.0", $denyAsNetworkRuleDefaultAction = $False)
+{
+	$params = Get-SqlBlobAuditingTestEnvironmentParameters $testSuffix
+	Create-TestEnvironmentWithParams $params $location $serverVersion $denyAsNetworkRuleDefaultAction
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	New-AzOperationalInsightsWorkspace -ResourceGroupName $params.rgname -Name $params.workspaceName -Sku "Standard" -Location "eastus"
 	New-AzEventHubNamespace -ResourceGroupName $params.rgname -NamespaceName $params.eventHubNamespace -Location $location
 }
@@ -143,10 +162,17 @@ function Create-ThreatDetectionClassicTestEnvironment ($testSuffix, $location = 
 .SYNOPSIS
 Creates the test environment needed to perform the Sql auditing tests
 #>
+<<<<<<< HEAD
 function Create-TestEnvironmentWithParams ($params, $location, $serverVersion)
 {
 	Create-BasicTestEnvironmentWithParams $params $location $serverVersion
 	New-AzStorageAccount -StorageAccountName $params.storageAccount -ResourceGroupName $params.rgname -Location $location -Type Standard_GRS
+=======
+function Create-TestEnvironmentWithParams ($params, $location, $serverVersion, $denyAsNetworkRuleDefaultAction = $False)
+{
+	Create-BasicTestEnvironmentWithParams $params $location $serverVersion
+	New-AzStorageAccount -StorageAccountName $params.storageAccount -ResourceGroupName $params.rgname -Location $location -Type Standard_GRS -DenyAsNetworkRuleDefaultAction $denyAsNetworkRuleDefaultAction
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	Wait-Seconds 10
 }
 
@@ -568,6 +594,18 @@ function Get-VNetName
 
 <#
 .SYNOPSIS
+<<<<<<< HEAD
+=======
+Gets valid managed instance operation name
+#>
+function Get-ManagedInstanceOperationName
+{
+    return getAssetName
+}
+
+<#
+.SYNOPSIS
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Gets test mode - 'Record' or 'Playback'
 #>
 function Get-SqlTestMode {
@@ -931,6 +969,37 @@ function Create-ManagedInstanceForTest ($resourceGroup, $subnetId)
 
 <#
 	.SYNOPSIS
+<<<<<<< HEAD
+=======
+	Asyn update of hardware generation on Sql managed instance
+#>
+function Update-ManagedInstanceGenerationForTest ($resourceGroup, $managedInstance)
+{
+ 	$computeGeneration = "Gen5"
+
+	$managedInstance = Set-AzSqlInstance -ResourceGroupName $resourceGroup.ResourceGroupName -Name $managedInstance.ManagedInstanceName `
+ 			 -ComputeGeneration $computeGeneration -Force -AsJob
+
+	return $managedInstance
+}
+
+<#
+	.SYNOPSIS
+	Sync update of storage on Sql managed instance
+#>
+function Update-ManagedInstanceStorageForTest ($resourceGroup, $managedInstance)
+{
+	$storageSize = 928
+
+	$managedInstance = Set-AzSqlInstance -ResourceGroupName $resourceGroup.ResourceGroupName -Name $managedInstance.ManagedInstanceName `
+ 			-StorageSizeInGb $storageSize -Force
+
+	return $managedInstance
+}
+
+<#
+	.SYNOPSIS
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	Creates a managed instance in an instance pool
 #>
 function Create-ManagedInstanceInInstancePoolForTest ($instancePool)

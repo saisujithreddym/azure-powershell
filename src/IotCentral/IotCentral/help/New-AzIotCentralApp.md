@@ -44,11 +44,19 @@ Template          : iotc-default@1.0.0
 SubscriptionId    : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ResourceGroupName : MyResourceGroupName
 
+<<<<<<< HEAD
 Create an IoT Central application in the standard pricing tier S1, in the region of the resource group.
 
 ### Example 2 Create simple IoT Central Application.
 ```powershell
 PS C:\> New-AzIotCentralApp -ResourceGroupName "MyResourceGroupName" -Name "MyAppResourceName" -Subdomain "MyAppSubdomain" -Sku "S1" -DisplayName "My Custom Display Name" -Template "iotc-default" -Location "westus"
+=======
+Create an IoT Central application in the standard pricing tier ST2, in the region of the resource group.
+
+### Example 2 Create simple IoT Central Application.
+```powershell
+PS C:\> New-AzIotCentralApp -ResourceGroupName "MyResourceGroupName" -Name "MyAppResourceName" -Subdomain "MyAppSubdomain" -Sku "ST2" -DisplayName "My Custom Display Name" -Template "iotc-default" -Location "westus"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 Example Output:
@@ -67,7 +75,11 @@ Template          : iotc-default@1.0.0
 SubscriptionId    : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ResourceGroupName : MyResourceGroupName
 
+<<<<<<< HEAD
 Create an IoT Central application with the standard pricing tier S1 in the 'westus' region, with a custom display name, based on the iotc-default template.
+=======
+Create an IoT Central application with the standard pricing tier ST2 in the 'westus' region, with a custom display name, based on the iotc-default template.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## PARAMETERS
 
@@ -165,7 +177,11 @@ Accept wildcard characters: False
 
 ### -Sku
 Pricing tier for IoT Central applications.
+<<<<<<< HEAD
 Default value is S1.
+=======
+Default value is ST2.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String

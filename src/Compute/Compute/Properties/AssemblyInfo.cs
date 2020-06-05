@@ -25,8 +25,13 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 [assembly: CLSCompliant(false)]
 [assembly: Guid("91792853-487B-4DC2-BE6C-DD09A0A1BC10")]
+<<<<<<< HEAD
 [assembly: AssemblyVersion("3.4.0")]
 [assembly: AssemblyFileVersion("3.4.0")]
+=======
+[assembly: AssemblyVersion("3.7.0")]
+[assembly: AssemblyFileVersion("3.7.0")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 #if !SIGN
 [assembly: InternalsVisibleTo("Microsoft.Azure.PowerShell.Cmdlets.Compute.Test")]
 #endif

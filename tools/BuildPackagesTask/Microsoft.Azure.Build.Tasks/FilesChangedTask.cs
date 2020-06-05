@@ -14,11 +14,20 @@
 //
 namespace Microsoft.WindowsAzure.Build.Tasks
 {
+<<<<<<< HEAD
     using Microsoft.Build.Framework;
     using Microsoft.Build.Utilities;
     using Octokit;
     using System.Collections.Generic;
     using System;
+=======
+    using System;
+    using System.Collections.Generic;
+    using System.Runtime.InteropServices;
+    using Microsoft.Build.Framework;
+    using Microsoft.Build.Utilities;
+    using Octokit;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     /// <summary>
     /// Build task to get all of the files changed in a given PR.
@@ -43,6 +52,14 @@ namespace Microsoft.WindowsAzure.Build.Tasks
         public string PullRequestNumber { get; set; }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Gets or set the TargetModule, e.g. Az.Storage
+        /// </summary>
+        public string TargetModule { get; set; }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Gets or sets the files changed produced by the task.
         /// </summary>
         [Output]
@@ -66,12 +83,24 @@ namespace Microsoft.WindowsAzure.Build.Tasks
             }
 
             var debugEnvironmentVariable = Environment.GetEnvironmentVariable("DebugLocalBuildTasks");
+<<<<<<< HEAD
+=======
+            Console.WriteLine("DebugLocalBuildTasks:" + debugEnvironmentVariable);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             bool debug;
             if (!Boolean.TryParse(debugEnvironmentVariable, out debug))
             {
                 debug = false;
             }
 
+<<<<<<< HEAD
+=======
+            if (debug)
+            {
+                Console.WriteLine("PullRequestNumber:" + PullRequestNumber);
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             int ParsedPullRequestNumber;
 
             // The next statement will convert the string representation of a number to its integer equivalent.
@@ -81,7 +110,17 @@ namespace Microsoft.WindowsAzure.Build.Tasks
                 List<string> filesChanged = new List<string>();
                 try
                 {
+<<<<<<< HEAD
                     var client = new GitHubClient(new ProductHeaderValue("Azure"));
+=======
+                    //The variable is set in pipeline: "azure-powershell - powershell-core"
+                    var token = Environment.GetEnvironmentVariable("NOSCOPEPAT_ADXSDKPS");
+                    var client = new GitHubClient(new ProductHeaderValue("Azure"));
+                    if(RuntimeInformation.IsOSPlatform(OSPlatform.OSX) && !string.IsNullOrEmpty(token))
+                    {
+                        client.Credentials = new Credentials(token);
+                    }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     var files = client.PullRequest.Files(RepositoryOwner, RepositoryName, int.Parse(PullRequestNumber))
                                     .ConfigureAwait(false).GetAwaiter().GetResult();
                     if (files == null)
@@ -119,6 +158,14 @@ namespace Microsoft.WindowsAzure.Build.Tasks
 
                 FilesChanged = filesChanged.ToArray();
             }
+<<<<<<< HEAD
+=======
+            else if(!string.IsNullOrEmpty(TargetModule))
+            {
+                //Add one FAKE changed file for TargetModule, so TargetModule will be included for FilterTask
+                FilesChanged = new string[] { $"src/{TargetModule}/changeLog.md" };
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             else
             {
                 FilesChanged = new string[] { };

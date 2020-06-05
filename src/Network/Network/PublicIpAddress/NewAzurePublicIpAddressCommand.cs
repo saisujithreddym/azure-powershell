@@ -19,6 +19,10 @@ using Microsoft.Azure.Commands.Network.Models;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
 using Microsoft.Azure.Management.Network;
+<<<<<<< HEAD
+=======
+using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +31,11 @@ using MNM = Microsoft.Azure.Management.Network.Models;
 
 namespace Microsoft.Azure.Commands.Network
 {
+<<<<<<< HEAD
+=======
+    [GenericBreakingChange("Default behaviour of Zone will be changed", OldWay = "Zone = [] means the Standard Public IP address is zone-redundant",
+        NewWay = "Zone = [] means the Standard Public IP has no zones. If you want to create a zone-redundant Public IP address, please specify all the zones in the region. For example, Zone = [\"1\", \"2\", \"3\"].To learn more visit aka.ms/standardpublicip")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "PublicIpAddress", SupportsShouldProcess = true),OutputType(typeof(PSPublicIpAddress))]
     public class NewAzurePublicIpAddressCommand : PublicIpAddressBaseCmdlet
     {

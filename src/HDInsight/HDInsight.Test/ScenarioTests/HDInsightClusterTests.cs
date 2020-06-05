@@ -35,5 +35,15 @@ namespace Commands.HDInsight.Test.ScenarioTests
         {
             TestController.NewInstance.RunPowerShellTest(_logger, "Test-ClusterRelatedCommands");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void TestCmkClusterRelatedCommands()
+        {
+            TestController.NewInstance.RunPowerShellTest(_logger, "Test-CmkClusterRelatedCommands");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

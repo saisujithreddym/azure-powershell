@@ -16,7 +16,10 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Commands
 {
     using Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models;
     using System;
+<<<<<<< HEAD
     using System.Collections.Generic;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     using System.Management.Automation;
 
     [Cmdlet("Get", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "ApiManagementOpenIdConnectProvider", DefaultParameterSetName = GetAll)]

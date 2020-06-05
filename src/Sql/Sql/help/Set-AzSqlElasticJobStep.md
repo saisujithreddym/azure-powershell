@@ -107,8 +107,13 @@ The Set-AzSqlElasticJobStep cmdlet updates a job step
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### Example 1 - Updates a job step's target group for a job
 ```
+=======
+### Example 1: Updates a job step's target group for a job
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> $jobStep = Get-AzSqlElasticJobStep -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -JobName job1 -StepName step1
 $jobStep | Set-AzSqlElasticJobStep -TargetGroupName tg2
 
@@ -117,8 +122,13 @@ JobName StepName StepId TargetGroupName CredentialName Output ExecutionOptions  
 job1    step1    1      tg2             cred1                 (43200,10,1,120,2) SELECT 1
 ```
 
+<<<<<<< HEAD
 ### Example 2 - Updates a job step's T-SQL script for a job
 ```
+=======
+### Example 2: Updates a job step's T-SQL script for a job
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> $jobStep = Get-AzSqlElasticJobStep -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -JobName job1 -StepName step1
 $jobStep | Set-AzSqlElasticJobStep -CommandText "SELECT 2"
 
@@ -129,6 +139,15 @@ job1    step1    1      tg1             cred1                 (43200,10,1,120,2)
 
 Updates a job step from a job
 
+<<<<<<< HEAD
+=======
+### Example 3
+
+```powershell <!-- Aladdin Generated Example --> 
+Set-AzSqlElasticJobStep -AgentName agent -CommandText 'SELECT 2' -JobName job1 -Name step1 -ResourceGroupName MyResourceGroup -ServerName s1
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -AgentName

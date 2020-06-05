@@ -132,7 +132,19 @@ namespace Microsoft.Azure.Commands.Compute.Automation
                         galleryImageVersion.PublishingProfile.TargetRegions = new List<TargetRegion>();
                         foreach (var t in this.TargetRegion)
                         {
+<<<<<<< HEAD
                             galleryImageVersion.PublishingProfile.TargetRegions.Add(new TargetRegion((string)t["Name"], (int?)t["ReplicaCount"], (string)t["StorageAccountType"]));
+=======
+                            var target = new TargetRegion()
+                            {
+                                Name = (string)t["Name"],
+                                RegionalReplicaCount = (int?)t["ReplicaCount"],
+                                StorageAccountType = (string)t["StorageAccountType"],
+                                Encryption = (t["Encryption"] == null) ? (EncryptionImages)t["Encryption"] : null
+                            };
+
+                            galleryImageVersion.PublishingProfile.TargetRegions.Add(target);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         }
                     }
 
@@ -319,7 +331,19 @@ namespace Microsoft.Azure.Commands.Compute.Automation
                         galleryImageVersion.PublishingProfile.TargetRegions = new List<TargetRegion>();
                         foreach (var t in this.TargetRegion)
                         {
+<<<<<<< HEAD
                             galleryImageVersion.PublishingProfile.TargetRegions.Add(new TargetRegion((string)t["Name"], (int?)t["ReplicaCount"]));
+=======
+                            var target = new TargetRegion()
+                            {
+                                Name = (string)t["Name"],
+                                RegionalReplicaCount = (int?)t["ReplicaCount"],
+                                StorageAccountType = (string)t["StorageAccountType"],
+                                Encryption = (t["Encryption"] == null) ? (EncryptionImages)t["Encryption"] : null
+                            };
+
+                            galleryImageVersion.PublishingProfile.TargetRegions.Add(target);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         }
                     }
 

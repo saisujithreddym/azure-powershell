@@ -49,13 +49,21 @@ namespace Microsoft.Azure.Commands.CosmosDB
 
         [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ParentObjectParameterSet, HelpMessage = Constants.SqlContainerObjectHelpMessage)]
         [ValidateNotNull]
+<<<<<<< HEAD
         public PSSqlContainerGetResults InputObject { get; set; }
+=======
+        public PSSqlContainerGetResults ParentObject { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
          public override void ExecuteCmdlet()
         {
             if (ParameterSetName.Equals(ParentObjectParameterSet, StringComparison.Ordinal))
             {
+<<<<<<< HEAD
                 ResourceIdentifier resourceIdentifier = new ResourceIdentifier(InputObject.Id);
+=======
+                ResourceIdentifier resourceIdentifier = new ResourceIdentifier(ParentObject.Id);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ResourceGroupName = resourceIdentifier.ResourceGroupName;
                 ContainerName = resourceIdentifier.ResourceName;
                 DatabaseName = ResourceIdentifierExtensions.GetSqlDatabaseName(resourceIdentifier);

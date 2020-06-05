@@ -40,7 +40,11 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Cmdlets
         /// <summary>
         /// Executes the cmdlet to retrieve metadata resources
         /// </summary>
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
+=======
+        public override void Execute()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             if (!string.IsNullOrEmpty(this.Name))
             {

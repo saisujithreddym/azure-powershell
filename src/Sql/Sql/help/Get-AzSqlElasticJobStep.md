@@ -54,8 +54,13 @@ The Get-AzSqlElasticJobStep cmdlet gets one or more job steps from a job
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### Example 1 - Gets a job step from a job
 ```
+=======
+### Example 1: Gets a job step from a job
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> $job = Get-AzSqlElasticJob -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -Name job1
 $job | Get-AzSqlElasticJobStep -Name step1
 

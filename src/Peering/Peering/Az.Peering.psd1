@@ -53,7 +53,11 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
+<<<<<<< HEAD
 RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.1'; })
+=======
+RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.5'; })
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'Microsoft.Azure.Management.Peering.dll', 'AutoMapper.dll'
@@ -74,8 +78,14 @@ NestedModules = @('Microsoft.Azure.PowerShell.Cmdlets.Peering.dll')
 FunctionsToExport = @()
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
+<<<<<<< HEAD
 CmdletsToExport = 'Get-AzPeering', 'Get-AzPeerAsn', 'New-AzPeerAsn', 'New-AzPeering', 
                'Update-AzPeering', 'Set-AzPeeringExchangeConnectionObject', 
+=======
+CmdletsToExport = 'Get-AzPeering', 'Get-AzPeerAsn', 'New-AzPeerAsn', 
+               'New-AzPeering', 'Update-AzPeering', 'Remove-AzPeering',
+               'Set-AzPeeringExchangeConnectionObject', 
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                'New-AzPeeringExchangeConnectionObject', 
                'Set-AzPeeringDirectConnectionObject', 
                'New-AzPeeringDirectConnectionObject', 'Get-AzPeeringLocation', 
@@ -83,7 +93,16 @@ CmdletsToExport = 'Get-AzPeering', 'Get-AzPeerAsn', 'New-AzPeerAsn', 'New-AzPeer
                'Remove-AzPeeringServicePrefix', 'New-AzPeeringServicePrefix', 
                'Get-AzPeeringServicePrefix', 'Get-AzPeeringServiceLocation', 
                'Get-AzPeeringServiceProvider', 'Get-AzPeeringService', 
+<<<<<<< HEAD
                'New-AzPeeringService'
+=======
+               'New-AzPeeringService', 'Get-AzPeeringServiceCountry', 
+               'New-AzPeeringRegisteredPrefix', 'Set-AzPeeringRegisteredPrefix', 
+               'Get-AzPeeringRegisteredPrefix', 'Remove-AzPeeringRegisteredPrefix',
+               'New-AzPeeringRegisteredAsn', 'Set-AzPeeringRegisteredAsn',
+               'Get-AzPeeringRegisteredAsn', 'Remove-AzPeeringRegisteredAsn',
+               'New-AzPeerAsnContactDetail'
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Variables to export from this module
 # VariablesToExport = @()

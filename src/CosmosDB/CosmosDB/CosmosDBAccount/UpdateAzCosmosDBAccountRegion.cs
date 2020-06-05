@@ -24,7 +24,11 @@ using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 
 namespace Microsoft.Azure.Commands.CosmosDB
 {
+<<<<<<< HEAD
     [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBAccountRegion", DefaultParameterSetName = NameParameterSet, SupportsShouldProcess = true), OutputType(typeof(PSDatabaseAccount))]
+=======
+    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "CosmosDBAccountRegion", DefaultParameterSetName = NameParameterSet, SupportsShouldProcess = true), OutputType(typeof(PSDatabaseAccountGetResults))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class UpdateAzCosmosDBAccountRegion : AzureCosmosDBCmdletBase
     { 
         [Parameter(Mandatory = true, ParameterSetName = NameParameterSet, HelpMessage = Constants.ResourceGroupNameHelpMessage)]
@@ -46,9 +50,15 @@ namespace Microsoft.Azure.Commands.CosmosDB
         [ValidateNotNullOrEmpty]
         public string ResourceId { get; set; }
 
+<<<<<<< HEAD
         [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ObjectParameterSet, HelpMessage = Constants.ResourceIdHelpMessage)]
         [ValidateNotNull]
         public PSDatabaseAccount InputObject { get; set; }
+=======
+        [Parameter(Mandatory = true, ValueFromPipeline = true, ParameterSetName = ObjectParameterSet, HelpMessage = Constants.AccountObjectHelpMessage)]
+        [ValidateNotNull]
+        public PSDatabaseAccountGetResults InputObject { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         [Parameter(Mandatory = false, HelpMessage = Constants.AsJobHelpMessage)]
         public SwitchParameter AsJob { get; set; }
@@ -72,6 +82,7 @@ namespace Microsoft.Azure.Commands.CosmosDB
             }
 
             List<Location> locations = new List<Location>();
+<<<<<<< HEAD
 
             if( (Location != null && Location.Length > 0) ||
                 (LocationObject != null && LocationObject.Length > 0))
@@ -84,6 +95,25 @@ namespace Microsoft.Azure.Commands.CosmosDB
                 foreach (PSLocation psLocation in LocationObject)
                 {
                     locations.Add(PSLocation.ConvertPSLocationToLocation(psLocation));
+=======
+            if (Location != null || LocationObject != null)
+            {
+                if (Location != null && Location.Length > 0)
+                {
+                    int failoverPriority = 0;
+                    foreach (string location in Location)
+                    {
+                        locations.Add(new Location(locationName: location, failoverPriority: failoverPriority));
+                        failoverPriority++;
+                    }
+                }
+                if (LocationObject != null && LocationObject.Length > 0)
+                {
+                    foreach (PSLocation psLocation in LocationObject)
+                    {
+                        locations.Add(PSLocation.ToSDKModel(psLocation));
+                    }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
             }
             else
@@ -99,7 +129,11 @@ namespace Microsoft.Azure.Commands.CosmosDB
                 CosmosDBManagementClient.DatabaseAccounts.UpdateWithHttpMessagesAsync(ResourceGroupName, Name, createUpdateParameters).GetAwaiter().GetResult();
 
                 DatabaseAccountGetResults databaseAccount = CosmosDBManagementClient.DatabaseAccounts.GetWithHttpMessagesAsync(ResourceGroupName, Name).GetAwaiter().GetResult().Body;
+<<<<<<< HEAD
                 WriteObject(new PSDatabaseAccount(databaseAccount));
+=======
+                WriteObject(new PSDatabaseAccountGetResults(databaseAccount));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return;

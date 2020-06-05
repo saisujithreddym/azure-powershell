@@ -30,7 +30,11 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
     /// Filters resource groups.
     /// </summary>
     [Cmdlet("Get", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "ResourceGroup", DefaultParameterSetName = ResourceGroupNameParameterSet), OutputType(typeof(PSResourceGroup))]
+<<<<<<< HEAD
     public class GetAzureResourceGroupCmdlet : ResourceManagerCmdletBase
+=======
+    public class GetAzureResourceGroupCmdlet : ResourceManagerCmdletBaseWithAPiVersion
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     {
         /// <summary>
         /// List resources group by name parameter set.
@@ -63,6 +67,7 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
         [ValidateNotNullOrEmpty]
         public Hashtable Tag { get; set; }
 
+<<<<<<< HEAD
         public override void ExecuteCmdlet()
         {
             Name = Name ?? ResourceIdentifier.FromResourceGroupIdentifier(this.Id).ResourceGroupName;
@@ -70,6 +75,12 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation
             this.WriteObject(
                 ResourceManagerSdkClient.FilterResourceGroups(name: this.Name, tag: this.Tag, detailed: false, location: this.Location),
                 true);
+=======
+        protected override void OnProcessRecord()
+        {
+            Name = Name ?? ResourceIdentifier.FromResourceGroupIdentifier(this.Id).ResourceGroupName;
+            this.WriteObject(ResourceManagerSdkClient.FilterResourceGroups(name: this.Name, tag: this.Tag, detailed: false, location: this.Location), true);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
     }

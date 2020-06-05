@@ -66,6 +66,13 @@ namespace Microsoft.Azure.Commands.HDInsight.Models
                 LdapsUrls = clusterSecurityProfile.LdapsUrls != null ? clusterSecurityProfile.LdapsUrls.ToArray() : null,
                 ClusterUsersGroupDNs = clusterSecurityProfile.ClusterUsersGroupDNs != null ? clusterSecurityProfile.ClusterUsersGroupDNs.ToArray() : null,
             } : null;
+<<<<<<< HEAD
+=======
+
+            MinSupportedTlsVersion = cluster.Properties.MinSupportedTlsVersion;
+            DiskEncryption = cluster.Properties.DiskEncryptionProperties;
+            AssignedIdentity = cluster.Identity;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public AzureHDInsightCluster(Cluster cluster, IDictionary<string, string> clusterConfiguration, IDictionary<string, string> clusterIdentity)
@@ -201,5 +208,23 @@ namespace Microsoft.Azure.Commands.HDInsight.Models
         /// The security profile.
         /// </value>
         public AzureHDInsightSecurityProfile SecurityProfile { get; set; }
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// Gets or sets the minimal supported TLS version.
+        /// </summary>
+        public string MinSupportedTlsVersion { get; set; }
+
+        /// <summary>
+        /// Gets or sets the disk encryption properties.
+        /// </summary>
+        public DiskEncryptionProperties DiskEncryption { get; set; }
+
+        /// <summary>
+        /// Gets or sets the assigned identity.
+        /// </summary>
+        public ClusterIdentity AssignedIdentity { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

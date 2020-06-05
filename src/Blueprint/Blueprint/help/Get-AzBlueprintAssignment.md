@@ -12,6 +12,7 @@ Get one or more blueprint assignments.
 
 ## SYNTAX
 
+<<<<<<< HEAD
 ### BlueprintAssignmentsBySubscription (Default)
 ```
 Get-AzBlueprintAssignment [[-SubscriptionId] <String>] [-DefaultProfile <IAzureContextContainer>]
@@ -22,6 +23,30 @@ Get-AzBlueprintAssignment [[-SubscriptionId] <String>] [-DefaultProfile <IAzureC
 ```
 Get-AzBlueprintAssignment [[-SubscriptionId] <String>] [-Name] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+### SubscriptionScope (Default)
+```
+Get-AzBlueprintAssignment [-SubscriptionId <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### BySubscriptionAndName
+```
+Get-AzBlueprintAssignment -Name <String> [-SubscriptionId <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### ByManagementGroupAndName
+```
+Get-AzBlueprintAssignment -Name <String> -ManagementGroupId <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### ManagementGroupScope
+```
+Get-AzBlueprintAssignment -ManagementGroupId <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -52,6 +77,23 @@ PS C:\> Get-AzBlueprintAssignment -SubscriptionId "00000000-1111-0000-1111-00000
 
 Get the blueprint assignment with the given name within the specified subscription.
 
+<<<<<<< HEAD
+=======
+### Example 3
+```powershell
+PS C:\> Get-AzBlueprintAssignment -ManagementGroupId "myManagementGroup"
+```
+
+Get the blueprint assignments within the specified management group.
+
+### Example 4
+```powershell
+PS C:\> Get-AzBlueprintAssignment -ManagementGroupId "myManagementGroup" -Name "myAssignmentName"
+```
+
+Get the blueprint assignment with the given name within the specified management group.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -DefaultProfile
@@ -69,16 +111,42 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -ManagementGroupId
+The ID of the management group where the Blueprint assignment is saved.
+
+```yaml
+Type: System.String
+Parameter Sets: ByManagementGroupAndName, ManagementGroupScope
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Name
 Blueprint assignment name.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: BlueprintAssignmentByName
 Aliases:
 
 Required: True
 Position: 1
+=======
+Parameter Sets: BySubscriptionAndName, ByManagementGroupAndName
+Aliases:
+
+Required: True
+Position: Named
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -89,18 +157,30 @@ Subscription Id the blueprint assignment is deployed to.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: 0
+=======
+Parameter Sets: SubscriptionScope, BySubscriptionAndName
+Aliases:
+
+Required: False
+Position: Named
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

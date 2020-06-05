@@ -53,10 +53,17 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
+<<<<<<< HEAD
 RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.1'; })
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'YamlDotNet.dll', 'AutoMapper.dll'
+=======
+RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.5'; })
+
+# Assemblies that must be loaded prior to importing this module
+RequiredAssemblies = 'YamlDotNet.dll', 'AutoMapper.dll', "Microsoft.Azure.Management.ContainerService.dll"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
 # ScriptsToProcess = @()
@@ -75,7 +82,13 @@ FunctionsToExport = @()
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = 'Get-AzAks', 'New-AzAks', 'Remove-AzAks', 'Import-AzAksCredential', 
+<<<<<<< HEAD
                'Start-AzAksDashboard', 'Stop-AzAksDashboard', 'Set-AzAks'
+=======
+               'Start-AzAksDashboard', 'Stop-AzAksDashboard', 'Set-AzAks', 
+			   'New-AzAksNodePool', 'Update-AzAksNodePool', 'Remove-AzAksNodePool',
+			   'Get-AzAksNodePool', "Install-AzAksKubectl", 'Get-AzAksVersion'
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Variables to export from this module
 # VariablesToExport = @()

@@ -29,7 +29,12 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
     /// <summary>
     /// The get azure peering service command.
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet(VerbsCommon.Get, "AzPeeringService", DefaultParameterSetName = Constants.ParameterSetNameByResourceGroupName)]
+=======
+    [Cmdlet(VerbsCommon.Get, Constants.AzPeeringService,
+        DefaultParameterSetName = Constants.ParameterSetNameByResourceGroupName)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSPeeringService))]
     public class GetAzurePeeringServiceCommand : PeeringBaseCmdlet
     {

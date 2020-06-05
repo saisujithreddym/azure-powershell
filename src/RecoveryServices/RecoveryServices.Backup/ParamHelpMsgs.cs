@@ -12,6 +12,11 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
+=======
+using System.Configuration.Internal;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
 {
     /// <summary>
@@ -50,6 +55,10 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
             public const string RetentionPolicy = "Retention Policy object for the policy.";
             public const string SchedulePolicy = "Schedule Policy object for the policy.";
             public const string ProtectionPolicy = "Protection policy object.";
+<<<<<<< HEAD
+=======
+            public const string FixForInConsistentItems = "Switch Parameter indicating whether or not to retry Policy Update for failed items.";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         internal static class Job
@@ -92,6 +101,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
             public const string EnableCompression = "A switch which will specify that the requested on-demand SQL backup should be compressed.";
             public const string ParentID = "Specified the ARM ID of an Instance or AG.";
             public const string FriendlyName = "FriendlyName of the backed up item";
+<<<<<<< HEAD
+=======
+            public const string inclusionDiskList = "List of Disk LUNs to include in backup";
+            public const string exclusionDiskList = "List of Disk LUNs to exclude in backup";
+            public const string resetExclusionSettings = "Specifies to reset disk exclusion setting associated with the item";
+            public const string excludeAllDataDisks = "Option to specify to backup OS disks only";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         internal static class ProtectableItem
@@ -135,6 +151,12 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
         {
             public const string TargetResourceGroupName = "The resource group to which the managed disks are restored. This parameter is mandatory for backup of VM with managed disks";
             public const string OsaOption = "Use this switch if the disks from the recovery point are to be restored to their original storage accounts";
+<<<<<<< HEAD
+=======
+            public const string RestoreOnlyOSDisk = "Use this switch to restore only OS disks of a backed up VM";
+            public const string RestoreDiskList = "Specify which disks to recover of the backed up VM";
+            public const string RestoreAsUnmanagedDisks = "Use this switch to specify to restore as unmanaged disks";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         internal static class RestoreFS
@@ -145,7 +167,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
             public const string TargetStorageAccountName = "The storage account to which the file share has to be restored to.";
             public const string TargetFileShareName = "The File Share to which the file share has to be restored to.";
             public const string TargetFolder = "The folder under which the file share has to be restored to within the targetFileShareName.Leave the variable empty to restore under root folder.";
+<<<<<<< HEAD
 
+=======
+            public const string MultipleSourceFilePath = "Used for Multiple files restore from a file share. The paths of the items to be restored within the file share.";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         internal static class ProtectionCheck
@@ -163,6 +189,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets
             public const string TargetItem = "Specifies the target on which the DB needs to be restored. For SQL restores, it needs to be of protectable item type SQLInstance only.";
             public const string OriginalWorkloadRestore = "Specifies that the backed up DB is to be overwritten with the DB information present in the recovery point.";
             public const string AlternateWorkloadRestore = "Specifies that the backed up DB should be restored as a new DB in another instance or as a new DB in the same instance";
+<<<<<<< HEAD
+=======
+            public const string TargetContainer = "Specifies the target machine on which DB Files need to be restored.";
+            public const string RestoeAsFiles = "Specifies to restore Database as files in a machine.";
+            public const string FilePath = "Specifies the filepath for restore operation.";
+            public const string FromFull = "Specifies the Full RecoveryPoint to which Log backups will be applied.";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

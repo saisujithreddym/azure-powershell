@@ -115,7 +115,11 @@ namespace Microsoft.Azure.Commands.Advisor.Cmdlets.Utilities
         /// Filter recommendations by given resourceId.
         /// </summary>
         /// <param name="recListTobeFiltered">List to be filtered</param>
+<<<<<<< HEAD
         /// <param name="resourceId">ResoruceId of the recommendation.</param>
+=======
+        /// <param name="resourceId">ResourceId of the recommendation.</param>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// <returns>Recommendation of PsAzureAdvisorResourceRecommendationBase type</returns>
         public static List<PsAzureAdvisorResourceRecommendationBase> RecommendationFilterByResourceId(IEnumerable<PsAzureAdvisorResourceRecommendationBase> recListTobeFiltered, string resourceId)
         {

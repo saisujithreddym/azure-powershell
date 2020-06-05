@@ -17,7 +17,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
+<<<<<<< HEAD
 using Microsoft.Azure.Management.Internal.Resources.Models;
+=======
+using Microsoft.Azure.Management.Internal.Resources.Utilities;
+using Microsoft.Azure.Management.ResourceManager.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.WindowsAzure.Commands.Utilities.Common;
 
 namespace Microsoft.Azure.Commands.Tags.Model
@@ -44,6 +49,26 @@ namespace Microsoft.Azure.Commands.Tags.Model
             };
         }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Convert a SDK TagsResource object to PS PSTagResource
+        /// </summary>
+        /// <param name="tagsResource">SDK TagsResource extension method</param>
+        /// <returns>PS object PSTagResource</returns>
+        public static PSTagResource ToPSTagResource(this TagsResource tagsResource)
+        {
+            return new PSTagResource
+            {
+                Id = tagsResource?.Id,
+                Name = tagsResource?.Name,
+                Type = tagsResource?.Type,
+                Properties = new PSTagsObject(tagsResource?.Properties?.TagsProperty),
+                PropertiesTable = ResourcesExtensions.ConstructTagsTable(TagsConversionHelper.CreateTagHashtable(tagsResource?.Properties?.TagsProperty))
+            };
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private static TagValue EmptyTagValue
         {
             get
@@ -51,7 +76,10 @@ namespace Microsoft.Azure.Commands.Tags.Model
                 return new TagValue()
                 {
                     TagValueProperty = string.Empty,
+<<<<<<< HEAD
                     Id = string.Empty,
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     Count = new TagCount()
                     {
                         Type = string.Empty

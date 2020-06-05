@@ -41,6 +41,16 @@ Set-AzPolicyDefinition -Id <String> [-DisplayName <String>] [-Description <Strin
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### InputObjectParameterSet
+```
+Set-AzPolicyDefinition [-DisplayName <String>] [-Description <String>] [-Policy <String>] [-Metadata <String>]
+ [-Parameter <String>] [-Mode <String>] -InputObject <PsPolicyDefinition> [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## DESCRIPTION
 The **Set-AzPolicyDefinition** cmdlet modifies a policy definition.
 
@@ -158,6 +168,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -InputObject
+The policy definition object to update that was output from another cmdlet.
+
+```yaml
+Type: Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation.Policy.PsPolicyDefinition
+Parameter Sets: InputObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ManagementGroupName
 The name of the management group of the policy definition to update.
 

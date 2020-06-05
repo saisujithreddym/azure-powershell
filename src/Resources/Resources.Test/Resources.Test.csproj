@@ -31,7 +31,15 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Update="Microsoft.Azure.Management.ResourceManager" Version="3.0.0-preview" />
   </ItemGroup>
 
+=======
+    <PackageReference Update="Microsoft.Azure.Management.ResourceManager" Version="3.7.1-preview" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.9.0" />
+  </ItemGroup>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 </Project>

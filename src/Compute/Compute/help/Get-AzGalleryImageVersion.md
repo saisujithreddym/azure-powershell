@@ -32,7 +32,11 @@ Get or list gallery image versions.
 
 ### Example 1
 ```powershell
+<<<<<<< HEAD
 PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -ImageDefinitionName image1 -GalleryImageVersionName 1.0.0
+=======
+PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1 -GalleryImageVersionName 1.0.0
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ResourceGroupName        : rg1
 PublishingProfile        :
@@ -70,7 +74,11 @@ Get the gallery image version.
 
 ### Example 2
 ```powershell
+<<<<<<< HEAD
 PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -ImageDefinitionName image1 -GalleryImageVersionName 1*
+=======
+PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1 -GalleryImageVersionName 1*
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ResourceGroupName        : rg1
 PublishingProfile        :
@@ -139,7 +147,11 @@ Get the gallery image versions that starts with "1".
 
 ### Example 3
 ```powershell
+<<<<<<< HEAD
 PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -ImageDefinitionName image1
+=======
+PS C:\> Get-AzGalleryImageVersion -ResourceGroupName rg1 -GalleryName gallery1 -GalleryImageDefinitionName image1
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ResourceGroupName        : rg1
 PublishingProfile        :

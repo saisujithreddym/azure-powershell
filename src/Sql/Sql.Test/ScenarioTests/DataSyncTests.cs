@@ -25,6 +25,14 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
         public DataSyncTests(ITestOutputHelper output) : base(output)
         {
             XunitTracingInterceptor.AddToContext(new XunitTracingInterceptor(output));
+<<<<<<< HEAD
+=======
+
+            base.resourceTypesToIgnoreApiVersion = new string[] {
+                "Microsoft.Sql/servers",
+                "Microsoft.Sql/managedInstances/databases"
+            };
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         [Fact]
@@ -130,6 +138,10 @@ namespace Microsoft.Azure.Commands.Sql.Test.ScenarioTests
         public void TestSyncMemberRemove()
         {
             RunPowerShellTest("Test-RemoveSyncMember");
+<<<<<<< HEAD
         }                       
+=======
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

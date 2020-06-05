@@ -129,5 +129,13 @@ namespace Microsoft.Azure.Commands.Sql.ManagedInstance.Model
         /// Gets or sets the instance pool name
         /// </summary>
         public string InstancePoolName { get; set; }
+<<<<<<< HEAD
+=======
+
+        /// <summary>
+        /// Gets or sets the managed instance minimal tls version
+        /// </summary>
+        public string MinimalTlsVersion { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

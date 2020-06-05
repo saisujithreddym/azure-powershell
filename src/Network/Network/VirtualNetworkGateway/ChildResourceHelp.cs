@@ -52,7 +52,11 @@ namespace Microsoft.Azure.Commands.Network
                 resourceName);
         }
 
+<<<<<<< HEAD
         private static string NormalizeVirtualNetworkGatewayChildResourceIds(string id, string resourceGroupName, string VirtualNetworkGatewayName)
+=======
+        public static string NormalizeVirtualNetworkGatewayChildResourceIds(string id, string resourceGroupName, string VirtualNetworkGatewayName)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             id = NormalizeId(id, "resourceGroups", resourceGroupName);
             id = NormalizeId(id, "virtualNetworkGateways", VirtualNetworkGatewayName);

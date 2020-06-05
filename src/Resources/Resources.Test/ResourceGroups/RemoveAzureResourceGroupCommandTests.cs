@@ -17,6 +17,10 @@ using Microsoft.Azure.ServiceManagement.Common.Models;
 using Microsoft.WindowsAzure.Commands.ScenarioTest;
 using Microsoft.WindowsAzure.Commands.Test.Utilities.Common;
 using Moq;
+<<<<<<< HEAD
+=======
+using System;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Management.Automation;
 using Xunit;
 using Xunit.Abstractions;
@@ -33,6 +37,10 @@ namespace Microsoft.Azure.Commands.Resources.Test
 
         private string resourceGroupName = "myResourceGroup";
         private string resourceGroupId = "/subscriptions/subId/resourceGroups/myResourceGroup";
+<<<<<<< HEAD
+=======
+        private string resourceId = "/subscriptions/subId/resourceGroups/myResourceGroup/providers/myResourceProvider/resourceType/myResource";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         public RemoveAzureResourceGroupCommandTests(ITestOutputHelper output)
         {
@@ -75,5 +83,30 @@ namespace Microsoft.Azure.Commands.Resources.Test
 
             resourcesClientMock.Verify(f => f.DeleteResourceGroup(resourceGroupName), Times.Once());
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void RemovesResourceGroupFromResourceId()
+        {
+            commandRuntimeMock.Setup(f => f.ShouldProcess(It.IsAny<string>(), It.IsAny<string>())).Returns(true);
+            resourcesClientMock.Setup(f => f.DeleteResourceGroup(resourceGroupName));
+
+            cmdlet.Id = resourceId;
+            cmdlet.Force = true;
+
+            try
+            {
+                cmdlet.ExecuteCmdlet();
+            }
+            catch (System.ArgumentException)
+            {
+                Console.WriteLine("The id should be resourceGroup id");
+            }
+
+            resourcesClientMock.Verify(f => f.DeleteResourceGroup(resourceGroupName), Times.Never());
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

@@ -17,10 +17,19 @@ using Microsoft.Azure.Storage.File;
 using System.Globalization;
 using System.Management.Automation;
 using System.Security.Permissions;
+<<<<<<< HEAD
 
 namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
 {
     [Cmdlet("Set", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageShareQuota"), OutputType(typeof(FileShareProperties))]
+=======
+using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+using Microsoft.WindowsAzure.Commands.Common.Storage.ResourceModel;
+
+namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
+{
+    [Cmdlet("Set", Azure.Commands.ResourceManager.Common.AzureRMConstants.AzurePrefix + "StorageShareQuota", DefaultParameterSetName = Constants.ShareNameParameterSetName), OutputType(typeof(AzureStorageFileShare))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class SetAzureStorageShareQuota : AzureStorageFileCmdletBase
     {
         [Alias("N", "Name")]
@@ -33,12 +42,23 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
         public string ShareName { get; set; }
 
         [Parameter(
+<<<<<<< HEAD
         Position = 0,
         Mandatory = true,
         ValueFromPipeline = true,
         ParameterSetName = Constants.ShareParameterSetName,
         HelpMessage = "CloudFileShare object indicated the share whose quota to set.")]
         [ValidateNotNull]
+=======
+            Position = 0,
+            Mandatory = true,
+            ValueFromPipeline = true,
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = Constants.ShareParameterSetName,
+            HelpMessage = "CloudFileShare object indicated the share whose quota to set.")]
+        [ValidateNotNull]
+        [Alias("CloudFileShare")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFileShare Share { get; set; }
 
         [Alias("QuotaGiB")]
@@ -76,7 +96,11 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
                 this.Channel.SetShareProperties(fileShare, null, this.RequestOptions, this.OperationContext);
             }
 
+<<<<<<< HEAD
             WriteObject(fileShare.Properties);
+=======
+            WriteObject( new AzureStorageFileShare(fileShare, this.Channel.StorageContext));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

@@ -42,6 +42,12 @@ namespace Microsoft.Azure.Commands.Network
         internal const string ByVpnSiteName = "ByVpnSiteName";
         internal const string ByVpnSiteIpAddress = "ByVpnSiteIpAddress";
         internal const string ByVpnSiteLinkObject = "ByVpnSiteLinkObject";
+<<<<<<< HEAD
+=======
+
+        internal const string ByVpnSiteLinkIpAddress = "ByVpnSiteLinkIpAddress";
+        internal const string ByVpnSiteLinkFqdn = "ByVpnSiteLinkFqdn";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         
         internal const string ByVpnConnectionObject = "ByVpnConnectionObject";
         internal const string ByVpnConnectionResourceId = "ByVpnConnectionResourceId";

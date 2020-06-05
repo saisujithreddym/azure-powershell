@@ -13,24 +13,39 @@ Adds an Access Restiction rule to an Azure Web App.
 
 ### IpAddressParameterSet (Default)
 ```
+<<<<<<< HEAD
 Add-AzWebAppAccessRestrictionRule [-ResourceGroupName] <String> [-WebAppName] <String> -Name <String>
  [-Description <String>] -Priority <UInt32> -Action <String> [-SlotName <String>] [-TargetScmSite]
+=======
+Add-AzWebAppAccessRestrictionRule [-ResourceGroupName] <String> [-WebAppName] <String> [-Name <String>]
+ [-Description <String>] -Priority <UInt32> [-Action <String>] [-SlotName <String>] [-TargetScmSite]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  -IpAddress <String> [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ### SubnetNameParameterSet
 ```
+<<<<<<< HEAD
 Add-AzWebAppAccessRestrictionRule [-ResourceGroupName] <String> [-WebAppName] <String> -Name <String>
  [-Description <String>] -Priority <UInt32> -Action <String> [-SlotName <String>] [-TargetScmSite]
+=======
+Add-AzWebAppAccessRestrictionRule [-ResourceGroupName] <String> [-WebAppName] <String> [-Name <String>]
+ [-Description <String>] -Priority <UInt32> [-Action <String>] [-SlotName <String>] [-TargetScmSite]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  -SubnetName <String> -VirtualNetworkName <String> [-IgnoreMissingServiceEndpoint] [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SubnetIdParameterSet
 ```
+<<<<<<< HEAD
 Add-AzWebAppAccessRestrictionRule [-ResourceGroupName] <String> [-WebAppName] <String> -Name <String>
  [-Description <String>] -Priority <UInt32> -Action <String> [-SlotName <String>] [-TargetScmSite]
+=======
+Add-AzWebAppAccessRestrictionRule [-ResourceGroupName] <String> [-WebAppName] <String> [-Name <String>]
+ [-Description <String>] -Priority <UInt32> [-Action <String>] [-SlotName <String>] [-TargetScmSite]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  -SubnetId <String> [-IgnoreMissingServiceEndpoint] [-PassThru] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
@@ -67,9 +82,15 @@ Parameter Sets: (All)
 Aliases:
 Accepted values: Allow, Deny
 
+<<<<<<< HEAD
 Required: True
 Position: Named
 Default value: None
+=======
+Required: False
+Position: Named
+Default value: Allow
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -142,7 +163,11 @@ Type: System.String
 Parameter Sets: (All)
 Aliases:
 
+<<<<<<< HEAD
 Required: True
+=======
+Required: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Position: Named
 Default value: None
 Accept pipeline input: False

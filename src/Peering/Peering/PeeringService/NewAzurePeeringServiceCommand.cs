@@ -29,7 +29,13 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
     /// <summary>
     /// The new azure peering service command.
     /// </summary>
+<<<<<<< HEAD
     [Cmdlet(VerbsCommon.New, "AzPeeringService", DefaultParameterSetName = Constants.ParameterSetNameDefault, SupportsShouldProcess = true)]
+=======
+    [Cmdlet(VerbsCommon.New, Constants.AzPeeringService, 
+        DefaultParameterSetName = Constants.ParameterSetNameDefault, 
+        SupportsShouldProcess = true)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSPeeringService))]
     public class NewAzurePeeringServiceCommand : PeeringBaseCmdlet
     {

@@ -115,7 +115,11 @@ Required: False
 Position: 1
 Default value: None
 Accept pipeline input: False
+<<<<<<< HEAD
 Accept wildcard characters: True
+=======
+Accept wildcard characters: False
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### -ResourceId

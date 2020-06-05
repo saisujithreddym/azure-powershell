@@ -175,6 +175,16 @@ namespace Microsoft.Azure.Commands.Profile
             HelpMessage = "The resource identifier of the Azure Attestation service that is the recipient of the requested token.")]
         public string AzureAttestationServiceEndpointResourceId { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true,
+            HelpMessage = "Dns suffix of Azure Synapse Analytics.")]
+        public string AzureSynapseAnalyticsEndpointSuffix { get; set; }
+
+        [Parameter(Mandatory = false, ValueFromPipelineByPropertyName = true,
+            HelpMessage = "The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.")]
+        public string AzureSynapseAnalyticsEndpointResourceId { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         protected override void BeginProcessing()
         {
@@ -329,6 +339,13 @@ namespace Microsoft.Azure.Commands.Profile
                                     nameof(AzureAttestationServiceEndpointSuffix));
                                 SetEndpointIfBound(newEnvironment, AzureEnvironment.ExtendedEndpoint.AzureAttestationServiceEndpointResourceId,
                                     nameof(AzureAttestationServiceEndpointResourceId));
+<<<<<<< HEAD
+=======
+                                SetEndpointIfBound(newEnvironment, AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointSuffix,
+                                    nameof(AzureSynapseAnalyticsEndpointSuffix));
+                                SetEndpointIfBound(newEnvironment, AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointResourceId,
+                                    nameof(AzureSynapseAnalyticsEndpointResourceId));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                                 WriteObject(new PSAzureEnvironment(profileClient.AddOrSetEnvironment(newEnvironment)));
                             }
                         });

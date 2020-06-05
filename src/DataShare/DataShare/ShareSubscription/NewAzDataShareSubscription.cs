@@ -23,10 +23,18 @@ namespace Microsoft.Azure.Commands.DataShare.ShareSubscription
     using Microsoft.Azure.PowerShell.Cmdlets.DataShare.Extensions;
     using Microsoft.Azure.PowerShell.Cmdlets.DataShare.Models;
     using Microsoft.Azure.PowerShell.Cmdlets.DataShare.Properties;
+<<<<<<< HEAD
+=======
+    using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     /// <summary>
     /// Defines the New-DataShareSubscription cmdlet.
     /// </summary>
+<<<<<<< HEAD
+=======
+    [GenericBreakingChange("Parameter SourceShareLocation is mandatory to support cross region share subscription creation.")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "DataShareSubscription", DefaultParameterSetName = ParameterSetNames.FieldsParameterSet, SupportsShouldProcess = true), OutputType(typeof(PSDataShare))]
     public class NewAzDataShareSubscription : AzureDataShareCmdletBase
     {
@@ -68,6 +76,18 @@ namespace Microsoft.Azure.Commands.DataShare.ShareSubscription
         [ValidateNotNullOrEmpty]
         public string InvitationId { get; set; }
 
+<<<<<<< HEAD
+=======
+        /// <summary>
+        /// Location of the source share.
+        /// </summary>
+        [Parameter(Mandatory = true,
+            ParameterSetName = ParameterSetNames.FieldsParameterSet,
+            HelpMessage = "Azure data share location")]
+        [ValidateNotNullOrEmpty]
+        public string SourceShareLocation { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         private const string ResourceType = "ShareSubscription";
 
         public override void ExecuteCmdlet()
@@ -80,7 +100,12 @@ namespace Microsoft.Azure.Commands.DataShare.ShareSubscription
                     this.Name,
                     new ShareSubscription()
                     {
+<<<<<<< HEAD
                         InvitationId = this.InvitationId
+=======
+                        InvitationId = this.InvitationId,
+                        SourceShareLocation = this.SourceShareLocation
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     });
 
                 this.WriteObject(shareSubscription.ToPsObject());

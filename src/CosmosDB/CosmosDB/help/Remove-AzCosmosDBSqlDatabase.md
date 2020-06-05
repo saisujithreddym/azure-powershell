@@ -92,7 +92,11 @@ Aliases:
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: False
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 

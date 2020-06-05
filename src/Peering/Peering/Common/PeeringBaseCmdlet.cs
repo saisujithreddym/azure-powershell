@@ -29,6 +29,10 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 
     using Newtonsoft.Json;
+<<<<<<< HEAD
+=======
+    using DirectPeeringType = Models.DirectPeeringType;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     /// <summary>
     ///     The InputObject base cmdlet
@@ -42,11 +46,27 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
         /// </summary>
         public IPeeringManagementClient PeeringManagementClient
         {
+<<<<<<< HEAD
             get =>
                 this.peeringClient ?? (this.peeringClient =
                                            AzureSession.Instance.ClientFactory.CreateArmClient<PeeringManagementClient>(
                                                this.DefaultProfile.DefaultContext,
                                                AzureEnvironment.Endpoint.ResourceManager));
+=======
+            get
+            {
+                if(this.peeringClient == null)
+                {
+                    this.peeringClient =
+                                           AzureSession.Instance.ClientFactory.CreateArmClient<PeeringManagementClient>(
+                                               this.DefaultProfile.DefaultContext,
+                                               AzureEnvironment.Endpoint.ResourceManager);
+                }
+                // for testing.
+                // this.peeringClient.BaseUri = new Uri("https://secrets.wanrr-test.radar.core.azure-test.net");
+                return this.peeringClient;
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             set => this.peeringClient = value;
         }
@@ -57,6 +77,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
         public IPeeringsOperations PeeringClient => this.PeeringManagementClient.Peerings;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// The peer asn operations client
+        /// </summary>
+        public IPeerAsnsOperations PeerAsnClient => this.PeeringManagementClient.PeerAsns;
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         ///     The PSPeering location client.
         /// </summary>
         public IPeeringLocationsOperations PeeringLocationClient => this.PeeringManagementClient.PeeringLocations;
@@ -77,6 +105,24 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
         public IPeeringServiceLocationsOperations PeeringServiceLocationsClient => this.PeeringManagementClient.PeeringServiceLocations;
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// The peering service country client.
+        /// </summary>
+        public IPeeringServiceCountriesOperations PeeringServiceCountryClient => this.PeeringManagementClient.PeeringServiceCountries;
+
+        /// <summary>
+        /// The peering registered asn client.
+        /// </summary>
+        public IRegisteredAsnsOperations RegisteredAsnClient => this.PeeringManagementClient.RegisteredAsns;
+
+        /// <summary>
+        /// The peering registered asn client
+        /// </summary>
+        public IRegisteredPrefixesOperations RegisteredPrefixesClient => this.PeeringManagementClient.RegisteredPrefixes;
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// The peering service prefix client
         /// </summary>
         public IPrefixesOperations PeeringServicePrefixesClient => this.PeeringManagementClient.Prefixes;
@@ -587,5 +633,25 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
             }
             return error;
         }
+<<<<<<< HEAD
+=======
+
+        public string ConvertToDirectPeeringType(string peeringType)
+        {
+            if(peeringType == Constants.Ix)
+            {
+                return DirectPeeringType.Ix;
+            }
+            if (peeringType == Constants.IxRs)
+            {
+                return DirectPeeringType.IxRs;
+            }
+            if (peeringType == Constants.CDN8069)
+            {
+                return DirectPeeringType.Cdn;
+            }
+            return DirectPeeringType.Edge;
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

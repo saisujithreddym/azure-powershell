@@ -14,6 +14,7 @@ Get one or more blueprint definitions.
 
 ### SubscriptionScope (Default)
 ```
+<<<<<<< HEAD
 Get-AzBlueprint [[-SubscriptionId] <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -56,6 +57,50 @@ Get-AzBlueprint [-ManagementGroupId] <String> [-Name] <String> [-Version] <Strin
 ```
 Get-AzBlueprint [-ManagementGroupId] <String> [-Name] <String> [-LatestPublished]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+=======
+Get-AzBlueprint [-SubscriptionId <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByManagementGroupNameAndVersion
+```
+Get-AzBlueprint -Name <String> -ManagementGroupId <String> [-Version] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### BySubscriptionAndName
+```
+Get-AzBlueprint [-Name <String>] [-SubscriptionId <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### ByManagementGroupAndName
+```
+Get-AzBlueprint -Name <String> -ManagementGroupId <String> [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### ByManagementGroupNameAndLatestPublished
+```
+Get-AzBlueprint -Name <String> -ManagementGroupId <String> [-LatestPublished]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### BySubscriptionNameAndLatestPublished
+```
+Get-AzBlueprint -Name <String> [-SubscriptionId <String>] [-LatestPublished]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### BySubscriptionNameAndVersion
+```
+Get-AzBlueprint -Name <String> [-SubscriptionId <String>] [-Version] <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ManagementGroupScope
+```
+Get-AzBlueprint -ManagementGroupId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## DESCRIPTION
@@ -159,7 +204,11 @@ Defaults to false.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
+<<<<<<< HEAD
 Parameter Sets: BySubscriptionNameAndLatestPublished, ByManagementGroupNameAndLatestPublished
+=======
+Parameter Sets: ByManagementGroupNameAndLatestPublished, BySubscriptionNameAndLatestPublished
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -174,11 +223,19 @@ Management Group Id where the blueprint definition is saved.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: ManagementGroupScope, ByManagementGroupAndName, ByManagementGroupNameAndVersion, ByManagementGroupNameAndLatestPublished
 Aliases:
 
 Required: True
 Position: 0
+=======
+Parameter Sets: ByManagementGroupNameAndVersion, ByManagementGroupAndName, ByManagementGroupNameAndLatestPublished, ManagementGroupScope
+Aliases:
+
+Required: True
+Position: Named
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -189,11 +246,31 @@ Blueprint definition name.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: BySubscriptionAndName, BySubscriptionNameAndVersion, BySubscriptionNameAndLatestPublished, ByManagementGroupAndName, ByManagementGroupNameAndVersion, ByManagementGroupNameAndLatestPublished
 Aliases:
 
 Required: True
 Position: 0
+=======
+Parameter Sets: ByManagementGroupNameAndVersion, ByManagementGroupAndName, ByManagementGroupNameAndLatestPublished, BySubscriptionNameAndLatestPublished, BySubscriptionNameAndVersion
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: BySubscriptionAndName
+Aliases:
+
+Required: False
+Position: Named
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -204,11 +281,19 @@ Subscription Id where the blueprint definition is saved.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: SubscriptionScope, BySubscriptionAndName, BySubscriptionNameAndVersion, BySubscriptionNameAndLatestPublished
 Aliases:
 
 Required: False
 Position: 0
+=======
+Parameter Sets: SubscriptionScope, BySubscriptionAndName, BySubscriptionNameAndLatestPublished, BySubscriptionNameAndVersion
+Aliases:
+
+Required: False
+Position: Named
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -219,7 +304,11 @@ Published blueprint definition version.
 
 ```yaml
 Type: System.String
+<<<<<<< HEAD
 Parameter Sets: BySubscriptionNameAndVersion, ByManagementGroupNameAndVersion
+=======
+Parameter Sets: ByManagementGroupNameAndVersion, BySubscriptionNameAndVersion
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
@@ -230,7 +319,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

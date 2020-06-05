@@ -31,12 +31,26 @@ namespace Microsoft.Azure.Commands.Network
         [ValidateNotNullOrEmpty]
         public string Name { get; set; }
 
+<<<<<<< HEAD
         [Parameter(
             Mandatory = true,
+=======
+        [Parameter(Mandatory = true,
+            ParameterSetName = CortexParameterSetNames.ByVpnSiteLinkIpAddress,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = "The Next Hop IpAddress.")]
         [ValidateNotNullOrEmpty]
         public string IPAddress { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(Mandatory = true,
+            ParameterSetName = CortexParameterSetNames.ByVpnSiteLinkFqdn,
+            HelpMessage = "The Next Hop Fqdn.")]
+        [ValidateNotNullOrEmpty]
+        public string Fqdn { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(
             Mandatory = false,
             HelpMessage = "Link Provider Name.")]
@@ -64,9 +78,36 @@ namespace Microsoft.Azure.Commands.Network
             var vpnSiteLink = new PSVpnSiteLink
             {
                 Name = this.Name,
+<<<<<<< HEAD
                 IpAddress = this.IPAddress
             };
 
+=======
+            };
+
+            if (ParameterSetName.Contains(CortexParameterSetNames.ByVpnSiteLinkIpAddress))
+            {
+                System.Net.IPAddress ipAddress;
+                if (string.IsNullOrWhiteSpace(this.IPAddress) || 
+                    !System.Net.IPAddress.TryParse(this.IPAddress, out ipAddress))
+                {
+                    throw new PSArgumentException(Properties.Resources.InvalidIPAddress);
+                }
+
+                vpnSiteLink.IpAddress = this.IPAddress;
+                vpnSiteLink.Fqdn = string.Empty;
+            }
+            else if (ParameterSetName.Contains(CortexParameterSetNames.ByVpnSiteLinkFqdn))
+            {
+                if (string.IsNullOrWhiteSpace(this.Fqdn))
+                {
+                    throw new PSArgumentException(Properties.Resources.InvalidFqdn);
+                }
+                vpnSiteLink.Fqdn = this.Fqdn;
+                vpnSiteLink.IpAddress = string.Empty;
+            }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             if (BGPAsn > 0 || !string.IsNullOrWhiteSpace(BGPPeeringAddress))
             {
                 vpnSiteLink.BgpProperties = ValidateAndCreatePSVpnLinkBgpSettings(BGPAsn, BGPPeeringAddress);

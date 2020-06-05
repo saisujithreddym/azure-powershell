@@ -16,6 +16,10 @@ using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Components;
 using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Entities.Resources;
 using Microsoft.Azure.Commands.ResourceManager.Cmdlets.Extensions;
 using Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkExtensions;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Management.ResourceManager.Models;
 using Newtonsoft.Json.Linq;
 using System;
@@ -63,6 +67,14 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels
 
         public IDictionary<string, string> Tags { get; set; }
 
+<<<<<<< HEAD
+=======
+        public string TagsTable
+        {
+            get { return ResourcesExtensions.ConstructTagsTable(TagsConversionHelper.CreateTagHashtable(Tags)); }
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string SubscriptionId { get; set; }
 
         public DateTime? CreatedTime { get; set; }
@@ -93,6 +105,33 @@ namespace Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels
             this.ResourceGroupName = resourceIdentifier.ResourceGroupName;
         }
 
+<<<<<<< HEAD
+=======
+        public PSResource(GenericResourceExpanded resource)
+        {
+            this.ResourceId = resource.Id;
+            this.Id = resource.Id;
+            this.Identity = resource.Identity;
+            this.Kind = resource.Kind;
+            this.Location = resource.Location;
+            this.ManagedBy = resource.ManagedBy;
+            this.ResourceName = resource.Name;
+            this.Name = resource.Name;
+            this.Plan = resource.Plan;
+            this.Properties = ((JToken)resource.Properties).ToPsObject();
+            this.ResourceType = resource.Type;
+            this.Sku = resource.Sku;
+            this.Tags = resource.Tags;
+            this.Type = resource.Type;
+            this.CreatedTime = resource.CreatedTime;
+            this.ChangedTime = resource.ChangedTime;
+
+            var resourceIdentifier = new ResourceIdentifier(this.Id);
+            this.ParentResource = resourceIdentifier.ParentResource;
+            this.ResourceGroupName = resourceIdentifier.ResourceGroupName;
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public PSResource(Resource<JToken> resource)
         {
             this.Name = resource.Name;

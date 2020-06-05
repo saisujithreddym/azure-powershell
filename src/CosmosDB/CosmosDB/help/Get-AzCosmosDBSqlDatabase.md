@@ -14,6 +14,7 @@ Gets the CosmosDB Sql Database.
 
 ### ByNameParameterSet (Default)
 ```
+<<<<<<< HEAD
 Get-AzCosmosDBSqlDatabase -ResourceGroupName <String> -AccountName <String> [-Name <String>] [-Detailed]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
@@ -21,6 +22,15 @@ Get-AzCosmosDBSqlDatabase -ResourceGroupName <String> -AccountName <String> [-Na
 ### ByObjectParameterSet
 ```
 Get-AzCosmosDBSqlDatabase [-Name <String>] -InputObject <PSDatabaseAccount> [-Detailed]
+=======
+Get-AzCosmosDBSqlDatabase -ResourceGroupName <String> -AccountName <String> [-Name <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ByParentObjectParameterSet
+```
+Get-AzCosmosDBSqlDatabase [-Name <String>] -ParentObject <PSDatabaseAccountGetResults>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -35,12 +45,16 @@ PS C:\> Get-AzCosmosDBSqlDatabase -AccountName {accountName} -ResourceGroupName 
 
 Name                    : {databaseName}
 Id                      : {databaseId}
+<<<<<<< HEAD
 SqlDatabaseGetResultsId :
 _rid                    :
 _ts                     :
 _etag                   :
 _colls                  :
 _users                  :
+=======
+Resource                 : Microsoft.Azure.Commands.CosmosDB.Models.PSSqlDatabaseGetPropertiesResource
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ## PARAMETERS
@@ -75,11 +89,19 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -Detailed
 If provided then, the cmdlet returns the container with the throughput value.
 
 ```yaml
 Type: SwitchParameter
+=======
+### -Name
+Database name.
+
+```yaml
+Type: String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -90,17 +112,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
 ### -InputObject
 CosmosDB Account object
 
 ```yaml
 Type: PSDatabaseAccount
 Parameter Sets: ByObjectParameterSet
+=======
+### -ParentObject
+CosmosDB Account object
+
+```yaml
+Type: PSDatabaseAccountGetResults
+Parameter Sets: ByParentObjectParameterSet
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -117,6 +149,9 @@ Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 

@@ -88,6 +88,17 @@ namespace Commands.Network.Test.ScenarioTests
         {
             TestRunner.RunTestScript("Test-AzureFirewallCRUDwithManagementIpConfig");
         }
+<<<<<<< HEAD
         
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        [Trait(Category.Owner, NrpTeamAlias.azurefirewall)]
+        public void TestAzureFirewallWithDNSProxy()
+        {
+            TestRunner.RunTestScript("Test-AzureFirewallWithDNSProxy");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

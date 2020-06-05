@@ -170,6 +170,10 @@ namespace Microsoft.Azure.Commands.ApplicationInsights
                 apiKeys.ForEach(e => output.Add(new PSApiKeyTableView(e)));
                 WriteObject(output, true);
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         protected void WriteComponentApiKey(ApplicationInsightsComponentAPIKey apiKey)
@@ -198,6 +202,14 @@ namespace Microsoft.Azure.Commands.ApplicationInsights
             }
         }
 
+<<<<<<< HEAD
+=======
+        protected void WriteComponentLinkedStorageAccount(ComponentLinkedStorageAccounts linkedStorageAccount)
+        {
+            WriteObject(new PSComponentLinkedStorageAccounts(linkedStorageAccount.Id, linkedStorageAccount.Name, linkedStorageAccount.Type, linkedStorageAccount.LinkedStorageAccount));
+        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         protected void WriteDailyCapStatus(ApplicationInsightsComponentQuotaStatus quotaStatus)
         {
             if (quotaStatus != null)

@@ -14,8 +14,12 @@
 
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
 using Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Model;
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.Sql.Services;
 using Microsoft.Azure.Management.Sql.LegacySdk.Models;
+=======
+using Microsoft.Azure.Management.Sql.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory;
 using System;
 using System.Collections.Generic;
@@ -113,10 +117,14 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
         /// <returns>The upserted Azure SQL Server Active Directory administrator</returns>
         internal AzureSqlServerActiveDirectoryAdministratorModel UpsertServerActiveDirectoryAdministrator(string resourceGroup, string serverName, AzureSqlServerActiveDirectoryAdministratorModel model)
         {
+<<<<<<< HEAD
             var resp = Communicator.CreateOrUpdate(resourceGroup, serverName, new ServerAdministratorCreateOrUpdateParameters()
             {
                 Properties = GetActiveDirectoryInformation(model.DisplayName, model.ObjectId)
             });
+=======
+            var resp = Communicator.CreateOrUpdate(resourceGroup, serverName, GetActiveDirectoryInformation(model.DisplayName, model.ObjectId, model.IsAzureADOnlyAuthentication));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             return CreateServerActiveDirectoryAdministratorModelFromResponse(resourceGroup, serverName, resp);
         }
@@ -132,12 +140,29 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
         }
 
         /// <summary>
+<<<<<<< HEAD
+=======
+        /// Disable Azure Active Directory only authentication on a Azure SQL Server
+        /// </summary>
+        /// <param name="resourceGroup">The name of the resource group</param>
+        /// <param name="serverName">The name of the Azure Sql ServerActiveDirectoryAdministrator Server</param>
+        /// <returns>The upserted Azure SQL Server Active Directory administrator</returns>
+        internal AzureSqlServerActiveDirectoryAdministratorModel DisableAzureADOnlyAuthenticaion(string resourceGroup, string serverName)
+        {
+            var resp = Communicator.Disable(resourceGroup, serverName);
+
+            return CreateServerActiveDirectoryAdministratorModelFromResponse(resourceGroup, serverName, resp);
+        }
+
+        /// <summary>
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         /// Converts the response from the service to a powershell database object
         /// </summary>
         /// <param name="resourceGroupName">The resource group the server is in</param>
         /// <param name="serverName">The name of the Azure Sql ServerActiveDirectoryAdministrator Server</param>
         /// <param name="admin">The service response</param>
         /// <returns>The converted model</returns>
+<<<<<<< HEAD
         public static AzureSqlServerActiveDirectoryAdministratorModel CreateServerActiveDirectoryAdministratorModelFromResponse(string resourceGroup, string serverName, Management.Sql.LegacySdk.Models.ServerAdministrator admin)
         {
             AzureSqlServerActiveDirectoryAdministratorModel model = new AzureSqlServerActiveDirectoryAdministratorModel();
@@ -148,6 +173,23 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
             model.ObjectId = admin.Properties.Sid;
 
             return model;
+=======
+        public static AzureSqlServerActiveDirectoryAdministratorModel CreateServerActiveDirectoryAdministratorModelFromResponse(string resourceGroup, string serverName, Management.Sql.Models.ServerAzureADAdministrator admin)
+        {
+            if (admin != null)
+            {
+                AzureSqlServerActiveDirectoryAdministratorModel model = new AzureSqlServerActiveDirectoryAdministratorModel();
+
+                model.ResourceGroupName = resourceGroup;
+                model.ServerName = serverName;
+                model.DisplayName = admin.Login;
+                model.ObjectId = admin.Sid;
+                model.IsAzureADOnlyAuthentication = admin.AzureADOnlyAuthentication;
+                return model;
+            }
+
+            return null;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>
@@ -155,8 +197,14 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
         /// </summary>
         /// <param name="displayName">Azure Active Directory user or group display name</param>
         /// <param name="objectId">Azure Active Directory user or group object id</param>
+<<<<<<< HEAD
         /// <returns></returns>
         protected ServerAdministratorCreateOrUpdateProperties GetActiveDirectoryInformation(string displayName, Guid objectId)
+=======
+        /// <param name="isAzureADOnlyAuthentication">Allow only Azure Active Directory authentication</param>
+        /// <returns></returns>
+        protected ServerAzureADAdministrator GetActiveDirectoryInformation(string displayName, Guid objectId, bool? isAzureADOnlyAuthentication)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             // Gets the default Tenant id for the subscriptions
             Guid tenantId = GetTenantId();
@@ -164,7 +212,11 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
             // Check for a Azure Active Directory group. Recommended to always use group.
             IEnumerable<PSADGroup> groupList = null;
 
+<<<<<<< HEAD
             var filter = new ADObjectFilterOptions()
+=======
+                        var filter = new ADObjectFilterOptions()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             {
                 Id = (objectId != null && objectId != Guid.Empty) ? objectId.ToString() : null,
                 SearchString = displayName,
@@ -190,11 +242,20 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
                     throw new ArgumentException(string.Format(Microsoft.Azure.Commands.Sql.Properties.Resources.InvalidADGroupNotSecurity, displayName));
                 }
 
+<<<<<<< HEAD
                 return new ServerAdministratorCreateOrUpdateProperties()
+=======
+
+                return new ServerAzureADAdministrator()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {
                     Login = group.DisplayName,
                     Sid = group.Id,
                     TenantId = tenantId,
+<<<<<<< HEAD
+=======
+                    AzureADOnlyAuthentication = isAzureADOnlyAuthentication,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 };
             }
 
@@ -238,11 +299,19 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
                 // Only one user was found. Get the user display name and object id
                 var obj = userList.First();
 
+<<<<<<< HEAD
                 return new ServerAdministratorCreateOrUpdateProperties()
+=======
+                return new ServerAzureADAdministrator()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {
                     Login = displayName,
                     Sid = obj.Id,
                     TenantId = tenantId,
+<<<<<<< HEAD
+=======
+                    AzureADOnlyAuthentication = isAzureADOnlyAuthentication,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 };
             }
         }

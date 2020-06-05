@@ -95,6 +95,15 @@ namespace Microsoft.Azure.Commands.Network
         ValueFromPipelineByPropertyName = true,
         HelpMessage = "RoutingWeight.")]
         public int RoutingWeight { get; set; }
+<<<<<<< HEAD
+=======
+        
+        [Parameter(
+        Mandatory = false,
+        ValueFromPipelineByPropertyName = true,
+        HelpMessage = "Dead Peer Detection Timeout of the connection in seconds.")]
+        public int DpdTimeoutInSeconds { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         [Parameter(
         Mandatory = false,
@@ -125,6 +134,15 @@ namespace Microsoft.Azure.Commands.Network
         [Parameter(
             Mandatory = false,
             ValueFromPipelineByPropertyName = true,
+<<<<<<< HEAD
+=======
+            HelpMessage = "Whether to use PrivateIP for this S2S VPN tunnel")]
+        public SwitchParameter UseLocalAzureIpAddress { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            ValueFromPipelineByPropertyName = true,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = "A hashtable which represents resource tags.")]
         public Hashtable Tag { get; set; }
 
@@ -196,8 +214,15 @@ namespace Microsoft.Azure.Commands.Network
             vnetGatewayConnection.LocalNetworkGateway2 = this.LocalNetworkGateway2;
             vnetGatewayConnection.ConnectionType = this.ConnectionType;
             vnetGatewayConnection.RoutingWeight = this.RoutingWeight;
+<<<<<<< HEAD
             vnetGatewayConnection.SharedKey = this.SharedKey;
             vnetGatewayConnection.EnableBgp = this.EnableBgp;
+=======
+            vnetGatewayConnection.DpdTimeoutSeconds = this.DpdTimeoutInSeconds;
+            vnetGatewayConnection.SharedKey = this.SharedKey;
+            vnetGatewayConnection.EnableBgp = this.EnableBgp;
+            vnetGatewayConnection.UseLocalAzureIpAddress = this.UseLocalAzureIpAddress.IsPresent;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             vnetGatewayConnection.UsePolicyBasedTrafficSelectors = this.UsePolicyBasedTrafficSelectors;
             vnetGatewayConnection.ExpressRouteGatewayBypass = this.ExpressRouteGatewayBypass.IsPresent;
 

@@ -66,6 +66,11 @@ namespace Common.Authentication.Test
             Assert.Null(environment.AzureAnalysisServicesEndpointSuffix);
             Assert.Null(environment.AzureAttestationServiceEndpointResourceId);
             Assert.Null(environment.AzureAttestationServiceEndpointSuffix);
+<<<<<<< HEAD
+=======
+            Assert.Null(environment.AzureSynapseAnalyticsEndpointResourceId);
+            Assert.Null(environment.AzureSynapseAnalyticsEndpointSuffix);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         }
 
@@ -78,7 +83,11 @@ namespace Common.Authentication.Test
             "https://management.core.windows.net", ".sql.azure.com", ".core.windows.net",
             ".trafficmanager.windows.net", "https://batch.core.windows.net", "https://datalake.azure.net",
             "https://api.loganalytics.io", "https://api.loganalytics.io/v1", "analysisservices.azure.net",
+<<<<<<< HEAD
             "https://attest.azure.net", "attest.azure.net")]
+=======
+            "https://attest.azure.net", "attest.azure.net", "https://dev.azuresynapse.net", "dev.azuresynapse.net")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void CanConvertValidEnvironments(string name, bool onPremise, string activeDirectory, string serviceResource,
             string adTenant, string dataLakeJobs, string dataLakeFiles, string kvDnsSuffix,
@@ -86,7 +95,12 @@ namespace Common.Authentication.Test
             string publishSettings, string resourceManager, string serviceManagement,
             string sqlSuffix, string storageSuffix, string trafficManagerSuffix, string batchResource, string dataLakeResource,
             string azureOperationalInsightsEndpointResourceId, string azureOperationalInsightsEndpoint, string analysisServicesSuffix,
+<<<<<<< HEAD
             string azureAttestationServiceEndpointResourceId, string azureAttestationServiceEndpointSuffix)
+=======
+            string azureAttestationServiceEndpointResourceId, string azureAttestationServiceEndpointSuffix,
+            string azureSynapseAnalyticsEndpointResourceId, string azureSynapseAnalyticsEndpointSuffix)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             AzureEnvironment azEnvironment = CreateEnvironment(name, onPremise, activeDirectory,
                 serviceResource, adTenant, dataLakeJobs, dataLakeFiles, kvDnsSuffix,
@@ -94,7 +108,12 @@ namespace Common.Authentication.Test
                 resourceManager, serviceManagement, sqlSuffix, storageSuffix,
                 trafficManagerSuffix, batchResource, dataLakeResource,
                 azureOperationalInsightsEndpointResourceId, azureOperationalInsightsEndpoint, analysisServicesSuffix,
+<<<<<<< HEAD
                 azureAttestationServiceEndpointResourceId, azureAttestationServiceEndpointSuffix);
+=======
+                azureAttestationServiceEndpointResourceId, azureAttestationServiceEndpointSuffix,
+                azureSynapseAnalyticsEndpointResourceId, azureSynapseAnalyticsEndpointSuffix);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var environment = (PSAzureEnvironment)azEnvironment;
             Assert.NotNull(environment);
             CheckEndpoint(AzureEnvironment.Endpoint.ActiveDirectory, azEnvironment,
@@ -145,6 +164,13 @@ namespace Common.Authentication.Test
                 environment.AzureAttestationServiceEndpointResourceId);
             CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureAttestationServiceEndpointSuffix, azEnvironment,
                 environment.AzureAttestationServiceEndpointSuffix);
+<<<<<<< HEAD
+=======
+            CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointResourceId, azEnvironment,
+                environment.AzureSynapseAnalyticsEndpointResourceId);
+            CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointSuffix, azEnvironment,
+                environment.AzureSynapseAnalyticsEndpointSuffix);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Assert.Equal(azEnvironment.Name, environment.Name);
             Assert.Equal(azEnvironment.OnPremise, environment.EnableAdfsAuthentication);
         }
@@ -183,6 +209,11 @@ namespace Common.Authentication.Test
             Assert.False(environment.IsEndpointSet(AzureEnvironment.ExtendedEndpoint.AnalysisServicesEndpointSuffix));
             Assert.False(environment.IsEndpointSet(AzureEnvironment.ExtendedEndpoint.AzureAttestationServiceEndpointResourceId));
             Assert.False(environment.IsEndpointSet(AzureEnvironment.ExtendedEndpoint.AzureAttestationServiceEndpointSuffix));
+<<<<<<< HEAD
+=======
+            Assert.False(environment.IsEndpointSet(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointResourceId));
+            Assert.False(environment.IsEndpointSet(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointSuffix));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         [Theory]
@@ -194,7 +225,11 @@ namespace Common.Authentication.Test
             "https://management.core.windows.net", ".sql.azure.com", ".core.windows.net",
             ".trafficmanager.windows.net", "https://batch.core.windows.net", "https://datalake.azure.net",
             "https://api.loganalytics.io", "https://api.loganalytics.io/v1", "analysisservices.azure.net",
+<<<<<<< HEAD
             "https://attest.azure.net", "attest.azure.net")]
+=======
+            "https://attest.azure.net", "attest.azure.net", "https://dev.azuresynapse.net", "dev.azuresynapse.net")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void CanConvertValidPSEnvironments(string name, bool onPremise, string activeDirectory, string serviceResource,
             string adTenant, string dataLakeJobs, string dataLakeFiles, string kvDnsSuffix,
@@ -202,7 +237,12 @@ namespace Common.Authentication.Test
             string publishSettings, string resourceManager, string serviceManagement,
             string sqlSuffix, string storageSuffix, string trafficManagerSuffix, string batchResource, string dataLakeResource,
             string azureOperationalInsightsEndpointResourceId, string azureOperationalInsightsEndpoint, string analysisServicesSuffix,
+<<<<<<< HEAD
             string azureAttestationServiceEndpointResourceId, string azureAttestationServiceEndpointSuffix)
+=======
+            string azureAttestationServiceEndpointResourceId, string azureAttestationServiceEndpointSuffix,
+            string azureSynapseAnalyticsEndpointResourceId, string azureSynapseAnalyticsEndpointSuffix)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             PSAzureEnvironment environment = new PSAzureEnvironment
             {
@@ -231,7 +271,13 @@ namespace Common.Authentication.Test
                 AzureOperationalInsightsEndpoint = azureOperationalInsightsEndpoint,
                 AzureAnalysisServicesEndpointSuffix = analysisServicesSuffix,
                 AzureAttestationServiceEndpointResourceId = azureAttestationServiceEndpointResourceId,
+<<<<<<< HEAD
                 AzureAttestationServiceEndpointSuffix = azureAttestationServiceEndpointSuffix
+=======
+                AzureAttestationServiceEndpointSuffix = azureAttestationServiceEndpointSuffix,
+                AzureSynapseAnalyticsEndpointResourceId = azureSynapseAnalyticsEndpointResourceId,
+                AzureSynapseAnalyticsEndpointSuffix = azureSynapseAnalyticsEndpointSuffix
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
             var azEnvironment = (AzureEnvironment)environment;
             Assert.NotNull(environment);
@@ -283,6 +329,13 @@ namespace Common.Authentication.Test
                 environment.AzureAttestationServiceEndpointResourceId);
             CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureAttestationServiceEndpointSuffix, azEnvironment,
                 environment.AzureAttestationServiceEndpointSuffix);
+<<<<<<< HEAD
+=======
+            CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointResourceId, azEnvironment,
+                environment.AzureSynapseAnalyticsEndpointResourceId);
+            CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointSuffix, azEnvironment,
+                environment.AzureSynapseAnalyticsEndpointSuffix);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Assert.Equal(azEnvironment.Name, environment.Name);
             Assert.Equal(azEnvironment.OnPremise, environment.EnableAdfsAuthentication);
         }
@@ -294,7 +347,12 @@ namespace Common.Authentication.Test
             string publishSettings, string resourceManager, string serviceManagement,
             string sqlSuffix, string storageSuffix, string trafficManagerSuffix, string batchResource, string dataLakeResource,
             string azureOperationalInsightsEndpointResourceId, string azureOperationalInsightsEndpoint, string analysisServicesSuffix,
+<<<<<<< HEAD
             string azureAttestationServiceEndpointResourceId, string azureAttestationServiceEndpointSuffix)
+=======
+            string azureAttestationServiceEndpointResourceId, string azureAttestationServiceEndpointSuffix,
+            string azureSynapseAnalyticsEndpointResourceId, string azureSynapseAnalyticsEndpointSuffix)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             var environment = new AzureEnvironment() { Name = name, OnPremise = onPremise };
             SetEndpoint(AzureEnvironment.Endpoint.ActiveDirectory, environment, activeDirectory);
@@ -345,6 +403,13 @@ namespace Common.Authentication.Test
                 azureAttestationServiceEndpointResourceId);
             CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureAttestationServiceEndpointSuffix, environment,
                 azureAttestationServiceEndpointSuffix);
+<<<<<<< HEAD
+=======
+            CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointResourceId, environment,
+                azureSynapseAnalyticsEndpointResourceId);
+            CheckEndpoint(AzureEnvironment.ExtendedEndpoint.AzureSynapseAnalyticsEndpointSuffix, environment,
+                azureSynapseAnalyticsEndpointSuffix);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             return environment;
 
         }

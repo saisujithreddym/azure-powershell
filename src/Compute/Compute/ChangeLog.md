@@ -19,6 +19,40 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Added HostId parameter to `Update-AzVM` cmdlet
+* Updated Help documents for `New-AzVMConfig`, `New-AzVmssConfig`, `Update-AzVmss`, `Set-AzVMOperatingSystem` and `Set-AzVmssOsProfile` cmdlets.
+* Breaking changes
+    - FilterExpression parameter is removed from `Get-AzVMImage` cmdlet.
+    - AssignIdentity parameter is removed from `New-AzVmssConfig`, `New-AzVMConfig` and `Update-AzVM` cmdlets.
+    - AutomaticRepairMaxInstanceRepairsPercent is removed from `New-AzVmssConfig` and `Update-AzVmss` cmdlets.
+    - AvailabilitySetsColocationStatus, VirtualMachinesColocationStatus and VirtualMachineScaleSetsColocationStatus properties are removed from ProximityPlacementGroup.
+    - MaxInstanceRepairsPercent property is removed from AutomaticRepairsPolicy.
+    - The types of AvailabilitySets, VirtualMachines and VirtualMachineScaleSets are changed from IList<SubResource> to IList<SubResourceWithColocationStatus>.
+* Description for `Get-AzVM` cmdlet has been updated to better describe it. 
+
+## Version 3.7.0
+* Added `Set-AzVmssOrchestrationServiceState` cmdlet.
+* `Get-AzVmss` with -InstanceView shows OrchestrationService states.
+
+## Version 3.6.0
+* Added the following parameters to `New-AzDiskConfig` cmdlet: 
+    - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
+* Allowed Encryption property to Target parameter of `New-AzGalleryImageVersion` cmdlet.
+* Fixed tempDisk issue for `Set-AzVmss` -Reimage and `Invoke-AzVMReimage` cmdlets. [#11354]
+* Added support to below cmdlets for new SAP Extension
+    - `Set-AzVMAEMExtension`
+    - `Get-AzVMAEMExtension`
+    - `Remove-AzVMAEMExtension`
+    - `Update-AzVMAEMExtension`
+* Fixed errors in examples of help document
+* Showed the exact string value for VM PowerState in the table format.
+* `New-AzVmssConfig`: fixed serialization of AutomaticRepairs property when SinglePlacementGroup is disabled. [#11257]
+
+## Version 3.5.0
+* Allowed empty value for ProximityPlacementGroupId during update
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 3.4.0
 * Limit the number of VM status to 100 to avoid throttling when Get-AzVM -Status is performed without VM name.
@@ -27,6 +61,10 @@
     - New-AzDiskUpdateConfig, New-AzSnapshotUpdateConfig
 * Add ColocationStatus parameter to Get-AzProximityPlacementGroup cmdlet.
 * Fix broken example code for 'Revoke-AzSnapshotAccess' and 'Grant-AzSnapshotAccess'
+<<<<<<< HEAD
+=======
+* Fix broken example code for 'Set-AzDiskDiskEncryptionKey' and 'Set-AzDiskKeyEncryptionKey'
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 3.3.0
 * Fix Set-AzVMCustomScriptExtension cmdlet for a VM with managed OD disk which does not have OS profile.

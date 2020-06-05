@@ -18,6 +18,15 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Adding support for Peering Registered Prefix
+* Adding support for Peering Registered ASN
+* Adding filter to Legacy Peering
+* Adding filter to Peering Service Countries
+* Adding contact details to peer asn
+* Bug fixes
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 0.1.7
 * Update references in .psd1 to use relative path

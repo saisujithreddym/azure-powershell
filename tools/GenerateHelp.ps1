@@ -13,7 +13,11 @@ Param(
 
 $ResourceManagerFolders = Get-ChildItem -Directory -Path "$PSScriptRoot\..\src" | Where-Object { $_.Name -ne 'lib' -and $_.Name -ne 'Package' -and $_.Name -ne 'packages' }
 Import-Module "$PSScriptRoot\HelpGeneration\HelpGeneration.psm1"
+<<<<<<< HEAD
 $UnfilteredHelpFolders = Get-ChildItem -Include 'help' -Path "$PSScriptRoot\..\artifacts" -Recurse -Directory | where { $_.FullName -like "*$BuildConfig*" -and $_.FullName -notlike "*Stack*" }
+=======
+$UnfilteredHelpFolders = Get-ChildItem -Include 'help' -Path "$PSScriptRoot\..\artifacts" -Recurse -Directory | where { $_.FullName -like "*$BuildConfig*" -and ($_.FullName -notlike "*Stack*" -or $_.FullName -like "*StackEdge*") }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 $FilteredHelpFolders = $UnfilteredHelpFolders
 if (![string]::IsNullOrEmpty($FilteredModules))
 {
@@ -78,7 +82,42 @@ if ($ValidateMarkdownHelp)
     }
 }
 
+<<<<<<< HEAD
 if ($GenerateMamlHelp)
 {
     $FilteredHelpFolders | foreach { New-AzMamlHelp $_.FullName }
+=======
+# We need to define new version of module instead of hardcode here
+$NewModules = @("Az.AppConfiguration",
+                "Az.Databricks",
+                "Az.Functions",
+                "Az.Kusto",
+                "Az.MariaDb",
+                "Az.MySql",
+                "Az.Portal",
+                "Az.PostgreSql",
+                "Az.TimeSeriesInsights"
+                )
+if ($GenerateMamlHelp)
+{
+    $FilteredMamlHelpFolders = @()
+    foreach ($HelpFolder in $FilteredHelpFolders)
+    {
+        $ModuleName = "" 
+        if($HelpFolder -match "(?s)artifacts\\$BuildConfig\\(?<module>.+)\\help")
+        {
+            $ModuleName = $Matches["module"]
+        }
+        if($HelpFolder -match "(?s)artifacts/$BuildConfig/(?<module>.+)/help")
+        {
+            $ModuleName = $Matches["module"]
+        }
+        if($NewModules -notcontains $ModuleName)
+        {
+            $FilteredMamlHelpFolders += $HelpFolder
+        }
+
+    }
+    $FilteredMamlHelpFolders | foreach { New-AzMamlHelp $_.FullName }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 }

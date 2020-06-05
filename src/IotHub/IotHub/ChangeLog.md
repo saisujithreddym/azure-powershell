@@ -18,6 +18,65 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Added cmdlet to invoke a query in an IoT hub to retrieve information using a SQL-like language.
+* Fix issue that `Add-AzIotHubDevice` fails to create Edge Enabled Device without child devices [#11597]
+* Added cmdlet to generate SAS token for Iot Hub, device or module.
+* Added cmdlet to invoke configuration metrics query.
+* Manage IoT Edge automatic deployment at scale. New cmdlets are:
+    - `Add-AzIotHubDeployment`
+    - `Get-AzIotHubDeployment`
+    - `Remove-AzIotHubDeployment`
+    - `Set-AzIotHubDeployment`
+* Added cmdlet to invoke an IoT Edge deployment metrics query.
+* Added cmdlet to apply the configuration content to the specified edge device.
+
+## Version 2.4.0
+* Manage IoT device twin configuration, New cmdlets are:
+    - `Get-AzIotHubDeviceTwin`
+    - `Update-AzIotHubDeviceTwin`
+* Added cmdlet to invoke direct method on a device in an Iot Hub.
+* Manage IoT device module twin configuration, New cmdlets are:
+    - `Get-AzIotHubModuleTwin`
+    - `Update-AzIotHubModuleTwin`
+* Manage IoT automatic device management configuration at scale. New cmdlets are:
+    - `Add-AzIotHubConfiguration`
+    - `Get-AzIotHubConfiguration`
+    - `Remove-AzIotHubConfiguration`
+    - `Set-AzIotHubConfiguration`
+* Added cmdlet to invoke an edge module method in an Iot Hub.
+
+## Version 2.3.0
+* Added support to manage distributed settings per-device. New Cmdlets are:
+    - `Get-AzIotHubDistributedTracing`
+    - `Set-AzIotHubDistributedTracing`
+
+## Version 2.2.0
+* Added support to manage devices in an Iot Hub. New Cmdlets are:
+	- `Add-AzIotHubDevice`
+	- `Get-AzIotHubDevice`
+	- `Remove-AzIotHubDevice`
+	- `Set-AzIotHubDevice`
+* Added support to manage modules on a target Iot device in an Iot Hub. New Cmdlets are:
+	- `Add-AzIotHubModule`
+	- `Get-AzIotHubModule`
+	- `Remove-AzIotHubModule`
+	- `Set-AzIotHubModule`
+* Added cmdlet to get the connection string of a target IoT device in an Iot Hub.
+* Added cmdlet to get the connection string of a module on a target IoT device in an Iot Hub.
+* Added support to get/set parent device of an IoT device. New Cmdlets are:
+    - `Get-AzIotHubDeviceParent`
+    - `Set-AzIotHubDeviceParent`
+* Added support to manage device parent-child relationship.
+
+## Version 2.1.0
+* Added support to manage devices in an Iot Hub. New Cmdlets are:
+	- `Add-AzIotHubDevice`
+	- `Get-AzIotHubDevice`
+	- `Remove-AzIotHubDevice`
+	- `Set-AzIotHubDevice`
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 2.0.1
 * Update references in .psd1 to use relative path

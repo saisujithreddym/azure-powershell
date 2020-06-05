@@ -66,7 +66,11 @@ namespace Microsoft.Azure.Commands.Profile.Test
             var response = new HttpResponseMessage(HttpStatusCode.BadRequest);
             var hyakException = new TestHyakException("exception message", CloudHttpRequestErrorInfo.Create(request), CloudHttpResponseErrorInfo.Create(response))
             {
+<<<<<<< HEAD
                 Error = new Hyak.Common.CloudError { Code="HyakCode", Message="HyakError"}
+=======
+                Error = new Hyak.Common.CloudError { Code = "HyakCode", Message = "HyakError" }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             };
 
             var autorestException = new Microsoft.Rest.Azure.CloudException("exception message")
@@ -79,7 +83,11 @@ namespace Microsoft.Azure.Commands.Profile.Test
 
             var cmdlet = new ResolveError
             {
+<<<<<<< HEAD
                 Error = new [] 
+=======
+                Error = new[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {
                     new ErrorRecord(new Exception("exception message"), "errorCode", ErrorCategory.AuthenticationError, this),
                     new ErrorRecord(hyakException, "errorCode", ErrorCategory.ConnectionError, this),
@@ -87,8 +95,12 @@ namespace Microsoft.Azure.Commands.Profile.Test
                 },
                 CommandRuntime = runtime
             };
+<<<<<<< HEAD
 
             cmdlet.ExecuteCmdlet();
+=======
+            Assert.Throws<NotImplementedException>(() => cmdlet.ExecuteCmdlet());
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Assert.NotNull(runtime.OutputPipeline);
             Assert.Equal(3, runtime.OutputPipeline.Count);
             var errorResult = runtime.OutputPipeline[0] as AzureExceptionRecord;
@@ -130,9 +142,15 @@ namespace Microsoft.Azure.Commands.Profile.Test
         {
             var runtime = new MockCommandRuntime();
             var hyakException = new TestHyakException(null, null, null);
+<<<<<<< HEAD
  
             var autorestException = new Microsoft.Rest.Azure.CloudException();
  
+=======
+
+            var autorestException = new Microsoft.Rest.Azure.CloudException();
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var cmdlet = new ResolveError
             {
                 Error = new[]
@@ -143,8 +161,13 @@ namespace Microsoft.Azure.Commands.Profile.Test
                 },
                 CommandRuntime = runtime
             };
+<<<<<<< HEAD
  
             cmdlet.ExecuteCmdlet();
+=======
+
+            Assert.Throws<NotImplementedException>(() => cmdlet.ExecuteCmdlet());
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Assert.NotNull(runtime.OutputPipeline);
             Assert.Equal(3, runtime.OutputPipeline.Count);
             var errorResult = runtime.OutputPipeline[0] as AzureExceptionRecord;
@@ -173,7 +196,11 @@ namespace Microsoft.Azure.Commands.Profile.Test
             var cmdlet = new ResolveError { CommandRuntime = mock };
             var message = "RuntimeErrorMessage";
             var exception = new Exception(message);
+<<<<<<< HEAD
             cmdlet.ExecuteCmdletWithExceptionInPipeline<AzureErrorRecord>("Resolve-AzureRmError", exception, new KeyValuePair<string, object>("Last", null ) );
+=======
+            cmdlet.ExecuteCmdletWithExceptionInPipeline<AzureErrorRecord>("Resolve-AzureRmError", exception, new KeyValuePair<string, object>("Last", null));
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Assert.NotNull(mock.ErrorStream);
             Assert.Single(mock.ErrorStream);
             Assert.NotNull(mock.OutputPipeline);
@@ -183,8 +210,11 @@ namespace Microsoft.Azure.Commands.Profile.Test
             Assert.NotNull(record.Exception);
             Assert.Equal(typeof(Exception), record.Exception.GetType());
             Assert.Equal(message, record.Message);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
     }
 }

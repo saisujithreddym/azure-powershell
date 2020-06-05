@@ -79,5 +79,15 @@ namespace Microsoft.Azure.Commands.PolicyInsights.Test.ScenarioTests
         {
             TestController.NewInstance.RunPowerShellTest(_logger, "Remediation-ReEvaluateCompliance");
         }
+<<<<<<< HEAD
+=======
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        public void ErrorHandling()
+        {
+            TestController.NewInstance.RunPowerShellTest(_logger, "Remediation-ErrorHandling");
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

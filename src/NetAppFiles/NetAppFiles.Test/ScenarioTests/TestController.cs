@@ -85,6 +85,10 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Test.ScenarioTests.ScenarioTest
                 {"Microsoft.Resources", null},
                 {"Microsoft.Features", null},
                 {"Microsoft.Authorization", null},
+<<<<<<< HEAD
+=======
+                {"Microsoft.Network", null},
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {"Microsoft.Compute", null}
             };
             var providersToIgnore = new Dictionary<string, string>

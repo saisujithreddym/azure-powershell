@@ -41,7 +41,11 @@ Updates a Log Alert Rule by PUT semantics
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### Example 1 - Set by rule name
+=======
+### Example 1: Set by rule name
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```powershell
 PS C:\> Set-AzScheduledQueryRule -ResourceGroupName "MyResourceGroup" -Name "LogAlertRule1" -Enabled $true -Location "centralindia" -Action $alertingAction -Description "log alert description" -Schedule $schedule -Source $source
 
@@ -59,7 +63,11 @@ Location          : centralindia
 Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace, Resource]}
 ```
 
+<<<<<<< HEAD
 ### Example 2 - Set by Input Object
+=======
+### Example 2: Set by Input Object
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```powershell
 PS C:\> Set-AzScheduledQueryRule -InputObject $sqr -Description "changed description"
 
@@ -77,7 +85,11 @@ Location          : centralindia
 Tags              : {[hidden-link:/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/Microsoft.OperationalInsights/workspaces/MyWorkspace, Resource]}
 ```
 
+<<<<<<< HEAD
 ### Example 3 - Set by resource Id
+=======
+### Example 3: Set by resource Id
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```powershell
 PS C:\> Set-AzScheduledQueryRule -ResourceId "/subscriptions/ad825170-845c-47db-8f00-11978947b089/resourceGroups/MyResourceGroup/providers/microsoft.insights/scheduledqueryrules/LogAlertRule1" -Enabled $true -Location "centralindia" -Action $alertingAction -Description "change description again" -Schedule $schedule -Source $source
 

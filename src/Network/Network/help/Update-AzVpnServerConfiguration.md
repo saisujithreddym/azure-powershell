@@ -25,9 +25,16 @@ Update-AzVpnServerConfiguration -ResourceGroupName <String> -Name <String> [-Vpn
 ```
 Update-AzVpnServerConfiguration -ResourceGroupName <String> -Name <String> [-VpnProtocol <String[]>]
  [-VpnAuthenticationType <String[]>] [-RadiusServerAddress <String>] [-RadiusServerSecret <SecureString>]
+<<<<<<< HEAD
  [-RadiusServerRootCertificateFilesList <String[]>] [-RadiusClientRootCertificateFilesList <String[]>]
  [-VpnClientIpsecPolicy <PSIpsecPolicy[]>] [-Tag <Hashtable>] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+ [-RadiusServerList <PSRadiusServer[]>] [-RadiusServerRootCertificateFilesList <String[]>]
+ [-RadiusClientRootCertificateFilesList <String[]>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
+ [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### ByVpnServerConfigurationNameByAadAuthentication
@@ -51,9 +58,16 @@ Update-AzVpnServerConfiguration -InputObject <PSVpnServerConfiguration> [-VpnPro
 ```
 Update-AzVpnServerConfiguration -InputObject <PSVpnServerConfiguration> [-VpnProtocol <String[]>]
  [-VpnAuthenticationType <String[]>] [-RadiusServerAddress <String>] [-RadiusServerSecret <SecureString>]
+<<<<<<< HEAD
  [-RadiusServerRootCertificateFilesList <String[]>] [-RadiusClientRootCertificateFilesList <String[]>]
  [-VpnClientIpsecPolicy <PSIpsecPolicy[]>] [-Tag <Hashtable>] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+ [-RadiusServerList <PSRadiusServer[]>] [-RadiusServerRootCertificateFilesList <String[]>]
+ [-RadiusClientRootCertificateFilesList <String[]>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
+ [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### ByVpnServerConfigurationObjectByAadAuthentication
@@ -77,9 +91,16 @@ Update-AzVpnServerConfiguration -ResourceId <String> [-VpnProtocol <String[]>]
 ```
 Update-AzVpnServerConfiguration -ResourceId <String> [-VpnProtocol <String[]>]
  [-VpnAuthenticationType <String[]>] [-RadiusServerAddress <String>] [-RadiusServerSecret <SecureString>]
+<<<<<<< HEAD
  [-RadiusServerRootCertificateFilesList <String[]>] [-RadiusClientRootCertificateFilesList <String[]>]
  [-VpnClientIpsecPolicy <PSIpsecPolicy[]>] [-Tag <Hashtable>] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+=======
+ [-RadiusServerList <PSRadiusServer[]>] [-RadiusServerRootCertificateFilesList <String[]>]
+ [-RadiusClientRootCertificateFilesList <String[]>] [-VpnClientIpsecPolicy <PSIpsecPolicy[]>]
+ [-Tag <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ```
 
 ### ByVpnServerConfigurationResourceIdByAadAuthentication
@@ -131,7 +152,11 @@ The above command will update an existing VpnServerConfiguration with VpnProtoco
 AAD audience for P2S AAD authentication.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByAadAuthentication, ByVpnServerConfigurationObjectByAadAuthentication, ByVpnServerConfigurationResourceIdByAadAuthentication
 Aliases:
 
@@ -146,7 +171,11 @@ Accept wildcard characters: False
 AAD issuer for P2S AAD authentication.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByAadAuthentication, ByVpnServerConfigurationObjectByAadAuthentication, ByVpnServerConfigurationResourceIdByAadAuthentication
 Aliases:
 
@@ -161,7 +190,11 @@ Accept wildcard characters: False
 AAD tenant for P2S AAD authentication.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByAadAuthentication, ByVpnServerConfigurationObjectByAadAuthentication, ByVpnServerConfigurationResourceIdByAadAuthentication
 Aliases:
 
@@ -176,7 +209,11 @@ Accept wildcard characters: False
 Run cmdlet in the background
 
 ```yaml
+<<<<<<< HEAD
 Type: SwitchParameter
+=======
+Type: System.Management.Automation.SwitchParameter
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -191,7 +228,11 @@ Accept wildcard characters: False
 The credentials, account, tenant, and subscription used for communication with Azure.
 
 ```yaml
+<<<<<<< HEAD
 Type: IAzureContextContainer
+=======
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -206,7 +247,11 @@ Accept wildcard characters: False
 The vpn server configuration object to be modified
 
 ```yaml
+<<<<<<< HEAD
 Type: PSVpnServerConfiguration
+=======
+Type: Microsoft.Azure.Commands.Network.Models.PSVpnServerConfiguration
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationObjectByCertificateAuthentication, ByVpnServerConfigurationObjectByRadiusAuthentication, ByVpnServerConfigurationObjectByAadAuthentication
 Aliases: VpnServerConfiguration
 
@@ -221,7 +266,11 @@ Accept wildcard characters: False
 The resource name.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByCertificateAuthentication, ByVpnServerConfigurationNameByRadiusAuthentication, ByVpnServerConfigurationNameByAadAuthentication
 Aliases: ResourceName, VpnServerConfigurationName
 
@@ -236,7 +285,11 @@ Accept wildcard characters: False
 A list of RadiusClientRootCertificate files' paths
 
 ```yaml
+<<<<<<< HEAD
 Type: String[]
+=======
+Type: System.String[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByRadiusAuthentication, ByVpnServerConfigurationObjectByRadiusAuthentication, ByVpnServerConfigurationResourceIdByRadiusAuthentication
 Aliases:
 
@@ -251,7 +304,26 @@ Accept wildcard characters: False
 P2S External Radius server address.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+Parameter Sets: ByVpnServerConfigurationNameByRadiusAuthentication, ByVpnServerConfigurationObjectByRadiusAuthentication, ByVpnServerConfigurationResourceIdByRadiusAuthentication
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -RadiusServerList
+P2S External multiple radius servers.
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSRadiusServer[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByRadiusAuthentication, ByVpnServerConfigurationObjectByRadiusAuthentication, ByVpnServerConfigurationResourceIdByRadiusAuthentication
 Aliases:
 
@@ -266,7 +338,11 @@ Accept wildcard characters: False
 A list of RadiusClientRootCertificate files' paths
 
 ```yaml
+<<<<<<< HEAD
 Type: String[]
+=======
+Type: System.String[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByRadiusAuthentication, ByVpnServerConfigurationObjectByRadiusAuthentication, ByVpnServerConfigurationResourceIdByRadiusAuthentication
 Aliases:
 
@@ -281,7 +357,11 @@ Accept wildcard characters: False
 P2S External Radius server secret.
 
 ```yaml
+<<<<<<< HEAD
 Type: SecureString
+=======
+Type: System.Security.SecureString
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByRadiusAuthentication, ByVpnServerConfigurationObjectByRadiusAuthentication, ByVpnServerConfigurationResourceIdByRadiusAuthentication
 Aliases:
 
@@ -296,7 +376,11 @@ Accept wildcard characters: False
 The resource group name.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByCertificateAuthentication, ByVpnServerConfigurationNameByRadiusAuthentication, ByVpnServerConfigurationNameByAadAuthentication
 Aliases:
 
@@ -311,7 +395,11 @@ Accept wildcard characters: False
 The Azure resource ID for the vpn server configuration.
 
 ```yaml
+<<<<<<< HEAD
 Type: String
+=======
+Type: System.String
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationResourceIdByCertificateAuthentication, ByVpnServerConfigurationResourceIdByRadiusAuthentication, ByVpnServerConfigurationResourceIdByAadAuthentication
 Aliases: VpnServerConfigurationId
 
@@ -326,7 +414,11 @@ Accept wildcard characters: False
 A hashtable which represents resource tags.
 
 ```yaml
+<<<<<<< HEAD
 Type: Hashtable
+=======
+Type: System.Collections.Hashtable
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -341,7 +433,11 @@ Accept wildcard characters: False
 The list of P2S VPN client tunneling protocols.
 
 ```yaml
+<<<<<<< HEAD
 Type: String[]
+=======
+Type: System.String[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 Accepted values: Certificate, Radius, AAD
@@ -357,7 +453,11 @@ Accept wildcard characters: False
 A list of IPSec policies for VpnServerConfiguration.
 
 ```yaml
+<<<<<<< HEAD
 Type: PSIpsecPolicy[]
+=======
+Type: Microsoft.Azure.Commands.Network.Models.PSIpsecPolicy[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 
@@ -372,7 +472,11 @@ Accept wildcard characters: False
 A list of VpnClientCertificates to be revoked files' paths
 
 ```yaml
+<<<<<<< HEAD
 Type: String[]
+=======
+Type: System.String[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByCertificateAuthentication, ByVpnServerConfigurationObjectByCertificateAuthentication, ByVpnServerConfigurationResourceIdByCertificateAuthentication
 Aliases:
 
@@ -387,7 +491,11 @@ Accept wildcard characters: False
 A list of VpnClientRootCertificates to be added files' paths
 
 ```yaml
+<<<<<<< HEAD
 Type: String[]
+=======
+Type: System.String[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByVpnServerConfigurationNameByCertificateAuthentication, ByVpnServerConfigurationObjectByCertificateAuthentication, ByVpnServerConfigurationResourceIdByCertificateAuthentication
 Aliases:
 
@@ -402,7 +510,11 @@ Accept wildcard characters: False
 The list of P2S VPN client tunneling protocols.
 
 ```yaml
+<<<<<<< HEAD
 Type: String[]
+=======
+Type: System.String[]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases:
 Accepted values: IkeV2, OpenVPN
@@ -418,7 +530,11 @@ Accept wildcard characters: False
 Prompts you for confirmation before running the cmdlet.
 
 ```yaml
+<<<<<<< HEAD
 Type: SwitchParameter
+=======
+Type: System.Management.Automation.SwitchParameter
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: cf
 
@@ -434,7 +550,11 @@ Shows what would happen if the cmdlet runs.
 The cmdlet is not run.
 
 ```yaml
+<<<<<<< HEAD
 Type: SwitchParameter
+=======
+Type: System.Management.Automation.SwitchParameter
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: (All)
 Aliases: wi
 
@@ -446,7 +566,11 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+<<<<<<< HEAD
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
+=======
+This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## INPUTS
 

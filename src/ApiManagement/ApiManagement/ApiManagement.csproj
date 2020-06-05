@@ -13,7 +13,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.2.2" />
+<<<<<<< HEAD
     <PackageReference Include="Microsoft.Azure.Management.ApiManagement" Version="4.11.0-preview" />
+=======
+    <PackageReference Include="Microsoft.Azure.Management.ApiManagement" Version="5.0.0-preview" />
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.0" />
   </ItemGroup>
 

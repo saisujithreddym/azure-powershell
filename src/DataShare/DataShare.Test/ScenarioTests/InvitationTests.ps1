@@ -33,7 +33,11 @@ function Test-InvitationCrud
 		$removed = Remove-AzDataShareInvitation -AccountName $AccountName -ResourceGroupName $resourceGroup -ShareName $ShareName -Name $InvitationName -PassThru
 
 		Assert-True { $removed }
+<<<<<<< HEAD
 		Assert-ThrowsContains { Get-AzDataShareInvitation -AccountName $AccountName -ResourceGroupName $resourceGroup -ShareName $ShareName -Name $InvitationName} "Resource 'sdktestinginvitation' does not exist"
+=======
+		Assert-ThrowsContains { Get-AzDataShareInvitation -AccountName $AccountName -ResourceGroupName $resourceGroup -ShareName $ShareName -Name $InvitationName} "Resource 'psinvitation' does not exist"
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	}
     finally
 	{

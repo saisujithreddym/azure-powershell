@@ -429,6 +429,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                     asrVaultCreds.ResourceNamespace;
                 PSRecoveryServicesClient.asrVaultCreds.ARMResourceType =
                     asrVaultCreds.ARMResourceType;
+<<<<<<< HEAD
+=======
+                PSRecoveryServicesClient.asrVaultCreds.PrivateEndpointStateForSiteRecovery =
+                    asrVaultCreds.PrivateEndpointStateForSiteRecovery;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
         }
 

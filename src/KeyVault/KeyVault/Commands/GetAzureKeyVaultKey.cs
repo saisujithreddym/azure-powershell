@@ -12,16 +12,30 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
+<<<<<<< HEAD
 using Microsoft.Azure.Commands.KeyVault.Models;
 using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
 using System.Collections.Generic;
+=======
+using Microsoft.Azure.Commands.Common.Authentication;
+using Microsoft.Azure.Commands.KeyVault.Helpers;
+using Microsoft.Azure.Commands.KeyVault.Models;
+using Microsoft.Azure.Commands.KeyVault.Properties;
+using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
+using Microsoft.Azure.KeyVault.WebKey;
+using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Linq;
 using System.Management.Automation;
 
 namespace Microsoft.Azure.Commands.KeyVault
 {
+<<<<<<< HEAD
     [Cmdlet("Get", ResourceManager.Common.AzureRMConstants.AzurePrefix + "KeyVaultKey",        DefaultParameterSetName = ByVaultNameParameterSet)]
+=======
+    [Cmdlet("Get", ResourceManager.Common.AzureRMConstants.AzurePrefix + "KeyVaultKey", DefaultParameterSetName = ByVaultNameParameterSet)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSKeyVaultKeyIdentityItem), typeof(PSKeyVaultKey), typeof(PSDeletedKeyVaultKeyIdentityItem), typeof(PSDeletedKeyVaultKey))]
     public class GetAzureKeyVaultKey : KeyVaultCmdletBase
     {
@@ -40,6 +54,11 @@ namespace Microsoft.Azure.Commands.KeyVault
         private const string ResourceIdByKeyNameParameterSet = "ByResourceIdKeyName";
         private const string ResourceIdByKeyVersionsParameterSet = "ByResourceIdKeyVersions";
 
+<<<<<<< HEAD
+=======
+        private readonly string[] _supportedTypesForDownload = new string[] { Constants.RSA, Constants.RSAHSM };
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #endregion
 
         #region Input Parameter Definitions
@@ -189,11 +208,22 @@ namespace Microsoft.Azure.Commands.KeyVault
             HelpMessage = "Specifies whether to show the previously deleted keys in the output.")]
         public SwitchParameter InRemovedState { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(Mandatory = false, HelpMessage = "Specifies the output file for which this cmdlet saves the key. The public key is saved in PEM format by default.")]
+        [ValidateNotNullOrEmpty]
+        public string OutFile { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         #endregion
 
         public override void ExecuteCmdlet()
         {
+<<<<<<< HEAD
             PSKeyVaultKey keyBundle;
+=======
+            PSKeyVaultKey keyBundle = null;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             if (InputObject != null)
             {
@@ -243,31 +273,82 @@ namespace Microsoft.Azure.Commands.KeyVault
                     WriteObject(keyBundle);
                 }
             }
+<<<<<<< HEAD
+=======
+
+            if (!string.IsNullOrEmpty(OutFile) && keyBundle != null)
+            {
+                DownloadKey(keyBundle.Key, OutFile);
+            }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         private void GetAndWriteKeys(string vaultName, string name) =>
             GetAndWriteObjects(new KeyVaultObjectFilterOptions
+<<<<<<< HEAD
                 {
                     VaultName = vaultName,
                     NextLink = null
                 },
+=======
+            {
+                VaultName = vaultName,
+                NextLink = null
+            },
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 (options) => KVSubResourceWildcardFilter(name, DataServiceClient.GetKeys(options)));
 
         private void GetAndWriteDeletedKeys(string vaultName, string name) =>
             GetAndWriteObjects(new KeyVaultObjectFilterOptions
+<<<<<<< HEAD
                 {
                     VaultName = vaultName,
                     NextLink = null
                 },
+=======
+            {
+                VaultName = vaultName,
+                NextLink = null
+            },
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 (options) => KVSubResourceWildcardFilter(name, DataServiceClient.GetDeletedKeys(options)));
 
         private void GetAndWriteKeyVersions(string vaultName, string name, string currentKeyVersion) =>
             GetAndWriteObjects(new KeyVaultObjectFilterOptions
+<<<<<<< HEAD
                 {
                     VaultName = vaultName,
                     NextLink = null,
                     Name = name
                 }, 
                 (options) => DataServiceClient.GetKeyVersions(options).Where(k => k.Version != currentKeyVersion));
+=======
+            {
+                VaultName = vaultName,
+                NextLink = null,
+                Name = name
+            },
+                (options) => DataServiceClient.GetKeyVersions(options).Where(k => k.Version != currentKeyVersion));
+
+        private void DownloadKey(JsonWebKey jwk, string path)
+        {
+            if (CanDownloadKey(jwk, out string reason))
+            {
+                var pem = JwkHelper.ExportPublicKeyToPem(jwk);
+                AzureSession.Instance.DataStore.WriteFile(path, pem);
+                WriteDebug(string.Format(Resources.PublicKeySavedAt, path));
+            }
+            else
+            {
+                WriteWarning(reason);
+            }
+        }
+
+        private bool CanDownloadKey(JsonWebKey jwk, out string reason)
+        {
+            reason = string.Format(Resources.DownloadNotSupported, jwk.Kty);
+            return _supportedTypesForDownload.Contains(jwk.Kty);
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

@@ -53,7 +53,11 @@ DotNetFrameworkVersion = '4.7.2'
 # ProcessorArchitecture = ''
 
 # Modules that must be imported into the global environment prior to importing this module
+<<<<<<< HEAD
 RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.1'; })
+=======
+RequiredModules = @(@{ModuleName = 'Az.Accounts'; ModuleVersion = '1.7.5'; })
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Assemblies that must be loaded prior to importing this module
 RequiredAssemblies = 'Microsoft.Azure.Management.SecurityCenter.dll'
@@ -88,7 +92,26 @@ CmdletsToExport = 'Get-AzSecurityAlert', 'Set-AzSecurityAlert',
                'Remove-AzSecurityWorkspaceSetting', 
                'Get-AzSecurityAdvancedThreatProtection', 
                'Enable-AzSecurityAdvancedThreatProtection', 
+<<<<<<< HEAD
                'Disable-AzSecurityAdvancedThreatProtection'
+=======
+               'Disable-AzSecurityAdvancedThreatProtection',
+			   'Get-AzIotSecuritySolution', 'Set-AzIotSecuritySolution', 'Remove-AzIotSecuritySolution', 'Update-AzIotSecuritySolution',
+			   'New-AzIotSecuritySolutionRecommendationConfigurationObject', 'New-AzIotSecuritySolutionUserDefinedResourcesObject',
+			   'Get-AzDeviceSecurityGroup', 'Set-AzDeviceSecurityGroup', 'Remove-AzDeviceSecurityGroup',
+			   'New-AzDeviceSecurityGroupAllowlistCustomAlertRuleObject', 'New-AzDeviceSecurityGroupDenylistCustomAlertRuleObject', 
+			   'New-AzDeviceSecurityGroupThresholdCustomAlertRuleObject', 'New-AzDeviceSecurityGroupTimeWindowRuleObject',
+			   'Get-AzIotSecurityAnalyticsAggregatedAlert',
+			   'Get-AzIotSecurityAnalyticsAggregatedRecommendation',
+			   'Get-AzIotSecurityAnalytics', 
+			   'Disable-AzIotSecurityAnalyticsAggregatedAlert',
+               'Set-AzSqlInformationProtectionPolicy',
+               'Get-AzSqlInformationProtectionPolicy',
+               'Get-AzRegulatoryComplianceStandard',
+               'Get-AzRegulatoryComplianceControl',
+               'Get-AzRegulatoryComplainceAssessment'
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 # Variables to export from this module
 # VariablesToExport = @()

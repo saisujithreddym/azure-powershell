@@ -47,7 +47,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Test.Scenario
             {
                 var resourceManagementClient = ApiManagementHelper.GetResourceManagementClient(context);
                 ResourceGroupName = "powershelltest";
+<<<<<<< HEAD
                 Location = "West US";
+=======
+                Location = "CentralUSEUAP";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
                 if (string.IsNullOrWhiteSpace(ResourceGroupName))
                 {
@@ -69,7 +73,11 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Test.Scenario
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
         public void ApiCloneCrudTest()
+=======
+         public void ApiCloneCrudTest()
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             RunPowerShellTest("ApiClone-Test");
         }        
@@ -104,6 +112,16 @@ namespace Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Test.Scenario
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
+<<<<<<< HEAD
+=======
+        public void ApiImportExportOpenApiJsonTest()
+        {
+            RunPowerShellTest("Api-ImportExportOpenApiJsonTest");
+        }
+        
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public void ApiSchemaCrudOnSwaggerApiTest()
         {
             RunPowerShellTest("ApiSchema-SwaggerCRUDTest");

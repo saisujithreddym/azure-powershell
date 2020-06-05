@@ -18,6 +18,14 @@
         - Additional information about change #1
 -->
 ## Upcoming Release
+<<<<<<< HEAD
+=======
+* Add new cmdlets: `Get-AzRegulatoryComplianceStandard`, 
+					`Get-AzRegulatoryComplianceControl`, 
+					`Get-AzRegulatoryComplainceAssessment`
+* Add new API for IoTSecuritySolution, IoTSecuritySolutionAnalytics and DeviceSecurityGroups services
+* Support management of SQL Information Protection Policy.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## Version 0.7.7
 * Update references in .psd1 to use relative path

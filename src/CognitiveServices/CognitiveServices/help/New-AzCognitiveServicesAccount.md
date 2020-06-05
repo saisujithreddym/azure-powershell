@@ -13,13 +13,33 @@ Creates a Cognitive Services account.
 
 ## SYNTAX
 
+<<<<<<< HEAD
 ```
 New-AzCognitiveServicesAccount [-ResourceGroupName] <String> [-Name] <String> [-Type] <String>
  [-SkuName] <String> [-Location] <String> [-Tag <Hashtable[]>] [-CustomSubdomainName <String>]
+=======
+### CognitiveServicesEncryption
+```
+New-AzCognitiveServicesAccount [-ResourceGroupName] <String> [-Name] <String> [-Type] <String>
+ [-SkuName] <String> [-Location] <String> [-Tag <Hashtable[]>] [-CustomSubdomainName <String>]
+ [-AssignIdentity] [-StorageAccountId <String[]>] [-CognitiveServicesEncryption]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-NetworkRuleSet <PSNetworkRuleSet>] [-Force] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
+<<<<<<< HEAD
+=======
+### KeyVaultEncryption
+```
+New-AzCognitiveServicesAccount [-ResourceGroupName] <String> [-Name] <String> [-Type] <String>
+ [-SkuName] <String> [-Location] <String> [-Tag <Hashtable[]>] [-CustomSubdomainName <String>]
+ [-AssignIdentity] [-StorageAccountId <String[]>] [-KeyVaultEncryption] -KeyName <String> -KeyVersion <String>
+ -KeyVaultUri <String> [-NetworkRuleSet <PSNetworkRuleSet>] [-Force] [-DefaultProfile <IAzureContextContainer>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## DESCRIPTION
 The **New-AzCognitiveServicesAccount** cmdlet creates a Cognitive Services account with the
 specified type and SKU.
@@ -48,6 +68,39 @@ Tags              :
 
 ## PARAMETERS
 
+<<<<<<< HEAD
+=======
+### -AssignIdentity
+Generate and assign a new Cognitive Services Account Identity for this storage account for use with key management services like Azure KeyVault.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -CognitiveServicesEncryption
+Whether to set Cognitive Services Account Encryption KeySource to Microsoft.CognitiveServices or not.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: CognitiveServicesEncryption
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -CustomSubdomainName
 Cognitive Services Account Subdomain Name.
 
@@ -93,6 +146,69 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -KeyName
+Cognitive Services Account encryption keySource KeyVault KeyName
+
+```yaml
+Type: System.String
+Parameter Sets: KeyVaultEncryption
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyVaultEncryption
+Whether to set Cognitive Services Account encryption keySource to Microsoft.KeyVault or not. If you specify KeyName, KeyVersion and KeyVaultUri, Cognitive Services Account Encryption KeySource will also be set to Microsoft.KeyVault weather this parameter is set or not.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: KeyVaultEncryption
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyVaultUri
+Cognitive Services Account encryption keySource KeyVault KeyVaultUri
+
+```yaml
+Type: System.String
+Parameter Sets: KeyVaultEncryption
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -KeyVersion
+Cognitive Services Account encryption keySource KeyVault KeyVersion
+
+```yaml
+Type: System.String
+Parameter Sets: KeyVaultEncryption
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Location
 Specifies the location in which to create the account.
 
@@ -177,6 +293,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -StorageAccountId
+List of User Owned Storage Accounts.
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -Tag
 Specifies a tag as a name/value pair.
 

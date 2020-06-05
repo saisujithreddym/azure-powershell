@@ -8,7 +8,11 @@ schema: 2.0.0
 # New-AzDiskEncryptionSet
 
 ## SYNOPSIS
+<<<<<<< HEAD
 Creates a disk encryption key.
+=======
+Creates a disk encryption set.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## SYNTAX
 
@@ -18,7 +22,11 @@ New-AzDiskEncryptionSet [-ResourceGroupName] <String> [-Name] <String> [-InputOb
 ```
 
 ## DESCRIPTION
+<<<<<<< HEAD
 Creates a disk encryption key.
+=======
+Creates a disk encryption set.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 

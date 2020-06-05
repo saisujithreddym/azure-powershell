@@ -154,6 +154,7 @@ namespace Microsoft.Azure.Commands.Sql.Backup.Services
         /// <param name="serverName">The name of the Azure SQL Server</param>
         /// <returns>A backup vault</returns>
         public Management.Sql.LegacySdk.Models.BackupLongTermRetentionVault GetBackupLongTermRetentionVault(
+<<<<<<< HEAD
             string resourceGroupName, 
             string serverName, 
             string baVaultName)
@@ -161,6 +162,15 @@ namespace Microsoft.Azure.Commands.Sql.Backup.Services
             return GetLegacySqlClient().DatabaseBackup.GetBackupLongTermRetentionVault(
                 resourceGroupName, 
                 serverName, 
+=======
+            string resourceGroupName,
+            string serverName,
+            string baVaultName)
+        {
+            return GetLegacySqlClient().DatabaseBackup.GetBackupLongTermRetentionVault(
+                resourceGroupName,
+                serverName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 baVaultName).BackupLongTermRetentionVault;
         }
 
@@ -172,6 +182,7 @@ namespace Microsoft.Azure.Commands.Sql.Backup.Services
         /// <param name="databaseName">The name of the Azure SQL Database</param>
         /// <returns>A backup LongTermRetention policy</returns>
         public Management.Sql.LegacySdk.Models.DatabaseBackupLongTermRetentionPolicy GetDatabaseBackupLongTermRetentionPolicy(
+<<<<<<< HEAD
             string resourceGroupName, 
             string serverName, 
             string databaseName, 
@@ -181,6 +192,17 @@ namespace Microsoft.Azure.Commands.Sql.Backup.Services
                 resourceGroupName, 
                 serverName, 
                 databaseName, 
+=======
+            string resourceGroupName,
+            string serverName,
+            string databaseName,
+            string baPolicyName)
+        {
+            return GetLegacySqlClient().DatabaseBackup.GetDatabaseBackupLongTermRetentionPolicy(
+                resourceGroupName,
+                serverName,
+                databaseName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 baPolicyName).DatabaseBackupLongTermRetentionPolicy;
         }
 
@@ -188,6 +210,7 @@ namespace Microsoft.Azure.Commands.Sql.Backup.Services
         /// Creates or updates a backup LongTermRetention vault
         /// </summary>
         public Management.Sql.LegacySdk.Models.BackupLongTermRetentionVault SetBackupLongTermRetentionVault(
+<<<<<<< HEAD
             string resourceGroupName, 
             string serverName, 
             string baVaultName, 
@@ -197,6 +220,17 @@ namespace Microsoft.Azure.Commands.Sql.Backup.Services
                 resourceGroupName, 
                 serverName, 
                 baVaultName, 
+=======
+            string resourceGroupName,
+            string serverName,
+            string baVaultName,
+            BackupLongTermRetentionVaultCreateOrUpdateParameters parameters)
+        {
+            return GetLegacySqlClient().DatabaseBackup.CreateOrUpdateBackupLongTermRetentionVault(
+                resourceGroupName,
+                serverName,
+                baVaultName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 parameters).BackupLongTermRetentionVault;
         }
 
@@ -204,6 +238,7 @@ namespace Microsoft.Azure.Commands.Sql.Backup.Services
         /// Creates or updates a backup LongTermRetention policy
         /// </summary>
         public Management.Sql.LegacySdk.Models.DatabaseBackupLongTermRetentionPolicy SetDatabaseBackupLongTermRetentionPolicy(
+<<<<<<< HEAD
             string resourceGroupName, 
             string serverName, 
             string databaseName, 
@@ -215,6 +250,19 @@ namespace Microsoft.Azure.Commands.Sql.Backup.Services
                 serverName, 
                 databaseName, 
                 baPolicyName, 
+=======
+            string resourceGroupName,
+            string serverName,
+            string databaseName,
+            string baPolicyName,
+            DatabaseBackupLongTermRetentionPolicyCreateOrUpdateParameters parameters)
+        {
+            return GetLegacySqlClient().DatabaseBackup.CreateOrUpdateDatabaseBackupLongTermRetentionPolicy(
+                resourceGroupName,
+                serverName,
+                databaseName,
+                baPolicyName,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 parameters).DatabaseBackupLongTermRetentionPolicy;
         }
 

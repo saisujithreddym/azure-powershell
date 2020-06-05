@@ -84,33 +84,61 @@ namespace Microsoft.WindowsAzure.Commands.Storage.File.Cmdlet
             Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
+=======
+            ValueFromPipelineByPropertyName = true,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             ParameterSetName = ShareCloseAllParameterSetName,
             HelpMessage = "CloudFileShare object indicated the share which contains the files/directories to closed handle.")]
         [Parameter(
             Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = ShareCloseSingleParameterSetName,
             HelpMessage = "CloudFileShare object indicated the share which contains the files/directories to closed handle.")]
         [ValidateNotNull]
+=======
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = ShareCloseSingleParameterSetName,
+            HelpMessage = "CloudFileShare object indicated the share which contains the files/directories to closed handle.")]
+        [ValidateNotNull]
+        [Alias ("CloudFileShare")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFileShare Share { get; set; }
 
         [Parameter(
             Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = DirectoryCloseAllParameterSetName,
             HelpMessage = "CloudFileDirectory object indicated the base folder which contains the files/directories to closed handle.")]
         [ValidateNotNull]
+=======
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = DirectoryCloseAllParameterSetName,
+            HelpMessage = "CloudFileDirectory object indicated the base folder which contains the files/directories to closed handle.")]
+        [ValidateNotNull]
+        [Alias("CloudFileDirectory")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFileDirectory Directory { get; set; }
 
         [Parameter(
             Position = 0,
             Mandatory = true,
             ValueFromPipeline = true,
+<<<<<<< HEAD
             ParameterSetName = FileCloseAllParameterSetName,
             HelpMessage = "CloudFile object indicated the file to close handle.")]
         [ValidateNotNull]
+=======
+            ValueFromPipelineByPropertyName = true,
+            ParameterSetName = FileCloseAllParameterSetName,
+            HelpMessage = "CloudFile object indicated the file to close handle.")]
+        [ValidateNotNull]
+        [Alias("CloudFile")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public CloudFile File { get; set; }
 
         [Parameter(

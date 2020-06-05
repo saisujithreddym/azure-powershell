@@ -26,6 +26,10 @@
 
 using Microsoft.Azure.Commands.Network.Models;
 using Microsoft.Azure.Management.Network.Models;
+<<<<<<< HEAD
+=======
+using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,6 +39,11 @@ using MNM = Microsoft.Azure.Management.Network.Models;
 
 namespace Microsoft.Azure.Commands.Network
 {
+<<<<<<< HEAD
+=======
+    [GenericBreakingChange("Default behaviour of Zone will be changed", OldWay = "Zone = [] means the Standard FrontendIpConfig is zone-redundant",
+        NewWay = "Zone = [] means the Standard FrontendIpConfig has no zones. If you want to create a zone-redundant FrontendIpConfig, please specify all the zones in the region. For example, Zone = [\"1\", \"2\", \"3\"].To learn more visit aka.ms/standardpublicip")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [Cmdlet(VerbsCommon.New, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "LoadBalancerFrontendIpConfig", DefaultParameterSetName = "SetByResourceSubnet", SupportsShouldProcess = true), OutputType(typeof(PSFrontendIPConfiguration))]
     public partial class NewAzureRmLoadBalancerFrontendIpConfigCommand : NetworkBaseCmdlet
     {

@@ -646,6 +646,16 @@ function Test-DataLakeStoreFileSystem
 		Assert-AreEqual 3 $headTailResult[0]
 		Assert-AreEqual 4 $headTailResult[1]
 
+<<<<<<< HEAD
+=======
+        #Create a file with byte and read it
+        $byteDataFile="/byteData/filetest.txt"
+        [byte[]] $byteData = 1,2,3,4,5
+        New-AzDataLakeStoreItem -Account $accountName -Path $byteDataFile -Force -Value $byteData -Encoding Byte
+        $result = Get-AzDataLakeStoreItemContent -Account $accountName -path $byteDataFile -Encoding Byte
+        Assert-True {@(Compare-Object $byteData $result -SyncWindow 0).Length -eq 0}
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		# Import and get file
 		$localFileInfo = Get-ChildItem $fileToCopy
 		$result = Import-AzDataLakeStoreItem -Account $accountName -Path $fileToCopy -Destination $importFile

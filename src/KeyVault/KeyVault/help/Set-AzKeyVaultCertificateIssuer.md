@@ -35,8 +35,13 @@ The Set-AzKeyVaultCertificateIssuer cmdlet sets a certificate issuer in a key va
 
 ### Example 1: Set a certificate issuer
 ```powershell
+<<<<<<< HEAD
 PS C:\> $AdminDetails = New-AzKeyVaultCertificateAdministratorDetails -FirstName user -LastName name -EmailAddress username@microsoft.com
 PS C:\> $OrgDetails = New-AzKeyVaultCertificateOrganizationDetails -AdministrationDetails $AdminDetails
+=======
+PS C:\> $AdminDetails = New-AzKeyVaultCertificateAdministratorDetail -FirstName user -LastName name -EmailAddress username@microsoft.com
+PS C:\> $OrgDetails = New-AzKeyVaultCertificateOrganizationDetail -AdministrationDetails $AdminDetails
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> $Password = ConvertTo-SecureString -String P@ssw0rd -AsPlainText -Force
 PS C:\> Set-AzKeyVaultCertificateIssuer -VaultName "Contosokv01" -Name "TestIssuer01" -IssuerProvider "Test" -AccountId "555" -ApiKey $Password -OrganizationDetails $OrgDetails -PassThru
 

@@ -28,12 +28,24 @@ Update-AzCosmosDBAccountRegion [-Location <String[]>] [-LocationObject <PSLocati
 ### ByObjectParameterSet
 ```
 Update-AzCosmosDBAccountRegion [-Location <String[]>] [-LocationObject <PSLocation[]>]
+<<<<<<< HEAD
  -InputObject <PSDatabaseAccount> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 Update Regions of a CosmosDB Account.
+=======
+ -InputObject <PSDatabaseAccountGetResults> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## DESCRIPTION
+Update Regions of a CosmosDB Account. Location can be provided either as an object of type PSLocation or as strings of Location Name ordered by failover priority.
+LocationObject parameter expects the list of current locations (failover prioritiies included) appended by the new LocationObjects corresponding to new locations to be added.
+Location parameter expects the list of current location(ordered by failover priority) and the new locations. 
+Please note, we only support Addition of Regions. Please provide either Location or LocationObject.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 
@@ -113,14 +125,22 @@ Accept wildcard characters: False
 ResourceId of the resource.
 
 ```yaml
+<<<<<<< HEAD
 Type: PSDatabaseAccount
+=======
+Type: PSDatabaseAccountGetResults
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByObjectParameterSet
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: True (ByPropertyName)
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 

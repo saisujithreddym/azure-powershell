@@ -16,7 +16,10 @@ using Microsoft.Azure.Commands.Network.Models;
 using Microsoft.Azure.Commands.ResourceManager.Common.Tags;
 using Microsoft.Azure.Management.Network;
 using Microsoft.Azure.Management.Network.Models;
+<<<<<<< HEAD
 using System;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Net;
 
 namespace Microsoft.Azure.Commands.Network
@@ -62,7 +65,11 @@ namespace Microsoft.Azure.Commands.Network
             return psPrivateLinkService;
         }
 
+<<<<<<< HEAD
         public PSPrivateLinkService ToPsPrivateLinkService(PrivateLinkService privateLinkService)
+=======
+        public PSPrivateLinkService ToPsPrivateLinkService(Microsoft.Azure.Management.Network.Models.PrivateLinkService privateLinkService)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             var psPrivateLinkService = NetworkResourceManagerProfile.Mapper.Map<PSPrivateLinkService>(privateLinkService);
             psPrivateLinkService.Tag = TagsConversionHelper.CreateTagHashtable(privateLinkService.Tags);

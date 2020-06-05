@@ -24,9 +24,25 @@ using System;
 
 namespace Microsoft.Azure.Commands.Management.Storage
 {
+<<<<<<< HEAD
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "StorageAccount"), OutputType(typeof(PSStorageAccount))]
     public class NewAzureStorageAccountCommand : StorageAccountBaseCmdlet
     {
+=======
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "StorageAccount", DefaultParameterSetName = AzureActiveDirectoryDomainServicesForFileParameterSet), OutputType(typeof(PSStorageAccount))]
+    public class NewAzureStorageAccountCommand : StorageAccountBaseCmdlet
+    {
+        /// <summary>
+        /// Set AzureActiveDirectoryDomainServicesForFile parameter set name
+        /// </summary>
+        private const string AzureActiveDirectoryDomainServicesForFileParameterSet = "AzureActiveDirectoryDomainServicesForFile";
+
+        /// <summary>
+        /// Set ActiveDirectoryDomainServicesForFile parameter set name
+        /// </summary>
+        private const string ActiveDirectoryDomainServicesForFileParameterSet = "ActiveDirectoryDomainServicesForFile";
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(
             Position = 0,
             Mandatory = true,
@@ -57,6 +73,11 @@ namespace Microsoft.Azure.Commands.Management.Storage
             StorageModels.SkuName.StandardRAGRS,
             StorageModels.SkuName.PremiumLRS,
             StorageModels.SkuName.PremiumZRS,
+<<<<<<< HEAD
+=======
+            StorageModels.SkuName.StandardGZRS,
+            StorageModels.SkuName.StandardRAGZRS,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             IgnoreCase = true)]
         public string SkuName { get; set; }
 
@@ -166,7 +187,12 @@ namespace Microsoft.Azure.Commands.Management.Storage
 
         [Parameter(
             Mandatory = false,
+<<<<<<< HEAD
             HelpMessage = "Enable Azure Files Azure Active Directory Domain Service Authentication for the storage account.")]
+=======
+            HelpMessage = "Enable Azure Files Azure Active Directory Domain Service Authentication for the storage account.",
+            ParameterSetName = AzureActiveDirectoryDomainServicesForFileParameterSet)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [ValidateNotNullOrEmpty]
         public bool EnableAzureActiveDirectoryDomainServicesForFile
         {
@@ -184,6 +210,69 @@ namespace Microsoft.Azure.Commands.Management.Storage
         [Parameter(Mandatory = false, HelpMessage = "Indicates whether or not the storage account can support large file shares with more than 5 TiB capacity. Once the account is enabled, the feature cannot be disabled. Currently only supported for LRS and ZRS replication types, hence account conversions to geo-redundant accounts would not be possible. Learn more in https://go.microsoft.com/fwlink/?linkid=2086047")]
         public SwitchParameter EnableLargeFileShare { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Enable Azure Files Active Directory Domain Service Authentication for the storage account.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public bool EnableActiveDirectoryDomainServicesForFile
+        {
+            get
+            {
+                return enableActiveDirectoryDomainServicesForFile.Value;
+            }
+            set
+            {
+                enableActiveDirectoryDomainServicesForFile = value;
+            }
+        }
+        private bool? enableActiveDirectoryDomainServicesForFile = null;
+
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the primary domain that the AD DNS server is authoritative for. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string ActiveDirectoryDomainName { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the NetBIOS domain name. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string ActiveDirectoryNetBiosDomainName { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the Active Directory forest to get. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string ActiveDirectoryForestName { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the domain GUID. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string ActiveDirectoryDomainGuid { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the security identifier (SID). This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string ActiveDirectoryDomainSid { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+            HelpMessage = "Specifies the security identifier (SID) for Azure Storage. This parameter must be set when -EnableActiveDirectoryDomainServicesForFile is set to true.",
+            ParameterSetName = ActiveDirectoryDomainServicesForFileParameterSet)]
+        [ValidateNotNullOrEmpty]
+        public string ActiveDirectoryAzureStorageSid { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = false, HelpMessage = "Run cmdlet in the background")]
         public SwitchParameter AsJob { get; set; }
 
@@ -255,6 +344,7 @@ namespace Microsoft.Azure.Commands.Management.Storage
             {
                 createParameters.IsHnsEnabled = enableHierarchicalNamespace;
             }
+<<<<<<< HEAD
             if (enableAzureActiveDirectoryDomainServicesForFile !=null)
             {
                 createParameters.AzureFilesIdentityBasedAuthentication = new AzureFilesIdentityBasedAuthentication();
@@ -262,6 +352,39 @@ namespace Microsoft.Azure.Commands.Management.Storage
                 {
                     createParameters.AzureFilesIdentityBasedAuthentication.DirectoryServiceOptions = DirectoryServiceOptions.AADDS;
                 }
+=======
+            if (enableAzureActiveDirectoryDomainServicesForFile !=null || enableActiveDirectoryDomainServicesForFile != null)
+            {
+                createParameters.AzureFilesIdentityBasedAuthentication = new AzureFilesIdentityBasedAuthentication();
+                if (enableAzureActiveDirectoryDomainServicesForFile != null && enableAzureActiveDirectoryDomainServicesForFile.Value)
+                {
+                    createParameters.AzureFilesIdentityBasedAuthentication.DirectoryServiceOptions = DirectoryServiceOptions.AADDS;
+                }
+                else if (enableActiveDirectoryDomainServicesForFile != null && enableActiveDirectoryDomainServicesForFile.Value)
+                {
+                    if (string.IsNullOrEmpty(this.ActiveDirectoryDomainName)
+                        || string.IsNullOrEmpty(this.ActiveDirectoryNetBiosDomainName)
+                        || string.IsNullOrEmpty(this.ActiveDirectoryForestName)
+                        || string.IsNullOrEmpty(this.ActiveDirectoryDomainGuid)
+                        || string.IsNullOrEmpty(this.ActiveDirectoryDomainSid)
+                        || string.IsNullOrEmpty(this.ActiveDirectoryAzureStorageSid)
+                        )
+                    {
+                        throw new System.ArgumentNullException("ActiveDirectoryDomainName, ActiveDirectoryNetBiosDomainName, ActiveDirectoryForestName, ActiveDirectoryDomainGuid, ActiveDirectoryDomainSid, ActiveDirectoryAzureStorageSid", 
+                            "To enable ActiveDirectoryDomainServicesForFile, user must specify all of: ActiveDirectoryDomainName, ActiveDirectoryNetBiosDomainName, ActiveDirectoryForestName, ActiveDirectoryDomainGuid, ActiveDirectoryDomainSid, ActiveDirectoryAzureStorageSid.");
+                    }
+                    createParameters.AzureFilesIdentityBasedAuthentication.DirectoryServiceOptions = DirectoryServiceOptions.AD;
+                    createParameters.AzureFilesIdentityBasedAuthentication.ActiveDirectoryProperties = new ActiveDirectoryProperties()
+                    {
+                        DomainName = this.ActiveDirectoryDomainName,
+                        NetBiosDomainName = this.ActiveDirectoryNetBiosDomainName,
+                        ForestName = this.ActiveDirectoryForestName,
+                        DomainGuid = this.ActiveDirectoryDomainGuid,
+                        DomainSid = this.ActiveDirectoryDomainSid,
+                        AzureStorageSid = this.ActiveDirectoryAzureStorageSid
+                    };
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 else
                 {
                     createParameters.AzureFilesIdentityBasedAuthentication.DirectoryServiceOptions = DirectoryServiceOptions.None;

@@ -35,12 +35,24 @@ namespace Microsoft.Azure.Commands.Network.Models
         [Ps1Xml(Target = ViewControl.Table)]
         public int RoutingWeight { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Ps1Xml(Target = ViewControl.Table)]
+        public int DpdTimeoutSeconds { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string SharedKey { get; set; }
 
         [Ps1Xml(Target = ViewControl.Table)]
         public bool EnableBgp { get; set; }
 
         [Ps1Xml(Target = ViewControl.Table)]
+<<<<<<< HEAD
+=======
+        public bool UseLocalAzureIpAddress { get; set; }
+
+        [Ps1Xml(Target = ViewControl.Table)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ConnectionStatus { get; set; }
 
         [Ps1Xml(Target = ViewControl.Table)]

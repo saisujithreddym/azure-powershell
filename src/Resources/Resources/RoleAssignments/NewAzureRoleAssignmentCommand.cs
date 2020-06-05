@@ -28,6 +28,11 @@ namespace Microsoft.Azure.Commands.Resources
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "RoleAssignment", DefaultParameterSetName = ParameterSet.Empty), OutputType(typeof(PSRoleAssignment))]
     public class NewAzureRoleAssignmentCommand : ResourcesBaseCmdlet
     {
+<<<<<<< HEAD
+=======
+        #region Parameters
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, ParameterSetName = ParameterSet.ResourceGroupWithObjectId,
             HelpMessage = "The user or group object id.")]
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, ParameterSetName = ParameterSet.ResourceWithObjectId,
@@ -57,7 +62,11 @@ namespace Microsoft.Azure.Commands.Resources
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, ParameterSetName = ParameterSet.ScopeWithSPN,
             HelpMessage = "The app SPN.")]
         [ValidateNotNullOrEmpty]
+<<<<<<< HEAD
         [Alias("SPN","ServicePrincipalName")]
+=======
+        [Alias("SPN", "ServicePrincipalName")]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public string ApplicationId { get; set; }
 
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, ParameterSetName = ParameterSet.ResourceGroupWithObjectId,
@@ -144,6 +153,11 @@ namespace Microsoft.Azure.Commands.Resources
         [ValidateNotNullOrEmpty]
         public SwitchParameter AllowDelegation { get; set; }
 
+<<<<<<< HEAD
+=======
+        #endregion
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public Guid RoleAssignmentId { get; set; } = default(Guid);
 
         public override void ExecuteCmdlet()

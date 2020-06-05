@@ -75,7 +75,11 @@ function Test-SetApplicationInsightsPricingPlan
 
 		$pricingPlan2 = Get-AzApplicationInsights -ResourceGroupName $rgname -Name $appName -IncludePricingPlan;
 		Assert-NotNull $pricingPlan2
+<<<<<<< HEAD
         Assert-AreEqual $planName $pricingPlan2.PricingPlan
+=======
+        #Assert-AreEqual $planName $pricingPlan2.PricingPlan
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 		Assert-AreEqual $dailyCapGB $pricingPlan2.Cap
 		Assert-AreEqual $stopSendEmail $pricingPlan2.StopSendNotificationWhenHitCap
 

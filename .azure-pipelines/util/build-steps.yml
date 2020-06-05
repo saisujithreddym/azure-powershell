@@ -4,6 +4,14 @@ parameters:
   configuration: ''
 
 steps:
+<<<<<<< HEAD
+=======
+- task: PowerShell@2
+  displayName: 'Check Ingored File'
+  inputs:
+    filePath: tools/CheckIgnoredFile.ps1
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
@@ -13,4 +21,8 @@ steps:
 
 - template: publish-artifacts-steps.yml
   parameters:
+<<<<<<< HEAD
     artifactName: build-${{ parameters.osName }}
+=======
+    artifactName: build-${{ parameters.osName }}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

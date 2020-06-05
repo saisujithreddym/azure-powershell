@@ -19,9 +19,19 @@ namespace Microsoft.Azure.Commands.Security.Common
         public const string GeneralScope = "GeneralScope";
         public const string SubscriptionScope = "SubscriptionScope";
         public const string ResourceGroupScope = "ResourceGroupScope";
+<<<<<<< HEAD
         public const string ScopeLevelResource = "ScopeLevelResource";
         public const string SubscriptionLevelResource = "SubscriptionLevelResource";
         public const string ResourceGroupLevelResource = "ResourceGroupLevelResource";
+=======
+        public const string ResourceIdScope = "ResourceIdScope";
+        public const string SolutionScope = "SolutionScope";
+        public const string ScopeLevelResource = "ScopeLevelResource";
+        public const string SubscriptionLevelResource = "SubscriptionLevelResource";
+        public const string ResourceGroupLevelResource = "ResourceGroupLevelResource";
+        public const string SolutionLevelResource = "SolutionLevelResource";
+        public const string ResourceIdLevelResource = "ResourceIdLevelResource";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public const string ResourceId = "ResourceId";
         public const string InputObject = "InputObject";
         public const string PolicyOn = "PolicyOn";

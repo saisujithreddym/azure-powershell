@@ -19,11 +19,17 @@ using System.Management.Automation;
 namespace Microsoft.Azure.Commands.KeyVault.Commands
 {
     /// <summary>
+<<<<<<< HEAD
     /// New-AzKeyVaultCertificateAdministratorDetails creates an in-memory administrator details object
     /// </summary>
     [GenericBreakingChange("New-AzKeyVaultCertificateAdministratorDetails alias will be removed in an upcoming breaking change release", "2.0.0")]
     [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzurePrefix + "KeyVaultCertificateAdministratorDetail",SupportsShouldProcess = true)]
     [Alias("New-AzKeyVaultCertificateAdministratorDetails")]
+=======
+    /// New-AzKeyVaultCertificateAdministratorDetail creates an in-memory administrator details object
+    /// </summary>
+    [Cmdlet("New", ResourceManager.Common.AzureRMConstants.AzurePrefix + "KeyVaultCertificateAdministratorDetail",SupportsShouldProcess = true)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     [OutputType(typeof(PSKeyVaultCertificateAdministratorDetails))]
     public class NewAzureKeyVaultCertificateAdministratorDetails : KeyVaultCmdletBase
     {

@@ -18,7 +18,12 @@ Update-AzCosmosDBAccount -ResourceGroupName <String> -Name <String> [-DefaultCon
  [-EnableAutomaticFailover <Boolean>] [-EnableMultipleWriteLocations <Boolean>]
  [-EnableVirtualNetwork <Boolean>] [-IpRangeFilter <String[]>] [-MaxStalenessIntervalInSeconds <Int32>]
  [-MaxStalenessPrefix <Int32>] [-Tag <Hashtable>] [-VirtualNetworkRule <String[]>]
+<<<<<<< HEAD
  [-VirtualNetworkRuleObject <PSVirtualNetworkRule[]>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+=======
+ [-VirtualNetworkRuleObject <PSVirtualNetworkRule[]>] [-DisableKeyBasedMetadataWriteAccess <Boolean>]
+ [-PublicNetworkAccess <String>] [-KeyVaultKeyUri <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -28,17 +33,31 @@ Update-AzCosmosDBAccount -ResourceId <String> [-DefaultConsistencyLevel <String>
  [-EnableAutomaticFailover <Boolean>] [-EnableMultipleWriteLocations <Boolean>]
  [-EnableVirtualNetwork <Boolean>] [-IpRangeFilter <String[]>] [-MaxStalenessIntervalInSeconds <Int32>]
  [-MaxStalenessPrefix <Int32>] [-Tag <Hashtable>] [-VirtualNetworkRule <String[]>]
+<<<<<<< HEAD
  [-VirtualNetworkRuleObject <PSVirtualNetworkRule[]>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+=======
+ [-VirtualNetworkRuleObject <PSVirtualNetworkRule[]>] [-DisableKeyBasedMetadataWriteAccess <Boolean>]
+ [-PublicNetworkAccess <String>] [-KeyVaultKeyUri <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### ByObjectParameterSet
 ```
+<<<<<<< HEAD
 Update-AzCosmosDBAccount -InputObject <PSDatabaseAccount> [-DefaultConsistencyLevel <String>]
  [-EnableAutomaticFailover <Boolean>] [-EnableMultipleWriteLocations <Boolean>]
  [-EnableVirtualNetwork <Boolean>] [-IpRangeFilter <String[]>] [-MaxStalenessIntervalInSeconds <Int32>]
  [-MaxStalenessPrefix <Int32>] [-Tag <Hashtable>] [-VirtualNetworkRule <String[]>]
  [-VirtualNetworkRuleObject <PSVirtualNetworkRule[]>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+=======
+Update-AzCosmosDBAccount -InputObject <PSDatabaseAccountGetResults> [-DefaultConsistencyLevel <String>]
+ [-EnableAutomaticFailover <Boolean>] [-EnableMultipleWriteLocations <Boolean>]
+ [-EnableVirtualNetwork <Boolean>] [-IpRangeFilter <String[]>] [-MaxStalenessIntervalInSeconds <Int32>]
+ [-MaxStalenessPrefix <Int32>] [-Tag <Hashtable>] [-VirtualNetworkRule <String[]>]
+ [-VirtualNetworkRuleObject <PSVirtualNetworkRule[]>] [-DisableKeyBasedMetadataWriteAccess <Boolean>]
+ [-PublicNetworkAccess <String>] [-KeyVaultKeyUri <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -137,6 +156,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -DisableKeyBasedMetadataWriteAccess
+Disable write operations on metadata resources (databases, containers, throughput) via account keys
+
+```yaml
+Type: Boolean
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -EnableAutomaticFailover
 Enables automatic failover of the write region in the rare event that the region is unavailable due to an outage.
 Automatic failover will result in a new write region for the account and is chosen based on the failover priorities configured for the account.
@@ -190,14 +227,22 @@ Accept wildcard characters: False
 CosmosDB Account object
 
 ```yaml
+<<<<<<< HEAD
 Type: PSDatabaseAccount
+=======
+Type: PSDatabaseAccountGetResults
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Parameter Sets: ByObjectParameterSet
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: False
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 
@@ -217,6 +262,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -KeyVaultKeyUri
+URI of the KeyVault
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -MaxStalenessIntervalInSeconds
 When used with Bounded Staleness consistency, this value represents the time amount of staleness (in timespan) tolerated.
 Accepted range for this value is 5-86400.
@@ -264,6 +327,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+<<<<<<< HEAD
+=======
+### -PublicNetworkAccess
+Whether or not public endpoint access is allowed for this server. Possible values include: 'Enabled', 'Disabled'
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ### -ResourceGroupName
 Name of resource group.
 
@@ -336,7 +417,11 @@ Aliases:
 Required: False
 Position: Named
 Default value: None
+<<<<<<< HEAD
 Accept pipeline input: False
+=======
+Accept pipeline input: True (ByValue)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Accept wildcard characters: False
 ```
 

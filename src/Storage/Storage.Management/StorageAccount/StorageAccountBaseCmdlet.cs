@@ -31,6 +31,10 @@ namespace Microsoft.Azure.Commands.Management.Storage
         protected const string StorageAccountKeyNounStr = StorageAccountNounStr + "Key";
         protected const string StorageAccountRuleNounStr = StorageAccountNounStr + "NetworkRule";
         protected const string StorageAccountRuleSetNounStr = StorageAccountRuleNounStr + "Set";
+<<<<<<< HEAD
+=======
+        protected const string StorageAccountFailoverNounStr = StorageAccountNounStr + "Failover";
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
         protected const string StorageAccountNameAlias = "StorageAccountName";
         protected const string AccountNameAlias = "AccountName";
@@ -48,6 +52,12 @@ namespace Microsoft.Azure.Commands.Management.Storage
 
         protected const string StorageUsageNounStr = "AzureRmStorageUsage";
 
+<<<<<<< HEAD
+=======
+        internal const string StandardGZRS = "Standard_GZRS";
+        internal const string StandardRAGZRS = "Standard_RAGZRS";
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         protected struct AccountAccessTier
         {
             internal const string Hot = "Hot";

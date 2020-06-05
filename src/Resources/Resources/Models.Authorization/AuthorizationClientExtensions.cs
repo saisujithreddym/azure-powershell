@@ -114,7 +114,11 @@ namespace Microsoft.Azure.Commands.Resources.Models.Authorization
             return assignments.ToPSRoleAssignments(roleDefinitions, policyClient, activeDirectoryClient, excludeAssignmentsForDeletedPrincipals);
         }
 
+<<<<<<< HEAD
                 public static IEnumerable<PSDenyAssignment> ToPSDenyAssignments(this IEnumerable<DenyAssignment> assignments, ActiveDirectoryClient activeDirectoryClient, bool excludeAssignmentsForDeletedPrincipals = true)
+=======
+        public static IEnumerable<PSDenyAssignment> ToPSDenyAssignments(this IEnumerable<DenyAssignment> assignments, ActiveDirectoryClient activeDirectoryClient, bool excludeAssignmentsForDeletedPrincipals = true)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         {
             var psAssignments = new List<PSDenyAssignment>();
             if (assignments == null || !assignments.Any())
@@ -249,11 +253,18 @@ namespace Microsoft.Azure.Commands.Resources.Models.Authorization
             {
                 throw new InvalidOperationException(ProjectResources.InSufficientGraphPermission);
             }
+<<<<<<< HEAD
 
             foreach (RoleAssignment assignment in assignments)
             {
                 assignment.RoleDefinitionId = assignment.RoleDefinitionId.GuidFromFullyQualifiedId();
                 PSADObject adObject = adObjects.SingleOrDefault(o => o.Id == assignment.PrincipalId) ??
+=======
+            foreach (RoleAssignment assignment in assignments)
+            {
+                assignment.RoleDefinitionId = assignment.RoleDefinitionId.GuidFromFullyQualifiedId();
+                PSADObject adObject = adObjects.SingleOrDefault(o => o is PSErrorHelperObject || o.Id == assignment.PrincipalId) ??
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     new PSADObject() { Id = assignment.PrincipalId };
                 PSRoleDefinition roleDefinition = roleDefinitions.SingleOrDefault(r => r.Id == assignment.RoleDefinitionId) ??
                     new PSRoleDefinition() { Id = assignment.RoleDefinitionId };
@@ -301,6 +312,21 @@ namespace Microsoft.Azure.Commands.Resources.Models.Authorization
                         CanDelegate = delegationFlag
                     });
                 }
+<<<<<<< HEAD
+=======
+                else if (adObject is PSErrorHelperObject && ((PSErrorHelperObject)adObject).ErrorType == ErrorTypeEnum.MalformedQuery)
+                {
+                    // swallow the previously handled error
+                    psAssignments.Add(new PSRoleAssignment()
+                    {
+                        RoleAssignmentId = assignment.Id,
+                        RoleDefinitionId = roleDefinition.Id,
+                        RoleDefinitionName = roleDefinition.Name,
+                        Scope = assignment.Scope,
+                        ObjectType = assignment.Type
+                    });
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 else if (!excludeAssignmentsForDeletedPrincipals)
                 {
                     psAssignments.Add(new PSRoleAssignment()

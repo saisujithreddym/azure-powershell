@@ -78,8 +78,13 @@ The Set-AzSqlElasticJob cmdlet updates a job
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### Example 1 - Updates a job to start an hour from now and repeat every 1 hour
 ```
+=======
+### Example 1: Updates a job to start an hour from now and repeat every 1 hour
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\> $job = Get-AzSqlElasticJob -ResourceGroupName rg -ServerName elasticjobserver -AgentName agent -Name job1
 $job | Set-AzSqlElasticJob -IntervalType Hour -IntervalCount 1 -StartTime (Get-Date).AddHours(1) -Enable
 
@@ -90,6 +95,15 @@ job1    0                   6/1/2018 10:50:15 PM 12/31/9999 11:59:59 AM Recurrin
 
 Updates a job
 
+<<<<<<< HEAD
+=======
+### Example 2
+
+```powershell <!-- Aladdin Generated Example --> 
+Set-AzSqlElasticJob -AgentName agent -Enable -IntervalCount 1 -IntervalType Hour -Name step1 -ResourceGroupName MyResourceGroup -ServerName s1 -StartTime '9/16/2016 11:31:12'
+```
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ## PARAMETERS
 
 ### -AgentName

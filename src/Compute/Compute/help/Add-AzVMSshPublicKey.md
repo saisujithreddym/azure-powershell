@@ -9,7 +9,11 @@ schema: 2.0.0
 # Add-AzVMSshPublicKey
 
 ## SYNOPSIS
+<<<<<<< HEAD
 Adds the public keys for SSH for a virtual machine.
+=======
+Adds the public keys for SSH for a virtual machine, when only creating the VM.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## SYNTAX
 
@@ -19,7 +23,11 @@ Add-AzVMSshPublicKey [-VM] <PSVirtualMachine> [[-KeyData] <String>] [[-Path] <St
 ```
 
 ## DESCRIPTION
+<<<<<<< HEAD
 The **Add-AzVMSshPublicKey** cmdlet adds the public keys that you can use to connect to a Linux virtual machine over Secure Shell (SSH).
+=======
+The **Add-AzVMSshPublicKey** cmdlet adds the public keys that you can use to connect to a Linux virtual machine over Secure Shell (SSH). This cannot be used after VM creation, if you try to use this after VM creation without Update-AzVM, there will be no error, if you use the command with Update-AzVM, the command will error.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ## EXAMPLES
 

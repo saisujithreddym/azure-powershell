@@ -29,8 +29,13 @@ The **Get-AzWebAppBackupConfiguration** cmdlet gets the backup configuration of 
 
 ## EXAMPLES
 
+<<<<<<< HEAD
 ### 1:
 ```
+=======
+### Example 1
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\>Get-AzWebAppBackupConfiguration -ResourceGroupName "Default-Web-WestUS" -Name "WebAppStandard"
 ```
 

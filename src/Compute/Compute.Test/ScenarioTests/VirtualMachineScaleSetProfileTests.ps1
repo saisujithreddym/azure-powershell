@@ -128,6 +128,12 @@ function Test-VirtualMachineScaleSetProfile
     # AdditionalCapabilities
     Assert-Null $vmss.VirtualMachineProfile.AdditionalCapabilities;
 
+<<<<<<< HEAD
+=======
+    # AutomaticRepairsPolicy
+    Assert-Null $vmss.AutomaticRepairsPolicy;
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $extname2 = 'catextension';
     $publisher2 = 'Microsoft.AzureCAT.AzureEnhancedMonitoring';
     $exttype2 = 'AzureCATExtensionHandler';
@@ -150,12 +156,23 @@ function Test-VirtualMachineScaleSetProfile
     Assert-AreEqual $extname $vmss2.VirtualMachineProfile.ExtensionProfile.Extensions[1].ProvisionAfterExtensions[0];
 
     $vmss3 = New-AzVmssConfig -Location $loc -SkuCapacity 2 -SkuName 'Standard_A0' -UpgradePolicyMode 'Automatic' -DisableAutoRollback $true -EnableUltraSSD `
+<<<<<<< HEAD
                               -TerminateScheduledEvents -TerminateScheduledEventNotBeforeTimeoutInMinutes 15;
+=======
+                              -TerminateScheduledEvents -TerminateScheduledEventNotBeforeTimeoutInMinutes 15 `
+                              -EnableAutomaticRepair;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     Assert-True { $vmss3.UpgradePolicy.AutomaticOSUpgradePolicy.DisableAutomaticRollback };
     Assert-True { $vmss3.AdditionalCapabilities.UltraSSDEnabled };
     Assert-True { $vmss3.VirtualMachineProfile.ScheduledEventsProfile.TerminateNotificationProfile.Enable };
     Assert-AreEqual "PT15M" $vmss3.VirtualMachineProfile.ScheduledEventsProfile.TerminateNotificationProfile.NotBeforeTimeout;
 
+<<<<<<< HEAD
+=======
+    # AutomaticRepairsPolicy
+    Assert-True { $vmss3.AutomaticRepairsPolicy.Enabled };
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     $ppgid = "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/rgname/providers/Microsoft.Compute/proximityPlacementGroups/ppgname"
     $vmss4 = New-AzVmssConfig -Location $loc -SkuCapacity $skuCapacity -SkuName $skuName -UpgradePolicyMode $upgradePolicy -ProximityPlacementGroupId $ppgid;
     Assert-Null $vmss4.Identity;

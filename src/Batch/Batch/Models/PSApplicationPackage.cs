@@ -32,6 +32,10 @@ namespace Microsoft.Azure.Commands.Batch.Models
 
         public string StorageUrl { get; set; }
 
+<<<<<<< HEAD
         public DateTime StorageUrlExpiry { get; set; }
+=======
+        public DateTime? StorageUrlExpiry { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

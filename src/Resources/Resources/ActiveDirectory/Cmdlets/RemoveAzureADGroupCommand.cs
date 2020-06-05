@@ -13,15 +13,22 @@
 // ----------------------------------------------------------------------------------
 
 using Microsoft.WindowsAzure.Commands.Utilities.Common;
+<<<<<<< HEAD
 using System;
 using System.Linq;
+=======
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Management.Automation;
 using ProjectResources = Microsoft.Azure.Commands.Resources.Properties.Resources;
 
 
 namespace Microsoft.Azure.Commands.ActiveDirectory
 {
+<<<<<<< HEAD
     [Cmdlet("Remove", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "ADGroup", SupportsShouldProcess = true, DefaultParameterSetName = ParameterSet.ObjectId), OutputType(typeof(bool))]
+=======
+    [Cmdlet("Remove", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "ADGroup", SupportsShouldProcess = true, DefaultParameterSetName = ParameterSet.DisplayName), OutputType(typeof(bool))]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     public class RemoveAzureADGroupCommand : ActiveDirectoryBaseCmdlet
     {
         [Parameter(Mandatory = true, ValueFromPipelineByPropertyName = true, ParameterSetName = ParameterSet.ObjectId, HelpMessage = "The object id of the group to be removed.")]
@@ -36,10 +43,17 @@ namespace Microsoft.Azure.Commands.ActiveDirectory
         [ValidateNotNullOrEmpty]
         public PSADGroup InputObject { get; set; }
 
+<<<<<<< HEAD
         [Parameter(Mandatory = true)]
         public SwitchParameter PassThru { get; set; }
 
         [Parameter(Mandatory = true)]
+=======
+        [Parameter(Mandatory = false)]
+        public SwitchParameter PassThru { get; set; }
+
+        [Parameter(Mandatory = false)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public SwitchParameter Force { get; set; }
 
         public override void ExecuteCmdlet()

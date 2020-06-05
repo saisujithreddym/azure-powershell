@@ -17,6 +17,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Management.Automation;
 using Microsoft.Azure.Commands.RecoveryServices.Properties;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Management.RecoveryServices.Backup.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Management.RecoveryServices.Models;
 using Microsoft.WindowsAzure.Commands.Common.CustomAttributes;
 
@@ -56,8 +60,15 @@ namespace Microsoft.Azure.Commands.RecoveryServices
                 {
                     if (this.BackupStorageRedundancy.HasValue)
                     {
+<<<<<<< HEAD
                         BackupStorageConfig vaultStorageRequest = new BackupStorageConfig();
                         vaultStorageRequest.StorageModelType = BackupStorageRedundancy.ToString();
+=======
+                        BackupResourceConfigResource vaultStorageRequest = new BackupResourceConfigResource();
+                        BackupResourceConfig properties = new BackupResourceConfig();
+                        vaultStorageRequest.Properties = properties;
+                        vaultStorageRequest.Properties.StorageModelType = BackupStorageRedundancy.ToString();
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         RecoveryServicesClient.UpdateVaultStorageType(
                             this.Vault.ResourceGroupName, this.Vault.Name, vaultStorageRequest);
                     }

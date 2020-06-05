@@ -137,6 +137,7 @@ namespace Microsoft.Azure.Commands.ApiManagement
             PsApiManagementCustomHostNameConfiguration[] customHostnameConfigurations = null,
             PsApiManagementSystemCertificate[] systemCertificates = null,
             PsApiManagementSslSetting sslSettings = null,
+<<<<<<< HEAD
             bool createResourceIdentity = false)
         {
             string skuType = Mappers.MapSku(sku);
@@ -147,6 +148,20 @@ namespace Microsoft.Azure.Commands.ApiManagement
                 skuProperties.Capacity = capacity;
             }
 
+=======
+            bool createSystemResourceIdentity = false,
+            string[] userAssignedIdentity = null)
+        {
+            string skuType = Mappers.MapSku(sku);
+
+            if(capacity == null)
+            {
+                capacity = (sku == PsApiManagementSku.Consumption ? 0 : 1);
+            }
+
+            var skuProperties = new ApiManagementServiceSkuProperties(skuType, capacity.Value);
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var parameters = new ApiManagementServiceResource
             {
                 Location = location,
@@ -213,10 +228,14 @@ namespace Microsoft.Azure.Commands.ApiManagement
                 parameters.EnableClientCertificate = enableClientCertificate;
             }
 
+<<<<<<< HEAD
             if (createResourceIdentity)
             {
                 parameters.Identity = new ApiManagementServiceIdentity();
             }
+=======
+            parameters.Identity = Mappers.MapAssignedIdentity(createSystemResourceIdentity, userAssignedIdentity);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             var apiManagementResource = Client.ApiManagementService.CreateOrUpdate(resourceGroupName, serviceName, parameters);
             return new PsApiManagement(apiManagementResource);      
@@ -290,6 +309,7 @@ namespace Microsoft.Azure.Commands.ApiManagement
 
         public PsApiManagement SetApiManagementService(
             PsApiManagement apiManagement,
+<<<<<<< HEAD
             bool createResourceIdentity)
         {
             ApiManagementServiceResource apiManagementParameters = Mappers.MapPsApiManagement(apiManagement);
@@ -298,6 +318,14 @@ namespace Microsoft.Azure.Commands.ApiManagement
             {
                 apiManagementParameters.Identity = new ApiManagementServiceIdentity();
             }
+=======
+            bool createSystemResourceIdentity,
+            string[] userAssignedIdentity)
+        {
+            ApiManagementServiceResource apiManagementParameters = Mappers.MapPsApiManagement(apiManagement);
+
+            apiManagementParameters.Identity = Mappers.MapAssignedIdentity(createSystemResourceIdentity, userAssignedIdentity);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             var apiManagementService = Client.ApiManagementService.CreateOrUpdate(
                 apiManagement.ResourceGroupName, 

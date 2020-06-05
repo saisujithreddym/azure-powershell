@@ -14,8 +14,13 @@
 
 using Microsoft.Azure.Commands.Common.Authentication;
 using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+<<<<<<< HEAD
 using Microsoft.Azure.Management.Sql.LegacySdk;
 using Microsoft.Azure.Management.Sql.LegacySdk.Models;
+=======
+using Microsoft.Azure.Management.Sql;
+using Microsoft.Azure.Management.Sql.Models;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Collections.Generic;
 
 namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Services
@@ -68,27 +73,45 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
         /// <summary>
         /// Gets the Azure SQL Server Active Directory administrator
         /// </summary>
+<<<<<<< HEAD
         public Management.Sql.LegacySdk.Models.ServerAdministrator Get(string resourceGroupName, string serverName)
         {
             return GetCurrentSqlClient().ServerAdministrators.Get(resourceGroupName, serverName, ActiveDirectoryDefaultName).Administrator;
+=======
+        public Management.Sql.Models.ServerAzureADAdministrator Get(string resourceGroupName, string serverName)
+        {
+            return GetCurrentSqlClient().ServerAzureADAdministrators.GetAsync(resourceGroupName, serverName).Result;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>
         /// Lists Azure SQL Server Active Directory administrators
         /// </summary>
+<<<<<<< HEAD
         public IList<Management.Sql.LegacySdk.Models.ServerAdministrator> List(string resourceGroupName, string serverName)
         {
             return GetCurrentSqlClient().ServerAdministrators.List(resourceGroupName, serverName).Administrators;
+=======
+        public IEnumerable<Management.Sql.Models.ServerAzureADAdministrator> List(string resourceGroupName, string serverName)
+        {
+            return GetCurrentSqlClient().ServerAzureADAdministrators.ListByServer(resourceGroupName, serverName);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>
         /// Creates or updates a Azure SQL Server Active Directory Administrator
         /// </summary>
+<<<<<<< HEAD
         public Management.Sql.LegacySdk.Models.ServerAdministrator CreateOrUpdate(string resourceGroupName, string serverName, ServerAdministratorCreateOrUpdateParameters parameters)
         {
             // Always set the type to active directory
             parameters.Properties.AdministratorType = ActiveDirectoryDefaultType;
             return GetCurrentSqlClient().ServerAdministrators.CreateOrUpdate(resourceGroupName, serverName, ActiveDirectoryDefaultName, parameters).ServerAdministrator;
+=======
+        public Management.Sql.Models.ServerAzureADAdministrator CreateOrUpdate(string resourceGroupName, string serverName, ServerAzureADAdministrator parameters)
+        {
+           return GetCurrentSqlClient().ServerAzureADAdministrators.CreateOrUpdate(resourceGroupName, serverName, parameters);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>
@@ -96,7 +119,19 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
         /// </summary>
         public void Remove(string resourceGroupName, string serverName)
         {
+<<<<<<< HEAD
             GetCurrentSqlClient().ServerAdministrators.Delete(resourceGroupName, serverName, ActiveDirectoryDefaultName);
+=======
+            GetCurrentSqlClient().ServerAzureADAdministrators.DeleteWithHttpMessagesAsync(resourceGroupName, serverName);
+        }
+
+        /// <summary>
+        /// Disables Azure Active Directory only authentication on a Azure SQL Server
+        /// </summary>
+        public Management.Sql.Models.ServerAzureADAdministrator Disable(string resourceGroupName, string serverName)
+        {
+            return GetCurrentSqlClient().ServerAzureADAdministrators.DisableAzureADOnlyAuthenticationAsync(resourceGroupName, serverName).Result;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         /// <summary>
@@ -109,7 +144,11 @@ namespace Microsoft.Azure.Commands.Sql.ServerActiveDirectoryAdministrator.Servic
             // Get the SQL management client for the current subscription
             if (SqlClient == null)
             {
+<<<<<<< HEAD
                 SqlClient = AzureSession.Instance.ClientFactory.CreateClient<SqlManagementClient>(Context, AzureEnvironment.Endpoint.ResourceManager);
+=======
+                SqlClient = AzureSession.Instance.ClientFactory.CreateArmClient<Management.Sql.SqlManagementClient>(Context, AzureEnvironment.Endpoint.ResourceManager);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
             return SqlClient;
         }

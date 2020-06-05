@@ -100,6 +100,17 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Volume
 
         [Parameter(
             ParameterSetName = FieldsParameterSet,
+<<<<<<< HEAD
+=======
+            Mandatory = false,
+            HelpMessage = "The type of the ANF volume")]
+        [ValidateNotNullOrEmpty]
+        [PSArgumentCompleter("DataProtection")]
+        public string VolumeType { get; set; }
+
+        [Parameter(
+            ParameterSetName = FieldsParameterSet,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             Mandatory = true,
             HelpMessage = "The service level of the ANF volume")]
         [Parameter(
@@ -118,6 +129,15 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Volume
 
         [Parameter(
             Mandatory = false,
+<<<<<<< HEAD
+=======
+            HelpMessage = "A hashtable array which represents the replication object")]
+        [ValidateNotNullOrEmpty]
+        public PSNetAppFilesReplicationObject ReplicationObject { get; set; }
+
+        [Parameter(
+            Mandatory = false,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             HelpMessage = "A hashtable array which represents the protocol types")]
         [ValidateNotNullOrEmpty]
         [PSArgumentCompleter("NFSv3", "NFSv4.1", "CIFS")]
@@ -161,6 +181,14 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Volume
                 PoolName = NameParts[1];
             }
 
+<<<<<<< HEAD
+=======
+            var dataProtection = new PSNetAppFilesVolumeDataProtection
+            {
+                Replication = ReplicationObject
+            };
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             var volumeBody = new Management.NetApp.Models.Volume()
             {
                 ServiceLevel = ServiceLevel,
@@ -169,6 +197,11 @@ namespace Microsoft.Azure.Commands.NetAppFiles.Volume
                 SubnetId = SubnetId,
                 Location = Location,
                 ExportPolicy = (ExportPolicy != null) ? ModelExtensions.ConvertExportPolicyFromPs(ExportPolicy) : null,
+<<<<<<< HEAD
+=======
+                DataProtection = (dataProtection.Replication != null) ? ModelExtensions.ConvertDataProtectionFromPs(dataProtection) : null,
+                VolumeType = VolumeType,
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 ProtocolTypes = ProtocolType,
                 Tags = tagPairs
             };

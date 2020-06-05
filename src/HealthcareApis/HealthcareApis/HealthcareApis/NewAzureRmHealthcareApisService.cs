@@ -208,6 +208,7 @@ namespace Microsoft.Azure.Commands.HealthcareApis.Commands
         {
             List<ServiceAccessPolicyEntry> accessPolicies = new List<ServiceAccessPolicyEntry>();
 
+<<<<<<< HEAD
             if (AccessPolicyObjectId == null || AccessPolicyObjectId.Length == 0)
             {
                 string objectID = base.AccessPolicyID;
@@ -219,6 +220,15 @@ namespace Microsoft.Azure.Commands.HealthcareApis.Commands
             {
                 HealthcareApisArgumentValidator.ValidateObjectId(objectID);
                 accessPolicies.Add(new ServiceAccessPolicyEntry(objectID));
+=======
+            if (AccessPolicyObjectId != null && AccessPolicyObjectId.Length > 0)
+            {
+                foreach (var objectID in AccessPolicyObjectId)
+                {
+                    HealthcareApisArgumentValidator.ValidateObjectId(objectID);
+                    accessPolicies.Add(new ServiceAccessPolicyEntry(objectID));
+                }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
             }
 
             return accessPolicies;

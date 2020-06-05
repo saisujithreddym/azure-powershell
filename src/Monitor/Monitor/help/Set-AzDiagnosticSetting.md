@@ -38,21 +38,33 @@ This cmdlet implements the ShouldProcess pattern, i.e. it might request confirma
 ## EXAMPLES
 
 ### Example 1: Enable all metrics and logs for a resource
+<<<<<<< HEAD
 ```
+=======
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
 ```
 
 This command enables all available metrics and logs for Resource01.
 
 ### Example 2: Disable all metrics and logs
+<<<<<<< HEAD
 ```
+=======
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
 ```
 
 This command disables all available metrics and logs for the resource Resource01.
 
 ### Example 3: Enable/disable multiple metrics categories
+<<<<<<< HEAD
 ```
+=======
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
 StorageAccountId   : <storageAccountId>
 StorageAccountName : <storageAccountName>
@@ -81,7 +93,11 @@ This command disables the metrics categories called Category1 and Category2.
 All the other categories remain the same.
 
 ### Example 4: Enable/disable multiple log categories
+<<<<<<< HEAD
 ```
+=======
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
 StorageAccountId   : <storageAccountId>
 StorageAccountName : <storageAccountName>
@@ -109,16 +125,26 @@ Logs
 This command enables Category1 and Category2.
 All the other metrics and logs categories remain the same.
 
+<<<<<<< HEAD
 ### Example 4: Enable a time grain and multiple categories
 ```
+=======
+### Example 5: Enable a time grain and multiple categories
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
 ```
 
 This command enables only Category1, Category2, and time grain PT1M.
 All other time grains and categories are unchanged.
 
+<<<<<<< HEAD
 ### Example 5: Using pipeline
 ```
+=======
+### Example 6: Using pipeline
+```powershell
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 PS C:\>Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting -Enabled $True -Category Category1,Category2
 ```
 
@@ -358,7 +384,11 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceId
+<<<<<<< HEAD
 The Id of the workspace
+=======
+The resource Id of the Log Analytics workspace to send logs/metrics to
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ```yaml
 Type: System.String

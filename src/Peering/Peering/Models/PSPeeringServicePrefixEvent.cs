@@ -14,7 +14,11 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
     using System.Linq;
 
     /// <summary>
+<<<<<<< HEAD
     /// The peering service prefix event class.
+=======
+    /// The details of the event associated with a prefix.
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     /// </summary>
     public partial class PSPeeringServicePrefixEvent
     {

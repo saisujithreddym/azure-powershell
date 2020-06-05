@@ -40,13 +40,33 @@ namespace Microsoft.Azure.Commands.Management.Storage
         [ValidateNotNullOrEmpty]
         public string Name { get; set; }
 
+<<<<<<< HEAD
+=======
+        [Parameter(
+            HelpMessage = "Lists the Kerberos keys (if active directory enabled) for the specified storage account.")]
+        public SwitchParameter ListKerbKey { get; set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public override void ExecuteCmdlet()
         {
             base.ExecuteCmdlet();
 
+<<<<<<< HEAD
             var storageKeys = this.StorageClient.StorageAccounts.ListKeys(
                  this.ResourceGroupName,
                  this.Name).Keys;
+=======
+            ListKeyExpand? listkeyExpend = null;
+            if (ListKerbKey.IsPresent)
+            {
+                listkeyExpend = ListKeyExpand.Kerb;
+            }
+
+            var storageKeys = this.StorageClient.StorageAccounts.ListKeys(
+                 this.ResourceGroupName,
+                 this.Name,
+                 listkeyExpend).Keys;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
             WriteObject(storageKeys, true);
         }

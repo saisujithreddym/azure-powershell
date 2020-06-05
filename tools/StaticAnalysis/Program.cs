@@ -71,6 +71,7 @@ namespace StaticAnalysis
                 }
 
                 var directories = new List<string>{ installDir }.Where((d) => Directory.Exists(d)).ToList<string>();
+<<<<<<< HEAD
 
                 var reportsDirectory = Directory.GetCurrentDirectory();
                 bool logReportsDirectoryWarning = true;
@@ -86,6 +87,23 @@ namespace StaticAnalysis
                     logReportsDirectoryWarning = false;
                 }
 
+=======
+
+                var reportsDirectory = Directory.GetCurrentDirectory();
+                bool logReportsDirectoryWarning = true;
+                if (args.Any(a => a == "--reports-directory" || a == "-r"))
+                {
+                    int idx = Array.FindIndex(args, a => a == "--reports-directory" || a == "-r");
+                    if (idx + 1 == args.Length)
+                    {
+                        throw new ArgumentException("No value provided for the --reports-directory parameter.");
+                    }
+
+                    reportsDirectory = args[idx + 1];
+                    logReportsDirectoryWarning = false;
+                }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 if (!Directory.Exists(reportsDirectory))
                 {
                     Directory.CreateDirectory(reportsDirectory);
@@ -143,6 +161,7 @@ namespace StaticAnalysis
                 analysisLogger.WriteReports();
                 analysisLogger.CheckForIssues(2);
             }
+<<<<<<< HEAD
             catch(Exception ex)
             {
                 analysisLogger?.WriteError(ex.ToString());
@@ -188,6 +207,48 @@ namespace StaticAnalysis
                             fileEmpty = false;
                         }
 
+=======
+            finally
+            {
+                foreach (var exceptionFileName in ExceptionFileNames)
+                {
+                    var exceptionFilePath = Path.Combine(ExceptionsDirectory, exceptionFileName);
+                    if (File.Exists(exceptionFilePath))
+                    {
+                        File.Delete(exceptionFilePath);
+                    }
+                }
+            }
+        }
+
+        private static void ConsolidateExceptionFiles(string exceptionsDirectory, bool useNetcore)
+        {
+            foreach (var exceptionFileName in ExceptionFileNames)
+            {
+                var moduleExceptionFilePaths = Directory.EnumerateFiles(exceptionsDirectory, exceptionFileName, SearchOption.AllDirectories)
+                                                        .Where(f => useNetcore ? Directory.GetParent(f).Name.StartsWith("Az.") : Directory.GetParent(f).Name.StartsWith("Azure"))
+                                                        .ToList();
+                var exceptionFilePath = Path.Combine(exceptionsDirectory, exceptionFileName);
+                if (File.Exists(exceptionFilePath))
+                {
+                    File.Delete(exceptionFilePath);
+                }
+
+                File.Create(exceptionFilePath).Close();
+                var fileEmpty = true;
+                foreach (var moduleExceptionFilePath in moduleExceptionFilePaths)
+                {
+                    var content = File.ReadAllLines(moduleExceptionFilePath);
+                    if (content.Length > 1)
+                    {
+                        if (fileEmpty)
+                        {
+                            // Write the header
+                            File.WriteAllLines(exceptionFilePath, new string[] { content.FirstOrDefault() });
+                            fileEmpty = false;
+                        }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                         // Write everything but the header
                         content = content.Skip(1).ToArray();
                         File.AppendAllLines(exceptionFilePath, content);

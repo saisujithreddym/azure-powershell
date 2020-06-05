@@ -36,12 +36,17 @@ Specify the *Filter* parameter to get the job schedules that match an Open Data 
 ```
 PS C:\>Get-AzBatchJobSchedule -Id "JobSchedule23" -BatchContext $Context
 CreationTime                : 7/25/2015 9:15:43 PM
+<<<<<<< HEAD
 DisplayName                 : 
+=======
+DisplayName                 :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ETag                        : 0x8D2953633427FCA
 ExecutionInformation        : Microsoft.Azure.Commands.Batch.Models.PSJobScheduleExecutionInformation
 Id                          : JobSchedule23
 JobSpecification            : Microsoft.Azure.Commands.Batch.Models.PSJobSpecification
 LastModified                : 7/25/2015 9:15:43 PM
+<<<<<<< HEAD
 Metadata                    : 
 PreviousState               : Invalid
 PreviousStateTransitionTime : 
@@ -49,6 +54,15 @@ Schedule                    :
 State                       : Active
 StateTransitionTime         : 7/25/2015 9:15:43 PM
 Statistics                  : 
+=======
+Metadata                    :
+PreviousState               : Invalid
+PreviousStateTransitionTime :
+Schedule                    :
+State                       : Active
+StateTransitionTime         : 7/25/2015 9:15:43 PM
+Statistics                  :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Url                         : https://pfuller.westus.batch.azure.com/jobschedules/JobSchedule23
 ```
 
@@ -59,12 +73,17 @@ Use the Get-AzBatchAccountKey cmdlet to assign a context to the $Context variabl
 ```
 PS C:\>Get-AzBatchJobSchedule -Filter "startswith(id,'Job')" -BatchContext $Context
 CreationTime                : 7/25/2015 9:15:43 PM
+<<<<<<< HEAD
 DisplayName                 : 
+=======
+DisplayName                 :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ETag                        : 0x8D2953633427FCA
 ExecutionInformation        : Microsoft.Azure.Commands.Batch.Models.PSJobScheduleExecutionInformation
 Id                          : JobSchedule23
 JobSpecification            : Microsoft.Azure.Commands.Batch.Models.PSJobSpecification
 LastModified                : 7/25/2015 9:15:43 PM
+<<<<<<< HEAD
 Metadata                    : 
 PreviousState               : Invalid
 PreviousStateTransitionTime : 
@@ -76,11 +95,25 @@ Url                         : https://pfuller.westus.batch.azure.com/jobschedule
 
 CreationTime                : 7/26/2015 5:39:33 PM
 DisplayName                 : 
+=======
+Metadata                    :
+PreviousState               : Invalid
+PreviousStateTransitionTime :
+Schedule                    :
+State                       : Active
+StateTransitionTime         : 7/25/2015 9:15:43 PM
+Statistics                  :
+Url                         : https://pfuller.westus.batch.azure.com/jobschedules/JobSchedule23
+
+CreationTime                : 7/26/2015 5:39:33 PM
+DisplayName                 :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ETag                        : 0x8D295E12B1084B4
 ExecutionInformation        : Microsoft.Azure.Commands.Batch.Models.PSJobScheduleExecutionInformation
 Id                          : JobSchedule26
 JobSpecification            : Microsoft.Azure.Commands.Batch.Models.PSJobSpecification
 LastModified                : 7/26/2015 5:39:33 PM
+<<<<<<< HEAD
 Metadata                    : 
 PreviousState               : Invalid
 PreviousStateTransitionTime : 
@@ -88,6 +121,15 @@ Schedule                    :
 State                       : Active
 StateTransitionTime         : 7/26/2015 5:39:33 PM
 Statistics                  : 
+=======
+Metadata                    :
+PreviousState               : Invalid
+PreviousStateTransitionTime :
+Schedule                    :
+State                       : Active
+StateTransitionTime         : 7/26/2015 5:39:33 PM
+Statistics                  :
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 Url                         : https://pfuller.westus.batch.azure.com/jobschedules/JobSchedule26
 ```
 
@@ -237,6 +279,10 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 [Stop-AzBatchJobSchedule](./Stop-AzBatchJobSchedule.md)
 
+<<<<<<< HEAD
 [Azure Batch Cmdlets](./Az.Batch.md)
 
 
+=======
+[Azure Batch Cmdlets](/powershell/module/Az.Batch/)
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

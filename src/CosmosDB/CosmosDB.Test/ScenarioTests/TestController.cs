@@ -18,8 +18,15 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Microsoft.Azure.Commands.Common.Authentication;
+<<<<<<< HEAD
 using Microsoft.Azure.Management.Internal.Resources;
 using Microsoft.Azure.Management.CosmosDB;
+=======
+using Microsoft.Azure.Internal.Common;
+using Microsoft.Azure.Management.Internal.Resources;
+using Microsoft.Azure.Management.CosmosDB;
+using Microsoft.Azure.Management.Network;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using Microsoft.Azure.Test.HttpRecorder;
 using Microsoft.Rest.ClientRuntime.Azure.TestFramework;
 using Microsoft.WindowsAzure.Commands.ScenarioTest;
@@ -36,6 +43,13 @@ namespace Microsoft.Azure.Commands.CosmosDB.Test.ScenarioTests.ScenarioTest
 
         public CosmosDBManagementClient CosmosDBManagementClient { get; private set; }
 
+<<<<<<< HEAD
+=======
+        public NetworkManagementClient NetworkManagementClient { get; private set; }
+
+        public AzureRestClient AzureRestClient { get; private set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public static TestController NewInstance => new TestController();
 
         protected TestController()
@@ -47,9 +61,19 @@ namespace Microsoft.Azure.Commands.CosmosDB.Test.ScenarioTests.ScenarioTest
         {
             ResourceManagementClient = GetResourceManagementClient(context);
             CosmosDBManagementClient = GetCosmosDBManagementClient(context);
+<<<<<<< HEAD
             _helper.SetupManagementClients(
                 ResourceManagementClient,
                 CosmosDBManagementClient);
+=======
+            NetworkManagementClient = GetNetworkManagementClient(context);
+            AzureRestClient = GetAzureRestClient(context);
+            _helper.SetupManagementClients(
+                ResourceManagementClient,
+                CosmosDBManagementClient,
+                NetworkManagementClient,
+                AzureRestClient);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public void RunPowerShellTest(ServiceManagement.Common.Models.XunitTracingInterceptor logger, params string[] scripts)
@@ -79,6 +103,10 @@ namespace Microsoft.Azure.Commands.CosmosDB.Test.ScenarioTests.ScenarioTest
                 {"Microsoft.Resources", null},
                 {"Microsoft.Features", null},
                 {"Microsoft.Authorization", null},
+<<<<<<< HEAD
+=======
+                {"Microsoft.Network", null},
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 {"Microsoft.Compute", null}
             };
             var providersToIgnore = new Dictionary<string, string>
@@ -102,6 +130,10 @@ namespace Microsoft.Azure.Commands.CosmosDB.Test.ScenarioTests.ScenarioTest
                     "ScenarioTests\\" + callingClassName + ".ps1",
                     _helper.RMProfileModule,
                     _helper.GetRMModulePath("Az.CosmosDB.psd1"),
+<<<<<<< HEAD
+=======
+                    _helper.GetRMModulePath("Az.Network.psd1"),
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                     "AzureRM.Resources.ps1");
                 try
                 {
@@ -127,5 +159,18 @@ namespace Microsoft.Azure.Commands.CosmosDB.Test.ScenarioTests.ScenarioTest
         {
             return context.GetServiceClient<CosmosDBManagementClient>(TestEnvironmentFactory.GetTestEnvironment());
         }
+<<<<<<< HEAD
+=======
+
+        private static NetworkManagementClient GetNetworkManagementClient(MockContext context)
+        {
+            return context.GetServiceClient<NetworkManagementClient>(TestEnvironmentFactory.GetTestEnvironment());
+        }
+
+        private static AzureRestClient GetAzureRestClient(MockContext context)
+        {
+            return context.GetServiceClient<AzureRestClient>(TestEnvironmentFactory.GetTestEnvironment());
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

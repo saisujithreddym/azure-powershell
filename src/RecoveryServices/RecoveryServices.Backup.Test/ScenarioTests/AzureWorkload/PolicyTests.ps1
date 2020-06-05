@@ -70,6 +70,15 @@ function Test-AzureVmWorkloadPolicy
 	Assert-AreEqual $schedulePolicy.IsDifferentialBackupEnabled $true
 	Assert-AreEqual $schedulePolicy.IsLogBackupEnabled $true
 
+<<<<<<< HEAD
+=======
+	# Fix Policy Update for failed items
+	Set-AzRecoveryServicesBackupProtectionPolicy `
+		-VaultId $vault.ID `
+		-FixForInconsistentItems `
+		-Policy $policy
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 	# Delete policy
 	Remove-AzRecoveryServicesBackupProtectionPolicy `
 		-VaultId $vault.ID `

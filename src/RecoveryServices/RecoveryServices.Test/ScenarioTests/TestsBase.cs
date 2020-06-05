@@ -24,6 +24,10 @@ using RestTestFramework = Microsoft.Rest.ClientRuntime.Azure.TestFramework;
 using Microsoft.Azure.ServiceManagement.Common.Models;
 using System.Diagnostics;
 using Microsoft.Azure.Management.Internal.Resources;
+<<<<<<< HEAD
+=======
+using Microsoft.Azure.Management.RecoveryServices.Backup;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 namespace Microsoft.Azure.Commands.RecoveryServices.Test.ScenarioTests
 {
@@ -33,6 +37,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Test.ScenarioTests
 
         public RecoveryServicesClient RsClient { get; private set; }
 
+<<<<<<< HEAD
+=======
+        public RecoveryServicesBackupClient RsBackupClient { get; private set; }
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public ResourceManagementClient InternalRmClient { get; private set; }
 
         public static TestController NewInstance => new TestController();
@@ -46,8 +55,14 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Test.ScenarioTests
         {
             RsClient = GetRsClient(context);
             InternalRmClient = GetInternalRmClient(context);
+<<<<<<< HEAD
 
             _helper.SetupManagementClients(RsClient, InternalRmClient);
+=======
+            RsBackupClient = GetRsBackupClient(context);
+
+            _helper.SetupManagementClients(RsClient, InternalRmClient, RsBackupClient);
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         }
 
         public void RunPsTest(XunitTracingInterceptor logger, params string[] scripts)
@@ -131,5 +146,13 @@ namespace Microsoft.Azure.Commands.RecoveryServices.Test.ScenarioTests
         {
             return context.GetServiceClient<RecoveryServicesClient>(RestTestFramework.TestEnvironmentFactory.GetTestEnvironment());
         }
+<<<<<<< HEAD
+=======
+
+        private static RecoveryServicesBackupClient GetRsBackupClient(RestTestFramework.MockContext context)
+        {
+            return context.GetServiceClient<RecoveryServicesBackupClient>(RestTestFramework.TestEnvironmentFactory.GetTestEnvironment());
+        }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     }
 }

@@ -51,7 +51,11 @@ This command sets the short term retention policy for database01 to 35 days.
 
 ### Example 2
 ```powershell
+<<<<<<< HEAD
 PS C:\> Get-AzSqlDatabase -ResourceGroupName resourcegroup01 -InstanceName server01 -DatabaseName database01 | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 35
+=======
+PS C:\> Get-AzSqlInstanceDatabase -ResourceGroupName resourcegroup01 -InstanceName server01 -DatabaseName database01 | Set-AzSqlInstanceDatabaseBackupShortTermRetentionPolicy -RetentionDays 35
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 ResourceGroupName : resourcegroup01
 InstanceName      : instance01
 DatabaseName      : database01

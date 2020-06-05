@@ -11,12 +11,41 @@ Locale: en-US
 This topic displays help topics for the Azure Attestation Cmdlets.
 
 ## Az.Attestation Cmdlets
+<<<<<<< HEAD
 ### [Get-AzAttestation](Get-AzAttestation.md)
 Gets an attestation.
 
 ### [New-AzAttestation](New-AzAttestation.md)
 Creates an attestation.
+=======
+### [Add-AzAttestationPolicySigner](Add-AzAttestationPolicySigner.md)
+Adds a trusted policy signer for a tenant in Azure Attestation.
+
+### [Get-AzAttestation](Get-AzAttestation.md)
+Gets an attestation.
+
+### [Get-AzAttestationPolicy](Get-AzAttestationPolicy.md)
+Gets the policy from a tenant in Azure Attestation.
+
+### [Get-AzAttestationPolicySigners](Get-AzAttestationPolicySigners.md)
+Gets the trusted policy signers from a tenant in Azure Attestation.
+
+### [New-AzAttestation](New-AzAttestation.md)
+Creates an attestation
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
 ### [Remove-AzAttestation](Remove-AzAttestation.md)
 Deletes an attestation.
 
+<<<<<<< HEAD
+=======
+### [Remove-AzAttestationPolicySigner](Remove-AzAttestationPolicySigner.md)
+Removes a trusted policy signer for a tenant in Azure Attestation.
+
+### [Reset-AzAttestationPolicy](Reset-AzAttestationPolicy.md)
+Resets the policy from a tenant in Azure Attestationn.}
+
+### [Set-AzAttestationPolicy](Set-AzAttestationPolicy.md)
+Sets the policy from a tenant in Azure Attestationn.
+
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e

@@ -198,7 +198,11 @@ function Add-SolutionReference
         [string]$ServiceFolderPath
     )
 
+<<<<<<< HEAD
     $CsprojFiles = Get-ChildItem -Path $ServiceFolderPath -Filter "*.csproj" -Recurse | Where-Object { $_.FullName -notlike "*Stack*" -and $_.FullName -notlike "*.Test*" }
+=======
+    $CsprojFiles = Get-ChildItem -Path $ServiceFolderPath -Filter "*.csproj" -Recurse | Where-Object { ($_.FullName -notlike "*Stack*" -or $_.FullName -like "*StackEdge*") -and $_.FullName -notlike "*.Test*" }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
     foreach ($CsprojFile in $CsprojFiles)
     {
         $Key = $CsprojFile.BaseName

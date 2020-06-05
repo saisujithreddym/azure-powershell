@@ -53,13 +53,21 @@ namespace Microsoft.Azure.Commands.Network
         [Parameter(
             Mandatory = true,
             HelpMessage = "Min scale units for this ExpressRouteGateway.")]
+<<<<<<< HEAD
         [ValidateRange(2, 100)]
+=======
+        [ValidateRange(1, 100)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public uint MinScaleUnits { get; set; }
 
         [Parameter(
             Mandatory = false,
             HelpMessage = "Max scale units for this ExpressRouteGateway.")]
+<<<<<<< HEAD
         [ValidateRange(2, 100)]
+=======
+        [ValidateRange(1, 100)]
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
         public uint MaxScaleUnits { get; set; }
 
         [Parameter(

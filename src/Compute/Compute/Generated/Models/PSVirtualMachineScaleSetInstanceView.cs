@@ -30,6 +30,10 @@ namespace Microsoft.Azure.Commands.Compute.Automation.Models
         public VirtualMachineScaleSetInstanceViewStatusesSummary VirtualMachine { get; set; }
         public IList<VirtualMachineScaleSetVMExtensionsSummary> Extensions { get; set; }
         public IList<InstanceViewStatus> Statuses { get; set; }
+<<<<<<< HEAD
+=======
+        public IList<OrchestrationServiceSummary> OrchestrationServices { get; set; }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 
     }
 }

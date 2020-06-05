@@ -18,6 +18,10 @@ using Microsoft.Azure.Commands.Security.Common;
 using Microsoft.Azure.Commands.Security.Models.Alerts;
 using Microsoft.Azure.Commands.SecurityCenter.Common;
 using Microsoft.Rest.Azure;
+<<<<<<< HEAD
+=======
+using System;
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
 using System.Management.Automation;
 
 namespace Microsoft.Azure.Commands.Security.Cmdlets.Alerts
@@ -101,14 +105,36 @@ namespace Microsoft.Azure.Commands.Security.Cmdlets.Alerts
             {
                 if (ShouldProcess(name, VerbsCommon.Set))
                 {
+<<<<<<< HEAD
                     SecurityCenterClient.Alerts.UpdateSubscriptionLevelAlertStateWithHttpMessagesAsync(name, actionType).GetAwaiter().GetResult();
+=======
+                    if (actionType == "Dismiss")
+                    {
+                        SecurityCenterClient.Alerts.UpdateSubscriptionLevelAlertStateToDismissWithHttpMessagesAsync(name).GetAwaiter().GetResult();
+                    }
+                    else if (actionType == "Activate")
+                    {
+                        SecurityCenterClient.Alerts.UpdateSubscriptionLevelAlertStateToReactivateWithHttpMessagesAsync(name).GetAwaiter().GetResult();
+                    }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
             }
             else
             {
                 if (ShouldProcess(name, VerbsCommon.Set))
                 {
+<<<<<<< HEAD
                     SecurityCenterClient.Alerts.UpdateResourceGroupLevelAlertStateWithHttpMessagesAsync(name, actionType, rg).GetAwaiter().GetResult();
+=======
+                    if (actionType == "Dismiss")
+                    {
+                        SecurityCenterClient.Alerts.UpdateResourceGroupLevelAlertStateToDismissWithHttpMessagesAsync(name, rg).GetAwaiter().GetResult();
+                    }
+                    else if (actionType == "Activate")
+                    {
+                        SecurityCenterClient.Alerts.UpdateResourceGroupLevelAlertStateToReactivateWithHttpMessagesAsync(name, rg).GetAwaiter().GetResult();
+                    }
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
                 }
             }
 
@@ -118,4 +144,8 @@ namespace Microsoft.Azure.Commands.Security.Cmdlets.Alerts
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5fcd5c7b105c638909ca50ef4370d71fce2137e
